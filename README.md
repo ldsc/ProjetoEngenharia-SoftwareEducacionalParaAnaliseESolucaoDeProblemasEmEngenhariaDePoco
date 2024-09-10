@@ -25,14 +25,15 @@
 
 # Nome do Software (ou Biblioteca):
 
--   
+-   Simulador Educacional Para Análise e Solução de Problemas em Engenharia de Poço
 
 
 <a id="orgb289cc3"></a>
 
 # Resumo e/ou informação extra:
 
--   
+-   Este projeto tem como objetivo desenvolver um simulador educacional voltado para alunos de Engenharia de Petróleo que necessitam de suporte no estudo e aplicação de conceitos relacionados à Engenharia de Poços. O Projeto irá reunir os principais pontos focais da ementa atual da disciplina, integrando ferramentas para visualização, análise, simulação e cálculos. Com funcionalidades intuitivas, o simulador visa facilitar o aprendizado e aprofundamento em tópicos essenciais, podendo ser utilizado tanto por alunos da disciplina quanto por outros interessados em explorar o conteúdo, independentemente de estarem no LENEP ou em outras instituições.
+
 
 
 <a id="org27654ad"></a>
@@ -60,7 +61,8 @@
 
 # Lista dos Autores:
 
--   &#x2026;
+-   Nathan Rangel Magalhães <nrmagalhaes@hotmail.com>
+-   Thauan Ferreira Barbosa <thauanbarbosa@lenep.uenf.com>
 -   André Duarte Bueno <andreduartebueno@gmail.com>
 
 
@@ -69,8 +71,7 @@
 # Áreas de pesquisa vinculadas:
 
 -   Modelagem Matemática Computacional
--   Engenharia de Reservatório
--   &#x2026;
+-   Engenharia de Poço
 
 
 <a id="orgeae2cfa"></a>
@@ -94,14 +95,13 @@
 # Tipo de Interface:
 
 -   Terminal e gráfica (gnuplot).
--   Qt? [opcional]
 
 
 <a id="orgb4d834c"></a>
 
 # Plataformas Suportadas:
 
--   Windows e GNU/Linux e Mac OS X (não testada).
+-   Windows.
 
 
 <a id="org9045193"></a>
