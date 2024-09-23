@@ -1,0 +1,9 @@
+g++ main.cpp -o main.exe
+
+if errolevel 1 (
+    pause
+    exit /b
+)
+
+main.exe
+pause
