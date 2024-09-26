@@ -1,0 +1,600 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master 3-Projeto-ModelosDeEngenharia-Master.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style apalike
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter
+\backslash
+space - Elaboração}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Elaboração
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Elaboração
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Elaboração"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neste capítulo será apresentada a elaboração do simulador, que envolve o
+ desenvolvimento teórico, as equações análiticas, identificação dos pacotes
+ e algoritmos adicionais relacionados ao software a ser desenvolvido.
+\end_layout
+
+\begin_layout Section
+Análise de domínio
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Análise-de-domínio"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O tópico análise de domínio e uma parte fundamental da elaboração de um
+ projeto, na qual se faz necessário entender e delimitar os conceitos principais
+ para a construção do simulador.
+\end_layout
+
+\begin_layout Standard
+O presente projeto esta relacionado a 5 conceitos fundamentais:
+\end_layout
+
+\begin_layout Enumerate
+Mecânica dos fluidos:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A mecânica dos fluidos, especialmente no contexto da engenharia de perfuração,
+ envolve o estudo e o controle de como fluidos se comportam sob diferentes
+ condições de pressão, velocidade e temperatura, além da interação com materiais
+ sólidos (como cascalho e cimento).
+ O sucesso na perfuração de poços de petróleo depende diretamente da capacidade
+ de lidar com a dinâmica dos fluidos de perfuração, que são essenciais para
+ estabilizar o poço, controlar pressões, remover cascalhos e cimentar o
+ revestimento de forma eficiente.
+ Nesse projeto iremos determinar as pressões de fluidos em duas condições
+ de poço: quando a coluna e o fluido estão em repouso e quando fluidos são
+ bombeados em uma coluna fixa.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Mecânica das rochas:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A mecânica das rochas é crucial na engenharia de perfuração porque lida
+ com o comportamento e as propriedades das formações rochosas atravessadas
+ pelo poço.
+ Durante a perfuração, a interação entre as tensões in situ e as propriedades
+ das rochas impacta diretamente a estabilidade do poço, a capacidade de
+ perfurar com eficiência e a integridade do revestimento.
+ Entender a mecânica das rochas ajuda a prever e mitigar problemas como
+ o colapso do poço, fraturas indesejadas e falhas estruturais nas rochas.
+ O comportamento das rochas sob compressão, cisalhamento, e outras tensões
+ precisa ser cuidadosamente estudado para garantir que o poço permaneça
+ estável, especialmente em formações frágeis ou propensas à fraturação.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Equações analíticas:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+As equações analíticas desempenham um papel essencial na engenharia de perfuraçã
+o, pois fornecem modelos matemáticos que permitem prever e controlar diversos
+ parâmetros operacionais, como pressões, tensões, fluxo de fluidos e comportamen
+to das rochas.
+ O uso de equações analíticas permite aos engenheiros desenvolver soluções
+ precisas e rápidas para problemas complexos, sem a necessidade de depender
+ exclusivamente de simulações numéricas.
+ Na perfuração, equações como a Lei de Darcy, para fluxo de fluidos em meios
+ porosos, ou a equação de Bernoulli, para energia de fluxo em sistemas de
+ fluidos, ajudam a modelar a circulação de lama de perfuração, prever perdas
+ de fluido e estimar a pressão hidrostática necessária para manter a estabilidad
+e do poço.
+ Outro exemplo são as equações de Navier-Stokes, que são usadas para descrever
+ o comportamento de fluidos complexos como os utilizados na lama de perfuração.
+ Além disso, equações analíticas podem ser usadas para estimar as tensões
+ nas paredes do poço, o que é essencial para prever fraturas ou falhas no
+ revestimento, e calcular a pressão de poro, que deve ser cuidadosamente
+ controlada para evitar blowouts.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Programação:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+O paradigma de programação orientada a objetos (POO) é amplamente utilizado
+ no desenvolvimento de grandes softwares, especialmente pela sua capacidade
+ de organizar o código em estruturas modulares e reutilizáveis.
+ POO se baseia em conceitos como classes, objetos, herança, encapsulamento,
+ polimorfismo e abstração, permitindo que os problemas sejam divididos em
+ partes menores e mais gerenciáveis.
+ Isso facilita a manutenção, evolução e escalabilidade de sistemas complexos,
+ como os usados em engenharia de perfuração, simulações e gestão de dados
+ de poços.
+ C++ é uma das linguagens mais populares nesse paradigma, especialmente
+ em áreas que exigem alto desempenho e controle eficiente de recursos, como
+ a perfuração de poços e a simulação geológica.
+ Além de suportar POO, o C++ é conhecido por sua rapidez, principalmente
+ por permitir o gerenciamento manual de memória e por sua rica biblioteca
+ padrão e bibliotecas de terceiros, como Qt (para interfaces gráficas) e
+ QCustomPlot (para gráficos científicos).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Modelagem Gráfica:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A modelagem gráfica é um componente vital em diversas áreas da engenharia,
+ especialmente em projetos de perfuração e exploração de petróleo, pois
+ permite a visualização e análise de dados complexos de forma intuitiva
+ e acessível.
+ Através de representações gráficas, como gráficos 2D e 3D, mapas de subsuperfíc
+ie, simulações visuais de poços e campos petrolíferos, os engenheiros podem
+ tomar decisões mais informadas sobre a operação e planejamento.
+ As bibliotecas gráficas como Qt (que integra facilmente com C++) são amplamente
+ utilizadas para criar gráficos científicos e visualizações de dados complexos,
+ como perfis de pressão, porosidade e velocidades de ondas P e S nas formações
+ geológicas.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Formulação teórica
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Formulação-teórica"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Hidrúlica de perfuração
+\end_layout
+
+\begin_layout Standard
+Na engenharia de perfuração um fluido de perfuração tem três funções principais:
+ transportar cascalho, previnir o influxo de fluidos e manter a estabilidade
+ do poço.
+ Para que possa cumprir tais funções o fluido depnede do seu fluxo na tubulação
+ e das pressões associadas a esse fluxo.
+ Para que um enenheiro poça formular o melhor fluido de perfuração para
+ cada situação especifica ele deve ser capaz de prever as pressões e fluxos
+ de fluidos no poço.
+\end_layout
+
+\begin_layout Standard
+Os fluidos de perfuração podem ser bem variados em temos de composição e
+ propriedades indo desde fluidos incompressíveis como a água ate fluidos
+ muito compressíveis como a espuma.
+ O simulador se propõem a resolver dois tipos de problema, o primeiro deles
+ sendo problemas estaticos que envolvem o cálculo de pressão hidrostática
+ e o segundo deles com a movimentação de fluidos pelo tubo.
+\end_layout
+
+\begin_layout Subsection
+Pressão Hidrostática
+\end_layout
+
+\begin_layout Standard
+A pressão hidrostática e a variação da pressão com a profundidade em uma
+ coluna de fluido, que normalmente e mais facilmente calculada em codições
+ de poço estático.
+ essa pressão pode ser deduzida considerando o diagrama de corpo livre REF
+ 1 (Colocar figura).
+ 
+\end_layout
+
+\begin_layout Standard
+A partir dessa dedução chegamos a equação (1) a seguir em unidades oil field,
+ onde dp é a variação de pressão dZ é a variação de profundidade e ρ é a
+ densidade do fluido.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dp}{dZ}=0.05195\rho
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos calcular a pressão hidrostatica para dois tipo de fluidos, os incompress
+íveis e os fluidos compressíveis.
+\end_layout
+
+\begin_layout Subsubsection*
+Fluidos incompressíveis
+\end_layout
+
+\begin_layout Standard
+Sabemos que alguns fluidos usados como lama de perfuração tem um comportamento
+ aproximadamente incompressível, como por exemplo o uso de água salgada,
+ nesses casos a compressibilidade do fluido para baixas temperaturas pode
+ ser desprezada e o peso específico pode ser considerado constante com a
+ profundidade.
+ De forma que a equação (1) nos fornece a seguinte equação para fluidos
+ incompressíveis: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+p=0.05195\rho Z+p_{0}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde p0, que é a constante de integração, é igual a pressão na superficie.
+ Uma importante aplicação para essa equação é determinar a densidade correta
+ de um fluido de perfuração, de forma que o mesmo seja capaz de evitar o
+ influxo de fluidos da formação para o poço, evitando dessa forma kiks ou
+ blowouts, além de não causar fraturas nas formação que geraria uma perda
+ de circulação de fluido que também e indesejada.
+\end_layout
+
+\begin_layout Subsubsection
+Fluidos compressíveis
+\end_layout
+
+\begin_layout Standard
+Em muitas operações nós temos a presença de gás em algum momento da perfuração
+ ou completação, podendo ser injetado ou fluir de alguma formação.
+ Cálcular a pressão hidrostática de um coluna de gás estática é um tanto
+ quanto mais complicado devido ao fato da compressibilidade fazer com que
+ a densidade do gás mude com a variação de pressão.
+ O comportamento do gás é modelado utilizando a equação do gás real:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+p=\rho z\frac{RT}{M}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ralizando a combinação da equação da pressão hidrostática para fluidos incompres
+siveis e da equação do gás real chegamos a seguinte equação da pressão hidrostát
+ica para fluidos compressíveis:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+p=p_{0}\exp\left(\frac{M\triangle Z}{1544\bar{z}T}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Pressão hidrostática em colunas com mais de um tipo de fluido
+\end_layout
+
+\begin_layout Standard
+Outra situação muito comum durante a perfuração é a existência de seções
+ com diferentes densidades de fluidos na coluna.
+ Para se calcular a pressão hidrostática nesse tipo de situação precisamos
+ determinar a variação de pressão separadamente para cada seção, como na
+ figura (Colocar figura 5.3).
+\end_layout
+
+\begin_layout Standard
+Em geral a pressão em qualquer profundiade Z pode ser calculada por meio
+ da equação:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+p=p_{0}+g\sum p_{i}\left(Z_{i}-Z_{i-1}\right)+g\rho_{n}\left(Z_{i}-Z_{i-1}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Densidade Equivalente
+\end_layout
+
+\begin_layout Standard
+Em muitas situaçoes de campo é util comparar uma coluna com varios fluidos
+ com uma coluna com um unico fluido equivalente que esteja aberta para a
+ atmosfera.
+ Isso só é possível calculando a densidade da lama equivalente, definida
+ por: (colocar Eq.
+ 5.11b) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\rho_{e}=\frac{p}{0.05195Z}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A densidade equivalente da lama sempre deve ser calculada utilizando uma
+ profunidade de referência específica.
+\end_layout
+
+\begin_layout Section
+Identificação de pacotes – assuntos
+\end_layout
+
+\begin_layout Standard
+...aqui...
+\end_layout
+
+\begin_layout Itemize
+Nome Pacote: Descrição.
+ O que é, para que serve, como se relaciona com os demais pacotes.
+\end_layout
+
+\begin_layout Itemize
+Nome Pacote: Descrição.
+ O que é, para que serve, como se relaciona com os demais pacotes.
+\end_layout
+
+\begin_layout Itemize
+Nome Pacote: Descrição.
+ O que é, para que serve, como se relaciona com os demais pacotes.
+\end_layout
+
+\begin_layout Section
+Diagrama de pacotes – assuntos
+\begin_inset CommandInset label
+LatexCommand label
+name "sec: Diagrama de pacotes – assuntos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+...aqui...
+\end_layout
+
+\begin_layout Standard
+coloque aqui texto falando do diagrama de pacotes, referencie a figura.
+ Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-Pacotes"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/DiagramaDeComponentes-Assuntos-Pacotes.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de Pacotes
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-Pacotes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Nota: 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Não perca de vista a visão do todo; do projeto de engenharia como um todo.
+ Cada capítulo, cada seção, cada parágrafo deve se encaixar.
+ Este é um diferencial fundamental do engenheiro em relação ao técnico,
+ a capacidade de desenvolver projetos, de ver o todo e suas diferentes partes,
+ de modelar processos/sistemas/produtos de engenharia.
+\end_layout
+
+\end_body
+\end_document
