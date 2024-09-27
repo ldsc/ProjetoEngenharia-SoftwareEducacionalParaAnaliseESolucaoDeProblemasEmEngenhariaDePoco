@@ -4,29 +4,32 @@
 class Cfluido {
 private:
     double densidade;
-    double camadaProfundidade;
+    double profundidadeInicial;
+    double profundidadeFinal;
     double pressaoSuperficie;
+    
 
 public:
     // Construtor
-    Cfluido (double dens, double profundidade, double pressaoSup);
-
-    // Destrutor
-    virtual ~Cfluido() {}
+    Cfluido(double dens, double profundidadeI, double profundidadeF, double pressaoSup)
+    : densidade(dens), profundidadeInicial(profundidadeI), profundidadeFinal(profundidadeF), pressaoSuperficie(pressaoSup) {}
 
     // Getters
     double getDensidade() const { return densidade; }
-    double getCamadaProfundidade() const { return camadaProfundidade; }
+    double getProfundidadeInicial() const { return profundidadeInicial; }
+    double getProfundidadeFinal() const { return profundidadeFinal; }
     double getpressaoSuperficie() const { return pressaoSuperficie; }
 
     // Setters
     void setDensidade(double dens) { densidade = dens; }
-    void setCamadaProdundidade(double profundidade) { camadaProfundidade = profundidade; }
+    void setProdundidadeInicial(double profundidade) { profundidadeInicial = profundidade; }
+    void setProdundidadeFinal(double profundidade) { profundidadeFinal = profundidade; }
     void setPressaoSuperficie(double pressaoSup) { densidade = pressaoSup; }
-    
-    //Metodos 
-    void exibePropriedades();
-    double PressaoHidroestatica();
+
+    //metodos
+    virtual void exibePropriedades() = 0;
+    virtual double PressaoHidroestatica() = 0;
+    virtual double DensidadeEquivalente() = 0;
 };
 
 #endif 

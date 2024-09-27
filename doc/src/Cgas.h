@@ -9,12 +9,11 @@ private:
     double MassaMolar;
     double FatorCompressibilidade;
     double Temperatura;
-    double const_R = 1554;
+    double const_R = 1544;
 
 public:
     // Construtor
-    Cgas(double dens=0, double profundidade =0, double pressaoSup=0, double massaM = 0, double FatorC = 0, double temp=0){}
-    double PressaoHidroestatica();
+    Cgas(double dens, double profundidadeI, double profundidadeF, double pressaoSup, double massaM, double FatorC, double temp);
 
     // Getters
     double getMassaMolar() const { return MassaMolar; }
@@ -23,14 +22,15 @@ public:
     double getconst_R() const { return const_R; }
 
     // Setters
-    double setMassaMolar( double massaM ) const { return MassaMolar; }
-    double setFatorCompressibilidade( double FatorC ) const { return FatorCompressibilidade; }
-    double setTemperatura( double temp ) const { return temp; }
-    double setconst_R( double constR ) const { return constR; }
+    void setMassaMolar( double massaM ) { MassaMolar = massaM; }
+    void setFatorCompressibilidade( double FatorC ) { FatorCompressibilidade = FatorC; }
+    void setTemperatura( double temp ) { Temperatura = temp; }
+    void setconst_R( double constR ) { const_R = constR; }
 
     //Metodos 
-    void exibePropriedades();
-    double PressaoHidroestaticagas() ;
+    void exibePropriedades() override;
+    double PressaoHidroestatica() override;
+    double DensidadeEquivalente() override;
 
 };
 
