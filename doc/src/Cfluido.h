@@ -2,12 +2,11 @@
 #define CFLUIDO_H
 
 class Cfluido {
-private:
+protected:
     double densidade;
     double profundidadeInicial;
     double profundidadeFinal;
     double pressaoSuperficie;
-    
 
 public:
     // Construtor
@@ -32,4 +31,4 @@ public:
     virtual double DensidadeEquivalente() = 0;
 };
 
-#endif 
+#endif

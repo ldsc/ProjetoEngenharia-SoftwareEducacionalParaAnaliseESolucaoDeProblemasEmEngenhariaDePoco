@@ -9,10 +9,10 @@ public:
     // Construtor
     Coleo(double dens, double profundidadeI, double profundidadeF, double pressaoSup);
 
-    //Metodos 
+    //Metodos
     void exibePropriedades() override;
     double PressaoHidroestatica() override;
     double DensidadeEquivalente() override;
 };
 
-#endif 
+#endif

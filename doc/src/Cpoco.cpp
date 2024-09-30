@@ -3,10 +3,8 @@
 #include <iostream>
 
 // Construtor
-Cpoco::Cpoco(double Profund) 
+Cpoco::Cpoco(double Profund)
     : ProfundidadeTotal(Profund), profundidadeOcupada(0.0) {}
-
-
 
 // Metodos
 bool Cpoco::adicionarFluido(Cfluido& fluido) {
@@ -27,10 +25,10 @@ bool Cpoco::adicionarFluido(Cfluido& fluido) {
 
 void Cpoco::exibeFluidos() const {
     for (size_t i = 0; i < fluidos.size(); ++i) {
-        std::cout << "##### Exibe fluido " << (i + 1) << " #####" << std::endl; 
-        
+        std::cout << "##### Exibe fluido " << (i + 1) << " #####" << std::endl;
+
         fluidos[i]->exibePropriedades();
-        std::cout << std::endl; 
+        std::cout << std::endl;
     }
 }
 
@@ -49,12 +47,12 @@ void Cpoco::verificarPreenchimentoColuna() {
     double profundidadeNaoOcupada = ProfundidadeTotal - profundidadeOcupada;
 
     if (profundidadeNaoOcupada > 0) {
-  
+
         double profundidadeInicialAr = ProfundidadeTotal - profundidadeOcupada;
         double profundidadeFinalAr = ProfundidadeTotal;
 
         Cgas Ar(1, 0, 0, profundidadeInicialAr, 16, 1, profundidadeFinalAr);
-        
+
         adicionarFluido(Ar);
         std::cout << "Uma coluna de "<< profundidadeNaoOcupada << "ft de ar foi adicionada!" << std::endl;
         std::cout << std::endl;

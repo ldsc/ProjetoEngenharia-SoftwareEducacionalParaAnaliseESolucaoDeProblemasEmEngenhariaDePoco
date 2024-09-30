@@ -10,7 +10,7 @@ private:
     double ProfundidadeTotal;
     double profundidadeOcupada;
     std::vector<Cfluido*> fluidos;
-    
+
 public:
     //construtor
     Cpoco(double Profund);
@@ -32,4 +32,4 @@ public:
 
 };
 
-#endif 
+#endif

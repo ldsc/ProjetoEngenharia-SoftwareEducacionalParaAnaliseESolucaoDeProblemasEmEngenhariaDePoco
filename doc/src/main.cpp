@@ -1,12 +1,9 @@
 #include <iostream>
-#include "Coleo.cpp"
-#include "Cgas.cpp"
-#include "Cpoco.cpp"
-
-
+#include "Coleo.h"
+#include "Cgas.h"
+#include "Cpoco.h"
 
 int main() {
-
     Coleo oleo(11, 0, 12000, 0);
 
     std::cout << "\n";
@@ -36,8 +33,8 @@ int main() {
     poco.adicionarFluido(gas);
     poco.exibeFluidos();
     poco.verificarPreenchimentoColuna();
-    std::cout << "Pressao hidroestatica Total:" << poco.pressaoHidroestaticaTotal() << " psi" << std::endl; 
-    std::cout << "Densidade Efetiva Total:" << poco.DensidadeEfetivaTotal() << " psi" << std::endl; 
+    std::cout << "Pressao hidroestatica Total:" << poco.pressaoHidroestaticaTotal() << " psi" << std::endl;
+    std::cout << "Densidade Efetiva Total:" << poco.DensidadeEfetivaTotal() << " psi" << std::endl;
 
     system("pause");
 

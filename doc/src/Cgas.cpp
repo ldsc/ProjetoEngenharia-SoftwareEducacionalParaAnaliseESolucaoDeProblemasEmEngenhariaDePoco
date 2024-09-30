@@ -4,37 +4,25 @@
 
 //Construtor
 Cgas::Cgas(double dens, double profundidadeI, double profundidadeF, double pressaoSup, double massaM, double FatorC, double temp)
-    : Cfluido(dens, profundidadeI, profundidadeF, pressaoSup), MassaMolar(massaM), FatorCompressibilidade(FatorC), Temperatura(temp) {}
+  : Cfluido(dens, profundidadeI, profundidadeF, pressaoSup), MassaMolar(massaM), FatorCompressibilidade(FatorC), Temperatura(temp) {}
 
 //Metodos
 void Cgas::exibePropriedades(){
-    std::cout << "- Profundidade inicial do fluido: " << getProfundidadeInicial() << " ft" << std::endl;
-    std::cout << "- Profundidade final do fluido: " << getProfundidadeFinal() << " ft" << std::endl;
-    std::cout << "- Pressao na Superficie: " << getpressaoSuperficie() << " psi" << std::endl;
-    std::cout << "- Massa Molar " << getMassaMolar() << " lb/mol" << std::endl;
-    std::cout << "- Z (fator de compressibilidade): " << getFatorCompressibilidade() << std::endl;
-    std::cout << "- Temperatura: " << getTemperatura() << " K" << std::endl;
-    std::cout << "- Constante R: " << getconst_R() << std::endl;
-    
+  std::cout << "\n- Profundidade inicial do fluido: " << getProfundidadeInicial() << " ft"
+            << "\n- Profundidade final do fluido: " << getProfundidadeFinal() << " ft"
+            << "\n- Pressao na Superficie: " << getpressaoSuperficie() << " psi"
+            << "\n- Massa Molar " << getMassaMolar() << " lb/mol"
+            << "\n- Z (fator de compressibilidade): " << getFatorCompressibilidade()
+            << "\n- Temperatura: " << getTemperatura() << " K"
+            << "\n- Constante R: " << getconst_R();
 }
 
-double Cgas::PressaoHidroestatica(){
-
-    double pressaosup = getpressaoSuperficie();
-    double produndidadeI = getProfundidadeInicial();
-    double produndidadeF = getProfundidadeFinal();
-    double massaM = getMassaMolar();
-    double FatorC = getFatorCompressibilidade();
-    double temp = getTemperatura();
-
-    return pressaosup * exp( (massaM/(FatorC*temp*getconst_R())) * (produndidadeI-produndidadeF) );
+double Cgas::PressaoHidroestatica() {
+  return pressaoSuperficie * exp( ( MassaMolar / (FatorCompressibilidade * Temperatura * const_R) * ( profundidadeInicial  - profundidadeFinal) ));
 
 }
 
-double Cgas::DensidadeEquivalente(){
-
-    double produndidadeF = getProfundidadeFinal();
-
-    return PressaoHidroestatica() / (produndidadeF * 0.05195);
+double Cgas::DensidadeEquivalente() {
+  return PressaoHidroestatica()     / (profundidadeFinal  * 0.05195);
 
 }

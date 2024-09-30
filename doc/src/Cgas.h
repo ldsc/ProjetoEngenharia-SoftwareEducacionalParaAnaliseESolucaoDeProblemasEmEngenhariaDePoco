@@ -4,12 +4,12 @@
 #include "Cfluido.h"
 
 class Cgas : public Cfluido{
-private:
+protected:
 
     double MassaMolar;
     double FatorCompressibilidade;
     double Temperatura;
-    double const_R = 1544;
+    double const_R = 1544.0;
 
 public:
     // Construtor
@@ -27,11 +27,10 @@ public:
     void setTemperatura( double temp ) { Temperatura = temp; }
     void setconst_R( double constR ) { const_R = constR; }
 
-    //Metodos 
+    //Metodos
     void exibePropriedades() override;
     double PressaoHidroestatica() override;
     double DensidadeEquivalente() override;
-
 };
 
-#endif 
+#endif
