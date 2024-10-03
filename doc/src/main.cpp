@@ -1,40 +1,33 @@
 #include <iostream>
-#include "Coleo.h"
-#include "Cgas.h"
-#include "Cpoco.h"
+#include "arquivos.cpp"
 
+// Esse Main é apenas para testas se as classes, atributos e métodos estão rodando corretamente, favor desconsiderar códigos abaixos
 int main() {
-    Coleo oleo(11, 0, 12000, 0);
+
+    CFluido Fluido1("m", 10.5);
+    CFluido Fluido2("fl", 8.5);
+    CFluido Fluido3("fc", 12.7);
+    CFluido Fluido4("hc", 16.7);
+
+    CTrechoPoco secao1("Secao1", 0, 7000, &Fluido1);
+    CTrechoPoco secao2("Secao2", 7000, 7300, &Fluido2);
+    CTrechoPoco secao3("Secao3", 7300, 9000, &Fluido3);
+    CTrechoPoco secao4("Secao4", 9000, 10000, &Fluido4);
+  
+    CPoco Poco(10000, 0);
+
+    Poco.AdicionarTrechoPoco(secao1);
+    Poco.AdicionarTrechoPoco(secao2);
+    Poco.AdicionarTrechoPoco(secao3);
+    Poco.AdicionarTrechoPoco(secao4);
 
     std::cout << "\n";
-    oleo.exibePropriedades();
+    Poco.ExibeTrechos();
     std::cout << "\n";
-    std::cout << "Pressao hidroestatica:" << oleo.PressaoHidroestatica() << " psi" << std::endl;
-    std::cout << "Densidade Equivalente:" << oleo.DensidadeEquivalente() << " lbm/gal" << std::endl;
+    std::cout << "Pressao hidroestatica: " << Poco.PressaoHidroestaticaTotal() << " psi" << std::endl;
+    std::cout << "Densidade Equivalente: " << Poco.DensidadeEfetivaTotal() << " lbm/gal" << std::endl;
 
-    std::cout << "\n";
-    std::cout << "-------------------------------------------------" << std::endl;
-    std::cout << "\n";
-
-    Cgas gas(1, 5500, 6000, 4000, 16, 1, 629);
-    std::cout << "\n";
-    gas.exibePropriedades();
-    std::cout << "\n";
-    std::cout << "Pressao hidroestatica:" << gas.PressaoHidroestatica() << " psi" << std::endl;
-    std::cout << "Densidade Equivalente:" << gas.DensidadeEquivalente() << " lbm/gal" << std::endl;
-    std::cout << "\n";
-
-    std::cout << "\n";
-    std::cout << "-------------------------------------------------" << std::endl;
-    std::cout << "\n";
-
-    Cpoco poco(12500);
-    poco.adicionarFluido(oleo);
-    poco.adicionarFluido(gas);
-    poco.exibeFluidos();
-    poco.verificarPreenchimentoColuna();
-    std::cout << "Pressao hidroestatica Total:" << poco.pressaoHidroestaticaTotal() << " psi" << std::endl;
-    std::cout << "Densidade Efetiva Total:" << poco.DensidadeEfetivaTotal() << " psi" << std::endl;
+    Poco.PlotarProfundidadePorDensidade();
 
     system("pause");
 

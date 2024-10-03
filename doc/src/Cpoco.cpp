@@ -1,60 +1,56 @@
-#include "Cpoco.h"
-#include "Cgas.h"
+#include "CPoco.h"
 #include <iostream>
+#include <vector>
+#include <fstream>
+#include <cstdlib> 
 
 // Construtor
-Cpoco::Cpoco(double Profund)
-    : ProfundidadeTotal(Profund), profundidadeOcupada(0.0) {}
+CPoco::CPoco(double Profund, double PressaoSup)
+    : ProfundidadeTotal(Profund), PressaoSuperficie(PressaoSup) {}
 
 // Metodos
-bool Cpoco::adicionarFluido(Cfluido& fluido) {
+bool CPoco::AdicionarTrechoPoco(CTrechoPoco& TrechoPoco) {
 
-    double profundidadeFluido = fluido.getProfundidadeFinal() - fluido.getProfundidadeInicial();
+    double ProfundidadeFluido = TrechoPoco.GetProfundidadeFinal() - TrechoPoco.GetProfundidadeInicial();
 
     // Verifica se a profundidade total ocupada + profundidade do novo fluido excede a profundidade total do poço
-    if (profundidadeOcupada + profundidadeFluido <= ProfundidadeTotal) {
-        fluidos.push_back(&fluido);
-        profundidadeOcupada += profundidadeFluido;
+    if (ProfundidadeOcupada + ProfundidadeFluido <= ProfundidadeTotal) {
+        Trechos.push_back(&TrechoPoco);
+        ProfundidadeOcupada += ProfundidadeFluido;
         return true;
 
     } else {
-        std::cout << "Erro: O fluido excede a profundidade total do poço!" << std::endl;
+        std::cout << "Erro: O fluido excede a profundidade total do poço!\n";
         return false;
     }
 }
 
-void Cpoco::exibeFluidos() const {
-    for (size_t i = 0; i < fluidos.size(); ++i) {
-        std::cout << "##### Exibe fluido " << (i + 1) << " #####" << std::endl;
+void CPoco::ExibeTrechos() const {
+    for (size_t i = 0; i < Trechos.size(); ++i) {
+        std::cout << "##### Camada: " << (i + 1) << " #####" << std::endl;
 
-        fluidos[i]->exibePropriedades();
+        Trechos[i]->ExibePropriedades();
         std::cout << std::endl;
     }
 }
 
-double Cpoco::pressaoHidroestaticaTotal() const {
+double CPoco::PressaoHidroestaticaTotal() const {
 
-    double pressaoTotal = 0.0;
+    double PressaoTotal = 0.0;
 
-    for (const auto& fluido : fluidos) {
-        pressaoTotal += fluido->PressaoHidroestatica();
+    for (const auto& Trecho : Trechos) {
+        PressaoTotal += Trecho->PressaoHidroestatica();
     }
-    return pressaoTotal;
+    return PressaoTotal + PressaoSuperficie;
 }
 
-void Cpoco::verificarPreenchimentoColuna() {
+void CPoco::VerificarPreenchimentoColuna() {
 
-    double profundidadeNaoOcupada = ProfundidadeTotal - profundidadeOcupada;
+    double ProfundidadeNaoOcupada = ProfundidadeTotal - ProfundidadeOcupada;
 
-    if (profundidadeNaoOcupada > 0) {
+    if (ProfundidadeNaoOcupada > 0) {
 
-        double profundidadeInicialAr = ProfundidadeTotal - profundidadeOcupada;
-        double profundidadeFinalAr = ProfundidadeTotal;
-
-        Cgas Ar(1, 0, 0, profundidadeInicialAr, 16, 1, profundidadeFinalAr);
-
-        adicionarFluido(Ar);
-        std::cout << "Uma coluna de "<< profundidadeNaoOcupada << "ft de ar foi adicionada!" << std::endl;
+        std::cout << "Uma coluna de "<< ProfundidadeNaoOcupada << "ft de fluido precisa ser adicionada!" << std::endl;
         std::cout << std::endl;
     }
 
@@ -64,13 +60,55 @@ void Cpoco::verificarPreenchimentoColuna() {
     }
 }
 
-double Cpoco::DensidadeEfetivaTotal() const {
+double CPoco::DensidadeEfetivaTotal() const {
 
     double DensidadeTotal = 0.0;
 
-    for (const auto& fluido : fluidos) {
-        DensidadeTotal += fluido->DensidadeEquivalente();
+    for (const auto& Trecho : Trechos) {
+        DensidadeTotal += Trecho->DensidadeEquivalente();
     }
-    return DensidadeTotal / fluidos.size();
+    return DensidadeTotal / Trechos.size();
 
+}
+
+void CPoco::PlotarProfundidadePorDensidade() { 
+    std::vector<double> Profundidade;
+    std::vector<double> Densidade;
+
+    double ProfunTotal = 0;
+    double SomaDensidades = 0;
+
+    for (const auto& trecho : Trechos) {
+        double Intervalo = trecho->GetProfundidadeFinal() - trecho->GetProfundidadeInicial();  
+
+        for (double i = 0; i <= Intervalo; i += 0.5) {
+            
+            double Dens = (ProfunTotal * 0.05195 * trecho->GetFluido()->GetDensidade());
+            
+            // Adiciona a densidade ao somatório
+            SomaDensidades += Dens;
+
+            // Calcula a média das densidades e adiciona ao vetor
+            double MediaDens = SomaDensidades / (Densidade.size() + 1);
+            Densidade.push_back(MediaDens);
+        }
+    }        
+
+    std::ofstream outputFile("dados.txt");
+    for (size_t j = 0; j < Profundidade.size(); ++j) {
+        outputFile << Profundidade[j] << "\t" << Densidade[j] << std::endl;
+    }
+    outputFile.close();
+
+    // Comando Gnuplot para plotar os dados
+    std::ofstream gnuplotFile("plot_script.gp");
+    gnuplotFile << "set title 'Profundidade vs Densidade'\n";
+    gnuplotFile << "set xlabel 'Profundidade'\n";
+    gnuplotFile << "set ylabel 'Densidade'\n";
+    gnuplotFile << "plot 'dados.txt' using 1:2 with linespoints title 'Densidade vs Profundidade'\n";
+    gnuplotFile << "pause -1\n"; // Pausa para que você possa ver o gráfico
+    gnuplotFile.close();
+
+    // Executa o Gnuplot com o script gerado
+    std::system("gnuplot plot_script.gp");
 }

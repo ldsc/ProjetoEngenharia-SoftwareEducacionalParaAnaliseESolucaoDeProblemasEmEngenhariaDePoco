@@ -1,4 +1,10 @@
-#include "Cfluido.h"
+#include "CFluido.h"
+#include <iostream>
+#include <cmath>
 
-// Cfluido::Cfluido(double dens, double profundidadeI, double profundidadeF, double pressaoSup)
-//     : densidade(dens), profundidadeInicial(profundidadeI), profundidadeFinal(profundidadeF), pressaoSuperficie(pressaoSup) {}
+
+//Metodos
+void CFluido::ExibePropriedades() {
+    std::cout << "\n- Nome: " << GetNome() << " lb/gal";
+    std::cout << "\n- Densidade: " << GetDensidade() << " lb/gal";
+}

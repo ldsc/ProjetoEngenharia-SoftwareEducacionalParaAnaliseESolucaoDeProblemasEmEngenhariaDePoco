@@ -3,32 +3,38 @@
 
 #include <vector>
 #include <memory>
-#include "Cfluido.h"
+#include "CFluido.h"
+#include "CTrechoPoco.h"
 
-class Cpoco {
-private:
+class CPoco {
+protected:
     double ProfundidadeTotal;
-    double profundidadeOcupada;
-    std::vector<Cfluido*> fluidos;
+    double ProfundidadeOcupada = 0;
+    double PressaoSuperficie;
+    std::vector<CTrechoPoco*> Trechos;
 
 public:
     //construtor
-    Cpoco(double Profund);
+    CPoco();
+    CPoco(double Profund, double PressaoSup);
 
     // Getters
-    double getProfundidadeTotal() const { return ProfundidadeTotal; }
-    double getprofundidadeOcupada() const { return profundidadeOcupada; }
+    double GetProfundidadeTotal() const { return ProfundidadeTotal; }
+    double GetProfundidadeOcupada() const { return ProfundidadeOcupada; }
+    double GetPressaoSuperficie() const { return PressaoSuperficie; }
 
     // Setters
-    void setProfundidadeTotal( double Profund ) { ProfundidadeTotal = Profund; }
-    void setprofundidadeOcupada( double Profund ) { profundidadeOcupada = Profund; }
+    void SetProfundidadeTotal( double Profund ) { ProfundidadeTotal = Profund; }
+    void SetProfundidadeOcupada( double Profund ) { ProfundidadeOcupada = Profund; }
+    void SetPressaoSuperficie( double PressaoSup ) { PressaoSuperficie = PressaoSup; }
 
     // Metodos
-    bool adicionarFluido(Cfluido& fluido);
-    void exibeFluidos() const;
-    double pressaoHidroestaticaTotal() const;
+    bool AdicionarTrechoPoco(CTrechoPoco& TrechoPoco);
+    void ExibeTrechos() const;
+    double PressaoHidroestaticaTotal() const;
     double DensidadeEfetivaTotal() const;
-    void verificarPreenchimentoColuna();
+    void VerificarPreenchimentoColuna();
+    void PlotarProfundidadePorDensidade();
 
 };
 

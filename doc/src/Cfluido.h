@@ -1,34 +1,29 @@
 #ifndef CFLUIDO_H
 #define CFLUIDO_H
 
-class Cfluido {
+#include <string>
+
+class CFluido {
 protected:
-    double densidade;
-    double profundidadeInicial;
-    double profundidadeFinal;
-    double pressaoSuperficie;
+    std::string Nome;
+    double Densidade;
 
 public:
     // Construtor
-    Cfluido(double dens, double profundidadeI, double profundidadeF, double pressaoSup)
-    : densidade(dens), profundidadeInicial(profundidadeI), profundidadeFinal(profundidadeF), pressaoSuperficie(pressaoSup) {}
+    CFluido();
+    CFluido(std::string nome, double Dens)
+    : Nome(nome), Densidade(Dens) {}
 
     // Getters
-    double getDensidade() const { return densidade; }
-    double getProfundidadeInicial() const { return profundidadeInicial; }
-    double getProfundidadeFinal() const { return profundidadeFinal; }
-    double getpressaoSuperficie() const { return pressaoSuperficie; }
+    std::string GetNome() const { return Nome; }
+    double GetDensidade() const { return Densidade; }
 
     // Setters
-    void setDensidade(double dens) { densidade = dens; }
-    void setProdundidadeInicial(double profundidade) { profundidadeInicial = profundidade; }
-    void setProdundidadeFinal(double profundidade) { profundidadeFinal = profundidade; }
-    void setPressaoSuperficie(double pressaoSup) { densidade = pressaoSup; }
+    void SetNome(double nome) { Nome = nome; }
+    void SetDensidade(double Dens) { Densidade = Dens; }
 
     //metodos
-    virtual void exibePropriedades() = 0;
-    virtual double PressaoHidroestatica() = 0;
-    virtual double DensidadeEquivalente() = 0;
+    void ExibePropriedades();
 };
 
 #endif
