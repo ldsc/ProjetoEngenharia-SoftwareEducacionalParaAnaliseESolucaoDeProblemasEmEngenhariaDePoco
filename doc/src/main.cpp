@@ -29,6 +29,25 @@ int main() {
 
     Poco.PlotarProfundidadePorDensidade();
 
+    std::cout << "--------------------------------------------------------------\n";
+
+    CFluido Fluido5("agua", 8.33, 1);
+    CTrechoPoco secao5("Secao5", 0, 5000, &Fluido5);
+    CPoco Poco2(5000, 0 , 6.5, 4.5, 3.826, 500);
+
+    Poco2.AdicionarTrechoPoco(secao5);
+    CModeloNewtoniano model(&Poco2);
+
+    std::string fluxo = model.DeterminarFluxoPoco();
+    double perda = model.CalcularPerdaPorFriccaoPoco();
+    std::string fluxoA = model.DeterminarFluxoAnular();
+    double perdaA = model.CalcularPerdaPorFriccaoAnular();
+
+    std::cout << fluxo << std::endl;
+    std::cout << perda << std::endl;
+    std::cout << fluxoA << std::endl;
+    std::cout << perdaA << std::endl;
+
     system("pause");
 
 };

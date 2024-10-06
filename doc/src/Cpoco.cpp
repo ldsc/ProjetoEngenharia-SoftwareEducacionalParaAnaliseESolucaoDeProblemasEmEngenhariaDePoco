@@ -4,9 +4,6 @@
 #include <fstream>
 #include <cstdlib> 
 
-// Construtor
-CPoco::CPoco(double Profund, double PressaoSup, double D, double q)
-    : ProfundidadeTotal(Profund), PressaoSuperficie(PressaoSup), Diametro(D), Vazao(q) {}
 
 // Metodos
 bool CPoco::AdicionarTrechoPoco(CTrechoPoco& TrechoPoco) {

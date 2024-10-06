@@ -15,8 +15,10 @@ public:
     CModeloReologico(CPoco* poco) : Poco(poco) {}
 
     //Métodos
-    virtual std::string DeterminarFluxo() = 0;
-    virtual double CalcularPerdaPorFriccao() = 0;
+    virtual std::string DeterminarFluxoPoco() = 0;
+    virtual std::string DeterminarFluxoAnular() = 0;
+    virtual double CalcularPerdaPorFriccaoPoco() = 0;
+    virtual double CalcularPerdaPorFriccaoAnular() = 0;
 };
 
 #endif

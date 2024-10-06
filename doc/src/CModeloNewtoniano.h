@@ -14,8 +14,10 @@ public:
     CModeloNewtoniano(CPoco* poco) : CModeloReologico(poco){}
     
     //Métodos
-    std::string DeterminarFluxo() override;
-    double CalcularPerdaPorFriccao() override;
+    std::string DeterminarFluxoPoco() override;
+    std::string DeterminarFluxoAnular() override;
+    double CalcularPerdaPorFriccaoPoco() override;
+    double CalcularPerdaPorFriccaoAnular() override;
 
 };
 
