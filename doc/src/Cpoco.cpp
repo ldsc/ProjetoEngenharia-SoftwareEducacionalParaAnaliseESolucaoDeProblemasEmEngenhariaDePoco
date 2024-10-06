@@ -5,8 +5,8 @@
 #include <cstdlib> 
 
 // Construtor
-CPoco::CPoco(double Profund, double PressaoSup)
-    : ProfundidadeTotal(Profund), PressaoSuperficie(PressaoSup) {}
+CPoco::CPoco(double Profund, double PressaoSup, double D, double q)
+    : ProfundidadeTotal(Profund), PressaoSuperficie(PressaoSup), Diametro(D), Vazao(q) {}
 
 // Metodos
 bool CPoco::AdicionarTrechoPoco(CTrechoPoco& TrechoPoco) {
@@ -71,26 +71,34 @@ double CPoco::DensidadeEfetivaTotal() const {
 
 }
 
+double CPoco::ViscosidadeEfetivaTotal() const {
+
+    double ViscosidadeTotal = 0.0;
+
+    for (const auto& Trecho : Trechos) {
+        ViscosidadeTotal += Trecho->GetFluido()->GetViscosidade();
+    }
+    return ViscosidadeTotal / Trechos.size();
+
+}
+
 void CPoco::PlotarProfundidadePorDensidade() { 
     std::vector<double> Profundidade;
     std::vector<double> Densidade;
 
     double ProfunTotal = 0;
-    double SomaDensidades = 0;
 
     for (const auto& trecho : Trechos) {
         double Intervalo = trecho->GetProfundidadeFinal() - trecho->GetProfundidadeInicial();  
 
-        for (double i = 0; i <= Intervalo; i += 0.5) {
+        for (double i = 0; i <= Intervalo; i += 1) {
             
-            double Dens = (ProfunTotal * 0.05195 * trecho->GetFluido()->GetDensidade());
-            
-            // Adiciona a densidade ao somatório
-            SomaDensidades += Dens;
+            double Dens = PressaoHidroestaticaTotal() / ( (ProfunTotal) * 0.05195 );
+   
+            Densidade.push_back(Dens);
+            Profundidade.push_back(ProfunTotal);
 
-            // Calcula a média das densidades e adiciona ao vetor
-            double MediaDens = SomaDensidades / (Densidade.size() + 1);
-            Densidade.push_back(MediaDens);
+            ProfunTotal += 1;
         }
     }        
 
