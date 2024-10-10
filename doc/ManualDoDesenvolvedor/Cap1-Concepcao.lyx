@@ -1157,7 +1157,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/DiagramaDeCasoUso-Geral.png
-	lyxscale 50
+	lyxscale 10
 	special height=0.3\textheight
 
 \end_inset

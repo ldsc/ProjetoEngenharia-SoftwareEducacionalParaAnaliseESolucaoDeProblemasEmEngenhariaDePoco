@@ -199,7 +199,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/DiagramaDeClasses.png
-	lyxscale 50
+	lyxscale 15
 	width 100text%
 
 \end_inset
@@ -396,7 +396,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/DiagramaDeSequencia-Eventos.png
-	lyxscale 50
+	lyxscale 15
 	width 100text%
 
 \end_inset
@@ -700,7 +700,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/DiagramaDeAtividade-1.png
-	lyxscale 85
+	lyxscale 15
 	width 100text%
 
 \end_inset

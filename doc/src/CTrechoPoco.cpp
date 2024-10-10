@@ -10,11 +10,11 @@ double CTrechoPoco::PressaoHidroestatica() {
 
 void CTrechoPoco::ExibePropriedades(){
 
-    std::cout << "Nome da secao: " << GetNome() << " ft \n" \
-              << "Profundidade Inicial: " << GetProfundidadeInicial() << " ft \n" \
-              << "Profundidade Final: " << GetProfundidadeFinal() << " ft \n" \
-              << "Nome do Fluido: " << Fluido->GetNome() << " ft \n" \
-              << "Densidade do Fluido: " << Fluido->GetDensidade() << std::endl;
+    std::cout << "- Nome da secao: " << GetNome() << "\n" \
+              << "- Profundidade Inicial: " << GetProfundidadeInicial() << " ft \n" \
+              << "- Profundidade Final: " << GetProfundidadeFinal() << " ft \n" \
+              << "- Nome do Fluido: " << Fluido->GetNome() << " ft \n" \
+              << "- Densidade do Fluido: " << Fluido->GetDensidade() << " lb/gal" << std::endl;
             
 }
 

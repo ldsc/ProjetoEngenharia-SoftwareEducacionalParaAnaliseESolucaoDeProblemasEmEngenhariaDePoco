@@ -44,6 +44,7 @@ public:
     // Metodos
     bool AdicionarTrechoPoco(CTrechoPoco& TrechoPoco);
     void ExibeTrechos() const;
+    void ExibePropriedades() const;
     double PressaoHidroestaticaTotal() const;
     double DensidadeEfetivaTotal() const;
     double ViscosidadeEfetivaTotal() const;
