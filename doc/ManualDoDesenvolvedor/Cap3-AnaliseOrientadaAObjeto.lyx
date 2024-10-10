@@ -245,16 +245,6 @@ name "subsec:Dicionário-de-classes"
 \begin_layout Itemize
 
 \series bold
-CSimuladorPoco:
-
-\series default
- Classe responsável por organizar as células do objeto a ser simulado e por resolver os problemas propostos no projeto,
- garantindo uma simulação eficiente e precisa.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
 CPoco:
 
 \series default
@@ -264,7 +254,7 @@ CPoco:
 \begin_layout Itemize
 
 \series bold
-CSecaoPoco:
+CTrechoPoco:
  
 \series default
 Classe herdeira responsável por subdividir as diferentes partes do poço,
@@ -283,19 +273,28 @@ Cfluido:
 \begin_layout Itemize
 
 \series bold
-Cgas
+CModeloReologico:
+ 
 \series default
-:
- Classe herdeira que provê os valores e propriedades exclusivas do fluido no estado gasoso.
+Classe responsável pelos modelos utilizados para calcular a perda de pressão friccional.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-Coleo:
-
+CModeloNewtoniano:
+ 
 \series default
- Classe herdeira que fornece os valores e propriedades exclusivas do fluido no estado líquido.
+Classe responsável por calcular perda de pressão friccional para o modelo newtoniano.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+CModeloNaoNewtoniano:
+ 
+\series default
+Classe responsável por calcular perda de pressão friccional para o modelo plástico de Bingham e lei de potências.
 \end_layout
 
 \begin_layout Itemize
@@ -304,8 +303,7 @@ Coleo:
 QCustomPlot:
  
 \series default
-Classe responsável por gerar gráficos apresentados pelo CSimuladorPoco,
- utilizando a biblioteca QCustomPlot (obtida em https://www.qcustomplot.com/),
+Classe responsável por gerar gráficos utilizando a biblioteca QCustomPlot (obtida em https://www.qcustomplot.com/),
  para visualização dos dados.
 \end_layout
 
@@ -408,7 +406,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de seqüência
+Diagrama de sequência
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-sequencia"
@@ -508,7 +506,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeComunicacao.png
+	filename imagens/DiagramaDeComunicaca.png
 	lyxscale 85
 	width 100text%
 
@@ -578,7 +576,7 @@ name "subsec:diagrama de estados"
 
 \begin_layout Standard
 Um diagrama de máquina de estado representa os diversos estados que o objeto assume e os eventos que ocorrem ao longo de sua vida ou mesmo ao longo de um processo (histórico do objeto).
- A figura mostra um diagrama de estado para a classe CSimuladorPoco.
+ A figura mostra um diagrama de estado para a classe CPoco.
 \end_layout
 
 \begin_layout Standard
@@ -616,7 +614,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeEstado-ClasseSimulador.png
+	filename imagens/DiagramaDeEstado-ClasseSimulado.png
 	lyxscale 50
 	width 100text%
 
@@ -664,7 +662,7 @@ name "sec: Diagrama de atividades"
 No diagrama de atividades apresentado,
  é mostrado em detalhes uma atividade específica.
  Para o presente caso,
- será apresentado o diagrama da classe CFluido.
+ será apresentado o diagrama da classe CPoco.
 \end_layout
 
 \begin_layout Standard

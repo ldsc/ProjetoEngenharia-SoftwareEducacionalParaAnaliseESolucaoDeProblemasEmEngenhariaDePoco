@@ -181,15 +181,16 @@ today ele vai colocar data no material impresso
 \end_layout
 
 \begin_layout Standard
-No presente projeto de engenharia desenvolve-se o Simulador Educacional
- para Análise e Solução de Problemas em Engenharia de Poço, uma aplicação
- direcionada à engenharia de petróleo que adota o paradigma da orientação
- a objetos.
- O simulador foi criado em resposta à necessidade dos alunos do curso de
+No presente projeto de engenharia desenvolve-se o Software Educacional para
+ Análise e Solução de Problemas em Engenharia de Poço, uma aplicação direcionada
+ à engenharia de petróleo que adota o paradigma da orientação a objetos.
+ O software foi criado em resposta à necessidade dos alunos do curso de
  Engenharia de Exploração e Produção de Petróleo, oferecendo uma solução
- interativa para testar conveitos fundamentais da disciplina de Engenharia
- de Poço, como...
- 
+ análitica para testar conveitos fundamentais da disciplina de Engenharia
+ de Poço, como calcular a pressão hidrostatica de um poço, calcular a densidade
+ média, calcular a queda de pressão friccional tanto no tubo quando no anular
+ utilizando diferentes modelos como o de fluidos newtonianos, plástico de
+ Binghan e lei de potências para fluxo turbulento e laminar....
 \end_layout
 
 \begin_layout Section
@@ -214,14 +215,13 @@ O desenvolvimento de um software para a disciplina de Engenharia de Poço
 
 \begin_layout Standard
 Com o objetivo de facilitar o aprendizado e proporcionar uma ferramenta
- acessível para os estudantes, o software será capaz de realizar simulações
- e cálculos automatizados, facilitando a interação com diferentes cenários
- e paramêtros.
- Essa abordagem interativa proporciona um aprendizado mais dinâmico e eficaz,
- promovendo um ambiente de estudos mais produtivo e intuitivo.
+ acessível para os estudantes, o software será capaz de realizar cálculos
+ automatizados, facilitando a interação com diferentes cenários e paramêtros.
+ Essa abordagem proporciona um aprendizado mais dinâmico e eficaz, promovendo
+ um ambiente de estudos mais produtivo e intuitivo.
  O uso do software permitirá uma melhor compreensão dos processos envolvidos
  na Engenharia de Poços e contribuirá, significativamente, para a formação
- dos futuros engenheiros, oferecendo uma ferramenta de apoio que simula
+ dos futuros engenheiros, oferecendo uma ferramenta de apoio que utiliza
  cenários reais e reforçar os conhecimentos adquiridos em sala de aula.
 \end_layout
 
@@ -250,7 +250,7 @@ Objetivo geral:
 
 \begin_deeper
 \begin_layout Itemize
-Desenvolver um simulador capaz de análisar e cálcular as principais equações
+Desenvolver um software capaz de análisar e cálcular as principais equações
  que sustetam o príncipio da Engenharia de Poço, concretizando o conhecimento
  teórico adiquirido pelos alunos durante a disciplina.
 \end_layout
