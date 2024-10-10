@@ -9,11 +9,11 @@ std::string CModeloNewtoniano::DeterminarFluxoPoco() {
     
     // Definir o tipo de fluxo com base no número de Reynolds
     if (Reynolds <= 2100) {
-        Fluxo = "Laminar";
+        FluxoPoco = "Laminar";
     } else {
-        Fluxo = "Turbulento";
+        FluxoPoco = "Turbulento";
     }
-    return Fluxo;
+    return FluxoPoco;
 }
 
 
@@ -26,11 +26,11 @@ std::string CModeloNewtoniano::DeterminarFluxoAnular() {
 
     // Definir o tipo de fluxo com base no número de Reynolds
     if (Reynolds <= 2100) {
-        Fluxo = "Laminar";
+        FluxoAnular = "Laminar";
     } else {
-        Fluxo = "Turbulento";
+        FluxoAnular = "Turbulento";
     }
-    return Fluxo;
+    return FluxoAnular;
 }
 
 
@@ -39,13 +39,13 @@ double CModeloNewtoniano::CalcularPerdaPorFriccaoPoco() {
     double VMedioPoco = Poco->GetVazao() / (2.448 * std::pow(Poco->GetDiametroRevestimentoID(), 2)); // Cálculo da velocidade média do fluido no poço
     
     // Verifica se o tipo de fluxo já foi determinado
-    if (Fluxo == "") {
-        std::cout << "O valor de Reynolds não foi definido, não foi possível determinar o fluxo do escoamento!\n";
+    if (FluxoPoco == "") {
+        std::cout << "O valor de Reynolds nao foi definido, nao foi possivel determinar o fluxo do escoamento!\n";
         return 0;
     }
     
     // Cálculo da perda por fricção dependendo do tipo de fluxo
-    if (Fluxo == "Laminar") {
+    if (FluxoPoco == "Laminar") {
         return (Poco->ViscosidadeEfetivaTotal() * VMedioPoco) / (1500 * std::pow(Poco->GetDiametroRevestimentoID(), 2));
     } else {  // Fluxo turbulento
         return (std::pow(Poco->DensidadeEfetivaTotal(), 0.75) * std::pow(VMedioPoco, 1.75) * std::pow(Poco->ViscosidadeEfetivaTotal(), 0.25)) 
@@ -60,13 +60,13 @@ double CModeloNewtoniano::CalcularPerdaPorFriccaoAnular() {
     double VMedioPoco = Poco->GetVazao() / (2.448 * (std::pow(Poco->GetDiametroPoco(), 2) - std::pow(Poco->GetDiametroRevestimentoOD(), 2))); // Cálculo da velocidade média do fluido no espaço anular
     
     // Verifica se o tipo de fluxo já foi determinado
-    if (Fluxo == "") {
-        std::cout << "O valor de Reynolds não foi definido, não foi possível determinar o fluxo do escoamento!\n";
+    if (FluxoAnular == "") {
+        std::cout << "O valor de Reynolds nao foi definido, nao foi possivel determinar o fluxo do escoamento!\n";
         return 0;
     }
     
     // Cálculo da perda por fricção dependendo do tipo de fluxo
-    if (Fluxo == "Laminar") {
+    if (FluxoAnular == "Laminar") {
         return (Poco->ViscosidadeEfetivaTotal() * VMedioPoco) / (1000 * std::pow(DiametroAnular, 2));
     } else {  // Fluxo turbulento
         return (std::pow(Poco->DensidadeEfetivaTotal(), 0.75) * std::pow(VMedioPoco, 1.75) * std::pow(Poco->ViscosidadeEfetivaTotal(), 0.25)) 

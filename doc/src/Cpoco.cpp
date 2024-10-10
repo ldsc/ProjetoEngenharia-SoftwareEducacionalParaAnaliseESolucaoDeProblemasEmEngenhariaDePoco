@@ -24,7 +24,7 @@ bool CPoco::AdicionarTrechoPoco(CTrechoPoco& TrechoPoco) {
 
 void CPoco::ExibeTrechos() const {
     for (size_t i = 0; i < Trechos.size(); ++i) {
-        std::cout << "##### Trecho: " << (i + 1) << " #####" << std::endl;
+        std::cout << "##### Trecho: " << (i + 1) << " ##### \n";
 
         Trechos[i]->ExibePropriedades();
         std::cout << std::endl;
@@ -32,13 +32,13 @@ void CPoco::ExibeTrechos() const {
 }
 
 void CPoco::ExibePropriedades() const {
-    std::cout << "\n- Profundidade Total: " << GetProfundidadeTotal() << " ft";
-    std::cout << "\n- Profunidade Ocupada: " << GetProfundidadeOcupada() << " ft";
-    std::cout << "\n- Pressao Superficie: " << GetPressaoSuperficie() << " psi";
-    std::cout << "\n- Diametro Poco: " << GetDiametroPoco() << " in";
-    std::cout << "\n- Diametro Revestimento OD: " << GetDiametroRevestimentoOD() << " in";
-    std::cout << "\n- Diametro Revestimento ID: " << GetDiametroRevestimentoID() << " in";
-    std::cout << "\n- Vazao: " << GetVazao() << " gal/min\n";
+    std::cout << "\n- Profundidade Total: " << GetProfundidadeTotal() << " ft" \
+                 "\n- Profunidade Ocupada: " << GetProfundidadeOcupada() << " ft" \
+                 "\n- Pressao Superficie: " << GetPressaoSuperficie() << " psi" \
+                 "\n- Diametro Poco: " << GetDiametroPoco() << " in" \
+                 "\n- Diametro Revestimento OD: " << GetDiametroRevestimentoOD() << " in" \
+                 "\n- Diametro Revestimento ID: " << GetDiametroRevestimentoID() << " in" \
+                 "\n- Vazao: " << GetVazao() << " gal/min\n";
 }
 
 double CPoco::PressaoHidroestaticaTotal() const {

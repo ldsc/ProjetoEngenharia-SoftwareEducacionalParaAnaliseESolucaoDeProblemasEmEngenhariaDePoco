@@ -7,7 +7,8 @@
 class CModeloNewtoniano : public CModeloReologico {
 
 protected:
-    std::string Fluxo = "";  
+    std::string FluxoPoco = ""; 
+    std::string FluxoAnular = "";  
 
 public:
     //Construtor
