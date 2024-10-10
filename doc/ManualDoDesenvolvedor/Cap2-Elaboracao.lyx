@@ -488,6 +488,596 @@ A densidade equivalente da lama sempre deve ser calculada utilizando uma
  profunidade de referência específica.
 \end_layout
 
+\begin_layout Subsection
+Modelos reológicos de fluidos de perfuração
+\end_layout
+
+\begin_layout Standard
+Durante o processo de perfuração de um poço muitas vezes forças viscoelásticas
+ extremamente grande precisam ser vencidas para que o fluido de perfuração
+ se mova pelos conduites longos e finos utilizados nesse processo, dessa
+ forma se faz essencial a análise da perda de pressão por atrito.
+ Na maioria dos casos as propriedades elásticas dos fluidos de perfuração
+ e seus efeitos durante o fluxo de um poço são despressiveis,sendo consideradas
+ para o cálculo apenas as forças viscosas.
+ Entretanto com o avanço tecnologio lamas cada vez mais complexas estão
+ sendo formuladas de forma que os testes devem consideras as propriedades
+ elásticas da deformação que ocorre durante o fluxo.
+\end_layout
+
+\begin_layout Standard
+Para tal, se faz necessaria uma descrição matemática e desenvolvimento de
+ equações para a perda por atrito, de forma que modelos reologicos são geralment
+e utilizados pro engenheiros de perfuração para aproximar o comportamento
+ de um fluido, nesse projeto abordaremos três modelos sendo eles o modelo
+ newtoniano, o modelo plástico de Bingham e o modelo de lei de potências.
+ É importante resaltar a existência de outros modelos que podem futuramente
+ ser acrescentados no aprimoramento desse projeto.
+\end_layout
+
+\begin_layout Subsubsection
+Visão geral dos modelos reológicos
+\end_layout
+
+\begin_layout Standard
+As forças viscosas de um fluido sao governadas pela viscosidade do mesmo,
+ para entender o que é a viscosidade podemos analisar um simples experimento
+ em que um fluido é colocado entre duas placas paralelas de área A separadas
+ por uma distancia L como mostra a figura (Colocar figura 5.11)
+\end_layout
+
+\begin_layout Standard
+Ao colocar a placa superior inicialmente em repouso em um movimento na direção
+ x com uma velocidade constant
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+e ν
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ por um tempo suficiente percebemos que uma força F constante é necessária
+ para manter a placa superior em movimento, a magnitude dessa força pode
+ ser encontrada por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{F}{A}=\mu\frac{\nu}{L}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A razão F/A é conhecida como tensão de cisalhamento exercida sobre o fluido.
+ a constante de proporcionalidade μ é chamada de viscosidade aparente.
+ Dessa forma podemos definir a tensão de cisalhamento como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tau=\frac{F}{A}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A taxa de cisalhamento e expressa como o gradiente da velocidade 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ν/L:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\dot{\gamma}=\frac{d\nu}{dL}\approx\frac{\nu}{L}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A viscosidade aparente pode ser definida como a razão entre a tensão de
+ cisalhamento e a taxa de cisalhamento.
+ A principal característica de um fluido newtoniano é a viscosidade constante
+ do fluido.
+ Como sabemos os fluidos de perfuração sao misturas complexas que não podem
+ ser caracterizadas por um unico valor de viscosidade, quando um fluido
+ nao apresenta uma proporcionalidade entre tensao de cisalhamente e taxa
+ de cisalhamento ele passa a ser conhecido como um fluido não newtoniano,
+ podendo ser pseudoplásticos se a viscosidade diminui com o aumento da taxa
+ de cisalhamento e dilatantes se a viscosidade aumenta com o aumento da
+ taxa de cisalhamento.
+ (Colocr figura 5.12)
+\end_layout
+
+\begin_layout Subsubsection
+Modelo de Fluido Newtoniano
+\end_layout
+
+\begin_layout Standard
+Como ja afirmamos um fluido newtoniano tem a taxa de cisalhamento proporcional
+ a tensão de cisalhamento:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tau=\mu\dot{\gamma}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde a constante de proporcionalidade μ é o que chamamos de viscosidade.
+ Para o caso de um fluido newtoniano e retomando nosso experimento das placas
+ isso significa que se a força F for dobrada a velocidade da placa também
+ sera dobrada.
+ Os principais fluidos newtonianos são água, gás e salmouras, fluidos muito
+ comuns na engenharia de poço.
+\end_layout
+
+\begin_layout Standard
+A relação linear descrita pela eq.
+ 10 só e válida para o fluxo laminar, quando o fluido se move em camadas,
+ que ocorre apenas em taxas de cisalhamento baixas.
+ Em altas taxas de cisalhamento o fluxo deixa de ser laminar e se torna
+ turbulento, no qual as particulas se movem de forma caotica em relação
+ ai sentido do fluxo criando vórtices e redemoinhos.
+\end_layout
+
+\begin_layout Subsubsection
+Fluidos Plásticos de Bingham
+\end_layout
+
+\begin_layout Standard
+O modelo plástico de Bingham (Bingham 1922) pode ser definido como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tau=\tau_{y}+\mu_{p}\dot{\gamma}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A principal característica de um plástico Bingham é a necessidade de um
+ valor minimo de tensão de cisalhamento para que o fluido começe a fluir,
+ essa tensão mínima τ
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+y
+\end_layout
+
+\end_inset
+
+é chamada de tensão de escoamento.
+ Após a tensão de escoamento o fluido de Bingham se comporta como um fluido
+ newtoniado onde a mudança na tensão de cisalhamento é proporcional a mudança
+ na taxa de cisalhamento.
+ A constante de proporcionalidade é chamada de viscosidade plástica.
+\end_layout
+
+\begin_layout Subsubsection
+Fluidos de Lei de Potência
+\end_layout
+
+\begin_layout Standard
+O modelo de lei de potência (Ostwald 1925) pode ser definido como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tau=K\dot{\gamma}^{n}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O modelo de lei de potências requer também dois parâmetros para caracterização
+ de fluidos, porém, esse modelo pode ser utilizado para representar um fluido
+ pseudoplástico (n < 1), um fluido newtoniano (n = 1) ou um fluido dilatante
+ (n > 1).
+\end_layout
+
+\begin_layout Standard
+O parâmetro K é chamado de índice de consistência do fluido, e o parâmetro
+ n é chamado de expente da lei de potência ou índice de comportamento do
+ fluxo.
+\end_layout
+
+\begin_layout Subsection
+Perda de pressão friccional em um tubo de perfuração
+\end_layout
+
+\begin_layout Standard
+A perda de pressão friccional durante a circulação de fluidos em operações
+ de perfuração pode ser calculada através de diferentes modelos de fluido.
+ O primeiro paço é determinar o tipo de escoamento, para isso utilizamos
+ o número de Reynolds, porém para cada modelo existe uma equação para a
+ obtenção do numero de Reynolds.
+\end_layout
+
+\begin_layout Subsubsection
+Modelo de Fluido Newtoniano
+\end_layout
+
+\begin_layout Standard
+Para um fluido newtoniano o número de reynolds pode ser obtido a partir
+ da seguinte equação:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{re}=\frac{928\rho\bar{v}d}{\mu}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde ρ é densidade enfetiva total, d é o diametro interno do poço, μ é a
+ viscosiadade efetiva total e 
+\begin_inset Formula $\bar{v}$
+\end_inset
+
+ é a velocidade média que pode ser obtida pela seguinte equação:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\bar{v}=\frac{q}{2.448d^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde q é a vazão do poço.
+\end_layout
+
+\begin_layout Standard
+O fluxo é considerado turbulento quando o número de Reynolds é maior ou
+ igual a 2100.
+ Após determinar o regime de fluxo podemos utilizar uma das duas equações
+ abaixo para calcular a perda de pressão por fricção em um poço.
+\end_layout
+
+\begin_layout Standard
+Para fluxo laminar:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dp_{f}}{dL}=\frac{\mu\bar{v}}{1500d^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para o fluxo turbulento:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dp_{f}}{dL}=\frac{\rho^{0.75}\bar{v}^{1.75}\mu^{0.25}}{1800d^{1.25}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Fluidos Plásticos de Bingham
+\end_layout
+
+\begin_layout Standard
+Para um fluido que se comporta como plástico de Bingham o número de reynolds
+ e a velociadade media podem ser obtidos pelas equações 13 e 14 respectivame.
+ O fluxo é considerado turbulento quando o número de Reynolds é maior ou
+ igual a 2100.
+ Para calcular a perda de pressão por fricção utilizamos as seguintes equações:
+\end_layout
+
+\begin_layout Standard
+Para fluxo laminar:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dp_{f}}{dL}=\frac{\mu\bar{v}}{1500d^{2}}+\frac{\tau_{y}}{225d}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para o fluxo turbulento podemos usar a equação 16.
+\end_layout
+
+\begin_layout Subsubsection
+Fluidos de Lei de Potência
+\end_layout
+
+\begin_layout Standard
+Para um fluido que atende ao modelo de lei de potência o número de reynolds
+ pode ser obtido a partir da seguinte equação:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{re}=\frac{89100\rho\bar{v}^{2-n}}{K}\left(\frac{0.0416d}{3+\frac{1}{n}}\right)^{n}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A velocidade média pode ser obtida pela equação 14.
+ O fluxo é considerado turbulento quando o número de Reynolds é maior ou
+ igual a 2100.
+ Para calcular a perda de pressão por fricção utilizamos as seguintes equações:
+\end_layout
+
+\begin_layout Standard
+Para fluxo laminar:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dp_{f}}{dL}=\frac{K\bar{v}^{n}\left(\frac{3+\frac{1}{n}}{0.0416}\right)^{n}}{144000d^{1+n}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para o fluxo turbulento:
+\end_layout
+
+\begin_layout Standard
+Acho que nao tem formula analitica (Discutir)
+\end_layout
+
+\begin_layout Subsection
+Perda de pressão friccional em um anular
+\end_layout
+
+\begin_layout Standard
+A perda de pressão friccional durante a circulação de fluidos em operações
+ de perfuração também pode ocorrer no anular, e assim como a perda na tubulação,
+ pode ser calculada através de diferentes modelos de fluido.
+ Assim como vimos anteriormente o primeiro paço é determinar o tipo de escoament
+o, para isso utilizamos o número de Reynolds, porém para cada modelo existe
+ uma equação para a obtenção do numero de Reynolds.
+\end_layout
+
+\begin_layout Subsubsection
+Modelo de Fluido Newtoniano
+\end_layout
+
+\begin_layout Standard
+Para um fluido newtoniano o número de reynolds pode ser obtido a partir
+ da seguinte equação:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{re}=\frac{757\rho\bar{v}\left(d_{2}-d_{1}\right)}{\mu}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A velocidade média pode ser obtida pela equação:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\bar{v}=\frac{q}{2.448\left(d_{2}^{2}-d_{1}^{2}\right)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O fluxo é considerado turbulento quando o número de Reynolds é maior ou
+ igual a 2100.
+ Após determinar o regime de fluxo podemos utilizar uma das duas equações
+ abaixo para calcular a perda de pressão por fricção em um anular.
+\end_layout
+
+\begin_layout Standard
+Para fluxo laminar:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dp_{f}}{dL}=\frac{\mu\bar{v}}{1000\left(d_{2}-d_{1}\right)^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para o fluxo turbulento:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dp_{f}}{dL}=\frac{\rho^{0.75}\bar{v}^{1.75}\mu^{0.25}}{1396\left(d_{2}-d_{1}\right)^{1.25}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Fluidos Plásticos de Bingham
+\end_layout
+
+\begin_layout Standard
+Para um fluido que se comporta como plástico de Bingham o número de reynolds
+ e a velociadade media podem ser obtidos pelas equações 20 e 21 respectivame.
+ O fluxo é considerado turbulento quando o número de Reynolds é maior ou
+ igual a 2100.
+ Para calcular a perda de pressão por fricção utilizamos as seguintes equações:
+\end_layout
+
+\begin_layout Standard
+Para fluxo laminar:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dp_{f}}{dL}=\frac{\mu\bar{v}}{1000\left(d_{2}-d_{1}\right)^{2}}+\frac{\tau_{y}}{200\left(d_{2}-d_{1}\right)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para o fluxo turbulento podemos usar a equação 23.
+\end_layout
+
+\begin_layout Subsubsection
+Fluidos de Lei de Potência
+\end_layout
+
+\begin_layout Standard
+Para um fluido que atende ao modelo de lei de potência o número de reynolds
+ pode ser obtido a partir da seguinte equação:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{re}=\frac{109000\rho\bar{v}^{2-n}}{K}\left(\frac{0.0208\left(d_{2}-d_{1}\right)}{2+\frac{1}{n}}\right)^{n}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A velocidade média pode ser obtida pela equação 21.
+ O fluxo é considerado turbulento quando o número de Reynolds é maior ou
+ igual a 2100.
+ Para calcular a perda de pressão por fricção utilizamos as seguintes equações:
+\end_layout
+
+\begin_layout Standard
+Para fluxo laminar:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dp_{f}}{dL}=\frac{K\bar{v}^{n}\left(\frac{2+\frac{1}{n}}{0.0208}\right)^{n}}{144000\left(d_{2}-d_{1}\right)^{1+n}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para o fluxo turbulento:
+\end_layout
+
+\begin_layout Standard
+Acho que nao tem formula analitica (Discutir)
+\end_layout
+
 \begin_layout Section
 Identificação de pacotes – assuntos
 \end_layout
