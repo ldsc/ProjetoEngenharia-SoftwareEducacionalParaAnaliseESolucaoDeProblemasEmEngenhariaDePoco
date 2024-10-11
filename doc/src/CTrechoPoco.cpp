@@ -8,6 +8,13 @@ double CTrechoPoco::PressaoHidroestatica() {
 
 }
 
+double CTrechoPoco::PressaoHidroestaticaNoPonto(double profund) {
+
+
+    return ( (profund)  * 0.05195 * Fluido->GetDensidade());
+
+}
+
 void CTrechoPoco::ExibePropriedades(){
 
     std::cout << "- Nome da secao: " << GetNome() << "\n" \

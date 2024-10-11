@@ -67,8 +67,9 @@ void menuPrincipal() {
         desenharBorda();
 
         std::cout << "\n1. Exibir Propriedades do Poco\n"
-                     "2. Calcular Pressao Hidrostatica do Poco\n"
-                     "3. Calcular Perda de Carga por Friccao\n"
+                     "2. Calcular Pressao Hidrostatica e Densidade no Poco\n"
+                     "3. Plotar Perfil Profundidade vs Densidade\n"
+                     "4. Calcular Perda de Carga por Friccao\n"
                      "0. Sair\n";
         std::cout << "Escolha: ";
         std::cin >> escolha;
@@ -87,6 +88,10 @@ void menuPrincipal() {
                 break;
 
             case 3:
+                Poco1.PlotarProfundidadePorDensidade();
+                break;
+
+            case 4:
                 menuPerdaDeCarga();
                 break;
 

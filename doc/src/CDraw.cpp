@@ -21,7 +21,12 @@ void desenharLinhaTexto(const std::string& texto) {
     int largura = 65; 
     int espacos = (largura - texto.size() - 2) / 2; 
 
-    std::string textoParaExibir = texto.size() > largura - 2 ? texto.substr(0, largura - 2) : texto;
+    std::string textoParaExibir;
+    if (texto.size() > static_cast<std::string::size_type>(largura - 2)) {
+        textoParaExibir = texto.substr(0, largura - 2);
+    } else {
+        textoParaExibir = texto;
+    }
 
     std::cout << "#"; 
     std::cout << std::setw(espacos) << ""; 

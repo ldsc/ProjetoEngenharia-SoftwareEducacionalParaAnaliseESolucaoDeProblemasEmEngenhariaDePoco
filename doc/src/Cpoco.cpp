@@ -57,12 +57,12 @@ void CPoco::VerificarPreenchimentoColuna() {
 
     if (ProfundidadeNaoOcupada > 0) {
 
-        std::cout << "Uma coluna de "<< ProfundidadeNaoOcupada << "ft de fluido precisa ser adicionada!" << std::endl;
+        std::cout << "Uma coluna de "<< ProfundidadeNaoOcupada << "ft de fluido precisa ser adicionada!\n";
         std::cout << std::endl;
     }
 
     else{
-        std::cout << "A coluna de fluidos equivale a profundidade da coluna do poco! " << std::endl;
+        std::cout << "A coluna de fluidos equivale a profundidade da coluna do poco!\n";
         std::cout << std::endl;
     }
 }
@@ -70,13 +70,17 @@ void CPoco::VerificarPreenchimentoColuna() {
 double CPoco::DensidadeEfetivaTotal() const {
 
     double DensidadeTotal = 0.0;
+    double ComprimentoTotal = 0.0;
 
     for (const auto& Trecho : Trechos) {
-        DensidadeTotal += Trecho->DensidadeEquivalente();
+        double ComprimentoTrecho = Trecho->GetProfundidadeFinal() - Trecho->GetProfundidadeInicial();
+        DensidadeTotal += Trecho->DensidadeEquivalente() * ComprimentoTrecho;
+        ComprimentoTotal += ComprimentoTrecho;
     }
-    return DensidadeTotal / Trechos.size();
 
+    return DensidadeTotal / ComprimentoTotal;
 }
+
 
 double CPoco::ViscosidadeEfetivaTotal() const {
 
@@ -95,18 +99,18 @@ void CPoco::PlotarProfundidadePorDensidade() {
 
     double ProfunTotal = 0;
 
+    // Coletar dados para a profundidade e densidade
     for (const auto& trecho : Trechos) {
         double Intervalo = trecho->GetProfundidadeFinal() - trecho->GetProfundidadeInicial();  
 
         for (double i = 0; i <= Intervalo; i += 1) {
-            
-            double Dens = PressaoHidroestaticaTotal() / ( (ProfunTotal) * 0.05195 );
+            double ProfundidadeAtual = ProfunTotal + i; // Atualiza a profundidade em cada iteração
+            double Dens = PressaoHidroestaticaTotal() / (ProfundidadeAtual * 0.05195);
    
             Densidade.push_back(Dens);
-            Profundidade.push_back(ProfunTotal);
-
-            ProfunTotal += 1;
+            Profundidade.push_back(ProfundidadeAtual); // Armazena a profundidade atual
         }
+        ProfunTotal += Intervalo; // Avança a profundidade total
     }        
 
     std::ofstream outputFile("dados.txt");
@@ -118,12 +122,18 @@ void CPoco::PlotarProfundidadePorDensidade() {
     // Comando Gnuplot para plotar os dados
     std::ofstream gnuplotFile("plot_script.gp");
     gnuplotFile << "set title 'Profundidade vs Densidade'\n";
-    gnuplotFile << "set xlabel 'Profundidade'\n";
-    gnuplotFile << "set ylabel 'Densidade'\n";
-    gnuplotFile << "plot 'dados.txt' using 1:2 with linespoints title 'Densidade vs Profundidade'\n";
+    gnuplotFile << "set xlabel 'ESD, lbm/gal'\n";
+    gnuplotFile << "set ylabel 'Depth, ft'\n";
+    gnuplotFile << "set yrange [20:0] \n"; // Inverter o eixo Y
+    gnuplotFile << "set grid\n"; // Adicionar grade ao gráfico
+    gnuplotFile << "set style data linespoints\n"; // Estilo de linha com pontos
+
+    // Plota apenas uma curva
+    gnuplotFile << "plot 'dados.txt' using 2:1 with linespoints title 'Densidade vs Profundidade'\n"; 
     gnuplotFile << "pause -1\n"; // Pausa para que você possa ver o gráfico
     gnuplotFile.close();
 
     // Executa o Gnuplot com o script gerado
     std::system("gnuplot plot_script.gp");
 }
+

@@ -31,6 +31,7 @@ public:
 
     // Métodos
     double PressaoHidroestatica();
+    double PressaoHidroestaticaNoPonto(double Profund);
     void ExibePropriedades();
     double DensidadeEquivalente();
 
