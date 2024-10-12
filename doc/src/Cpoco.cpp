@@ -8,12 +8,12 @@
 // Metodos
 bool CPoco::AdicionarTrechoPoco(CTrechoPoco& TrechoPoco) {
 
-    double ProfundidadeFluido = TrechoPoco.GetProfundidadeFinal() - TrechoPoco.GetProfundidadeInicial();
+    double ProfundidadeFluido = TrechoPoco.ProfundidadeFinal() - TrechoPoco.ProfundidadeInicial();
 
     // Verifica se a profundidade total ocupada + profundidade do novo fluido excede a profundidade total do poço
-    if (ProfundidadeOcupada + ProfundidadeFluido <= ProfundidadeTotal) {
-        Trechos.push_back(&TrechoPoco);
-        ProfundidadeOcupada += ProfundidadeFluido;
+    if (profundidadeOcupada + ProfundidadeFluido <= profundidadeFinal) {
+        trechos.push_back(&TrechoPoco);
+        profundidadeOcupada += ProfundidadeFluido;
         return true;
 
     } else {
@@ -23,37 +23,37 @@ bool CPoco::AdicionarTrechoPoco(CTrechoPoco& TrechoPoco) {
 }
 
 void CPoco::ExibeTrechos() const {
-    for (size_t i = 0; i < Trechos.size(); ++i) {
+    for (size_t i = 0; i < trechos.size(); ++i) {
         std::cout << "##### Trecho: " << (i + 1) << " ##### \n";
 
-        Trechos[i]->ExibePropriedades();
+        trechos[i]->ExibePropriedades();
         std::cout << std::endl;
     }
 }
 
 void CPoco::ExibePropriedades() const {
-    std::cout << "\n- Profundidade Total: " << GetProfundidadeTotal() << " ft" \
-                 "\n- Profunidade Ocupada: " << GetProfundidadeOcupada() << " ft" \
-                 "\n- Pressao Superficie: " << GetPressaoSuperficie() << " psi" \
-                 "\n- Diametro Poco: " << GetDiametroPoco() << " in" \
-                 "\n- Diametro Revestimento OD: " << GetDiametroRevestimentoOD() << " in" \
-                 "\n- Diametro Revestimento ID: " << GetDiametroRevestimentoID() << " in" \
-                 "\n- Vazao: " << GetVazao() << " gal/min\n";
+    std::cout << "\n- Profundidade Total: " << ProfundidadeTotal() << " ft" \
+                 "\n- Profunidade Ocupada: " << ProfundidadeOcupada() << " ft" \
+                 "\n- Pressao Superficie: " << PressaoSuperficie() << " psi" \
+                 "\n- Diametro poco: " << DiametroPoco() << " in" \
+                 "\n- Diametro Revestimento OD: " << DiametroRevestimentoOD() << " in" \
+                 "\n- Diametro Revestimento ID: " << DiametroRevestimentoID() << " in" \
+                 "\n- vazao: " << Vazao() << " gal/min\n";
 }
 
 double CPoco::PressaoHidroestaticaTotal() const {
 
     double PressaoTotal = 0.0;
 
-    for (const auto& Trecho : Trechos) {
+    for (const auto& Trecho : trechos) {
         PressaoTotal += Trecho->PressaoHidroestatica();
     }
-    return PressaoTotal + PressaoSuperficie;
+    return PressaoTotal + pressaoSuperficie;
 }
 
 void CPoco::VerificarPreenchimentoColuna() {
 
-    double ProfundidadeNaoOcupada = ProfundidadeTotal - ProfundidadeOcupada;
+    double ProfundidadeNaoOcupada = profundidadeFinal - profundidadeOcupada;
 
     if (ProfundidadeNaoOcupada > 0) {
 
@@ -72,8 +72,8 @@ double CPoco::DensidadeEfetivaTotal() const {
     double DensidadeTotal = 0.0;
     double ComprimentoTotal = 0.0;
 
-    for (const auto& Trecho : Trechos) {
-        double ComprimentoTrecho = Trecho->GetProfundidadeFinal() - Trecho->GetProfundidadeInicial();
+    for (const auto& Trecho : trechos) {
+        double ComprimentoTrecho = Trecho->ProfundidadeFinal() - Trecho->ProfundidadeInicial();
         DensidadeTotal += Trecho->DensidadeEquivalente() * ComprimentoTrecho;
         ComprimentoTotal += ComprimentoTrecho;
     }
@@ -86,10 +86,10 @@ double CPoco::ViscosidadeEfetivaTotal() const {
 
     double ViscosidadeTotal = 0.0;
 
-    for (const auto& Trecho : Trechos) {
-        ViscosidadeTotal += Trecho->GetFluido()->GetViscosidade();
+    for (const auto& Trecho : trechos) {
+        ViscosidadeTotal += Trecho->Fluido()->GetViscosidade();
     }
-    return ViscosidadeTotal / Trechos.size();
+    return ViscosidadeTotal / trechos.size();
 
 }
 
@@ -100,8 +100,8 @@ void CPoco::PlotarProfundidadePorDensidade() {
     double ProfunTotal = 0;
 
     // Coletar dados para a profundidade e densidade
-    for (const auto& trecho : Trechos) {
-        double Intervalo = trecho->GetProfundidadeFinal() - trecho->GetProfundidadeInicial();  
+    for (const auto& trecho : trechos) {
+        double Intervalo = trecho->ProfundidadeFinal() - trecho->ProfundidadeInicial();  
 
         for (double i = 0; i <= Intervalo; i += 1) {
             double ProfundidadeAtual = ProfunTotal + i; // Atualiza a profundidade em cada iteração

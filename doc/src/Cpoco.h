@@ -8,38 +8,38 @@
 
 class CPoco {
 protected:
-    double ProfundidadeTotal;
-    double ProfundidadeOcupada = 0;
-    double PressaoSuperficie;
-    double DiametroPoco;
-    double DiametroRevestimentoOD;
-    double DiametroRevestimentoID;
-    double Vazao;
-    std::vector<CTrechoPoco*> Trechos;
+    double profundidadeFinal;
+    double profundidadeOcupada = 0;
+    double pressaoSuperficie;
+    double diametroPoco;
+    double diametroRevestimentoOD;
+    double diametroRevestimentoID;
+    double vazao;
+    std::vector<CTrechoPoco*> trechos;
 
 public:
     //construtor
     CPoco();
     CPoco(double Profund, double PressaoSup, double D = 1, double OD= 1, double ID= 1, double q = 1)
-    : ProfundidadeTotal(Profund), PressaoSuperficie(PressaoSup), DiametroPoco(D), DiametroRevestimentoOD(OD), DiametroRevestimentoID(ID), Vazao(q) {}
+    : profundidadeFinal(Profund), pressaoSuperficie(PressaoSup), diametroPoco(D), diametroRevestimentoOD(OD), diametroRevestimentoID(ID), vazao(q) {}
 
     // Getters
-    double GetProfundidadeTotal() const { return ProfundidadeTotal; }
-    double GetProfundidadeOcupada() const { return ProfundidadeOcupada; }
-    double GetPressaoSuperficie() const { return PressaoSuperficie; }
-    double GetDiametroPoco() const { return DiametroPoco; }
-    double GetDiametroRevestimentoOD() const { return DiametroRevestimentoOD; }
-    double GetDiametroRevestimentoID() const { return DiametroRevestimentoID; }
-    double GetVazao() const { return Vazao; }
+    double ProfundidadeTotal() const { return profundidadeFinal; }
+    double ProfundidadeOcupada() const { return profundidadeOcupada; }
+    double PressaoSuperficie() const { return pressaoSuperficie; }
+    double DiametroPoco() const { return diametroPoco; }
+    double DiametroRevestimentoOD() const { return diametroRevestimentoOD; }
+    double DiametroRevestimentoID() const { return diametroRevestimentoID; }
+    double Vazao() const { return vazao; }
 
     // Setters
-    void SetProfundidadeTotal( double Profund ) { ProfundidadeTotal = Profund; }
-    void SetProfundidadeOcupada( double Profund ) { ProfundidadeOcupada = Profund; }
-    void SetPressaoSuperficie( double PressaoSup ) { PressaoSuperficie = PressaoSup; }
-    void SetDiametroPoco( double D ) { DiametroPoco = D; }
-    void SetDiametroRevestimentoOD( double OD ) { DiametroRevestimentoOD = OD; }
-    void SetDiametroRevestimentoID( double ID ) { DiametroRevestimentoID = ID; }
-    void SetVazao( double q ) { Vazao = q; }
+    void ProfundidadeTotal( double Profund ) { profundidadeFinal = Profund; }
+    void ProfundidadeOcupada( double Profund ) { profundidadeOcupada = Profund; }
+    void PressaoSuperficie( double PressaoSup ) { pressaoSuperficie = PressaoSup; }
+    void DiametroPoco( double D ) { diametroPoco = D; }
+    void DiametroRevestimentoOD( double OD ) { diametroRevestimentoOD = OD; }
+    void DiametroRevestimentoID( double ID ) { diametroRevestimentoID = ID; }
+    void Vazao( double q ) { vazao = q; }
 
     // Metodos
     bool AdicionarTrechoPoco(CTrechoPoco& TrechoPoco);

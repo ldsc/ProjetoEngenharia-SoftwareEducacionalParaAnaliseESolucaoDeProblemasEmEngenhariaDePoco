@@ -41,7 +41,7 @@ void cabecalho() {
     desenharBorda();
     desenharLinhaTexto("");
     desenharLinhaTexto("  SOFTWARE EDUCACIONAL PARA ANALISE   ");
-    desenharLinhaTexto("  E SOLUCAO DE PROBLEMAS EM ENGENHARIA DE POCO  ");
+    desenharLinhaTexto("  E SOLUCAO DE PROBLEMAS EM ENGENHARIA DE poco  ");
     desenharLinhaTexto("");
     desenharLinhaTexto("Nathan Rangel Magalhaes - nrmagalhaes@hotmail.com");
     desenharLinhaTexto("Thauan Ferreira Barbosa - thauanbarbosa@lenep.uenf.com");

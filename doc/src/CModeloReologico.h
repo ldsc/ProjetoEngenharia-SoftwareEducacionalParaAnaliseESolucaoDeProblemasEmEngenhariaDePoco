@@ -7,12 +7,12 @@
 class CModeloReologico {
 
 protected:
-    CPoco* Poco;
+    CPoco* poco;
 
 public:
     //Construtores
     CModeloReologico() {}
-    CModeloReologico(CPoco* poco) : Poco(poco) {}
+    CModeloReologico(CPoco* poco) : poco(poco) {}
 
     //Métodos
     virtual std::string DeterminarFluxoPoco() = 0;

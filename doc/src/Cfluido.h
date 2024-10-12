@@ -5,7 +5,7 @@
 
 class CFluido {
 protected:
-    std::string Nome;
+    std::string nome;
     double Densidade;
     double Viscosidade;
 
@@ -13,15 +13,15 @@ public:
     // Construtor
     CFluido();
     CFluido(std::string nome, double Dens, double visc = 0)
-    : Nome(nome), Densidade(Dens), Viscosidade(visc) {}
+    : nome(nome), Densidade(Dens), Viscosidade(visc) {}
 
     // Getters
-    std::string GetNome() const { return Nome; }
+    std::string Nome() const { return nome; }
     double GetDensidade() const { return Densidade; }
     double GetViscosidade() const { return Viscosidade; }
 
     // Setters
-    void SetNome(double nome) { Nome = nome; }
+    void Nome(double nome) { nome = nome; }
     void SetDensidade(double Dens) { Densidade = Dens; }
     void SetViscosidade(double visc) { Viscosidade = visc; }
 

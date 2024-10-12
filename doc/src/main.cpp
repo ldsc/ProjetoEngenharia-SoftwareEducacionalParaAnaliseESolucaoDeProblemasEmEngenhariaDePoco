@@ -17,8 +17,8 @@ void menuPerdaDeCarga() {
         desenharLinhaTexto("Menu de Perda de Carga");
         desenharBorda();
 
-        std::cout << "\n1. Verificar Fluxo no Poco\n"
-                     "2. Calcular Perda de Friccao no Poco\n"
+        std::cout << "\n1. Verificar Fluxo no poco\n"
+                     "2. Calcular Perda de Friccao no poco\n"
                      "3. Verificar Fluxo no Anular\n"
                      "4. Calcular Perda de Friccao no Anular\n"
                      "0. Voltar\n";
@@ -28,10 +28,10 @@ void menuPerdaDeCarga() {
 
         switch (escolha) {
             case 1:
-                std::cout << "\nTipo de Fluxo no Poco: " << model.DeterminarFluxoPoco() << "\n";
+                std::cout << "\nTipo de Fluxo no poco: " << model.DeterminarFluxoPoco() << "\n";
                 break;
             case 2:
-                std::cout << "\nPerda Friccional no Poco: " << model.CalcularPerdaPorFriccaoPoco() << " psi/ft\n";
+                std::cout << "\nPerda Friccional no poco: " << model.CalcularPerdaPorFriccaoPoco() << " psi/ft\n";
                 break;
             case 3:
                 std::cout << "\nTipo de Fluxo no Anular: " << model.DeterminarFluxoAnular() << "\n";
@@ -66,8 +66,8 @@ void menuPrincipal() {
         desenharLinhaTexto("   Menu Principal   ");
         desenharBorda();
 
-        std::cout << "\n1. Exibir Propriedades do Poco\n"
-                     "2. Calcular Pressao Hidrostatica e Densidade no Poco\n"
+        std::cout << "\n1. Exibir Propriedades do poco\n"
+                     "2. Calcular Pressao Hidrostatica e Densidade no poco\n"
                      "3. Plotar Perfil Profundidade vs Densidade\n"
                      "4. Calcular Perda de Carga por Friccao\n"
                      "0. Sair\n";
@@ -76,7 +76,7 @@ void menuPrincipal() {
 
         switch (escolha) {
             case 1:
-                std::cout << "\n##### Propriedades do Poco #####\n";
+                std::cout << "\n##### Propriedades do poco #####\n";
                 Poco1.ExibePropriedades();
                 std::cout << "\n";
                 Poco1.ExibeTrechos();

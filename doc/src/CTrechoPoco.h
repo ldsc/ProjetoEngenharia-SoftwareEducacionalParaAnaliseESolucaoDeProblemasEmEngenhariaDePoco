@@ -7,27 +7,27 @@
 class CTrechoPoco {
 
 protected:
-    std::string Nome;
-    double ProfundidadeInicial;
-    double ProfundidadeFinal;
-    CFluido* Fluido;  
+    std::string nome;
+    double profundidadeInicial;
+    double profundidadeFinal;
+    CFluido* fluido;  
 
 public:
     // Construtor
     CTrechoPoco();
-    CTrechoPoco(std::string nome, double ProfundidadeI, double ProfundidadeF, CFluido* Fluido)
-        : Nome(nome), ProfundidadeInicial(ProfundidadeI), ProfundidadeFinal(ProfundidadeF), Fluido(Fluido) {}
+    CTrechoPoco(std::string nome, double ProfundidadeI, double ProfundidadeF, CFluido* fluido)
+        : nome(nome), profundidadeInicial(ProfundidadeI), profundidadeFinal(ProfundidadeF), fluido(fluido) {}
 
     // Getters
-    std::string GetNome() const { return Nome; }
-    double GetProfundidadeInicial() const { return ProfundidadeInicial; }
-    double GetProfundidadeFinal() const { return ProfundidadeFinal; }
-    CFluido* GetFluido() const { return Fluido; }
+    std::string Nome() const { return nome; }
+    double ProfundidadeInicial() const { return profundidadeInicial; }
+    double ProfundidadeFinal() const { return profundidadeFinal; }
+    CFluido* Fluido() const { return fluido; }
 
     // Setters
-    void SetNome(double nome) { Nome = nome; }
-    void SetProfundidadeInicial(double ProfundI) { ProfundidadeInicial = ProfundI; }
-    void SetProfundidadeFinal(double ProfundF) { ProfundidadeFinal = ProfundF; }
+    void Nome(double nome) { nome = nome; }
+    void ProfundidadeInicial(double ProfundI) { profundidadeInicial = ProfundI; }
+    void ProfundidadeFinal(double ProfundF) { profundidadeFinal = ProfundF; }
 
     // Métodos
     double PressaoHidroestatica();

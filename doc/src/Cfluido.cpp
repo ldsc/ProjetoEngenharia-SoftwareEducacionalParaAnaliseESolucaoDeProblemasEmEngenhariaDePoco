@@ -5,7 +5,7 @@
 
 //Metodos
 void CFluido::ExibePropriedades() {
-    std::cout << "\n- Nome: " << GetNome() << " lb/gal\n" \
+    std::cout << "\n- nome: " << Nome() << " lb/gal\n" \
             "- Densidade: " << GetDensidade() << " lb/gal\n" \
             "- Viscosidade: " << GetDensidade() << " cp";
 }
