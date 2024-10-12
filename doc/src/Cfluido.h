@@ -11,7 +11,8 @@ protected:
 
 public:
     // Construtor
-    CFluido();
+    CFluido() {}
+    ~CFluido() {}
     CFluido(std::string nome, double Dens, double visc = 0)
     : nome(nome), Densidade(Dens), Viscosidade(visc) {}
 

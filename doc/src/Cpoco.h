@@ -19,7 +19,8 @@ protected:
 
 public:
     //construtor
-    CPoco();
+    CPoco() {}
+    ~CPoco() {}
     CPoco(double Profund, double PressaoSup, double D = 1, double OD= 1, double ID= 1, double q = 1)
     : profundidadeFinal(Profund), pressaoSuperficie(PressaoSup), diametroPoco(D), diametroRevestimentoOD(OD), diametroRevestimentoID(ID), vazao(q) {}
 

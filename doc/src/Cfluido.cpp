@@ -2,7 +2,6 @@
 #include <iostream>
 #include <cmath>
 
-
 //Metodos
 void CFluido::ExibePropriedades() {
     std::cout << "\n- nome: " << Nome() << " lb/gal\n" \

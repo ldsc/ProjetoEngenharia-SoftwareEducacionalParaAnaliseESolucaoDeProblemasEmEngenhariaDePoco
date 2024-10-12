@@ -12,6 +12,8 @@ protected:
 
 public:
     //Construtor
+    CModeloNewtoniano() {}
+    ~CModeloNewtoniano() {}
     CModeloNewtoniano(CPoco* poco) : CModeloReologico(poco){}
 
     // Getters

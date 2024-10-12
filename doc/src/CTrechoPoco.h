@@ -14,10 +14,11 @@ protected:
 
 public:
     // Construtor
-    CTrechoPoco();
+    CTrechoPoco() {}
+    ~CTrechoPoco() {}
     CTrechoPoco(std::string nome, double ProfundidadeI, double ProfundidadeF, CFluido* fluido)
         : nome(nome), profundidadeInicial(ProfundidadeI), profundidadeFinal(ProfundidadeF), fluido(fluido) {}
-
+    
     // Getters
     std::string Nome() const { return nome; }
     double ProfundidadeInicial() const { return profundidadeInicial; }

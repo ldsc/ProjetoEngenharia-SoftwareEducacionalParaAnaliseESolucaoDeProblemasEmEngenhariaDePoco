@@ -12,6 +12,7 @@ protected:
 public:
     //Construtores
     CModeloReologico() {}
+    virtual ~CModeloReologico() {}
     CModeloReologico(CPoco* poco) : poco(poco) {}
 
     //Métodos
