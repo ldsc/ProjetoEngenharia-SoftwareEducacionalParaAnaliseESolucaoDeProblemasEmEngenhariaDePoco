@@ -6,13 +6,21 @@
 
 
 // Metodos
-bool CPoco::AdicionarTrechoPoco(CTrechoPoco& TrechoPoco) {
 
-    double ProfundidadeFluido = TrechoPoco.ProfundidadeFinal() - TrechoPoco.ProfundidadeInicial();
+std::vector<CTrechoPoco*> CPoco::Trechos() const {
+    std::vector<CTrechoPoco*> trechosPonteiros;
+    for (const auto& trecho : trechos) {
+        trechosPonteiros.push_back(trecho.get()); // Adiciona o ponteiro do trecho ao vetor
+    }
+    return trechosPonteiros; // Retorna o vetor de ponteiros
+}
+bool CPoco::AdicionarTrechoPoco(std::unique_ptr<CTrechoPoco> TrechoPoco) {
+
+    double ProfundidadeFluido = TrechoPoco->ProfundidadeFinal() - TrechoPoco->ProfundidadeInicial();
 
     // Verifica se a profundidade total ocupada + profundidade do novo fluido excede a profundidade total do poço
     if (profundidadeOcupada + ProfundidadeFluido <= profundidadeFinal) {
-        trechos.push_back(&TrechoPoco);
+        trechos.push_back(std::move(TrechoPoco)); 
         profundidadeOcupada += ProfundidadeFluido;
         return true;
 
@@ -87,7 +95,7 @@ double CPoco::ViscosidadeEfetivaTotal() const {
     double ViscosidadeTotal = 0.0;
 
     for (const auto& Trecho : trechos) {
-        ViscosidadeTotal += Trecho->Fluido()->GetViscosidade();
+        ViscosidadeTotal += Trecho->Fluido()->Viscosidade();
     }
     return ViscosidadeTotal / trechos.size();
 

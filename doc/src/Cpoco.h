@@ -15,7 +15,7 @@ protected:
     double diametroRevestimentoOD;
     double diametroRevestimentoID;
     double vazao;
-    std::vector<CTrechoPoco*> trechos;
+    std::vector<std::unique_ptr<CTrechoPoco>> trechos;
 
 public:
     //construtor
@@ -32,7 +32,8 @@ public:
     double DiametroRevestimentoOD() const { return diametroRevestimentoOD; }
     double DiametroRevestimentoID() const { return diametroRevestimentoID; }
     double Vazao() const { return vazao; }
-
+    std::vector<CTrechoPoco*> Trechos() const;
+    
     // Setters
     void ProfundidadeTotal( double Profund ) { profundidadeFinal = Profund; }
     void ProfundidadeOcupada( double Profund ) { profundidadeOcupada = Profund; }
@@ -43,7 +44,7 @@ public:
     void Vazao( double q ) { vazao = q; }
 
     // Metodos
-    bool AdicionarTrechoPoco(CTrechoPoco& TrechoPoco);
+    bool AdicionarTrechoPoco(std::unique_ptr<CTrechoPoco> TrechoPoco);
     void ExibeTrechos() const;
     void ExibePropriedades() const;
     double PressaoHidroestaticaTotal() const;

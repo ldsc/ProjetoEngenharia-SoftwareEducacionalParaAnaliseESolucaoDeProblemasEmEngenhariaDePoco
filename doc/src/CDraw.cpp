@@ -35,6 +35,22 @@ void desenharLinhaTexto(const std::string& texto) {
     std::cout << "#\n";
 }
 
+void desenharAviso(const std::string& aviso) {
+    int largura = 65; 
+    std::string avisoParaExibir;
+
+    if (aviso.size() > static_cast<std::string::size_type>(largura - 2)) {
+        avisoParaExibir = aviso.substr(0, largura - 2);
+    } else {
+        avisoParaExibir = aviso;
+    }
+
+    std::cout << "# [AVISO] "; 
+    std::cout << avisoParaExibir; // Texto do aviso
+    std::cout << std::setw(largura - avisoParaExibir.size() - 10) << ""; // Ajusta o espaço restante
+    std::cout << "#\n";
+}
+
 // Funcao para o cabeçalho
 void cabecalho() {
     limparTela();
