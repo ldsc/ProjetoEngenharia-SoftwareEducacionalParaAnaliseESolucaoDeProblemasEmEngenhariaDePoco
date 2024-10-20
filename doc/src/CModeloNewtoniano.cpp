@@ -2,74 +2,72 @@
 #include <iostream>
 #include <cmath>
 
+// Função para determinar o tipo de fluxo no poço
 std::string CModeloNewtoniano::DeterminarFluxoPoco() {
-    
-    double VMedioPoco = poco->Vazao() / (2.448 * std::pow(poco->DiametroRevestimentoID(), 2)); // Cálculo da velocidade média
-    double Reynolds = (928 * poco->DensidadeEfetivaTotal() * VMedioPoco * poco->DiametroRevestimentoID()) / poco->ViscosidadeEfetivaTotal(); // Cálculo Reynolds
-    
-    // Definir o tipo de fluxo com base no número de Reynolds
-    if (Reynolds <= 2100) {
-        fluxoPoco = "Laminar";
-    } else {
-        fluxoPoco = "Turbulento";
-    }
+    double diametroRevestimentoID = poco->DiametroRevestimentoID();
+    double vazao = poco->Vazao();
+    double densidade = poco->DensidadeEfetivaTotal();
+    double viscosidade = poco->ViscosidadeEfetivaTotal();
+
+    double VMedioPoco = vazao / (2.448 * std::pow(diametroRevestimentoID, 2)); // Cálculo da velocidade média
+    double Reynolds = (928 * densidade * VMedioPoco * diametroRevestimentoID) / viscosidade; // Cálculo de Reynolds
+
+    fluxoPoco = (Reynolds <= 2100) ? "Laminar" : "Turbulento"; // Determinação do fluxo
     return fluxoPoco;
 }
 
-
+// Função para determinar o tipo de fluxo no espaço anular
 std::string CModeloNewtoniano::DeterminarFluxoAnular() {
-    
-    double DiametroAnular = poco->DiametroPoco() - poco->DiametroRevestimentoOD(); // Cálculo do diâmetro anular
-    
-    double VMedioPoco = poco->Vazao() / (2.448 * (std::pow(poco->DiametroPoco(), 2) - std::pow(poco->DiametroRevestimentoOD(), 2))); // Cálculo da velocidade média do fluido
-    double Reynolds = (757 * poco->DensidadeEfetivaTotal() * VMedioPoco * DiametroAnular) / poco->ViscosidadeEfetivaTotal(); // Cálculo Reynolds 
+    double diametroAnular = poco->DiametroPoco() - poco->DiametroRevestimentoOD();
+    double vazao = poco->Vazao();
+    double densidade = poco->DensidadeEfetivaTotal();
+    double viscosidade = poco->ViscosidadeEfetivaTotal();
 
-    // Definir o tipo de fluxo com base no número de Reynolds
-    if (Reynolds <= 2100) {
-        fluxoAnular = "Laminar";
-    } else {
-        fluxoAnular = "Turbulento";
-    }
+    double VMedioAnular = vazao / (2.448 * (std::pow(poco->DiametroPoco(), 2) - std::pow(poco->DiametroRevestimentoOD(), 2))); // Cálculo da velocidade média
+    double Reynolds = (757 * densidade * VMedioAnular * diametroAnular) / viscosidade; // Cálculo de Reynolds
+
+    fluxoAnular = (Reynolds <= 2100) ? "Laminar" : "Turbulento"; // Determinação do fluxo
     return fluxoAnular;
 }
 
-
+// Função para calcular a perda de carga por fricção no poço
 double CModeloNewtoniano::CalcularPerdaPorFriccaoPoco() {
-    
-    double VMedioPoco = poco->Vazao() / (2.448 * std::pow(poco->DiametroRevestimentoID(), 2)); // Cálculo da velocidade média do fluido no poço
-    
-    // Verifica se o tipo de fluxo já foi determinado
     if (fluxoPoco == "") {
-        std::cout << "O valor de Reynolds nao foi definido, nao foi possivel determinar o fluxo do escoamento!\n";
-        return 0;
+        DeterminarFluxoPoco();
     }
-    
-    // Cálculo da perda por fricção dependendo do tipo de fluxo
+
+    double diametroRevestimentoID = poco->DiametroRevestimentoID();
+    double vazao = poco->Vazao();
+    double viscosidade = poco->ViscosidadeEfetivaTotal();
+    double densidade = poco->DensidadeEfetivaTotal();
+
+    double VMedioPoco = vazao / (2.448 * std::pow(diametroRevestimentoID, 2)); // Cálculo da velocidade média
+
     if (fluxoPoco == "Laminar") {
-        return (poco->ViscosidadeEfetivaTotal() * VMedioPoco) / (1500 * std::pow(poco->DiametroRevestimentoID(), 2));
+        return (viscosidade * VMedioPoco) / (1500 * std::pow(diametroRevestimentoID, 2));
     } else {  // Fluxo turbulento
-        return (std::pow(poco->DensidadeEfetivaTotal(), 0.75) * std::pow(VMedioPoco, 1.75) * std::pow(poco->ViscosidadeEfetivaTotal(), 0.25)) 
-               / (1800 * std::pow(poco->DiametroRevestimentoID(), 1.25));
+        return (std::pow(densidade, 0.75) * std::pow(VMedioPoco, 1.75) * std::pow(viscosidade, 0.25)) 
+               / (1800 * std::pow(diametroRevestimentoID, 1.25));
     }
 }
 
-
+// Função para calcular a perda de carga por fricção no espaço anular
 double CModeloNewtoniano::CalcularPerdaPorFriccaoAnular() {
-    
-    double DiametroAnular = poco->DiametroPoco() - poco->DiametroRevestimentoOD(); // Cálculo do diâmetro anular
-    double VMedioPoco = poco->Vazao() / (2.448 * (std::pow(poco->DiametroPoco(), 2) - std::pow(poco->DiametroRevestimentoOD(), 2))); // Cálculo da velocidade média do fluido no espaço anular
-    
-    // Verifica se o tipo de fluxo já foi determinado
     if (fluxoAnular == "") {
-        std::cout << "O valor de Reynolds nao foi definido, nao foi possivel determinar o fluxo do escoamento!\n";
-        return 0;
+        DeterminarFluxoAnular();
     }
-    
-    // Cálculo da perda por fricção dependendo do tipo de fluxo
+
+    double diametroAnular = poco->DiametroPoco() - poco->DiametroRevestimentoOD();
+    double vazao = poco->Vazao();
+    double viscosidade = poco->ViscosidadeEfetivaTotal();
+    double densidade = poco->DensidadeEfetivaTotal();
+
+    double VMedioAnular = vazao / (2.448 * (std::pow(poco->DiametroPoco(), 2) - std::pow(poco->DiametroRevestimentoOD(), 2))); // Cálculo da velocidade média
+
     if (fluxoAnular == "Laminar") {
-        return (poco->ViscosidadeEfetivaTotal() * VMedioPoco) / (1000 * std::pow(DiametroAnular, 2));
+        return (viscosidade * VMedioAnular) / (1000 * std::pow(diametroAnular, 2));
     } else {  // Fluxo turbulento
-        return (std::pow(poco->DensidadeEfetivaTotal(), 0.75) * std::pow(VMedioPoco, 1.75) * std::pow(poco->ViscosidadeEfetivaTotal(), 0.25)) 
-               / (1396 * std::pow(DiametroAnular, 1.25));
+        return (std::pow(densidade, 0.75) * std::pow(VMedioAnular, 1.75) * std::pow(viscosidade, 0.25)) 
+               / (1396 * std::pow(diametroAnular, 1.25));
     }
 }

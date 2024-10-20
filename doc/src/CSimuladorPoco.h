@@ -22,17 +22,18 @@ public:
     // Menus principais
     void menuPerdaDeCarga();
     void menuPrincipal();
-    void menuConfigurarPoco();
+    void menuConfigurarSimulador();
 
     // Métodos auxiliares para configurar o poço e fluidos
     void configurarPoco();
-    void adicionarFluido();
+    void configurarFluido();
+    void configurarPorArquivo(const std::string& arquivo);
     void definirModeloReologico();
 
     // Métodos de simulação
     void simularPerdaDeCarga();
     void simularPressaoHidrostatica();
-    void exibirResultados() const;
+    void exibirPropriedades();
 
 };
 

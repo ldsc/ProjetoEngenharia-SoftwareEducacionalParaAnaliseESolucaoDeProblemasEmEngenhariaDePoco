@@ -1,0 +1,9 @@
+# Configuração do Poço------------------------------------------------------------------------------------
+# Profundidade (ft)    Pressão Superficial (psi)    Diâmetro (in)    OD (in)    ID (in)    Vazão (bbl/d)
+11483                   2175                        8.66             7.87         7.09          158
+
+# Configuração dos Fluidos--------------------------------------------------------------------------------
+# Nome       Densidade (lbm/gal)    Viscosidade (cP)    Prof. Inicial (ft)    Prof. Final (ft)
+Fluido_B        8.76                    1.8                 0                    3281
+Fluido_C        8.17                    2.1                 3281                 8202
+Fluido_D        9.17                    1.3                 8202                 11483

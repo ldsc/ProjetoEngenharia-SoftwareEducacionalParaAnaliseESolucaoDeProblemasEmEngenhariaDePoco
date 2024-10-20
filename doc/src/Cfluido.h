@@ -26,8 +26,6 @@ public:
     void Densidade(double Dens) { densidade = Dens; }
     void Viscosidade(double visc) { viscosidade = visc; }
 
-    //metodos
-    void ExibePropriedades();
 };
 
 #endif
