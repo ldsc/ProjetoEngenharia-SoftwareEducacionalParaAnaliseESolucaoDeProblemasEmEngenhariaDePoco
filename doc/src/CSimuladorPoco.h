@@ -36,6 +36,7 @@ public:
     void configurarFluido();
     void configurarPorArquivo(const std::string& arquivo);
     void definirModeloReologico();
+    void imprimirResultados();
 
     // Métodos de simulação
     void simularPerdaDeCarga();
