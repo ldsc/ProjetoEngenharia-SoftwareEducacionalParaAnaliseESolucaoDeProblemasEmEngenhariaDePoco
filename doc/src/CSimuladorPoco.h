@@ -4,6 +4,8 @@
 #include "CPoco.h"
 #include "CTrechoPoco.h"
 #include "CModeloNewtoniano.h"
+#include "CModeloBingham.h"
+#include "CModeloPotencia.h"
 #include <memory>
 #include <vector>
 
@@ -13,6 +15,9 @@ protected:
     std::unique_ptr<CTrechoPoco> trechoPoco;
     std::unique_ptr<CFluido> fluido;
     std::unique_ptr<CModeloNewtoniano> modeloNewtoniano;
+    std::unique_ptr<CModeloBingham> modeloBingham;
+    std::unique_ptr<CModeloPotencia> modeloPotencia;
+
 
 public:
     // Construtor e destrutor
@@ -20,9 +25,11 @@ public:
     ~CSimuladorPoco() {}
 
     // Menus principais
-    void menuPerdaDeCarga();
     void menuPrincipal();
     void menuConfigurarSimulador();
+    void menuPerdaDeCarga();
+    void menuModeloReologicos();
+    
 
     // Métodos auxiliares para configurar o poço e fluidos
     void configurarPoco();

@@ -1,4 +1,6 @@
 #include "CTrechoPoco.cpp"
 #include "Cpoco.cpp"
 #include "CModeloNewtoniano.cpp"
+#include "CModeloBingham.cpp"
+#include "CModeloPotencia.cpp"
 #include "CSimuladorPoco.cpp"

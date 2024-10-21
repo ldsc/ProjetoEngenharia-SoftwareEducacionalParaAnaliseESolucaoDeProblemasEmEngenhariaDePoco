@@ -295,10 +295,9 @@ void CSimuladorPoco::menuPerdaDeCarga() {
         desenharLinhaTexto("Menu de Perda de Carga");
         desenharBorda();
 
-        std::cout << "\n1. Verificar Fluxo no poco\n"
-                     "2. Calcular Perda de Friccao no poco\n"
-                     "3. Verificar Fluxo no Anular\n"
-                     "4. Calcular Perda de Friccao no Anular\n"
+        std::cout << "\n1. Verificar Regime Do Fluxo no poco\n"
+                     "2. Verificar Regime Do Fluxo no Anular\n"
+                     "3. Calcular Perda De Carga No Poco/Anular\n"
                      "0. Voltar\n";
         std::cout << "Escolha: ";
         std::cin >> escolha;
@@ -313,10 +312,70 @@ void CSimuladorPoco::menuPerdaDeCarga() {
                 std::cout << "\nPerda Friccional no poco: " << modeloNewtoniano->CalcularPerdaPorFriccaoPoco() << " psi/ft\n";
                 break;
             case 3:
-                std::cout << "\nTipo de Fluxo no Anular: " << modeloNewtoniano->DeterminarFluxoAnular() << "\n";
+                menuModeloReologicos();
                 break;
-            case 4:
+            case 0:
+                return; // Volta ao menu principal
+            default:
+                std::cout << "Opcao invalida! Tente novamente.\n";
+                break;
+        }
+
+        std::cout << "\nPressione Enter para continuar...";
+        std::cin.ignore().get(); // Pausa até pressionar Enter
+    }
+}
+
+void CSimuladorPoco::menuModeloReologicos() {
+    int escolha;
+
+    while (true) {
+        limparTela();
+        desenharBorda();
+        desenharLinhaTexto("Menu de Perda de Carga");
+        desenharBorda();
+
+        std::cout << "\n1. Calcular Perdas De Carga Pelo Modelo Newtoniano\n"
+                     "2. Calcular Perdas De Carga Pelo Modelo Plastico De Bingham\n"
+                     "3. Calcular Perdas De Carga Pelo Modelo De Potencia\n"
+                     "0. Voltar\n";
+        std::cout << "Escolha: ";
+        std::cin >> escolha;
+
+        auto modeloNewtoniano = std::make_unique<CModeloNewtoniano>(poco.get());
+        auto modeloBingham = std::make_unique<CModeloBingham>(poco.get());
+        auto modeloPotencia = std::make_unique<CModeloPotencia>(poco.get());
+
+        switch (escolha) {
+            case 1:
+                std::cout << "\nPerda Friccional no poco: " << modeloNewtoniano->CalcularPerdaPorFriccaoPoco() << " psi/ft";
                 std::cout << "\nPerda Friccional no Anular: " << modeloNewtoniano->CalcularPerdaPorFriccaoAnular() << " psi/ft\n";
+                break;
+            case 2:
+            double pontoDeEscoamento;
+
+            std::cout << "\nInforme o valor do pontoDeEscoamento [lbf/100 sq.ft]: ";
+            std::cin >> pontoDeEscoamento;
+            modeloBingham->PontoDeEscoamento(pontoDeEscoamento);
+
+            std::cout << "\nPerda Friccional no poco: " << modeloBingham->CalcularPerdaPorFriccaoPoco() << " psi/ft";
+            std::cout << "\nPerda Friccional no Anular: " << modeloBingham->CalcularPerdaPorFriccaoAnular() << " psi/ft\n";
+                break;
+            case 3:
+            double indiceDeConsistencia, indiceDeComportamento, friccao;
+
+            std::cout << "\nInforme o valor do indice de consistencia [Cp eq]: ";
+            std::cin >> indiceDeConsistencia;
+            std::cout << "\nInforme o valor do indice de comportamento: ";
+            std::cin >> pontoDeEscoamento;
+            std::cout << "\nInforme o valor da friccao [lbf/100 sq.ft]: ";
+            std::cin >> friccao;
+            modeloPotencia->IndiceDeComportamento(indiceDeComportamento);
+            modeloPotencia->IndiceDeConsistencia(indiceDeConsistencia);
+            modeloPotencia->Friccao(friccao);
+
+            std::cout << "\nPerda Friccional no poco: " << modeloPotencia->CalcularPerdaPorFriccaoPoco() << " psi/ft";
+            std::cout << "\nPerda Friccional no Anular: " << modeloPotencia->CalcularPerdaPorFriccaoAnular() << " psi/ft\n";
                 break;
             case 0:
                 return; // Volta ao menu principal
