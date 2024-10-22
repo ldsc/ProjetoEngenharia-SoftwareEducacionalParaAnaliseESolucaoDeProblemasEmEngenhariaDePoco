@@ -1,0 +1,33 @@
+# Nome do compilador
+CXX = g++
+
+CXXFLAGS = -Wall -std=c++23 -O2
+
+# Diretório de saída
+OUT_DIR = ../test
+
+# Nome do executável
+TARGET = $(OUT_DIR)/SoftwarePoco
+
+SRC = Auxiliar.cpp \
+	  CFluido.cpp \
+      CPoco.cpp \
+      CTrechoPoco.cpp \
+      CModeloReologico.cpp \
+      CModeloBingham.cpp \
+      CModeloNewtoniano.cpp \
+      CModeloPotencia.cpp \
+      CSimuladorPoco.cpp \
+	  main.cpp
+
+OBJ = $(SRC:.cpp=.o)
+
+$(TARGET): $(OBJ)
+	mkdir -p $(OUT_DIR)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJ)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJ) $(TARGET)

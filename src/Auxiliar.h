@@ -1,5 +1,5 @@
 #include <iostream>
-#include <iomanip> 
+#include <iomanip>
 
 
 // Funcao para limpar a tela (compatível com Windows e Linux)
@@ -18,8 +18,8 @@ void desenharBorda() {
 
 
 void desenharLinhaTexto(const std::string& texto) {
-    int largura = 65; 
-    int espacos = (largura - texto.size() - 2) / 2; 
+    int largura = 65;
+    int espacos = (largura - texto.size() - 2) / 2;
 
     std::string textoParaExibir;
     if (texto.size() > static_cast<std::string::size_type>(largura - 2)) {
@@ -28,15 +28,15 @@ void desenharLinhaTexto(const std::string& texto) {
         textoParaExibir = texto;
     }
 
-    std::cout << "#"; 
-    std::cout << std::setw(espacos) << ""; 
+    std::cout << "#";
+    std::cout << std::setw(espacos) << "";
     std::cout << textoParaExibir; // Texto centralizado
-    std::cout << std::setw(largura - textoParaExibir.size() - espacos - 1) << ""; 
+    std::cout << std::setw(largura - textoParaExibir.size() - espacos - 1) << "";
     std::cout << "#\n";
 }
 
 void desenharAviso(const std::string& aviso) {
-    int largura = 65; 
+    int largura = 65;
     std::string avisoParaExibir;
 
     if (aviso.size() > static_cast<std::string::size_type>(largura - 2)) {
@@ -45,7 +45,7 @@ void desenharAviso(const std::string& aviso) {
         avisoParaExibir = aviso;
     }
 
-    std::cout << "# [AVISO] "; 
+    std::cout << "# [AVISO] ";
     std::cout << avisoParaExibir; // Texto do aviso
     std::cout << std::setw(largura - avisoParaExibir.size() - 10) << ""; // Ajusta o espaço restante
     std::cout << "#\n";
