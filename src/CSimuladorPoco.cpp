@@ -274,7 +274,7 @@ void CSimuladorPoco::menuConfigurarSimulador() {
                 break;
 
             case 3:
-                configurarPorArquivo("../ArquivoPoco.dat");
+                configurarPorArquivo("ArquivoPoco.dat");
                 break;
             }
             case 0:
@@ -361,12 +361,12 @@ void CSimuladorPoco::menuModeloReologicos() {
             std::cout << "\nInforme o valor do pontoDeEscoamento [lbf/100 sq.ft]: ";
             std::cin >> pontoDeEscoamento;
             modeloBingham->PontoDeEscoamento(pontoDeEscoamento);
-
+            
             std::cout << "\nPerda Friccional no poco: " << modeloBingham->CalcularPerdaPorFriccaoPoco() << " psi/ft";
             std::cout << "\nPerda Friccional no Anular: " << modeloBingham->CalcularPerdaPorFriccaoAnular() << " psi/ft\n";
                 break;
             case 3:
-            double indiceDeConsistencia, indiceDeComportamento, friccao;
+            double indiceDeConsistencia;
 
             std::cout << "\nInforme o valor do indice de consistencia [Cp eq]: ";
             std::cin >> indiceDeConsistencia;

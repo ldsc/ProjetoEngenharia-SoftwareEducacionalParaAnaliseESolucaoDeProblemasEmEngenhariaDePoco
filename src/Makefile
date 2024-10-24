@@ -1,13 +1,15 @@
 # Nome do compilador
 CXX = g++
 
+# Flags do compilador
 CXXFLAGS = -Wall -std=c++17 -O2
 
 # Diretório de saída
-OUT_DIR = output
+OUT_DIR = ..\test
 
-# Nome do executável
-TARGET = $(OUT_DIR)/SoftwarePoco
+# Nome do executável (adiciona extensão .exe no Windows)
+TARGET = $(OUT_DIR)/SoftwarePoco$(EXE)
+
 
 SRC = main.cpp \
       CAuxiliar.cpp \
@@ -21,15 +23,18 @@ SRC = main.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
-# Regra principal para gerar o executável
+EXE = .exe
+RM = del
+RMFLAGS = /Q
+RMCMD = FOR %i IN (*.o) DO $(RM) $(RMFLAGS) %i
+
+
 $(TARGET): $(OBJ)
-	mkdir -p $(OUT_DIR)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJ)
 
-# Regra para gerar arquivos .o a partir de .cpp
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Regra de limpeza manual (mantém o diretório limpo após build)
 clean:
-	rm -f $(OBJ) $(TARGET)
+	$(RMCMD)
+	$(RM) $(RMFLAGS) $(TARGET)
