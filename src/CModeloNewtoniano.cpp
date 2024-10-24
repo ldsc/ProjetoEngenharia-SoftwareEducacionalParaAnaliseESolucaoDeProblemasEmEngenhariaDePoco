@@ -10,9 +10,9 @@ std::string CModeloNewtoniano::DeterminarFluxoPoco() {
     double viscosidade = poco->ViscosidadeEfetivaTotal();
 
     double VMedioPoco = vazao / (2.448 * std::pow(diametroRevestimentoID, 2)); // Cálculo da velocidade média
-    double Reynolds = (928 * densidade * VMedioPoco * diametroRevestimentoID) / viscosidade; // Cálculo de Reynolds
+    reynoldsPoco = (928 * densidade * VMedioPoco * diametroRevestimentoID) / viscosidade; // Cálculo de Reynolds
 
-    fluxoPoco = (Reynolds <= 2100) ? "Laminar" : "Turbulento"; // Determinação do fluxo
+    fluxoPoco = (reynoldsPoco <= 2100) ? "Laminar" : "Turbulento"; // Determinação do fluxo
     return fluxoPoco;
 }
 
@@ -24,15 +24,15 @@ std::string CModeloNewtoniano::DeterminarFluxoAnular() {
     double viscosidade = poco->ViscosidadeEfetivaTotal();
 
     double VMedioAnular = vazao / (2.448 * (std::pow(poco->DiametroPoco(), 2) - std::pow(poco->DiametroRevestimentoOD(), 2))); // Cálculo da velocidade média
-    double Reynolds = (757 * densidade * VMedioAnular * diametroAnular) / viscosidade; // Cálculo de Reynolds
+    reynoldsAnular = (757 * densidade * VMedioAnular * diametroAnular) / viscosidade; // Cálculo de Reynolds
 
-    fluxoAnular = (Reynolds <= 2100) ? "Laminar" : "Turbulento"; // Determinação do fluxo
+    fluxoAnular = (reynoldsAnular <= 2100) ? "Laminar" : "Turbulento"; // Determinação do fluxo
     return fluxoAnular;
 }
 
 // Função para calcular a perda de carga por fricção no poço
 double CModeloNewtoniano::CalcularPerdaPorFriccaoPoco() {
-    if (fluxoPoco == "") {
+    if (fluxoPoco.empty()) {
         DeterminarFluxoPoco();
     }
 
@@ -40,20 +40,19 @@ double CModeloNewtoniano::CalcularPerdaPorFriccaoPoco() {
     double vazao = poco->Vazao();
     double viscosidade = poco->ViscosidadeEfetivaTotal();
     double densidade = poco->DensidadeEfetivaTotal();
-
+    fatorFriccao = DeterminarFatorFriccao(reynoldsPoco, 1.0);
     double VMedioPoco = vazao / (2.448 * std::pow(diametroRevestimentoID, 2)); // Cálculo da velocidade média
 
     if (fluxoPoco == "Laminar") {
         return (viscosidade * VMedioPoco) / (1500 * std::pow(diametroRevestimentoID, 2));
     } else {  // Fluxo turbulento
-        return (std::pow(densidade, 0.75) * std::pow(VMedioPoco, 1.75) * std::pow(viscosidade, 0.25)) 
-               / (1800 * std::pow(diametroRevestimentoID, 1.25));
+        return (fatorFriccao * densidade * std::pow(VMedioPoco, 2) ) / (25.8 * diametroRevestimentoID);
     }
 }
 
 // Função para calcular a perda de carga por fricção no espaço anular
 double CModeloNewtoniano::CalcularPerdaPorFriccaoAnular() {
-    if (fluxoAnular == "") {
+    if (fluxoAnular.empty()) {
         DeterminarFluxoAnular();
     }
 
@@ -61,13 +60,13 @@ double CModeloNewtoniano::CalcularPerdaPorFriccaoAnular() {
     double vazao = poco->Vazao();
     double viscosidade = poco->ViscosidadeEfetivaTotal();
     double densidade = poco->DensidadeEfetivaTotal();
+    fatorFriccao = DeterminarFatorFriccao(reynoldsAnular, 1.0);
 
     double VMedioAnular = vazao / (2.448 * (std::pow(poco->DiametroPoco(), 2) - std::pow(poco->DiametroRevestimentoOD(), 2))); // Cálculo da velocidade média
 
     if (fluxoAnular == "Laminar") {
         return (viscosidade * VMedioAnular) / (1000 * std::pow(diametroAnular, 2));
     } else {  // Fluxo turbulento
-        return (std::pow(densidade, 0.75) * std::pow(VMedioAnular, 1.75) * std::pow(viscosidade, 0.25)) 
-               / (1396 * std::pow(diametroAnular, 1.25));
+        return (fatorFriccao * densidade * std::pow(VMedioAnular, 2) ) / (21.1 * diametroAnular);
     }
 }

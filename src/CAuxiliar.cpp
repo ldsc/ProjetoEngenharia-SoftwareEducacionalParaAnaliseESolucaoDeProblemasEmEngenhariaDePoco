@@ -1,9 +1,7 @@
-#include <iostream>
-#include <iomanip>
-
+#include "CAuxiliar.h"
 
 // Funcao para limpar a tela (compatível com Windows e Linux)
-void limparTela() {
+void CAuxiliar::limparTela() {
     #ifdef _WIN32
         system("cls");
     #else
@@ -12,12 +10,12 @@ void limparTela() {
 }
 
 // Funcao para desenhar bordas de um menu quadrado
-void desenharBorda() {
+void CAuxiliar::desenharBorda() {
     std::cout << "###################################################################\n";
 }
 
 
-void desenharLinhaTexto(const std::string& texto) {
+void CAuxiliar::desenharLinhaTexto(const std::string& texto) {
     int largura = 65;
     int espacos = (largura - texto.size() - 2) / 2;
 
@@ -35,7 +33,7 @@ void desenharLinhaTexto(const std::string& texto) {
     std::cout << "#\n";
 }
 
-void desenharAviso(const std::string& aviso) {
+void CAuxiliar::desenharAviso(const std::string& aviso) {
     int largura = 65;
     std::string avisoParaExibir;
 
@@ -52,7 +50,7 @@ void desenharAviso(const std::string& aviso) {
 }
 
 // Funcao para o cabeçalho
-void cabecalho() {
+void CAuxiliar::cabecalho() {
     limparTela();
     desenharBorda();
     desenharLinhaTexto("");

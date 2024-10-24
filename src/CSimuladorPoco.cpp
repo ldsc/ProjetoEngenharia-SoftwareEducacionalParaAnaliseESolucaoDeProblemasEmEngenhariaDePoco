@@ -5,8 +5,10 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-#include "CDraw.cpp"
+#include "CAuxiliar.h"
 #include "CSimuladorPoco.h"
+
+auto auxiliar = std::make_unique<CAuxiliar>();
 
 void CSimuladorPoco::exibirPropriedades() {
         // Exibir propriedades do poço
@@ -177,18 +179,18 @@ void CSimuladorPoco::menuPrincipal() {
     while (true) {
         int escolha;
 
-        limparTela();
-        desenharBorda();
-        desenharLinhaTexto("   Menu Principal   ");
-        desenharBorda();
+        auxiliar->limparTela();
+        auxiliar->desenharBorda();
+        auxiliar->desenharLinhaTexto("   Menu Principal   ");
+        auxiliar->desenharBorda();
 
         bool pocoConfigurado = (poco != nullptr);
 
         std::cout << "\n1. Configurar Poco\n"
                   << (pocoConfigurado ? "2. Exibir Propriedades do Poco\n"
                                       : "2. [X] Exibir Propriedades do Poco\n")
-                  << (pocoConfigurado ? "3. Calcular Pressao Hidrostatica e Densidade no Poco\n"
-                                      : "3. [X] Calcular Pressao Hidrostatica e Densidade no Poco\n")
+                  << (pocoConfigurado ? "3. Calcular Pressao Hidrostatica, Densidade no Poco e Viscosidade\n"
+                                      : "3. [X] Calcular Pressao Hidrostatica, Densidade no Poco e Viscosidade\n")
                   << (pocoConfigurado ? "4. Plotar Perfil Profundidade vs Densidade\n"
                                       : "4. [X] Plotar Perfil Profundidade vs Densidade\n")
                   << (pocoConfigurado ? "5. Calcular Perda de Carga por Friccao\n"
@@ -222,6 +224,7 @@ void CSimuladorPoco::menuPrincipal() {
                         case 3:
                             std::cout << "\nPressao Hidrostatica Total: " << poco->PressaoHidroestaticaTotal() << " psi\n";
                             std::cout << "Densidade Media: " << poco->DensidadeEfetivaTotal() << " lb/ga\n";
+                            std::cout << "Viscosidade Media: " << poco->ViscosidadeEfetivaTotal() << " cP\n";
                             break;
 
                         case 4:
@@ -247,10 +250,10 @@ void CSimuladorPoco::menuConfigurarSimulador() {
     int escolha;
 
     while (true) {
-        limparTela();
-        desenharBorda();
-        desenharLinhaTexto("Configurar Poco");
-        desenharBorda();
+        auxiliar->limparTela();
+        auxiliar->desenharBorda();
+        auxiliar->desenharLinhaTexto("Configurar Poco");
+        auxiliar->desenharBorda();
 
         std::cout << "\n1. Criar Poco\n"
                      "2. Adicionar Fluido\n"
@@ -266,7 +269,7 @@ void CSimuladorPoco::menuConfigurarSimulador() {
             }
 
             case 2: {
-                desenharAviso("Voce pode adicionar multiplos fluidos");
+                auxiliar->desenharAviso("Voce pode adicionar multiplos fluidos");
                 configurarFluido();
                 break;
 
@@ -290,10 +293,10 @@ void CSimuladorPoco::menuPerdaDeCarga() {
     int escolha;
 
     while (true) {
-        limparTela();
-        desenharBorda();
-        desenharLinhaTexto("Menu de Perda de Carga");
-        desenharBorda();
+        auxiliar->limparTela();
+        auxiliar->desenharBorda();
+        auxiliar->desenharLinhaTexto("Menu de Perda de Carga");
+        auxiliar->desenharBorda();
 
         std::cout << "\n1. Verificar Regime Do Fluxo no poco\n"
                      "2. Verificar Regime Do Fluxo no Anular\n"
@@ -307,9 +310,10 @@ void CSimuladorPoco::menuPerdaDeCarga() {
         switch (escolha) {
             case 1:
                 std::cout << "\nTipo de Fluxo no poco: " << modeloNewtoniano->DeterminarFluxoPoco() << "\n";
+                
                 break;
             case 2:
-                std::cout << "\nPerda Friccional no poco: " << modeloNewtoniano->CalcularPerdaPorFriccaoPoco() << " psi/ft\n";
+                std::cout << "\nTipo de Fluxo no anular: " << modeloNewtoniano->DeterminarFluxoAnular() << "\n";
                 break;
             case 3:
                 menuModeloReologicos();
@@ -330,10 +334,10 @@ void CSimuladorPoco::menuModeloReologicos() {
     int escolha;
 
     while (true) {
-        limparTela();
-        desenharBorda();
-        desenharLinhaTexto("Menu de Perda de Carga");
-        desenharBorda();
+        auxiliar->limparTela();
+        auxiliar->desenharBorda();
+        auxiliar->desenharLinhaTexto("Menu de Perda de Carga");
+        auxiliar->desenharBorda();
 
         std::cout << "\n1. Calcular Perdas De Carga Pelo Modelo Newtoniano\n"
                      "2. Calcular Perdas De Carga Pelo Modelo Plastico De Bingham\n"
@@ -366,13 +370,7 @@ void CSimuladorPoco::menuModeloReologicos() {
 
             std::cout << "\nInforme o valor do indice de consistencia [Cp eq]: ";
             std::cin >> indiceDeConsistencia;
-            std::cout << "\nInforme o valor do indice de comportamento: ";
-            std::cin >> pontoDeEscoamento;
-            std::cout << "\nInforme o valor da friccao [lbf/100 sq.ft]: ";
-            std::cin >> friccao;
-            modeloPotencia->IndiceDeComportamento(indiceDeComportamento);
             modeloPotencia->IndiceDeConsistencia(indiceDeConsistencia);
-            modeloPotencia->Friccao(friccao);
 
             std::cout << "\nPerda Friccional no poco: " << modeloPotencia->CalcularPerdaPorFriccaoPoco() << " psi/ft";
             std::cout << "\nPerda Friccional no Anular: " << modeloPotencia->CalcularPerdaPorFriccaoAnular() << " psi/ft\n";

@@ -4,11 +4,7 @@
 #include "CModeloReologico.h"
 
 
-class CModeloNewtoniano : public CModeloReologico {
-
-protected:
-    std::string fluxoPoco = ""; 
-    std::string fluxoAnular = "";  
+class CModeloNewtoniano : public CModeloReologico { 
 
 public:
     //Construtor
@@ -17,6 +13,8 @@ public:
     CModeloNewtoniano(CPoco* poco) : CModeloReologico(poco){}
 
     // Getters
+    double ReynoldsPoco() const { return reynoldsPoco; }
+    double ReynoldsAnular() const { return reynoldsAnular; }
     std::string FluxoPoco() const { return fluxoPoco; }
     std::string ProfundidadeOcupada() const { return fluxoAnular; }
     

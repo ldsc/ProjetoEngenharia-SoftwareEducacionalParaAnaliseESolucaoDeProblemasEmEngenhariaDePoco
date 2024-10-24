@@ -1,10 +1,12 @@
-#include "arquivos.cpp"
+#include "CAuxiliar.h"
+#include "CSimuladorPoco.h"
 
 int main() {
-
+    
+    CAuxiliar cabecalho;
     CSimuladorPoco simulador;
 
-    cabecalho();
+    cabecalho.cabecalho();
     simulador.menuPrincipal();
 
 

@@ -8,8 +8,6 @@ class CModeloBingham : public CModeloReologico {
 
 protected:
     double pontoDeEscoamento;
-    std::string fluxoPoco = ""; 
-    std::string fluxoAnular = "";  
 
 public:
     //Construtor
@@ -27,6 +25,7 @@ public:
     void ProfundidadeTotal( double FloxoA ) { fluxoAnular = FloxoA; }
     
     //Métodos
+    double DeterminarReynoldsCritico(double hedstron);
     double PontoDeEscoamento() const { return pontoDeEscoamento; }
     std::string DeterminarFluxoPoco() override;
     std::string DeterminarFluxoAnular() override;

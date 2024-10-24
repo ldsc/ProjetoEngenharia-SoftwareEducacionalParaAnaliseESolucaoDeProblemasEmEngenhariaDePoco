@@ -32,14 +32,14 @@ std::string CModeloPotencia::DeterminarFluxoAnular() {
 
 // Função para calcular a perda de carga por fricção no poço
 double CModeloPotencia::CalcularPerdaPorFriccaoPoco() {
-    if (fluxoPoco == "") {
+    if (fluxoPoco.empty()) {
         DeterminarFluxoPoco();
     }
 
     double diametroRevestimentoID = poco->DiametroRevestimentoID();
     double vazao = poco->Vazao();
-    double viscosidade = poco->ViscosidadeEfetivaTotal();
     double densidade = poco->DensidadeEfetivaTotal();
+    fatorFriccao = DeterminarFatorFriccao(reynoldsPoco, 1.0);
 
     double VMedioPoco = vazao / (2.448 * std::pow(diametroRevestimentoID, 2)); // Cálculo da velocidade média
 
@@ -47,20 +47,20 @@ double CModeloPotencia::CalcularPerdaPorFriccaoPoco() {
         return ((indiceDeConsistencia * std::pow(VMedioPoco, -indiceDeComportamento)) * std::pow(( (3+(1/indiceDeComportamento) ) / 0.0416), indiceDeComportamento)) 
         / (144000 * std::pow(diametroRevestimentoID, (1+indiceDeComportamento)));
     } else {  // Fluxo turbulento
-        return (friccao * densidade * std::pow(VMedioPoco, 2)) / (25.8 * diametroRevestimentoID);
+        return (fatorFriccao * densidade * std::pow(VMedioPoco, 2) ) / (25.8 * diametroRevestimentoID);
     }
 }
 
 // Função para calcular a perda de carga por fricção no espaço anular
 double CModeloPotencia::CalcularPerdaPorFriccaoAnular() {
-    if (fluxoAnular == "") {
+    if (fluxoAnular.empty()) {
         DeterminarFluxoAnular();
     }
 
     double diametroAnular = poco->DiametroPoco() - poco->DiametroRevestimentoOD();
     double vazao = poco->Vazao();
-    double viscosidade = poco->ViscosidadeEfetivaTotal();
     double densidade = poco->DensidadeEfetivaTotal();
+    fatorFriccao = DeterminarFatorFriccao(reynoldsPoco, 1.0);
 
     double VMedioAnular = vazao / (2.448 * (std::pow(poco->DiametroPoco(), 2) - std::pow(poco->DiametroRevestimentoOD(), 2))); // Cálculo da velocidade média
 
@@ -68,6 +68,6 @@ double CModeloPotencia::CalcularPerdaPorFriccaoAnular() {
         return ((indiceDeConsistencia * std::pow(VMedioAnular, -indiceDeComportamento)) * std::pow(( (2+(1/indiceDeComportamento) ) / 0.0208), indiceDeComportamento)) 
         / (144000 * std::pow(diametroAnular, (1+indiceDeComportamento)));
     } else {  // Fluxo turbulento
-        return (friccao * densidade * std::pow(VMedioAnular, 2)) / (21.1 * diametroAnular);
+        return (fatorFriccao * densidade * std::pow(VMedioAnular, 2) ) / (21.1 * diametroAnular);
     }
 }

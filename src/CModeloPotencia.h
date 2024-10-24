@@ -9,9 +9,6 @@ class CModeloPotencia : public CModeloReologico {
 protected:
     double indiceDeConsistencia;
     double indiceDeComportamento;
-    double friccao;
-    std::string fluxoPoco = ""; 
-    std::string fluxoAnular = "";  
 
 public:
     //Construtor
@@ -22,7 +19,6 @@ public:
     // Getters
     double IndiceDeConsistencia() const { return indiceDeConsistencia; }
     double IndiceDeComportamento() const { return indiceDeComportamento; }
-    double Friccao() const { return friccao; }
     std::string FluxoPoco() const { return fluxoPoco; }
     std::string FluxoAnular() const { return fluxoAnular; }
     
@@ -30,11 +26,11 @@ public:
     // Setters
     void IndiceDeConsistencia( double IndiceC ) { indiceDeConsistencia = IndiceC; }
     void IndiceDeComportamento( double IndiceC ) { indiceDeComportamento = IndiceC; }
-    void Friccao( double Fricc ) { friccao = Fricc; }
     void FluxoPoco( double FluxoP ) { fluxoPoco = FluxoP; }
     void ProfundidadeTotal( double FloxoA ) { fluxoAnular = FloxoA; }
     
     //Métodos
+    double DeterminarReynoldsCritico(double hedstron);
     std::string DeterminarFluxoPoco() override;
     std::string DeterminarFluxoAnular() override;
     double CalcularPerdaPorFriccaoPoco() override;
