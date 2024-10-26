@@ -4,7 +4,28 @@
 
 #include "CModeloReologico.h"
 
-double CModeloReologico::DeterminarFatorFriccao(double re, double n) {
+double CModeloReologico::DeterminarReynoldsPoco(double densidade, double VMedioPoco, double diametroRevestimentoID, double viscosidade) {
+    reynoldsPoco = (928 * densidade * VMedioPoco * diametroRevestimentoID) / viscosidade;
+    return reynoldsPoco;
+}
+
+double CModeloReologico::DeterminarReynoldsAnular(double densidade, double VMedioAnular, double diametroAnular, double viscosidade){
+    reynoldsAnular = (757 * densidade * VMedioAnular * diametroAnular) / viscosidade;
+    return reynoldsAnular;
+}
+
+double CModeloReologico::DeterminarVelocidadeMediaPoco(double vazao, double diametroRevestimentoID){
+    vMediaPoco = vazao / (2.448 * std::pow(diametroRevestimentoID, 2));
+    return vMediaPoco;
+}
+
+double CModeloReologico::DeterminarVelocidadeMediaAnular(double vazao, double diametroPoco, double diametroRevestimentoOD){
+    vMediaAnular = vazao / (2.448 * (std::pow(diametroPoco, 2) - std::pow(diametroRevestimentoOD, 2)));
+    return vMediaAnular;
+}
+
+
+double CModeloReologico::DeterminarFatorFriccao(double re) {
     // Função auxiliar para o cálculo do fator laminar (este não está sendo usado, mas se precisar, pode ser ativado)
     auto laminar_fator = [](double re) {
         return 0.0791 / std::pow(re, 0.25);
@@ -21,7 +42,7 @@ double CModeloReologico::DeterminarFatorFriccao(double re, double n) {
     };
 
     // Método de Newton-Raphson para resolver f(x) = 0
-    auto newtonRaphson = [&](double x0, double tol = 1e-6, int max_iter = 1000) {
+    auto newtonRaphson = [&](double x0, double tol = 1e-6, int max_iter = 1000000) {
         double x = x0;
         for (int i = 0; i < max_iter; i++) {
             double fx = f(x);
@@ -31,7 +52,6 @@ double CModeloReologico::DeterminarFatorFriccao(double re, double n) {
             }
             x -= fx / dfx;
         }
-        std::cerr << "Solução não encontrada após " << max_iter << " iterações." << std::endl;
         return x;
     };
 

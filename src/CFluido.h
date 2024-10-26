@@ -6,14 +6,14 @@
 class CFluido {
 protected:
     std::string nome;
-    double densidade;
-    double viscosidade;
+    double densidade = 0.0;
+    double viscosidade = 0.0;
 
 public:
     // Construtor
     CFluido() {}
     ~CFluido() {}
-    CFluido(std::string nome, double Dens, double visc = 0)
+    CFluido(std::string nome, double Dens, double visc)
     : nome(nome), densidade(Dens), viscosidade(visc) {}
 
     // Getters

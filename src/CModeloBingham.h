@@ -1,5 +1,5 @@
-#ifndef CMODELOPOTENCIA_H
-#define CMODELOPOTENCIA_H
+#ifndef CMODELOBINGHAM_H
+#define CMODELOBINGHAM_H
 
 #include "CModeloReologico.h"
 
@@ -7,7 +7,12 @@
 class CModeloBingham : public CModeloReologico {
 
 protected:
-    double pontoDeEscoamento;
+    double viscosidadePlastica = 0.0;
+    double pontoDeEscoamento = 0.0;
+    double reynoldsCriticoPoco = 0.0;
+    double reynoldsCriticoAnular = 0.0;
+    double reynoldsHedstronPoco = 0.0;
+    double reynoldsHedstronAnular = 0.0;
 
 public:
     //Construtor
@@ -16,17 +21,20 @@ public:
     CModeloBingham(CPoco* poco) : CModeloReologico(poco){}
 
     // Getters
-    std::string FluxoPoco() const { return fluxoPoco; }
-    std::string ProfundidadeOcupada() const { return fluxoAnular; }
+    double PontoDeEscoamento() const { return pontoDeEscoamento; }
+    double ReynoldsCriticoPoco() const { return reynoldsCriticoPoco; }
+    double ReynoldsCriticoAnular() const { return reynoldsCriticoAnular; }
+    double ReynoldsHedstronPoco() const { return reynoldsHedstronPoco; }
+    double ReynoldsHedstronAnular() const { return reynoldsHedstronAnular; }
     
     // Setters
     void PontoDeEscoamento( double PontoE ) { pontoDeEscoamento = PontoE; }
-    void FluxoPoco( double FluxoP ) { fluxoPoco = FluxoP; }
-    void ProfundidadeTotal( double FloxoA ) { fluxoAnular = FloxoA; }
+    void ViscosidadePlastica( double ViscosidadeP ) { viscosidadePlastica = ViscosidadeP; }
     
     //Métodos
     double DeterminarReynoldsCritico(double hedstron);
-    double PontoDeEscoamento() const { return pontoDeEscoamento; }
+    double DeterminarReynoldsHedstronPoco(double densidade, double pontoDeEscoamento, double diametroRevestimentoID, double viscosidade);
+    double DeterminarReynoldsHedstronAnular(double densidade, double pontoDeEscoamento, double diametroAnular, double viscosidade);
     std::string DeterminarFluxoPoco() override;
     std::string DeterminarFluxoAnular() override;
     double CalcularPerdaPorFriccaoPoco() override;

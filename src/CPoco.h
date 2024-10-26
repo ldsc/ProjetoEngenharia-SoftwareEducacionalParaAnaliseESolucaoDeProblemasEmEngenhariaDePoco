@@ -8,20 +8,20 @@
 
 class CPoco {
 protected:
-    double profundidadeFinal;
+    double profundidadeFinal = 0.0;
     double profundidadeOcupada = 0;
-    double pressaoSuperficie;
-    double diametroPoco;
-    double diametroRevestimentoOD;
-    double diametroRevestimentoID;
-    double vazao;
+    double pressaoSuperficie = 0.0;
+    double diametroPoco = 0.0;
+    double diametroRevestimentoOD = 0.0;
+    double diametroRevestimentoID = 0.0;
+    double vazao = 0.0;
     std::vector<std::unique_ptr<CTrechoPoco>> trechos;
 
 public:
     //construtor
     CPoco() {}
     ~CPoco() {}
-    CPoco(double Profund, double PressaoSup, double D = 1, double OD= 1, double ID= 1, double q = 1)
+    CPoco(double Profund, double PressaoSup, double D , double OD, double ID, double q)
     : profundidadeFinal(Profund), pressaoSuperficie(PressaoSup), diametroPoco(D), diametroRevestimentoOD(OD), diametroRevestimentoID(ID), vazao(q) {}
 
     // Getters

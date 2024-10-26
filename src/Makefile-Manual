@@ -1,10 +1,13 @@
 # Nome do compilador
 CXX = g++
 
-CXXFLAGS = -Wall -std=c++23 -O2
+# Flags do compilador
+CXXFLAGS = -Wall -std=c++17 -O2
 
 # Diretório de saída
-OUT_DIR = ../test
+OUT_DIR = ..\test
+
+TARGET = $(OUT_DIR)/SoftwarePoco$(EXE)
 
 # Nome do executável
 TARGET = $(OUT_DIR)/SoftwarePoco

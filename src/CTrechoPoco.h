@@ -7,8 +7,8 @@
 
 class CTrechoPoco {
 protected:
-    double profundidadeInicial;
-    double profundidadeFinal;
+    double profundidadeInicial = 0.0;
+    double profundidadeFinal = 0.0;
     std::unique_ptr<CFluido> fluido;
 
 public:

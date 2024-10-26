@@ -1,5 +1,5 @@
-#ifndef CMODELOBINGHAM_H
-#define CMODELOBINGHAM_H
+#ifndef CMODELOPOTENCIA_H
+#define CMODELOPOTENCIA_H
 
 #include "CModeloReologico.h"
 
@@ -7,8 +7,8 @@
 class CModeloPotencia : public CModeloReologico {
 
 protected:
-    double indiceDeConsistencia;
-    double indiceDeComportamento;
+    double indiceDeConsistencia = 0.0;
+    double indiceDeComportamento = 1.0;
 
 public:
     //Construtor

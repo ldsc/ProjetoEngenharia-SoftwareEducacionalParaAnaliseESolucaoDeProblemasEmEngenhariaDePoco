@@ -28,7 +28,8 @@ public:
     void menuPrincipal();
     void menuConfigurarSimulador();
     void menuPerdaDeCarga();
-    void menuModeloReologicos();
+    void menuModeloNewtoniano();
+    void menuModeloBingham();
     
 
     // Métodos auxiliares para configurar o poço e fluidos

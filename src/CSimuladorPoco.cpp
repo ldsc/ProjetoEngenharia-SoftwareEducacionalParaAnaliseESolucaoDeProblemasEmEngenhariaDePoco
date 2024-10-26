@@ -298,25 +298,23 @@ void CSimuladorPoco::menuPerdaDeCarga() {
         auxiliar->desenharLinhaTexto("Menu de Perda de Carga");
         auxiliar->desenharBorda();
 
-        std::cout << "\n1. Verificar Regime Do Fluxo no poco\n"
-                     "2. Verificar Regime Do Fluxo no Anular\n"
+        std::cout << "\n1. Modelo Newtoniano\n"
+                     "2. Modelo Bingham\n"
                      "3. Calcular Perda De Carga No Poco/Anular\n"
                      "0. Voltar\n";
         std::cout << "Escolha: ";
         std::cin >> escolha;
 
-        auto modeloNewtoniano = std::make_unique<CModeloNewtoniano>(poco.get());
-
         switch (escolha) {
             case 1:
-                std::cout << "\nTipo de Fluxo no poco: " << modeloNewtoniano->DeterminarFluxoPoco() << "\n";
-                
+                menuModeloNewtoniano();
                 break;
+                
             case 2:
-                std::cout << "\nTipo de Fluxo no anular: " << modeloNewtoniano->DeterminarFluxoAnular() << "\n";
+                menuModeloBingham();
                 break;
             case 3:
-                menuModeloReologicos();
+
                 break;
             case 0:
                 return; // Volta ao menu principal
@@ -330,50 +328,136 @@ void CSimuladorPoco::menuPerdaDeCarga() {
     }
 }
 
-void CSimuladorPoco::menuModeloReologicos() {
+void CSimuladorPoco::menuModeloNewtoniano() {
     int escolha;
 
     while (true) {
         auxiliar->limparTela();
         auxiliar->desenharBorda();
-        auxiliar->desenharLinhaTexto("Menu de Perda de Carga");
+        auxiliar->desenharLinhaTexto("Menu de Perda de Carga - Newtoniano");
         auxiliar->desenharBorda();
 
-        std::cout << "\n1. Calcular Perdas De Carga Pelo Modelo Newtoniano\n"
-                     "2. Calcular Perdas De Carga Pelo Modelo Plastico De Bingham\n"
-                     "3. Calcular Perdas De Carga Pelo Modelo De Potencia\n"
+        std::cout << "\n1. Determinar Perda de Carga no Poco\n"
+                     "2. Determinar Perda de Carga no Anular\n"
                      "0. Voltar\n";
         std::cout << "Escolha: ";
         std::cin >> escolha;
 
-        auto modeloNewtoniano = std::make_unique<CModeloNewtoniano>(poco.get());
-        auto modeloBingham = std::make_unique<CModeloBingham>(poco.get());
-        auto modeloPotencia = std::make_unique<CModeloPotencia>(poco.get());
+        modeloNewtoniano = std::make_unique<CModeloNewtoniano>(poco.get());
 
         switch (escolha) {
             case 1:
-                std::cout << "\nPerda Friccional no poco: " << modeloNewtoniano->CalcularPerdaPorFriccaoPoco() << " psi/ft";
-                std::cout << "\nPerda Friccional no Anular: " << modeloNewtoniano->CalcularPerdaPorFriccaoAnular() << " psi/ft\n";
+                std::cout << "\nVelocidade no Poco: " << modeloNewtoniano->VMediaPoco() << " ft/s"
+                          << "\nReynolds no Poco: " << modeloNewtoniano->ReynoldsPoco()
+                          << "\nTipo de Fluxo no Poco: " << modeloNewtoniano->DeterminarFluxoPoco() 
+                          << "\nPerda Friccional no Poco: " << modeloNewtoniano->CalcularPerdaPorFriccaoPoco() << " psi/ft\n";
+
+                if (modeloNewtoniano->FluxoPoco() == "Turbulento") {
+                    std::cout << "\nFator de Friccao no Poco: " << modeloNewtoniano->FatorFriccaoPoco() << "\n"; 
+                }
                 break;
             case 2:
-            double pontoDeEscoamento;
+                std::cout << "\nVelocidade no anular: " << modeloNewtoniano->VMediaAnular() << " ft/s"
+                          << "\nReynolds no anular: " << modeloNewtoniano->ReynoldsAnular()
+                          << "\nTipo de Fluxo no anular: " << modeloNewtoniano->DeterminarFluxoAnular() 
+                          << "\nPerda Friccional no Anular: " << modeloNewtoniano->CalcularPerdaPorFriccaoAnular() << " psi/ft\n";
 
-            std::cout << "\nInforme o valor do pontoDeEscoamento [lbf/100 sq.ft]: ";
-            std::cin >> pontoDeEscoamento;
-            modeloBingham->PontoDeEscoamento(pontoDeEscoamento);
+                if (modeloNewtoniano->FluxoAnular() == "Turbulento") {
+                    std::cout << "\nFator de Friccao no Anular: " << modeloNewtoniano->FatorFriccaoAnular() << "\n";
+                }
+                break;
+            case 0:
+                return; // Volta ao menu principal
+            default:
+                std::cout << "Opcao invalida! Tente novamente.\n";
+                break;
+        }
+
+        std::cout << "\nPressione Enter para continuar...";
+        std::cin.ignore().get(); // Pausa até pressionar Enter
+    }
+}
+
+void CSimuladorPoco::menuModeloBingham() {
+    int escolha;
+
+    while (true) {
+        double pontoDeEscoamento, viscosidadePlastica;
+
+        auxiliar->limparTela();
+        auxiliar->desenharBorda();
+        auxiliar->desenharLinhaTexto("Menu de Perda de Carga - Bingham");
+        auxiliar->desenharBorda();
+
+        std::cout << "\n1. Determinar Perda de Carga no Poco\n"
+                     "2. Determinar Perda de Carga no Anular\n"
+                     "0. Voltar\n";
+        std::cout << "Escolha: ";
+        std::cin >> escolha;
+
+        modeloBingham = std::make_unique<CModeloBingham>(poco.get());
+
+        switch (escolha) {
+            case 1:
+                std::cout << "\nInforme o valor do pontoDeEscoamento [lbf/100 sq.ft]: ";
+                std::cin >> pontoDeEscoamento;
+                modeloBingham->PontoDeEscoamento(pontoDeEscoamento);
+
+                std::cout << "Informe o valor da viscosidade Plastica [cP]: ";
+                std::cin >> viscosidadePlastica;
+                modeloBingham->ViscosidadePlastica(viscosidadePlastica);
+
+
+                std::cout << "\nVelocidade no Poco: " << modeloBingham->VMediaPoco() << " ft/s"
+                          << "\nReynolds no Poco: " << modeloBingham->ReynoldsPoco()
+                          << "\nReynolds Hedstrom no Poco: " << modeloBingham->ReynoldsHedstronPoco()
+                          << "\nReynolds Critico no Poco: " << modeloBingham->ReynoldsCriticoPoco()
+                          << "\nTipo de Fluxo no Poco: " << modeloBingham->DeterminarFluxoPoco() 
+                          << "\nPerda Friccional no Poco: " << modeloBingham->CalcularPerdaPorFriccaoPoco() << " psi/ft\n";
+
+                if (modeloBingham->FluxoPoco() == "Turbulento") {
+                    std::cout << "\nFator de Friccao: " << modeloBingham->FatorFriccaoPoco() << "\n"; 
+                }
+                break;
+            case 2:
+                std::cout << "\nInforme o valor do pontoDeEscoamento [lbf/100 sq.ft]: ";
+                std::cin >> pontoDeEscoamento;
+                modeloBingham->PontoDeEscoamento(pontoDeEscoamento);
+
+                std::cout << "Informe o valor da viscosidade Plastica [cP]: ";
+                std::cin >> viscosidadePlastica;
+                modeloBingham->ViscosidadePlastica(viscosidadePlastica);
+                std::cout << "\nVelocidade no anular: " << modeloBingham->VMediaAnular() << " ft/s"
+                          << "\nReynolds no anular: " << modeloBingham->ReynoldsAnular()
+                          << "\nReynolds de Hedstrom no anular: " << modeloBingham->ReynoldsAnular()
+                          << "\nReynolds Critico no no anular: " << modeloBingham->ReynoldsAnular()
+                          << "\nTipo de Fluxo no anular: " << modeloBingham->DeterminarFluxoAnular() 
+                          << "\nPerda Friccional no Anular: " << modeloBingham->CalcularPerdaPorFriccaoAnular() << " psi/ft\n";
+
+                if (modeloBingham->FluxoAnular() == "Turbulento") {
+                    std::cout << "\nFator de Friccao: " << modeloBingham->FatorFriccaoAnular() << "\n";
+                }
+                         
+
+            //double pontoDeEscoamento;
+
+            //std::cout << "\nInforme o valor do pontoDeEscoamento [lbf/100 sq.ft]: ";
+            //std::cin >> pontoDeEscoamento;
+            //modeloBingham->PontoDeEscoamento(pontoDeEscoamento);
             
-            std::cout << "\nPerda Friccional no poco: " << modeloBingham->CalcularPerdaPorFriccaoPoco() << " psi/ft";
-            std::cout << "\nPerda Friccional no Anular: " << modeloBingham->CalcularPerdaPorFriccaoAnular() << " psi/ft\n";
+            //std::cout << "\nPerda Friccional no poco: " << modeloBingham->CalcularPerdaPorFriccaoPoco() << " psi/ft";
+            //std::cout << "\nPerda Friccional no Anular: " << modeloBingham->CalcularPerdaPorFriccaoAnular() << " psi/ft\n";
                 break;
             case 3:
-            double indiceDeConsistencia;
+            
+            //double indiceDeConsistencia;
 
-            std::cout << "\nInforme o valor do indice de consistencia [Cp eq]: ";
-            std::cin >> indiceDeConsistencia;
-            modeloPotencia->IndiceDeConsistencia(indiceDeConsistencia);
+            //std::cout << "\nInforme o valor do indice de consistencia [Cp eq]: ";
+            //std::cin >> indiceDeConsistencia;
+            //modeloPotencia->IndiceDeConsistencia(indiceDeConsistencia);
 
-            std::cout << "\nPerda Friccional no poco: " << modeloPotencia->CalcularPerdaPorFriccaoPoco() << " psi/ft";
-            std::cout << "\nPerda Friccional no Anular: " << modeloPotencia->CalcularPerdaPorFriccaoAnular() << " psi/ft\n";
+            //std::cout << "\nPerda Friccional no poco: " << modeloPotencia->CalcularPerdaPorFriccaoPoco() << " psi/ft";
+            //std::cout << "\nPerda Friccional no Anular: " << modeloPotencia->CalcularPerdaPorFriccaoAnular() << " psi/ft\n";
                 break;
             case 0:
                 return; // Volta ao menu principal

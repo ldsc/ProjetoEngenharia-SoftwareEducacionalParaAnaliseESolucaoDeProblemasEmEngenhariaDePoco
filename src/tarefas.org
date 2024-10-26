@@ -1,20 +1,4 @@
 * Lista de correções:
-** Não se inclui o .cpp, sempre arquivos .h que tem a descrição das classes, métodos e funções
-** O arquivo .h é visualizado pelo usuário, distribuído nas bibliotecas. O arquivo cpp não é distribuído nas bibliotecas privadas.
-** O arquivo .cpp tem a implementação.
-** O programa make abre o arquivo Makefile e segue as intrduções que encontra para converter os .cpp em .o e depois linkar os mesmos gerando o executável.
-** Ou faço um arquivo Makefile manual, como você fez Nathan (corrigi e renomeei para Makefile-Manual) 
 ** Criei um arquivo CMakeLists.txt que é usado pela versão automatizada do make, o cmake.
 ** Cria-se um arquivo CMakeLists.txt e roda-se "cmake ." com isso ele lê sua máquina e gera o arquivo Makefile para windows ou linux ou mac-os x.
-** Corrigir o arquivo CSimuladorPoco, abaixo usa indiceDeComportamento sem ter atribuído nenhum valor, esta usando LIXO.
-            case 3:
-            double indiceDeConsistencia, indiceDeComportamento, friccao;
-
-            cout << "\nInforme o valor do indice de consistencia [Cp eq]: ";
-            cin >> indiceDeConsistencia;
-            cout << "\nInforme o valor do indice de comportamento: ";
-            cin >> pontoDeEscoamento;
-            cout << "\nInforme o valor da friccao [lbf/100 sq.ft]: ";
-            cin >> friccao;
-            modeloPotencia->IndiceDeComportamento(indiceDeComportamento);
 
