@@ -9,6 +9,8 @@ class CModeloPotencia : public CModeloReologico {
 protected:
     double indiceDeConsistencia = 0.0;
     double indiceDeComportamento = 1.0;
+    double reynoldsCriticoPoco = 2100.0;
+    double reynoldsCriticoAnular = 2100.0;
 
 public:
     //Construtor
@@ -17,6 +19,8 @@ public:
     CModeloPotencia(CPoco* poco) : CModeloReologico(poco){}
 
     // Getters
+    double ReynoldsCriticoPoco() const { return reynoldsCriticoPoco; }
+    double ReynoldsCriticoAnular() const { return reynoldsCriticoAnular; }
     double IndiceDeConsistencia() const { return indiceDeConsistencia; }
     double IndiceDeComportamento() const { return indiceDeComportamento; }
     std::string FluxoPoco() const { return fluxoPoco; }
@@ -30,7 +34,9 @@ public:
     void ProfundidadeTotal( double FloxoA ) { fluxoAnular = FloxoA; }
     
     //Métodos
-    double DeterminarReynoldsCritico(double hedstron);
+    double DeterminarReynoldsCritico(double Reynolds);
+    double DeterminarReynoldsPoco(double densidade, double VMedioPoco, double diametroRevestimentoID, double indiceDeConsistencia, double indiceDeComportamento);
+    double DeterminarReynoldsAnular(double densidade, double VMedioPoco, double diametroAnular, double indiceDeConsistencia, double indiceDeComportamento);
     std::string DeterminarFluxoPoco() override;
     std::string DeterminarFluxoAnular() override;
     double CalcularPerdaPorFriccaoPoco() override;

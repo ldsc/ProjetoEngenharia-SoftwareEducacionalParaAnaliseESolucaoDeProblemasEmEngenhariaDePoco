@@ -36,6 +36,28 @@ double CPoco::PressaoHidroestaticaTotal() const {
     return PressaoTotal + pressaoSuperficie;
 }
 
+double CPoco::PressaoHidroestaticaNoPonto(double profundidade) const {
+    double PressaoTotal = pressaoSuperficie;
+    double profundidadeAcumulada = 0.0;
+
+    for (const auto& Trecho : trechos) {
+        double profundidadeTrecho = Trecho->ProfundidadeFinal() - Trecho->ProfundidadeInicial();
+        
+        // Verifica se a profundidade está dentro do trecho atual
+        if (profundidade <= profundidadeAcumulada + profundidadeTrecho) {
+            // Calcula a contribuição do trecho até a profundidade desejada
+            PressaoTotal += Trecho->PressaoHidroestatica(profundidade - profundidadeAcumulada);
+            break;
+        } else {
+            // Adiciona a pressão hidrostática do trecho completo
+            PressaoTotal += Trecho->PressaoHidroestatica();
+            profundidadeAcumulada += profundidadeTrecho;
+        }
+    }
+
+    return PressaoTotal;
+}
+
 void CPoco::VerificarPreenchimentoColuna() {
     double ProfundidadeNaoOcupada = profundidadeFinal - profundidadeOcupada;
 
@@ -79,9 +101,9 @@ void CPoco::PlotarProfundidadePorDensidade() {
     for (const auto& trecho : trechos) {
         double Intervalo = trecho->ProfundidadeFinal() - trecho->ProfundidadeInicial();  
 
-        for (double i = 0; i <= Intervalo; i += 0.1) { // Usando um incremento menor
+        for (double i = 0; i <= Intervalo; i += 1) { // Usando um incremento menor
             double ProfundidadeAtual = ProfunTotal + i; // Atualiza a profundidade em cada iteração
-            double Dens = PressaoHidroestaticaTotal() / (ProfundidadeAtual * 0.05195);
+            double Dens = PressaoHidroestaticaNoPonto(ProfundidadeAtual) / (ProfundidadeAtual * 0.05195);
    
             Densidade.push_back(Dens);
             Profundidade.push_back(ProfundidadeAtual); // Armazena a profundidade atual
@@ -91,10 +113,6 @@ void CPoco::PlotarProfundidadePorDensidade() {
 
     // Escrever dados em arquivo
     std::ofstream outputFile("dados.txt");
-    if (!outputFile.is_open()) {
-        std::cerr << "Erro ao abrir o arquivo dados.txt para escrita." << std::endl;
-        return;
-    }
     
     for (size_t j = 0; j < Profundidade.size(); ++j) {
         outputFile << Profundidade[j] << "\t" << Densidade[j] << std::endl;
@@ -117,9 +135,11 @@ void CPoco::PlotarProfundidadePorDensidade() {
 
     // Plota apenas uma curva
     gnuplotFile << "plot 'dados.txt' using 2:1 with linespoints title 'Densidade vs Profundidade'\n"; 
+    gnuplotFile << "set terminal pngcairo size 1920,1080\n";
+    gnuplotFile << "set output 'Profundidade_vs_densidade.png'\n";
     gnuplotFile << "pause -1\n"; // Pausa para que você possa ver o gráfico
     gnuplotFile.close();
 
     // Executa o Gnuplot com o script gerado
-    std::system("gnuplot plot_script.gp");
+    std::system("gnuplot -persist plot_script.gp");
 }

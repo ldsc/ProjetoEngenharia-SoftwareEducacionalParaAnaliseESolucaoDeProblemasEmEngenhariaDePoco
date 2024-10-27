@@ -29,7 +29,7 @@ public:
 
     // Métodos
     double PressaoHidroestatica();
-    double PressaoHidroestaticaNoPonto(double profund);
+    double PressaoHidroestatica(double profund);
     double DensidadeEquivalente();
 };
 

@@ -27,9 +27,11 @@ public:
     // Menus principais
     void menuPrincipal();
     void menuConfigurarSimulador();
+    void menuPressaoHidrostatica();
     void menuPerdaDeCarga();
     void menuModeloNewtoniano();
     void menuModeloBingham();
+    void menuModeloPotencia();
     
 
     // Métodos auxiliares para configurar o poço e fluidos

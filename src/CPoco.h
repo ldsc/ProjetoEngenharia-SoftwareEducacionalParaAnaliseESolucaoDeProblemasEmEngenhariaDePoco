@@ -46,6 +46,7 @@ public:
     // Metodos
     bool AdicionarTrechoPoco(std::unique_ptr<CTrechoPoco> TrechoPoco);
     double PressaoHidroestaticaTotal() const;
+    double PressaoHidroestaticaNoPonto(double profundidade) const;
     double DensidadeEfetivaTotal() const;
     double ViscosidadeEfetivaTotal() const;
     void VerificarPreenchimentoColuna();

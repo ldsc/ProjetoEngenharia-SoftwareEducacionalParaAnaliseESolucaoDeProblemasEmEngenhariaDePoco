@@ -2,31 +2,48 @@
 #include <iostream>
 #include <cmath>
 
+double CModeloPotencia::DeterminarReynoldsCritico(double Reynolds) {
+
+    return 0.0;
+}
+
+double CModeloPotencia::DeterminarReynoldsPoco(double densidade, double VMedioPoco, double diametroRevestimentoID, double indiceDeConsistencia, double indiceDeComportamento) {
+    reynoldsPoco = ((89100 * densidade * std::pow(VMedioPoco, 2-indiceDeComportamento)) / indiceDeConsistencia) * (std::pow((0.0416 * diametroRevestimentoID)/(3+(1/indiceDeComportamento)),indiceDeComportamento));
+    
+    if (indiceDeComportamento < 0.4){
+        reynoldsCriticoPoco = DeterminarReynoldsCritico(reynoldsPoco);
+    }
+    return reynoldsPoco;
+}
+
+double CModeloPotencia::DeterminarReynoldsAnular(double densidade, double VMedioPoco, double diametroAnular, double indiceDeConsistencia, double indiceDeComportamento) {
+    reynoldsAnular = ((109000 * densidade * std::pow(VMedioPoco, 2-indiceDeComportamento)) / indiceDeConsistencia) * (std::pow((0.0208 * diametroAnular)/(2+(1/indiceDeComportamento)),indiceDeComportamento));
+    
+    if (indiceDeComportamento < 0.4){
+        reynoldsCriticoAnular = DeterminarReynoldsCritico(reynoldsAnular);
+    }
+
+    return reynoldsAnular;
+}
+
 // Função para determinar o tipo de fluxo no poço
 std::string CModeloPotencia::DeterminarFluxoPoco() {
-    double diametroRevestimentoID = poco->DiametroRevestimentoID();
-    double vazao = poco->Vazao();
-    double densidade = poco->DensidadeEfetivaTotal();
-    double viscosidade = poco->ViscosidadeEfetivaTotal();
 
-    double VMedioPoco = vazao / (2.448 * std::pow(diametroRevestimentoID, 2)); // Cálculo da velocidade média
-    double Reynolds = (928 * densidade * VMedioPoco * diametroRevestimentoID) / viscosidade; // Cálculo de Reynolds
+    vMediaPoco = DeterminarVelocidadeMediaPoco(poco->Vazao(), poco->DiametroRevestimentoID());
+    reynoldsPoco = DeterminarReynoldsPoco(poco->DensidadeEfetivaTotal(), vMediaPoco, poco->DiametroRevestimentoID(), indiceDeConsistencia, indiceDeComportamento);
 
-    fluxoPoco = (Reynolds <= 2100) ? "Laminar" : "Turbulento"; // Determinação do fluxo
+    fluxoPoco = (reynoldsPoco <= reynoldsCriticoPoco) ? "Laminar" : "Turbulento"; // Determinação do fluxo
     return fluxoPoco;
 }
 
 // Função para determinar o tipo de fluxo no espaço anular
 std::string CModeloPotencia::DeterminarFluxoAnular() {
+
     double diametroAnular = poco->DiametroPoco() - poco->DiametroRevestimentoOD();
-    double vazao = poco->Vazao();
-    double densidade = poco->DensidadeEfetivaTotal();
-    double viscosidade = poco->ViscosidadeEfetivaTotal();
+   vMediaAnular = DeterminarVelocidadeMediaAnular(poco->Vazao(), poco->DiametroPoco(), poco->DiametroRevestimentoOD());
+    reynoldsAnular = DeterminarReynoldsPoco(poco->DensidadeEfetivaTotal(), vMediaAnular, diametroAnular, indiceDeConsistencia, indiceDeComportamento);
 
-    double vMedio = vazao / (2.448 * (std::pow(poco->DiametroPoco(), 2) - std::pow(poco->DiametroRevestimentoOD(), 2))); // Cálculo da velocidade média
-    double Re = DeterminarReynoldsAnular(densidade, vMedio, diametroAnular, viscosidade);
-
-    fluxoAnular = (Re <= 2100) ? "Laminar" : "Turbulento"; // Determinação do fluxo
+    fluxoAnular = (reynoldsAnular <= reynoldsCriticoAnular) ? "Laminar" : "Turbulento"; // Determinação do fluxo
     return fluxoAnular;
 }
 
@@ -36,18 +53,13 @@ double CModeloPotencia::CalcularPerdaPorFriccaoPoco() {
         DeterminarFluxoPoco();
     }
 
-    double diametroRevestimentoID = poco->DiametroRevestimentoID();
-    double vazao = poco->Vazao();
-    double densidade = poco->DensidadeEfetivaTotal();
     fatorFriccaoPoco = DeterminarFatorFriccao(reynoldsPoco);
 
-    double VMedioPoco = vazao / (2.448 * std::pow(diametroRevestimentoID, 2)); // Cálculo da velocidade média
-
     if (fluxoPoco == "Laminar") {
-        return ((indiceDeConsistencia * std::pow(VMedioPoco, -indiceDeComportamento)) * std::pow(( (3+(1/indiceDeComportamento) ) / 0.0416), indiceDeComportamento)) 
-        / (144000 * std::pow(diametroRevestimentoID, (1+indiceDeComportamento)));
+        return ((indiceDeConsistencia * std::pow(vMediaPoco, -indiceDeComportamento)) * std::pow(( (3+(1/indiceDeComportamento) ) / 0.0416), indiceDeComportamento)) 
+        / (144000 * std::pow(poco->DiametroRevestimentoID(), (1+indiceDeComportamento)));
     } else {  // Fluxo turbulento
-        return (fatorFriccaoPoco * densidade * std::pow(VMedioPoco, 2) ) / (25.8 * diametroRevestimentoID);
+        return (fatorFriccaoPoco * poco->DensidadeEfetivaTotal() * std::pow(vMediaPoco, 2) ) / (25.8 * poco->DiametroRevestimentoID());
     }
 }
 
@@ -58,16 +70,12 @@ double CModeloPotencia::CalcularPerdaPorFriccaoAnular() {
     }
 
     double diametroAnular = poco->DiametroPoco() - poco->DiametroRevestimentoOD();
-    double vazao = poco->Vazao();
-    double densidade = poco->DensidadeEfetivaTotal();
-    fatorFriccaoAnular = DeterminarFatorFriccao(reynoldsPoco);
-
-    double VMedioAnular = vazao / (2.448 * (std::pow(poco->DiametroPoco(), 2) - std::pow(poco->DiametroRevestimentoOD(), 2))); // Cálculo da velocidade média
+    fatorFriccaoAnular = DeterminarFatorFriccao(reynoldsAnular);
 
     if (fluxoAnular == "Laminar") {
-        return ((indiceDeConsistencia * std::pow(VMedioAnular, -indiceDeComportamento)) * std::pow(( (2+(1/indiceDeComportamento) ) / 0.0208), indiceDeComportamento)) 
+        return ((indiceDeConsistencia * std::pow(vMediaAnular, -indiceDeComportamento)) * std::pow(( (2+(1/indiceDeComportamento) ) / 0.0208), indiceDeComportamento)) 
         / (144000 * std::pow(diametroAnular, (1+indiceDeComportamento)));
     } else {  // Fluxo turbulento
-        return (fatorFriccaoAnular * densidade * std::pow(VMedioAnular, 2) ) / (21.1 * diametroAnular);
+        return (fatorFriccaoAnular * poco->DensidadeEfetivaTotal() * std::pow(vMediaAnular, 2) ) / (21.1 * diametroAnular);
     }
 }
