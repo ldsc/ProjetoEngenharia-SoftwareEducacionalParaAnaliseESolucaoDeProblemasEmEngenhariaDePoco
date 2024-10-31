@@ -242,6 +242,19 @@ name "subsec:Dicionário-de-classes"
 
 \end_layout
 
+\begin_layout Standard
+O software é composto por um total de 9 classes:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+CSimuladorPoco:
+ 
+\series default
+Classe responsável por integrar todas as funcionalidades do simulador.
+\end_layout
+
 \begin_layout Itemize
 
 \series bold
@@ -264,7 +277,7 @@ Classe herdeira responsável por subdividir as diferentes partes do poço,
 \begin_layout Itemize
 
 \series bold
-Cfluido:
+CFluido:
 
 \series default
  Classe responsável por prover os valores e propriedades do fluido.
@@ -291,10 +304,19 @@ Classe responsável por calcular perda de pressão friccional para o modelo newt
 \begin_layout Itemize
 
 \series bold
-CModeloNaoNewtoniano:
+CModeloBingham:
  
 \series default
-Classe responsável por calcular perda de pressão friccional para o modelo plástico de Bingham e lei de potências.
+Classe responsável por calcular perda de pressão friccional para o modelo Plástico de Bingham.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+CModeloPotencia:
+ 
+\series default
+Classe responsável por calcular perda de pressão friccional para o modelo Lei de Potência.
 \end_layout
 
 \begin_layout Itemize
@@ -305,6 +327,25 @@ QCustomPlot:
 \series default
 Classe responsável por gerar gráficos utilizando a biblioteca QCustomPlot (obtida em https://www.qcustomplot.com/),
  para visualização dos dados.
+\end_layout
+
+\begin_layout Standard
+O diagrama de classes é apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-classes"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Nele podemos observar todas as classes,
+ seus atributos,
+ métodos,
+ heranças e seus relacionamentos.
 \end_layout
 
 \begin_layout Section
@@ -379,7 +420,18 @@ name "subsec: Diagrama de sequência geral"
 
 \begin_layout Standard
 A seguir,
- é apresentado o diagrama de sequência geral na Figura 4.2.
+ é apresentado o diagrama de sequência geral na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-sequencia"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard

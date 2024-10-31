@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -27,11 +27,11 @@
 \end_preamble
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -39,7 +39,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -53,7 +55,7 @@
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -74,7 +76,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -96,11 +100,16 @@
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -181,16 +190,15 @@ today ele vai colocar data no material impresso
 \end_layout
 
 \begin_layout Standard
-No presente projeto de engenharia desenvolve-se o Software Educacional para
- Análise e Solução de Problemas em Engenharia de Poço, uma aplicação direcionada
- à engenharia de petróleo que adota o paradigma da orientação a objetos.
- O software foi criado em resposta à necessidade dos alunos do curso de
- Engenharia de Exploração e Produção de Petróleo, oferecendo uma solução
- análitica para testar conveitos fundamentais da disciplina de Engenharia
- de Poço, como calcular a pressão hidrostatica de um poço, calcular a densidade
- média, calcular a queda de pressão friccional tanto no tubo quando no anular
- utilizando diferentes modelos como o de fluidos newtonianos, plástico de
- Binghan e lei de potências para fluxo turbulento e laminar....
+No presente projeto de engenharia desenvolve-se o Software Educacional para Análise e Solução de Problemas em Engenharia de Poço,
+ uma aplicação direcionada à engenharia de petróleo que adota o paradigma da orientação a objetos.
+ O software foi criado em resposta à necessidade dos alunos do curso de Engenharia de Exploração e Produção de Petróleo,
+ oferecendo uma solução analítica para testar conceitos fundamentais da disciplina de Engenharia de Poço,
+ como calcular a pressão hidrostática de um poço,
+ calcular a densidade média,
+ calcular a viscosidade média,
+ calcular a queda de pressão friccional tanto no tubo quando no anular utilizando diferentes modelos como o de fluidos newtonianos,
+ plástico de Bingham e lei de potências para fluxo turbulento e laminar....
 \end_layout
 
 \begin_layout Section
@@ -205,24 +213,21 @@ name "sec:Escopo-do-Problema"
 \end_layout
 
 \begin_layout Standard
-O desenvolvimento de um software para a disciplina de Engenharia de Poço
- surge como uma resposta as necessidades dos alunos em obter uma compreensão
- aprofundada dos conteúdos abordados em sala de aula.
- Normalmente os estudos dos conceitos relacionados a disciplina são realizados
- por meio de exercícios teoricos, esboços e análises manuais que dificultam
- a visualização e aplicação prática dos conceitos fundamentais.
+O desenvolvimento de um software para a disciplina de Engenharia de Poço surge como uma resposta as necessidades dos alunos em obter uma compreensão aprofundada dos conteúdos abordados em sala de aula.
+ Normalmente os estudos dos conceitos relacionados a disciplina são realizados por meio de exercícios teóricos,
+ esboços e análises manuais que dificultam a visualização e aplicação prática dos conceitos fundamentais.
 \end_layout
 
 \begin_layout Standard
-Com o objetivo de facilitar o aprendizado e proporcionar uma ferramenta
- acessível para os estudantes, o software será capaz de realizar cálculos
- automatizados, facilitando a interação com diferentes cenários e paramêtros.
- Essa abordagem proporciona um aprendizado mais dinâmico e eficaz, promovendo
- um ambiente de estudos mais produtivo e intuitivo.
- O uso do software permitirá uma melhor compreensão dos processos envolvidos
- na Engenharia de Poços e contribuirá, significativamente, para a formação
- dos futuros engenheiros, oferecendo uma ferramenta de apoio que utiliza
- cenários reais e reforçar os conhecimentos adquiridos em sala de aula.
+Com o objetivo de facilitar o aprendizado e proporcionar uma ferramenta acessível para os estudantes,
+ o software será capaz de realizar cálculos automatizados,
+ facilitando a interação com diferentes cenários e parâmetros.
+ Essa abordagem proporciona um aprendizado mais dinâmico e eficaz,
+ promovendo um ambiente de estudos mais produtivo e intuitivo.
+ O uso do software permitirá uma melhor compreensão dos processos envolvidos na Engenharia de Poços e contribuirá,
+ significativamente,
+ para a formação dos futuros engenheiros,
+ oferecendo uma ferramenta de apoio que utiliza cenários reais e reforçar os conhecimentos adquiridos em sala de aula.
 \end_layout
 
 \begin_layout Section
@@ -250,9 +255,8 @@ Objetivo geral:
 
 \begin_deeper
 \begin_layout Itemize
-Desenvolver um software capaz de análisar e cálcular as principais equações
- que sustetam o príncipio da Engenharia de Poço, concretizando o conhecimento
- teórico adiquirido pelos alunos durante a disciplina.
+Desenvolver um software capaz de analisar e calcular as principais equações que sustentam o princípio da Engenharia de Poço,
+ concretizando o conhecimento teórico adquirido pelos alunos durante a disciplina.
 \end_layout
 
 \end_deeper
@@ -266,8 +270,8 @@ Objetivos específicos:
 
 \begin_deeper
 \begin_layout Itemize
-Modelar física e matematicamente o problema, incluindo a definição das proprieda
-de a serem medidas.
+Modelar física e matematicamente o problema,
+ incluindo a definição das propriedade a serem medidas.
 \end_layout
 
 \begin_layout Itemize
@@ -275,7 +279,7 @@ Modelagem estática e dinâmica do software.
 \end_layout
 
 \begin_layout Itemize
-Calcular as propriedades hidrodinâmicas e reologicas do poço.
+Calcular as propriedades hidrodinâmicas e reológicas do poço.
 \end_layout
 
 \begin_layout Itemize
@@ -297,6 +301,8 @@ name "sec:Metodologia-utilizada"
 
 
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -309,18 +315,18 @@ Metodologia utilizada
 \end_layout
 
 \begin_layout Standard
-Para o desenvolvimento deste projeto, adotamos a metodologia de engenharia
- de software apresentada pelo Prof.
- André Bueno e disponibilizada no github, a mesma será complementada pelo
- estudo realizada durante o desenvolvimento do projeto, com a coorientação
- do Prof.
+Para o desenvolvimento deste projeto,
+ adotamos a metodologia de engenharia de software apresentada pelo Prof.
+ André Bueno e disponibilizada no github,
+ a mesma será complementada pelo estudo realizada durante o desenvolvimento do projeto,
+ com a coorientação do Prof.
  Bruno José Vicente.
- Essa metodologia, centrada em ciclos de concepção e análise, planejamento/detal
-hamento e construção-implementação, é amplamente embasada na disciplina
- de Introdução a Projetos: Metodologia Cientíca e Projeto de Softwares (LEP01582
-), além disso toda a parte computacional envolvendo POO em C++ está embassada
- na disciplina Programação Orientada ao Objeto com C++ (LEP01447) oferecendo
- uma base sólida para a criação do simulador.
+ Essa metodologia,
+ centrada em ciclos de concepção e análise,
+ planejamento/detalhamento e construção/implementação,
+ é amplamente embasada na disciplina de Introdução a Projetos:
+ Metodologia Científica e Projeto de Softwares (LEP01582),
+ além disso toda a parte computacional envolvendo POO em C++ está embasada na disciplina Programação Orientada ao Objeto com C++ (LEP01447) oferecendo uma base sólida para a criação do simulador.
  
 \end_layout
 

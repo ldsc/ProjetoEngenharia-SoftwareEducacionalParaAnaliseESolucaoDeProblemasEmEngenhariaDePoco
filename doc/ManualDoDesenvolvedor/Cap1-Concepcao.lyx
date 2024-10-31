@@ -338,6 +338,59 @@ name "sec: Nome do sistema/produto"
 \end_layout
 
 \begin_layout Standard
+O software chamado de Software Educacional Para Análise e Solução de Problemas em Engenharia de Poço,
+ foi desenvolvido utilizando uma linguagem de programação em C++ com paradigma de orientação a objeto,
+ sendo capaz de calcular a pressão hidrostática em qualquer ponto do poço,
+ calcular as propriedades médias dos fluidos que ocupam o poço como viscosidade e densidade,
+ determinar o fluxo de escoamento podendo ser laminar ou turbulento e utilizar 3 modelos reológicos (modelo Newtoniano,
+ modelo Plástico de Bingham e modelo Lei de Potencias) para calcular a queda de pressão provocada pela perda de carga friccional.
+\end_layout
+
+\begin_layout Standard
+O software permite ao usuário a interação com gráficos e a armazenagem de informações na forma de arquivo PDF.
+\end_layout
+
+\begin_layout Standard
+A tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Características-básicas-do"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ apresenta as características do software desenvolvido.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Características básicas do programa
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Características-básicas-do"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -381,7 +434,21 @@ Componentes principais
 \begin_inset Text
 
 \begin_layout Plain Layout
+Banco de dados com métodos e propriedades da engenharia de poço.
+ 
+\end_layout
 
+\begin_layout Plain Layout
+Algoritmo de aproximação de resultados.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Interface gráfica para o plot de resultados.
+\end_layout
+
+\begin_layout Plain Layout
+Saída gráfica e em pdf.
 \end_layout
 
 \end_inset
@@ -412,6 +479,11 @@ A missão do software é fornecer uma ferramenta eficiente para potencializar o 
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -454,7 +526,24 @@ especificação
 \end_layout
 
 \begin_layout Standard
-...
+Deseja-se desenvolver um software com interface amigável que possibilite o usuário escolher de forma livre a funcionalidade de deseja utilizar naquele momento.
+ Os caculos realizados pelos software se baseiam em equações analíticas desenvolvidas na disciplina de Engenharia de poço.
+\end_layout
+
+\begin_layout Standard
+Inicialmente o usuário precisara configurar as propriedades do poço,
+ ação que pode ser feita de duas formas,
+ tanto a partir da leitura de um arquivo .dat ou a partir do imput individual das propriedade no terminal.
+ Após configurar o poço o usuário poderá exibir as propriedades do poço,
+ calcular a pressão hidrostática no fundo do poço ou selecionar uma profundidade na qual essa pressão será calculada,
+ plotar gráficos de perfis como o gráfico da profundidade pela densidade e por fim poderá calcular a perda de pressão devido a perda de carga por fricção.
+\end_layout
+
+\begin_layout Standard
+Ao iniciar o calculo da perda de pressão é possível determinar o tipo de escoamento tanto no poço quando no anular,
+ e para calcular a perda de pressão o usuário poderá selecionar entre três modelos reológicos,
+ o modelo Newtoniano,
+ o modelo de Plástico de Bingham e o modelo de Lei de Potências.
 \end_layout
 
 \begin_layout Section
@@ -946,7 +1035,7 @@ Apresentar interface em comados terminais.
 \end_layout
 
 \begin_layout Section
-Casos de Uso Geral
+Casos de Uso
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Casos-de-uso-Geral"
@@ -982,11 +1071,15 @@ do software
 Nesta seção iremos mostrar o caso de uso do software a ser desenvolvido.
 \end_layout
 
+\begin_layout Subsection
+Diagrama de caso de uso geral
+\end_layout
+
 \begin_layout Standard
-O diagrama de caso de uso geral da 
+O diagrama de caso de uso geral da Figura 
 \begin_inset CommandInset ref
-LatexCommand nameref
-reference "cap:Diagrama-caso-uso-geral"
+LatexCommand ref
+reference "cap:Diagrama-caso-uso-geral-1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -997,7 +1090,7 @@ nolink "false"
  mostra o usuário de frente a interface com as opções permitidas do simulador.
  Com essas opções ele poderá executar,
  analisar os resultados obtidos e salvar as imagens ou os dados em um arquivo PDF.
- As condições do caso de uso são apresentados na 
+ As condições do caso de uso são apresentados na Tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Exemplo-de-um-caso-de-uso (tabela)"
@@ -1008,7 +1101,7 @@ nolink "false"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -1122,12 +1215,17 @@ Etapas:
 
 \begin_layout Plain Layout
 4.
- Calcular pressão hidrostática do poço e a densidade do fluido
+ Calcular pressão hidrostática do poço 
 \end_layout
 
 \begin_layout Plain Layout
 5.
- Calcular perdas por fricção no poço e anular
+ Calcular densidade do fluido
+\end_layout
+
+\begin_layout Plain Layout
+6.
+ Calcular a Queda de Pressão Devido a Perdas por Fricção
 \end_layout
 
 \begin_layout Plain Layout
@@ -1164,6 +1262,25 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de caso de uso – Caso de uso geral
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-caso-uso-geral-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagens/DiagramaDeCasoUso-Geral.png
@@ -1176,13 +1293,54 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Diagrama de caso de uso específico
+\end_layout
+
+\begin_layout Standard
+O caso de uso específico da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-caso-de-uso-especifico1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ mostra o cenário onde o usurário deseja calcular a pressão hidrostática e a densidade dos fluidos configurados no poço.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de caso de uso – Caso de uso geral
+Diagrama de caso de uso específico:
+ cálculo de pressão hidrostática e densidade 
 \begin_inset CommandInset label
 LatexCommand label
-name "cap:Diagrama-caso-uso-geral"
+name "cap:Diagrama-de-caso-de-uso-especifico1"
 
 \end_inset
 
@@ -1192,6 +1350,82 @@ name "cap:Diagrama-caso-uso-geral"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../../imagens/DiagramaDeCasoDeUso-Especifico-1.png
+	lyxscale 40
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O caso de uso específico da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-caso-de-uso-especifico2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ mostra o cenário onde o usurário deseja calcular a perda de pressão devido a perda por fricção no poço e no anular.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de caso de uso específico - cálculo da perda de pressão devido a perda por fricção no poço e no anular 
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-caso-de-uso-especifico2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../../imagens/DiagramaDeCasoDeUso-Especifico-1.png
+	lyxscale 40
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
 \end_layout
 
 \end_inset

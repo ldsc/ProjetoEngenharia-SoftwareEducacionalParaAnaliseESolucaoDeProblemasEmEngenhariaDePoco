@@ -336,21 +336,97 @@ Pressão Hidrostática
 \end_layout
 
 \begin_layout Standard
-A pressão hidrostática e a variação da pressão com a profundidade em uma coluna de fluido,
- que normalmente e mais facilmente calculada em condições de poço estático.
- Essa pressão pode ser deduzida considerando o diagrama de corpo livre REF 1 (Colocar figura).
+A pressão hidrostática é a variação da pressão com a profundidade em uma coluna de fluido,
+ que normalmente é mais facilmente calculada em condições de poço estático.
+ Essa pressão pode ser deduzida considerando o diagrama de corpo livre mostrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-corpo-livre"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
-A partir dessa dedução chegamos a equação (1) a seguir em unidades oil field,
- onde dp é a variação de pressão dZ é a variação de profundidade e ρ é a densidade do fluido.
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de corpo livre,
+ atuação de forças em um elemento de fluido.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-corpo-livre"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagens/DigramaCorpoLivre.png
+	lyxscale 70
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A partir dessa dedução chegamos a Equação (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EquacaoPressao"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) a seguir em unidades oil field,
+ onde 
+\begin_inset Formula $dp$
+\end_inset
+
+ é a variação de pressão 
+\begin_inset Formula $dZ$
+\end_inset
+
+ é a variação de profundidade e 
+\begin_inset Formula $\rho$
+\end_inset
+
+ é a densidade do fluido.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{dp}{dZ}=0.05195\rho
+\frac{dp}{dZ}=0.05195\rho\label{eq:EquacaoPressao}
 \end{equation}
 
 \end_inset
@@ -371,7 +447,18 @@ Fluidos incompressíveis
 Sabemos que alguns fluidos usados como lama de perfuração tem um comportamento aproximadamente incompressível,
  como por exemplo o uso de água salgada,
  nesses casos a compressibilidade do fluido para baixas temperaturas pode ser desprezada e o peso específico pode ser considerado constante com a profundidade.
- De forma que a equação (1) nos fornece a seguinte equação para fluidos incompressíveis:
+ De forma que a partir da integração da Equação (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EquacaoPressao"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) podemos chegar na equação hidrostática para fluidos incompressíveis:
  
 \end_layout
 
@@ -387,13 +474,17 @@ p=0.05195\rho Z+p_{0}
 \end_layout
 
 \begin_layout Standard
-Onde p0,
+Onde 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+,
  que é a constante de integração,
  é igual a pressão na superfície.
  Uma importante aplicação para essa equação é determinar a densidade correta de um fluido de perfuração,
  de forma que o mesmo seja capaz de evitar o influxo de fluidos da formação para o poço,
  evitando dessa forma kiks ou blowouts,
- além de não causar fraturas nas formação que geraria uma perda de circulação de fluido que também e indesejada.
+ além de não causar fraturas na formação que poderia provocar uma perda de circulação de fluido que também é indesejada.
 \end_layout
 
 \begin_layout Subsubsection
@@ -401,7 +492,7 @@ Fluidos compressíveis
 \end_layout
 
 \begin_layout Standard
-Em muitas operações nós temos a presença de gás em algum momento da perfuração ou completação,
+Em muitas operações temos a presença de gás em algum momento da perfuração ou completação,
  podendo ser injetado ou fluir de alguma formação.
  Calcular a pressão hidrostática de um coluna de gás estática é um tanto quanto mais complicado devido ao fato da compressibilidade fazer com que a densidade do gás mude com a variação de pressão.
  O comportamento do gás é modelado utilizando a equação do gás real:
@@ -440,7 +531,58 @@ Pressão hidrostática em colunas com mais de um tipo de fluido
 \begin_layout Standard
 Outra situação muito comum durante a perfuração é a existência de seções com diferentes densidades de fluidos na coluna.
  Para se calcular a pressão hidrostática nesse tipo de situação precisamos determinar a variação de pressão separadamente para cada seção,
- como na figura (Colocar figura 5.3).
+ como na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Coluna-multiplos-fluidos"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Coluna composta por fluidos com diferentes características.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Coluna-multiplos-fluidos"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagens/ColunaMultiplosFluidos.png
+	lyxscale 70
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -480,7 +622,7 @@ Em muitas situações de campo é útil comparar uma coluna com vários fluidos 
 \end_layout
 
 \begin_layout Standard
-A densidade equivalente da lama sempre deve ser calculada utilizando uma profundidade de referência específica.
+A densidade da lama equivalente sempre deve ser calculada utilizando uma profundidade de referência específica.
 \end_layout
 
 \begin_layout Subsection
@@ -488,7 +630,7 @@ Modelos reológicos de fluidos de perfuração
 \end_layout
 
 \begin_layout Standard
-Durante o processo de perfuração de um poço muitas vezes forças viscoelásticas extremamente grande precisam ser vencidas para que o fluido de perfuração se mova pelos conduítes longos e finos utilizados nesse processo,
+Durante o processo de perfuração de um poço muitas vezes forças viscoelásticas extremamente grandes precisam ser vencidas para que o fluido de perfuração se mova pelos conduítes longos e finos utilizados nesse processo,
  dessa forma se faz essencial a análise da perda de pressão por atrito.
  Na maioria dos casos as propriedades elásticas dos fluidos de perfuração e seus efeitos durante o fluxo de um poço são desprendíveis,
  sendo consideradas para o cálculo apenas as forças viscosas.
@@ -510,11 +652,74 @@ Visão geral dos modelos reológicos
 
 \begin_layout Standard
 As forças viscosas de um fluido são governadas pela viscosidade do mesmo,
- para entender o que é a viscosidade podemos analisar um simples experimento em que um fluido é colocado entre duas placas paralelas de área A separadas por uma distancia L como mostra a figura (Colocar figura 5.11)
+ para entender o que é a viscosidade podemos analisar um simples experimento em que um fluido é colocado entre duas placas paralelas de área 
+\begin_inset Formula $A$
+\end_inset
+
+ separadas por uma distancia 
+\begin_inset Formula $L$
+\end_inset
+
+ como mostra a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Fluxo-laminar"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Ao colocar a placa superior inicialmente em repouso em um movimento na direção x com uma velocidade constant
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo laminar de fluido Newtoniano.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-laminar"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagens/FluxoLaminar.png
+	lyxscale 70
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ao colocar a placa superior inicialmente em repouso em um movimento na direção 
+\begin_inset Formula $x$
+\end_inset
+
+ com uma velocidade constant
 \family roman
 \series medium
 \shape up
@@ -527,7 +732,11 @@ Ao colocar a placa superior inicialmente em repouso em um movimento na direção
 \uwave off
 \noun off
 \color none
-e ν
+e 
+\begin_inset Formula $v$
+\end_inset
+
+
 \family default
 \series default
 \shape default
@@ -540,8 +749,13 @@ e ν
 \uwave default
 \noun default
 \color inherit
- por um tempo suficiente percebemos que uma força F constante é necessária para manter a placa superior em movimento,
- a magnitude dessa força pode ser encontrada por:
+ por um tempo suficiente,
+ percebemos que uma força 
+\begin_inset Formula $F$
+\end_inset
+
+ constante é necessária para manter a placa superior em movimento,
+ a magnitude dessa força pode ser determinada por:
 \end_layout
 
 \begin_layout Standard
@@ -556,8 +770,16 @@ e ν
 \end_layout
 
 \begin_layout Standard
-A razão F/A é conhecida como tensão de cisalhamento exercida sobre o fluido.
- a constante de proporcionalidade μ é chamada de viscosidade aparente.
+A razão 
+\begin_inset Formula $\frac{F}{A}$
+\end_inset
+
+ é conhecida como tensão de cisalhamento exercida sobre o fluido.
+ a constante de proporcionalidade 
+\begin_inset Formula $\mu$
+\end_inset
+
+ é chamada de viscosidade aparente.
  Dessa forma podemos definir a tensão de cisalhamento como:
 \end_layout
 
@@ -586,7 +808,11 @@ A taxa de cisalhamento e expressa como o gradiente da velocidade
 \uwave off
 \noun off
 \color none
-ν/L:
+
+\begin_inset Formula $\frac{v}{L}$
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -609,18 +835,58 @@ A viscosidade aparente pode ser definida como a razão entre a tensão de cisalh
  (Colocar figura 5.12)
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo laminar de fluido Newtoniano.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-laminar-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagens/FluxoLaminar.png
+	lyxscale 70
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Modelo de Fluido Newtoniano
 \end_layout
 
 \begin_layout Standard
-Como ja afirmamos um fluido newtoniano tem a taxa de cisalhamento proporcional a tensão de cisalhamento:
+Como já afirmamos um fluido newtoniano tem a taxa de cisalhamento proporcional a tensão de cisalhamento:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\tau=\mu\dot{\gamma}
+\tau=\mu\dot{\gamma}\label{eq:FluidoNewtoniano}
 \end{equation}
 
 \end_inset
@@ -629,16 +895,35 @@ Como ja afirmamos um fluido newtoniano tem a taxa de cisalhamento proporcional a
 \end_layout
 
 \begin_layout Standard
-Onde a constante de proporcionalidade μ é o que chamamos de viscosidade.
- Para o caso de um fluido newtoniano e retomando nosso experimento das placas isso significa que se a força F for dobrada a velocidade da placa também sera dobrada.
+Onde a constante de proporcionalidade 
+\begin_inset Formula $\mu$
+\end_inset
+
+ é o que chamamos de viscosidade.
+ Para o caso de um fluido newtoniano é retomando nosso experimento das placas,
+ isso significa que se a força 
+\begin_inset Formula $F$
+\end_inset
+
+ for dobrada a velocidade da placa também sera dobrada.
  Os principais fluidos newtonianos são água,
  gás e salmouras,
  fluidos muito comuns na engenharia de poço.
 \end_layout
 
 \begin_layout Standard
-A relação linear descrita pela eq.
- 10 só e válida para o fluxo laminar,
+A relação linear descrita pela Equação (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:FluidoNewtoniano"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) só e válida para o fluxo laminar,
  quando o fluido se move em camadas,
  que ocorre apenas em taxas de cisalhamento baixas.
  Em altas taxas de cisalhamento o fluxo deixa de ser laminar e se torna turbulento,
@@ -666,16 +951,11 @@ O modelo plástico de Bingham (Bingham 1922) pode ser definido como:
 
 \begin_layout Standard
 A principal característica de um plástico Bingham é a necessidade de um valor mínimo de tensão de cisalhamento para que o fluido comece a fluir,
- essa tensão mínima τ
-\begin_inset script subscript
-
-\begin_layout Plain Layout
-y
-\end_layout
-
+ essa tensão mínima 
+\begin_inset Formula $\tau_{y}$
 \end_inset
 
-é chamada de tensão de escoamento.
+ é chamada de tensão de escoamento.
  Após a tensão de escoamento o fluido de Bingham se comporta como um fluido newtoniano onde a mudança na tensão de cisalhamento é proporcional a mudança na taxa de cisalhamento.
  A constante de proporcionalidade é chamada de viscosidade plástica.
 \end_layout
@@ -719,7 +999,7 @@ Perda de pressão friccional em um tubo de perfuração
 A perda de pressão friccional durante a circulação de fluidos em operações de perfuração pode ser calculada através de diferentes modelos de fluido.
  O primeiro paço é determinar o tipo de escoamento,
  para isso utilizamos o número de Reynolds,
- porém para cada modelo existe uma equação para a obtenção do numero de Reynolds.
+ porém para cada modelo existe uma equação para a obtenção do número de Reynolds.
 \end_layout
 
 \begin_layout Subsubsection
@@ -742,9 +1022,21 @@ N_{re}=\frac{928\rho\bar{v}d}{\mu}
 \end_layout
 
 \begin_layout Standard
-Onde ρ é densidade efetiva total,
- d é o diâmetro interno do poço,
- μ é a viscosidade efetiva total e 
+Onde 
+\begin_inset Formula $\rho$
+\end_inset
+
+ é densidade efetiva total,
+ 
+\begin_inset Formula $d$
+\end_inset
+
+ é o diâmetro interno do poço,
+ 
+\begin_inset Formula $\mu$
+\end_inset
+
+ é a viscosidade efetiva total e 
 \begin_inset Formula $\bar{v}$
 \end_inset
 
@@ -754,7 +1046,7 @@ Onde ρ é densidade efetiva total,
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\bar{v}=\frac{q}{2.448d^{2}}
+\bar{v}=\frac{q}{2.448d^{2}}\label{eq:VelociadadeMedia}
 \end{equation}
 
 \end_inset
@@ -763,7 +1055,11 @@ Onde ρ é densidade efetiva total,
 \end_layout
 
 \begin_layout Standard
-Onde q é a vazão do poço.
+Onde 
+\begin_inset Formula $q$
+\end_inset
+
+ é a vazão do poço.
 \end_layout
 
 \begin_layout Standard
@@ -793,7 +1089,7 @@ Para o fluxo turbulento:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{dp_{f}}{dL}=\frac{\rho^{0.75}\bar{v}^{1.75}\mu^{0.25}}{1800d^{1.25}}
+\frac{dp_{f}}{dL}=\frac{f\rho\bar{v}^{2}}{25.8d}\label{eq:EquacaoTurbulento}
 \end{equation}
 
 \end_inset
@@ -801,14 +1097,90 @@ Para o fluxo turbulento:
 
 \end_layout
 
+\begin_layout Standard
+Onde 
+\begin_inset Formula $f$
+\end_inset
+
+ é chamado de fator de fricção e pode ser calculado utilizando o método numérico de Newton-Raphson.
+\end_layout
+
 \begin_layout Subsubsection
 Fluidos Plásticos de Bingham
 \end_layout
 
 \begin_layout Standard
-Para um fluido que se comporta como plástico de Bingham o número de Reynolds e a velocidade media podem ser obtidos pelas equações 13 e 14 respectivamente.
- O fluxo é considerado turbulento quando o número de Reynolds é maior ou igual a 2100.
- Para calcular a perda de pressão por fricção utilizamos as seguintes equações:
+Para um fluido que se comporta como plástico de Bingham a velocidade média podem ser obtida pela Equação (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:VelociadadeMedia"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+ O número de Reynolds pode ser obtido a partir da seguinte equação:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{re}=\frac{928\rho\bar{v}d}{\mu_{p}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde 
+\begin_inset Formula $\mu_{p}$
+\end_inset
+
+ é chamado de viscosidade plástica.
+\end_layout
+
+\begin_layout Standard
+O fluxo é considerado turbulento quando o número de Reynolds é maior ou igual ao número de Reynods crítico.
+ O número de Reynods crítico pode ser calculado pela seguinte fórmula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{rec}=\frac{1-\frac{4}{3}\left(\frac{\tau_{y}}{\tau_{w}}\right)+\frac{1}{3}\left(\frac{\tau_{y}}{\tau_{w}}\right)^{4}}{8\left(\frac{\tau_{y}}{\tau_{w}}\right)}N_{He}\label{eq:ReynoldsCritico}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde 
+\begin_inset Formula $N_{He}$
+\end_inset
+
+é chamado de numero de Hedstrom e pode ser calculado pela seguinte fórmula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{He}=\frac{37100\rho\tau_{y}d^{2}}{\mu_{p}^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para calcular a perda de pressão por fricção utilizamos as seguintes equações:
 \end_layout
 
 \begin_layout Standard
@@ -827,7 +1199,18 @@ Para fluxo laminar:
 \end_layout
 
 \begin_layout Standard
-Para o fluxo turbulento podemos usar a equação 16.
+Para o fluxo turbulento podemos usar a Equação (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EquacaoTurbulento"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsubsection
@@ -850,7 +1233,18 @@ N_{re}=\frac{89100\rho\bar{v}^{2-n}}{K}\left(\frac{0.0416d}{3+\frac{1}{n}}\right
 \end_layout
 
 \begin_layout Standard
-A velocidade média pode ser obtida pela equação 14.
+A velocidade média pode ser obtida pela Equação (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:VelociadadeMedia"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
  O fluxo é considerado turbulento quando o número de Reynolds é maior ou igual a 2100.
  Para calcular a perda de pressão por fricção utilizamos as seguintes equações:
 \end_layout
@@ -871,11 +1265,18 @@ Para fluxo laminar:
 \end_layout
 
 \begin_layout Standard
-Para o fluxo turbulento:
-\end_layout
+Para o fluxo turbulento podemos usar a Equação (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EquacaoTurbulento"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
-\begin_layout Standard
-Acho que não tem formula analítica (Discutir)
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsection
@@ -917,7 +1318,7 @@ A velocidade média pode ser obtida pela equação:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\bar{v}=\frac{q}{2.448\left(d_{2}^{2}-d_{1}^{2}\right)}
+\bar{v}=\frac{q}{2.448\left(d_{2}^{2}-d_{1}^{2}\right)}\label{eq:VelocidadeMediaAnular}
 \end{equation}
 
 \end_inset
@@ -952,7 +1353,7 @@ Para o fluxo turbulento:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{dp_{f}}{dL}=\frac{\rho^{0.75}\bar{v}^{1.75}\mu^{0.25}}{1396\left(d_{2}-d_{1}\right)^{1.25}}
+\frac{dp_{f}}{dL}=\frac{f\rho\bar{v}^{2}}{21.1\left(d_{2}-d_{1}\right)}\label{eq:EquacaoTurbulentoAnular}
 \end{equation}
 
 \end_inset
@@ -965,9 +1366,62 @@ Fluidos Plásticos de Bingham
 \end_layout
 
 \begin_layout Standard
-Para um fluido que se comporta como plástico de Bingham o número de Reynolds e a velocidade media podem ser obtidos pelas equações 20 e 21 respectivamente.
- O fluxo é considerado turbulento quando o número de Reynolds é maior ou igual a 2100.
- Para calcular a perda de pressão por fricção utilizamos as seguintes equações:
+Para um fluido que se comporta como plástico de Bingham a velocidade média podem ser obtida pela Equações (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:VelocidadeMediaAnular"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+ O número de Reynolds pode ser obtido a partir da seguinte equação:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{re}=\frac{757\rho\bar{v}\left(d_{2}-d_{1}\right)}{\mu_{p}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O fluxo é considerado turbulento quando o número de Reynolds é maior ou igual ao número de Reynods crítico.
+ O número de Reynods crítico pode ser calculado usando a Equação (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ReynoldsCritico"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+),
+ mas o número de Hedstrom deve ser calculado pela seguinte equação:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{He}=\frac{24700\rho\tau_{y}\left(d_{2}-d_{1}\right)^{2}}{\mu_{p}^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para calcular a perda de pressão por fricção utilizamos as seguintes equações:
 \end_layout
 
 \begin_layout Standard
@@ -986,7 +1440,18 @@ Para fluxo laminar:
 \end_layout
 
 \begin_layout Standard
-Para o fluxo turbulento podemos usar a equação 23.
+Para o fluxo turbulento podemos usar a Equação (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EquacaoTurbulentoAnular"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsubsection
@@ -1009,7 +1474,18 @@ N_{re}=\frac{109000\rho\bar{v}^{2-n}}{K}\left(\frac{0.0208\left(d_{2}-d_{1}\righ
 \end_layout
 
 \begin_layout Standard
-A velocidade média pode ser obtida pela equação 21.
+A velocidade média pode ser obtida pela Equação (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:VelocidadeMediaAnular"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
  O fluxo é considerado turbulento quando o número de Reynolds é maior ou igual a 2100.
  Para calcular a perda de pressão por fricção utilizamos as seguintes equações:
 \end_layout
@@ -1030,43 +1506,54 @@ Para fluxo laminar:
 \end_layout
 
 \begin_layout Standard
-Para o fluxo turbulento:
-\end_layout
+Para o fluxo turbulento podemos usar a Equação (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EquacaoTurbulentoAnular"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
-\begin_layout Standard
-Acho que não tem formula analítica (Discutir)
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Section
 Identificação de pacotes – assuntos
 \end_layout
 
-\begin_layout Standard
-...aqui...
+\begin_layout Itemize
+Pacote engenharia de poço:
+ O pacote engenharia de poço é responsável por relacionar os pacotes mecânica dos fluidos,
+ mecânica das rochas e equações analíticas de forma a tornar possível e coerente os resultados obtidos pela simulação.
 \end_layout
 
 \begin_layout Itemize
-Nome Pacote:
- Descrição.
- O que é,
- para que serve,
- como se relaciona com os demais pacotes.
+Pacote mecânica dos fluidos:
+ É o pacote que relaciona todas as propriedades dos fluidos e como esses fluidos se correlacionam com o poço e com outros fluidos.
 \end_layout
 
 \begin_layout Itemize
-Nome Pacote:
- Descrição.
- O que é,
- para que serve,
- como se relaciona com os demais pacotes.
+Pacote mecânica das rochas:
+ É o pacote que relaciona todas as propriedades das rochas presentes no sistema.
 \end_layout
 
 \begin_layout Itemize
-Nome Pacote:
- Descrição.
- O que é,
- para que serve,
- como se relaciona com os demais pacotes.
+Pacote janela principal:
+ É o pacote que compreende a interface amigável que o usuário tera contato,
+ é o ambiente onde o usuário poderá enviar comandos para o simulador e é a partir daqui que poderá visualizar os resultados.
+\end_layout
+
+\begin_layout Itemize
+Pacote equações analíticas:
+ Neste pacote estão agrupadas todas as equações analíticas que são aplicadas durante a simulação
+\end_layout
+
+\begin_layout Itemize
+Pacote modelagem gráfica:
+ Esse é o pacote responsável por montar os gráficos que são obtidos a partir dos resultados da simulação.
 \end_layout
 
 \begin_layout Section
@@ -1081,13 +1568,7 @@ name "sec: Diagrama de pacotes – assuntos"
 \end_layout
 
 \begin_layout Standard
-...aqui...
-\end_layout
-
-\begin_layout Standard
-coloque aqui texto falando do diagrama de pacotes,
- referencie a figura.
- Veja Figura 
+O diagrama de pacotes é apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Diagrama-de-Pacotes"
@@ -1140,27 +1621,6 @@ name "fig:Diagrama-de-Pacotes"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Description
-Nota:
- 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Não perca de vista a visão do todo;
- do projeto de engenharia como um todo.
- Cada capítulo,
- cada seção,
- cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos,
- de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
 \end_layout
 
 \end_body
