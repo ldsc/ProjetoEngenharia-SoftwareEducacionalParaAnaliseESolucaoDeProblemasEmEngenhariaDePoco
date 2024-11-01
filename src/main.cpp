@@ -7,7 +7,7 @@ int main() {
     CSimuladorPoco simulador;
 
     cabecalho.cabecalho();
-    simulador.menuPrincipal();
+    simulador.MenuPrincipal();
 
 
 

@@ -25,26 +25,23 @@ public:
     ~CSimuladorPoco() {}
 
     // Menus principais
-    void menuPrincipal();
-    void menuConfigurarSimulador();
-    void menuPressaoHidrostatica();
-    void menuPerdaDeCarga();
-    void menuModeloNewtoniano();
-    void menuModeloBingham();
-    void menuModeloPotencia();
+    void MenuPrincipal();
+    void MenuConfigurarSimulador();
+    void MenuPressaoHidrostatica();
+    void MenuPerdaDeCarga();
+    void MenuModeloNewtoniano();
+    void MenuModeloBingham();
+    void MenuModeloPotencia();
     
 
     // Métodos auxiliares para configurar o poço e fluidos
-    void configurarPoco();
-    void configurarFluido();
-    void configurarPorArquivo(const std::string& arquivo);
-    void definirModeloReologico();
-    void imprimirResultados();
+    void ConfigurarPoco();
+    void ConfigurarFluido();
+    void ConfigurarPorArquivo(const std::string& arquivo);
+    void ImprimirResultados();
 
     // Métodos de simulação
-    void simularPerdaDeCarga();
-    void simularPressaoHidrostatica();
-    void exibirPropriedades();
+    void ExibirPropriedades();
 
 };
 

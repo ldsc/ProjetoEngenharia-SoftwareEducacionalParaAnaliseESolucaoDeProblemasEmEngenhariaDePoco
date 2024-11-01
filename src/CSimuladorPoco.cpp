@@ -10,7 +10,7 @@
 
 auto auxiliar = std::make_unique<CAuxiliar>();
 
-void CSimuladorPoco::exibirPropriedades() {
+void CSimuladorPoco::ExibirPropriedades() {
         // Exibir propriedades do poço
             std::cout << "\nPropriedades do Poco:" << std::endl;
             std::cout << std::setw(30) << "Profundidade Total:" 
@@ -60,7 +60,7 @@ void CSimuladorPoco::exibirPropriedades() {
             }
 }
 
-void CSimuladorPoco::configurarPoco() {
+void CSimuladorPoco::ConfigurarPoco() {
     double profundidade, pressaoSuperficie, diametro, OD, ID, vazao;
 
     std::cout << "\nInforme a profundidade total do poco [ft]: ";
@@ -85,7 +85,7 @@ void CSimuladorPoco::configurarPoco() {
     poco = std::make_unique<CPoco>(profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
 }
 
-void CSimuladorPoco::configurarFluido() {
+void CSimuladorPoco::ConfigurarFluido() {
     std::vector<std::unique_ptr<CTrechoPoco>> trechos; // Vetor para armazenar os trechos
                 char continuar;
 
@@ -126,7 +126,7 @@ void CSimuladorPoco::configurarFluido() {
                 }
 }
 
-void CSimuladorPoco::configurarPorArquivo(const std::string& arquivo) {
+void CSimuladorPoco::ConfigurarPorArquivo(const std::string& arquivo) {
     std::ifstream file(arquivo);
     
     if (!file) {
@@ -178,7 +178,7 @@ void CSimuladorPoco::configurarPorArquivo(const std::string& arquivo) {
     file.close();
 }
 // Função para o menu principal
-void CSimuladorPoco::menuPrincipal() {
+void CSimuladorPoco::MenuPrincipal() {
     while (true) {
         int escolha;
 
@@ -208,7 +208,7 @@ void CSimuladorPoco::menuPrincipal() {
 
         switch (escolha) {
             case 1:
-                menuConfigurarSimulador();
+                MenuConfigurarSimulador();
                 break;
 
             case 0:
@@ -221,11 +221,11 @@ void CSimuladorPoco::menuPrincipal() {
                 } else {
                     switch (escolha) {
                         case 2:
-                            exibirPropriedades();
+                            ExibirPropriedades();
                             break;
 
                         case 3:
-                            menuPressaoHidrostatica();
+                            MenuPressaoHidrostatica();
                             break;
 
                         case 4:
@@ -233,7 +233,7 @@ void CSimuladorPoco::menuPrincipal() {
                             break;
 
                         case 5:
-                            menuPerdaDeCarga();
+                            MenuPerdaDeCarga();
                             break;
 
                         default:
@@ -247,7 +247,7 @@ void CSimuladorPoco::menuPrincipal() {
     }
 }
 
-void CSimuladorPoco::menuConfigurarSimulador() {
+void CSimuladorPoco::MenuConfigurarSimulador() {
     int escolha;
 
     while (true) {
@@ -265,17 +265,17 @@ void CSimuladorPoco::menuConfigurarSimulador() {
 
         switch (escolha) {
             case 1: {
-                configurarPoco();
+                ConfigurarPoco();
                 break;
             }
 
             case 2: {
                 auxiliar->desenharAviso("Voce pode adicionar multiplos fluidos");
-                configurarFluido();
+                ConfigurarFluido();
                 break;
 
             case 3:
-                configurarPorArquivo("ArquivoPoco.dat");
+                ConfigurarPorArquivo("ArquivoPoco.dat");
                 break;
             }
             case 0:
@@ -290,7 +290,7 @@ void CSimuladorPoco::menuConfigurarSimulador() {
     }
 }
 
-void CSimuladorPoco::menuPressaoHidrostatica() {
+void CSimuladorPoco::MenuPressaoHidrostatica() {
     int escolha;
     double profundidade;
 
@@ -330,7 +330,7 @@ void CSimuladorPoco::menuPressaoHidrostatica() {
     }
 }
 
-void CSimuladorPoco::menuPerdaDeCarga() {
+void CSimuladorPoco::MenuPerdaDeCarga() {
     int escolha;
 
     while (true) {
@@ -348,14 +348,14 @@ void CSimuladorPoco::menuPerdaDeCarga() {
 
         switch (escolha) {
             case 1:
-                menuModeloNewtoniano();
+                MenuModeloNewtoniano();
                 break;
                 
             case 2:
-                menuModeloBingham();
+                MenuModeloBingham();
                 break;
             case 3:
-                menuModeloPotencia();
+                MenuModeloPotencia();
                 break;
             case 0:
                 return; // Volta ao menu principal
@@ -369,7 +369,7 @@ void CSimuladorPoco::menuPerdaDeCarga() {
     }
 }
 
-void CSimuladorPoco::menuModeloNewtoniano() {
+void CSimuladorPoco::MenuModeloNewtoniano() {
     int escolha;
 
     while (true) {
@@ -419,7 +419,7 @@ void CSimuladorPoco::menuModeloNewtoniano() {
     }
 }
 
-void CSimuladorPoco::menuModeloBingham() {
+void CSimuladorPoco::MenuModeloBingham() {
     int escolha;
 
     while (true) {
@@ -492,7 +492,7 @@ void CSimuladorPoco::menuModeloBingham() {
     }
 }
 
-void CSimuladorPoco::menuModeloPotencia() {
+void CSimuladorPoco::MenuModeloPotencia() {
     int escolha;
 
     while (true) {
