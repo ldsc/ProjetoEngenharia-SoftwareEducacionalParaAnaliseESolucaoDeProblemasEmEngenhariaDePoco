@@ -40,8 +40,8 @@ std::string CModeloPotencia::DeterminarFluxoPoco() {
 std::string CModeloPotencia::DeterminarFluxoAnular() {
 
     double diametroAnular = poco->DiametroPoco() - poco->DiametroRevestimentoOD();
-   vMediaAnular = DeterminarVelocidadeMediaAnular(poco->Vazao(), poco->DiametroPoco(), poco->DiametroRevestimentoOD());
-    reynoldsAnular = DeterminarReynoldsPoco(poco->DensidadeEfetivaTotal(), vMediaAnular, diametroAnular, indiceDeConsistencia, indiceDeComportamento);
+    vMediaAnular = DeterminarVelocidadeMediaAnular(poco->Vazao(), poco->DiametroPoco(), poco->DiametroRevestimentoOD());
+    reynoldsAnular = DeterminarReynoldsAnular(poco->DensidadeEfetivaTotal(), vMediaAnular, diametroAnular, indiceDeConsistencia, indiceDeComportamento);
 
     fluxoAnular = (reynoldsAnular <= reynoldsCriticoAnular) ? "Laminar" : "Turbulento"; // Determinação do fluxo
     return fluxoAnular;
