@@ -874,7 +874,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da função main},
- label={main-cpp}] {../../scr/main.cpp}
+ label={main-cpp}] {../../src/main.cpp}
 \end_layout
 
 \end_inset
@@ -917,7 +917,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CSimuladorPoco},
- label={CSimuladorPoco-h}] {../../scr/CSimuladorPoco.h}
+ label={CSimuladorPoco-h}] {../../src/CSimuladorPoco.h}
 \end_layout
 
 \end_inset
@@ -960,7 +960,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CSimuladorPoco},
- label={CSimuladorPoco-cpp}] {../../scr/CSimuladorPoco.h}
+ label={CSimuladorPoco-cpp}] {../../src/CSimuladorPoco.h}
 \end_layout
 
 \end_inset
@@ -1003,7 +1003,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CSimuladorPoco},
- label={CPoco-h}] {../../scr/CPoco.h}
+ label={CPoco-h}] {../../src/CPoco.h}
 \end_layout
 
 \end_inset
@@ -1046,7 +1046,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CSimuladorPoco},
- label={CPoco-cpp}] {../../scr/CPoco.cpp}
+ label={CPoco-cpp}] {../../src/CPoco.cpp}
 \end_layout
 
 \end_inset
@@ -1089,7 +1089,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CFluido},
- label={CFluido-h}] {../../scr/CFluido.h}
+ label={CFluido-h}] {../../src/CFluido.h}
 \end_layout
 
 \end_inset
@@ -1132,7 +1132,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CFluido},
- label={CFluido-cpp}] {../../scr/CFluido.cpp}
+ label={CFluido-cpp}] {../../src/CFluido.cpp}
 \end_layout
 
 \end_inset
@@ -1175,7 +1175,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CModeloReologico},
- label={CModeloReologico-h}] {../../scr/CModeloReologico.h}
+ label={CModeloReologico-h}] {../../src/CModeloReologico.h}
 \end_layout
 
 \end_inset
@@ -1218,7 +1218,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CModeloReologico},
- label={CModeloReologico-cpp}] {../../scr/CModeloReologico.cpp}
+ label={CModeloReologico-cpp}] {../../src/CModeloReologico.cpp}
 \end_layout
 
 \end_inset
@@ -1261,7 +1261,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CModeloNewtoniano},
- label={CModeloNewtoniano-h}] {../../scr/CModeloNewtoniano.h}
+ label={CModeloNewtoniano-h}] {../../src/CModeloNewtoniano.h}
 \end_layout
 
 \end_inset
@@ -1304,7 +1304,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CModeloNewtoniano},
- label={CModeloNewtoniano-cpp}] {../../scr/CModeloNewtoniano.cpp}
+ label={CModeloNewtoniano-cpp}] {../../src/CModeloNewtoniano.cpp}
 \end_layout
 
 \end_inset
@@ -1347,7 +1347,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CModeloBingham},
- label={CModeloBingham-h}] {../../scr/CModeloBingham.h}
+ label={CModeloBingham-h}] {../../src/CModeloBingham.h}
 \end_layout
 
 \end_inset
@@ -1390,7 +1390,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CModeloBingham},
- label={CModeloBingham-cpp}] {../../scr/CModeloBingham.cpp}
+ label={CModeloBingham-cpp}] {../../src/CModeloBingham.cpp}
 \end_layout
 
 \end_inset
@@ -1433,7 +1433,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CModeloPotencia},
- label={CModeloPotencia-h}] {../../scr/CModeloPotencia.h}
+ label={CModeloPotencia-h}] {../../src/CModeloPotencia.h}
 \end_layout
 
 \end_inset
@@ -1476,7 +1476,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CModeloPotencia},
- label={CModeloPotencia-cpp}] {../../scr/CModeloPotencia.cpp}
+ label={CModeloPotencia-cpp}] {../../src/CModeloPotencia.cpp}
 \end_layout
 
 \end_inset

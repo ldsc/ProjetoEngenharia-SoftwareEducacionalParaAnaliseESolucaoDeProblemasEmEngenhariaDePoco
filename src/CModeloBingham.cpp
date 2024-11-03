@@ -74,9 +74,13 @@ double CModeloBingham::CalcularPerdaPorFriccaoPoco() {
     }
 
     fatorFriccaoPoco = DeterminarFatorFriccao(reynoldsPoco);
+    std::cout << viscosidadePlastica << std::endl;
+    std::cout << vMediaPoco << std::endl;
+    std::cout << poco->DiametroRevestimentoID() << std::endl;
+    std::cout <<pontoDeEscoamento << std::endl;
 
     if (fluxoPoco == "Laminar") {
-        return  ((poco->ViscosidadeEfetivaTotal() * vMediaPoco) / (1500 * std::pow(poco->DiametroRevestimentoID(), 2))) + (pontoDeEscoamento/(225*poco->DiametroRevestimentoID()));
+        return  ((viscosidadePlastica * vMediaPoco) / (1500 * (std::pow(poco->DiametroRevestimentoID(), 2)))) + (pontoDeEscoamento/(225*poco->DiametroRevestimentoID()));
     } else {  // Fluxo turbulento
         return (fatorFriccaoPoco * poco->DensidadeEfetivaTotal() * std::pow(vMediaPoco, 2) ) / (25.8 * poco->DiametroRevestimentoID());
     }
@@ -92,7 +96,7 @@ double CModeloBingham::CalcularPerdaPorFriccaoAnular() {
     fatorFriccaoAnular = DeterminarFatorFriccao(reynoldsAnular);
 
     if (fluxoAnular == "Laminar") {
-        return ((poco->ViscosidadeEfetivaTotal() * vMediaAnular) / (1000 * std::pow(diametroAnular, 2))) + (pontoDeEscoamento/(200*diametroAnular));
+        return ((viscosidadePlastica * vMediaAnular) / (1000 * std::pow(diametroAnular, 2))) + (pontoDeEscoamento/(200*diametroAnular));
     } else {  // Fluxo turbulento
         return (fatorFriccaoAnular * poco->DensidadeEfetivaTotal() * std::pow(vMediaAnular, 2) ) / (21.1 * diametroAnular);
     }

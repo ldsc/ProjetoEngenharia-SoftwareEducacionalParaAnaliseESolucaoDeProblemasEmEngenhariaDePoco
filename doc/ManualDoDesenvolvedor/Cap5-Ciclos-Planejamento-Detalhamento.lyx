@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -27,11 +27,11 @@
 \end_preamble
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -39,7 +39,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -53,7 +55,7 @@
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -74,7 +76,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -96,24 +100,48 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
 
-\begin_layout Chapter
-Lista das Características/
-\emph on
-Features
-\emph default
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
+
+\begin_inset VSpace 0.01cm*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Ciclos de Planejamento/Detalhamento
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Ciclos de Planejamento/Detalhamento
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset label
 LatexCommand label
-name "chap:Lista-das-Características"
+name "chap: Ciclos de Planejamento/Detalhamento"
 
 \end_inset
 
@@ -121,121 +149,80 @@ name "chap:Lista-das-Características"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo lista-se as características do sistema a ser desenvolvido
- (seção 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Lista-de-características"
-
-\end_inset
-
-).
- 
+Apresenta-se neste capítulo as versões do software desenvolvido.
 \end_layout
 
 \begin_layout Section
-Lista de características <<features>>
+Versão 0.1 - Uso modo terminal e Gnuplot para saída de gráfico
+\end_layout
+
+\begin_layout Standard
+Na primeira versão,
+ foi utilizado um sistema de entrada e saída de dados inteiramente pelo terminal,
+ sem o uso de bibliotecas de interface gráfica.
+ O Gnuplot foi empregado para a geração de gráficos e visualização de dados,
+ permitindo uma forma simples e direta de exibir os resultados ao usuário.
+ Essa versão foi desenvolvida em um ambiente de desenvolvimento baseado em terminal,
+ tudo isso no sistema operacional Windows 11.
+\end_layout
+
+\begin_layout Standard
+Note que é um software simples,
+ com uma interação baseada em texto.
+ O usuário pode gerar gráficos e simular diferentes senários.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Versão-0.1,-simples"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Versão 0.1,
+ simples e utilizando a biblioteca 
+\shape italic
+SFML
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Lista-de-características"
+name "fig:Versão-0.1,-simples"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-No final do ciclo de concepção e análise chegamos a uma lista de características
- <<
-\emph on
-features
-\emph default
->> que teremos de implementar.
-\end_layout
+\end_inset
 
-\begin_layout Standard
-Após a análises desenvolvidas e considerando o requisito de que este material
- deve ter um formato didático, chegamos a seguinte lista:
-\begin_inset Note Note
-status open
 
-\begin_layout Plain Layout
-nota importante, o número de versões irá depender do tamanho do ciclo, ou
- seja, número de dias de cada ciclo e capacidade da equipe.
-\end_layout
+\begin_inset Graphics
+	filename imagens/Sistema-V0.1.png
+	lyxscale 60
+	width 100text%
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Itemize
-v0.1
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Ex: O sistema deve plotar gráficos de pressão x temperatura
-\end_layout
-
-\begin_layout Itemize
-Ex: O sistema deve permitir abrir arquivos num formato especificado.
-\end_layout
-
-\begin_layout Itemize
-Ex: nome de classe a ser implementada e testada
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-v0.3
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Lista de classes a serem implementadas
-\end_layout
-
-\begin_layout Itemize
-Testes
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-v0.7
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Lista de classes a serem implementadas
-\end_layout
-
-\begin_layout Itemize
-Testes
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
 \begin_layout Plain Layout
-1.
- Uma feature deve, sempre que possível, poder ser implementada dentro de
- um ciclo.
- Se o ciclo é definido como sendo mensal, a feature deve poder ser concluída
- em um mês.
-\end_layout
-
-\begin_layout Plain Layout
-2.
- Tente associar as features a componentes a serem implementados.
- Por exemplo, uma feature pode ser uma classe.
-\end_layout
-
-\begin_layout Plain Layout
-3.
- 
+\align center
+Fonte:
+ Produzido pelo autor.
 \end_layout
 
 \end_inset
