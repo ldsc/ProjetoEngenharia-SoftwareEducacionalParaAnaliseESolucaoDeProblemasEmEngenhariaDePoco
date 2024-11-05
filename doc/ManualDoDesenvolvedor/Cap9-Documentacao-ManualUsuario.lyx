@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -28,11 +28,11 @@
 \options normaltoc, sumarioincompleto
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
 \inputencoding utf8
-\fontencoding global
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -40,7 +40,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -66,7 +68,7 @@
 \pdf_colorlinks false
 \pdf_backref page
 \pdf_pdfusetitle true
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -87,7 +89,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -109,37 +113,25 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset Newpage cleardoublepage
-\end_inset
-
-
-\begin_inset VSpace 0.01cm*
-\end_inset
-
-
-\begin_inset Newpage cleardoublepage
-\end_inset
-
-
-\begin_inset VSpace 0.01cm*
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Manual do Usuário
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -161,6 +153,8 @@ name "chap:Manual-do-Usuário"
 \begin_layout Section
 Instalação
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -199,8 +193,8 @@ Lá você encontra instruções atualizadas para baixar e instalar.
 \end_layout
 
 \begin_layout Standard
-Para um tutorial de como instalar e utilizar o programa, é possível assistir
- o vídeo 
+Para um tutorial de como instalar e utilizar o programa,
+ é possível assistir o vídeo 
 \begin_inset CommandInset href
 LatexCommand href
 target "https://www.youtube.com/watch?v=65e5s1MiY_c"
@@ -214,6 +208,8 @@ literal "false"
 \begin_layout Subsection
 Dependências
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -253,7 +249,8 @@ dnf install gcc
 
 \end_deeper
 \begin_layout Standard
-Ou, é possível utilizar o software Qt Creator:
+Ou,
+ é possível utilizar o software Qt Creator:
 \end_layout
 
 \begin_layout Itemize
@@ -269,8 +266,7 @@ software
 status open
 
 \begin_layout Plain Layout
-precisamos carregar o software no github do ldsc e capturar uma imagem do
- site gerado;
+precisamos carregar o software no github do ldsc e capturar uma imagem do site gerado;
 \end_layout
 
 \begin_layout Plain Layout
@@ -285,6 +281,8 @@ Colocar aqui.
 \begin_layout Section
 Interface gráfica
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -301,6 +299,7 @@ A interface do programa é apresentada na Figura
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Imagem da Interface Gráfica"
+nolink "false"
 
 \end_inset
 
@@ -310,6 +309,7 @@ reference "fig:Imagem da Interface Gráfica"
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -344,7 +344,8 @@ name "fig:Imagem da Interface Gráfica"
 
 \begin_layout Plain Layout
 \align center
-Fonte: Produzido pelo autor.
+Fonte:
+ Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -357,22 +358,25 @@ O Figura
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Imagem da Interface Gráfica"
+nolink "false"
 
 \end_inset
 
- mostra a janela principal do software e foram listadas 14 grupos de funcionalid
-ades importantes ao usuário.
+ mostra a janela principal do software e foram listadas 14 grupos de funcionalidades importantes ao usuário.
 \end_layout
 
 \begin_layout Itemize
 Região onde o usuário desenha o objeto desejado.
- Para desenhar, deve ser clicado com o botão esquerdo do mouse.
+ Para desenhar,
+ deve ser clicado com o botão esquerdo do mouse.
 \end_layout
 
 \begin_layout Itemize
-Retas e ponto de estudo, a partir dele, serão gerados os quatro gráficos
- da direita (5-8).
- Para escolher a posição, o usuário deve clicar com o botão direito do mouse.
+Retas e ponto de estudo,
+ a partir dele,
+ serão gerados os quatro gráficos da direita (5-8).
+ Para escolher a posição,
+ o usuário deve clicar com o botão direito do mouse.
 \end_layout
 
 \begin_layout Itemize
@@ -381,19 +385,23 @@ Região onde o usuário consegue diferenciar os materiais utilizados na simulaç
 
 \begin_layout Itemize
 Botões para o usuário navegar entre as camadas.
- Clicando no 'mais', ele pode criar uma camada.
- No 'X', pode excluir a camada atual, e as setas são para navegação.
+ Clicando no 'mais',
+ ele pode criar uma camada.
+ No 'X',
+ pode excluir a camada atual,
+ e as setas são para navegação.
 \end_layout
 
 \begin_layout Itemize
 Gráfico da temperatura ao longo do tempo.
- Mostra a temperatura no ponto de estudo escolhido em 3, e é atualizado
- em toda evolução temporal da simulação.
+ Mostra a temperatura no ponto de estudo escolhido em 3,
+ e é atualizado em toda evolução temporal da simulação.
 \end_layout
 
 \begin_layout Itemize
 Gráfico da temperatura ao longo das camadas.
- Como só foi criado uma única camada, o gráfico ficará vazio.
+ Como só foi criado uma única camada,
+ o gráfico ficará vazio.
 \end_layout
 
 \begin_layout Itemize
@@ -408,53 +416,64 @@ Gráfico da temperatura ao longo da vertical.
 
 \begin_layout Itemize
 Gráfico com as propriedades termofísicas ao longo da temperatura.
- O usuário pode selecionar o material que quer analisar na região esquerda
- da área destacada.
+ O usuário pode selecionar o material que quer analisar na região esquerda da área destacada.
 \end_layout
 
 \begin_layout Itemize
 Propriedades do desenho.
- Aqui o usuário pode escolher se quer apagar o desenho ou não, o formato
- do pincel, tamanho do pincel, temperatura e material da área desenhada
- e se é fonte/sumidouro de calor ou não.
+ Aqui o usuário pode escolher se quer apagar o desenho ou não,
+ o formato do pincel,
+ tamanho do pincel,
+ temperatura e material da área desenhada e se é fonte/sumidouro de calor ou não.
 \end_layout
 
 \begin_layout Itemize
 Propriedades da simulação.
- Aqui o usuáro pode configurar o tamanho da malha (dx), a distância entre
- as camadas (dz), o intervalo de tempo (dt), e os diversos tipos de velocidade
- da simulação: sem paralelismo, paralelismo por grid, paralelismo total
- (este último é o mais rápido, e é a escolha padrão)
+ Aqui o usuáro pode configurar o tamanho da malha (dx),
+ a distância entre as camadas (dz),
+ o intervalo de tempo (dt),
+ e os diversos tipos de velocidade da simulação:
+ sem paralelismo,
+ paralelismo por grid,
+ paralelismo total (este último é o mais rápido,
+ e é a escolha padrão)
 \end_layout
 
 \begin_layout Itemize
 Botão para iniciar a janela com a renderização 3D.
- Para navegar nessa janela, são listados os seguintes botões:
+ Para navegar nessa janela,
+ são listados os seguintes botões:
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-Espaço: muda a cor entre temperatura ou materiais.
+Espaço:
+ muda a cor entre temperatura ou materiais.
 \end_layout
 
 \begin_layout Enumerate
-Pg Up: zoom in.
+Pg Up:
+ zoom in.
 \end_layout
 
 \begin_layout Enumerate
-Pg Down: zoom out.
+Pg Down:
+ zoom out.
 \end_layout
 
 \begin_layout Enumerate
-w/a/s/d: configura o ângulo do objeto.
+w/a/s/d:
+ configura o ângulo do objeto.
 \end_layout
 
 \begin_layout Enumerate
-setas: move o objeto na janela.
+setas:
+ move o objeto na janela.
 \end_layout
 
 \begin_layout Enumerate
-mouse: mesmas funcionalidades de (d).
+mouse:
+ mesmas funcionalidades de (d).
 \end_layout
 
 \end_deeper
@@ -464,13 +483,14 @@ Botão para iniciar ou parar a simulação.
 
 \begin_layout Itemize
 Área com informações da posição/temperatura/material do desenho à esquerda,
- e informações da simulação (tempo atual e quanto tempo levou para resolver
- as iterações para chegar no novo tempo)
+ e informações da simulação (tempo atual e quanto tempo levou para resolver as iterações para chegar no novo tempo)
 \end_layout
 
 \begin_layout Section
 Como adicionar materiais
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -487,7 +507,8 @@ Apresenta-se neste apêndice instruções para adição de novos materiais.
 \end_layout
 
 \begin_layout Standard
-Para adicionar qualquer material ao simulador, é necessário clicar em 
+Para adicionar qualquer material ao simulador,
+ é necessário clicar em 
 \emph on
 Arquivo->Import material
 \emph default
@@ -495,8 +516,7 @@ Arquivo->Import material
 \end_layout
 
 \begin_layout Standard
-É importante lembrar que os arquivos devem ter o formato que será ensinado
- a seguir.
+É importante lembrar que os arquivos devem ter o formato que será ensinado a seguir.
 \end_layout
 
 \begin_layout Standard
@@ -527,6 +547,7 @@ reference "fig:Como-adicionar-um"
 plural "false"
 caps "false"
 noprefix "false"
+nolink "false"
 
 \end_inset
 
@@ -536,6 +557,7 @@ noprefix "false"
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -545,7 +567,9 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Adicionar um material no simulador: seleciona Arquivo, Import material,
+Adicionar um material no simulador:
+ seleciona Arquivo,
+ Import material,
  euUma janela será aberta para o usuário escolher o material
 \begin_inset CommandInset label
 LatexCommand label
@@ -571,7 +595,8 @@ name "fig:Como-adicionar-um"
 
 \begin_layout Plain Layout
 \align center
-Fonte: Produzido pelo autor.
+Fonte:
+ Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -582,6 +607,8 @@ Fonte: Produzido pelo autor.
 \begin_layout Subsection
 Método da correlação ou constante
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -594,9 +621,9 @@ Método da correlação ou constante
 \end_layout
 
 \begin_layout Standard
-Para adicionar um material que utilize métodos de correlação ou possuí proprieda
-des termofísicas constantes, deverá ser criado um arquivo com extensão '.correlac
-ao' ou '.constante', respectivamente.
+Para adicionar um material que utilize métodos de correlação ou possuí propriedades termofísicas constantes,
+ deverá ser criado um arquivo com extensão '.correlacao' ou '.constante',
+ respectivamente.
 \end_layout
 
 \begin_layout Standard
@@ -640,6 +667,7 @@ status open
 
 \color gray
 RGBA:
+
 \color inherit
  236 217 122 255
 \end_layout
@@ -648,6 +676,7 @@ RGBA:
 
 \color gray
 Cp:
+
 \color inherit
  2753
 \end_layout
@@ -656,6 +685,7 @@ Cp:
 
 \color gray
 rho:
+
 \color inherit
  747.3
 \end_layout
@@ -668,6 +698,7 @@ rho:
 
 \color gray
 k:
+
 \color inherit
  76.64 0.2633 0.0002
 \end_layout
@@ -678,11 +709,14 @@ k:
 \end_layout
 
 \begin_layout Standard
-Onde a primeira linha contém o RGBA do material, a segunda linha contém
- o valor de Cp, seguindo por rho.
+Onde a primeira linha contém o RGBA do material,
+ a segunda linha contém o valor de Cp,
+ seguindo por rho.
  Na quarta linha tem um comentário mostrando a equação da correlação utilizada,
- e na última linha, devem ser inseridos os valores de C0, C1 e C2, respectivamen
-te.
+ e na última linha,
+ devem ser inseridos os valores de C0,
+ C1 e C2,
+ respectivamente.
 \begin_inset Note Note
 status open
 
@@ -691,19 +725,18 @@ Nicholas:
 \end_layout
 
 \begin_layout Plain Layout
-A informação do rgba não é relativa ao material é uma informação puramente
- relacionada a interface em sí;
+A informação do rgba não é relativa ao material é uma informação puramente relacionada a interface em sí;
 \end_layout
 
 \begin_layout Plain Layout
-Sugiro tirar dos arquivos dos materiais e adicionar num arquivo como nome
- "interface-material-cor.dat" ou "material.cor"
+Sugiro tirar dos arquivos dos materiais e adicionar num arquivo como nome "interface-material-cor.dat" ou "material.cor"
 \end_layout
 
 \begin_layout Plain Layout
 nomematerial 
 \color gray
 RGBA:
+
 \color inherit
  236 217 122 255
 \end_layout
@@ -712,6 +745,7 @@ RGBA:
 nomematerial 
 \color gray
 RGBA:
+
 \color inherit
  236 217 122 255
 \end_layout
@@ -720,6 +754,7 @@ RGBA:
 nomematerial 
 \color gray
 RGBA:
+
 \color inherit
  236 217 122 255
 \end_layout
@@ -736,6 +771,8 @@ assim desvincula dados dos materiais da interface QT.
 \begin_layout Subsection
 Método de interpolação
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -748,11 +785,10 @@ Método de interpolação
 \end_layout
 
 \begin_layout Standard
-Em muitos casos práticos as propriedades físicas de um material são obtidas
- em experimentos laboratoriais.
- É comum medir a condutividade do material para diferentes valores de temperatur
-a, nestes casos, podemos usar métodos de interpolação para obter o valor
- de 
+Em muitos casos práticos as propriedades físicas de um material são obtidas em experimentos laboratoriais.
+ É comum medir a condutividade do material para diferentes valores de temperatura,
+ nestes casos,
+ podemos usar métodos de interpolação para obter o valor de 
 \begin_inset Formula $k(T)$
 \end_inset
 
@@ -760,8 +796,8 @@ a, nestes casos, podemos usar métodos de interpolação para obter o valor
 \end_layout
 
 \begin_layout Standard
-Para adicionar um material que utilize métodos de interpolação, deverá ser
- criado um arquivo com extensão '.interpolacao'.
+Para adicionar um material que utilize métodos de interpolação,
+ deverá ser criado um arquivo com extensão '.interpolacao'.
 \end_layout
 
 \begin_layout Standard
@@ -791,6 +827,7 @@ status open
 
 \color gray
 RGBA:
+
 \color inherit
  255 128 0 30 
 \begin_inset Note Note
@@ -809,6 +846,7 @@ tirar daqui
 
 \color gray
 Cp:
+
 \color inherit
  353.0
 \end_layout
@@ -817,6 +855,7 @@ Cp:
 
 \color gray
 rho:
+
 \color inherit
  7262.0 
 \end_layout
@@ -824,7 +863,8 @@ rho:
 \begin_layout Plain Layout
 
 \color gray
--T---k: 
+-T---k:
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -869,7 +909,8 @@ rho:
 \end_layout
 
 \begin_layout Standard
-Onde a primeira linha contém o RGBA do material, nas linhas abaixo o 
+Onde a primeira linha contém o RGBA do material,
+ nas linhas abaixo o 
 \begin_inset Formula $Cp$
 \end_inset
 
@@ -886,8 +927,9 @@ Onde a primeira linha contém o RGBA do material, nas linhas abaixo o
 \begin_inset Formula $k$
 \end_inset
 
-, são inseridos os valores da temperatura, e a respectiva condutividade
- térmica (
+,
+ são inseridos os valores da temperatura,
+ e a respectiva condutividade térmica (
 \begin_inset Formula $k$
 \end_inset
 
@@ -898,6 +940,8 @@ Onde a primeira linha contém o RGBA do material, nas linhas abaixo o
 \begin_layout Section
 Como gerar relatório em PDF
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -910,9 +954,10 @@ Como gerar relatório em PDF
 \end_layout
 
 \begin_layout Standard
-Os resultados da simulação podem ser exportados em pdf, onde a primeira
- página apresenta informações da simulação, juntamente com os gráficos.Para
- isso, é necessário clicar em 
+Os resultados da simulação podem ser exportados em pdf,
+ onde a primeira página apresenta informações da simulação,
+ juntamente com os gráficos.Para isso,
+ é necessário clicar em 
 \begin_inset Quotes eld
 \end_inset
 
@@ -932,14 +977,15 @@ Export pdf
 \end_layout
 
 \begin_layout Standard
-Nas páginas a seguir, são apresentados os grids, com um máximo de 6 grids
- por página.
+Nas páginas a seguir,
+ são apresentados os grids,
+ com um máximo de 6 grids por página.
 \end_layout
 
 \begin_layout Standard
 O objeto 3D do relatório pode ser interpretado como chapas furadas de cobre,
- ferro e alumínio, com fontes de calor de níquel em vários pontos de cada
- chapa.
+ ferro e alumínio,
+ com fontes de calor de níquel em vários pontos de cada chapa.
 \end_layout
 
 \begin_layout Standard

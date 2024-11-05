@@ -121,17 +121,6 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset Newpage cleardoublepage
-\end_inset
-
-
-\begin_inset VSpace 0.01cm*
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Ciclos Construção
 \begin_inset Index idx
@@ -809,7 +798,7 @@ color{mymauve}},
 Versão 0.1 - Código fonte - 
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Versão 0.3 codigo-fonte"
+name "sec:Versão 0.1 codigo-fonte"
 
 \end_inset
 
@@ -820,7 +809,7 @@ pageformat default
 status open
 
 \begin_layout Plain Layout
-Versão 0.3 código fonte
+Versão 0.1 código fonte
 \end_layout
 
 \end_inset

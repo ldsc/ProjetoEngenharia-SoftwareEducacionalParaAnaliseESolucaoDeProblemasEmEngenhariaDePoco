@@ -383,7 +383,7 @@ name "fig:Diagrama-corpo-livre"
 \begin_inset Graphics
 	filename imagens/DigramaCorpoLivre.png
 	lyxscale 70
-	width 70text%
+	width 100text%
 
 \end_inset
 
@@ -574,6 +574,7 @@ name "fig:Coluna-multiplos-fluidos"
 \begin_inset Graphics
 	filename imagens/ColunaMultiplosFluidos.png
 	lyxscale 70
+	width 100text%
 
 \end_inset
 
@@ -703,6 +704,7 @@ name "fig:Fluxo-laminar"
 \begin_inset Graphics
 	filename imagens/FluxoLaminar.png
 	lyxscale 70
+	width 100text%
 
 \end_inset
 
@@ -832,47 +834,6 @@ A viscosidade aparente pode ser definida como a razão entre a tensão de cisalh
  Como sabemos os fluidos de perfuração são misturas complexas que não podem ser caracterizadas por um único valor de viscosidade,
  quando um fluido não apresenta uma proporcionalidade entre tensão de cisalhamento e taxa de cisalhamento ele passa a ser conhecido como um fluido não newtoniano,
  podendo ser pseudoplásticos se a viscosidade diminui com o aumento da taxa de cisalhamento e dilatantes se a viscosidade aumenta com o aumento da taxa de cisalhamento.
- (Colocar figura 5.12)
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Fluxo laminar de fluido Newtoniano.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Fluxo-laminar-1"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename imagens/FluxoLaminar.png
-	lyxscale 70
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -1190,7 +1151,7 @@ Para fluxo laminar:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{dp_{f}}{dL}=\frac{\mu\bar{v}}{1500d^{2}}+\frac{\tau_{y}}{225d}
+\frac{dp_{f}}{dL}=\frac{\mu_{p}\bar{v}}{1500d^{2}}+\frac{\tau_{y}}{225d}
 \end{equation}
 
 \end_inset
@@ -1590,8 +1551,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeComponentes-Assuntos-Pacote.png
-	lyxscale 50
+	filename imagens/DiagramaPacotes.png
+	lyxscale 20
 	width 100text%
 
 \end_inset

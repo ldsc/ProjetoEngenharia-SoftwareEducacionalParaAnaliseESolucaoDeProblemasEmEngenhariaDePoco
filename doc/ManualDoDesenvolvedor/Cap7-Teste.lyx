@@ -121,17 +121,6 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset Newpage cleardoublepage
-\end_inset
-
-
-\begin_inset VSpace 0.01cm*
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Resultados
 \begin_inset Index idx
@@ -204,11 +193,826 @@ Aplicando os conceitos apresentados no capítulo de Metodologia,
 \end_layout
 
 \begin_layout Section
+Propriedades da simulação
+\end_layout
+
+\begin_layout Standard
+Para iniciarmos os testes,
+ antes precisamos definir as propriedades do poço e dos fluidos que foram utilizadas na simulação.
+ Dois cenários de propriedades foram utilizados,
+ um para produzir um regime de fluxo laminar e outro para produzir um regime de fluxo turbulento.
+\end_layout
+
+\begin_layout Subsection
+Configurações para o regime turbulento
+\end_layout
+
+\begin_layout Standard
+Abaixo na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:PropriedadesPocoTurbulento"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos as propriedades do poço.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Configuração do poço turbulento
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:PropriedadesPocoTurbulento"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Profundidade (ft)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pressão na superfície (psi)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Diâmetro (in)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+OD (in)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ID (in)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vazão (gal/min)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11483
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2175
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.66
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.87
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.09
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+158
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Abaixo na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:PropriedadesFluidosTurbulento"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos as propriedades dos fluidos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Configuração do poço turbulento
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:PropriedadesFluidosTurbulento"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fluidos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Densidade (lb/gal)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade (cP)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Profundidade inicial (ft)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Profundidade final (ft)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.76
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3281
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3281
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8202
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9.17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8202
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11483
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Configurações para o regime laminar
+\end_layout
+
+\begin_layout Standard
+Abaixo na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:PropriedadesPocoLaminar"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos as propriedades do poço.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Configuração do poço laminar
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:PropriedadesPocoLaminar"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Profundidade (ft)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pressão na superfície (psi)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Diâmetro (in)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+OD (in)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ID (in)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vazão (gal/min)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3281
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2175
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.66
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.87
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.09
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Abaixo na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:PropriedadesFluidosLaminar"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos as propriedades dos fluidos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Configuração do poço turbulento
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:PropriedadesFluidosLaminar"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fluidos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Densidade (lb/gal)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade (cP)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Profundidade inicial (ft)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Profundidade final (ft)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.76
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3281
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Testes
+\end_layout
+
+\begin_layout Subsection
 Validação da Perda de Fricção Pelo Modelo Newtoniano no Poço
 \begin_inset Index idx
 range none
 pageformat default
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Validação do simulador
@@ -229,50 +1033,56 @@ Aqui,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
+Para o fluxo laminar no poço realizamos os seguinte cálculos:
+ 
+\end_layout
 
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Soluções calculadas manualmente para Modelo Newtoniano no Poço considerando Regime Laminar 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Modelo-Newtoniano--Laminar-Poco-Manual"
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{v}=\frac{100}{2.448\times7.09^{2}}=0.8126
+\]
 
 \end_inset
 
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../imagens/validacao_temperaturas.png
-	lyxscale 70
-	scale 80
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{re}=\frac{928\times8.76\times0.8126\times7.09}{30}=1561.18
+\]
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\align center
-Fonte:
- Produzido pelo autor.
-\end_layout
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dp_{f}}{dL}=\frac{30\times0.8126}{1500\times7.09^{2}}=3.23\times10^{-4}
+\]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelo-Newtoniano--Laminar-Poco-Codigo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos os resultados obtidos pelo software que podem ser validados pelos cálculos acima.
 \end_layout
 
 \begin_layout Standard
@@ -291,7 +1101,7 @@ status open
 Soluções geradas pelo código para Modelo Newtoniano no Poço considerando Regime Laminar 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:fig:Modelo-Newtoniano--Laminar-Poco-Codigo"
+name "fig:Modelo-Newtoniano--Laminar-Poco-Codigo"
 
 \end_inset
 
@@ -304,53 +1114,6 @@ name "fig:fig:Modelo-Newtoniano--Laminar-Poco-Codigo"
 \begin_inset Graphics
 	filename imagens/Newtoniano-Poco-Laminar-Codigo.jpg
 	lyxscale 70
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte:
- Produzido pelo autor.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Soluções calculadas manualmente para Modelo Newtoniano no Poço considerando Regime Turbulento
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:fig:Modelo-Newtoniano--Turbulento-Poco-Manual"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../imagens/validacao.png
-	lyxscale 110
 	width 100text%
 
 \end_inset
@@ -370,6 +1133,59 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
+Para o fluxo turbulento no poço realizamos os seguinte cálculos:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{v}=\frac{158}{2.448\times7.09^{2}}=1.2839
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{re}=\frac{928\times8.62\times1.2839\times7.09}{1.73}=42090.74
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dp_{f}}{dL}=\frac{0.0055\times8.62\times1.2839^{2}}{25.8\times7.09}=4.21\times10^{-4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelo-Newtoniano--Turbulento-Poco-Codigo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos os resultados obtidos pelo software que podem ser validados pelos cálculos acima.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document
@@ -385,7 +1201,7 @@ status open
 Soluções geradas pelo código para Modelo Newtoniano no Poço considerando Regime Turbulento 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:fig:Modelo-Newtoniano--Turbulento-Poco-Codigo"
+name "fig:Modelo-Newtoniano--Turbulento-Poco-Codigo"
 
 \end_inset
 
@@ -398,7 +1214,7 @@ name "fig:fig:Modelo-Newtoniano--Turbulento-Poco-Codigo"
 \begin_inset Graphics
 	filename imagens/Newtoniano-Poco-Turbulento-Codigo.jpg
 	lyxscale 70
-	scale 80
+	width 100text%
 
 \end_inset
 
@@ -416,7 +1232,7 @@ Fonte:
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Validação da Perda de Fricção Pelo Modelo Newtoniano no Anular
 \end_layout
 
@@ -432,50 +1248,56 @@ Neste tópico,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
+Para o fluxo laminar no anular realizamos os seguinte cálculos:
+ 
+\end_layout
 
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Soluções calculadas manualmente para Modelo Newtoniano no Anular considerando Regime Laminar 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Modelo-Newtoniano-Laminar-Anular-Manual"
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{v}=\frac{100}{2.448\times\left(8.66^{2}-7.87^{2}\right)}=3.1281
+\]
 
 \end_inset
 
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../imagens/validacao_temperaturas.png
-	lyxscale 70
-	scale 80
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{re}=\frac{757\times8.76\times3.1281\times\left(8.66-7.87\right)}{30}=546.24
+\]
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\align center
-Fonte:
- Produzido pelo autor.
-\end_layout
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dp_{f}}{dL}=\frac{30\times3.1281}{1000\times\left(8.66-7.87\right)^{2}}=0.1503
+\]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelo-Newtoniano-Laminar-Anular-Codigo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos os resultados obtidos pelo software que podem ser validados pelos cálculos acima.
 \end_layout
 
 \begin_layout Standard
@@ -494,7 +1316,7 @@ status open
 Soluções geradas pelo código para Modelo Newtoniano no Anular considerando Regime Laminar 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:fig:Modelo-Newtoniano-Laminar-Anular-Codigo"
+name "fig:Modelo-Newtoniano-Laminar-Anular-Codigo"
 
 \end_inset
 
@@ -507,7 +1329,7 @@ name "fig:fig:Modelo-Newtoniano-Laminar-Anular-Codigo"
 \begin_inset Graphics
 	filename imagens/Newtoniano-Anular-Laminar-Codigo.jpg
 	lyxscale 70
-	scale 80
+	width 100text%
 
 \end_inset
 
@@ -526,50 +1348,56 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
+Para o fluxo turbulento no anular realizamos os seguinte cálculos:
+ 
+\end_layout
 
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Soluções calculadas manualmente para Modelo Newtoniano no Anular considerando Regime Turbulento
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:fig:Modelo-Newtoniano--Turbulento-Anular-Manual"
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{v}=\frac{158}{2.448\times\left(8.66^{2}-7.87^{2}\right)}=4.94
+\]
 
 \end_inset
 
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../imagens/validacao.png
-	lyxscale 110
-	width 100text%
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{re}=\frac{757\times8.62\times4.94\times\left(8.66-7.87\right)}{1.73}=14720
+\]
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\align center
-Fonte:
- Produzido pelo autor.
-\end_layout
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dp_{f}}{dL}=\frac{0.007\times8.62\times4.94^{2}}{21.1\times\left(8.66-7.87\right)}=0.09
+\]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelo-Newtoniano--Turbulento-Anular-Codigo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos os resultados obtidos pelo software que podem ser validados pelos cálculos acima.
 \end_layout
 
 \begin_layout Standard
@@ -588,7 +1416,7 @@ status open
 Soluções geradas pelo código para Modelo Newtoniano no Anular considerando Regime Turbulento 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:fig:Modelo-Newtoniano--Turbulento-Anular-Codigo"
+name "fig:Modelo-Newtoniano--Turbulento-Anular-Codigo"
 
 \end_inset
 
@@ -601,7 +1429,7 @@ name "fig:fig:Modelo-Newtoniano--Turbulento-Anular-Codigo"
 \begin_inset Graphics
 	filename imagens/Newtoniano-Anular-Turbulento-Codigo.jpg
 	lyxscale 70
-	scale 80
+	width 100text%
 
 \end_inset
 
@@ -619,7 +1447,7 @@ Fonte:
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Validação da Perda de Fricção Pelo Modelo Bingham no Poco
 \end_layout
 
@@ -635,50 +1463,78 @@ Aqui,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
+Para o fluxo laminar no poço realizamos os seguinte cálculos:
+ 
+\end_layout
 
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Soluções calculadas manualmente para Modelo Newtoniano no Poço considerando Regime Laminar 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Modelo-Bingham--Laminar-Poco-Manual"
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{v}=\frac{100}{2.448\times7.09^{2}}=0.8126
+\]
 
 \end_inset
 
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../imagens/validacao_temperaturas.png
-	lyxscale 70
-	scale 80
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{He}=\frac{37100\times8.76\times40\times7.09^{2}}{8.7^{2}}=8.63\times10^{6}
+\]
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\align center
-Fonte:
- Produzido pelo autor.
-\end_layout
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{rec}=33000
+\]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{re}=\frac{928\times8.76\times0.8126\times7.09}{8.7}=5383.39
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dp_{f}}{dL}=\frac{8.7\times0.8126}{1500\times7.09^{2}}+\frac{40}{225\times7.09}=0.025
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelo-Bingham--Laminar-Poco-Codigo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos os resultados obtidos pelo software que podem ser validados pelos cálculos acima.
 \end_layout
 
 \begin_layout Standard
@@ -694,10 +1550,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Newtoniano no Poço considerando Regime Laminar 
+Soluções geradas pelo código para Modelo Plástico de Bingham no Poço considerando Regime Laminar 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:fig:Modelo-Bingham--Laminar-Poco-Codigo"
+name "fig:Modelo-Bingham--Laminar-Poco-Codigo"
 
 \end_inset
 
@@ -708,55 +1564,8 @@ name "fig:fig:Modelo-Bingham--Laminar-Poco-Codigo"
 
 
 \begin_inset Graphics
-	filename ../imagens/validacao_temperaturas.png
+	filename s
 	lyxscale 70
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte:
- Produzido pelo autor.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Soluções calculadas manualmente para Modelo Newtoniano no Poço considerando Regime Turbulento
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:fig:Modelo-Bingham--Turbulento-Poco-Manual"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../imagens/validacao.png
-	lyxscale 110
 	width 100text%
 
 \end_inset
@@ -776,6 +1585,81 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
+Para o fluxo turbulento no poço realizamos os seguinte cálculos:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{v}=\frac{158}{2.448\times7.09^{2}}=1.2839
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{He}=\frac{37100\times8.62\times1\times7.09^{2}}{1.8^{2}}=4.96\times10^{6}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{rec}=27000
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{re}=\frac{928\times8.62\times1.2839\times7.09}{1.8}=40453.88
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dp_{f}}{dL}=\frac{0.0057\times8.62\times1.2839^{2}}{25.8\times7.09}=4.45\times10^{-4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelo-Bingham--Turbulento-Poco-Codigo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos os resultados obtidos pelo software que podem ser validados pelos cálculos acima.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document
@@ -788,10 +1672,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Newtoniano no Poço considerando Regime Turbulento 
+Soluções geradas pelo código para Modelo Plástico de Bingham no Poço considerando Regime Turbulento 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:fig:Modelo-Bingham--Turbulento-Poco-Codigo"
+name "fig:Modelo-Bingham--Turbulento-Poco-Codigo"
 
 \end_inset
 
@@ -804,7 +1688,7 @@ name "fig:fig:Modelo-Bingham--Turbulento-Poco-Codigo"
 \begin_inset Graphics
 	filename imagens/Bingham-Poco-Turbulento-Codigo.jpg
 	lyxscale 70
-	scale 80
+	width 100text%
 
 \end_inset
 
@@ -822,7 +1706,7 @@ Fonte:
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Validação da Perda de Fricção Pelo Modelo Bingham no Anular
 \end_layout
 
@@ -837,50 +1721,78 @@ Nesta seção,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
+Para o fluxo laminar no anular realizamos os seguinte cálculos:
+ 
+\end_layout
 
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Soluções calculadas manualmente para Modelo Newtoniano no Poço considerando Regime Laminar 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Modelo-Bingham-Laminar-Anular-Manual"
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{v}=\frac{100}{2.448\times\left(8.66^{2}-7.87^{2}\right)}=3.1281
+\]
 
 \end_inset
 
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../imagens/validacao_temperaturas.png
-	lyxscale 70
-	scale 80
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{He}=\frac{24700\times8.76\times40\times\left(8.66-7.87\right)^{2}}{8.7^{2}}=71363.59
+\]
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\align center
-Fonte:
- Produzido pelo autor.
-\end_layout
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{rec}=6000
+\]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{re}=\frac{757\times8.76\times3.1281\times\left(8.66-7.87\right)}{8.7}=1883.59
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dp_{f}}{dL}=\frac{8.7\times3.1281}{1000\times\left(8.66-7.87\right)^{2}}+\frac{40}{200\times\left(8.66-7.87\right)}=0.29
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelo-Bingham-Laminar-Anular-Codigo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos os resultados obtidos pelo software que podem ser validados pelos cálculos acima.
 \end_layout
 
 \begin_layout Standard
@@ -896,10 +1808,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Newtoniano no Poço considerando Regime Laminar 
+Soluções geradas pelo código para Modelo Plástico de Bingham no Anular considerando Regime Laminar 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:fig:Modelo-Bingham-Laminar-Anular-Codigo"
+name "fig:Modelo-Bingham-Laminar-Anular-Codigo"
 
 \end_inset
 
@@ -910,55 +1822,8 @@ name "fig:fig:Modelo-Bingham-Laminar-Anular-Codigo"
 
 
 \begin_inset Graphics
-	filename ../imagens/validacao_temperaturas.png
+	filename e
 	lyxscale 70
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte:
- Produzido pelo autor.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Soluções calculadas manualmente para Modelo Newtoniano no Poço considerando Regime Turbulento
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:fig:Modelo-Bingham-Turbulento-Poco-Manual"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../imagens/validacao.png
-	lyxscale 110
 	width 100text%
 
 \end_inset
@@ -978,6 +1843,81 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
+Para o fluxo turbulento no anular realizamos os seguinte cálculos:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{v}=\frac{158}{2.448\times\left(8.66^{2}-7.87^{2}\right)}=4.94
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{He}=\frac{24700\times8.62\times1\times\left(8.66-7.87\right)^{2}}{1.8^{2}}=41012.23
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{rec}=5000
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{re}=\frac{757\times8.62\times4.94\times\left(8.66-7.87\right)}{1.8}=14147.66
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dp_{f}}{dL}=\frac{0.007\times8.62\times4.94^{2}}{21.1\times\left(8.66-7.87\right)}=0.088
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelo-Bingham-Turbulento-Poco-Codigo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos os resultados obtidos pelo software que podem ser validados pelos cálculos acima.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document
@@ -990,10 +1930,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Newtoniano no Poço considerando Regime Turbulento 
+Soluções geradas pelo código para Modelo Plástico de Bingham no Anular considerando Regime Turbulento 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:fig:Modelo-Bingham-Turbulento-Poco-Codigo"
+name "fig:Modelo-Bingham-Turbulento-Poco-Codigo"
 
 \end_inset
 
@@ -1006,7 +1946,7 @@ name "fig:fig:Modelo-Bingham-Turbulento-Poco-Codigo"
 \begin_inset Graphics
 	filename imagens/Bingham-Anular-Turbulento-Codigo.jpg
 	lyxscale 70
-	scale 80
+	width 100text%
 
 \end_inset
 
@@ -1024,7 +1964,7 @@ Fonte:
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Validação da Perda de Fricção Pelo Modelo de Potência no Poco
 \end_layout
 
@@ -1039,50 +1979,56 @@ Este tópico aborda a validação do modelo de perda de fricção para fluidos q
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
+Para o fluxo laminar no poço realizamos os seguinte cálculos:
+ 
+\end_layout
 
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Soluções calculadas manualmente para Modelo Newtoniano no Poço considerando Regime Laminar 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Modelo-Potencia--Laminar-Poco-Manual"
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{v}=\frac{100}{2.448\times7.09^{2}}=0.8126
+\]
 
 \end_inset
 
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../imagens/validacao_temperaturas.png
-	lyxscale 70
-	scale 80
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{re}=\frac{89100\times8.76\times0.8126^{1}}{200}\left(\frac{0.0416\times7.09}{3+\frac{1}{1}}\right)^{1}=233.83
+\]
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\align center
-Fonte:
- Produzido pelo autor.
-\end_layout
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dp_{f}}{dL}=\frac{200\times0.8126^{1}\left(\frac{3+\frac{1}{1}}{0.0416}\right)^{1}}{144000\times7.09^{1+1}}=2.1\times10^{-3}
+\]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelo-Potencia--Laminar-Poco-Codigo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos os resultados obtidos pelo software que podem ser validados pelos cálculos acima.
 \end_layout
 
 \begin_layout Standard
@@ -1098,10 +2044,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Newtoniano no Poço considerando Regime Laminar 
+Soluções geradas pelo código para Modelo Lei de Potência no Poço considerando Regime Laminar 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:fig:Modelo-Potencia--Laminar-Poco-Codigo"
+name "fig:Modelo-Potencia--Laminar-Poco-Codigo"
 
 \end_inset
 
@@ -1112,55 +2058,8 @@ name "fig:fig:Modelo-Potencia--Laminar-Poco-Codigo"
 
 
 \begin_inset Graphics
-	filename ../imagens/validacao_temperaturas.png
+	filename w
 	lyxscale 70
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte:
- Produzido pelo autor.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Soluções calculadas manualmente para Modelo Newtoniano no Poço considerando Regime Turbulento
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:fig:Modelo-Potencia--Turbulento-Poco-Manual"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../imagens/validacao.png
-	lyxscale 110
 	width 100text%
 
 \end_inset
@@ -1180,6 +2079,59 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
+Para o fluxo turbulento no poço realizamos os seguinte cálculos:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{v}=\frac{158}{2.448\times7.09^{2}}=1.2839
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{re}=\frac{89100\times8.62\times0.8126^{1}}{25}\left(\frac{0.0416\times7.09}{3+\frac{1}{1}}\right)^{1}=2908
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dp_{f}}{dL}=\frac{0.012\times8.62\times1.2839^{2}}{25.8\times7.09}=9.3\times10^{-4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelo-Potencia--Turbulento-Poco-Codigo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos os resultados obtidos pelo software que podem ser validados pelos cálculos acima.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document
@@ -1192,10 +2144,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Newtoniano no Poço considerando Regime Turbulento 
+Soluções geradas pelo código para Modelo Lei de Potência no Poço considerando Regime Turbulento 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:fig:Modelo-Potencia--Turbulento-Poco-Codigo"
+name "fig:Modelo-Potencia--Turbulento-Poco-Codigo"
 
 \end_inset
 
@@ -1208,7 +2160,7 @@ name "fig:fig:Modelo-Potencia--Turbulento-Poco-Codigo"
 \begin_inset Graphics
 	filename imagens/Potencia-Poco-Turbulento-Codigo.jpg
 	lyxscale 70
-	scale 80
+	width 100text%
 
 \end_inset
 
@@ -1226,7 +2178,7 @@ Fonte:
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Validação da Perda de Fricção Pelo Modelo de Potência no Anular
 \end_layout
 
@@ -1241,50 +2193,56 @@ Nesta seção,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
+Para o fluxo laminar no poço realizamos os seguinte cálculos:
+ 
+\end_layout
 
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Soluções calculadas manualmente para Modelo Newtoniano no Poço considerando Regime Laminar 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Modelo-Potencia--Laminar-Anular-Manual"
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{v}=\frac{100}{2.448\times\left(8.66^{2}-7.87^{2}\right)}=3.1281
+\]
 
 \end_inset
 
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../imagens/validacao_temperaturas.png
-	lyxscale 70
-	scale 80
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{re}=\frac{109000\times8.76\times3.1281^{1}}{200}\left(\frac{0.0208\times\left(8.66-7.87\right)}{2+\frac{1}{1}}\right)^{1}=81.79
+\]
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\align center
-Fonte:
- Produzido pelo autor.
-\end_layout
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dp_{f}}{dL}=\frac{200\times3.1281^{1}\left(\frac{2+\frac{1}{1}}{0.0208}\right)^{1}}{144000\times\left(8.66-7.87\right)^{1+1}}=1.004
+\]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelo-Potencia--Laminar-Poco-Codigo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos os resultados obtidos pelo software que podem ser validados pelos cálculos acima.
 \end_layout
 
 \begin_layout Standard
@@ -1300,10 +2258,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Newtoniano no Poço considerando Regime Laminar 
+Soluções geradas pelo código para Modelo Lei de Potência no Anular considerando Regime Laminar 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:fig:Modelo-Potencia--Laminar-Anular-Codigo-5"
+name "fig:fig:Modelo-Potencia--Laminar-Anular-Codigo"
 
 \end_inset
 
@@ -1314,55 +2272,8 @@ name "fig:fig:Modelo-Potencia--Laminar-Anular-Codigo-5"
 
 
 \begin_inset Graphics
-	filename ../imagens/validacao_temperaturas.png
+	filename a
 	lyxscale 70
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte:
- Produzido pelo autor.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Soluções calculadas manualmente para Modelo Newtoniano no Poço considerando Regime Turbulento
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:fig:Modelo-Potencia--Turbulento-Anular-Manual"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../imagens/validacao.png
-	lyxscale 110
 	width 100text%
 
 \end_inset
@@ -1382,6 +2293,59 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
+Para o fluxo turbulento no poço realizamos os seguinte cálculos:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{v}=\frac{158}{2.448\times\left(8.66^{2}-7.87^{2}\right)}=4.94
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{re}=\frac{109000\times8.62\times4.94^{1}}{12}\left(\frac{0.0208\times\left(8.66-7.87\right)}{2+\frac{1}{1}}\right)^{1}=2118.59
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dp_{f}}{dL}=\frac{0.013\times8.62\times4.94^{2}}{21.1\times\left(8.66-7.87\right)}=0.164
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelo-Potencia--Turbulento-Anular-Codigo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos os resultados obtidos pelo software que podem ser validados pelos cálculos acima.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document
@@ -1394,10 +2358,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Newtoniano no Poço considerando Regime Turbulento 
+Soluções geradas pelo código para Modelo Lei de Potência no Anular considerando Regime Turbulento 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:fig:Modelo-Potencia--Turbulento-Anular-Codigo"
+name "fig:Modelo-Potencia--Turbulento-Anular-Codigo"
 
 \end_inset
 
@@ -1410,7 +2374,7 @@ name "fig:fig:Modelo-Potencia--Turbulento-Anular-Codigo"
 \begin_inset Graphics
 	filename imagens/Potencia-Anular-Turbulento-Codigo.jpg
 	lyxscale 70
-	scale 80
+	width 100text%
 
 \end_inset
 
@@ -1428,7 +2392,7 @@ Fonte:
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Validação da Pressão hidrostática no Fundo do Poço
 \end_layout
 
@@ -1444,50 +2408,55 @@ Aqui,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
+Foram realizados os seguintes cálculos:
+\end_layout
 
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Soluções calculadas manualmente para Modelo Newtoniano no Poço considerando Regime Laminar 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Modelo-Newtoniano--Laminar-Poco-Manual-6"
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{1}=0.05195\times8.76\times3281+2175=3668.12
+\]
 
 \end_inset
 
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../imagens/validacao_temperaturas.png
-	lyxscale 70
-	scale 80
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{2}=0.05195\times8.17\times4921+3668.12=5756.74
+\]
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\align center
-Fonte:
- Produzido pelo autor.
-\end_layout
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{3}=0.05195\times9.17\times3281+5756.74=7319.74
+\]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PressaoHidrostatica"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos os resultados obtidos pelo software que podem ser validados pelos cálculos acima.
 \end_layout
 
 \begin_layout Standard
@@ -1503,10 +2472,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Newtoniano no Poço considerando Regime Laminar 
+Soluções geradas pelo código para pressão hidrostática no fundo do poço 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:fig:Modelo-Newtoniano--Laminar-Poco-Codigo-6"
+name "fig:PressaoHidrostatica"
 
 \end_inset
 
@@ -1519,7 +2488,7 @@ name "fig:fig:Modelo-Newtoniano--Laminar-Poco-Codigo-6"
 \begin_inset Graphics
 	filename imagens/Pressao-Hidroestatica-Fundo-do-Poco-Codigo.png
 	lyxscale 70
-	scale 80
+	width 100text%
 
 \end_inset
 

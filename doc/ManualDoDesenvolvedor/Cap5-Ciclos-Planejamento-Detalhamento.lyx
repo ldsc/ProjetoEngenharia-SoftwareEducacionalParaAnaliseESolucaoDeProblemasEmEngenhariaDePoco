@@ -114,17 +114,6 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset Newpage cleardoublepage
-\end_inset
-
-
-\begin_inset VSpace 0.01cm*
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Ciclos de Planejamento/Detalhamento
 \begin_inset Index idx
@@ -172,7 +161,7 @@ Note que é um software simples,
  O usuário pode gerar gráficos e simular diferentes senários.
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Versão-0.1,-simples"
+reference "fig:Versao0.1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -186,7 +175,7 @@ placement H
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -194,12 +183,12 @@ status open
 
 \begin_layout Plain Layout
 Versão 0.1,
- simples e utilizando a biblioteca 
+ interface do software
 \shape italic
-SFML
+
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Versão-0.1,-simples"
+name "fig:Versao0.1"
 
 \end_inset
 

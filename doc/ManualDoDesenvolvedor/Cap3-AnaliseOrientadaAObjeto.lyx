@@ -188,8 +188,24 @@ name "sec:Diagramas-de-classes"
 \end_layout
 
 \begin_layout Standard
+O diagrama de classes é apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-classes"
+nolink "false"
+
+\end_inset
+
+.
+ Ele tem como objetivo apresentar todas as classes,
+ seus atributos,
+ métodos,
+ heranças e relações entre as classes.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
-placement document
+placement H
 alignment document
 wide false
 sideways false
@@ -197,17 +213,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename imagens/DiagramaDeClasses.png
-	lyxscale 15
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -224,6 +229,20 @@ name "cap:Diagrama-de-classes"
 \end_inset
 
 
+\begin_inset Graphics
+	filename imagens/DiagramaClasse.png
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -445,8 +464,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeSequencia-Eventos.png
-	lyxscale 15
+	filename imagens/DiagramaSequencia.png
+	lyxscale 10
 	width 100text%
 
 \end_inset
@@ -558,8 +577,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeComunicaca.png
-	lyxscale 85
+	filename imagens/DiagramaComunicacao.png
+	lyxscale 20
 	width 100text%
 
 \end_inset
@@ -592,14 +611,14 @@ name "cap:Diagrama-de-comunicação"
 \end_layout
 
 \begin_layout Section
-Diagrama de estado
+Diagrama de máquina de estado
 \begin_inset Index idx
 range none
 pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-estado
+máquina deestado
 \end_layout
 
 \end_inset
@@ -608,10 +627,10 @@ estado
 \begin_inset Index idx
 range none
 pageformat default
-status open
+status collapsed
 
 \begin_layout Plain Layout
-Diagrama de estado
+Diagrama de máquina estado
 \end_layout
 
 \end_inset
@@ -619,7 +638,7 @@ Diagrama de estado
 
 \begin_inset CommandInset label
 LatexCommand label
-name "subsec:diagrama de estados"
+name "subsec:diagrama de máquina de estado"
 
 \end_inset
 
@@ -628,7 +647,18 @@ name "subsec:diagrama de estados"
 
 \begin_layout Standard
 Um diagrama de máquina de estado representa os diversos estados que o objeto assume e os eventos que ocorrem ao longo de sua vida ou mesmo ao longo de um processo (histórico do objeto).
- A figura mostra um diagrama de estado para a classe CPoco.
+ A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-maquina-de-estado"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ mostra um diagrama de máquina de estado para o objeto modelo newtoniano.
 \end_layout
 
 \begin_layout Standard
@@ -666,8 +696,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeEstado-ClasseSimulado.png
-	lyxscale 50
+	filename imagens/DiagramaMaquinaEstado.png
+	lyxscale 15
 	width 100text%
 
 \end_inset
@@ -714,20 +744,18 @@ name "sec: Diagrama de atividades"
 No diagrama de atividades apresentado,
  é mostrado em detalhes uma atividade específica.
  Para o presente caso,
- será apresentado o diagrama da classe CPoco.
+ será apresentado o diagrama do método CalcularPerdaPorFriccaoPoco da classe CModeloNewtoniano.
 \end_layout
 
 \begin_layout Standard
 Inicialmente,
  os dados são recebidos pela classe responsável pela simulação de fluidos.
- Seus atributos são atualizados conforme os dados de entrada,
- e o sistema inicia o processo de definição do fluido.
- Dependendo do tipo de fluido,
- o fluxo segue por uma das duas sequências:
- se o fluido for gás,
- é realizado o cálculo das propriedades compressíveis;
- se for óleo,
- o sistema realiza o cálculo das propriedades incompressíveis.
+ Seus atributos são atualizados conforme os dados de entrada.
+ O primeiro passo realizado pelo método e calcular a velocidade média do poço,
+ após esse cálculo o método realiza uma verificação para saber se o número de Reynolds foi calculado,
+ caso não tenha sido o programa apresentara uma mensagem de erro,
+ caso tenha sido o método segue para a determinação do fluxo.
+ O fluxo pode ser laminar ou turbulento existindo uma ação específica para cada um dos caminhos.
 \end_layout
 
 \begin_layout Standard
@@ -749,7 +777,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeAtividade-1.png
+	filename imagens/DiagramaAtividade.png
 	lyxscale 15
 	width 100text%
 

@@ -185,7 +185,7 @@ lhead{
 \backslash
 thechapter
 \backslash
-space - Especificação}  
+space - Concepção}  
 \end_layout
 
 \end_inset
@@ -1079,7 +1079,7 @@ Diagrama de caso de uso geral
 O diagrama de caso de uso geral da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cap:Diagrama-caso-uso-geral-1"
+reference "fig:Diagrama-caso-uso-geral-1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1093,7 +1093,7 @@ nolink "false"
  As condições do caso de uso são apresentados na Tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cap:Exemplo-de-um-caso-de-uso (tabela)"
+reference "tab:Exemplo-de-um-caso-de-uso (tabela)"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1119,7 +1119,7 @@ status open
 Caso de uso 1
 \begin_inset CommandInset label
 LatexCommand label
-name "cap:Exemplo-de-um-caso-de-uso (tabela)"
+name "tab:Exemplo-de-um-caso-de-uso (tabela)"
 
 \end_inset
 
@@ -1268,7 +1268,7 @@ status open
 Diagrama de caso de uso – Caso de uso geral
 \begin_inset CommandInset label
 LatexCommand label
-name "cap:Diagrama-caso-uso-geral-1"
+name "fig:Diagrama-caso-uso-geral-1"
 
 \end_inset
 
@@ -1283,9 +1283,9 @@ name "cap:Diagrama-caso-uso-geral-1"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeCasoUso-Geral.png
-	lyxscale 10
-	special height=0.3\textheight
+	filename imagens/DiagramaCasoUsoGeral.png
+	lyxscale 20
+	width 100text%
 
 \end_inset
 
@@ -1311,7 +1311,7 @@ Diagrama de caso de uso específico
 O caso de uso específico da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cap:Diagrama-de-caso-de-uso-especifico1"
+reference "fig:Diagrama-de-caso-de-uso-especifico1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1340,7 +1340,7 @@ Diagrama de caso de uso específico:
  cálculo de pressão hidrostática e densidade 
 \begin_inset CommandInset label
 LatexCommand label
-name "cap:Diagrama-de-caso-de-uso-especifico1"
+name "fig:Diagrama-de-caso-de-uso-especifico1"
 
 \end_inset
 
@@ -1351,9 +1351,9 @@ name "cap:Diagrama-de-caso-de-uso-especifico1"
 
 
 \begin_inset Graphics
-	filename ../../imagens/DiagramaDeCasoDeUso-Especifico-1.png
-	lyxscale 40
-	width 80text%
+	filename imagens/DiagramaCasoUsoEspecifico1.png
+	lyxscale 20
+	width 100text%
 
 \end_inset
 
@@ -1375,7 +1375,7 @@ Fonte:
 O caso de uso específico da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cap:Diagrama-de-caso-de-uso-especifico2"
+reference "fig:Diagrama-de-caso-de-uso-especifico2"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1402,7 +1402,7 @@ status open
 Diagrama de caso de uso específico - cálculo da perda de pressão devido a perda por fricção no poço e no anular 
 \begin_inset CommandInset label
 LatexCommand label
-name "cap:Diagrama-de-caso-de-uso-especifico2"
+name "fig:Diagrama-de-caso-de-uso-especifico2"
 
 \end_inset
 
@@ -1413,9 +1413,9 @@ name "cap:Diagrama-de-caso-de-uso-especifico2"
 
 
 \begin_inset Graphics
-	filename ../../imagens/DiagramaDeCasoDeUso-Especifico-1.png
-	lyxscale 40
-	width 80text%
+	filename imagens/DiagramaCasoUsoEspecifico2.png
+	lyxscale 20
+	width 100text%
 
 \end_inset
 

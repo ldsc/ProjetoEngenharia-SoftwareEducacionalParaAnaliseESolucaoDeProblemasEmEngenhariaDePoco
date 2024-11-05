@@ -230,14 +230,6 @@ literal "true"
 
 \begin_layout Standard
 \align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap9-Documentacao-ManualUsuario.lyx"
-literal "true"
-
-\end_inset
-
-
 \begin_inset Note Note
 status open
 

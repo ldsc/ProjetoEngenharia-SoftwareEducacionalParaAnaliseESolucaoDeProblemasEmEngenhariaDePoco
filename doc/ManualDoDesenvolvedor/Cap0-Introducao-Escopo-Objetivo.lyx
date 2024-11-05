@@ -155,7 +155,8 @@ status open
 
 
 \backslash
-lfoot{SeuNomeAqui} 
+lfoot{Nathan Rangel Magalhães,
+ Thauan Ferreira Barbosa} 
 \backslash
 rfoot{
 \backslash
@@ -198,7 +199,7 @@ No presente projeto de engenharia desenvolve-se o Software Educacional para Aná
  calcular a densidade média,
  calcular a viscosidade média,
  calcular a queda de pressão friccional tanto no tubo quando no anular utilizando diferentes modelos como o de fluidos newtonianos,
- plástico de Bingham e lei de potências para fluxo turbulento e laminar....
+ plástico de Bingham e lei de potências para fluxo turbulento e laminar.
 \end_layout
 
 \begin_layout Section
