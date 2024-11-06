@@ -197,6 +197,10 @@ status open
 Definições de informações aplicadas a códigos de C++ embutidos
 \end_layout
 
+\begin_layout Plain Layout
+Pacote listings.pdf
+\end_layout
+
 \end_inset
 
 
@@ -947,6 +951,11 @@ status open
 
 \backslash
 lstset{style=C++} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CSimuladorPoco},
  label={CSimuladorPoco-cpp}] {../../src/CSimuladorPoco.h}
@@ -1477,6 +1486,27 @@ lstinputlisting[ caption={Arquivo de implementação da classe CModeloPotencia},
 \align center
 Fonte:
  produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Detalhes de C++ veja 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bueno2003,adb-prog-livroCpp"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

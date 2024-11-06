@@ -331,8 +331,39 @@ Os fluidos de perfuração podem ser bem variados em temos de composição e pro
  o primeiro deles sendo problemas estáticos que envolvem o cálculo de pressão hidrostática e o segundo deles com a movimentação de fluidos pelo tubo.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Veja seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Pressão-Hidrostática"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
 \begin_layout Subsection
 Pressão Hidrostática
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Pressão-Hidrostática"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -367,10 +398,19 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de corpo livre,
- atuação de forças em um elemento de fluido.
+ atuação de forças em um elemento de fluido
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Diagrama-corpo-livre"
+
+\end_inset
+
+.
+ Fonte 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LIVROPOCOJOAO"
+literal "false"
 
 \end_inset
 
@@ -407,20 +447,24 @@ nolink "false"
 
 \end_inset
 
-) a seguir em unidades oil field,
+) a seguir em unidades 
+\emph on
+oil field
+\emph default
+,
  onde 
 \begin_inset Formula $dp$
 \end_inset
 
- é a variação de pressão 
+ é a variação de pressão [unidade] 
 \begin_inset Formula $dZ$
 \end_inset
 
- é a variação de profundidade e 
+ é a variação de profundidade [m] e 
 \begin_inset Formula $\rho$
 \end_inset
 
- é a densidade do fluido.
+ é a densidade do fluido [unidade].
 \end_layout
 
 \begin_layout Standard
@@ -459,7 +503,6 @@ nolink "false"
 \end_inset
 
 ) podemos chegar na equação hidrostática para fluidos incompressíveis:
- 
 \end_layout
 
 \begin_layout Standard
@@ -478,7 +521,7 @@ Onde
 \begin_inset Formula $p_{0}$
 \end_inset
 
-,
+ [unidade],
  que é a constante de integração,
  é igual a pressão na superfície.
  Uma importante aplicação para essa equação é determinar a densidade correta de um fluido de perfuração,

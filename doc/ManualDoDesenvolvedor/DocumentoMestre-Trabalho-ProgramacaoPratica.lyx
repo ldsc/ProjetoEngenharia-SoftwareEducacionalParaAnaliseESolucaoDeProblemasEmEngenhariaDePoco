@@ -363,6 +363,11 @@ options "bibtotoc,authordate2"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
 \begin_inset Newpage cleardoublepage
 \end_inset
 

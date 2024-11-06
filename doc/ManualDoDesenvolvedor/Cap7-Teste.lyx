@@ -709,7 +709,7 @@ name "tab:PropriedadesPocoLaminar"
 <lyxtabular version="3" rows="2" columns="6">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -891,7 +891,7 @@ name "tab:PropriedadesFluidosLaminar"
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="5">
-<features tabularvalignment="middle">
+<features tabularvalignment="middle" tabularwidth="100text%">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
