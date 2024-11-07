@@ -170,39 +170,17 @@ Instalação
 O software foi disponibilizado no site 
 \begin_inset CommandInset href
 LatexCommand href
-target "https://github.com/ldsc"
+name "GitHub - Software Educacional Para Análise de Poço"
+target "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"
 literal "false"
 
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-depois de colocar no site precisa atualizar este link
-\end_layout
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
 Lá você encontra instruções atualizadas para baixar e instalar.
-\end_layout
-
-\begin_layout Standard
-Para um tutorial de como instalar e utilizar o programa,
- é possível assistir o vídeo 
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.youtube.com/watch?v=65e5s1MiY_c"
-literal "false"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Subsection
@@ -238,46 +216,6 @@ literal "false"
 .
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Para instalar no GNU/Linux use o comando 
-\family typewriter
-dnf install gcc
-\family default
-.
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-Ou,
- é possível utilizar o software Qt Creator:
-\end_layout
-
-\begin_layout Itemize
-Biblioteca Qt disponível em https://www.qt.io/download - o 
-\shape italic
-software
-\shape default
- foi desenvolvido com o Qt na versão 6.1.3.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-precisamos carregar o software no github do ldsc e capturar uma imagem do site gerado;
-\end_layout
-
-\begin_layout Plain Layout
-Colocar aqui.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Interface gráfica
 \begin_inset Index idx
@@ -298,7 +236,7 @@ Interface gráfica
 A interface do programa é apresentada na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Imagem da Interface Gráfica"
+reference "fig:ImagemInterfaceGráfica"
 nolink "false"
 
 \end_inset
@@ -319,10 +257,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Imagem da Interface Gráfica
+Imagem da interface gráfica
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Imagem da Interface Gráfica"
+name "fig:ImagemInterfaceGráfica"
 
 \end_inset
 
@@ -333,7 +271,7 @@ name "fig:Imagem da Interface Gráfica"
 
 
 \begin_inset Graphics
-	filename ../imagens/Interface-vFinal2.png
+	filename imagens/menu-principal-codigo.png
 	lyxscale 30
 	width 100text%
 
@@ -357,137 +295,145 @@ Fonte:
 O Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Imagem da Interface Gráfica"
+reference "fig:ImagemInterfaceGráfica"
 nolink "false"
 
 \end_inset
 
- mostra a janela principal do software e foram listadas 14 grupos de funcionalidades importantes ao usuário.
+ mostra as principais opções de configuração e operação disponíveis ao usuário no menu do programa,
+ organizadas em funcionalidades específicas para a simulação de poços de petróleo.
+\end_layout
+
+\begin_layout Section
+Funcionalidades 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Funcionalidades"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Região onde o usuário desenha o objeto desejado.
- Para desenhar,
- deve ser clicado com o botão esquerdo do mouse.
-\end_layout
-
-\begin_layout Itemize
-Retas e ponto de estudo,
- a partir dele,
- serão gerados os quatro gráficos da direita (5-8).
- Para escolher a posição,
- o usuário deve clicar com o botão direito do mouse.
-\end_layout
-
-\begin_layout Itemize
-Região onde o usuário consegue diferenciar os materiais utilizados na simulação.
-\end_layout
-
-\begin_layout Itemize
-Botões para o usuário navegar entre as camadas.
- Clicando no 'mais',
- ele pode criar uma camada.
- No 'X',
- pode excluir a camada atual,
- e as setas são para navegação.
-\end_layout
-
-\begin_layout Itemize
-Gráfico da temperatura ao longo do tempo.
- Mostra a temperatura no ponto de estudo escolhido em 3,
- e é atualizado em toda evolução temporal da simulação.
-\end_layout
-
-\begin_layout Itemize
-Gráfico da temperatura ao longo das camadas.
- Como só foi criado uma única camada,
- o gráfico ficará vazio.
-\end_layout
-
-\begin_layout Itemize
-Gráfico da temperatura ao longo da horizontal.
- Mostra a temperatura ao longo da reta horizontal de estudo.
-\end_layout
-
-\begin_layout Itemize
-Gráfico da temperatura ao longo da vertical.
- Mostra a temperatura ao longo da reta vertical de estudo.
-\end_layout
-
-\begin_layout Itemize
-Gráfico com as propriedades termofísicas ao longo da temperatura.
- O usuário pode selecionar o material que quer analisar na região esquerda da área destacada.
-\end_layout
-
-\begin_layout Itemize
-Propriedades do desenho.
- Aqui o usuário pode escolher se quer apagar o desenho ou não,
- o formato do pincel,
- tamanho do pincel,
- temperatura e material da área desenhada e se é fonte/sumidouro de calor ou não.
-\end_layout
-
-\begin_layout Itemize
-Propriedades da simulação.
- Aqui o usuáro pode configurar o tamanho da malha (dx),
- a distância entre as camadas (dz),
- o intervalo de tempo (dt),
- e os diversos tipos de velocidade da simulação:
- sem paralelismo,
- paralelismo por grid,
- paralelismo total (este último é o mais rápido,
- e é a escolha padrão)
-\end_layout
-
-\begin_layout Itemize
-Botão para iniciar a janela com a renderização 3D.
- Para navegar nessa janela,
- são listados os seguintes botões:
+Configurar Poço:
+ permite ao usuário definir e ajustar as principais propriedades do poço e fluido,
+ oferecendo três opções:
 \end_layout
 
 \begin_deeper
-\begin_layout Enumerate
-Espaço:
- muda a cor entre temperatura ou materiais.
+\begin_layout Itemize
+Criar Poço:
+ para configurar propriedades iniciais,
+ como profundidade,
+ diâmetro e revestimento.
 \end_layout
 
-\begin_layout Enumerate
-Pg Up:
- zoom in.
+\begin_layout Itemize
+Adicionar Fluido:
+ para definir as características dos fluidos presentes no poço,
+ incluindo densidade e viscosidade.
 \end_layout
 
-\begin_layout Enumerate
-Pg Down:
- zoom out.
-\end_layout
-
-\begin_layout Enumerate
-w/a/s/d:
- configura o ângulo do objeto.
-\end_layout
-
-\begin_layout Enumerate
-setas:
- move o objeto na janela.
-\end_layout
-
-\begin_layout Enumerate
-mouse:
- mesmas funcionalidades de (d).
+\begin_layout Itemize
+Carregar Dados a Partir de Arquivo (.dat):
+ para importar as configurações do poço e fluidos a partir de um arquivo .dat,
+ facilitando a inicialização da simulação com dados externos.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Botão para iniciar ou parar a simulação.
+Exibir Propriedades do Poço:
+ exibe as características e parâmetros do poço,
+ incluindo profundidade total,
+ diâmetro,
+ e propriedades dos fluidos,
+ organizadas para fácil visualização.
 \end_layout
 
 \begin_layout Itemize
-Área com informações da posição/temperatura/material do desenho à esquerda,
- e informações da simulação (tempo atual e quanto tempo levou para resolver as iterações para chegar no novo tempo)
+Calcular Pressão Hidrostática do Poço:
+ permite ao usuário calcular a pressão exercida pelo fluido em diferentes pontos do poço,
+ com duas opções:
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Calcular Pressão Hidrostática (Fundo de Poço):
+ exibe a pressão no fundo do poço considerando a profundidade total e a densidade do fluido.
+\end_layout
+
+\begin_layout Itemize
+Calcular Pressão Hidrostática em um Ponto do Poço:
+ permite calcular a pressão hidrostática em uma profundidade específica,
+ escolhida pelo usuário.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Plotar Perfil Profundidade vs Densidade:
+ gera um gráfico que mostra a variação de densidade dos fluidos em relação à profundidade,
+ facilitando a visualização da distribuição dos fluidos ao longo do poço.
+\end_layout
+
+\begin_layout Itemize
+Calcular Perda de Carga por Fricção:
+ oferece cálculo detalhado da perda de carga utilizando três modelos reológicos distintos,
+ com opções para poço e espaço anular.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Modelo Newtoniano
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Determinar Perda de Carga no Poço:
+ realiza o cálculo de perda de carga considerando um modelo Newtoniano no espaço do poço.
+\end_layout
+
+\begin_layout Itemize
+Determinar Perda de Carga no Anular:
+ cálculo de perda de carga utilizando um modelo Newtoniano para o espaço anular.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Modelo Bingham
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Determinar Perda de Carga no Poço:
+ cálculo para perda de carga aplicando o modelo Bingham no espaço do poço.
+\end_layout
+
+\begin_layout Itemize
+Determinar Perda de Carga no Anular:
+ utiliza o modelo Bingham para calcular a perda de carga no espaço anular.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Modelo de Potência
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Determinar Perda de Carga no Poço:
+ realiza o cálculo com o modelo de potência no espaço do poço.
+\end_layout
+
+\begin_layout Itemize
+Determinar Perda de Carga no Anular:
+ cálculo da perda de carga no espaço anular com o modelo de potência.
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Section
-Como adicionar materiais
+Como adicionar Informações do Poço/Fluido
 \begin_inset Index idx
 range none
 pageformat default
@@ -503,47 +449,29 @@ Como adicionar materiais
 \end_layout
 
 \begin_layout Standard
-Apresenta-se neste apêndice instruções para adição de novos materiais.
+Apresenta-se neste apêndice instruções para configuração do Poço/Fluido.
 \end_layout
 
 \begin_layout Standard
-Para adicionar qualquer material ao simulador,
- é necessário clicar em 
-\emph on
-Arquivo->Import material
-\emph default
- e escolher o arquivo desejado.
-\end_layout
-
-\begin_layout Standard
-É importante lembrar que os arquivos devem ter o formato que será ensinado a seguir.
-\end_layout
-
-\begin_layout Standard
-A extensão do arquivo deve ser:
-\end_layout
-
-\begin_layout Itemize
-'.constante',
-\end_layout
-
-\begin_layout Itemize
-'.correlacao'
-\end_layout
-
-\begin_layout Itemize
-'.interpolacao'
-\end_layout
-
-\begin_layout Standard
-conforme o modelo escolhido.
+Para configurar um poço ou fluido no software,
+ o usuário tem duas opções:
+ realizar a configuração manualmente acessando 
+\series bold
+Configurar Poço → Criar Poço
+\series default
+ para definir as propriedades do poço,
+ ou 
+\series bold
+Configurar Poço → Adicionar Fluido
+\series default
+ para especificar as características dos fluidos.
 \end_layout
 
 \begin_layout Standard
 A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Como-adicionar-um"
+reference "fig:ComoAdicionarUmMaterial"
 plural "false"
 caps "false"
 noprefix "false"
@@ -570,10 +498,10 @@ status open
 Adicionar um material no simulador:
  seleciona Arquivo,
  Import material,
- euUma janela será aberta para o usuário escolher o material
+ e uma janela será aberta para o usuário escolher o material
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Como-adicionar-um"
+name "fig:ComoAdicionarUmMaterial"
 
 \end_inset
 
@@ -584,7 +512,7 @@ name "fig:Como-adicionar-um"
 
 
 \begin_inset Graphics
-	filename ../imagens/importar_material.png
+	filename imagens/Configurar-poco-codigo.png
 	lyxscale 80
 	width 100text%
 
@@ -604,238 +532,58 @@ Fonte:
 
 \end_layout
 
-\begin_layout Subsection
-Método da correlação ou constante
-\begin_inset Index idx
-range none
-pageformat default
-status open
-
-\begin_layout Plain Layout
-Método da correlação ou constante
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
-Para adicionar um material que utilize métodos de correlação ou possuí propriedades termofísicas constantes,
- deverá ser criado um arquivo com extensão '.correlacao' ou '.constante',
- respectivamente.
-\end_layout
+Além disso,
+ se preferir,
+ o usuário pode carregar os dados diretamente a partir de um arquivo .dta.
+ Nesse arquivo,
+ as configurações devem seguir uma ordem específica,
+ onde apenas um poço e os fluidos são listados,
+ um abaixo do outro,
+ conforme a sequência mostrada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ArquivoDat"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
-\begin_layout Standard
-O molde do arquivo é apresentado abaixo:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-você poderia mostrar na tela a correlação
-\end_layout
-
-\begin_layout Plain Layout
-k=C0+C1*T-C2*T^2 sendo c0c1c2 substituido pelos valores lidos
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-
-\color gray
-RGBA:
-
-\color inherit
- 236 217 122 255
-\end_layout
-
-\begin_layout Plain Layout
-
-\color gray
-Cp:
-
-\color inherit
- 2753
-\end_layout
-
-\begin_layout Plain Layout
-
-\color gray
-rho:
-
-\color inherit
- 747.3
-\end_layout
-
-\begin_layout Plain Layout
-/// k=C0+C1*T-C2*T^2
-\end_layout
-
-\begin_layout Plain Layout
-
-\color gray
-k:
-
-\color inherit
- 76.64 0.2633 0.0002
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Onde a primeira linha contém o RGBA do material,
- a segunda linha contém o valor de Cp,
- seguindo por rho.
- Na quarta linha tem um comentário mostrando a equação da correlação utilizada,
- e na última linha,
- devem ser inseridos os valores de C0,
- C1 e C2,
- respectivamente.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Nicholas:
-\end_layout
-
-\begin_layout Plain Layout
-A informação do rgba não é relativa ao material é uma informação puramente relacionada a interface em sí;
-\end_layout
-
-\begin_layout Plain Layout
-Sugiro tirar dos arquivos dos materiais e adicionar num arquivo como nome "interface-material-cor.dat" ou "material.cor"
-\end_layout
-
-\begin_layout Plain Layout
-nomematerial 
-\color gray
-RGBA:
-
-\color inherit
- 236 217 122 255
-\end_layout
-
-\begin_layout Plain Layout
-nomematerial 
-\color gray
-RGBA:
-
-\color inherit
- 236 217 122 255
-\end_layout
-
-\begin_layout Plain Layout
-nomematerial 
-\color gray
-RGBA:
-
-\color inherit
- 236 217 122 255
-\end_layout
-
-\begin_layout Plain Layout
-assim desvincula dados dos materiais da interface QT.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Método de interpolação
-\begin_inset Index idx
-range none
-pageformat default
-status open
-
-\begin_layout Plain Layout
-Método de interpolação
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Em muitos casos práticos as propriedades físicas de um material são obtidas em experimentos laboratoriais.
- É comum medir a condutividade do material para diferentes valores de temperatura,
- nestes casos,
- podemos usar métodos de interpolação para obter o valor de 
-\begin_inset Formula $k(T)$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-Para adicionar um material que utilize métodos de interpolação,
- deverá ser criado um arquivo com extensão '.interpolacao'.
-\end_layout
-
-\begin_layout Standard
-O molde do arquivo é apresentado abaixo:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-
-\color gray
-RGBA:
-
-\color inherit
- 255 128 0 30 
-\begin_inset Note Note
-status open
+\align center
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
-tirar daqui
+Arquivo .dat para adicionar propriedades do poço e dos fluidos no simulador
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ArquivoDat"
+
+\end_inset
+
+
 \end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagens/funcionalidade-carregar-poco.png
+	lyxscale 80
+	width 100text%
 
 \end_inset
 
@@ -843,64 +591,9 @@ tirar daqui
 \end_layout
 
 \begin_layout Plain Layout
-
-\color gray
-Cp:
-
-\color inherit
- 353.0
-\end_layout
-
-\begin_layout Plain Layout
-
-\color gray
-rho:
-
-\color inherit
- 7262.0 
-\end_layout
-
-\begin_layout Plain Layout
-
-\color gray
--T---k:
- 
-\end_layout
-
-\begin_layout Plain Layout
-100 0.2 
-\end_layout
-
-\begin_layout Plain Layout
-200 0.4 
-\end_layout
-
-\begin_layout Plain Layout
-300 0.5 
-\end_layout
-
-\begin_layout Plain Layout
-400 0.55 
-\end_layout
-
-\begin_layout Plain Layout
-500 0.6 
-\end_layout
-
-\begin_layout Plain Layout
-600 0.65 
-\end_layout
-
-\begin_layout Plain Layout
-700 0.7 
-\end_layout
-
-\begin_layout Plain Layout
-800 0.75 
-\end_layout
-
-\begin_layout Plain Layout
-900 0.8 
+\align center
+Fonte:
+ Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -909,94 +602,18 @@ rho:
 \end_layout
 
 \begin_layout Standard
-Onde a primeira linha contém o RGBA do material,
- nas linhas abaixo o 
-\begin_inset Formula $Cp$
-\end_inset
+Dessa forma após configurar o poço o usuário poderá explorar as funcionalidade do software descritas na Seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Funcionalidades"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
- e o 
-\begin_inset Formula $rho$
 \end_inset
 
 .
- Abaixo da linha com 
-\begin_inset Formula $T$
-\end_inset
-
- e 
-\begin_inset Formula $k$
-\end_inset
-
-,
- são inseridos os valores da temperatura,
- e a respectiva condutividade térmica (
-\begin_inset Formula $k$
-\end_inset
-
-).
- O usuário pode adicionar quantas linhas desejar.
-\end_layout
-
-\begin_layout Section
-Como gerar relatório em PDF
-\begin_inset Index idx
-range none
-pageformat default
-status open
-
-\begin_layout Plain Layout
-Como gerar relatório em PDF
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Os resultados da simulação podem ser exportados em pdf,
- onde a primeira página apresenta informações da simulação,
- juntamente com os gráficos.Para isso,
- é necessário clicar em 
-\begin_inset Quotes eld
-\end_inset
-
-File
-\begin_inset Quotes erd
-\end_inset
-
- e 
-\begin_inset Quotes eld
-\end_inset
-
-Export pdf
-\begin_inset Quotes erd
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Nas páginas a seguir,
- são apresentados os grids,
- com um máximo de 6 grids por página.
-\end_layout
-
-\begin_layout Standard
-O objeto 3D do relatório pode ser interpretado como chapas furadas de cobre,
- ferro e alumínio,
- com fontes de calor de níquel em vários pontos de cada chapa.
-\end_layout
-
-\begin_layout Standard
-\begin_inset External
-	template PDFPages
-	filename ../relatorios/relatorio_simulacao.pdf
-	extra LaTeX "pages=-"
-
-\end_inset
-
-
 \end_layout
 
 \end_body

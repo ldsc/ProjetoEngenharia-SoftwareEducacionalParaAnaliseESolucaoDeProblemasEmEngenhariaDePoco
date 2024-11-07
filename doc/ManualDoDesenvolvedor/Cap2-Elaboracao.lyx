@@ -314,6 +314,404 @@ name "sec:Formulação-teórica"
 \end_layout
 
 \begin_layout Subsection
+Termos e Unidades
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Termos e Unidades
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Termos-e-Unidades"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os principais termos e suas unidades utilizadas neste projeto estão listadas abaixo:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $dp$
+\end_inset
+
+ é a variação de pressão 
+\begin_inset Formula $\left[psi\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $dZ$
+\end_inset
+
+ é a variação de profundidade 
+\begin_inset Formula $\left[ft\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\rho$
+\end_inset
+
+ é a densidade do fluido 
+\begin_inset Formula $\left[lbm/gal\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ é a constante de integração igual a pressão na superfície 
+\begin_inset Formula $\left[psi\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $p$
+\end_inset
+
+ é a pressão
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\begin_inset Formula $\left[psi\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Z$
+\end_inset
+
+ é a profundidade 
+\begin_inset Formula $\left[ft\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $z$
+\end_inset
+
+ é o fator de desvio de gás;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R$
+\end_inset
+
+ é constante universal dos gases 
+\begin_inset Formula $\left[psi.ft^{3}/lb-mol.^{\circ}R\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T$
+\end_inset
+
+ é a temperatura absoluta 
+\begin_inset Formula $\left[^{\circ}R\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $M$
+\end_inset
+
+ é o peso molecular do gás 
+\begin_inset Formula $\left[lb/lb-mol\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\triangle Z$
+\end_inset
+
+ é a variação de profundidade 
+\begin_inset Formula $\left[ft\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $g$
+\end_inset
+
+ é a gravidade 
+\begin_inset Formula $\left[ft/s^{2}\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $v$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ velocidade 
+\begin_inset Formula $\left[ft/s\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tau$
+\end_inset
+
+ é a tensão de cisalhamento exercida sobre o fluido 
+\begin_inset Formula $\left[psi\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mu$
+\end_inset
+
+ é a viscosidade aparente 
+\begin_inset Formula $\left[cP\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\dot{\gamma}$
+\end_inset
+
+ é a taxa de cisalhamento 
+\begin_inset Formula $\left[1/s\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tau_{y}$
+\end_inset
+
+ é a tensão de escoamento ou o ponto de escoamento 
+\begin_inset Formula $\left[lbf/100.sq.ft\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mu_{p}$
+\end_inset
+
+ é a viscosidade plástica 
+\begin_inset Formula $\left[cP\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $K$
+\end_inset
+
+ é o índice de consistência do fluido 
+\begin_inset Formula $\left[cP\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n$
+\end_inset
+
+ é o expoente da lei de potência ou o índice de comportamento do fluxo;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N_{_{re}}$
+\end_inset
+
+ é o número de Reynolds;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $d$
+\end_inset
+
+ é o diâmetro interno do revestimento ID 
+\begin_inset Formula $\left[in\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\bar{v}$
+\end_inset
+
+ é a velocidade média 
+\begin_inset Formula $\left[ft/s\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $q$
+\end_inset
+
+ é a vazão do poço 
+\begin_inset Formula $\left[gal/min\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\frac{dp_{f}}{dL}$
+\end_inset
+
+ é a perda de pressão por fricção 
+\begin_inset Formula $\left[psi/ft\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f$
+\end_inset
+
+ é o fator de fricção;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tau_{w}$
+\end_inset
+
+ é a tensão de cisalhamento na parede 
+\begin_inset Formula $\left[lbf/ft^{2}\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N_{rec}$
+\end_inset
+
+ é o número de Reynods crítico;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N_{He}$
+\end_inset
+
+ é o numero de Hedstrom;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $d_{1}$
+\end_inset
+
+ é o diâmetro externo do revestimento OD 
+\begin_inset Formula $\left[in\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $d_{2}$
+\end_inset
+
+ é o diâmetro do poço 
+\begin_inset Formula $\left[in\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Subsection
 Hidráulica de perfuração
 \end_layout
 
@@ -409,7 +807,7 @@ name "fig:Diagrama-corpo-livre"
  Fonte 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "LIVROPOCOJOAO"
+key "APPLIED1991"
 literal "false"
 
 \end_inset
@@ -456,15 +854,28 @@ oil field
 \begin_inset Formula $dp$
 \end_inset
 
- é a variação de pressão [unidade] 
+ é a variação de pressão 
+\begin_inset Formula $\left[psi\right]$
+\end_inset
+
+,
+ 
 \begin_inset Formula $dZ$
 \end_inset
 
- é a variação de profundidade [m] e 
+ é a variação de profundidade
+\begin_inset Formula $\left[ft\right]$
+\end_inset
+
+e 
 \begin_inset Formula $\rho$
 \end_inset
 
- é a densidade do fluido [unidade].
+ é a densidade do fluido 
+\begin_inset Formula $\left[lb/gal\right]$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -521,13 +932,69 @@ Onde
 \begin_inset Formula $p_{0}$
 \end_inset
 
- [unidade],
- que é a constante de integração,
- é igual a pressão na superfície.
+ é a constante de integração,
+ é igual a pressão na superfície 
+\begin_inset Formula $\left[psi\right]$
+\end_inset
+
+,
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $p$
+\end_inset
+
+ é a pressão
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\begin_inset Formula $\left[psi\right]$
+\end_inset
+
+ e 
+\begin_inset Formula $Z$
+\end_inset
+
+ é a profundidade 
+\begin_inset Formula $\left[ft\right]$
+\end_inset
+
+.
  Uma importante aplicação para essa equação é determinar a densidade correta de um fluido de perfuração,
  de forma que o mesmo seja capaz de evitar o influxo de fluidos da formação para o poço,
  evitando dessa forma kiks ou blowouts,
- além de não causar fraturas na formação que poderia provocar uma perda de circulação de fluido que também é indesejada.
+ além de não causar fraturas na formação que poderia provocar uma perda de circulação de fluido que também é indesejada 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "APPLIED1991"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -553,18 +1020,64 @@ p=\rho z\frac{RT}{M}
 \end_layout
 
 \begin_layout Standard
+Onde 
+\begin_inset Formula $z$
+\end_inset
+
+ é o fator de desvio de gás,
+ 
+\begin_inset Formula $R$
+\end_inset
+
+ é constante universal dos gases 
+\begin_inset Formula $\left[psi.ft^{3}/lb-mol.^{\circ}R\right]$
+\end_inset
+
+,
+ 
+\begin_inset Formula $T$
+\end_inset
+
+ é a temperatura absoluta 
+\begin_inset Formula $\left[^{\circ}R\right]$
+\end_inset
+
+ e 
+\begin_inset Formula $M$
+\end_inset
+
+ é o peso molecular do gás 
+\begin_inset Formula $\left[lb/lb-mol\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 Realizando a combinação da equação da pressão hidrostática para fluidos incompressíveis e da equação do gás real chegamos a seguinte equação da pressão hidrostática para fluidos compressíveis:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-p=p_{0}\exp\left(\frac{M\triangle Z}{1544\bar{z}T}\right)
+p=p_{0}\exp\left(\frac{M\triangle Z}{1544zT}\right)
 \end{equation}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Onde 
+\begin_inset Formula $\triangle Z$
+\end_inset
+
+ é a variação de profundidade 
+\begin_inset Formula $\left[ft\right]$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -601,10 +1114,19 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Coluna composta por fluidos com diferentes características.
+Coluna composta por fluidos com diferentes características
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Coluna-multiplos-fluidos"
+
+\end_inset
+
+.
+ Fonte 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "APPLIED1991"
+literal "false"
 
 \end_inset
 
@@ -642,6 +1164,18 @@ p=p_{0}+g\sum p_{i}\left(Z_{i}-Z_{i-1}\right)+g\rho_{n}\left(Z_{i}-Z_{i-1}\right
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Onde 
+\begin_inset Formula $g$
+\end_inset
+
+ é a gravidade 
+\begin_inset Formula $\left[ft/s^{2}\right]$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -686,7 +1220,15 @@ Para tal,
  se faz necessária uma descrição matemática e desenvolvimento de equações para a perda por atrito,
  de forma que modelos reológicos são geralmente utilizados pro engenheiros de perfuração para aproximar o comportamento de um fluido,
  nesse projeto abordaremos três modelos sendo eles o modelo newtoniano,
- o modelo plástico de Bingham e o modelo de lei de potências.
+ o modelo plástico de Bingham e o modelo de lei de potências 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
+
+\end_inset
+
+.
  É importante ressaltar a existência de outros modelos que podem futuramente ser acrescentados no aprimoramento desse projeto.
 \end_layout
 
@@ -731,14 +1273,23 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Fluxo laminar de fluido Newtoniano.
+Fluxo laminar de fluido Newtoniano
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Fluxo-laminar"
 
 \end_inset
 
+.
+ Adaptado de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
 
+\end_inset
+
+ 
 \end_layout
 
 \end_inset
@@ -764,7 +1315,11 @@ Ao colocar a placa superior inicialmente em repouso em um movimento na direção
 \begin_inset Formula $x$
 \end_inset
 
- com uma velocidade constant
+ 
+\begin_inset Formula $\left[ft\right]$
+\end_inset
+
+com uma velocidade constant
 \family roman
 \series medium
 \shape up
@@ -794,12 +1349,28 @@ e
 \uwave default
 \noun default
 \color inherit
+ 
+\begin_inset Formula $\left[ft/s\right]$
+\end_inset
+
  por um tempo suficiente,
  percebemos que uma força 
 \begin_inset Formula $F$
 \end_inset
 
- constante é necessária para manter a placa superior em movimento,
+ 
+\begin_inset Formula $\left[lbf\right]$
+\end_inset
+
+ constante é necessária para manter a placa superior em movimento 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HALLIDAY_2009"
+literal "false"
+
+\end_inset
+
+,
  a magnitude dessa força pode ser determinada por:
 \end_layout
 
@@ -819,12 +1390,24 @@ A razão
 \begin_inset Formula $\frac{F}{A}$
 \end_inset
 
- é conhecida como tensão de cisalhamento exercida sobre o fluido.
+ é conhecida como tensão de cisalhamento exercida sobre o fluido 
+\begin_inset Formula $\tau$
+\end_inset
+
+
+\begin_inset Formula $\left[psi\right]$
+\end_inset
+
+.
  a constante de proporcionalidade 
 \begin_inset Formula $\mu$
 \end_inset
 
- é chamada de viscosidade aparente.
+ é chamada de viscosidade aparente 
+\begin_inset Formula $\left[cP\right]$
+\end_inset
+
+.
  Dessa forma podemos definir a tensão de cisalhamento como:
 \end_layout
 
@@ -840,7 +1423,15 @@ A razão
 \end_layout
 
 \begin_layout Standard
-A taxa de cisalhamento e expressa como o gradiente da velocidade 
+A taxa de cisalhamento 
+\begin_inset Formula $\dot{\gamma}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[1/s\right]$
+\end_inset
+
+é expressa como o gradiente da velocidade 
 \family roman
 \series medium
 \shape up
@@ -876,7 +1467,15 @@ A viscosidade aparente pode ser definida como a razão entre a tensão de cisalh
  A principal característica de um fluido newtoniano é a viscosidade constante do fluido.
  Como sabemos os fluidos de perfuração são misturas complexas que não podem ser caracterizadas por um único valor de viscosidade,
  quando um fluido não apresenta uma proporcionalidade entre tensão de cisalhamento e taxa de cisalhamento ele passa a ser conhecido como um fluido não newtoniano,
- podendo ser pseudoplásticos se a viscosidade diminui com o aumento da taxa de cisalhamento e dilatantes se a viscosidade aumenta com o aumento da taxa de cisalhamento.
+ podendo ser pseudoplásticos se a viscosidade diminui com o aumento da taxa de cisalhamento e dilatantes se a viscosidade aumenta com o aumento da taxa de cisalhamento 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -939,7 +1538,15 @@ Fluidos Plásticos de Bingham
 \end_layout
 
 \begin_layout Standard
-O modelo plástico de Bingham (Bingham 1922) pode ser definido como:
+O modelo plástico de Bingham 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
+
+\end_inset
+
+ pode ser definido como:
 \end_layout
 
 \begin_layout Standard
@@ -959,9 +1566,21 @@ A principal característica de um plástico Bingham é a necessidade de um valor
 \begin_inset Formula $\tau_{y}$
 \end_inset
 
- é chamada de tensão de escoamento.
+ é chamada de tensão de escoamento 
+\begin_inset Formula $\left[lbf/100.sq.ft\right]$
+\end_inset
+
+.
  Após a tensão de escoamento o fluido de Bingham se comporta como um fluido newtoniano onde a mudança na tensão de cisalhamento é proporcional a mudança na taxa de cisalhamento.
- A constante de proporcionalidade é chamada de viscosidade plástica.
+ A constante de proporcionalidade 
+\begin_inset Formula $\mu_{p}$
+\end_inset
+
+ é chamada de viscosidade plástica 
+\begin_inset Formula $\left[cP\right]$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -969,7 +1588,15 @@ Fluidos de Lei de Potência
 \end_layout
 
 \begin_layout Standard
-O modelo de lei de potência (Ostwald 1925) pode ser definido como:
+O modelo de lei de potência 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
+
+\end_inset
+
+ pode ser definido como:
 \end_layout
 
 \begin_layout Standard
@@ -986,13 +1613,37 @@ O modelo de lei de potência (Ostwald 1925) pode ser definido como:
 \begin_layout Standard
 O modelo de lei de potências requer também dois parâmetros para caracterização de fluidos,
  porém,
- esse modelo pode ser utilizado para representar um fluido pseudoplástico (n < 1),
- um fluido newtoniano (n = 1) ou um fluido dilatante (n > 1).
+ esse modelo pode ser utilizado para representar um fluido pseudoplástico (
+\begin_inset Formula $n$
+\end_inset
+
+ < 1),
+ um fluido newtoniano (
+\begin_inset Formula $n$
+\end_inset
+
+ = 1) ou um fluido dilatante (
+\begin_inset Formula $n$
+\end_inset
+
+ > 1).
 \end_layout
 
 \begin_layout Standard
-O parâmetro K é chamado de índice de consistência do fluido,
- e o parâmetro n é chamado de expoente da lei de potência ou índice de comportamento do fluxo.
+O parâmetro 
+\begin_inset Formula $K$
+\end_inset
+
+ é chamado de índice de consistência do fluido 
+\begin_inset Formula $\left[cP\right]$
+\end_inset
+
+,
+ e o parâmetro 
+\begin_inset Formula $n$
+\end_inset
+
+ é chamado de expoente da lei de potência ou índice de comportamento do fluxo.
 \end_layout
 
 \begin_layout Subsection
@@ -1002,8 +1653,20 @@ Perda de pressão friccional em um tubo de perfuração
 \begin_layout Standard
 A perda de pressão friccional durante a circulação de fluidos em operações de perfuração pode ser calculada através de diferentes modelos de fluido.
  O primeiro paço é determinar o tipo de escoamento,
- para isso utilizamos o número de Reynolds,
- porém para cada modelo existe uma equação para a obtenção do número de Reynolds.
+ para isso utilizamos o número de Reynolds 
+\begin_inset Formula $N_{_{re}}$
+\end_inset
+
+,
+ porém para cada modelo existe uma equação para a obtenção do número de Reynolds 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "APPLIED1991"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1027,24 +1690,22 @@ N_{re}=\frac{928\rho\bar{v}d}{\mu}
 
 \begin_layout Standard
 Onde 
-\begin_inset Formula $\rho$
-\end_inset
-
- é densidade efetiva total,
- 
 \begin_inset Formula $d$
 \end_inset
 
- é o diâmetro interno do poço,
- 
-\begin_inset Formula $\mu$
+ é o diâmetro interno do revestimento ID 
+\begin_inset Formula $\left[in\right]$
 \end_inset
 
- é a viscosidade efetiva total e 
+ e 
 \begin_inset Formula $\bar{v}$
 \end_inset
 
- é a velocidade média que pode ser obtida pela seguinte equação:
+ é a velocidade média 
+\begin_inset Formula $\left[ft/s\right]$
+\end_inset
+
+ que pode ser obtida pela seguinte equação:
 \end_layout
 
 \begin_layout Standard
@@ -1063,12 +1724,24 @@ Onde
 \begin_inset Formula $q$
 \end_inset
 
- é a vazão do poço.
+ é a vazão do poço 
+\begin_inset Formula $\left[gal/min\right]$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 O fluxo é considerado turbulento quando o número de Reynolds é maior ou igual a 2100.
- Após determinar o regime de fluxo podemos utilizar uma das duas equações abaixo para calcular a perda de pressão por fricção em um poço.
+ Após determinar o regime de fluxo podemos utilizar uma das duas equações abaixo para calcular a perda de pressão por fricção em um poço 
+\begin_inset Formula $\frac{dp_{f}}{dL}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[psi/ft\right]$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1141,15 +1814,11 @@ N_{re}=\frac{928\rho\bar{v}d}{\mu_{p}}
 \end_layout
 
 \begin_layout Standard
-Onde 
-\begin_inset Formula $\mu_{p}$
+O fluxo é considerado turbulento quando o número de Reynolds é maior ou igual ao número de Reynods crítico 
+\begin_inset Formula $N_{rec}$
 \end_inset
 
- é chamado de viscosidade plástica.
-\end_layout
-
-\begin_layout Standard
-O fluxo é considerado turbulento quando o número de Reynolds é maior ou igual ao número de Reynods crítico.
+.
  O número de Reynods crítico pode ser calculado pela seguinte fórmula:
 \end_layout
 
@@ -1166,6 +1835,15 @@ N_{rec}=\frac{1-\frac{4}{3}\left(\frac{\tau_{y}}{\tau_{w}}\right)+\frac{1}{3}\le
 
 \begin_layout Standard
 Onde 
+\begin_inset Formula $\tau_{w}$
+\end_inset
+
+ é a tensão de cisalhamento na parede 
+\begin_inset Formula $\left[lbf/ft^{2}\right]$
+\end_inset
+
+,
+ 
 \begin_inset Formula $N_{He}$
 \end_inset
 
@@ -1313,6 +1991,26 @@ N_{re}=\frac{757\rho\bar{v}\left(d_{2}-d_{1}\right)}{\mu}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Onde 
+\begin_inset Formula $d_{1}$
+\end_inset
+
+é o diâmetro externo do revestimento OD 
+\begin_inset Formula $\left[in\right]$
+\end_inset
+
+ e 
+\begin_inset Formula $d_{2}$
+\end_inset
+
+ é o diâmetro do poço 
+\begin_inset Formula $\left[in\right]$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1592,22 +2290,10 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename imagens/DiagramaPacotes.png
-	lyxscale 20
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de Pacotes
+Diagrama de pacotes
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Diagrama-de-Pacotes"
@@ -1616,6 +2302,18 @@ name "fig:Diagrama-de-Pacotes"
 
 
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/DiagramaPacotes.png
+	lyxscale 20
+	width 100text%
 
 \end_inset
 

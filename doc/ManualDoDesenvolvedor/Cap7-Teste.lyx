@@ -261,17 +261,19 @@ name "tab:PropriedadesPocoTurbulento"
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="6">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="13.8text%">
+<column alignment="center" valignment="top" width="13.8text%">
+<column alignment="center" valignment="top" width="13.8text%">
+<column alignment="center" valignment="top" width="13.8text%">
+<column alignment="center" valignment="top" width="13.8text%">
+<column alignment="center" valignment="top" width="13.8text%">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Profundidade (ft)
 \end_layout
 
@@ -281,6 +283,8 @@ Profundidade (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Pressão na superfície (psi)
 \end_layout
 
@@ -290,6 +294,8 @@ Pressão na superfície (psi)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Diâmetro (in)
 \end_layout
 
@@ -299,6 +305,8 @@ Diâmetro (in)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 OD (in)
 \end_layout
 
@@ -308,6 +316,8 @@ OD (in)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 ID (in)
 \end_layout
 
@@ -317,6 +327,8 @@ ID (in)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Vazão (gal/min)
 \end_layout
 
@@ -328,6 +340,8 @@ Vazão (gal/min)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 11483
 \end_layout
 
@@ -337,6 +351,8 @@ Vazão (gal/min)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 2175
 \end_layout
 
@@ -346,6 +362,8 @@ Vazão (gal/min)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 8.66
 \end_layout
 
@@ -355,6 +373,8 @@ Vazão (gal/min)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 7.87
 \end_layout
 
@@ -364,6 +384,8 @@ Vazão (gal/min)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 7.09
 \end_layout
 
@@ -373,6 +395,8 @@ Vazão (gal/min)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 158
 \end_layout
 
@@ -445,16 +469,18 @@ name "tab:PropriedadesFluidosTurbulento"
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="5">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="17text%">
+<column alignment="center" valignment="top" width="17text%">
+<column alignment="center" valignment="top" width="17text%">
+<column alignment="center" valignment="top" width="17text%">
+<column alignment="center" valignment="top" width="17text%">
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Fluidos
 \end_layout
 
@@ -464,7 +490,9 @@ Fluidos
 \begin_inset Text
 
 \begin_layout Plain Layout
-Densidade (lb/gal)
+
+\size footnotesize
+Densidade (lbm/gal)
 \end_layout
 
 \end_inset
@@ -473,6 +501,8 @@ Densidade (lb/gal)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Viscosidade (cP)
 \end_layout
 
@@ -482,6 +512,8 @@ Viscosidade (cP)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Profundidade inicial (ft)
 \end_layout
 
@@ -491,6 +523,8 @@ Profundidade inicial (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Profundidade final (ft)
 \end_layout
 
@@ -502,6 +536,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 1
 \end_layout
 
@@ -511,6 +547,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 8.76
 \end_layout
 
@@ -520,6 +558,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 1.8
 \end_layout
 
@@ -529,6 +569,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0
 \end_layout
 
@@ -538,6 +580,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 3281
 \end_layout
 
@@ -549,6 +593,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 2
 \end_layout
 
@@ -558,6 +604,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 8.17
 \end_layout
 
@@ -567,6 +615,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 2.1
 \end_layout
 
@@ -576,6 +626,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 3281
 \end_layout
 
@@ -585,6 +637,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 8202
 \end_layout
 
@@ -596,6 +650,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 3
 \end_layout
 
@@ -605,6 +661,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 9.17
 \end_layout
 
@@ -614,6 +672,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 1.3
 \end_layout
 
@@ -623,6 +683,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 8202
 \end_layout
 
@@ -632,6 +694,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 11483
 \end_layout
 
@@ -708,17 +772,19 @@ name "tab:PropriedadesPocoLaminar"
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="6">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top" width="3cm">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="13.8text%">
+<column alignment="center" valignment="top" width="13.8text%">
+<column alignment="center" valignment="top" width="13.8text%">
+<column alignment="center" valignment="top" width="13.8text%">
+<column alignment="center" valignment="top" width="13.8text%">
+<column alignment="center" valignment="top" width="13.8text%">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Profundidade (ft)
 \end_layout
 
@@ -728,6 +794,8 @@ Profundidade (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Pressão na superfície (psi)
 \end_layout
 
@@ -737,6 +805,8 @@ Pressão na superfície (psi)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Diâmetro (in)
 \end_layout
 
@@ -746,6 +816,8 @@ Diâmetro (in)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 OD (in)
 \end_layout
 
@@ -755,6 +827,8 @@ OD (in)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 ID (in)
 \end_layout
 
@@ -764,6 +838,8 @@ ID (in)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Vazão (gal/min)
 \end_layout
 
@@ -775,6 +851,8 @@ Vazão (gal/min)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 3281
 \end_layout
 
@@ -784,6 +862,8 @@ Vazão (gal/min)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 2175
 \end_layout
 
@@ -793,6 +873,8 @@ Vazão (gal/min)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 8.66
 \end_layout
 
@@ -802,6 +884,8 @@ Vazão (gal/min)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 7.87
 \end_layout
 
@@ -811,6 +895,8 @@ Vazão (gal/min)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 7.09
 \end_layout
 
@@ -820,6 +906,8 @@ Vazão (gal/min)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 100
 \end_layout
 
@@ -891,17 +979,19 @@ name "tab:PropriedadesFluidosLaminar"
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="5">
-<features tabularvalignment="middle" tabularwidth="100text%">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="17text%">
+<column alignment="center" valignment="top" width="17text%">
+<column alignment="center" valignment="top" width="17text%">
+<column alignment="center" valignment="top" width="17text%">
+<column alignment="center" valignment="top" width="17text%">
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Fluidos
 \end_layout
 
@@ -911,7 +1001,9 @@ Fluidos
 \begin_inset Text
 
 \begin_layout Plain Layout
-Densidade (lb/gal)
+
+\size footnotesize
+Densidade (lbm/gal)
 \end_layout
 
 \end_inset
@@ -920,6 +1012,8 @@ Densidade (lb/gal)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Viscosidade (cP)
 \end_layout
 
@@ -929,6 +1023,8 @@ Viscosidade (cP)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Profundidade inicial (ft)
 \end_layout
 
@@ -938,6 +1034,8 @@ Profundidade inicial (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Profundidade final (ft)
 \end_layout
 
@@ -949,6 +1047,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 1
 \end_layout
 
@@ -958,6 +1058,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 8.76
 \end_layout
 
@@ -967,6 +1069,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 30
 \end_layout
 
@@ -976,6 +1080,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0
 \end_layout
 
@@ -985,6 +1091,8 @@ Profundidade final (ft)
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 3281
 \end_layout
 
@@ -1098,7 +1206,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Newtoniano no Poço considerando Regime Laminar 
+Soluções geradas pelo código para modelo Newtoniano no poço considerando regime laminar 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Newtoniano--Laminar-Poco-Codigo"
@@ -1198,7 +1306,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Newtoniano no Poço considerando Regime Turbulento 
+Soluções geradas pelo código para modelo Newtoniano no poço considerando regime turbulento 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Newtoniano--Turbulento-Poco-Codigo"
@@ -1313,7 +1421,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Newtoniano no Anular considerando Regime Laminar 
+Soluções geradas pelo código para modelo Newtoniano no anular considerando regime laminar 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Newtoniano-Laminar-Anular-Codigo"
@@ -1413,7 +1521,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Newtoniano no Anular considerando Regime Turbulento 
+Soluções geradas pelo código para modelo Newtoniano no anular considerando regime turbulento 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Newtoniano--Turbulento-Anular-Codigo"
@@ -1550,7 +1658,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Plástico de Bingham no Poço considerando Regime Laminar 
+Soluções geradas pelo código para modelo Plástico de Bingham no poço considerando regime laminar 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Bingham--Laminar-Poco-Codigo"
@@ -1672,7 +1780,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Plástico de Bingham no Poço considerando Regime Turbulento 
+Soluções geradas pelo código para modelo Plástico de Bingham no poço considerando regime turbulento 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Bingham--Turbulento-Poco-Codigo"
@@ -1808,7 +1916,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Plástico de Bingham no Anular considerando Regime Laminar 
+Soluções geradas pelo código para modelo Plástico de Bingham no anular considerando regime laminar 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Bingham-Laminar-Anular-Codigo"
@@ -1930,7 +2038,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Plástico de Bingham no Anular considerando Regime Turbulento 
+Soluções geradas pelo código para modelo Plástico de Bingham no anular considerando regime turbulento 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Bingham-Turbulento-Poco-Codigo"
@@ -2044,7 +2152,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Lei de Potência no Poço considerando Regime Laminar 
+Soluções geradas pelo código para modelo Lei de Potência no poço considerando regime laminar 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Potencia--Laminar-Poco-Codigo"
@@ -2144,7 +2252,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Lei de Potência no Poço considerando Regime Turbulento 
+Soluções geradas pelo código para modelo Lei de Potência no poço considerando regime turbulento 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Potencia--Turbulento-Poco-Codigo"
@@ -2258,7 +2366,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Lei de Potência no Anular considerando Regime Laminar 
+Soluções geradas pelo código para modelo Lei de Potência no anular considerando regime laminar 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:fig:Modelo-Potencia--Laminar-Anular-Codigo"
@@ -2358,7 +2466,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para Modelo Lei de Potência no Anular considerando Regime Turbulento 
+Soluções geradas pelo código para modelo Lei de Potência no anular considerando regime turbulento 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Potencia--Turbulento-Anular-Codigo"

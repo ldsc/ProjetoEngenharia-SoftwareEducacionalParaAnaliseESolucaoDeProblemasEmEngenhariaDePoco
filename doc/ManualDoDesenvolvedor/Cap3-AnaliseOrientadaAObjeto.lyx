@@ -173,7 +173,15 @@ Neste capítulo são apresentados as classes desenvolvidas no projeto,
  além do diagrama de classes,
  os diagramas de sequência,
  de comunicação,
- de máquina de estado e de atividades.
+ de máquina de estado e de atividades
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bueno2003"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -229,10 +237,20 @@ name "cap:Diagrama-de-classes"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/DiagramaClasse.png
 	lyxscale 10
 	width 100text%
+	height 100theight%
+	rotateAngle 90
 
 \end_inset
 
@@ -462,18 +480,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename imagens/DiagramaSequencia.png
-	lyxscale 10
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -490,6 +496,26 @@ name "cap:Diagrama-de-sequencia"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/DiagramaSequencia.png
+	lyxscale 10
+	width 100text%
+	height 100theight%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -575,18 +601,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename imagens/DiagramaComunicacao.png
-	lyxscale 20
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -603,6 +617,24 @@ name "cap:Diagrama-de-comunicação"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/DiagramaComunicacao.png
+	lyxscale 20
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -775,18 +807,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename imagens/DiagramaAtividade.png
-	lyxscale 15
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -803,6 +823,24 @@ name "cap:Diagrama-de-atividades"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/DiagramaAtividade.png
+	lyxscale 15
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
 \end_layout
 
 \end_inset
