@@ -1,0 +1,8 @@
+# Ignorar binários e arquivos temporários
+*.o
+*.log
+*.tmp
+
+# Ignorar arquivos gerados pelo IDE
+.vscode/
+.idea/
