@@ -31,7 +31,7 @@
 \maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto-legacy
+\inputencoding utf8
 \fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -53,6 +53,7 @@
 \bibtex_command default
 \index_command default
 \float_placement H
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
@@ -819,7 +820,7 @@ literal "false"
 
 
 \begin_inset Graphics
-	filename imagens/DigramaCorpoLivre.png
+	filename ../imagens/DigramaCorpoLivre.png
 	lyxscale 70
 	width 100text%
 
@@ -1137,7 +1138,7 @@ literal "false"
 
 
 \begin_inset Graphics
-	filename imagens/ColunaMultiplosFluidos.png
+	filename ../imagens/ColunaMultiplosFluidos.png
 	lyxscale 70
 	width 100text%
 
@@ -1296,7 +1297,7 @@ literal "false"
 
 
 \begin_inset Graphics
-	filename imagens/FluxoLaminar.png
+	filename ../imagens/FluxoLaminar.png
 	lyxscale 70
 	width 100text%
 
@@ -2311,7 +2312,7 @@ name "fig:Diagrama-de-Pacotes"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaPacotes.png
+	filename ../imagens/DiagramaPacotes.png
 	lyxscale 20
 	width 100text%
 

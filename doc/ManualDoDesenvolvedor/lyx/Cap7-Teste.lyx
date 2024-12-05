@@ -1220,7 +1220,7 @@ name "fig:Modelo-Newtoniano--Laminar-Poco-Codigo"
 
 
 \begin_inset Graphics
-	filename imagens/Newtoniano-Poco-Laminar-Codigo.jpg
+	filename ../imagens/Newtoniano-Poco-Laminar-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -1320,7 +1320,7 @@ name "fig:Modelo-Newtoniano--Turbulento-Poco-Codigo"
 
 
 \begin_inset Graphics
-	filename imagens/Newtoniano-Poco-Turbulento-Codigo.jpg
+	filename ../imagens/Newtoniano-Poco-Turbulento-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -1435,7 +1435,7 @@ name "fig:Modelo-Newtoniano-Laminar-Anular-Codigo"
 
 
 \begin_inset Graphics
-	filename imagens/Newtoniano-Anular-Laminar-Codigo.jpg
+	filename ../imagens/Newtoniano-Anular-Laminar-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -1535,7 +1535,7 @@ name "fig:Modelo-Newtoniano--Turbulento-Anular-Codigo"
 
 
 \begin_inset Graphics
-	filename imagens/Newtoniano-Anular-Turbulento-Codigo.jpg
+	filename ../imagens/Newtoniano-Anular-Turbulento-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -1794,7 +1794,7 @@ name "fig:Modelo-Bingham--Turbulento-Poco-Codigo"
 
 
 \begin_inset Graphics
-	filename imagens/Bingham-Poco-Turbulento-Codigo.jpg
+	filename ../imagens/Bingham-Poco-Turbulento-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -2052,7 +2052,7 @@ name "fig:Modelo-Bingham-Turbulento-Poco-Codigo"
 
 
 \begin_inset Graphics
-	filename imagens/Bingham-Anular-Turbulento-Codigo.jpg
+	filename ../imagens/Bingham-Anular-Turbulento-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -2266,7 +2266,7 @@ name "fig:Modelo-Potencia--Turbulento-Poco-Codigo"
 
 
 \begin_inset Graphics
-	filename imagens/Potencia-Poco-Turbulento-Codigo.jpg
+	filename ../imagens/Potencia-Poco-Turbulento-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -2480,7 +2480,7 @@ name "fig:Modelo-Potencia--Turbulento-Anular-Codigo"
 
 
 \begin_inset Graphics
-	filename imagens/Potencia-Anular-Turbulento-Codigo.jpg
+	filename ../imagens/Potencia-Anular-Turbulento-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -2594,7 +2594,7 @@ name "fig:PressaoHidrostatica"
 
 
 \begin_inset Graphics
-	filename imagens/Pressao-Hidroestatica-Fundo-do-Poco-Codigo.png
+	filename ../imagens/Pressao-Hidroestatica-Fundo-do-Poco-Codigo.png
 	lyxscale 70
 	width 100text%
 

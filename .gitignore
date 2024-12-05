@@ -2,6 +2,7 @@
 *.o
 *.log
 *.tmp
+*.lyx~
 
 # Ignorar arquivos gerados pelo IDE
 .vscode/

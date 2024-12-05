@@ -89,7 +89,7 @@
 \maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto-legacy
+\inputencoding utf8
 \fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -111,6 +111,7 @@
 \bibtex_command default
 \index_command default
 \float_placement ph
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
@@ -1283,7 +1284,7 @@ name "fig:Diagrama-caso-uso-geral-1"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaCasoUsoGeral.png
+	filename ../imagens/DiagramaCasoUsoGeral.png
 	lyxscale 20
 	width 100text%
 
@@ -1351,7 +1352,7 @@ name "fig:Diagrama-de-caso-de-uso-especifico1"
 
 
 \begin_inset Graphics
-	filename imagens/DiagramaCasoUsoEspecifico1.png
+	filename ../imagens/DiagramaCasoUsoEspecifico1.png
 	lyxscale 20
 	width 100text%
 
@@ -1413,7 +1414,7 @@ name "fig:Diagrama-de-caso-de-uso-especifico2"
 
 
 \begin_inset Graphics
-	filename imagens/DiagramaCasoUsoEspecifico2.png
+	filename ../imagens/DiagramaCasoUsoEspecifico2.png
 	lyxscale 20
 	width 100text%
 

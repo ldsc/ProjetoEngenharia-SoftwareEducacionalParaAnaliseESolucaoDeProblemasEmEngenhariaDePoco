@@ -271,7 +271,7 @@ name "fig:ImagemInterfaceGráfica"
 
 
 \begin_inset Graphics
-	filename imagens/menu-principal-codigo.png
+	filename ../imagens/menu-principal-codigo.png
 	lyxscale 30
 	width 100text%
 
@@ -512,7 +512,7 @@ name "fig:ComoAdicionarUmMaterial"
 
 
 \begin_inset Graphics
-	filename imagens/Configurar-poco-codigo.png
+	filename ../imagens/Configurar-poco-codigo.png
 	lyxscale 80
 	width 100text%
 
@@ -581,7 +581,7 @@ name "fig:ArquivoDat"
 
 
 \begin_inset Graphics
-	filename imagens/funcionalidade-carregar-poco.png
+	filename ../imagens/funcionalidade-carregar-poco.png
 	lyxscale 80
 	width 100text%
 

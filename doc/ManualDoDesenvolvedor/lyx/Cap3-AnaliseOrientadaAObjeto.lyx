@@ -17,7 +17,7 @@
 \maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto-legacy
+\inputencoding utf8
 \fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -39,6 +39,7 @@
 \bibtex_command default
 \index_command default
 \float_placement p
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
@@ -246,7 +247,7 @@ name "cap:Diagrama-de-classes"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaClasse.png
+	filename ../imagens/DiagramaClasse.png
 	lyxscale 10
 	width 100text%
 	height 100theight%
@@ -501,7 +502,7 @@ name "cap:Diagrama-de-sequencia"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaSequencia.png
+	filename ../imagens/DiagramaSequencia.png
 	lyxscale 10
 	width 100text%
 	height 100theight%
@@ -622,7 +623,7 @@ name "cap:Diagrama-de-comunicação"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaComunicacao.png
+	filename ../imagens/DiagramaComunicacao.png
 	lyxscale 20
 	width 100text%
 
@@ -728,7 +729,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaMaquinaEstado.png
+	filename ../imagens/DiagramaMaquinaEstado.png
 	lyxscale 15
 	width 100text%
 
@@ -828,7 +829,7 @@ name "cap:Diagrama-de-atividades"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaAtividade.png
+	filename ../imagens/DiagramaAtividade.png
 	lyxscale 15
 	width 100text%
 

@@ -1,0 +1,620 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\options normaltoc, sumarioincompleto
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children no
+\language brazilian
+\language_package auto
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_title "Título da Monografia - Dissertação - Tese"
+\pdf_author "Nome do Autor"
+\pdf_subject "Descrever assunto"
+\pdf_keywords "Copiar do resumo"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style apalike
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 1
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Manual do Usuário
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Manual do Usuário
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Manual-do-Usuário"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Instalação
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Instalação
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O software foi disponibilizado no site 
+\begin_inset CommandInset href
+LatexCommand href
+name "GitHub - Software Educacional Para Análise de Poço"
+target "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lá você encontra instruções atualizadas para baixar e instalar.
+\end_layout
+
+\begin_layout Subsection
+Dependências
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Dependências
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para compilar o software é necessário atender as seguintes dependências:
+\end_layout
+
+\begin_layout Itemize
+Instalar o compilador g++ da GNU disponível em 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://gcc.gnu.org"
+target "http://gcc.gnu.org"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Interface gráfica
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Interface gráfica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A interface do programa é apresentada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ImagemInterfaceGráfica"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Imagem da interface gráfica
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ImagemInterfaceGráfica"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagens/menu-principal-codigo.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ImagemInterfaceGráfica"
+nolink "false"
+
+\end_inset
+
+ mostra as principais opções de configuração e operação disponíveis ao usuário no menu do programa,
+ organizadas em funcionalidades específicas para a simulação de poços de petróleo.
+\end_layout
+
+\begin_layout Section
+Funcionalidades 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Funcionalidades"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Configurar Poço:
+ permite ao usuário definir e ajustar as principais propriedades do poço e fluido,
+ oferecendo três opções:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Criar Poço:
+ para configurar propriedades iniciais,
+ como profundidade,
+ diâmetro e revestimento.
+\end_layout
+
+\begin_layout Itemize
+Adicionar Fluido:
+ para definir as características dos fluidos presentes no poço,
+ incluindo densidade e viscosidade.
+\end_layout
+
+\begin_layout Itemize
+Carregar Dados a Partir de Arquivo (.dat):
+ para importar as configurações do poço e fluidos a partir de um arquivo .dat,
+ facilitando a inicialização da simulação com dados externos.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Exibir Propriedades do Poço:
+ exibe as características e parâmetros do poço,
+ incluindo profundidade total,
+ diâmetro,
+ e propriedades dos fluidos,
+ organizadas para fácil visualização.
+\end_layout
+
+\begin_layout Itemize
+Calcular Pressão Hidrostática do Poço:
+ permite ao usuário calcular a pressão exercida pelo fluido em diferentes pontos do poço,
+ com duas opções:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Calcular Pressão Hidrostática (Fundo de Poço):
+ exibe a pressão no fundo do poço considerando a profundidade total e a densidade do fluido.
+\end_layout
+
+\begin_layout Itemize
+Calcular Pressão Hidrostática em um Ponto do Poço:
+ permite calcular a pressão hidrostática em uma profundidade específica,
+ escolhida pelo usuário.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Plotar Perfil Profundidade vs Densidade:
+ gera um gráfico que mostra a variação de densidade dos fluidos em relação à profundidade,
+ facilitando a visualização da distribuição dos fluidos ao longo do poço.
+\end_layout
+
+\begin_layout Itemize
+Calcular Perda de Carga por Fricção:
+ oferece cálculo detalhado da perda de carga utilizando três modelos reológicos distintos,
+ com opções para poço e espaço anular.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Modelo Newtoniano
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Determinar Perda de Carga no Poço:
+ realiza o cálculo de perda de carga considerando um modelo Newtoniano no espaço do poço.
+\end_layout
+
+\begin_layout Itemize
+Determinar Perda de Carga no Anular:
+ cálculo de perda de carga utilizando um modelo Newtoniano para o espaço anular.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Modelo Bingham
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Determinar Perda de Carga no Poço:
+ cálculo para perda de carga aplicando o modelo Bingham no espaço do poço.
+\end_layout
+
+\begin_layout Itemize
+Determinar Perda de Carga no Anular:
+ utiliza o modelo Bingham para calcular a perda de carga no espaço anular.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Modelo de Potência
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Determinar Perda de Carga no Poço:
+ realiza o cálculo com o modelo de potência no espaço do poço.
+\end_layout
+
+\begin_layout Itemize
+Determinar Perda de Carga no Anular:
+ cálculo da perda de carga no espaço anular com o modelo de potência.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+Como adicionar Informações do Poço/Fluido
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Como adicionar materiais
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se neste apêndice instruções para configuração do Poço/Fluido.
+\end_layout
+
+\begin_layout Standard
+Para configurar um poço ou fluido no software,
+ o usuário tem duas opções:
+ realizar a configuração manualmente acessando 
+\series bold
+Configurar Poço → Criar Poço
+\series default
+ para definir as propriedades do poço,
+ ou 
+\series bold
+Configurar Poço → Adicionar Fluido
+\series default
+ para especificar as características dos fluidos.
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ComoAdicionarUmMaterial"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ ilustra o local do menu que deve ser selecionado para adicionar o material.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Adicionar um material no simulador:
+ seleciona Arquivo,
+ Import material,
+ e uma janela será aberta para o usuário escolher o material
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ComoAdicionarUmMaterial"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagens/Configurar-poco-codigo.png
+	lyxscale 80
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Além disso,
+ se preferir,
+ o usuário pode carregar os dados diretamente a partir de um arquivo .dta.
+ Nesse arquivo,
+ as configurações devem seguir uma ordem específica,
+ onde apenas um poço e os fluidos são listados,
+ um abaixo do outro,
+ conforme a sequência mostrada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ArquivoDat"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquivo .dat para adicionar propriedades do poço e dos fluidos no simulador
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ArquivoDat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagens/funcionalidade-carregar-poco.png
+	lyxscale 80
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dessa forma após configurar o poço o usuário poderá explorar as funcionalidade do software descritas na Seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Funcionalidades"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

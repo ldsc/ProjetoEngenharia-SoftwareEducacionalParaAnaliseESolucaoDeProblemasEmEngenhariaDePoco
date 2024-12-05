@@ -40,7 +40,8 @@
 
 # Versão:
 
--   1.0.
+-   1.0. Primeira versão estável
+-   2.0. Versão com inclusão da interface gráfica (Em andamento)
 
 
 <a id="org14685fc"></a>
