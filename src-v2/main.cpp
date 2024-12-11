@@ -1,15 +1,11 @@
-#include "CAuxiliar.h"
-#include "CSimuladorPoco.h"
+#include "mainwindow.h"
 
-int main() {
-    
-    CAuxiliar cabecalho;
-    CSimuladorPoco simulador;
+#include <QApplication>
 
-    cabecalho.cabecalho();
-    simulador.MenuPrincipal();
-
-
-
-
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+    return a.exec();
 }
