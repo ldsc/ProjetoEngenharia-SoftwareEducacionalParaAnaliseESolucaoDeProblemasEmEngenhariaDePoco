@@ -10,7 +10,7 @@
 #include <vector>
 
 class CSimuladorPoco {
-protected:
+public:
     std::unique_ptr<CPoco> poco;
     std::unique_ptr<CTrechoPoco> trechoPoco;
     std::unique_ptr<CFluido> fluido;

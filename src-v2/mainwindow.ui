@@ -17,14 +17,27 @@
    <widget class="QPushButton" name="BntImportarDados">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>590</x>
       <y>60</y>
-      <width>111</width>
-      <height>21</height>
+      <width>121</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
      <string>Importar Dados</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BntExibirDados">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>110</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Exibir Dados</string>
     </property>
    </widget>
   </widget>
@@ -34,7 +47,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

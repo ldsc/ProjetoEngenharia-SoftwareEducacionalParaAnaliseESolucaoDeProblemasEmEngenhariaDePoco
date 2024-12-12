@@ -20,6 +20,8 @@ public:
 private slots:
     void on_BntImportarDados_clicked();
 
+    void on_BntExibirDados_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
