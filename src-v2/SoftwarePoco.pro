@@ -18,7 +18,6 @@ SOURCES += \
     CPoco.cpp \
     CSimuladorPoco.cpp \
     CTrechoPoco.cpp \
-    janelaexibirdados.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -32,11 +31,9 @@ HEADERS += \
     CPoco.h \
     CSimuladorPoco.h \
     CTrechoPoco.h \
-    janelaexibirdados.h \
     mainwindow.h
 
 FORMS += \
-    janelaexibirdados.ui \
     mainwindow.ui
 
 # Default rules for deployment.

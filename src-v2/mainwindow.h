@@ -2,6 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "CPoco.h"
+#include "CTrechoPoco.h"
+#include "CModeloNewtoniano.h"
+#include "CModeloBingham.h"
+#include "CModeloPotencia.h"
+#include <memory>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -12,6 +18,14 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+protected:
+    std::unique_ptr<CPoco> poco;
+    std::unique_ptr<CTrechoPoco> trechoPoco;
+    std::unique_ptr<CFluido> fluido;
+    std::unique_ptr<CModeloNewtoniano> modeloNewtoniano;
+    std::unique_ptr<CModeloBingham> modeloBingham;
+    std::unique_ptr<CModeloPotencia> modeloPotencia;
+
 
 public:
     MainWindow(QWidget *parent = nullptr);
@@ -20,7 +34,7 @@ public:
 private slots:
     void on_BntImportarDados_clicked();
 
-    void on_BntExibirDados_clicked();
+    void ExibirDadosPoco();
 
 private:
     Ui::MainWindow *ui;

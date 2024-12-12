@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="BntImportarDados">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>60</y>
+      <x>600</x>
+      <y>70</y>
       <width>121</width>
       <height>31</height>
      </rect>
@@ -27,18 +27,150 @@
      <string>Importar Dados</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="BntExibirDados">
+   <widget class="QTableWidget" name="tblFluidos">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>110</y>
-      <width>121</width>
-      <height>31</height>
+      <x>60</x>
+      <y>370</y>
+      <width>631</width>
+      <height>91</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Exibir Dados</string>
+    <column>
+     <property name="text">
+      <string>Nome do Fluido</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Densidade (lb/gal)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Viscosidade (cP)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Prof. Inicial (ft)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Prof. Final (ft)</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>60</y>
+      <width>293</width>
+      <height>276</height>
+     </rect>
     </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="lbnTituloProfundidadePoco">
+         <property name="text">
+          <string>Profundidade do Poço:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbnTituloProfundidadeOcupada">
+         <property name="text">
+          <string>Profundidade Ocupada:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbnTituloPressaoSup">
+         <property name="text">
+          <string>Pressão na Superficie:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbnTituloDiametroPoco">
+         <property name="text">
+          <string>Diâmetro do Poço:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbnTituloDiametroOD">
+         <property name="text">
+          <string>Diâmetro do Revestimento (OD):</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbnTituloDiametroID">
+         <property name="text">
+          <string>Diâmetro do Revestimento (ID):</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbnTituloVazao">
+         <property name="text">
+          <string>Vazão do Poço:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbnTituloDensidadeMedia">
+         <property name="text">
+          <string>Densidade Média:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbnTituloViscosidadeMedia">
+         <property name="text">
+          <string>Viscosidade Média:</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLineEdit" name="lnValorProfundidadePoco"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lnValorProfundidadeOcupada"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lnValorPressaoSup"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lnValorDiametroPoco"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lnValorDiametroOD"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lnValorDiametroID"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lnValorVazao"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lnValorDensidadeMedia"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lnValorViscosidadeMedia"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -47,7 +179,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
