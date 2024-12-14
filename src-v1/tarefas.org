@@ -1,9 +1,9 @@
-* Lista de correções:
-** TODO Criei um arquivo CMakeLists.txt que é usado pela versão automatizada do make, o cmake.
-** TODO Cria-se um arquivo CMakeLists.txt e roda-se "cmake ." com isso ele lê sua máquina e gera o arquivo Makefile para windows ou linux ou mac-os x.
+* Lista de correcioes:
+** TODO Criei um arquivo CMakeLists.txt que e usado pela versao automatizada do make, o cmake.
+** TODO Cria-se um arquivo CMakeLists.txt e roda-se "cmake ." com isso ele le sua maquina e gera o arquivo Makefile para windows ou linux ou mac-os x.
 ** Referenciar as figuras.
 ** Tirar pontos de figuras e tabelas.
-** Pode gerenciar o arquivo bibliografia.bib usando editor simples, ou o emacs (super power),  ou https://www.zotero.org/, ou https://www.mendeley.com/,.... tem vários.
+** Pode gerenciar o arquivo bibliografia.bib usando editor simples, ou o emacs (super power),  ou https://www.zotero.org/, ou https://www.mendeley.com/,.... tem varios.
 ** 
 ** 
 ** 

@@ -1,6 +1,6 @@
 #include "CAuxiliar.h"
 
-// Funcao para limpar a tela (compatível com Windows e Linux)
+// Funcao para limpar a tela (compativel com Windows e Linux)
 void CAuxiliar::limparTela() {
     #ifdef _WIN32
         system("cls");
@@ -45,11 +45,11 @@ void CAuxiliar::desenharAviso(const std::string& aviso) {
 
     std::cout << "# [AVISO] ";
     std::cout << avisoParaExibir; // Texto do aviso
-    std::cout << std::setw(largura - avisoParaExibir.size() - 10) << ""; // Ajusta o espaço restante
+    std::cout << std::setw(largura - avisoParaExibir.size() - 10) << ""; // Ajusta o espaco restante
     std::cout << "#\n";
 }
 
-// Funcao para o cabeçalho
+// Funcao para o cabecalho
 void CAuxiliar::cabecalho() {
     limparTela();
     desenharBorda();

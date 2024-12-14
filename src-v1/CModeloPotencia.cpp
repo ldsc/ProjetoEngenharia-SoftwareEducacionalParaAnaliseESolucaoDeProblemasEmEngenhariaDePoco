@@ -26,28 +26,28 @@ double CModeloPotencia::DeterminarReynoldsAnular(double densidade, double VMedio
     return reynoldsAnular;
 }
 
-// Função para determinar o tipo de fluxo no poço
+// Funcao para determinar o tipo de fluxo no poco
 std::string CModeloPotencia::DeterminarFluxoPoco() {
 
     vMediaPoco = DeterminarVelocidadeMediaPoco(poco->Vazao(), poco->DiametroRevestimentoID());
     reynoldsPoco = DeterminarReynoldsPoco(poco->DensidadeEfetivaTotal(), vMediaPoco, poco->DiametroRevestimentoID(), indiceDeConsistencia, indiceDeComportamento);
 
-    fluxoPoco = (reynoldsPoco <= reynoldsCriticoPoco) ? "Laminar" : "Turbulento"; // Determinação do fluxo
+    fluxoPoco = (reynoldsPoco <= reynoldsCriticoPoco) ? "Laminar" : "Turbulento"; // Determinacao do fluxo
     return fluxoPoco;
 }
 
-// Função para determinar o tipo de fluxo no espaço anular
+// Funcao para determinar o tipo de fluxo no espaco anular
 std::string CModeloPotencia::DeterminarFluxoAnular() {
 
     double diametroAnular = poco->DiametroPoco() - poco->DiametroRevestimentoOD();
     vMediaAnular = DeterminarVelocidadeMediaAnular(poco->Vazao(), poco->DiametroPoco(), poco->DiametroRevestimentoOD());
     reynoldsAnular = DeterminarReynoldsAnular(poco->DensidadeEfetivaTotal(), vMediaAnular, diametroAnular, indiceDeConsistencia, indiceDeComportamento);
 
-    fluxoAnular = (reynoldsAnular <= reynoldsCriticoAnular) ? "Laminar" : "Turbulento"; // Determinação do fluxo
+    fluxoAnular = (reynoldsAnular <= reynoldsCriticoAnular) ? "Laminar" : "Turbulento"; // Determinacao do fluxo
     return fluxoAnular;
 }
 
-// Função para calcular a perda de carga por fricção no poço
+// Funcao para calcular a perda de carga por friccao no poco
 double CModeloPotencia::CalcularPerdaPorFriccaoPoco() {
     if (fluxoPoco.empty()) {
         DeterminarFluxoPoco();
@@ -63,7 +63,7 @@ double CModeloPotencia::CalcularPerdaPorFriccaoPoco() {
     }
 }
 
-// Função para calcular a perda de carga por fricção no espaço anular
+// Funcao para calcular a perda de carga por friccao no espaco anular
 double CModeloPotencia::CalcularPerdaPorFriccaoAnular() {
     if (fluxoAnular.empty()) {
         DeterminarFluxoAnular();

@@ -33,7 +33,7 @@ public:
     void FluxoPoco( double FluxoP ) { fluxoPoco = FluxoP; }
     void ProfundidadeTotal( double FloxoA ) { fluxoAnular = FloxoA; }
     
-    //Métodos
+    //Metodos
     double DeterminarReynoldsCritico(double Reynolds);
     double DeterminarReynoldsPoco(double densidade, double VMedioPoco, double diametroRevestimentoID, double indiceDeConsistencia, double indiceDeComportamento);
     double DeterminarReynoldsAnular(double densidade, double VMedioPoco, double diametroAnular, double indiceDeConsistencia, double indiceDeComportamento);

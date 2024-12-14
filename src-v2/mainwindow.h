@@ -36,6 +36,14 @@ private slots:
 
     void ExibirDadosPoco();
 
+    void on_btnAdicionarPropriedades_clicked();
+
+    void on_btnPressaoHidroesttica_clicked();
+
+    void on_btnLimparPropriedadesPoco_clicked();
+
+    void on_btnAdicionarFluido_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

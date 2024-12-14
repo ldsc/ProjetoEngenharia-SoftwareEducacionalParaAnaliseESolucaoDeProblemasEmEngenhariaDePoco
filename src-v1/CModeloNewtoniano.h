@@ -13,7 +13,7 @@ public:
     ~CModeloNewtoniano() {}
     CModeloNewtoniano(CPoco* poco) : CModeloReologico(poco){}
 
-    //Métodos
+    //Metodos
     std::string DeterminarFluxoPoco() override;
     std::string DeterminarFluxoAnular() override;
     double CalcularPerdaPorFriccaoPoco() override;

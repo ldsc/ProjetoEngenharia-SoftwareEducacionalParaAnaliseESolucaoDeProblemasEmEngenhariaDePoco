@@ -11,7 +11,7 @@
 auto auxiliar = std::make_unique<CAuxiliar>();
 
 void CSimuladorPoco::ExibirPropriedades() {
-        // Exibir propriedades do poço
+        // Exibir propriedades do poco
             std::cout << "\nPropriedades do Poco:" << std::endl;
             std::cout << std::setw(30) << "Profundidade Total:" 
                     << std::setw(15) << poco->ProfundidadeTotal() << " ft" << std::endl;
@@ -19,7 +19,7 @@ void CSimuladorPoco::ExibirPropriedades() {
             std::cout << std::setw(30) << "Profundidade Ocupada:" 
                     << std::setw(15) << poco->ProfundidadeOcupada() << " ft" << std::endl;
 
-            std::cout << std::setw(30) << "Pressão Superficie:" 
+            std::cout << std::setw(30) << "Pressao Superficie:" 
                     << std::setw(15) << poco->PressaoSuperficie() << " psi" << std::endl;
 
             std::cout << std::setw(30) << "Diametro Poco:" 
@@ -40,14 +40,14 @@ void CSimuladorPoco::ExibirPropriedades() {
             std::cout << std::setw(30) << "Viscosidade Media:" 
                     << std::setw(15) << poco->ViscosidadeEfetivaTotal() << " cP" << std::endl;
 
-            // Cabeçalho da tabela
+            // Cabecalho da tabela
             std::cout << std::setw(20) << "Nome do Fluido" 
                     << std::setw(20) << "Densidade (lb/gal)" 
                     << std::setw(20) << "Viscosidade (cP)" 
                     << std::setw(20) << "Prof. Inicial (ft)" 
                     << std::setw(20) << "Prof. Final (ft)" << std::endl;
 
-            // Linha de separação
+            // Linha de separacao
             std::cout << std::string(100, '-') << std::endl;
 
             // Exibir dados dos fluidos
@@ -118,9 +118,9 @@ void CSimuladorPoco::ConfigurarFluido() {
                     std::cout << "Deseja adicionar outro fluido? (s/n): ";
                     std::cin >> continuar;
 
-                } while (continuar == 's' || continuar == 'S'); // Continua enquanto o usuário quiser
+                } while (continuar == 's' || continuar == 'S'); // Continua enquanto o usuario quiser
 
-                // Adiciona todos os trechos ao poço
+                // Adiciona todos os trechos ao poco
                 for (auto& trecho : trechos) {
                     poco->AdicionarTrechoPoco(std::move(trecho));
                 }
@@ -135,10 +135,10 @@ void CSimuladorPoco::ConfigurarPorArquivo(const std::string& arquivo) {
     }
 
     std::string linha;
-    bool lendoFluidos = false; // Começa lendo dados do poço
+    bool lendoFluidos = false; // Comeca lendo dados do poco
 
     while (std::getline(file, linha)) {
-        // Ignorar linhas vazias ou comentários
+        // Ignorar linhas vazias ou comentarios
         if (linha.empty() || linha[0] == '#') {
             if (linha.find("Fluidos") != std::string::npos) {
                 lendoFluidos = true; // Mudar para leitura de fluidos
@@ -147,7 +147,7 @@ void CSimuladorPoco::ConfigurarPorArquivo(const std::string& arquivo) {
         }
 
         if (!lendoFluidos) {
-            // Ler os dados do poço
+            // Ler os dados do poco
             std::istringstream iss(linha);
             double profundidade, pressaoSuperficie, diametro, OD, ID, vazao;
 
@@ -155,7 +155,7 @@ void CSimuladorPoco::ConfigurarPorArquivo(const std::string& arquivo) {
                 poco = std::make_unique<CPoco>(profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
                 std::cout << "Poco configurado a partir do arquivo " << arquivo << " com sucesso!" << std::endl;
             } else {
-                std::cerr << "Erro ao ler dados do poço na linha: " << linha << std::endl;
+                std::cerr << "Erro ao ler dados do poco na linha: " << linha << std::endl;
             }
         } else {
             // Ler os dados dos fluidos
@@ -167,7 +167,7 @@ void CSimuladorPoco::ConfigurarPorArquivo(const std::string& arquivo) {
                 auto fluido = std::make_unique<CFluido>(nome, densidade, viscosidade);
                 auto trechoPoco = std::make_unique<CTrechoPoco>(profInicial, profFinal, std::move(fluido));
                 if (!poco->AdicionarTrechoPoco(std::move(trechoPoco))) {
-                    std::cerr << "Erro ao adicionar trecho ao poço!" << std::endl;
+                    std::cerr << "Erro ao adicionar trecho ao poco!" << std::endl;
                 }
             } else {
                 std::cerr << "Erro ao ler linha de fluido: " << linha << std::endl;
@@ -177,7 +177,7 @@ void CSimuladorPoco::ConfigurarPorArquivo(const std::string& arquivo) {
 
     file.close();
 }
-// Função para o menu principal
+// Funcao para o menu principal
 void CSimuladorPoco::MenuPrincipal() {
     while (true) {
         int escolha;
@@ -217,7 +217,7 @@ void CSimuladorPoco::MenuPrincipal() {
 
             default:
                 if (!pocoConfigurado) {
-                    std::cout << "Opcao invalida ou indisponível! Configure o poço primeiro.\n";
+                    std::cout << "Opcao invalida ou indisponivel! Configure o poco primeiro.\n";
                 } else {
                     switch (escolha) {
                         case 2:
@@ -286,7 +286,7 @@ void CSimuladorPoco::MenuConfigurarSimulador() {
         }
 
         std::cout << "\nPressione Enter para continuar...";
-        std::cin.ignore().get(); // Pausa até pressionar Enter
+        std::cin.ignore().get(); // Pausa ate pressionar Enter
     }
 }
 
@@ -326,7 +326,7 @@ void CSimuladorPoco::MenuPressaoHidrostatica() {
         }
 
         std::cout << "\nPressione Enter para continuar...";
-        std::cin.ignore().get(); // Pausa até pressionar Enter
+        std::cin.ignore().get(); // Pausa ate pressionar Enter
     }
 }
 
@@ -365,7 +365,7 @@ void CSimuladorPoco::MenuPerdaDeCarga() {
         }
 
         std::cout << "\nPressione Enter para continuar...";
-        std::cin.ignore().get(); // Pausa até pressionar Enter
+        std::cin.ignore().get(); // Pausa ate pressionar Enter
     }
 }
 
@@ -415,7 +415,7 @@ void CSimuladorPoco::MenuModeloNewtoniano() {
         }
 
         std::cout << "\nPressione Enter para continuar...";
-        std::cin.ignore().get(); // Pausa até pressionar Enter
+        std::cin.ignore().get(); // Pausa ate pressionar Enter
     }
 }
 
@@ -488,7 +488,7 @@ void CSimuladorPoco::MenuModeloBingham() {
         }
 
         std::cout << "\nPressione Enter para continuar...";
-        std::cin.ignore().get(); // Pausa até pressionar Enter
+        std::cin.ignore().get(); // Pausa ate pressionar Enter
     }
 }
 
@@ -550,6 +550,6 @@ void CSimuladorPoco::MenuModeloPotencia() {
         }
 
         std::cout << "\nPressione Enter para continuar...";
-        std::cin.ignore().get(); // Pausa até pressionar Enter
+        std::cin.ignore().get(); // Pausa ate pressionar Enter
     }
 }

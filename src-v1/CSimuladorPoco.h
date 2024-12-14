@@ -34,13 +34,13 @@ public:
     void MenuModeloPotencia();
     
 
-    // Métodos auxiliares para configurar o poço e fluidos
+    // Metodos auxiliares para configurar o poco e fluidos
     void ConfigurarPoco();
     void ConfigurarFluido();
     void ConfigurarPorArquivo(const std::string& arquivo);
     void ImprimirResultados();
 
-    // Métodos de simulação
+    // Metodos de simulacao
     void ExibirPropriedades();
 
 };

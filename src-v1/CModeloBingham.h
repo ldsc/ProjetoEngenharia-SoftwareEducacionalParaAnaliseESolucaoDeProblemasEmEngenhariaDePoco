@@ -31,7 +31,7 @@ public:
     void PontoDeEscoamento( double PontoE ) { pontoDeEscoamento = PontoE; }
     void ViscosidadePlastica( double ViscosidadeP ) { viscosidadePlastica = ViscosidadeP; }
     
-    //Métodos
+    //Metodos
     
     double DeterminarReynoldsCritico(double hedstron);
     double DeterminarReynoldsHedstronPoco(double densidade, double pontoDeEscoamento, double diametroRevestimentoID, double viscosidade);
