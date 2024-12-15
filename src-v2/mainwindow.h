@@ -32,9 +32,6 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_BntImportarDados_clicked();
-
-    void ExibirDadosPoco();
 
     void on_btnAdicionarPropriedades_clicked();
 
@@ -43,6 +40,14 @@ private slots:
     void on_btnLimparPropriedadesPoco_clicked();
 
     void on_btnAdicionarFluido_clicked();
+
+    void on_actionImportar_Dados_triggered();
+
+    void on_bntRemoverFluido_clicked();
+
+    void on_actionSobre_o_Simulador_triggered();
+
+    void on_btnAtualizar_clicked();
 
 private:
     Ui::MainWindow *ui;

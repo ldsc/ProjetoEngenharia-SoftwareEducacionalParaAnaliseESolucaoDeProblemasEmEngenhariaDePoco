@@ -1,11 +1,11 @@
 #include "janelapressaohidroestatica.h"
 #include "ui_janelapressaohidroestatica.h"
+#include <QMessageBox>
 
-janelapressaohidroestatica::janelapressaohidroestatica(std::unique_ptr<CPoco> poco, QWidget *parent)
-    : QDialog(parent),
-    ui(new Ui::janelapressaohidroestatica),
-    m_poco(std::move(poco)) // Move o unique_ptr para m_poco
-{
+janelapressaohidroestatica::janelapressaohidroestatica(std::shared_ptr<CPoco> poco, QWidget *parent)
+    : QDialog(parent), // Inicializa a classe base QDialog
+    ui(new Ui::janelapressaohidroestatica), copiaPoco(poco){
+
     ui->setupUi(this);
 }
 
@@ -16,8 +16,13 @@ janelapressaohidroestatica::~janelapressaohidroestatica()
 
 void janelapressaohidroestatica::on_bntCalcularPressaoHidroestatica_clicked()
 {
-    double profundidade = ui->lnValorProfundidade->text().toDouble();
-    double PressaoHidro = m_poco->PressaoHidroestaticaNoPonto(profundidade);
-     ui->lbnValorPressao->setText(QString::number(PressaoHidro));
+    if(ui->lnValorProfundidade->text() == ""){
+        QMessageBox::warning(this, "Erro", "Por favor, informe um valor de profundidade!");
+    }
+    else{
+        double profundidade = ui->lnValorProfundidade->text().toDouble();
+        double PressaoHidro = copiaPoco->PressaoHidroestaticaNoPonto(profundidade);
+        ui->lbnValorPressao->setText(QString::number(PressaoHidro));
+    }
 }
 

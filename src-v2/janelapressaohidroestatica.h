@@ -14,7 +14,7 @@ class janelapressaohidroestatica : public QDialog
     Q_OBJECT
 
 public:
-    explicit janelapressaohidroestatica(std::unique_ptr<CPoco> poco, QWidget *parent = nullptr);
+    explicit janelapressaohidroestatica(std::shared_ptr<CPoco> poco, QWidget *parent = nullptr);
     ~janelapressaohidroestatica();
 
 private slots:
@@ -22,7 +22,7 @@ private slots:
 
 private:
     Ui::janelapressaohidroestatica *ui;
-    std::unique_ptr<CPoco> m_poco;
+    std::shared_ptr<CPoco> copiaPoco;
 };
 
 #endif // JANELAPRESSAOHIDROESTATICA_H
