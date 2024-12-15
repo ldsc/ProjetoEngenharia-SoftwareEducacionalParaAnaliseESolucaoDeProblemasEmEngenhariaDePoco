@@ -19,12 +19,12 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 protected:
-    std::unique_ptr<CPoco> poco;
-    std::unique_ptr<CTrechoPoco> trechoPoco;
-    std::unique_ptr<CFluido> fluido;
-    std::unique_ptr<CModeloNewtoniano> modeloNewtoniano;
-    std::unique_ptr<CModeloBingham> modeloBingham;
-    std::unique_ptr<CModeloPotencia> modeloPotencia;
+    std::shared_ptr<CPoco> poco;
+    std::shared_ptr<CTrechoPoco> trechoPoco = nullptr;
+    std::shared_ptr<CFluido> fluido = nullptr;
+    std::shared_ptr<CModeloNewtoniano> modeloNewtoniano = nullptr;
+    std::shared_ptr<CModeloBingham> modeloBingham = nullptr;
+    std::shared_ptr<CModeloPotencia> modeloPotencia = nullptr;
 
 
 public:
@@ -48,6 +48,8 @@ private slots:
     void on_actionSobre_o_Simulador_triggered();
 
     void on_btnAtualizar_clicked();
+
+    void on_btnCalcularPerdaCarga_clicked();
 
 private:
     Ui::MainWindow *ui;

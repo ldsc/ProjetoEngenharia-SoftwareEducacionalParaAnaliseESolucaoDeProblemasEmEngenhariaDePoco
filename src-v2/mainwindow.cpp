@@ -24,7 +24,6 @@ MainWindow::~MainWindow()
 }
 
 
-
 void MainWindow::on_btnAdicionarPropriedades_clicked()
 {
     double profundidade, pressaoSuperficie, diametro, OD, ID, vazao;
@@ -53,20 +52,21 @@ void MainWindow::on_btnAdicionarPropriedades_clicked()
             );
 
         if (resposta == QMessageBox::Yes) {
-            poco = std::make_unique<CPoco>(profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
+            poco = std::make_shared<CPoco>(profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
         }
         on_btnAtualizar_clicked();
     } else {
-        poco = std::make_unique<CPoco>(profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
+        poco = std::make_shared<CPoco>(profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
     }
 }
 
 
 void MainWindow::on_btnPressaoHidroesttica_clicked()
 {
-    //janelapressaohidroestatica janelaPressaoHidro(poco);
-    //janelaPressaoHidro.exec();
+    janelapressaohidroestatica janelaPressaoHidro(poco);
+    janelaPressaoHidro.exec();
 }
+
 
 void MainWindow::on_btnLimparPropriedadesPoco_clicked()
 {
@@ -188,35 +188,42 @@ void MainWindow::on_bntRemoverFluido_clicked()
 
 void MainWindow::on_actionSobre_o_Simulador_triggered()
 {
-
+    QMessageBox::warning(this, "Erro", "Função não implementada.");
 }
 
 
 void MainWindow::on_btnAtualizar_clicked()
 {
-    // Atualiza os valores dos QLineEdits com os dados do objeto poco
-    ui->lnValorProfundidadePoco->setText(QString::number(poco->ProfundidadeTotal()));       // Profundidade total do poço
-    ui->lbnValorProfundidadeOcupada->setText(QString::number(poco->ProfundidadeOcupada())); // Profundidade ocupada
-    ui->lnValorPressaoSup->setText(QString::number(poco->PressaoSuperficie()));           // Pressão na superfície
-    ui->lnValorDiametroPoco->setText(QString::number(poco->DiametroPoco()));              // Diâmetro do poço
-    ui->lnValorDiametroOD->setText(QString::number(poco->DiametroRevestimentoOD()));      // Diâmetro externo do revestimento (OD)
-    ui->lnValorDiametroID->setText(QString::number(poco->DiametroRevestimentoID()));      // Diâmetro interno do revestimento (ID)
-    ui->lnValorVazao->setText(QString::number(poco->Vazao()));                            // Vazão do fluido no poço
-    ui->lbnValorDensidadeMedia->setText(QString::number(poco->DensidadeEfetivaTotal()));   // Densidade efetiva média dos fluidos
-    ui->lbnValorViscosidadeMedia->setText(QString::number(poco->ViscosidadeEfetivaTotal())); // Viscosidade efetiva média dos fluidos
+        if (poco){
+        // Atualiza os valores dos QLineEdits com os dados do objeto poco
+        ui->lnValorProfundidadePoco->setText(QString::number(poco->ProfundidadeTotal()));       // Profundidade total do poço
+        ui->lbnValorProfundidadeOcupada->setText(QString::number(poco->ProfundidadeOcupada())); // Profundidade ocupada
+        ui->lnValorPressaoSup->setText(QString::number(poco->PressaoSuperficie()));           // Pressão na superfície
+        ui->lnValorDiametroPoco->setText(QString::number(poco->DiametroPoco()));              // Diâmetro do poço
+        ui->lnValorDiametroOD->setText(QString::number(poco->DiametroRevestimentoOD()));      // Diâmetro externo do revestimento (OD)
+        ui->lnValorDiametroID->setText(QString::number(poco->DiametroRevestimentoID()));      // Diâmetro interno do revestimento (ID)
+        ui->lnValorVazao->setText(QString::number(poco->Vazao()));                            // Vazão do fluido no poço
+        ui->lbnValorDensidadeMedia->setText(QString::number(poco->DensidadeEfetivaTotal()));   // Densidade efetiva média dos fluidos
+        ui->lbnValorViscosidadeMedia->setText(QString::number(poco->ViscosidadeEfetivaTotal())); // Viscosidade efetiva média dos fluidos
 
-    // Atualizar QTableWidget com os dados dos trechos
-    ui->tblFluidos->setRowCount(static_cast<int>(poco->Trechos().size()));
+        // Atualizar QTableWidget com os dados dos trechos
+        ui->tblFluidos->setRowCount(static_cast<int>(poco->Trechos().size()));
 
-    int row = 0;
-    for (const auto& trecho : poco->Trechos()) {
-        ui->tblFluidos->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(trecho->Fluido()->Nome())));
-        ui->tblFluidos->setItem(row, 1, new QTableWidgetItem(QString::number(trecho->Fluido()->Densidade(), 'f', 2)));
-        ui->tblFluidos->setItem(row, 2, new QTableWidgetItem(QString::number(trecho->Fluido()->Viscosidade(), 'f', 2)));
-        ui->tblFluidos->setItem(row, 3, new QTableWidgetItem(QString::number(trecho->ProfundidadeInicial(), 'f', 2)));
-        ui->tblFluidos->setItem(row, 4, new QTableWidgetItem(QString::number(trecho->ProfundidadeFinal(), 'f', 2)));
-        ++row;
+        int row = 0;
+        for (const auto& trecho : poco->Trechos()) {
+            ui->tblFluidos->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(trecho->Fluido()->Nome())));
+            ui->tblFluidos->setItem(row, 1, new QTableWidgetItem(QString::number(trecho->Fluido()->Densidade(), 'f', 2)));
+            ui->tblFluidos->setItem(row, 2, new QTableWidgetItem(QString::number(trecho->Fluido()->Viscosidade(), 'f', 2)));
+            ui->tblFluidos->setItem(row, 3, new QTableWidgetItem(QString::number(trecho->ProfundidadeInicial(), 'f', 2)));
+            ui->tblFluidos->setItem(row, 4, new QTableWidgetItem(QString::number(trecho->ProfundidadeFinal(), 'f', 2)));
+            ++row;
+        }
     }
+}
 
+
+void MainWindow::on_btnCalcularPerdaCarga_clicked()
+{
+    QMessageBox::warning(this, "Erro", "Função não implementada.");
 }
 

@@ -131,7 +131,7 @@
        <item row="2" column="0">
         <widget class="QLabel" name="lbnTituloDiametroPoco">
          <property name="text">
-          <string>Diâmetro do Poço:</string>
+          <string>Diâmetro do Poço (in):</string>
          </property>
         </widget>
        </item>
@@ -161,7 +161,7 @@
        <item row="5" column="0">
         <widget class="QLabel" name="lbnTituloVazao">
          <property name="text">
-          <string>Vazão do Poço:</string>
+          <string>Vazão do Poço (bbl/d):</string>
          </property>
         </widget>
        </item>
@@ -171,7 +171,7 @@
        <item row="6" column="0">
         <widget class="QLabel" name="lbnTituloProfundidadeOcupada">
          <property name="text">
-          <string>Profundidade Ocupada:</string>
+          <string>Profundidade Ocupada (ft):</string>
          </property>
         </widget>
        </item>
@@ -185,7 +185,7 @@
        <item row="7" column="0">
         <widget class="QLabel" name="lbnTituloDensidadeMedia">
          <property name="text">
-          <string>Densidade Média:</string>
+          <string>Densidade Média (lbm/gal):</string>
          </property>
         </widget>
        </item>
@@ -199,7 +199,7 @@
        <item row="8" column="0">
         <widget class="QLabel" name="lbnTituloViscosidadeMedia">
          <property name="text">
-          <string>Viscosidade Média:</string>
+          <string>Viscosidade Média (cP):</string>
          </property>
         </widget>
        </item>
@@ -225,7 +225,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>350</x>
