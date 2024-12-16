@@ -8,11 +8,11 @@
 // Historico de versoes:
 // 0. Interface para linguagem C
 //    por N. Devillard (27/01/03)
-// 1. Interface para C++: tradução direta da versao em C
+// 1. Interface para C++: traduï¿½ï¿½o direta da versao em C
 //    por Rajarshi Guha (07/03/03)
 // 2. Correcoes para compatibilidadde com Win32 
 //    por V. Chyzhdzenka (20/05/03)
-// 3. Novos métodos membros, correcoes para compatibilidade com Win32 e Linux 
+// 3. Novos mï¿½todos membros, correcoes para compatibilidade com Win32 e Linux 
 //    por M. Burgis (10/03/08)
 // 4. Traducao para Portugues, documentacao - javadoc/doxygen, 
 //    e modificacoes na interface (adicao de interface alternativa)
@@ -20,12 +20,12 @@
 //   Tarefas: 
 //   (v1)
 //   Documentar toda classe
-//   Adicionar novos métodos, criando atributos adicionais se necessario.
+//   Adicionar novos mï¿½todos, criando atributos adicionais se necessario.
 //   Adotar padrao C++, isto e, usar sobrecarga nas chamadas.
 //   (v2)
 //   Criar classe herdeira CGnuplot, que inclui somente a nova interface.
 //   como e herdeira, o usuario vai poder usar nome antigos.
-//   Vantagem: preserva classe original, cria nova interface, fica a critério do usuário
+//   Vantagem: preserva classe original, cria nova interface, fica a critï¿½rio do usuï¿½rio
 //   qual interface utilizar.
 ////////////////////////////////////////////////////////////////////////////////////////
 // Requisitos:
@@ -47,7 +47,8 @@
 #include <vector>
 #include <utility>
 #include <stdexcept>	// Heranca da classe std::runtime_error em GnuplotException
-#include <cstdio>		// Para acesso a arquivos FILE
+#include <cstdio>	
+#include <stdio.h>	// Para acesso a arquivos FILE
 
 /**
 @brief Erros em tempo de execucao
@@ -98,7 +99,7 @@ private:
   static std::string terminal_std;	///< Terminal padrao (standart), usado para visualizacoes.
   
   //------------------------------------------------------------------------------------- Metodos
-  // Funcoes membro (métodos membro) (funcoes auxiliares)
+  // Funcoes membro (mï¿½todos membro) (funcoes auxiliares)
   /// @brief Cria arquivo temporario e retorna seu nome.
   /// Usa get_program_path(); e popen();
   void  init ();		        
@@ -324,17 +325,17 @@ public:
 		else 
             return unset_surface();
 		}
-  /// @brief Ativa a legenda (a legenda é setada por padrao).
+  /// @brief Ativa a legenda (a legenda ï¿½ setada por padrao).
   /// Posicao: inside/outside, left/center/right, top/center/bottom, nobox/box
   Gnuplot &  set_legend (const std::string & position = "default");	
 
-  /// @brief Desativa a legenda (a legenda é setada por padrao).
+  /// @brief Desativa a legenda (a legenda ï¿½ setada por padrao).
   Gnuplot &  unset_legend ();
 
-  /// @brief Ativa/Desativa a legenda (a legenda é setada por padrao).
+  /// @brief Ativa/Desativa a legenda (a legenda ï¿½ setada por padrao).
   Gnuplot &  Legend(const std::string & position = "default") { return set_legend(position); }
 
-  /// @brief Ativa/Desativa a legenda (a legenda é setada por padrao).
+  /// @brief Ativa/Desativa a legenda (a legenda ï¿½ setada por padrao).
   Gnuplot &  Legend(int _flegend) {
                 if(flegend == _flegend)
             return set_legend(); 
@@ -620,14 +621,14 @@ public:
                                               { return plot_image (ucPicBuf, iWidth, iHeight, title); }
 
   ////////////////////////////////// Novidades Bueno ////////////////////////////////////////
-  /// Seta uma mensagem numa determinada posição (requer a chamada a Replot())
+  /// Seta uma mensagem numa determinada posiï¿½ï¿½o (requer a chamada a Replot())
   //set label "Yield Point" at 0.003,260
   Gnuplot & SetLabel( double x, double y, std::string label) {
       label = "set label \"" + label + "\" at " + std::to_string(x) + "," + std::to_string(y) + "\n";
       *this << label;
       return *this;      
   }
-  /// Seta uma mensagem numa determinada posição e já chama Replot()
+  /// Seta uma mensagem numa determinada posiï¿½ï¿½o e jï¿½ chama Replot()
   Gnuplot & PlotLabel( double x, double y,std::string label) {
       label = "set label \"" + label + "\" at " + std::to_string(x) + "," + std::to_string(y) + "\n";
       //std::cerr << label;
@@ -640,13 +641,13 @@ public:
   // entra com pares de dados
   // a letra "e" encerra a entrada de dados.
   // w=with p = points ls = linestyle
-  /// Seta um ponto numa determinada posição (requer a chamada a Replot())
+  /// Seta um ponto numa determinada posiï¿½ï¿½o (requer a chamada a Replot())
   Gnuplot & SetPoint(double x, double y) {
       //*this << "plot '-' w p ls 1, \n" << std::to_string(x) << " " <<  std::to_string(y) << "\ne\n";
       SetLabel( x,y,"*");
       return *this;      
   }
-  /// Plota um ponto numa determinada posição e já chama Replot()
+  /// Plota um ponto numa determinada posiï¿½ï¿½o e jï¿½ chama Replot()
   Gnuplot & PlotPoint(double x, double y/*, std::string styleInformation = ""*/) {
       return PlotLabel( x,y,"*");
   }
@@ -659,14 +660,14 @@ public:
   //  set style arrow 7 nohead ls 1
   // Para plotar uma seta, note que usar o estilo 1 definido acima
   //  set arrow from -500,-100 to 500,-100 as 1
-  /// Seta uma seta numa determinada posição
+  /// Seta uma seta numa determinada posiï¿½ï¿½o
   Gnuplot & SetArrow(double x1, double y1,double x2, double y2, int style_arrow = 1) {
       std::ostringstream os; 
       os << "set arrow from " << x1 << " , " << y1 << " to " << x2 << " , " << y2 << " as " << style_arrow << "\n";
       *this << os.str();
       return *this;      
   }
-  /// Seta uma seta numa determinada posição e já chama Replot()
+  /// Seta uma seta numa determinada posiï¿½ï¿½o e jï¿½ chama Replot()
   Gnuplot & PlotArrow(double x1, double y1,double x2, double y2, int style_arrow = 1) {
       std::ostringstream os; 
       os << "set arrow from " << x1 << " , " << y1 << " to " << x2 << " , " << y2 << " as " << style_arrow << "\n";
@@ -692,7 +693,7 @@ public:
       *this << os.str();
       return replot();
   }
-  /// Plota um Triângulo
+  /// Plota um Triï¿½ngulo
   // set style line 3 lc rgb 'black' pt 9   # triangle
   Gnuplot & Triangle(double x1, double y1,int size = 4 ) {
       std::ostringstream os; 
@@ -701,7 +702,7 @@ public:
       *this << os.str();
       return replot();
   }
-  /// Exporta gráfico no formato de uma imagem (FALTA TESTAR!).
+  /// Exporta grï¿½fico no formato de uma imagem (FALTA TESTAR!).
   // Abaixo os formatos suportados: 
   //   png jpeg pngcairo postscript  qt svg x11
   //   cairolatex canvas cgm context corel domterm dumb dxf eepic emf emtex epscairo
@@ -720,21 +721,21 @@ public:
 
   //----------------------------------------------------------------------------------
   // Repete o ultimo comando de plotagem, seja plot (2D) ou splot (3D)
-  // Usado para visualizar plotagens, após mudar algumas opcoes de plotagem
+  // Usado para visualizar plotagens, apï¿½s mudar algumas opcoes de plotagem
   // ou quando gerando o mesmo grafico para diferentes dispositivos (showonscreen, savetops)
   Gnuplot &  replot ();
 
   // Repete o ultimo comando de plotagem, seja plot (2D) ou splot (3D)
-  // Usado para visualizar plotagens, após mudar algumas opcoes de plotagem
+  // Usado para visualizar plotagens, apï¿½s mudar algumas opcoes de plotagem
   // ou quando gerando o mesmo grafico para diferentes dispositivos (showonscreen, savetops)
   Gnuplot &  Replot() 				{ return replot(); }
 
-  // Reseta uma sessao do gnuplot (próxima plotagem apaga definicoes previas)
+  // Reseta uma sessao do gnuplot (prï¿½xima plotagem apaga definicoes previas)
   Gnuplot &  reset_plot ();
 
-  // Reseta uma sessao do gnuplot (próxima plotagem apaga definicoes previas)
+  // Reseta uma sessao do gnuplot (prï¿½xima plotagem apaga definicoes previas)
   Gnuplot &  ResetPlot() 			{ return reset_plot(); }
-  // Reseta uma sessao do gnuplot (próxima plotagem apaga definicoes previas)
+  // Reseta uma sessao do gnuplot (prï¿½xima plotagem apaga definicoes previas)
   Gnuplot &  Reset()        		{ return reset_plot(); }
 
   // Reseta uma sessao do gnuplot e seta todas as variaveis para o default
@@ -749,7 +750,7 @@ public:
   // Verifica se a sessao esta valida
   bool  IsValid ()				{ return is_valid (); };
   // 
-  /// Sobrecarga do operador de inserção << ; uso: vector<double> vx,vy; grafico << make_pair(vx,vy);
+  /// Sobrecarga do operador de inserï¿½ï¿½o << ; uso: vector<double> vx,vy; grafico << make_pair(vx,vy);
 //   friend Gnuplot & operator<<(Gnuplot& grafico, std::pair< std::vector<double>,std::vector<double> > p) {
 //             grafico.PlotVector(p.first,p.second); return grafico; }
 };
