@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Classes"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Class List"><param name="Local" value="annotated.html#top"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CAuxiliar"><param name="Local" value="class_c_auxiliar.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CFluido"><param name="Local" value="class_c_fluido.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CImpressao"><param name="Local" value="class_c_impressao.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CModeloBingham"><param name="Local" value="class_c_modelo_bingham.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CModeloNewtoniano"><param name="Local" value="class_c_modelo_newtoniano.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CModeloPotencia"><param name="Local" value="class_c_modelo_potencia.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CModeloReologico"><param name="Local" value="class_c_modelo_reologico.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CPoco"><param name="Local" value="class_c_poco.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CSimuladorPoco"><param name="Local" value="class_c_simulador_poco.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CTrechoPoco"><param name="Local" value="class_c_trecho_poco.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Gnuplot"><param name="Local" value="class_gnuplot.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Gnuplot"><param name="Local" value="class_gnuplot.html#a187eb517b362cf379492fe7f1621ee50"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Gnuplot"><param name="Local" value="class_gnuplot.html#a8ceac5808e42665c1dee305ae7ea9070"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Gnuplot"><param name="Local" value="class_gnuplot.html#a24327b6116c71acdc195eadf665c67cb"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Gnuplot"><param name="Local" value="class_gnuplot.html#a14191e89154f2716608f6907975cc012"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="~Gnuplot"><param name="Local" value="class_gnuplot.html#a78a68f621caa87d1f34324fcd093c7bd"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CBRange"><param name="Local" value="class_gnuplot.html#a72c287667a80e2dfa8275688c93db056"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Circle"><param name="Local" value="class_gnuplot.html#aaacd6f7e8aa187e7aa5a07b811fb2889"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Cmd"><param name="Local" value="class_gnuplot.html#a59921d80c0315c95fc5f2cf28e6718df"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="cmd"><param name="Local" value="class_gnuplot.html#a07607803ede8dd5416906df0a1924fc5"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Command"><param name="Local" value="class_gnuplot.html#abd081059ee059e67c204585c456d41a2"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Contour"><param name="Local" value="class_gnuplot.html#aac76a01e16642ca0415b32a2fd4c93be"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Grid"><param name="Local" value="class_gnuplot.html#aba6c206ff95d6d7377627f8545ca62c1"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Hidden3d"><param name="Local" value="class_gnuplot.html#a42195fcdfc544df50d7d412f2918c218"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ImageExport"><param name="Local" value="class_gnuplot.html#a0a6cc04ed4afbf962ddaaeb2d04a5eaa"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IsoSamples"><param name="Local" value="class_gnuplot.html#a14c7ba149d3e9f523d15bb1fd66445e9"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Legend"><param name="Local" value="class_gnuplot.html#a2b9ba1e2d6babf020158c042eefdff76"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Legend"><param name="Local" value="class_gnuplot.html#af2f2bf238db3ebce2d92cd6ca95c1466"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator&lt;&lt;"><param name="Local" value="class_gnuplot.html#ae56495dc15f23d32f099129d3a50dd6c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="plot_equation"><param name="Local" value="class_gnuplot.html#a42dfb8c9d4636745c7be277ed818e849"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="plot_equation3d"><param name="Local" value="class_gnuplot.html#a79aed3a6927f7d1d3497cba441e8a943"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="plot_image"><param name="Local" value="class_gnuplot.html#ab71117b8fa74d53ea20c313717d86b5c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="plot_slope"><param name="Local" value="class_gnuplot.html#a51ea5105eb87285820bb93910f8d346c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="plot_x"><param name="Local" value="class_gnuplot.html#a9400d43204b9df62851c063aee604f0d"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="plot_xy"><param name="Local" value="class_gnuplot.html#a777b6a5474951d6d023dff4237d80a2b"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="plot_xy_err"><param name="Local" value="class_gnuplot.html#a3dd3934b09094a9ba48035a2edf4d4fd"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="plot_xyz"><param name="Local" value="class_gnuplot.html#aee30f21a00a4f31c8356a2ef1f0e26e3"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotArrow"><param name="Local" value="class_gnuplot.html#a3ff328979ce400294ab2d4df02b637dc"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotEquation"><param name="Local" value="class_gnuplot.html#a54a8351d4ea06e4873a73fa200835380"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotEquation3d"><param name="Local" value="class_gnuplot.html#a1bd342bc27ae0d3155bfb4847431f5a3"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotFile"><param name="Local" value="class_gnuplot.html#ac9383787c3831cada55dd081b0592857"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotFile"><param name="Local" value="class_gnuplot.html#a75a67ae376eb94892aa5ba48ae6c29c5"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotFile"><param name="Local" value="class_gnuplot.html#ac19856a234621520bf08ce5d0105d436"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="plotfile_x"><param name="Local" value="class_gnuplot.html#a4ca35415fa5560764597cfdfa46c6c40"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="plotfile_xy"><param name="Local" value="class_gnuplot.html#af226f395310d3c5c4f8b4d2aaf5d8823"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="plotfile_xy_err"><param name="Local" value="class_gnuplot.html#a33ab4bb031fa6a6b798c90a9089648e9"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="plotfile_xyz"><param name="Local" value="class_gnuplot.html#abd1c17c49fc59979a1143384c77c5b66"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotFileXYErrorBar"><param name="Local" value="class_gnuplot.html#abe9f9f5301c1dcc35acecbf854623085"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotImage"><param name="Local" value="class_gnuplot.html#a93fa9569c46f615840fcb364a29059a9"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotLabel"><param name="Local" value="class_gnuplot.html#add458e900a0abe4742200759a322e79a"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotPoint"><param name="Local" value="class_gnuplot.html#aeb54e73e8210060d129da92b7d7b8e1b"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotSlope"><param name="Local" value="class_gnuplot.html#af4912dcec86b05a74b27c30adddc5113"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotVector"><param name="Local" value="class_gnuplot.html#ac80f65502e2af281ae7c8c4a73d604d8"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotVector"><param name="Local" value="class_gnuplot.html#aefa64bbed449a6c7c1eb1fabb392d3f6"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotVector"><param name="Local" value="class_gnuplot.html#a2b2b8d5ffa6e9f0cc06617449e84c286"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PlotVectorXYErrorBar"><param name="Local" value="class_gnuplot.html#ac19dffd0bd609bb8de3cc29250d9f4dd"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PointSize"><param name="Local" value="class_gnuplot.html#af81087e5b9753620d73b66f6229d2646"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Samples"><param name="Local" value="class_gnuplot.html#a5fe518307dfcca82468b7e6279408525"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SaveTops"><param name="Local" value="class_gnuplot.html#a9dd058e30035a4a0009b38012d38efd0"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="savetops"><param name="Local" value="class_gnuplot.html#a032072c7c01b508a7535a17fb08562b1"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_cbrange"><param name="Local" value="class_gnuplot.html#a2c8c8ae0441f54dd728bc6594051c137"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_contour"><param name="Local" value="class_gnuplot.html#af845efc728a90d7e10de764eff0b2423"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_grid"><param name="Local" value="class_gnuplot.html#a4b7245b12dad1c0ef326e5f59eb83001"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_hidden3d"><param name="Local" value="class_gnuplot.html#a5ada5c76db0a735d3d331caa0eb4968a"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_isosamples"><param name="Local" value="class_gnuplot.html#ab810fa4c02fb49ae197786c305b78702"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_legend"><param name="Local" value="class_gnuplot.html#ad64a717dac18167f656c4f09239973f8"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_pointsize"><param name="Local" value="class_gnuplot.html#a95ec1636a871447dfe99463b769339c7"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_samples"><param name="Local" value="class_gnuplot.html#a671cbe7b18a267ea59f532c83a0035f6"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_smooth"><param name="Local" value="class_gnuplot.html#aa18386919da2ec4c994f1f9c7195d384"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_style"><param name="Local" value="class_gnuplot.html#acfdcda292650775ebed4683e8e1515b5"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_surface"><param name="Local" value="class_gnuplot.html#a0e36dcd81618234c6cdd135a9e1eee2b"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_title"><param name="Local" value="class_gnuplot.html#aa693e806a115af1e2776a15078e75b46"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_xautoscale"><param name="Local" value="class_gnuplot.html#a453688dc2eb979f842082290f3c02ac3"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_xlabel"><param name="Local" value="class_gnuplot.html#a58808028aec03a22b5c19693b14baeef"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_xlogscale"><param name="Local" value="class_gnuplot.html#aff546fad227d93babeb5d2cc9f047b89"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_xrange"><param name="Local" value="class_gnuplot.html#a726232ac7226b9fc8811eaefa87c902b"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_yautoscale"><param name="Local" value="class_gnuplot.html#a3cc19dba32bb2d3ac59494ae1493faa7"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_ylabel"><param name="Local" value="class_gnuplot.html#a7654b86e3873aec4c5101abb466fe4ab"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_ylogscale"><param name="Local" value="class_gnuplot.html#a201a802d2f27fece0d39809c4eb3bce0"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_yrange"><param name="Local" value="class_gnuplot.html#af621a43664a07523f098ffc3fb5a99b0"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_zautoscale"><param name="Local" value="class_gnuplot.html#ad72aa208fad039b6b7d13ea9595ce157"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_zlabel"><param name="Local" value="class_gnuplot.html#ab3206e715d20f05cc0dd1eec89ce8b07"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_zlogscale"><param name="Local" value="class_gnuplot.html#a1da3838163b0dbde8809b55c5b5c56b1"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set_zrange"><param name="Local" value="class_gnuplot.html#a91666451b8cfd1c5b279d2e585b11af6"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SetArrow"><param name="Local" value="class_gnuplot.html#a9d193a6e0dc758e9fa2c9b7e61e3874c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SetLabel"><param name="Local" value="class_gnuplot.html#a13b18ce1bfeaea31e34b877e6c2fa774"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SetPoint"><param name="Local" value="class_gnuplot.html#a3ae3c8a5686ed80c71f9d93d853f1e7f"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ShowOnScreen"><param name="Local" value="class_gnuplot.html#aada22f547a0a9ac26adea4a4ec836ea4"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="showonscreen"><param name="Local" value="class_gnuplot.html#a356d2faaa79f08d13fec9718b776b28d"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Smooth"><param name="Local" value="class_gnuplot.html#a29497993835d6b72df35188564ff71cd"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Square"><param name="Local" value="class_gnuplot.html#aae4384c4f789441ca74270ba716b1645"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Style"><param name="Local" value="class_gnuplot.html#aef1de768157bb75e080d1c60a1756e42"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Surface"><param name="Local" value="class_gnuplot.html#ad5367a586328205bc451a958db705274"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Title"><param name="Local" value="class_gnuplot.html#a83804130dca9267a667220852eb1a181"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Triangle"><param name="Local" value="class_gnuplot.html#a1d1b16eee6d51a40538f26f3cbdf83ae"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="unset_contour"><param name="Local" value="class_gnuplot.html#a39d10e6ce85875939a9c594d132a10d7"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="unset_grid"><param name="Local" value="class_gnuplot.html#a8b9a16d5793c3f4939b917b2c263860c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="unset_hidden3d"><param name="Local" value="class_gnuplot.html#a763ff17df1679cc2b1463b024aa89ebc"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="unset_legend"><param name="Local" value="class_gnuplot.html#a584e0710d7f5bcaa35653d1987f1563e"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="unset_smooth"><param name="Local" value="class_gnuplot.html#aec18795f217d6d8791275a1c866b550e"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="unset_surface"><param name="Local" value="class_gnuplot.html#a805f1807c9b3a0a6745d66fa1729e3be"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="unset_title"><param name="Local" value="class_gnuplot.html#a0d205a55ae104403292622b49af14ae7"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="unset_xlogscale"><param name="Local" value="class_gnuplot.html#aed8f962539fd8f53ab2c0218da7a6010"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="unset_ylogscale"><param name="Local" value="class_gnuplot.html#a74ebc96273b30c98fb9c8f047dd34ac0"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="unset_zlogscale"><param name="Local" value="class_gnuplot.html#a294d7473091f849fe70e4dba8df8712a"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="XAutoscale"><param name="Local" value="class_gnuplot.html#ab7c7f50c7b7a55ffc9b87ff892d2b2b6"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="XLabel"><param name="Local" value="class_gnuplot.html#aefb9c21bd11f2dd6724be22c8aba98bb"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="XLogscale"><param name="Local" value="class_gnuplot.html#a1c713ae32678d4ada2b170bf774f8f8c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="XLogscale"><param name="Local" value="class_gnuplot.html#a4a26f10f3d11eedcefa1582140144841"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="XRange"><param name="Local" value="class_gnuplot.html#acee07201a6f6c3cf40b87bee425058c0"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="YAutoscale"><param name="Local" value="class_gnuplot.html#af84a02a03a3c7c76fb8ea2364ad89546"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="YLabel"><param name="Local" value="class_gnuplot.html#a8e7fb34039d3252f01d3e78a44d6af08"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="YLogscale"><param name="Local" value="class_gnuplot.html#a391e01377127dab11cb7fb3ecbecd2fd"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="YLogscale"><param name="Local" value="class_gnuplot.html#aad6e2709ed492e4bf5d587143881c8b2"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="YRange"><param name="Local" value="class_gnuplot.html#ada2935405def74527ec9d86eebb88aad"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ZAutoscale"><param name="Local" value="class_gnuplot.html#a8d5f375097a968d169ecbf294af0c4b2"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ZLabel"><param name="Local" value="class_gnuplot.html#a74cd41eda01e17ab43cf8dcbe145333e"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ZLogscale"><param name="Local" value="class_gnuplot.html#a377c6088dd9c9378eafb260e993c35c1"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ZLogscale"><param name="Local" value="class_gnuplot.html#ac223d0668c8a0b361ac67eb949224cd4"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ZRange"><param name="Local" value="class_gnuplot.html#a58ce69438ac8f8b525c90a282228368f"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="GnuplotException"><param name="Local" value="class_gnuplot_exception.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="GnuplotException"><param name="Local" value="class_gnuplot_exception.html#a8b324a9ef4d3f75079d41ecd61c62d44"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Class Index"><param name="Local" value="classes.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Class Hierarchy"><param name="Local" value="hierarchy.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CAuxiliar"><param name="Local" value="class_c_auxiliar.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CFluido"><param name="Local" value="class_c_fluido.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CImpressao"><param name="Local" value="class_c_impressao.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CModeloReologico"><param name="Local" value="class_c_modelo_reologico.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CModeloBingham"><param name="Local" value="class_c_modelo_bingham.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CModeloNewtoniano"><param name="Local" value="class_c_modelo_newtoniano.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CModeloPotencia"><param name="Local" value="class_c_modelo_potencia.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CPoco"><param name="Local" value="class_c_poco.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CSimuladorPoco"><param name="Local" value="class_c_simulador_poco.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="CTrechoPoco"><param name="Local" value="class_c_trecho_poco.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Gnuplot"><param name="Local" value="class_gnuplot.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="std::runtime_error"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="GnuplotException"><param name="Local" value="class_gnuplot_exception.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Class Members"><param name="Local" value="functions.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="All"><param name="Local" value="functions.html#top"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Functions"><param name="Local" value="functions_func.html"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Files"><param name="Local" value="files.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="File List"><param name="Local" value="files.html#top"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="src-v1"><param name="Local" value="dir_75241454c2e4bc141eb5dbbfb68bb034.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CAuxiliar.h"><param name="Local" value="_c_auxiliar_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CFluido.h"><param name="Local" value="_c_fluido_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CGnuplot.h"><param name="Local" value="_c_gnuplot_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CImpressao.h"><param name="Local" value="_c_impressao_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CModeloBingham.h"><param name="Local" value="_c_modelo_bingham_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CModeloNewtoniano.h"><param name="Local" value="_c_modelo_newtoniano_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CModeloPotencia.h"><param name="Local" value="_c_modelo_potencia_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CModeloReologico.h"><param name="Local" value="_c_modelo_reologico_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CPoco.h"><param name="Local" value="_c_poco_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CSimuladorPoco.h"><param name="Local" value="_c_simulador_poco_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CTrechoPoco.h"><param name="Local" value="_c_trecho_poco_8h_source.html"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    </UL>
+  </UL>
+</UL>
+</BODY>
+</HTML>

@@ -959,7 +959,7 @@ lstset{style=C++}
 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CSimuladorPoco},
- label={CSimuladorPoco-cpp}] {../../../src-v1/CSimuladorPoco.h}
+ label={CSimuladorPoco-cpp}] {../../../src-v1/CSimuladorPoco.cpp}
 \end_layout
 
 \end_inset
@@ -1476,6 +1476,92 @@ lstset{style=C++}
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CModeloPotencia},
  label={CModeloPotencia-cpp}] {../../../src-v1/CModeloPotencia.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CImpressao-h}
+\end_layout
+
+\end_inset
+
+ a implementação da classe CImpressao.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CImpressao},
+ label={CImpressao-h}] {../../../src-v1/CImpressao.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CImpressao-cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe CImpressao.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CImpressao},
+ label={CImpressao-cpp}] {../../../src-v1/CImpressao.cpp}
 \end_layout
 
 \end_inset

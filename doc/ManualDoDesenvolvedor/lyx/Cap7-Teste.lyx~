@@ -1672,7 +1672,7 @@ name "fig:Modelo-Bingham--Laminar-Poco-Codigo"
 
 
 \begin_inset Graphics
-	filename s
+	filename C:/Users/thaua/projeto_c++/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Bingham-Poco-Laminar-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -1930,7 +1930,7 @@ name "fig:Modelo-Bingham-Laminar-Anular-Codigo"
 
 
 \begin_inset Graphics
-	filename e
+	filename C:/Users/thaua/projeto_c++/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Bingham-Anular-Laminar-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -2166,7 +2166,7 @@ name "fig:Modelo-Potencia--Laminar-Poco-Codigo"
 
 
 \begin_inset Graphics
-	filename w
+	filename C:/Users/thaua/projeto_c++/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Potencia-Poco-Laminar-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -2342,7 +2342,7 @@ N_{re}=\frac{109000\times8.76\times3.1281^{1}}{200}\left(\frac{0.0208\times\left
 Na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Modelo-Potencia--Laminar-Poco-Codigo"
+reference "fig:fig:Modelo-Potencia--Laminar-Anular-Codigo"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2380,7 +2380,7 @@ name "fig:fig:Modelo-Potencia--Laminar-Anular-Codigo"
 
 
 \begin_inset Graphics
-	filename a
+	filename C:/Users/thaua/projeto_c++/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Potencia-Anular-Laminar-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -2595,6 +2595,68 @@ name "fig:PressaoHidrostatica"
 
 \begin_inset Graphics
 	filename ../imagens/Pressao-Hidroestatica-Fundo-do-Poco-Codigo.png
+	lyxscale 70
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Grafico"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ temos um gráfico com a variação da pressão hidrostática em função da profundidade.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gráfico Pressão hidrostática por Profundidade 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Grafico"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/thaua/projeto_c++/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Grafico.jpeg
 	lyxscale 70
 	width 100text%
 

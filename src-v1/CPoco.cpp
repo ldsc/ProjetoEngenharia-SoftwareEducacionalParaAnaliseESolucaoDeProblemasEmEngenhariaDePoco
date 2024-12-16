@@ -1,5 +1,5 @@
 #include "CPoco.h"
-#include "CGnuplot.h"
+//#include "CGnuplot.h"
 #include <iostream>
 #include <vector>
 #include <fstream>

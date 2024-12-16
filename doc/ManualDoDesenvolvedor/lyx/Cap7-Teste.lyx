@@ -1672,7 +1672,7 @@ name "fig:Modelo-Bingham--Laminar-Poco-Codigo"
 
 
 \begin_inset Graphics
-	filename C:/Users/thaua/projeto_c++/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Bingham-Poco-Laminar-Codigo.jpg
+	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Bingham-Poco-Laminar-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -1930,7 +1930,7 @@ name "fig:Modelo-Bingham-Laminar-Anular-Codigo"
 
 
 \begin_inset Graphics
-	filename C:/Users/thaua/projeto_c++/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Bingham-Anular-Laminar-Codigo.jpg
+	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Bingham-Anular-Laminar-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -2166,7 +2166,7 @@ name "fig:Modelo-Potencia--Laminar-Poco-Codigo"
 
 
 \begin_inset Graphics
-	filename C:/Users/thaua/projeto_c++/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Potencia-Poco-Laminar-Codigo.jpg
+	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Potencia-Poco-Laminar-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -2380,7 +2380,7 @@ name "fig:fig:Modelo-Potencia--Laminar-Anular-Codigo"
 
 
 \begin_inset Graphics
-	filename C:/Users/thaua/projeto_c++/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Potencia-Anular-Laminar-Codigo.jpg
+	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Potencia-Anular-Laminar-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -2642,7 +2642,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Gráfico Pressão hidrostática por Profundidade 
+Gráfico pressão hidrostática por profundidade 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Grafico"
@@ -2656,7 +2656,137 @@ name "fig:Grafico"
 
 
 \begin_inset Graphics
-	filename C:/Users/thaua/projeto_c++/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Grafico.jpeg
+	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Grafico.jpeg
+	lyxscale 70
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Validação da Funcionalidade Impressão
+\end_layout
+
+\begin_layout Standard
+Nesta seção,
+ será validada a classe CImpressao que tem a função de armazenar os resultados da simulação em um arquivo de saída .dat.
+ Pode-se observar na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Funcionalidade_impressao"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ a funcionalidade armazenar os resultados obtidos durante a simulação.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Terminal mostrando a funcionalidade armazenar os resultados 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Funcionalidade_impressao"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Funcionalidade-impressao.png
+	lyxscale 70
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Arquivo-resultados"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ podemos ver todos os resultados gerados durante a simulação que forma armazenados no arquivo de saída .dat.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Terminal mostrando a funcionalidade armazenar os resultados 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Arquivo-resultados"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Arquivo-resultados.png
 	lyxscale 70
 	width 100text%
 

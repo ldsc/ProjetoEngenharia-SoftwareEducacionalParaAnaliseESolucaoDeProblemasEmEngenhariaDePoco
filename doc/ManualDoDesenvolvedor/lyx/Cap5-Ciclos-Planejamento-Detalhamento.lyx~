@@ -176,7 +176,7 @@ placement H
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -200,7 +200,7 @@ name "fig:Versao0.1"
 
 
 \begin_inset Graphics
-	filename imagens/Sistema-V0.1.png
+	filename C:/Users/thaua/projeto_c++/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Sistema-V0.1.png
 	lyxscale 60
 	width 100text%
 
