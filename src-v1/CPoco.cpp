@@ -1,4 +1,5 @@
 #include "CPoco.h"
+#include "CGnuplot.h"
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -73,9 +74,9 @@ void CPoco::VerificarPreenchimentoColuna() {
 double CPoco::DensidadeEfetivaTotal() const {
     double DensidadeTotal = 0.0;
     double ComprimentoTotal = 0.0;
-
+    double ComprimentoTrecho =0.0;
     for (const auto& Trecho : trechos) {
-        double ComprimentoTrecho = Trecho->ProfundidadeFinal() - Trecho->ProfundidadeInicial();
+        ComprimentoTrecho = Trecho->ProfundidadeFinal() - Trecho->ProfundidadeInicial();
         DensidadeTotal += Trecho->DensidadeEquivalente() * ComprimentoTrecho;
         ComprimentoTotal += ComprimentoTrecho;
     }
@@ -119,27 +120,38 @@ void CPoco::PlotarProfundidadePorDensidade() {
     }
     outputFile.close();
 
+    //Gnuplot gp;
+
+        // Nome do gráfico e estilo
+        //gp.set_title("Gráfico de X vs Y");
+        //gp.set_xlabel("Eixo X");
+        //gp.set_ylabel("Eixo Y");
+        //gp.set_style("linespoints");
+
+        // Plotar os dados
+        //gp.plot_xy(Densidade, Profundidade, "x^2"); 
+
     // Comando Gnuplot para plotar os dados
-    std::ofstream gnuplotFile("plot_script.gp");
-    if (!gnuplotFile.is_open()) {
-        std::cerr << "Erro ao abrir o arquivo plot_script.gp para escrita." << std::endl;
-        return;
-    }
+    //std::ofstream gnuplotFile("plot_script.gp");
+    //if (!gnuplotFile.is_open()) {
+    //    std::cerr << "Erro ao abrir o arquivo plot_script.gp para escrita." << std::endl;
+    //    return;
+    //}
     
-    gnuplotFile << "set title 'Profundidade vs Densidade'\n";
-    gnuplotFile << "set xlabel 'Densidade, lbm/gal'\n"; // Corrigido o label
-    gnuplotFile << "set ylabel 'Profundidade, ft'\n"; // Corrigido o label
-    gnuplotFile << "set yrange [20:0]\n"; // Inverter o eixo Y
-    gnuplotFile << "set grid\n"; // Adicionar grade ao grafico
-    gnuplotFile << "set style data linespoints\n"; // Estilo de linha com pontos
+    //gnuplotFile << "set title 'Profundidade vs Densidade'\n";
+    //gnuplotFile << "set xlabel 'Densidade, lbm/gal'\n"; // Corrigido o label
+    //gnuplotFile << "set ylabel 'Profundidade, ft'\n"; // Corrigido o label
+    //gnuplotFile << "set yrange [20:0]\n"; // Inverter o eixo Y
+    //gnuplotFile << "set grid\n"; // Adicionar grade ao grafico
+    // << "set style data linespoints\n"; // Estilo de linha com pontos
 
     // Plota apenas uma curva
-    gnuplotFile << "plot 'dados.txt' using 2:1 with linespoints title 'Densidade vs Profundidade'\n"; 
-    gnuplotFile << "set terminal pngcairo size 1920,1080\n";
-    gnuplotFile << "set output 'Profundidade_vs_densidade.png'\n";
-    gnuplotFile << "pause -1\n"; // Pausa para que voce possa ver o grafico
-    gnuplotFile.close();
+    //gnuplotFile << "plot 'dados.txt' using 2:1 with linespoints title 'Densidade vs Profundidade'\n"; 
+    //gnuplotFile << "set terminal pngcairo size 1920,1080\n";
+    //gnuplotFile << "set output 'Profundidade_vs_densidade.png'\n";
+    //gnuplotFile << "pause -1\n"; // Pausa para que voce possa ver o grafico
+    //gnuplotFile.close();
 
     // Executa o Gnuplot com o script gerado
-    std::system("gnuplot -persist plot_script.gp");
+    //std::system("gnuplot -persist plot_script.gp");
 }

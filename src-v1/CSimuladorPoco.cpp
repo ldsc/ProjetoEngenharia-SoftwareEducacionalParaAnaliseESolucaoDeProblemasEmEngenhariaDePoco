@@ -263,6 +263,7 @@ void CSimuladorPoco::MenuConfigurarSimulador() {
         std::cout << "Escolha: ";
         std::cin >> escolha;
 
+        auto impressao = std::make_unique<CImpressao>();
         switch (escolha) {
             case 1: {
                 ConfigurarPoco();
@@ -292,6 +293,7 @@ void CSimuladorPoco::MenuConfigurarSimulador() {
 
 void CSimuladorPoco::MenuPressaoHidrostatica() {
     int escolha;
+    std::string armazena;
     double profundidade;
 
     while (true) {
@@ -309,6 +311,12 @@ void CSimuladorPoco::MenuPressaoHidrostatica() {
         switch (escolha) {
             case 1:
                 std::cout << "\nPressao Hidrostatica Total: " << poco->PressaoHidroestaticaTotal() << " psi\n";
+                
+                std::cout << "Gostaria de armazenar o valor[s/n]? ";
+                std::cin >> armazena;
+                if(armazena == "s"){
+                    impressao->ArmazenarValor(poco->PressaoHidroestaticaTotal(), 0);    
+                }
                 break;
                 
             case 2:
@@ -371,6 +379,7 @@ void CSimuladorPoco::MenuPerdaDeCarga() {
 
 void CSimuladorPoco::MenuModeloNewtoniano() {
     int escolha;
+    std::string armazena;
 
     while (true) {
         auxiliar->limparTela();
@@ -396,6 +405,13 @@ void CSimuladorPoco::MenuModeloNewtoniano() {
                 if (modeloNewtoniano->FluxoPoco() == "Turbulento") {
                     std::cout << "\nFator de Friccao no Poco: " << modeloNewtoniano->FatorFriccaoPoco() << "\n"; 
                 }
+
+                std::cout << "Gostaria de armazenar o valor[s/n]? ";
+                std::cin >> armazena;
+                if(armazena == "s"){
+                    impressao->ArmazenarValor(modeloNewtoniano->CalcularPerdaPorFriccaoPoco(), 4);   
+                }
+                
                 break;
             case 2:
                 std::cout << "\nVelocidade no anular: " << modeloNewtoniano->VMediaAnular() << " ft/s"
@@ -406,6 +422,13 @@ void CSimuladorPoco::MenuModeloNewtoniano() {
                 if (modeloNewtoniano->FluxoAnular() == "Turbulento") {
                     std::cout << "\nFator de Friccao no Anular: " << modeloNewtoniano->FatorFriccaoAnular() << "\n";
                 }
+
+                std::cout << "Gostaria de armazenar o valor[s/n]? ";
+                std::cin >> armazena;
+                if(armazena == "s"){
+                    impressao->ArmazenarValor(modeloNewtoniano->CalcularPerdaPorFriccaoAnular(), 1);   
+                }
+                
                 break;
             case 0:
                 return; // Volta ao menu principal
@@ -421,6 +444,7 @@ void CSimuladorPoco::MenuModeloNewtoniano() {
 
 void CSimuladorPoco::MenuModeloBingham() {
     int escolha;
+    std::string armazena;
 
     while (true) {
         double pontoDeEscoamento, viscosidadePlastica;
@@ -458,6 +482,12 @@ void CSimuladorPoco::MenuModeloBingham() {
                 if (modeloBingham->FluxoPoco() == "Turbulento") {
                     std::cout << "\nFator de Friccao: " << modeloBingham->FatorFriccaoPoco() << "\n"; 
                 }
+
+                std::cout << "Gostaria de armazenar o valor[s/n]? ";
+                std::cin >> armazena;
+                if(armazena == "s"){
+                    impressao->ArmazenarValor(modeloBingham->CalcularPerdaPorFriccaoPoco(), 5);   
+                }
                 break;
             case 2:
                 std::cout << "\nInforme o valor do pontoDeEscoamento [lbf/100 sq.ft]: ";
@@ -478,7 +508,12 @@ void CSimuladorPoco::MenuModeloBingham() {
                 if (modeloBingham->FluxoAnular() == "Turbulento") {
                     std::cout << "\nFator de Friccao: " << modeloBingham->FatorFriccaoAnular() << "\n";
                 }
-                         
+
+                std::cout << "Gostaria de armazenar o valor[s/n]? ";
+                std::cin >> armazena;
+                if(armazena == "s"){
+                   impressao->ArmazenarValor(modeloBingham->CalcularPerdaPorFriccaoAnular(), 2);  
+                }        
                 break;
             case 0:
                 return; // Volta ao menu principal
@@ -494,6 +529,7 @@ void CSimuladorPoco::MenuModeloBingham() {
 
 void CSimuladorPoco::MenuModeloPotencia() {
     int escolha;
+    std::string armazena;
 
     while (true) {
         double indiceDeConsistencia;
@@ -526,6 +562,12 @@ void CSimuladorPoco::MenuModeloPotencia() {
                 if (modeloPotencia->FluxoPoco() == "Turbulento") {
                     std::cout << "\nFator de Friccao: " << modeloPotencia->FatorFriccaoPoco() << "\n"; 
                 }
+                
+                std::cout << "Gostaria de armazenar o valor[s/n]? ";
+                std::cin >> armazena;
+                if(armazena == "s"){
+                   impressao->ArmazenarValor(modeloPotencia->CalcularPerdaPorFriccaoPoco(), 6);
+                }  
                 break;
             case 2:
                 std::cout << "\nInforme o valor do indice de consistencia [Cp eq]: ";
@@ -541,6 +583,12 @@ void CSimuladorPoco::MenuModeloPotencia() {
                 if (modeloPotencia->FluxoAnular() == "Turbulento") {
                     std::cout << "\nFator de Friccao: " << modeloPotencia->FatorFriccaoAnular() << "\n";
                 }
+
+                std::cout << "Gostaria de armazenar o valor[s/n]? ";
+                std::cin >> armazena;
+                if(armazena == "s"){
+                   impressao->ArmazenarValor(modeloPotencia->CalcularPerdaPorFriccaoAnular(), 3);
+                } 
                 break;
             case 0:
                 return; // Volta ao menu principal

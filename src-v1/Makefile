@@ -18,7 +18,9 @@ SRC = main.cpp \
       CModeloReologico.cpp \
       CSimuladorPoco.cpp \
       CTrechoPoco.cpp \
-      CPoco.cpp 
+      CPoco.cpp \
+      CImpressao.cpp \
+      CGnuplot.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

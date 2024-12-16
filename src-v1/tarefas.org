@@ -5,6 +5,75 @@
 ** Tirar pontos de figuras e tabelas.
 ** Pode gerenciar o arquivo bibliografia.bib usando editor simples, ou o emacs (super power),  ou https://www.zotero.org/, ou https://www.mendeley.com/,.... tem varios.
 ** 
-** 
-** 
+** Tirar do titulo Software Software,
+** Passar o corretor ortografico
+imput? caculos? numero
+informar link para dados informados no RF-01
+rodar no linux!
+2.2.2  Hidráulica de perfuração ou 2.2.3 Pressão Hidrostática - decidir até onde vai maiusculo Maiusculo
+fazer figura Figura 2.1
 
+adicionar CGnuplot na cli
+e 10 classes:
+
+Diagrama de máquina de estado|: classe CNOME
+
+Nota:
+Não perca de vista a vis
+
+4.1 cli CG|nuplot grafica qcustmplot
+
+Figura 4.1: refazer, faça igual ao de pacotes; 
+
+para versao do TCC gere as bibliotecas separado
+
+Figura 5.1:
+
+cabecalho é atributo do simulador
+
+corrigir arquivos incluidos.
+
+atributos nome minusculo
+PressaoTotal -> pressaoTotal
+
+
+acrescentar booleano ]
+bool VerificarPreenchimentoColuna { preenchimentoColuna = true/false;}
+
+
+73 double CPoco :: DensidadeEfetivaTotal () const {
+74 double DensidadeTotal = 0.0;
+75 double ComprimentoTotal = 0.0;
+76double ComprimentoTrecho =0;
+77 for ( const auto & Trecho : trechos ) {
+78 ComprimentoTrecho = Trecho -> ProfundidadeFinal () -
+Trecho -> ProfundidadeInicial () ;
+79 DensidadeTotal += Trecho - > DensidadeEquivalente () *
+ComprimentoTrecho ;
+80 ComprimentoTotal += ComprimentoTrecho ;
+81 }
+82
+83 return DensidadeTotal / ComprimentoTotal ;
+84 }
+
+renomear todos os atributos
+profunTotal
+
+o
+115 std :: ofstream outputFile (" dados.txt") ;
+o
+115 std :: ofstream outputFile (" dadosSimulacaoPoco.Gnuplot.dat") ;
+
+** Modificar Poco (flag para o usuario manter o valor)
+
+** Verificar entradas invalidas
+
+
+ Dependências
+desenvolvedor o compilador
+Para compilar o software é necessário atender as seguintes dependências:
+ Instalar o compilador g++ da GNU disponível em http://gcc.gnu.org.
+
+usuario
+dependencia gnuplot
+e executavel e arquivos dados
