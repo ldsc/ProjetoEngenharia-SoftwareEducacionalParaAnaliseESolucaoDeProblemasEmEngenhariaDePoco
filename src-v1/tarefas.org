@@ -1,45 +1,34 @@
-* Lista de correcioes:
-** TODO Criei um arquivo CMakeLists.txt que e usado pela versao automatizada do make, o cmake.
-** TODO Cria-se um arquivo CMakeLists.txt e roda-se "cmake ." com isso ele le sua maquina e gera o arquivo Makefile para windows ou linux ou mac-os x.
-** Referenciar as figuras.
-** Tirar pontos de figuras e tabelas.
-** Pode gerenciar o arquivo bibliografia.bib usando editor simples, ou o emacs (super power),  ou https://www.zotero.org/, ou https://www.mendeley.com/,.... tem varios.
-** 
-** Tirar do titulo Software Software,
-** Passar o corretor ortografico
-imput? caculos? numero
-informar link para dados informados no RF-01
-rodar no linux!
-2.2.2  Hidráulica de perfuração ou 2.2.3 Pressão Hidrostática - decidir até onde vai maiusculo Maiusculo
-fazer figura Figura 2.1
+#+TITLE: tarefas necessárias para o código
+#+AUTHOR: Nathan Rangel, Thauan Barbosa e André Bueno
+#+DATE: <2024-12-17>
 
-adicionar CGnuplot na cli
-e 10 classes:
+* Lista de correções (Lyx):
+** DONE Criei um arquivo CMakeLists.txt que e usado pela versao automatizada do make, o cmake.
+** DONE Cria-se um arquivo CMakeLists.txt e roda-se "cmake ." com isso ele le sua maquina e gera o arquivo Makefile para windows ou linux ou mac-os x.
+** DONE Referenciar as figuras.
+** DONE Tirar pontos de figuras e tabelas.
+** DONE Pode gerenciar o arquivo bibliografia.bib usando editor simples, ou o emacs (super power),  ou https://www.zotero.org/, ou https://www.mendeley.com/,.... tem varios.
+** TODO Tirar do titulo Software Software,
+** TODO Passar o corretor ortografico
+*** TODO imput? caculos? numero
+** TODO informar link para dados informados no RF-01
+** TODO rodar no linux!
+** TODO 2.2.2  Hidráulica de perfuração ou 2.2.3 Pressão Hidrostática - decidir até onde vai maiusculo Maiusculo
+** TODO fazer figura Figura 2.1
+** TODO adicionar CGnuplot na seção de classes
+** TODO Diagrama de máquina de estado ajustar classe CNOME
+** TODO Nota sendo mostrada
+** TODO 4.1 cli CG|nuplot grafica qcustmplot
+** TODO Figura 4.1: refazer, faça igual ao de pacotes; 
+** TODO para versao do TCC gere as bibliotecas separado
+** TODO Figura 5.1:
 
-Diagrama de máquina de estado|: classe CNOME
-
-Nota:
-Não perca de vista a vis
-
-4.1 cli CG|nuplot grafica qcustmplot
-
-Figura 4.1: refazer, faça igual ao de pacotes; 
-
-para versao do TCC gere as bibliotecas separado
-
-Figura 5.1:
-
-cabecalho é atributo do simulador
-
-corrigir arquivos incluidos.
-
-atributos nome minusculo
-PressaoTotal -> pressaoTotal
-
-
-acrescentar booleano ]
-bool VerificarPreenchimentoColuna { preenchimentoColuna = true/false;}
-
+* Lista de correções (código):
+** TODO cabecalho é atributo do simulador
+** TODO corrigir arquivos incluidos.
+** TODO atributos nome minusculo
+** TODO PressaoTotal -> pressaoTotal
+** TODO acrescentar booleano | bool VerificarPreenchimentoColuna { preenchimentoColuna = true/false;}
 
 73 double CPoco :: DensidadeEfetivaTotal () const {
 74 double DensidadeTotal = 0.0;
@@ -56,20 +45,12 @@ ComprimentoTrecho ;
 83 return DensidadeTotal / ComprimentoTotal ;
 84 }
 
-renomear todos os atributos
-profunTotal
-
-o
-115 std :: ofstream outputFile (" dados.txt") ;
-o
-115 std :: ofstream outputFile (" dadosSimulacaoPoco.Gnuplot.dat") ;
-
-** Modificar Poco (flag para o usuario manter o valor)
-
-** Verificar entradas invalidas
+** TODO renomear todos os atributos | profunTotal
+** TODO std :: ofstream outputFile (" dados.txt") | (" dadosSimulacaoPoco.Gnuplot.dat") ;
+** TODO Modificar Poco (flag para o usuario manter o valor)
+** TODO Verificar entradas invalidas
 
 
- Dependências
 desenvolvedor o compilador
 Para compilar o software é necessário atender as seguintes dependências:
  Instalar o compilador g++ da GNU disponível em http://gcc.gnu.org.
