@@ -37,7 +37,8 @@ public:
     void PerdadeFriccaoPocoPotencia(double pocoPotencia) { perdadeFriccaoPocoPotencia = pocoPotencia; }
 
     // Metodos
-    void ArmazenarValor(double valor, int ref);
+    void ArmazenarValorSeNecessario(std::string texto, double valor, std::string unidade);
+    void ArmazenarValorSeNecessario(std::string texto, double valor);
     
 };
 

@@ -74,10 +74,6 @@ double CModeloBingham::CalcularPerdaPorFriccaoPoco() {
     }
 
     fatorFriccaoPoco = DeterminarFatorFriccao(reynoldsPoco);
-    std::cout << viscosidadePlastica << std::endl;
-    std::cout << vMediaPoco << std::endl;
-    std::cout << poco->DiametroRevestimentoID() << std::endl;
-    std::cout <<pontoDeEscoamento << std::endl;
 
     if (fluxoPoco == "Laminar") {
         return  ((viscosidadePlastica * vMediaPoco) / (1500 * (std::pow(poco->DiametroRevestimentoID(), 2)))) + (pontoDeEscoamento/(225*poco->DiametroRevestimentoID()));

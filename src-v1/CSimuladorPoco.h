@@ -6,6 +6,7 @@
 #include "CModeloNewtoniano.h"
 #include "CModeloBingham.h"
 #include "CModeloPotencia.h"
+#include "CAuxiliar.h"
 #include "CImpressao.h"
 #include <memory>
 #include <vector>
@@ -18,6 +19,7 @@ protected:
     std::unique_ptr<CModeloNewtoniano> modeloNewtoniano;
     std::unique_ptr<CModeloBingham> modeloBingham;
     std::unique_ptr<CModeloPotencia> modeloPotencia;
+    std::unique_ptr<CAuxiliar> auxiliar;
     std::unique_ptr<CImpressao> impressao;
 
 

@@ -61,10 +61,26 @@ void CSimuladorPoco::ExibirPropriedades() {
 }
 
 void CSimuladorPoco::ConfigurarPoco() {
+
+    bool pocoConfigurado = (poco != nullptr);
+    bool criarNovoPoco = false;
+
     double profundidade, pressaoSuperficie, diametro, OD, ID, vazao;
 
-    std::cout << "\nInforme a profundidade total do poco [ft]: ";
-    std::cin >> profundidade;
+    if (!pocoConfigurado) {
+        std::cout << "\nInforme a profundidade total do poco [ft]: ";
+        std::cin >> profundidade;
+    }
+    else {
+        std::cout << "\nInforme a profundidade total do poco [ft] (0 para manter a profundidade anterior): ";
+        std::cin >> profundidade;
+        if (profundidade == 0) {
+            profundidade = poco->ProfundidadeTotal();
+        }
+        else{
+            criarNovoPoco = true;
+        }
+    }    
 
     std::cout << "Informe a pressao na superficie do poco [psia]: ";
     std::cin >> pressaoSuperficie;
@@ -81,8 +97,21 @@ void CSimuladorPoco::ConfigurarPoco() {
     std::cout << "Informe a vazao do poco [gal/min]: ";
     std::cin >> vazao;
 
-    // Cria um novo objeto CPoco
-    poco = std::make_unique<CPoco>(profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
+    if (criarNovoPoco)
+    {
+        // Cria um novo objeto CPoco
+        poco = std::make_unique<CPoco>(profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
+        
+    }
+    else{
+        // Atualiza as propriedades do objeto CPoco
+        poco->PressaoSuperficie(pressaoSuperficie);
+        poco->DiametroPoco(diametro);
+        poco->DiametroRevestimentoOD(OD);
+        poco->DiametroRevestimentoID(ID);
+        poco->Vazao(vazao);
+    }
+    
 }
 
 void CSimuladorPoco::ConfigurarFluido() {
@@ -179,6 +208,9 @@ void CSimuladorPoco::ConfigurarPorArquivo(const std::string& arquivo) {
 }
 // Funcao para o menu principal
 void CSimuladorPoco::MenuPrincipal() {
+
+    auxiliar->cabecalho();
+
     while (true) {
         int escolha;
 
@@ -293,7 +325,6 @@ void CSimuladorPoco::MenuConfigurarSimulador() {
 
 void CSimuladorPoco::MenuPressaoHidrostatica() {
     int escolha;
-    std::string armazena;
     double profundidade;
 
     while (true) {
@@ -302,6 +333,8 @@ void CSimuladorPoco::MenuPressaoHidrostatica() {
         auxiliar->desenharLinhaTexto("Menu de Pressao Hidrostatica");
         auxiliar->desenharBorda();
 
+        std::string texto;
+
         std::cout << "\n1. Calcular Pressao Hidroestatica (Fundo de poco)\n"
                      "2. Calcular Pressao Hidroestatica em um Ponto do Poco\n"
                      "0. Voltar\n";
@@ -309,22 +342,23 @@ void CSimuladorPoco::MenuPressaoHidrostatica() {
         std::cin >> escolha;
 
         switch (escolha) {
+
             case 1:
                 std::cout << "\nPressao Hidrostatica Total: " << poco->PressaoHidroestaticaTotal() << " psi\n";
-                
-                std::cout << "Gostaria de armazenar o valor[s/n]? ";
-                std::cin >> armazena;
-                if(armazena == "s"){
-                    impressao->ArmazenarValor(poco->PressaoHidroestaticaTotal(), 0);    
-                }
+
+                texto = "O Valor da Pressao Hidrostatica: ";
+                impressao->ArmazenarValorSeNecessario(texto, poco->PressaoHidroestaticaTotal(), " psi");    
+
                 break;
                 
             case 2:
-
-                std::cout << "\nInforme a profundidade que deseja calcular [ft]: ";
+                
+                std::cout << "\nProfundidade maxima " << poco->ProfundidadeTotal() << " ft\n";
+                std::cout << "Informe a profundidade que deseja calcular [ft]: ";
                 std::cin >> profundidade;
 
                 std::cout << "\nPressao Hidrostatica: " << poco->PressaoHidroestaticaNoPonto(profundidade) << " psi\n";
+                
                 break;
             case 0:
                 return; // Volta ao menu principal
@@ -387,6 +421,8 @@ void CSimuladorPoco::MenuModeloNewtoniano() {
         auxiliar->desenharLinhaTexto("Menu de Perda de Carga - Newtoniano");
         auxiliar->desenharBorda();
 
+        std::string texto;
+
         std::cout << "\n1. Determinar Perda de Carga no Poco\n"
                      "2. Determinar Perda de Carga no Anular\n"
                      "0. Voltar\n";
@@ -406,11 +442,8 @@ void CSimuladorPoco::MenuModeloNewtoniano() {
                     std::cout << "\nFator de Friccao no Poco: " << modeloNewtoniano->FatorFriccaoPoco() << "\n"; 
                 }
 
-                std::cout << "Gostaria de armazenar o valor[s/n]? ";
-                std::cin >> armazena;
-                if(armazena == "s"){
-                    impressao->ArmazenarValor(modeloNewtoniano->CalcularPerdaPorFriccaoPoco(), 4);   
-                }
+                texto = "O Valor da Perda de Friccao no Poco para o Modelo Newtoniano: ";
+                impressao->ArmazenarValorSeNecessario(texto, poco->PressaoHidroestaticaTotal(), " psi/ft"); 
                 
                 break;
             case 2:
@@ -423,11 +456,8 @@ void CSimuladorPoco::MenuModeloNewtoniano() {
                     std::cout << "\nFator de Friccao no Anular: " << modeloNewtoniano->FatorFriccaoAnular() << "\n";
                 }
 
-                std::cout << "Gostaria de armazenar o valor[s/n]? ";
-                std::cin >> armazena;
-                if(armazena == "s"){
-                    impressao->ArmazenarValor(modeloNewtoniano->CalcularPerdaPorFriccaoAnular(), 1);   
-                }
+                texto = "O Valor da Perda de Friccao no Anular para o Modelo Newtoniano: ";
+                impressao->ArmazenarValorSeNecessario(texto, poco->PressaoHidroestaticaTotal(), " psi/ft");
                 
                 break;
             case 0:
@@ -453,6 +483,8 @@ void CSimuladorPoco::MenuModeloBingham() {
         auxiliar->desenharBorda();
         auxiliar->desenharLinhaTexto("Menu de Perda de Carga - Bingham");
         auxiliar->desenharBorda();
+
+        std::string texto;
 
         std::cout << "\n1. Determinar Perda de Carga no Poco\n"
                      "2. Determinar Perda de Carga no Anular\n"
@@ -483,11 +515,9 @@ void CSimuladorPoco::MenuModeloBingham() {
                     std::cout << "\nFator de Friccao: " << modeloBingham->FatorFriccaoPoco() << "\n"; 
                 }
 
-                std::cout << "Gostaria de armazenar o valor[s/n]? ";
-                std::cin >> armazena;
-                if(armazena == "s"){
-                    impressao->ArmazenarValor(modeloBingham->CalcularPerdaPorFriccaoPoco(), 5);   
-                }
+                texto = "O Valor da Perda de Friccao no Poco para o Modelo Bingham: ";
+                impressao->ArmazenarValorSeNecessario(texto, poco->PressaoHidroestaticaTotal(), " psi/ft");
+
                 break;
             case 2:
                 std::cout << "\nInforme o valor do pontoDeEscoamento [lbf/100 sq.ft]: ";
@@ -509,11 +539,9 @@ void CSimuladorPoco::MenuModeloBingham() {
                     std::cout << "\nFator de Friccao: " << modeloBingham->FatorFriccaoAnular() << "\n";
                 }
 
-                std::cout << "Gostaria de armazenar o valor[s/n]? ";
-                std::cin >> armazena;
-                if(armazena == "s"){
-                   impressao->ArmazenarValor(modeloBingham->CalcularPerdaPorFriccaoAnular(), 2);  
-                }        
+                texto = "O Valor da Perda de Friccao no Anular para o Modelo Bingham: ";
+                impressao->ArmazenarValorSeNecessario(texto, poco->PressaoHidroestaticaTotal(), " psi/ft");
+
                 break;
             case 0:
                 return; // Volta ao menu principal
@@ -539,6 +567,8 @@ void CSimuladorPoco::MenuModeloPotencia() {
         auxiliar->desenharLinhaTexto("Menu de Perda de Carga - Potencia");
         auxiliar->desenharBorda();
 
+        std::string texto;
+
         std::cout << "\n1. Determinar Perda de Carga no Poco\n"
                      "2. Determinar Perda de Carga no Anular\n"
                      "0. Voltar\n";
@@ -563,11 +593,9 @@ void CSimuladorPoco::MenuModeloPotencia() {
                     std::cout << "\nFator de Friccao: " << modeloPotencia->FatorFriccaoPoco() << "\n"; 
                 }
                 
-                std::cout << "Gostaria de armazenar o valor[s/n]? ";
-                std::cin >> armazena;
-                if(armazena == "s"){
-                   impressao->ArmazenarValor(modeloPotencia->CalcularPerdaPorFriccaoPoco(), 6);
-                }  
+                texto = "O Valor da Perda de Friccao no Poco para o Modelo Potencia: ";
+                impressao->ArmazenarValorSeNecessario(texto, poco->PressaoHidroestaticaTotal(), " psi/ft");
+
                 break;
             case 2:
                 std::cout << "\nInforme o valor do indice de consistencia [Cp eq]: ";
@@ -584,11 +612,9 @@ void CSimuladorPoco::MenuModeloPotencia() {
                     std::cout << "\nFator de Friccao: " << modeloPotencia->FatorFriccaoAnular() << "\n";
                 }
 
-                std::cout << "Gostaria de armazenar o valor[s/n]? ";
-                std::cin >> armazena;
-                if(armazena == "s"){
-                   impressao->ArmazenarValor(modeloPotencia->CalcularPerdaPorFriccaoAnular(), 3);
-                } 
+                texto = "O Valor da Perda de Friccao no Anular para o Modelo Potencia: ";
+                impressao->ArmazenarValorSeNecessario(texto, poco->PressaoHidroestaticaTotal(), " psi/ft");
+
                 break;
             case 0:
                 return; // Volta ao menu principal

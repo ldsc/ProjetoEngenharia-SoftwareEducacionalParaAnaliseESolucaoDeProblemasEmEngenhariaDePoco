@@ -24,11 +24,11 @@
 ** TODO Figura 5.1:
 
 * Lista de correções (código):
-** TODO cabecalho é atributo do simulador
-** TODO corrigir arquivos incluidos.
-** TODO atributos nome minusculo
-** TODO PressaoTotal -> pressaoTotal
-** TODO acrescentar booleano | bool VerificarPreenchimentoColuna { preenchimentoColuna = true/false;}
+** DONE cabecalho é atributo do simulador 
+** DONE corrigir arquivos incluidos.
+** DONE atributos nome minusculo
+** DONE PressaoTotal -> pressaoTotal
+** DONE acrescentar booleano | bool VerificarPreenchimentoColuna { preenchimentoColuna = true/false;}
 
 73 double CPoco :: DensidadeEfetivaTotal () const {
 74 double DensidadeTotal = 0.0;
@@ -45,10 +45,10 @@ ComprimentoTrecho ;
 83 return DensidadeTotal / ComprimentoTotal ;
 84 }
 
-** TODO renomear todos os atributos | profunTotal
-** TODO std :: ofstream outputFile (" dados.txt") | (" dadosSimulacaoPoco.Gnuplot.dat") ;
-** TODO Modificar Poco (flag para o usuario manter o valor)
-** TODO Verificar entradas invalidas
+** DONE renomear todos os atributos | profunTotal
+** DONE std :: ofstream outputFile (" dados.txt") | (" dadosSimulacaoPoco.Gnuplot.dat") ;
+** DONE Modificar Poco (flag para o usuario manter o valor)
+** DONE Verificar entradas invalidas
 
 
 desenvolvedor o compilador

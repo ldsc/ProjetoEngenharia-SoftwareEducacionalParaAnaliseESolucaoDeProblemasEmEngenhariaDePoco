@@ -49,7 +49,7 @@ public:
     double PressaoHidroestaticaNoPonto(double profundidade) const;
     double DensidadeEfetivaTotal() const;
     double ViscosidadeEfetivaTotal() const;
-    void VerificarPreenchimentoColuna();
+    bool VerificarPreenchimentoColuna();
     void PlotarProfundidadePorDensidade();
 
 };
