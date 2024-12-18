@@ -116,7 +116,7 @@
 \begin_body
 
 \begin_layout Chapter
-Ciclos de Planejamento/Detalhamento
+Ciclos de planejamento/detalhamento
 \begin_inset Index idx
 range none
 pageformat default
@@ -143,17 +143,29 @@ Apresenta-se neste capítulo as versões do software desenvolvido.
 \end_layout
 
 \begin_layout Section
-Versão 0.1 - Uso modo terminal e Gnuplot para saída de gráfico
+Versão 0.1 - Uso modo terminal e 
+\shape italic
+Gnuplot
+\shape default
+ para saída de gráfico
 \end_layout
 
 \begin_layout Standard
 Na primeira versão,
  foi utilizado um sistema de entrada e saída de dados inteiramente pelo terminal,
  sem o uso de bibliotecas de interface gráfica.
- O Gnuplot foi empregado para a geração de gráficos e visualização de dados,
+ O 
+\shape italic
+Gnuplot
+\shape default
+ foi empregado para a geração de gráficos e visualização de dados,
  permitindo uma forma simples e direta de exibir os resultados ao usuário.
  Essa versão foi desenvolvida em um ambiente de desenvolvimento baseado em terminal,
- tudo isso no sistema operacional Windows 11.
+ tudo isso no sistema operacional 
+\shape italic
+Windows
+\shape default
+ 11.
 \end_layout
 
 \begin_layout Standard

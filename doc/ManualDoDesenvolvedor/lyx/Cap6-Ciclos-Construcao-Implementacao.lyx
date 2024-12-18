@@ -123,7 +123,7 @@
 \begin_body
 
 \begin_layout Chapter
-Ciclos Construção
+Ciclos construção
 \begin_inset Index idx
 range none
 pageformat default
@@ -135,7 +135,7 @@ Ciclo construção
 
 \end_inset
 
- - Implementação
+ - implementação
 \begin_inset Index idx
 range none
 pageformat default
@@ -800,7 +800,7 @@ color{mymauve}},
 \end_layout
 
 \begin_layout Section
-Versão 0.1 - Código fonte - 
+Versão 0.1 - código fonte - 
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Versão 0.1 codigo-fonte"
@@ -825,14 +825,14 @@ Versão 0.1 código fonte
 \begin_layout Standard
 Como visto na seção anterior,
  a versão 0.1 foi a última desenvolvida utilizando execução no terminal.
- Abaixo serão exibidos as classes necessárias para a interação via terminal.
+ Abaixo serão exibidas as classes necessárias para a interação via terminal.
 \end_layout
 
 \begin_layout Standard
 Apresenta-se a seguir um conjunto de classes (arquivos .h e .cpp) além do programa 
-\family typewriter
+\shape italic
 main
-\family default
+\shape default
 .
 \end_layout
 
@@ -851,9 +851,9 @@ ref{main-cpp}
 \end_inset
 
  o arquivo com código da função 
-\family typewriter
+\shape italic
 main
-\family default
+\shape default
 .
 \end_layout
 

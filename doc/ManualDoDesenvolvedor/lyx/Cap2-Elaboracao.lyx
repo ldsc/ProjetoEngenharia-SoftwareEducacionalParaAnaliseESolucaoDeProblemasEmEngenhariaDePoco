@@ -183,7 +183,7 @@ O tópico análise de domínio e uma parte fundamental da elaboração de um pro
 \end_layout
 
 \begin_layout Standard
-O presente projeto esta relacionado a 5 conceitos fundamentais:
+O presente projeto está relacionado a 5 conceitos fundamentais:
 \end_layout
 
 \begin_layout Enumerate
@@ -236,7 +236,7 @@ As equações analíticas desempenham um papel essencial na engenharia de perfur
  como pressões,
  tensões,
  fluxo de fluidos e comportamento das rochas.
- O uso de equações analíticas permite aos engenheiros desenvolver soluções precisas e rápidas para problemas complexos,
+ O uso de equações analíticas permite aos engenheiros desenvolverem soluções precisas e rápidas para problemas complexos,
  sem a necessidade de depender exclusivamente de simulações numéricas.
  Na perfuração,
  equações como a Lei de Darcy,
@@ -251,7 +251,11 @@ As equações analíticas desempenham um papel essencial na engenharia de perfur
  equações analíticas podem ser usadas para estimar as tensões nas paredes do poço,
  o que é essencial para prever fraturas ou falhas no revestimento,
  e calcular a pressão de poro,
- que deve ser cuidadosamente controlada para evitar blowouts.
+ que deve ser cuidadosamente controlada para evitar 
+\shape italic
+blowouts
+\shape default
+.
 \end_layout
 
 \end_deeper
@@ -279,7 +283,11 @@ O paradigma de programação orientada a objetos (POO) é amplamente utilizado n
  Além de suportar POO,
  o C++ é conhecido por sua rapidez,
  principalmente por permitir o gerenciamento manual de memória e por sua rica biblioteca padrão e bibliotecas de terceiros,
- como Qt (para interfaces gráficas) e QCustomPlot (para gráficos científicos).
+ como Qt (para interfaces gráficas) e 
+\shape italic
+Gnuplot
+\shape default
+ (para gráficos científicos).
 \end_layout
 
 \end_deeper
@@ -315,14 +323,14 @@ name "sec:Formulação-teórica"
 \end_layout
 
 \begin_layout Subsection
-Termos e Unidades
+Termos e unidades
 \begin_inset Index idx
 range none
 pageformat default
 status open
 
 \begin_layout Plain Layout
-Termos e Unidades
+Termos e unidades
 \end_layout
 
 \end_inset
@@ -687,10 +695,29 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \begin_inset Formula $N_{He}$
 \end_inset
 
- é o numero de Hedstrom;
+ é o número de Hedstrom;
 \end_layout
 
 \begin_layout Itemize
+\begin_inset Formula $d_{1}$
+\end_inset
+
+ é o diâmetro externo do revestimento OD 
+\begin_inset Formula $\left[in\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $d_{2}$
+\end_inset
+
+ é o diâmetro do poço 
+\begin_inset Formula $\left[in\right]$
+\end_inset
+
+;
 \begin_inset Formula $d_{1}$
 \end_inset
 
@@ -725,8 +752,8 @@ Na engenharia de perfuração um fluido de perfuração tem três funções prin
 \end_layout
 
 \begin_layout Standard
-Os fluidos de perfuração podem ser bem variados em temos de composição e propriedades indo desde fluidos incompressíveis como a água ate fluidos muito compressíveis como a espuma.
- O simulador se propõem a resolver dois tipos de problema,
+Os fluidos de perfuração podem ser bem variados em temos de composição e propriedades indo desde fluidos incompressíveis como a água até fluidos muito compressíveis como a espuma.
+ O simulador se propõe a resolver dois tipos de problema,
  o primeiro deles sendo problemas estáticos que envolvem o cálculo de pressão hidrostática e o segundo deles com a movimentação de fluidos pelo tubo.
 \end_layout
 
@@ -755,7 +782,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Subsection
-Pressão Hidrostática
+Pressão hidrostática
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Pressão-Hidrostática"
@@ -804,15 +831,6 @@ name "fig:Diagrama-corpo-livre"
 
 \end_inset
 
-.
- Fonte 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "APPLIED1991"
-literal "false"
-
-\end_inset
-
 
 \end_layout
 
@@ -829,13 +847,26 @@ literal "false"
 
 \end_layout
 
+\begin_layout Plain Layout
+\align center
+Fonte 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "APPLIED1991"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-A partir dessa dedução chegamos a Equação (
+A partir dessa dedução chegamos à Equação (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:EquacaoPressao"
@@ -891,7 +922,7 @@ e
 \end_layout
 
 \begin_layout Standard
-Podemos calcular a pressão hidrostática para dois tipo de fluidos,
+Podemos calcular a pressão hidrostática para dois tipos de fluidos,
  os incompressíveis e os fluidos compressíveis.
 \end_layout
 
@@ -986,7 +1017,15 @@ Onde
 .
  Uma importante aplicação para essa equação é determinar a densidade correta de um fluido de perfuração,
  de forma que o mesmo seja capaz de evitar o influxo de fluidos da formação para o poço,
- evitando dessa forma kiks ou blowouts,
+ evitando dessa forma 
+\shape italic
+kiks
+\shape default
+ ou 
+\shape italic
+blowouts
+\shape default
+,
  além de não causar fraturas na formação que poderia provocar uma perda de circulação de fluido que também é indesejada 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1005,7 +1044,7 @@ Fluidos compressíveis
 \begin_layout Standard
 Em muitas operações temos a presença de gás em algum momento da perfuração ou completação,
  podendo ser injetado ou fluir de alguma formação.
- Calcular a pressão hidrostática de um coluna de gás estática é um tanto quanto mais complicado devido ao fato da compressibilidade fazer com que a densidade do gás mude com a variação de pressão.
+ Calcular a pressão hidrostática de uma coluna de gás estática é um tanto quanto mais complicado devido ao fato da compressibilidade fazer com que a densidade do gás mude com a variação de pressão.
  O comportamento do gás é modelado utilizando a equação do gás real:
 \end_layout
 
@@ -1122,15 +1161,6 @@ name "fig:Coluna-multiplos-fluidos"
 
 \end_inset
 
-.
- Fonte 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "APPLIED1991"
-literal "false"
-
-\end_inset
-
 
 \end_layout
 
@@ -1141,6 +1171,19 @@ literal "false"
 	filename ../imagens/ColunaMultiplosFluidos.png
 	lyxscale 70
 	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "APPLIED1991"
+literal "false"
 
 \end_inset
 
@@ -1180,7 +1223,7 @@ Onde
 \end_layout
 
 \begin_layout Subsection
-Densidade Equivalente
+Densidade equivalente
 \end_layout
 
 \begin_layout Standard
@@ -1211,7 +1254,7 @@ Modelos reológicos de fluidos de perfuração
 \begin_layout Standard
 Durante o processo de perfuração de um poço muitas vezes forças viscoelásticas extremamente grandes precisam ser vencidas para que o fluido de perfuração se mova pelos conduítes longos e finos utilizados nesse processo,
  dessa forma se faz essencial a análise da perda de pressão por atrito.
- Na maioria dos casos as propriedades elásticas dos fluidos de perfuração e seus efeitos durante o fluxo de um poço são desprendíveis,
+ Na maioria dos casos as propriedades elásticas dos fluidos de perfuração e seus efeitos durante o fluxo de um poço são desprezíveis,
  sendo consideradas para o cálculo apenas as forças viscosas.
  Entretanto com o avanço tecnológico lamas cada vez mais complexas estão sendo formuladas de forma que os testes devem consideras as propriedades elásticas da deformação que ocorre durante o fluxo.
 \end_layout
@@ -1219,8 +1262,8 @@ Durante o processo de perfuração de um poço muitas vezes forças viscoelásti
 \begin_layout Standard
 Para tal,
  se faz necessária uma descrição matemática e desenvolvimento de equações para a perda por atrito,
- de forma que modelos reológicos são geralmente utilizados pro engenheiros de perfuração para aproximar o comportamento de um fluido,
- nesse projeto abordaremos três modelos sendo eles o modelo newtoniano,
+ de forma que modelos reológicos são geralmente utilizados por engenheiros de perfuração para aproximar o comportamento de um fluido,
+ nesse projeto abordaremos três modelos sendo eles o modelo Newtoniano,
  o modelo plástico de Bingham e o modelo de lei de potências 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1243,7 +1286,7 @@ As forças viscosas de um fluido são governadas pela viscosidade do mesmo,
 \begin_inset Formula $A$
 \end_inset
 
- separadas por uma distancia 
+ separadas por uma distância 
 \begin_inset Formula $L$
 \end_inset
 
@@ -1281,15 +1324,6 @@ name "fig:Fluxo-laminar"
 
 \end_inset
 
-.
- Adaptado de 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "FUNDAMENTALS2011"
-literal "false"
-
-\end_inset
-
  
 \end_layout
 
@@ -1300,6 +1334,19 @@ literal "false"
 	filename ../imagens/FluxoLaminar.png
 	lyxscale 70
 	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Adaptado de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
 
 \end_inset
 
@@ -1465,9 +1512,9 @@ A taxa de cisalhamento
 
 \begin_layout Standard
 A viscosidade aparente pode ser definida como a razão entre a tensão de cisalhamento e a taxa de cisalhamento.
- A principal característica de um fluido newtoniano é a viscosidade constante do fluido.
+ A principal característica de um fluido Newtoniano é a viscosidade constante do fluido.
  Como sabemos os fluidos de perfuração são misturas complexas que não podem ser caracterizadas por um único valor de viscosidade,
- quando um fluido não apresenta uma proporcionalidade entre tensão de cisalhamento e taxa de cisalhamento ele passa a ser conhecido como um fluido não newtoniano,
+ quando um fluido não apresenta uma proporcionalidade entre tensão de cisalhamento e taxa de cisalhamento ele passa a ser conhecido como um fluido não Newtoniano,
  podendo ser pseudoplásticos se a viscosidade diminui com o aumento da taxa de cisalhamento e dilatantes se a viscosidade aumenta com o aumento da taxa de cisalhamento 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1480,11 +1527,11 @@ literal "false"
 \end_layout
 
 \begin_layout Subsubsection
-Modelo de Fluido Newtoniano
+Modelo de fluido Newtoniano
 \end_layout
 
 \begin_layout Standard
-Como já afirmamos um fluido newtoniano tem a taxa de cisalhamento proporcional a tensão de cisalhamento:
+Como já afirmamos um fluido Newtoniano tem a taxa de cisalhamento proporcional a tensão de cisalhamento:
 \end_layout
 
 \begin_layout Standard
@@ -1504,13 +1551,13 @@ Onde a constante de proporcionalidade
 \end_inset
 
  é o que chamamos de viscosidade.
- Para o caso de um fluido newtoniano é retomando nosso experimento das placas,
+ Para o caso de um fluido Newtoniano é retomando nosso experimento das placas,
  isso significa que se a força 
 \begin_inset Formula $F$
 \end_inset
 
- for dobrada a velocidade da placa também sera dobrada.
- Os principais fluidos newtonianos são água,
+ for dobrada a velocidade da placa também será dobrada.
+ Os principais fluidos Newtonianos são água,
  gás e salmouras,
  fluidos muito comuns na engenharia de poço.
 \end_layout
@@ -1531,11 +1578,11 @@ nolink "false"
  quando o fluido se move em camadas,
  que ocorre apenas em taxas de cisalhamento baixas.
  Em altas taxas de cisalhamento o fluxo deixa de ser laminar e se torna turbulento,
- no qual as partículas se movem de forma caótica em relação ai sentido do fluxo criando vórtices e redemoinhos.
+ no qual as partículas se movem de forma caótica em relação ao sentido do fluxo criando vórtices e redemoinhos.
 \end_layout
 
 \begin_layout Subsubsection
-Fluidos Plásticos de Bingham
+Modelo de fluidos plásticos de Bingham
 \end_layout
 
 \begin_layout Standard
@@ -1572,7 +1619,7 @@ A principal característica de um plástico Bingham é a necessidade de um valor
 \end_inset
 
 .
- Após a tensão de escoamento o fluido de Bingham se comporta como um fluido newtoniano onde a mudança na tensão de cisalhamento é proporcional a mudança na taxa de cisalhamento.
+ Após a tensão de escoamento o fluido de Bingham se comporta como um fluido Newtoniano onde a mudança na tensão de cisalhamento é proporcional a mudança na taxa de cisalhamento.
  A constante de proporcionalidade 
 \begin_inset Formula $\mu_{p}$
 \end_inset
@@ -1585,7 +1632,7 @@ A principal característica de um plástico Bingham é a necessidade de um valor
 \end_layout
 
 \begin_layout Subsubsection
-Fluidos de Lei de Potência
+Modelo fluidos de lei de potência
 \end_layout
 
 \begin_layout Standard
@@ -1619,7 +1666,7 @@ O modelo de lei de potências requer também dois parâmetros para caracterizaç
 \end_inset
 
  < 1),
- um fluido newtoniano (
+ um fluido Newtoniano (
 \begin_inset Formula $n$
 \end_inset
 
@@ -1659,7 +1706,8 @@ A perda de pressão friccional durante a circulação de fluidos em operações 
 \end_inset
 
 ,
- porém para cada modelo existe uma equação para a obtenção do número de Reynolds 
+ porém,
+ para cada modelo existe uma equação para a obtenção do número de Reynolds 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "APPLIED1991"
@@ -1671,11 +1719,11 @@ literal "false"
 \end_layout
 
 \begin_layout Subsubsection
-Modelo de Fluido Newtoniano
+Modelo de fluido Newtoniano
 \end_layout
 
 \begin_layout Standard
-Para um fluido newtoniano o número de Reynolds pode ser obtido a partir da seguinte equação:
+Para um fluido Newtoniano o número de Reynolds pode ser obtido a partir da seguinte equação:
 \end_layout
 
 \begin_layout Standard
@@ -1784,7 +1832,7 @@ Onde
 \end_layout
 
 \begin_layout Subsubsection
-Fluidos Plásticos de Bingham
+Fluidos plásticos de Bingham
 \end_layout
 
 \begin_layout Standard
@@ -1848,7 +1896,7 @@ Onde
 \begin_inset Formula $N_{He}$
 \end_inset
 
-é chamado de numero de Hedstrom e pode ser calculado pela seguinte fórmula:
+é chamado de número de Hedstrom e pode ser calculado pela seguinte fórmula:
 \end_layout
 
 \begin_layout Standard
@@ -1897,7 +1945,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Subsubsection
-Fluidos de Lei de Potência
+Fluidos de lei de potência
 \end_layout
 
 \begin_layout Standard
@@ -1972,15 +2020,15 @@ A perda de pressão friccional durante a circulação de fluidos em operações 
  pode ser calculada através de diferentes modelos de fluido.
  Assim como vimos anteriormente o primeiro paço é determinar o tipo de escoamento,
  para isso utilizamos o número de Reynolds,
- porém para cada modelo existe uma equação para a obtenção do numero de Reynolds.
+ porém para cada modelo existe uma equação para a obtenção do número de Reynolds.
 \end_layout
 
 \begin_layout Subsubsection
-Modelo de Fluido Newtoniano
+Modelo de fluido Newtoniano
 \end_layout
 
 \begin_layout Standard
-Para um fluido newtoniano o número de Reynolds pode ser obtido a partir da seguinte equação:
+Para um fluido Newtoniano o número de Reynolds pode ser obtido a partir da seguinte equação:
 \end_layout
 
 \begin_layout Standard
@@ -2065,11 +2113,11 @@ Para o fluxo turbulento:
 \end_layout
 
 \begin_layout Subsubsection
-Fluidos Plásticos de Bingham
+Fluidos plásticos de Bingham
 \end_layout
 
 \begin_layout Standard
-Para um fluido que se comporta como plástico de Bingham a velocidade média podem ser obtida pela Equações (
+Para um fluido que se comporta como plástico de Bingham a velocidade média pode ser obtida pela Equações (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:VelocidadeMediaAnular"
@@ -2158,7 +2206,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Subsubsection
-Fluidos de Lei de Potência
+Fluidos de lei de potência
 \end_layout
 
 \begin_layout Standard
@@ -2245,7 +2293,7 @@ Pacote mecânica das rochas:
 
 \begin_layout Itemize
 Pacote janela principal:
- É o pacote que compreende a interface amigável que o usuário tera contato,
+ É o pacote que compreende a interface amigável que o usuário terá contato,
  é o ambiente onde o usuário poderá enviar comandos para o simulador e é a partir daqui que poderá visualizar os resultados.
 \end_layout
 

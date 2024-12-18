@@ -128,7 +128,7 @@
 \begin_body
 
 \begin_layout Chapter
-Manual do Usuário
+Manual do usuário
 \begin_inset Index idx
 range none
 pageformat default
@@ -271,7 +271,7 @@ name "fig:ImagemInterfaceGráfica"
 
 
 \begin_inset Graphics
-	filename imagens/menu-principal-codigo.png
+	filename ../imagens/menu-principal-codigo.png
 	lyxscale 30
 	width 100text%
 
@@ -292,7 +292,7 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
-O Figura 
+A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:ImagemInterfaceGráfica"
@@ -371,7 +371,7 @@ Calcular Pressão Hidrostática em um Ponto do Poço:
 
 \end_deeper
 \begin_layout Itemize
-Plotar Perfil Profundidade vs Densidade:
+Plotar Perfil Profundidade por Densidade:
  gera um gráfico que mostra a variação de densidade dos fluidos em relação à profundidade,
  facilitando a visualização da distribuição dos fluidos ao longo do poço.
 \end_layout
@@ -433,7 +433,7 @@ Determinar Perda de Carga no Anular:
 \end_deeper
 \end_deeper
 \begin_layout Section
-Como adicionar Informações do Poço/Fluido
+Como adicionar informações do poço/fluido
 \begin_inset Index idx
 range none
 pageformat default
@@ -471,7 +471,7 @@ Configurar Poço → Adicionar Fluido
 A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:ComoAdicionarUmMaterial"
+reference "fig:ComoConfigurarPoco"
 plural "false"
 caps "false"
 noprefix "false"
@@ -495,13 +495,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Adicionar um material no simulador:
- seleciona Arquivo,
- Import material,
- e uma janela será aberta para o usuário escolher o material
+Configurar o poço no simulador:
+ funções de criar o poço e impostar o dados a partir de um arquivo .dat
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:ComoAdicionarUmMaterial"
+name "fig:ComoConfigurarPoco"
 
 \end_inset
 
@@ -512,7 +510,7 @@ name "fig:ComoAdicionarUmMaterial"
 
 
 \begin_inset Graphics
-	filename imagens/Configurar-poco-codigo.png
+	filename ../imagens/Configurar-poco-codigo.png
 	lyxscale 80
 	width 100text%
 
@@ -535,7 +533,7 @@ Fonte:
 \begin_layout Standard
 Além disso,
  se preferir,
- o usuário pode carregar os dados diretamente a partir de um arquivo .dta.
+ o usuário pode carregar os dados diretamente a partir de um arquivo .dat.
  Nesse arquivo,
  as configurações devem seguir uma ordem específica,
  onde apenas um poço e os fluidos são listados,
@@ -581,7 +579,7 @@ name "fig:ArquivoDat"
 
 
 \begin_inset Graphics
-	filename imagens/funcionalidade-carregar-poco.png
+	filename ../imagens/funcionalidade-carregar-poco.png
 	lyxscale 80
 	width 100text%
 

@@ -182,7 +182,7 @@ Neste capítulo,
 
 \begin_layout Standard
 Aplicando os conceitos apresentados no capítulo de Metodologia,
- Os modelos de perda de fricção foram desenvolvidos para aplicação no poço e anular,
+ os modelos de perda de fricção foram desenvolvidos para aplicação no poço e anular,
  além disso consideram tanto o fluxo laminar quanto o fluxo turbulento.
  Inicialmente,
  será apresentado o modelo para o regime laminar,
@@ -1116,7 +1116,7 @@ Testes
 \end_layout
 
 \begin_layout Subsection
-Validação da Perda de Fricção Pelo Modelo Newtoniano no Poço
+Validação da perda de fricção pelo modelo Newtoniano no poço
 \begin_inset Index idx
 range none
 pageformat default
@@ -1141,7 +1141,7 @@ Aqui,
 \end_layout
 
 \begin_layout Standard
-Para o fluxo laminar no poço realizamos os seguinte cálculos:
+Para o fluxo laminar no poço realizamos os seguintes cálculos:
  
 \end_layout
 
@@ -1241,7 +1241,7 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
-Para o fluxo turbulento no poço realizamos os seguinte cálculos:
+Para o fluxo turbulento no poço realizamos os seguintes cálculos:
  
 \end_layout
 
@@ -1341,7 +1341,7 @@ Fonte:
 \end_layout
 
 \begin_layout Subsection
-Validação da Perda de Fricção Pelo Modelo Newtoniano no Anular
+Validação da perda de fricção pelo modelo Newtoniano no anular
 \end_layout
 
 \begin_layout Standard
@@ -1356,7 +1356,7 @@ Neste tópico,
 \end_layout
 
 \begin_layout Standard
-Para o fluxo laminar no anular realizamos os seguinte cálculos:
+Para o fluxo laminar no anular realizamos os seguintes cálculos:
  
 \end_layout
 
@@ -1456,7 +1456,7 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
-Para o fluxo turbulento no anular realizamos os seguinte cálculos:
+Para o fluxo turbulento no anular realizamos os seguintes cálculos:
  
 \end_layout
 
@@ -1556,7 +1556,7 @@ Fonte:
 \end_layout
 
 \begin_layout Subsection
-Validação da Perda de Fricção Pelo Modelo Bingham no Poco
+Validação da perda de fricção pelo modelo Bingham no poco
 \end_layout
 
 \begin_layout Standard
@@ -1571,7 +1571,7 @@ Aqui,
 \end_layout
 
 \begin_layout Standard
-Para o fluxo laminar no poço realizamos os seguinte cálculos:
+Para o fluxo laminar no poço realizamos os seguintes cálculos:
  
 \end_layout
 
@@ -1658,7 +1658,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para modelo Plástico de Bingham no poço considerando regime laminar 
+Soluções geradas pelo código para modelo plástico de Bingham no poço considerando regime laminar 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Bingham--Laminar-Poco-Codigo"
@@ -1672,7 +1672,7 @@ name "fig:Modelo-Bingham--Laminar-Poco-Codigo"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Bingham-Poco-Laminar-Codigo.jpg
+	filename ../imagens/Bingham-Poco-Laminar-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -1693,7 +1693,7 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
-Para o fluxo turbulento no poço realizamos os seguinte cálculos:
+Para o fluxo turbulento no poço realizamos os seguintes cálculos:
  
 \end_layout
 
@@ -1780,7 +1780,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para modelo Plástico de Bingham no poço considerando regime turbulento 
+Soluções geradas pelo código para modelo plástico de Bingham no poço considerando regime turbulento 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Bingham--Turbulento-Poco-Codigo"
@@ -1815,7 +1815,7 @@ Fonte:
 \end_layout
 
 \begin_layout Subsection
-Validação da Perda de Fricção Pelo Modelo Bingham no Anular
+Validação da perda de fricção pelo modelo Bingham no anular
 \end_layout
 
 \begin_layout Standard
@@ -1829,7 +1829,7 @@ Nesta seção,
 \end_layout
 
 \begin_layout Standard
-Para o fluxo laminar no anular realizamos os seguinte cálculos:
+Para o fluxo laminar no anular realizamos os seguintes cálculos:
  
 \end_layout
 
@@ -1916,7 +1916,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para modelo Plástico de Bingham no anular considerando regime laminar 
+Soluções geradas pelo código para modelo plástico de Bingham no anular considerando regime laminar 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Bingham-Laminar-Anular-Codigo"
@@ -1930,7 +1930,7 @@ name "fig:Modelo-Bingham-Laminar-Anular-Codigo"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Bingham-Anular-Laminar-Codigo.jpg
+	filename ../imagens/Bingham-Anular-Laminar-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -1951,7 +1951,7 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
-Para o fluxo turbulento no anular realizamos os seguinte cálculos:
+Para o fluxo turbulento no anular realizamos os seguintes cálculos:
  
 \end_layout
 
@@ -2038,7 +2038,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para modelo Plástico de Bingham no anular considerando regime turbulento 
+Soluções geradas pelo código para modelo plástico de Bingham no anular considerando regime turbulento 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Bingham-Turbulento-Poco-Codigo"
@@ -2073,7 +2073,7 @@ Fonte:
 \end_layout
 
 \begin_layout Subsection
-Validação da Perda de Fricção Pelo Modelo de Potência no Poco
+Validação da perda de fricção pelo modelo de potência no poco
 \end_layout
 
 \begin_layout Standard
@@ -2087,7 +2087,7 @@ Este tópico aborda a validação do modelo de perda de fricção para fluidos q
 \end_layout
 
 \begin_layout Standard
-Para o fluxo laminar no poço realizamos os seguinte cálculos:
+Para o fluxo laminar no poço realizamos os seguintes cálculos:
  
 \end_layout
 
@@ -2152,7 +2152,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para modelo Lei de Potência no poço considerando regime laminar 
+Soluções geradas pelo código para modelo lei de potência no poço considerando regime laminar 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Potencia--Laminar-Poco-Codigo"
@@ -2166,7 +2166,7 @@ name "fig:Modelo-Potencia--Laminar-Poco-Codigo"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Potencia-Poco-Laminar-Codigo.jpg
+	filename ../imagens/Potencia-Poco-Laminar-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -2187,7 +2187,7 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
-Para o fluxo turbulento no poço realizamos os seguinte cálculos:
+Para o fluxo turbulento no poço realizamos os seguintes cálculos:
  
 \end_layout
 
@@ -2252,7 +2252,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para modelo Lei de Potência no poço considerando regime turbulento 
+Soluções geradas pelo código para modelo lei de potência no poço considerando regime turbulento 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Potencia--Turbulento-Poco-Codigo"
@@ -2287,7 +2287,7 @@ Fonte:
 \end_layout
 
 \begin_layout Subsection
-Validação da Perda de Fricção Pelo Modelo de Potência no Anular
+Validação da perda de fricção pelo modelo de potência no anular
 \end_layout
 
 \begin_layout Standard
@@ -2301,7 +2301,7 @@ Nesta seção,
 \end_layout
 
 \begin_layout Standard
-Para o fluxo laminar no poço realizamos os seguinte cálculos:
+Para o fluxo laminar no poço realizamos os seguintes cálculos:
  
 \end_layout
 
@@ -2366,7 +2366,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para modelo Lei de Potência no anular considerando regime laminar 
+Soluções geradas pelo código para modelo lei de potência no anular considerando regime laminar 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:fig:Modelo-Potencia--Laminar-Anular-Codigo"
@@ -2380,7 +2380,7 @@ name "fig:fig:Modelo-Potencia--Laminar-Anular-Codigo"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Potencia-Anular-Laminar-Codigo.jpg
+	filename ../imagens/Potencia-Anular-Laminar-Codigo.jpg
 	lyxscale 70
 	width 100text%
 
@@ -2401,7 +2401,7 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
-Para o fluxo turbulento no poço realizamos os seguinte cálculos:
+Para o fluxo turbulento no poço realizamos os seguintes cálculos:
  
 \end_layout
 
@@ -2466,7 +2466,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Soluções geradas pelo código para modelo Lei de Potência no anular considerando regime turbulento 
+Soluções geradas pelo código para modelo lei de potência no anular considerando regime turbulento 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelo-Potencia--Turbulento-Anular-Codigo"
@@ -2501,7 +2501,7 @@ Fonte:
 \end_layout
 
 \begin_layout Subsection
-Validação da Pressão hidrostática no Fundo do Poço
+Validação da pressão hidrostática no fundo do poço
 \end_layout
 
 \begin_layout Standard
@@ -2656,7 +2656,7 @@ name "fig:Grafico"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Grafico.jpeg
+	filename ../imagens/Grafico.jpeg
 	lyxscale 70
 	width 100text%
 
@@ -2677,7 +2677,7 @@ Fonte:
 \end_layout
 
 \begin_layout Subsection
-Validação da Funcionalidade Impressão
+Validação da funcionalidade impressão
 \end_layout
 
 \begin_layout Standard
@@ -2724,7 +2724,7 @@ name "fig:Funcionalidade_impressao"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Funcionalidade-impressao.png
+	filename ../imagens/Funcionalidade-impressao.png
 	lyxscale 70
 	width 100text%
 
@@ -2786,7 +2786,7 @@ name "fig:Arquivo-resultados"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc/ManualDoDesenvolvedor/imagens/Arquivo-resultados.png
+	filename ../imagens/Arquivo-resultados.png
 	lyxscale 70
 	width 100text%
 

@@ -30,7 +30,7 @@
 \maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto-legacy
+\inputencoding utf8
 \fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -52,6 +52,7 @@
 \bibtex_command default
 \index_command default
 \float_placement h
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false

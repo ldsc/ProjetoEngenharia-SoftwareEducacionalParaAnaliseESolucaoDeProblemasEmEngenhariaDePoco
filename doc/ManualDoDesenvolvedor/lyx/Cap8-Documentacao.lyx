@@ -161,7 +161,11 @@ thechapter - Documentação}
 \begin_layout Standard
 Neste capítulo é apresentado a documentação do software,
  mostrando como rodar o software,
- como utilizar e a documentação gerada pelo Doxygen.
+ como utilizar e a documentação gerada pelo 
+\shape italic
+Doxygen
+\shape default
+.
  Por fim,
  são listadas as dependências externas.
 \end_layout
@@ -200,12 +204,16 @@ Documentação do desenvolvedor
 
 \begin_layout Standard
 Nesta seção são apresentadas informações para os desenvolvedores,
- como a documentação em html,
+ como a documentação em HTML,
  e a listagem de algumas dependências específicas.
 \end_layout
 
 \begin_layout Itemize
-Os códigos foram documentados no GitHub:
+Os códigos foram documentados no 
+\shape italic
+GitHub
+\shape default
+:
 \end_layout
 
 \begin_deeper
@@ -222,7 +230,11 @@ literal "false"
 
 \end_deeper
 \begin_layout Itemize
-A documentação foi gerada utilizando o software doxygem:
+A documentação foi gerada utilizando o software 
+\shape italic
+Doxygem
+\shape default
+:
 \end_layout
 
 \begin_deeper
@@ -331,10 +343,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Código fonte da classe CSimuladorTemperatura,
- no Doxygen
+Código fonte da classe CSimuladorPoco,
+ no 
 \shape italic
-
+Doxygen
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Logo-e-documentação-2"

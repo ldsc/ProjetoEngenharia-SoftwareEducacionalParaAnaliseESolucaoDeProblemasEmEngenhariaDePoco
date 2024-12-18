@@ -89,7 +89,7 @@
 \maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto-legacy
+\inputencoding utf8
 \fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -111,6 +111,7 @@
 \bibtex_command default
 \index_command default
 \float_placement ph
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
@@ -327,7 +328,7 @@ Plotar gráficos usando biblioteca externa CGnuplot (tem livro do gnuplot na bib
 \end_layout
 
 \begin_layout Section
-Nome do Sistema/Produto
+Nome do sistema/produto
 \begin_inset CommandInset label
 LatexCommand label
 name "sec: Nome do sistema/produto"
@@ -444,11 +445,11 @@ Algoritmo de aproximação de resultados.
 \end_layout
 
 \begin_layout Plain Layout
-Interface gráfica para o plot de resultados.
+Interface gráfica para o plotar resultados.
 \end_layout
 
 \begin_layout Plain Layout
-Saída gráfica e em pdf.
+Saída gráfica e em arquivo .dat.
 \end_layout
 
 \end_inset
@@ -527,20 +528,24 @@ especificação
 
 \begin_layout Standard
 Deseja-se desenvolver um software com interface amigável que possibilite o usuário escolher de forma livre a funcionalidade de deseja utilizar naquele momento.
- Os caculos realizados pelos software se baseiam em equações analíticas desenvolvidas na disciplina de Engenharia de poço.
+ Os cálculos realizados pelo software se baseiam em equações desenvolvidas na disciplina de Engenharia de poço.
 \end_layout
 
 \begin_layout Standard
 Inicialmente o usuário precisara configurar as propriedades do poço,
  ação que pode ser feita de duas formas,
- tanto a partir da leitura de um arquivo .dat ou a partir do imput individual das propriedade no terminal.
+ tanto a partir da leitura de um arquivo .dat ou a partir do 
+\shape italic
+input
+\shape default
+ individual das propriedades no terminal.
  Após configurar o poço o usuário poderá exibir as propriedades do poço,
  calcular a pressão hidrostática no fundo do poço ou selecionar uma profundidade na qual essa pressão será calculada,
  plotar gráficos de perfis como o gráfico da profundidade pela densidade e por fim poderá calcular a perda de pressão devido a perda de carga por fricção.
 \end_layout
 
 \begin_layout Standard
-Ao iniciar o calculo da perda de pressão é possível determinar o tipo de escoamento tanto no poço quando no anular,
+Ao iniciar o cálculo da perda de pressão é possível determinar o tipo de escoamento tanto no poço quando no anular,
  e para calcular a perda de pressão o usuário poderá selecionar entre três modelos reológicos,
  o modelo Newtoniano,
  o modelo de Plástico de Bingham e o modelo de Lei de Potências.
@@ -628,7 +633,23 @@ RF-01
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve conter uma base de dados confiáveis retiradas de referências bibliográficas.
+O sistema deve conter uma base de dados confiáveis retiradas de referências bibliográficas como 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "APPLIED1991"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -895,7 +916,9 @@ RNF-01
 \begin_inset Text
 
 \begin_layout Plain Layout
-Suas primeiras versões deve suportar apenas o SO Windows
+Suas primeiras versões devem suportar os sistemas operacionais Linux e
+\shape italic
+ Windows.
 \end_layout
 
 \end_inset
@@ -937,7 +960,11 @@ RNF-02
 \begin_inset Text
 
 \begin_layout Plain Layout
-Plotagem de diferentes gráficos para representação do estudo analisado durante a simulação através do GnuPlot.
+Plotagem de diferentes gráficos para representação do estudo analisado durante a simulação através do 
+\shape italic
+Gnuplot
+\shape default
+.
 \end_layout
 
 \end_inset
@@ -1035,7 +1062,7 @@ Apresentar interface em comados terminais.
 \end_layout
 
 \begin_layout Section
-Casos de Uso
+Casos de uso
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Casos-de-uso-Geral"
@@ -1090,7 +1117,7 @@ nolink "false"
  mostra o usuário de frente a interface com as opções permitidas do simulador.
  Com essas opções ele poderá executar,
  analisar os resultados obtidos e salvar as imagens ou os dados em um arquivo PDF.
- As condições do caso de uso são apresentados na Tabela 
+ As condições do caso de uso são apresentadas na Tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Exemplo-de-um-caso-de-uso (tabela)"
@@ -1225,7 +1252,7 @@ Etapas:
 
 \begin_layout Plain Layout
 6.
- Calcular a Queda de Pressão Devido a Perdas por Fricção
+ Calcular a queda de pressão devido a perdas por fricção
 \end_layout
 
 \begin_layout Plain Layout
@@ -1235,7 +1262,7 @@ Etapas:
 
 \begin_layout Plain Layout
 7.
- Salvar dados em PDF
+ Salvar dados em arquivos .dat
 \end_layout
 
 \end_inset
@@ -1265,7 +1292,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de caso de uso – Caso de uso geral
+Diagrama de caso de uso – caso de uso geral
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Diagrama-caso-uso-geral-1"

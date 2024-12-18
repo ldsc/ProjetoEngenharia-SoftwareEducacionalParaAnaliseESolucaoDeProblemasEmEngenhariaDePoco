@@ -196,7 +196,7 @@ name "sec:Projeto-do-sistema"
 \end_layout
 
 \begin_layout Standard
-O paradigma de programação selecionado foi o orientado o objeto.
+O paradigma de programação selecionado foi o orientado a objeto.
 \end_layout
 
 \begin_layout Standard
@@ -214,7 +214,11 @@ Amplo suporte a orientação a objeto e diversos vínculos com UML.
 
 \begin_layout Itemize
 Dezenas de bibliotecas de suporte prontas,
- gráficos (biblioteca Gnuplot) e bibliotecas para gerar saídas em pdf.
+ gráficos (biblioteca 
+\shape italic
+Gnuplot
+\shape default
+) e bibliotecas para gerar saídas em arquivo .dat.
 \end_layout
 
 \begin_layout Itemize
@@ -224,12 +228,20 @@ Programação de alto nível com vários graus de abstração.
 \begin_layout Itemize
 Diversos ambientes de desenvolvimento - IDEs,
  compiladores,
- debugers,
- profillers.
+ 
+\shape italic
+debugers
+\shape default
+,
+ 
+\shape italic
+profillers
+\shape default
+.
 \end_layout
 
 \begin_layout Itemize
-Compiladores e ferramentas gratuítas disponíveis,
+Compiladores e ferramentas gratuitas disponíveis,
  facilitando o uso por alunos.
 \end_layout
 
@@ -255,11 +267,7 @@ Diagrama de componentes
 \end_layout
 
 \begin_layout Standard
-O diagrama de componentes mostra as relações entre todos os componentes do 
-\shape italic
-software
-\shape default
- e é apresentado na Figura 
+O diagrama de componentes mostra as relações entre todos os componentes do software e é apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Diagrama-de-componentes"

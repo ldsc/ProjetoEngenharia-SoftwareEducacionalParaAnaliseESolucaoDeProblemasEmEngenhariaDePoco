@@ -135,7 +135,7 @@ AOO
 
 \end_inset
 
- – Análise Orientada a Objeto
+ – análise orientada a objeto
 \begin_inset CommandInset label
 LatexCommand label
 name "chap:Análise Orientada a Objeto"
@@ -165,7 +165,7 @@ name "sec:AOO"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo são apresentados as classes desenvolvidas no projeto,
+Neste capítulo são apresentadas as classes desenvolvidas no projeto,
  suas relações,
  atributos e métodos.
  Ainda teremos um breve conceito de cada classe.
@@ -281,7 +281,7 @@ name "subsec:Dicionário-de-classes"
 \end_layout
 
 \begin_layout Standard
-O software é composto por um total de 9 classes:
+O software é composto por um total de 10 classes:
 \end_layout
 
 \begin_layout Itemize
@@ -336,7 +336,7 @@ Classe responsável pelos modelos utilizados para calcular a perda de pressão f
 CModeloNewtoniano:
  
 \series default
-Classe responsável por calcular perda de pressão friccional para o modelo newtoniano.
+Classe responsável por calcular perda de pressão friccional para o modelo Newtoniano.
 \end_layout
 
 \begin_layout Itemize
@@ -345,7 +345,7 @@ Classe responsável por calcular perda de pressão friccional para o modelo newt
 CModeloBingham:
  
 \series default
-Classe responsável por calcular perda de pressão friccional para o modelo Plástico de Bingham.
+Classe responsável por calcular perda de pressão friccional para o modelo plástico de Bingham.
 \end_layout
 
 \begin_layout Itemize
@@ -354,16 +354,29 @@ Classe responsável por calcular perda de pressão friccional para o modelo Plá
 CModeloPotencia:
  
 \series default
-Classe responsável por calcular perda de pressão friccional para o modelo Lei de Potência.
+Classe responsável por calcular perda de pressão friccional para o modelo lei de potência.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-QCustomPlot:
+CImpressao:
  
 \series default
-Classe responsável por gerar gráficos utilizando a biblioteca QCustomPlot (obtida em https://www.qcustomplot.com/),
+Classe responsável por armazenar e salvar os resultados da simulação em um arquivo .dat.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+CGnuplot:
+ 
+\series default
+Classe responsável por gerar gráficos utilizando a biblioteca 
+\shape italic
+Gnuplot
+\shape default
+,
  para visualização dos dados.
 \end_layout
 
@@ -387,7 +400,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Section
-Diagrama de seqüência – eventos
+Diagrama de sequência – eventos
 \begin_inset Index idx
 range none
 pageformat default
@@ -727,18 +740,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../imagens/DiagramaMaquinaEstado.png
-	lyxscale 15
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -755,6 +756,24 @@ name "cap:Diagrama-de-maquina-de-estado"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/DiagramaMaquinaEstado.png
+	lyxscale 15
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -847,27 +866,6 @@ Fonte:
 \end_inset
 
 
-\end_layout
-
-\begin_layout Description
-Nota:
- 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Não perca de vista a visão do todo;
- do projeto de engenharia como um todo.
- Cada capítulo,
- cada seção,
- cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos,
- de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
 \end_layout
 
 \end_body
