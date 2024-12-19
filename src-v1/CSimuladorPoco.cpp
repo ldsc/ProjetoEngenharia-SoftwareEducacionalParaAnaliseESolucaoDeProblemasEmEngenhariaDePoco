@@ -9,6 +9,7 @@
 #include "CSimuladorPoco.h"
 
 auto auxiliar = std::make_unique<CAuxiliar>();
+auto inputUsuario = std::make_unique<CInputUsuario>();
 
 void CSimuladorPoco::ExibirPropriedades() {
         // Exibir propriedades do poco
@@ -61,57 +62,35 @@ void CSimuladorPoco::ExibirPropriedades() {
 }
 
 void CSimuladorPoco::ConfigurarPoco() {
-
     bool pocoConfigurado = (poco != nullptr);
-    bool criarNovoPoco = false;
-
-    double profundidade, pressaoSuperficie, diametro, OD, ID, vazao;
 
     if (!pocoConfigurado) {
-        std::cout << "\nInforme a profundidade total do poco [ft]: ";
-        std::cin >> profundidade;
-    }
-    else {
-        std::cout << "\nInforme a profundidade total do poco [ft] (0 para manter a profundidade anterior): ";
-        std::cin >> profundidade;
-        if (profundidade == 0) {
-            profundidade = poco->ProfundidadeTotal();
-        }
-        else{
-            criarNovoPoco = true;
-        }
-    }    
+        // Solicita todas as informações para configurar o poço pela primeira vez.
+        double profundidade = inputUsuario->getDouble("Informe a profundidade total do poco [ft]: ");
+        double pressaoSuperficie = inputUsuario->getDouble("Informe a pressao na superficie do poco [psia]: ");
+        double diametro = inputUsuario->getDouble("Informe o diametro do poco [in]: ");
+        double OD = inputUsuario->getDouble("Informe o OD do revestimento [in]: ");
+        double ID = inputUsuario->getDouble("Informe o ID do revestimento [in]: ");
+        double vazao = inputUsuario->getDouble("Informe a vazao do poco [gal/min]: ");
 
-    std::cout << "Informe a pressao na superficie do poco [psia]: ";
-    std::cin >> pressaoSuperficie;
-
-    std::cout << "Informe o diametro do poco [in]: ";
-    std::cin >> diametro;
-
-    std::cout << "Informe o OD do poco [in]: ";
-    std::cin >> OD;
-
-    std::cout << "Informe o ID do poco [in]: ";
-    std::cin >> ID;
-
-    std::cout << "Informe a vazao do poco [gal/min]: ";
-    std::cin >> vazao;
-
-    if (criarNovoPoco)
-    {
-        // Cria um novo objeto CPoco
+        // Cria o poço com os valores fornecidos.
         poco = std::make_unique<CPoco>(profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
-        
+    } else {
+        // Pergunta se o usuário deseja atualizar os dados do poço existente.
+        int atualizar = inputUsuario->getSimNao("Gostaria de atualizar os dados do poco, isso ira deletar os dados de fluidos existentes? (s|n): ");
+        if (atualizar) {
+            // Solicita as novas informações.
+            double profundidade = inputUsuario->getDouble("Informe a profundidade total do poco [ft]: ");
+            double pressaoSuperficie = inputUsuario->getDouble("Informe a pressao na superficie do poco [psia]: ");
+            double diametro = inputUsuario->getDouble("Informe o diametro do poco [in]: ");
+            double OD = inputUsuario->getDouble("Informe o OD do revestimento [in]: ");
+            double ID = inputUsuario->getDouble("Informe o ID do revestimento [in]: ");
+            double vazao = inputUsuario->getDouble("Informe a vazao do poco [gal/min]: ");
+
+        // Cria o poço com os valores fornecidos.
+            poco = std::make_unique<CPoco>(profundidade, pressaoSuperficie, diametro, OD, ID, vazao);   
+        }
     }
-    else{
-        // Atualiza as propriedades do objeto CPoco
-        poco->PressaoSuperficie(pressaoSuperficie);
-        poco->DiametroPoco(diametro);
-        poco->DiametroRevestimentoOD(OD);
-        poco->DiametroRevestimentoID(ID);
-        poco->Vazao(vazao);
-    }
-    
 }
 
 void CSimuladorPoco::ConfigurarFluido() {
@@ -122,20 +101,11 @@ void CSimuladorPoco::ConfigurarFluido() {
                     std::string nome;
                     double densidade, viscosidade, profInicial, profFinal;
 
-                    std::cout << "\nInforme um nome para o fluido: ";
-                    std::cin >> nome;
-
-                    std::cout << "Informe a densidade do fluido: ";
-                    std::cin >> densidade;
-
-                    std::cout << "Informe a viscosidade do fluido: ";
-                    std::cin >> viscosidade;
-
-                    std::cout << "Informe a profundidade inicial do fluido: ";
-                    std::cin >> profInicial;
-
-                    std::cout << "Informe a profundidade final do fluido: ";
-                    std::cin >> profFinal;
+                    nome = inputUsuario->getString("Informe o nome do fluido: ");
+                    densidade = inputUsuario->getDouble("Informe a densidade do fluido: ");
+                    viscosidade = inputUsuario->getDouble("Informe a viscosidade do fluido: ");
+                    profInicial = inputUsuario->getDouble("Informe a profundidade inicial do fluido: ");
+                    profFinal = inputUsuario->getDouble("Informe a profundidade final do fluido: ");
 
                     // Cria um novo objeto CFluido e CTrechoPoco
                     auto fluido = std::make_unique<CFluido>(nome, densidade, viscosidade);
@@ -144,10 +114,9 @@ void CSimuladorPoco::ConfigurarFluido() {
                     // Armazena o trecho no vetor
                     trechos.push_back(std::move(trechoPoco));
 
-                    std::cout << "Deseja adicionar outro fluido? (s/n): ";
-                    std::cin >> continuar;
+                    continuar = inputUsuario->getSimNao("Deseja adicionar mais fluidos? (s|n): ");
 
-                } while (continuar == 's' || continuar == 'S'); // Continua enquanto o usuario quiser
+                } while (continuar); // Continua enquanto o usuario quiser
 
                 // Adiciona todos os trechos ao poco
                 for (auto& trecho : trechos) {
@@ -352,10 +321,7 @@ void CSimuladorPoco::MenuPressaoHidrostatica() {
                 break;
                 
             case 2:
-                
-                std::cout << "\nProfundidade maxima " << poco->ProfundidadeTotal() << " ft\n";
-                std::cout << "Informe a profundidade que deseja calcular [ft]: ";
-                std::cin >> profundidade;
+                profundidade = inputUsuario->getDouble("Informe a profundidade que deseja calcular [ft]: ");
 
                 std::cout << "\nPressao Hidrostatica: " << poco->PressaoHidroestaticaNoPonto(profundidade) << " psi\n";
                 

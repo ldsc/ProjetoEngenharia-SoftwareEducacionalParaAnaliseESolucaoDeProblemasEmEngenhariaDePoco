@@ -20,6 +20,7 @@ SRC = main.cpp \
       CTrechoPoco.cpp \
       CPoco.cpp \
       CImpressao.cpp \
+      CInputUsuario.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
