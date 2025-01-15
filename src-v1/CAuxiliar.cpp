@@ -63,5 +63,5 @@ void CAuxiliar::cabecalho() {
     desenharLinhaTexto("");
     desenharBorda();
     std::cout << "\nPressione Enter para continuar...";
-    std::cin.ignore().get(); // Pausa ate pressionar Enter
+    std::cin.get(); // Pausa ate pressionar Enter
 }

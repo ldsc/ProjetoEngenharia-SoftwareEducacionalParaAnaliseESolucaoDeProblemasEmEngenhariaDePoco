@@ -128,7 +128,7 @@ void CSimuladorPoco::ConfigurarPorArquivo(const std::string& arquivo) {
     std::ifstream file(arquivo);
     
     if (!file) {
-        std::cerr << "Erro ao abrir o arquivo: " << arquivo << std::endl;
+        std::cerr << "\n ### Erro ao abrir o arquivo: " << arquivo << std::endl;
         return;
     }
 
@@ -151,9 +151,9 @@ void CSimuladorPoco::ConfigurarPorArquivo(const std::string& arquivo) {
 
             if (iss >> profundidade >> pressaoSuperficie >> diametro >> OD >> ID >> vazao) {
                 poco = std::make_unique<CPoco>(profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
-                std::cout << "Poco configurado a partir do arquivo " << arquivo << " com sucesso!" << std::endl;
+                std::cout << "\n ### Poco configurado a partir do arquivo " << arquivo << " com sucesso!" << std::endl;
             } else {
-                std::cerr << "Erro ao ler dados do poco na linha: " << linha << std::endl;
+                std::cerr << "\n ### Erro ao ler dados do poco na linha: " << linha << std::endl;
             }
         } else {
             // Ler os dados dos fluidos
@@ -165,10 +165,10 @@ void CSimuladorPoco::ConfigurarPorArquivo(const std::string& arquivo) {
                 auto fluido = std::make_unique<CFluido>(nome, densidade, viscosidade);
                 auto trechoPoco = std::make_unique<CTrechoPoco>(profInicial, profFinal, std::move(fluido));
                 if (!poco->AdicionarTrechoPoco(std::move(trechoPoco))) {
-                    std::cerr << "Erro ao adicionar trecho ao poco!" << std::endl;
+                    std::cerr << "\n ### Erro ao adicionar trecho ao poco!" << std::endl;
                 }
             } else {
-                std::cerr << "Erro ao ler linha de fluido: " << linha << std::endl;
+                std::cerr << "\n ### Erro ao ler linha de fluido: " << linha << std::endl;
             }
         }
     }
@@ -223,6 +223,8 @@ void CSimuladorPoco::MenuPrincipal() {
                     switch (escolha) {
                         case 2:
                             ExibirPropriedades();
+                            std::cout << "\nPressione Enter para continuar...";
+                            std::cin.ignore().get(); // Pausa ate pressionar Enter
                             break;
 
                         case 3:
@@ -231,6 +233,8 @@ void CSimuladorPoco::MenuPrincipal() {
 
                         case 4:
                             poco->PlotarProfundidadePorDensidade();
+                            std::cout << "\nPressione Enter para continuar...";
+                            std::cin.ignore().get(); // Pausa ate pressionar Enter
                             break;
 
                         case 5:
@@ -243,8 +247,6 @@ void CSimuladorPoco::MenuPrincipal() {
                     }
                 }
         }
-        std::cout << "\nPressione Enter para continuar...";
-        std::cin.ignore().get();
     }
 }
 
@@ -258,8 +260,8 @@ void CSimuladorPoco::MenuConfigurarSimulador() {
         auxiliar->desenharBorda();
 
         std::cout << "\n1. Criar Poco\n"
-                     "2. Adicionar Fluido\n"
-                     "3. Carregar Dados a Partir de Arquivo (.dat)\n"
+                     "2. Criar Fluido\n"
+                     "3. Carregar Dados do Poco e Fluido a Partir de Arquivo (.dat)\n"
                      "0. Voltar\n";
         std::cout << "Escolha: ";
         std::cin >> escolha;
@@ -278,6 +280,9 @@ void CSimuladorPoco::MenuConfigurarSimulador() {
 
             case 3:
                 ConfigurarPorArquivo("ArquivoPoco.dat");
+
+                std::cout << "\nPressione Enter para continuar...";
+                std::cin.ignore().get(); // Pausa ate pressionar Enter
                 break;
             }
             case 0:
@@ -286,9 +291,6 @@ void CSimuladorPoco::MenuConfigurarSimulador() {
                 std::cout << "Opcao invalida! Tente novamente.\n";
                 break;
         }
-
-        std::cout << "\nPressione Enter para continuar...";
-        std::cin.ignore().get(); // Pausa ate pressionar Enter
     }
 }
 
@@ -371,9 +373,6 @@ void CSimuladorPoco::MenuPerdaDeCarga() {
                 std::cout << "Opcao invalida! Tente novamente.\n";
                 break;
         }
-
-        std::cout << "\nPressione Enter para continuar...";
-        std::cin.ignore().get(); // Pausa ate pressionar Enter
     }
 }
 

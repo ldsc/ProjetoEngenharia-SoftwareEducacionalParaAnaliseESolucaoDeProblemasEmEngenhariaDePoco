@@ -53,11 +53,11 @@ ComprimentoTrecho ;
 
 * TODO TCC1
 ** CImpressao CRelatorioPoco ou algo do genero, tem de ter um nome que faça sentido e esteja encapsulando os atributos e métodos.
-** Retirar necessidade de enter... apos atividade. 
+** DONE Retirar necessidade de enter... apos atividade. 
 ** A saída de dados de fluido deve estar relacionada a classe CFLuido ou que agrega fluidos, esta embutida no poço.
 ** Entrada
-*** Adicionar Fluido - padrão -> Criar Fluido
-*** Carregar Dados a Partir de Arquivo (.dat) -> Carregar Dados do Poço e Fluido a Partir de Arquivo (.dat)
+*** DONE Adicionar Fluido - padrão -> Criar Fluido
+*** DONE Carregar Dados a Partir de Arquivo (.dat) -> Carregar Dados do Poço e Fluido a Partir de Arquivo (.dat)
 **** a opção 3: já deve voltar.
 **** a opção voltar: não deve apresentar o "pressione enter"
 ***** Escolha: 0
@@ -82,10 +82,10 @@ ComprimentoTrecho ;
 ****** Arquivo: nomeUltimoPoco.dat ArquivoPoco-12312NOME.dat
 ***** No menu principal acessa a classe CConfiguracaoInterfaceCLI e então seta estes valores true/false
 **** Solução Qt
-**** Renomear doc para doc-v1
-**** Criar doc-v2
-**** Copiar arquivos de doc-v1
-**** Copiar src-v1 para src-v2
+**** DONE Renomear doc para doc-v1
+**** DONE Criar doc-v2
+**** DONE Copiar arquivos de doc-v1
+**** DONE Copiar src-v1 para src-v2
 **** Adicionar a interface gráfica para os testes apresentados
 **** Defende isso em tcc1
 * TODO TCC2
