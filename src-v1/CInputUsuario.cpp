@@ -38,10 +38,12 @@ bool CInputUsuario::getSimNao(std::string prompt) {
 
 std::string CInputUsuario::getString(std::string prompt) {
     std::cout << prompt;
+    
 
     while (true) {
         std::string input;
-        std::getline(std::cin, input);
+        std::cin >> input;
+        std::cin.ignore(1000, '\n'); // Limpa o buffer para evitar problemas com entradas adicionais
 
         // Valida e processa a entrada
         std::string resultado;
@@ -75,7 +77,7 @@ std::string CInputUsuario::getString(std::string prompt) {
         if (entradaValida) {
             return resultado;
         } else {
-            std::cout << "Entrada inválida (apenas letras e espaços são permitidos). Tente novamente: ";
+            std::cout << "Entrada invalida (apenas letras e espaços sao permitidos). Tente novamente: ";
         }
     }
 }

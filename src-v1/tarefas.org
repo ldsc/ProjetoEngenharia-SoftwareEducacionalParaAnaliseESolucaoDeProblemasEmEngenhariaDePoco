@@ -58,8 +58,8 @@ ComprimentoTrecho ;
 ** Entrada
 *** DONE Adicionar Fluido - padrão -> Criar Fluido
 *** DONE Carregar Dados a Partir de Arquivo (.dat) -> Carregar Dados do Poço e Fluido a Partir de Arquivo (.dat)
-**** a opção 3: já deve voltar.
-**** a opção voltar: não deve apresentar o "pressione enter"
+**** DONE a opção 3: já deve voltar.
+**** DONE a opção voltar: não deve apresentar o "pressione enter"
 ***** Escolha: 0
 ***** Pressione Enter para continuar...
 *** Interface:
