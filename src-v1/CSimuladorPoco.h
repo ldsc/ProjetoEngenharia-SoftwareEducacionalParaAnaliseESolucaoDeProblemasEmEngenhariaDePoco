@@ -7,7 +7,7 @@
 #include "CModeloBingham.h"
 #include "CModeloPotencia.h"
 #include "CAuxiliar.h"
-#include "CImpressao.h"
+#include "CRelatorioPoco.h"
 #include "CInputUsuario.h"
 #include <memory>
 #include <vector>
@@ -21,12 +21,12 @@ protected:
     std::unique_ptr<CModeloBingham> modeloBingham;
     std::unique_ptr<CModeloPotencia> modeloPotencia;
     std::unique_ptr<CAuxiliar> auxiliar;
-    std::unique_ptr<CImpressao> impressao;
+    std::unique_ptr<CRelatorioPoco> relatorioPoco;
     std::unique_ptr<CInputUsuario> inputUsuario;
 
-    bool armazenarPropriedadesPoco;
-    bool armazenarHistoricoPressaoHidrostatica;
-    bool armazenarHistoricoPerdaCarga;
+    bool armazenarPropriedadesPoco = true;
+    bool armazenarHistoricoPressaoHidrostatica = true;
+    bool armazenarHistoricoPerdaCarga = true;
 
 
 public:

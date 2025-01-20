@@ -19,7 +19,7 @@ SRC = main.cpp \
       CSimuladorPoco.cpp \
       CTrechoPoco.cpp \
       CPoco.cpp \
-      CImpressao.cpp \
+      CRelatorioPoco.cpp \
       CInputUsuario.cpp 
 
 OBJ = $(SRC:.cpp=.o)

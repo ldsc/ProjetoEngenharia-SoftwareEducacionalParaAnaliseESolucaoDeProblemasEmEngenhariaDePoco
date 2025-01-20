@@ -8,8 +8,9 @@
 
 class CPoco {
 protected:
+    std::string nomePoco;
     double profundidadeFinal = 0.0;
-    double profundidadeOcupada = 0;
+    double profundidadeOcupada = 0.0;
     double pressaoSuperficie = 0.0;
     double diametroPoco = 0.0;
     double diametroRevestimentoOD = 0.0;
@@ -21,10 +22,11 @@ public:
     //construtor
     CPoco() {}
     ~CPoco() {}
-    CPoco(double Profund, double PressaoSup, double D , double OD, double ID, double q)
-    : profundidadeFinal(Profund), pressaoSuperficie(PressaoSup), diametroPoco(D), diametroRevestimentoOD(OD), diametroRevestimentoID(ID), vazao(q) {}
+    CPoco(std::string Nome, double Profund, double PressaoSup, double D , double OD, double ID, double q)
+    : nomePoco(Nome),profundidadeFinal(Profund), pressaoSuperficie(PressaoSup), diametroPoco(D), diametroRevestimentoOD(OD), diametroRevestimentoID(ID), vazao(q) {}
 
     // Getters
+    std::string NomePoco() const { return nomePoco; }
     double ProfundidadeTotal() const { return profundidadeFinal; }
     double ProfundidadeOcupada() const { return profundidadeOcupada; }
     double PressaoSuperficie() const { return pressaoSuperficie; }
@@ -35,6 +37,7 @@ public:
     std::vector<CTrechoPoco*> Trechos() const;
     
     // Setters
+    void NomePoco( std::string Nome ) { nomePoco = Nome; }
     void ProfundidadeTotal( double Profund ) { profundidadeFinal = Profund; }
     void ProfundidadeOcupada( double Profund ) { profundidadeOcupada = Profund; }
     void PressaoSuperficie( double PressaoSup ) { pressaoSuperficie = PressaoSup; }

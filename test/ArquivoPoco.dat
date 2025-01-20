@@ -1,6 +1,6 @@
 # Configuração do Poço------------------------------------------------------------------------------------
-# Profundidade (ft)    Pressão Superficial (psi)    Diâmetro (in)    OD (in)    ID (in)    Vazão (bbl/d)
-11483                   2175                        8.66             7.87         7.09          158
+# Nome                 Profundidade (ft)    Pressão Superficial (psi)    Diâmetro (in)    OD (in)    ID (in)    Vazão (bbl/d)
+7-TES-01-RJS           11483                2175                         8.66             7.87       7.09       158
 
 
 # Configuração dos Fluidos--------------------------------------------------------------------------------

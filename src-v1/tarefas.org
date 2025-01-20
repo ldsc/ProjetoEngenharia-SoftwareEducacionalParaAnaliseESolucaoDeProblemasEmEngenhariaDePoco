@@ -49,45 +49,43 @@ ComprimentoTrecho ;
 ** DONE std :: ofstream outputFile (" dados.txt") | (" dadosSimulacaoPoco.Gnuplot.dat") ;
 ** DONE Modificar Poco (flag para o usuario manter o valor)
 ** DONE Verificar entradas invalidas
-** TODO A classe CImpressao.h deve ter nome associado a poco; não entendi porque criou....
 
 * TODO TCC1
-** CImpressao CRelatorioPoco ou algo do genero, tem de ter um nome que faça sentido e esteja encapsulando os atributos e métodos.
-** DONE Retirar necessidade de enter... apos atividade. 
-** A saída de dados de fluido deve estar relacionada a classe CFLuido ou que agrega fluidos, esta embutida no poço.
+** CImpressao CRelatorioPoco ou algo do gênero
+   - Deve ter um nome que faça sentido e encapsule os atributos e métodos.
+** DONE Retirar necessidade de "enter" após atividade.
+** A saída de dados de fluido deve estar relacionada à classe CFLuido ou a uma classe que agregue fluidos, estando embutida no poço.
 ** Entrada
-*** DONE Adicionar Fluido - padrão -> Criar Fluido
-*** DONE Carregar Dados a Partir de Arquivo (.dat) -> Carregar Dados do Poço e Fluido a Partir de Arquivo (.dat)
-**** DONE a opção 3: já deve voltar.
-**** DONE a opção voltar: não deve apresentar o "pressione enter"
-***** Escolha: 0
-***** Pressione Enter para continuar...
-*** Interface:
-**** Na interface aparece
-***** 1. Calcular Pressao Hidroestatica (Fundo de poco)
-***** 2. Calcular Pressao Hidroestatica em um Ponto do Poco
-***** 0. Voltar
-***** depois do cálculo pergunta
-***** Gostaria de armazenar o valor (s/n)? é muito chato tem de responder o tempo todo, não é prático o uso.
-**** Solução CLI:
-**** opção 1: Criar um item  "3. salvar os dados calculados"
-***** os atributos calculados devem fazer parte da classe a que pertente.
-***** elimina a pergunta Gostaria de armazenar o valor (s/n)? e adiciona uma opção 3 "3. salvar os dados calculados"
-**** opção 2:
-***** cria uma classe de CConfiguracaoInterfaceCLI
-****** bool salvarDadosCalculados = true; //set/get
-****** bool carregarSalvarDadosDosArquivosAutomaticamente = true; //set/get (arquivosPadroes: ArquivoPoco.dat  ResultadosSimulacaoPoco.dat)
-****** Criar opção de salvar com outros nomes; ArquivoPoco-12312NOME.dat
-****** Criar opção de ler com outros nomes; ArquivoPoco-12312NOME.dat
-****** Arquivo: nomeUltimoPoco.dat ArquivoPoco-12312NOME.dat
-***** No menu principal acessa a classe CConfiguracaoInterfaceCLI e então seta estes valores true/false
-**** Solução Qt
-**** DONE Renomear doc para doc-v1
-**** DONE Criar doc-v2
-**** DONE Copiar arquivos de doc-v1
-**** DONE Copiar src-v1 para src-v2
-**** Adicionar a interface gráfica para os testes apresentados
-**** Defende isso em tcc1
+   - ** DONE Adicionar Fluido - padrão -> Criar Fluido
+   - ** DONE Carregar Dados a Partir de Arquivo (.dat) -> Carregar Dados do Poço e Fluido a Partir de Arquivo (.dat)
+   - ** DONE A opção 3: já deve voltar.
+   - ** DONE A opção voltar: não deve apresentar o "pressione enter"
+** Interface
+   - ** Na interface aparece:
+     - 1. Calcular Pressão Hidrostática (Fundo de poço)
+     - 2. Calcular Pressão Hidrostática em um Ponto do Poço
+     - 0. Voltar
+     - Após o cálculo, pergunta:
+       - "Gostaria de armazenar o valor (s/n)?", o que é muito chato, precisa de uma solução mais prática.
+   - ** Solução CLI:
+     - ** Opção 1: Criar um item "3. Salvar os dados calculados"
+       - Os atributos calculados devem fazer parte da classe a que pertencem.
+       - Eliminar a pergunta "Gostaria de armazenar o valor (s/n)?" e adicionar uma opção "3. Salvar os dados calculados".
+     - ** Opção 2: Criar uma classe `CConfiguracaoInterfaceCLI`
+       - `bool salvarDadosCalculados = true;` // set/get
+       - `bool carregarSalvarDadosDosArquivosAutomaticamente = true;` // set/get (arquivos padrões: `ArquivoPoco.dat`, `ResultadosSimulacaoPoco.dat`)
+       - Criar opção de salvar com outros nomes: `ArquivoPoco-12312NOME.dat`
+       - Criar opção de ler com outros nomes: `ArquivoPoco-12312NOME.dat`
+       - Arquivo: `nomeUltimoPoco.dat`, `ArquivoPoco-12312NOME.dat`
+       - No menu principal, acessar a classe `CConfiguracaoInterfaceCLI` e então definir os valores como true/false.
+** Solução Qt
+   - ** DONE Renomear doc para doc-v1
+   - ** DONE Criar doc-v2
+   - ** DONE Copiar arquivos de doc-v1
+   - ** DONE Copiar src-v1 para src-v2
+   - ** Adicionar a interface gráfica para os testes apresentados.
+   - ** Defender isso em TCC1.
+
 * TODO TCC2
-*** Tem de acidionar a parte 2 da disciplina de poço.
-*** 
+   - ** Tem de adicionar a parte 2 da disciplina de poço.
+
