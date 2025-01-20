@@ -24,6 +24,10 @@ protected:
     std::unique_ptr<CImpressao> impressao;
     std::unique_ptr<CInputUsuario> inputUsuario;
 
+    bool armazenarPropriedadesPoco;
+    bool armazenarHistoricoPressaoHidrostatica;
+    bool armazenarHistoricoPerdaCarga;
+
 
 public:
     // Construtor e destrutor
@@ -38,6 +42,7 @@ public:
     void MenuModeloNewtoniano();
     void MenuModeloBingham();
     void MenuModeloPotencia();
+    void MenuPreferencias();
     
 
     // Metodos auxiliares para configurar o poco e fluidos

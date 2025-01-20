@@ -199,6 +199,7 @@ void CSimuladorPoco::MenuPrincipal() {
                                       : "4. [X] Plotar Perfil Profundidade vs Densidade\n")
                   << (pocoConfigurado ? "5. Calcular Perda de Carga por Friccao\n"
                                       : "5. [X] Calcular Perda de Carga por Friccao\n")
+                  << "6. Configurar preferencias de armazenamento\n"
                   << "0. Sair\n\n";
 
         if (!pocoConfigurado)
@@ -215,6 +216,10 @@ void CSimuladorPoco::MenuPrincipal() {
             case 0:
                 std::cout << "Saindo...\n";
                 return;
+
+            case 6:
+                MenuPreferencias();
+                break;
 
             default:
                 if (!pocoConfigurado) {
@@ -240,6 +245,7 @@ void CSimuladorPoco::MenuPrincipal() {
                         case 5:
                             MenuPerdaDeCarga();
                             break;
+
 
                         default:
                             std::cout << "Opcao invalida! Tente novamente.\n";
@@ -591,4 +597,38 @@ void CSimuladorPoco::MenuModeloPotencia() {
         std::cout << "\nPressione Enter para continuar...";
         std::cin.ignore().get(); // Pausa ate pressionar Enter
     }
+}
+
+void CSimuladorPoco::MenuPreferencias() {
+    int escolha;
+    do {
+        std::cout << "\n=== Configuração da Interface CLI ===\n";
+
+        // Mostrar configuração atual
+        std::cout << "1. Armazenar propriedades do poco: " 
+                  << (armazenarPropriedadesPoco ? "True" : "False") << "\n";
+        std::cout << "2. Armazenar historico de presao hidroestatica do poco: " 
+                  << (armazenarHistoricoPressaoHidrostatica ? "True" : "False") << "\n";
+        std::cout << "3. Armazenar historico de perda de carga do poco: " 
+                  << (armazenarHistoricoPerdaCarga ? "True" : "False") << "\n";
+
+        std::cout << "\nEscolha a configuração para alternar (1, 2, 3) ou 0 para sair: ";
+        std::cin >> escolha;
+
+        if (escolha == 0) {
+            break;  // Sair do menu
+        }
+
+        // Verificar se a escolha é válida (1, 2 ou 3)
+        if (escolha == 1) {
+            armazenarPropriedadesPoco = !armazenarPropriedadesPoco;
+        } else if (escolha == 2) {
+            armazenarHistoricoPressaoHidrostatica = !armazenarHistoricoPressaoHidrostatica;
+        } else if (escolha == 3) {
+            armazenarHistoricoPerdaCarga = !armazenarHistoricoPerdaCarga;
+        } else {
+            std::cout << "Opção inválida. Tente novamente.\n";
+        }
+
+    } while (true);  // Continua até o usuário escolher sair
 }
