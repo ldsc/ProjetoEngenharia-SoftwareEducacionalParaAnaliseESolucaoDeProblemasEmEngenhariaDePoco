@@ -49,7 +49,6 @@ public:
     void ConfigurarPoco();
     void ConfigurarFluido();
     void ConfigurarPorArquivo(const std::string& arquivo);
-    void ImprimirResultados();
 
     // Metodos de simulacao
     void ExibirPropriedades();

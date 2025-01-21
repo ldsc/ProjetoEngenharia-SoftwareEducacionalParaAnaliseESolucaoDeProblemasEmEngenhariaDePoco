@@ -8,20 +8,20 @@
 ** DONE Referenciar as figuras.
 ** DONE Tirar pontos de figuras e tabelas.
 ** DONE Pode gerenciar o arquivo bibliografia.bib usando editor simples, ou o emacs (super power),  ou https://www.zotero.org/, ou https://www.mendeley.com/,.... tem varios.
-** TODO Tirar do titulo Software Software,
-** TODO Passar o corretor ortografico
-*** TODO imput? caculos? numero
-** TODO informar link para dados informados no RF-01
-** TODO rodar no linux!
-** TODO 2.2.2  Hidráulica de perfuração ou 2.2.3 Pressão Hidrostática - decidir até onde vai maiusculo Maiusculo
-** TODO fazer figura Figura 2.1
-** TODO adicionar CGnuplot na seção de classes
-** TODO Diagrama de máquina de estado ajustar classe CNOME
-** TODO Nota sendo mostrada
-** TODO 4.1 cli CG|nuplot grafica qcustmplot
-** TODO Figura 4.1: refazer, faça igual ao de pacotes; 
-** TODO para versao do TCC gere as bibliotecas separado
-** TODO Figura 5.1:
+** DONE Tirar do titulo Software Software,
+** DONE Passar o corretor ortografico
+*** DONE imput? caculos? numero
+** DONE informar link para dados informados no RF-01
+** DONE rodar no linux!
+** DONE 2.2.2  Hidráulica de perfuração ou 2.2.3 Pressão Hidrostática - decidir até onde vai maiusculo Maiusculo
+** DONE fazer figura Figura 2.1
+** DONE adicionar CGnuplot na seção de classes
+** DONE Diagrama de máquina de estado ajustar classe CNOME
+** DONE Nota sendo mostrada
+** DONE 4.1 cli CG|nuplot grafica qcustmplot
+** DONE Figura 4.1: refazer, faça igual ao de pacotes; 
+** DONE para versao do TCC gere as bibliotecas separado
+** DONE Figura 5.1:
 
 * Lista de correções (código):
 ** DONE cabecalho é atributo do simulador 
@@ -50,17 +50,16 @@ ComprimentoTrecho ;
 ** DONE Modificar Poco (flag para o usuario manter o valor)
 ** DONE Verificar entradas invalidas
 
-* TODO TCC1
-** CImpressao CRelatorioPoco ou algo do gênero
-   - Deve ter um nome que faça sentido e encapsule os atributos e métodos.
+*  TCC1
+** DONE CImpressao CRelatorioPoco ou algo do gênero (Deve ter um nome que faça sentido e encapsule os atributos e métodos).
 ** DONE Retirar necessidade de "enter" após atividade.
-** A saída de dados de fluido deve estar relacionada à classe CFLuido ou a uma classe que agregue fluidos, estando embutida no poço.
+** TODO A saída de dados de fluido deve estar relacionada à classe CFLuido ou a uma classe que agregue fluidos, estando embutida no poço.
 ** Entrada
    - ** DONE Adicionar Fluido - padrão -> Criar Fluido
    - ** DONE Carregar Dados a Partir de Arquivo (.dat) -> Carregar Dados do Poço e Fluido a Partir de Arquivo (.dat)
    - ** DONE A opção 3: já deve voltar.
    - ** DONE A opção voltar: não deve apresentar o "pressione enter"
-** Interface
+** DONE Interface
    - ** Na interface aparece:
      - 1. Calcular Pressão Hidrostática (Fundo de poço)
      - 2. Calcular Pressão Hidrostática em um Ponto do Poço
@@ -71,7 +70,7 @@ ComprimentoTrecho ;
      - ** Opção 1: Criar um item "3. Salvar os dados calculados"
        - Os atributos calculados devem fazer parte da classe a que pertencem.
        - Eliminar a pergunta "Gostaria de armazenar o valor (s/n)?" e adicionar uma opção "3. Salvar os dados calculados".
-     - ** Opção 2: Criar uma classe `CConfiguracaoInterfaceCLI`
+     - ** Opção 2: Criar uma classe `CConfiguracaoInterfaceCLI` (Foi adaptado essa opcao)
        - `bool salvarDadosCalculados = true;` // set/get
        - `bool carregarSalvarDadosDosArquivosAutomaticamente = true;` // set/get (arquivos padrões: `ArquivoPoco.dat`, `ResultadosSimulacaoPoco.dat`)
        - Criar opção de salvar com outros nomes: `ArquivoPoco-12312NOME.dat`

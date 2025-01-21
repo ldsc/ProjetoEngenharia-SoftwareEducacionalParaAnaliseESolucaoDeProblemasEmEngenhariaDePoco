@@ -340,7 +340,7 @@ void CSimuladorPoco::MenuPressaoHidrostatica() {
                 std::cout << "\nPressao Hidrostatica Total: " << poco->PressaoHidroestaticaTotal() << " psi\n";
 
                 texto = "O Valor da Pressao Hidrostatica: ";
-                if (armazenarHistoricoPressaoHidrostatica == true) relatorioPoco->ArmazenarValor(poco->NomePoco(), texto, poco->PressaoHidroestaticaTotal(), " psi");    
+                if (armazenarHistoricoPressaoHidrostatica) relatorioPoco->ArmazenarValor(poco->NomePoco(), texto, poco->PressaoHidroestaticaTotal(), " psi");    
 
                 break;
                 
@@ -349,7 +349,7 @@ void CSimuladorPoco::MenuPressaoHidrostatica() {
 
                 std::cout << "\nPressao Hidrostatica: " << poco->PressaoHidroestaticaNoPonto(profundidade) << " psi\n";
                 texto = "O Valor da Pressao Hidrostatica no ponto " + std::to_string(profundidade) + " ft: ";
-                if (armazenarHistoricoPressaoHidrostatica == true) relatorioPoco->ArmazenarValor(poco->NomePoco(), texto, poco->PressaoHidroestaticaTotal(), " psi"); 
+                if (armazenarHistoricoPressaoHidrostatica) relatorioPoco->ArmazenarValor(poco->NomePoco(), texto, poco->PressaoHidroestaticaTotal(), " psi"); 
                 
                 break;
             case 0:
@@ -432,7 +432,7 @@ void CSimuladorPoco::MenuModeloNewtoniano() {
                 }
 
                 texto = "O Valor da Perda de Friccao no Poco para o Modelo Newtoniano: ";
-                if (armazenarHistoricoPerdaCarga == true) relatorioPoco->ArmazenarValor(poco->NomePoco(),texto, modeloNewtoniano->FatorFriccaoPoco(), " psi/ft"); 
+                if (armazenarHistoricoPerdaCarga) relatorioPoco->ArmazenarValor(poco->NomePoco(),texto, modeloNewtoniano->FatorFriccaoPoco(), " psi/ft"); 
                 
                 break;
             case 2:
@@ -446,7 +446,7 @@ void CSimuladorPoco::MenuModeloNewtoniano() {
                 }
 
                 texto = "O Valor da Perda de Friccao no Anular para o Modelo Newtoniano: ";
-                if (armazenarHistoricoPerdaCarga == true) relatorioPoco->ArmazenarValor(poco->NomePoco(),texto, modeloNewtoniano->FatorFriccaoAnular(), " psi/ft");
+                if (armazenarHistoricoPerdaCarga) relatorioPoco->ArmazenarValor(poco->NomePoco(),texto, modeloNewtoniano->FatorFriccaoAnular(), " psi/ft");
                 
                 break;
             case 0:
@@ -505,7 +505,7 @@ void CSimuladorPoco::MenuModeloBingham() {
                 }
 
                 texto = "O Valor da Perda de Friccao no Poco para o Modelo Bingham: ";
-                if (armazenarHistoricoPerdaCarga == true) relatorioPoco->ArmazenarValor(poco->NomePoco(),texto, modeloBingham->FatorFriccaoPoco(), " psi/ft");
+                if (armazenarHistoricoPerdaCarga) relatorioPoco->ArmazenarValor(poco->NomePoco(),texto, modeloBingham->FatorFriccaoPoco(), " psi/ft");
 
                 break;
             case 2:
@@ -583,7 +583,7 @@ void CSimuladorPoco::MenuModeloPotencia() {
                 }
                 
                 texto = "O Valor da Perda de Friccao no Poco para o Modelo Potencia: ";
-                if (armazenarHistoricoPerdaCarga == true) relatorioPoco->ArmazenarValor(poco->NomePoco(),texto, modeloPotencia->FatorFriccaoPoco(), " psi/ft");
+                if (armazenarHistoricoPerdaCarga) relatorioPoco->ArmazenarValor(poco->NomePoco(),texto, modeloPotencia->FatorFriccaoPoco(), " psi/ft");
 
                 break;
             case 2:
@@ -602,7 +602,7 @@ void CSimuladorPoco::MenuModeloPotencia() {
                 }
 
                 texto = "O Valor da Perda de Friccao no Anular para o Modelo Potencia: ";
-                if (armazenarHistoricoPerdaCarga == true) relatorioPoco->ArmazenarValor(poco->NomePoco(),texto, modeloPotencia->FatorFriccaoAnular(), " psi/ft");
+                if (armazenarHistoricoPerdaCarga) relatorioPoco->ArmazenarValor(poco->NomePoco(),texto, modeloPotencia->FatorFriccaoAnular(), " psi/ft");
 
                 break;
             case 0:
