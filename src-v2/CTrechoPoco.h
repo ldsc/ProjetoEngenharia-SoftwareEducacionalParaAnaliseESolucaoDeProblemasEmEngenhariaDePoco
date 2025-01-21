@@ -27,7 +27,7 @@ public:
     void ProfundidadeInicial(double ProfundI) { profundidadeInicial = ProfundI; }
     void ProfundidadeFinal(double ProfundF) { profundidadeFinal = ProfundF; }
 
-    // Métodos
+    // Metodos
     double PressaoHidroestatica();
     double PressaoHidroestatica(double profund);
     double DensidadeEquivalente();

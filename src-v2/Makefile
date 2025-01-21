@@ -4,7 +4,7 @@ CXX = g++
 # Flags do compilador
 CXXFLAGS = -Wall -std=c++17 -O2
 
-# Diretório de saída
+# Diretorio de saida
 OUT_DIR = ..\test
 
 TARGET = $(OUT_DIR)/SoftwarePoco$(EXE)
@@ -18,7 +18,9 @@ SRC = main.cpp \
       CModeloReologico.cpp \
       CSimuladorPoco.cpp \
       CTrechoPoco.cpp \
-      CPoco.cpp 
+      CPoco.cpp \
+      CRelatorioPoco.cpp \
+      CInputUsuario.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 

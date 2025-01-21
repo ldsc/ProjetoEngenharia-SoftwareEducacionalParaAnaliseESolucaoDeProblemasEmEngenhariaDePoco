@@ -33,7 +33,7 @@ public:
     std::string FluxoPoco() const { return fluxoPoco; }
     std::string FluxoAnular() const { return fluxoAnular; }
 
-    //Métodos
+    //Metodos
     double DeterminarFatorFriccao(double re);
     double DeterminarReynoldsPoco(double densidade, double VMedioPoco, double diametroRevestimentoID, double viscosidade);
     double DeterminarReynoldsAnular(double densidade, double VMedioAnular, double diametroAnular, double viscosidade);
