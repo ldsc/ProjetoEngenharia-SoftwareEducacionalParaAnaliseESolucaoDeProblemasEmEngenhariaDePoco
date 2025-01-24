@@ -9,61 +9,35 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    ../CAuxiliar.cpp \
-    ../CFluido.cpp \
-    ../CGnuplot.cpp \
-    ../CInputUsuario.cpp \
-    ../CModeloBingham.cpp \
-    ../CModeloNewtoniano.cpp \
-    ../CModeloPotencia.cpp \
-    ../CModeloReologico.cpp \
-    ../CPoco.cpp \
-    ../CRelatorioPoco.cpp \
-    ../CSimuladorPoco.cpp \
-    ../CTrechoPoco.cpp \
-    ../main.cpp \
-    CAuxiliar.cpp \
     CFluido.cpp \
     CGnuplot.cpp \
-    CInputUsuario.cpp \
     CModeloBingham.cpp \
     CModeloNewtoniano.cpp \
     CModeloPotencia.cpp \
     CModeloReologico.cpp \
     CPoco.cpp \
     CRelatorioPoco.cpp \
+    CSimuladorPoco.cpp \
     CTrechoPoco.cpp \
-    main.cpp \
-    csimuladorpoco.cpp
+    Main.cpp \
+    janelaadicionarfluido.cpp
 
 HEADERS += \
-    ../CAuxiliar.h \
-    ../CFluido.h \
-    ../CGnuplot.h \
-    ../CInputUsuario.h \
-    ../CModeloBingham.h \
-    ../CModeloNewtoniano.h \
-    ../CModeloPotencia.h \
-    ../CModeloReologico.h \
-    ../CPoco.h \
-    ../CRelatorioPoco.h \
-    ../CSimuladorPoco.h \
-    ../CTrechoPoco.h \
-    CAuxiliar.h \
     CFluido.h \
     CGnuplot.h \
-    CInputUsuario.h \
     CModeloBingham.h \
     CModeloNewtoniano.h \
     CModeloPotencia.h \
     CModeloReologico.h \
     CPoco.h \
     CRelatorioPoco.h \
+    CSimuladorPoco.h \
     CTrechoPoco.h \
-    csimuladorpoco.h
+    janelaadicionarfluido.h
 
 FORMS += \
-    csimuladorpoco.ui
+    CSimuladorPoco.ui \
+    janelaadicionarfluido.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

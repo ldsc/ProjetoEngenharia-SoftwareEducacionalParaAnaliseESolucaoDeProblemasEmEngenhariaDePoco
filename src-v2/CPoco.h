@@ -54,6 +54,7 @@ public:
     double ViscosidadeEfetivaTotal() const;
     bool VerificarPreenchimentoColuna();
     void PlotarProfundidadePorDensidade();
+    void RemoverTrechoPoco(const std::string& nomeFluido);
 
 };
 

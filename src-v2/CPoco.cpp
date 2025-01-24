@@ -29,6 +29,18 @@ bool CPoco::AdicionarTrechoPoco(std::unique_ptr<CTrechoPoco> TrechoPoco) {
     }
 }
 
+void CPoco::RemoverTrechoPoco(const std::string& nomeFluido) {
+    for (auto it = trechos.begin(); it != trechos.end();) {
+        if ((*it)->Fluido()->Nome() == nomeFluido) {
+            double ProfundidadeFluido = (*it)->ProfundidadeFinal() - (*it)->ProfundidadeInicial();
+            it = trechos.erase(it); // Remove o trecho e atualiza o iterador
+            profundidadeOcupada -= ProfundidadeFluido;
+        } else {
+            ++it; // Apenas avança para o próximo
+        }
+    }
+}
+
 double CPoco::PressaoHidroestaticaTotal() const {
 
     double pressaoTotal = 0.0;
@@ -74,6 +86,7 @@ bool CPoco::VerificarPreenchimentoColuna() {
         return true; // coluna preenchida
     }
 }
+
 
 double CPoco::DensidadeEfetivaTotal() const {
     double densidadeTotal = 0.0;
