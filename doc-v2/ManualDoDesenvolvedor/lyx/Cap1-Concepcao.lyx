@@ -343,7 +343,7 @@ O software chamado de Software Educacional Para Análise e Solução de Problema
  foi desenvolvido utilizando uma linguagem de programação em C++ com paradigma de orientação a objeto,
  sendo capaz de calcular a pressão hidrostática em qualquer ponto do poço,
  calcular as propriedades médias dos fluidos que ocupam o poço como viscosidade e densidade,
- determinar o fluxo de escoamento podendo ser laminar ou turbulento e utilizar 3 modelos reológicos (modelo Newtoniano,
+ determinar o fluxo de escoamento podendo ser laminar ou turbulento e utilizar três modelos reológicos (modelo Newtoniano,
  modelo Plástico de Bingham e modelo Lei de Potencias) para calcular a queda de pressão provocada pela perda de carga friccional.
 \end_layout
 
@@ -527,7 +527,7 @@ especificação
 \end_layout
 
 \begin_layout Standard
-Deseja-se desenvolver um software com interface amigável que possibilite o usuário escolher de forma livre a funcionalidade de deseja utilizar naquele momento.
+O software desenvolvido com interface amigável possibilita o usuário escolher de forma livre a funcionalidade que deseja utilizar naquele momento.
  Os cálculos realizados pelo software se baseiam em equações desenvolvidas na disciplina de Engenharia de poço.
 \end_layout
 
@@ -539,7 +539,7 @@ Inicialmente o usuário precisara configurar as propriedades do poço,
 input
 \shape default
  individual das propriedades no terminal.
- Após configurar o poço o usuário poderá exibir as propriedades do poço,
+ Após configurar o poço o usuário poderá visualizar as propriedades do poço,
  calcular a pressão hidrostática no fundo do poço ou selecionar uma profundidade na qual essa pressão será calculada,
  plotar gráficos de perfis como o gráfico da profundidade pela densidade e por fim poderá calcular a perda de pressão devido a perda de carga por fricção.
 \end_layout
@@ -575,7 +575,7 @@ name "sec:Requisitos"
 \end_layout
 
 \begin_layout Subsection
-Requisitos funcionais
+Requisitos Funcionais
 \begin_inset Index idx
 range none
 pageformat default
@@ -872,7 +872,7 @@ O usuário poderá visualizar seus resultados em um gráfico.
 \end_layout
 
 \begin_layout Subsection
-Requisitos não funcionais
+Requisitos Não Funcionais
 \begin_inset Index idx
 range none
 pageformat default
@@ -1048,7 +1048,7 @@ RNF-04
 \begin_inset Text
 
 \begin_layout Plain Layout
-Apresentar interface em comados terminais.
+Apresentar interface gráfica construida com o Qt Framework
 \end_layout
 
 \end_inset
@@ -1062,7 +1062,7 @@ Apresentar interface em comados terminais.
 \end_layout
 
 \begin_layout Section
-Casos de uso
+Casos de Uso
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Casos-de-uso-Geral"

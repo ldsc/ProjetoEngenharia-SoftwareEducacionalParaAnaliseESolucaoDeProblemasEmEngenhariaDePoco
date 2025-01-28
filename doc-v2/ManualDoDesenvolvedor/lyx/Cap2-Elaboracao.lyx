@@ -167,7 +167,7 @@ Neste capítulo será apresentada a elaboração do simulador,
 \end_layout
 
 \begin_layout Section
-Análise de domínio
+Análise de Domínio
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Análise-de-domínio"
@@ -312,7 +312,7 @@ A modelagem gráfica é um componente vital em diversas áreas da engenharia,
 
 \end_deeper
 \begin_layout Section
-Formulação teórica
+Formulação Teórica
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Formulação-teórica"
@@ -323,7 +323,7 @@ name "sec:Formulação-teórica"
 \end_layout
 
 \begin_layout Subsection
-Termos e unidades
+Termos e Unidades
 \begin_inset Index idx
 range none
 pageformat default
@@ -740,7 +740,7 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \end_layout
 
 \begin_layout Subsection
-Hidráulica de perfuração
+Hidráulica de Perfuração
 \end_layout
 
 \begin_layout Standard
@@ -782,7 +782,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Subsection
-Pressão hidrostática
+Pressão Hidrostática
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Pressão-Hidrostática"
@@ -1121,7 +1121,7 @@ Onde
 \end_layout
 
 \begin_layout Subsection
-Pressão hidrostática em colunas com mais de um tipo de fluido
+Pressão Hidrostática em Colunas Com Mais de Um Tipo de Fluido
 \end_layout
 
 \begin_layout Standard
@@ -1223,7 +1223,7 @@ Onde
 \end_layout
 
 \begin_layout Subsection
-Densidade equivalente
+Densidade Equivalente
 \end_layout
 
 \begin_layout Standard
@@ -1248,7 +1248,7 @@ A densidade da lama equivalente sempre deve ser calculada utilizando uma profund
 \end_layout
 
 \begin_layout Subsection
-Modelos reológicos de fluidos de perfuração
+Modelos Reológicos de Fluidos de Perfuração
 \end_layout
 
 \begin_layout Standard
@@ -1695,7 +1695,7 @@ O parâmetro
 \end_layout
 
 \begin_layout Subsection
-Perda de pressão friccional em um tubo de perfuração
+Perda de Pressão Friccional em um Tubo de Perfuração
 \end_layout
 
 \begin_layout Standard
@@ -2011,7 +2011,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Subsection
-Perda de pressão friccional em um anular
+Perda de Pressão Friccional em um Anular
 \end_layout
 
 \begin_layout Standard
@@ -2272,7 +2272,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Section
-Identificação de pacotes – assuntos
+Identificação de Pacotes – Assuntos
 \end_layout
 
 \begin_layout Itemize
@@ -2308,7 +2308,7 @@ Pacote modelagem gráfica:
 \end_layout
 
 \begin_layout Section
-Diagrama de pacotes – assuntos
+Diagrama de Pacotes – Assuntos
 \begin_inset CommandInset label
 LatexCommand label
 name "sec: Diagrama de pacotes – assuntos"

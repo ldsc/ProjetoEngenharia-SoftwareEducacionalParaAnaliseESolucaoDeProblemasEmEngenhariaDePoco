@@ -1100,10 +1100,6 @@ UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE
 \end_inset
 
 LABORATÓRIO DE ENGENHARIA E EXPLORAÇÃO DE PETRÓLEO
-\begin_inset Newline newline
-\end_inset
-
-CENTRO DE CIÊNCIA E TECNOLOGIA
 \end_layout
 
 \begin_layout Standard
@@ -1125,36 +1121,6 @@ O título deve ser o mais claro possível,
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 5cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-SOFTWARE EDUCACIONAL PARA ANÁLISE
-\begin_inset Newline newline
-\end_inset
-
-E SOLUÇÃO DE PROBLEMAS EM ENGENHARIA DE POÇO
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 1cm*
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-TRABALHO DE CONCLUSÃO DE CURSO
-\end_layout
-
-\begin_layout Standard
 \begin_inset VSpace 3cm
 \end_inset
 
@@ -1165,31 +1131,49 @@ TRABALHO DE CONCLUSÃO DE CURSO
 \align center
 
 \size large
-Versão 1:
+DESENVOLVIMENTO DO SOFTWARE EDUCACIONAL PARA 
 \begin_inset Newline newline
 \end_inset
 
-NATHAN RANGEL MAGALHÃES
+ANÁLISE E SOLUÇÃO DE PROBLEMAS EM ENGENHARIA DE POÇO
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \align center
 
 \size large
-THAUAN FERREIRA BARBOSA;
-\begin_inset Newline newline
+TRABALHO DE CONCLUSÃO DE CURSO - PROJETO DE ENGENHARIA
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+Versão 1:
+ NATHAN RANGEL MAGALHÃES;
+ THAUAN FERREIRA BARBOSA;
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
 Versão 2:
-\begin_inset Newline newline
-\end_inset
-
-NATHAN RANGEL MAGALHÃES
-\begin_inset Newline newline
-\end_inset
-
-Prof.
- André Duarte Bueno
+ NATHAN RANGEL MAGALHÃES
 \end_layout
 
 \begin_layout Standard
@@ -1234,6 +1218,10 @@ Corrigir a data
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace 1cm*
+\end_inset
+
+
 \begin_inset Newpage newpage
 \end_inset
 
