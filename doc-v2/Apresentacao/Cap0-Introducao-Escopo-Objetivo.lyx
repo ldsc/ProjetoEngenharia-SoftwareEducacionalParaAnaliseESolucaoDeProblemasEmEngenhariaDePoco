@@ -1,0 +1,365 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children no
+\language brazilian
+\language_package auto
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\float_alignment class
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style apalike
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Introdução
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Introdução"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter
+\backslash
+space - Introdução}
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lfoot{Nathan Rangel Magalhães} 
+\backslash
+rfoot{
+\backslash
+today}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No presente projeto de engenharia desenvolve-se o Software Educacional para Análise e Solução de Problemas em Engenharia de Poço,
+ uma aplicação direcionada à engenharia de petróleo que adota o paradigma da orientação a objetos.
+ O software foi criado em resposta à necessidade dos alunos do curso de Engenharia de Exploração e Produção de Petróleo,
+ oferecendo uma solução analítica para testar conceitos fundamentais da disciplina de Engenharia de Poço,
+ como calcular a pressão hidrostática de um poço,
+ calcular a densidade média,
+ calcular a viscosidade média,
+ calcular a queda de pressão friccional tanto no tubo quando no anular utilizando diferentes modelos como o de fluidos newtonianos,
+ plástico de Bingham e lei de potências para fluxo turbulento e laminar.
+\end_layout
+
+\begin_layout Section
+Escopo do problema
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Escopo-do-Problema"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O desenvolvimento de um software para a disciplina de Engenharia de Poço surge como uma resposta as necessidades dos alunos em obter uma compreensão aprofundada dos conteúdos abordados em sala de aula.
+ Normalmente os estudos dos conceitos relacionados a disciplina são realizados por meio de exercícios teóricos,
+ esboços e análises manuais que dificultam a visualização e aplicação prática dos conceitos fundamentais.
+\end_layout
+
+\begin_layout Standard
+Com o objetivo de facilitar o aprendizado e proporcionar uma ferramenta acessível para os estudantes,
+ o software será capaz de realizar cálculos automatizados,
+ facilitando a interação com diferentes cenários e parâmetros.
+ Essa abordagem proporciona um aprendizado mais dinâmico e eficaz,
+ promovendo um ambiente de estudos mais produtivo e intuitivo.
+ O uso do software permitirá uma melhor compreensão dos processos envolvidos na Engenharia de Poços e contribuirá,
+ significativamente,
+ para a formação dos futuros engenheiros,
+ oferecendo uma ferramenta de apoio que utiliza cenários reais e reforçar os conhecimentos adquiridos em sala de aula.
+\end_layout
+
+\begin_layout Section
+Objetivos
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Objetivos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os objetivos deste projeto de engenharia são:
+\end_layout
+
+\begin_layout Itemize
+Objetivo geral:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Desenvolver um software capaz de analisar e calcular as principais equações que sustentam o princípio da disciplina de Engenharia de Poço,
+ concretizando o conhecimento teórico adquirido pelos alunos durante a disciplina.
+ Atualmente os estudo dos conceitos da disciplina são realizados por meio de exercícios teóricos,
+ esboços e análises manuais que dificultam a visualização e aplicação prática dos conceitos fundamentais.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Objetivos específicos:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Modelar física e matematicamente o problema,
+ incluindo a definição das propriedades a serem medidas.
+\end_layout
+
+\begin_layout Itemize
+Modelagem estática e dinâmica do software.
+\end_layout
+
+\begin_layout Itemize
+Calcular as propriedades hidrodinâmicas e reológicas do poço.
+\end_layout
+
+\begin_layout Itemize
+Realizar simulações para testes e validação do software.
+\end_layout
+
+\begin_layout Itemize
+Implementar manual simplificado de uso do software.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Metodologia utilizada
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Metodologia-utilizada"
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Metodologia utilizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para o desenvolvimento deste projeto,
+ adotamos a metodologia de engenharia de software apresentada pelo Prof.
+ André Bueno e disponibilizada no github,
+ a mesma foi complementada pelo estudo realizada durante o desenvolvimento do projeto,
+ com a coorientação do Prof.
+ Bruno José Vicente.
+ Essa metodologia,
+ centrada em ciclos de concepção e análise,
+ planejamento/detalhamento e construção/implementação,
+ é amplamente embasada na disciplina de Introdução a Projetos:
+ Metodologia Científica e Projeto de Softwares (LEP01582),
+ além disso toda a parte computacional envolvendo POO em C++ está embasada na disciplina Programação Orientada ao Objeto com C++ (LEP01447) oferecendo uma base sólida para a criação do simulador.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etapas para o desenvolvimento do software
+\shape italic
+ - projeto de engenharia
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Etapas para o desenvolvimento do software"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/EngenhariaSoftware-Geral.png
+	lyxscale 25
+	width 100text%
+	special height=0.85\textheight
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Apostila da disciplina "Programação Orientada a Objeto em C++" do professor André Duarte Bueno
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
