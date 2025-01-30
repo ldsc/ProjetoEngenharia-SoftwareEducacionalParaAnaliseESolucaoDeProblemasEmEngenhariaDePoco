@@ -174,26 +174,6 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter
-\backslash
-space - Concepção}  
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Concepção
 \begin_inset CommandInset label
@@ -222,111 +202,6 @@ Apresenta-se neste capítulo do projeto de engenharia a concepção,
  a especificação do sistema a ser modelado e desenvolvido.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-#O que é especificação?
-\end_layout
-
-\begin_layout Description
-Nota:
- os textos que explicam o que é especificação;
- diagrama caso uso;
- etc....;
- foram colocados apenas para que você se lembre do assunto;
- na versão final do seu trabalho estes texto explicativos feitos pelo professor devem ser retirados/apagados.
-\end_layout
-
-\begin_layout Plain Layout
-A primeira etapa do desenvolvimento de um sistema é a concepção,
- a definição de requisitos a serem satisfeitos e a especificação do sistema (descrição do objetivo e o que se espera do sistema a ser desenvolvido,
- o contexto da aplicação).
-\end_layout
-
-\begin_layout Plain Layout
-Na concepção ocorre a primeira reunião da equipe de desenvolvimento com os clientes,
- quando é feita a especificação do software.
- O cliente por meio das especificações e das entrevistas,
- passa para o analista idéias gerais de uso do sistema.
- Neste caso,
- o cliente é o professor da disciplina e os alunos os analistas/desenvolvedores.
-\end_layout
-
-\begin_layout Plain Layout
-O resultado da etapa de especificação é um conjunto formal de documentos e requisitos organizados pelo analista do sistema com apoio dos usuários.
- 
-\end_layout
-
-\begin_layout Plain Layout
-As 
-\shape italic
-especificações
-\shape default
- definem as características gerais do sistema,
- aquilo que ele deve realizar e não a forma como irá fazê-lo.
- Definem as necessidades a serem satisfeitas.
- Envolvem a seleção do tipo de interface,
- a forma de interação com o usuário;
- se vai ter uma ou múltiplas janelas;
- se o software vai imprimir seus resultados,
- o formato dos arquivos de disco;
- se vai existir um help e seu formato.
- Podem ser especificadas características de desempenho.
- O cliente define o que deve obrigatoriamente ser satisfeito e o que é opcional – isto é,
- tudo o que o sistema/software deve ser.
- 
-\end_layout
-
-\begin_layout Description
-Dica:
- a comunicação com o cliente pode ser melhorada com o uso de metáforas,
- como,
- por exemplo,
- a metáfora da "lixeira".
- 
-\end_layout
-
-\begin_layout Description
-NOTA
-\begin_inset space ~
-\end_inset
-
-IMPORTANTE:
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Plain Layout
-Como requisitos mínimos o software deve:
-\end_layout
-
-\begin_layout Plain Layout
-Solicitar dados ao usuário via terminal (teclado/tela);
-\end_layout
-
-\begin_layout Plain Layout
-Mostrar resultados na tela;
-\end_layout
-
-\begin_layout Plain Layout
-Ler dados de entrada e gerar dados de saída em arquivos de disco;
-\end_layout
-
-\begin_layout Plain Layout
-Plotar gráficos usando biblioteca externa CGnuplot (tem livro do gnuplot na biblioteca );
-\end_layout
-
-\end_deeper
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Nome do sistema/produto
 \begin_inset CommandInset label
@@ -339,16 +214,33 @@ name "sec: Nome do sistema/produto"
 \end_layout
 
 \begin_layout Standard
-O software chamado de Software Educacional Para Análise e Solução de Problemas em Engenharia de Poço,
- foi desenvolvido utilizando uma linguagem de programação em C++ com paradigma de orientação a objeto,
- sendo capaz de calcular a pressão hidrostática em qualquer ponto do poço,
- calcular as propriedades médias dos fluidos que ocupam o poço como viscosidade e densidade,
- determinar o fluxo de escoamento podendo ser laminar ou turbulento e utilizar três modelos reológicos (modelo Newtoniano,
- modelo Plástico de Bingham e modelo Lei de Potencias) para calcular a queda de pressão provocada pela perda de carga friccional.
+O Programa Educacional para Análise e Solução de Desafios em Engenharia de Poço foi criado em C++,
+ empregando o modelo de programação orientada a objetos e a estrutura Qt,
+ que facilita a criação de aplicações tanto gráficas quanto não gráficas.
 \end_layout
 
 \begin_layout Standard
-O software permite ao usuário a interação com gráficos e a armazenagem de informações na forma de arquivo PDF.
+Esse programa oferece várias funções,
+ como o cálculo da pressão hidrostática em qualquer ponto do poço e a análise das propriedades médias dos fluidos,
+ que inclui a viscosidade e a densidade.
+ Ademais,
+ possui a capacidade de detectar possíveis falhas nas entradas,
+ como volumes de fluido que superam a capacidade do poço ou propriedades que estão fora dos limites esperados.
+\end_layout
+
+\begin_layout Standard
+Uma função significativa é a identificação do tipo de escoamento,
+ que pode ser tanto laminar quanto turbulento.
+ O programa também integra três modelos reológicos—
+Newtoniano,
+ Plástico de Bingham e Lei das Potências—
+para avaliar a queda de pressão gerada pela perda de carga friccional.
+\end_layout
+
+\begin_layout Standard
+Além dessas funcionalidades,
+ o software possibilita a interação com gráficos e o armazenamento de dados em arquivos com a extensão .dat,
+ proporcionando uma experiência mais satisfatória para o usuário.
 \end_layout
 
 \begin_layout Standard
@@ -435,7 +327,7 @@ Componentes principais
 \begin_inset Text
 
 \begin_layout Plain Layout
-Banco de dados com métodos e propriedades da engenharia de poço.
+Banco de dados com métodos e propriedades da Engenharia de Poço.
  
 \end_layout
 
@@ -527,26 +419,30 @@ especificação
 \end_layout
 
 \begin_layout Standard
-O software desenvolvido com interface amigável possibilita o usuário escolher de forma livre a funcionalidade que deseja utilizar naquele momento.
- Os cálculos realizados pelo software se baseiam em equações desenvolvidas na disciplina de Engenharia de poço.
+O programa criado apresenta uma interface intuitiva que possibilita ao usuário selecionar livremente a função que deseja acessar em um determinado momento.
+ As operações realizadas pelo programa se fundamentam em fórmulas estabelecidas na área de Engenharia de Poço,
+ conforme a grade curricular de 2024/01 e o código LEP01353.
 \end_layout
 
 \begin_layout Standard
-Inicialmente o usuário precisara configurar as propriedades do poço,
- ação que pode ser feita de duas formas,
- tanto a partir da leitura de um arquivo .dat ou a partir do 
-\shape italic
-input
-\shape default
- individual das propriedades no terminal.
- Após configurar o poço o usuário poderá visualizar as propriedades do poço,
- calcular a pressão hidrostática no fundo do poço ou selecionar uma profundidade na qual essa pressão será calculada,
- plotar gráficos de perfis como o gráfico da profundidade pela densidade e por fim poderá calcular a perda de pressão devido a perda de carga por fricção.
+Primeiramente,
+ o usuário deverá definir as características do poço e adicionar os fluidos que nele estão presentes.
+ Essa ação pode ser feita de duas maneiras:
+ através da importação de um arquivo .dat ou pela entrada manual dos dados na tela principal do programa.
+ Após realizar essas configurações,
+ o usuário poderá observar as características do poço e,
+ a partir daí,
+ executar simulações pertinentes ao conteúdo da matéria.
 \end_layout
 
 \begin_layout Standard
-Ao iniciar o cálculo da perda de pressão é possível determinar o tipo de escoamento tanto no poço quando no anular,
- e para calcular a perda de pressão o usuário poderá selecionar entre três modelos reológicos,
+Dentre as opções oferecidas,
+ o software possibilita calcular a pressão hidrostática em um ponto determinado do poço,
+ criar gráficos de perfis,
+ como o gráfico de profundidade em relação à densidade,
+ além de determinar a perda de pressão resultante da perda de carga por fricção.
+ Este cálculo pode ser efetuado para o fluxo dentro do poço e/ou no anular,
+ levando em consideração três modelos reológicos disponíveis no programa:
  o modelo Newtoniano,
  o modelo de Plástico de Bingham e o modelo de Lei de Potências.
 \end_layout
@@ -574,6 +470,10 @@ name "sec:Requisitos"
  
 \end_layout
 
+\begin_layout Standard
+Apresenta-se a seguir os requisitos funcionais e não funcionais.
+\end_layout
+
 \begin_layout Subsection
 Requisitos Funcionais
 \begin_inset Index idx
@@ -599,16 +499,6 @@ name "subsec:Requisitos-funcionais"
 
 \begin_layout Standard
 Apresenta-se a seguir os requisitos funcionais
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-coloque aqueles que fazem sentido para seu sistema
-\end_layout
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -688,6 +578,45 @@ RF-02
 \begin_inset Text
 
 \begin_layout Plain Layout
+O usuário poderá carregar dados da propriedade para a simulação.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 O usuário deverá ter liberdade para alterar as propriedades reológicas do poço/fluido.
 \end_layout
 
@@ -718,7 +647,7 @@ O usuário deverá ter liberdade para alterar as propriedades reológicas do po�
 \begin_layout Plain Layout
 
 \series bold
-RF-03
+RF-04
 \end_layout
 
 \end_inset
@@ -745,9 +674,6 @@ Deve permitir a exportação de simulações.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -760,7 +686,7 @@ Deve permitir a exportação de simulações.
 \begin_layout Plain Layout
 
 \series bold
-RF-04
+RF-05
 \end_layout
 
 \end_inset
@@ -787,9 +713,45 @@ Deve permitir cenários de simulação baseado em diferentes modelos teóricos.
 \end_inset
 
 
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-06
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O usuário poderá comparar os resultados da simulação em diferentes modelos reológicos.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -802,7 +764,7 @@ Deve permitir cenários de simulação baseado em diferentes modelos teóricos.
 \begin_layout Plain Layout
 
 \series bold
-RF-05
+RF-07
 \end_layout
 
 \end_inset
@@ -841,7 +803,7 @@ O usuário deve ter liberdade para adicionar ou retirar simplificações das pre
 \begin_layout Plain Layout
 
 \series bold
-RF-06
+RF-08
 \end_layout
 
 \end_inset
@@ -936,9 +898,6 @@ Suas primeiras versões devem suportar os sistemas operacionais Linux e
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -960,11 +919,7 @@ RNF-02
 \begin_inset Text
 
 \begin_layout Plain Layout
-Plotagem de diferentes gráficos para representação do estudo analisado durante a simulação através do 
-\shape italic
-Gnuplot
-\shape default
-.
+A linguagem predominante a ser utilizada é C++.
 \end_layout
 
 \end_inset
@@ -982,9 +937,6 @@ Gnuplot
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -998,6 +950,45 @@ Gnuplot
 
 \series bold
 RNF-03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Os gráficos devem ser ferados usando a biblioteca QCustomPlot
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RNF-04
 \end_layout
 
 \end_inset
@@ -1024,9 +1015,6 @@ Possibilitar exportação dos estudos realizados em saída de texto.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1039,7 +1027,7 @@ Possibilitar exportação dos estudos realizados em saída de texto.
 \begin_layout Plain Layout
 
 \series bold
-RNF-04
+RNF-05
 \end_layout
 
 \end_inset
@@ -1062,7 +1050,7 @@ Apresentar interface gráfica construida com o Qt Framework
 \end_layout
 
 \begin_layout Section
-Casos de Uso
+Casos de Uso do Software
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Casos-de-uso-Geral"
@@ -1082,16 +1070,6 @@ Casos de uso
 \end_inset
 
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-do software
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1227,17 +1205,17 @@ Etapas:
 
 \begin_layout Plain Layout
 1.
- Determinar as propriedades do fluido
+ Adicionar propriedades do fluido
 \end_layout
 
 \begin_layout Plain Layout
 2.
- Determinar propriedades do poço
+ Adicionar propriedades do poço
 \end_layout
 
 \begin_layout Plain Layout
 3.
- Configurar diversos fluidos no poço
+ Incluir diferentes tipos de fluidos no poço
 \end_layout
 
 \begin_layout Plain Layout
@@ -1262,7 +1240,7 @@ Etapas:
 
 \begin_layout Plain Layout
 7.
- Salvar dados em arquivos .dat
+ Salvar dados em saida .dat
 \end_layout
 
 \end_inset

@@ -156,34 +156,11 @@ status open
 
 
 \backslash
-lfoot{Nathan Rangel Magalhães,
- Thauan Ferreira Barbosa} 
+lfoot{Nathan Rangel Magalhães} 
 \backslash
 rfoot{
 \backslash
 today}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Substitua "SeuNomeAqui" por seu nome e sobrenome
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Jamais retire o 
-\backslash
-today ele vai colocar data no material impresso
 \end_layout
 
 \end_inset
@@ -257,8 +234,10 @@ Objetivo geral:
 
 \begin_deeper
 \begin_layout Itemize
-Desenvolver um software capaz de analisar e calcular as principais equações que sustentam o princípio da Engenharia de Poço,
+Desenvolver um software capaz de analisar e calcular as principais equações que sustentam o princípio da disciplina de Engenharia de Poço,
  concretizando o conhecimento teórico adquirido pelos alunos durante a disciplina.
+ Atualmente os estudo dos conceitos da disciplina são realizados por meio de exercícios teóricos,
+ esboços e análises manuais que dificultam a visualização e aplicação prática dos conceitos fundamentais.
 \end_layout
 
 \end_deeper
@@ -320,7 +299,7 @@ Metodologia utilizada
 Para o desenvolvimento deste projeto,
  adotamos a metodologia de engenharia de software apresentada pelo Prof.
  André Bueno e disponibilizada no github,
- a mesma será complementada pelo estudo realizada durante o desenvolvimento do projeto,
+ a mesma foi complementada pelo estudo realizada durante o desenvolvimento do projeto,
  com a coorientação do Prof.
  Bruno José Vicente.
  Essa metodologia,
@@ -330,6 +309,56 @@ Para o desenvolvimento deste projeto,
  Metodologia Científica e Projeto de Softwares (LEP01582),
  além disso toda a parte computacional envolvendo POO em C++ está embasada na disciplina Programação Orientada ao Objeto com C++ (LEP01447) oferecendo uma base sólida para a criação do simulador.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etapas para o desenvolvimento do software
+\shape italic
+ - projeto de engenharia
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Etapas para o desenvolvimento do software"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/EngenhariaSoftware-Geral.png
+	lyxscale 25
+	width 100text%
+	special height=0.85\textheight
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Apostila da disciplina "Programação Orientada a Objeto em C++" do professor André Duarte Bueno
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
