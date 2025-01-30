@@ -116,26 +116,6 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter
-\backslash
-space - Elaboração}  
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Elaboração
 \begin_inset Index idx
@@ -178,12 +158,12 @@ name "sec:Análise-de-domínio"
 \end_layout
 
 \begin_layout Standard
-O tópico análise de domínio e uma parte fundamental da elaboração de um projeto,
- na qual se faz necessário entender e delimitar os conceitos principais para a construção do simulador.
+O tópico de análise de domínio é essencial na criação de um projeto,
+ pois é necessário compreender e definir os conceitos principais necessários para o desenvolvimento do simulador.
 \end_layout
 
 \begin_layout Standard
-O presente projeto está relacionado a 5 conceitos fundamentais:
+Este projeto está vinculado a cinco conceitos essenciais:
 \end_layout
 
 \begin_layout Enumerate
@@ -192,17 +172,21 @@ Mecânica dos fluidos:
 
 \begin_deeper
 \begin_layout Standard
-A mecânica dos fluidos,
- especialmente no contexto da engenharia de perfuração,
- envolve o estudo e o controle de como fluidos se comportam sob diferentes condições de pressão,
- velocidade e temperatura,
- além da interação com materiais sólidos (como cascalho e cimento).
- O sucesso na perfuração de poços de petróleo depende diretamente da capacidade de lidar com a dinâmica dos fluidos de perfuração,
- que são essenciais para estabilizar o poço,
- controlar pressões,
- remover cascalhos e cimentar o revestimento de forma eficiente.
- Nesse projeto iremos determinar as pressões de fluidos em duas condições de poço:
- quando a coluna e o fluido estão em repouso e quando fluidos são bombeados em uma coluna fixa.
+A Mecânica dos fluidos,
+ especialmente no que diz respeito à engenharia de perfuração,
+ envolve a análise e a regulação do comportamento dos líquidos sob várias condições de temperatura,
+ pressão e velocidade.
+ Isso ocorre em contextos que consideram a influência de composições sólidas,
+ como cascalho e cimento.
+ A competência na perfuração de poços de petróleo é,
+ sem dúvida,
+ uma das áreas onde a gestão eficaz da dinâmica dos fluidos se destaca.
+ Os líquidos utilizados para estabilizar as perfurações,
+ controlar as pressões,
+ remover o cascalho e aplicar o cimento têm um papel crucial nesse processo.
+ Neste trabalho,
+ Pode-se calcular as pressões dos fluidos em relação a uma condição padrão do poço:
+ o estado de repouso da coluna e do fluido.
 \end_layout
 
 \end_deeper
@@ -212,16 +196,17 @@ Mecânica das rochas:
 
 \begin_deeper
 \begin_layout Standard
-A mecânica das rochas é crucial na engenharia de perfuração porque lida com o comportamento e as propriedades das formações rochosas atravessadas pelo poço.
- Durante a perfuração,
- a interação entre as tensões in situ e as propriedades das rochas impacta diretamente a estabilidade do poço,
- a capacidade de perfurar com eficiência e a integridade do revestimento.
- Entender a mecânica das rochas ajuda a prever e mitigar problemas como o colapso do poço,
- fraturas indesejadas e falhas estruturais nas rochas.
- O comportamento das rochas sob compressão,
- cisalhamento,
- e outras tensões precisa ser cuidadosamente estudado para garantir que o poço permaneça estável,
- especialmente em formações frágeis ou propensas à fraturação.
+A mecânica das rochas é crucial para a engenharia de perfuração,
+ pois abrange como as formações rochosas se comportam e quais fatores as influenciam ao longo do poço.
+ A interação entre as tensões no local e as rochas durante a perfuração tem um impacto direto na estabilidade do poço,
+ na sua eficiência de produção e na eficácia do processo de perfuração,
+ além de afetar a integridade do revestimento.
+ É essencial entender a mecânica que regula o comportamento das rochas para prever e se preparar para os problemas potencialmente graves do poço,
+ como colapsos,
+ fraturas indesejadas e falhas.
+ A análise detalhada das rochas sob condições de compressão,
+ cisalhamento e outras tensões é fundamental para garantir o bom funcionamento e a segurança do poço,
+ especialmente quando lidamos com rochas frágeis ou propensas a fraturas.
 \end_layout
 
 \end_deeper
@@ -231,31 +216,16 @@ Equações analíticas:
 
 \begin_deeper
 \begin_layout Standard
-As equações analíticas desempenham um papel essencial na engenharia de perfuração,
- pois fornecem modelos matemáticos que permitem prever e controlar diversos parâmetros operacionais,
- como pressões,
- tensões,
- fluxo de fluidos e comportamento das rochas.
- O uso de equações analíticas permite aos engenheiros desenvolverem soluções precisas e rápidas para problemas complexos,
- sem a necessidade de depender exclusivamente de simulações numéricas.
- Na perfuração,
+Equações analíticas são fundamentais para a engenharia de perfuração e fornecem representações matemáticas para facilitar a previsão e o controle de aspectos operacionais como tensões,
+ transmissões de líquidos e dinâmica entre as rochas da área de operação.
+ A exploração dessas equações lhes permite aos engenheiros desenvolver ativamente soluções rápidas e precisas para desafios complexos sem depender somente de simulações numéricas.
+ A campo de perfuração,
  equações como a Lei de Darcy,
- para fluxo de fluidos em meios porosos,
- ou a equação de Bernoulli,
- para energia de fluxo em sistemas de fluidos,
- ajudam a modelar a circulação de lama de perfuração,
- prever perdas de fluido e estimar a pressão hidrostática necessária para manter a estabilidade do poço.
- Outro exemplo são as equações de Navier-Stokes,
- que são usadas para descrever o comportamento de fluidos complexos como os utilizados na lama de perfuração.
- Além disso,
- equações analíticas podem ser usadas para estimar as tensões nas paredes do poço,
- o que é essencial para prever fraturas ou falhas no revestimento,
- e calcular a pressão de poro,
- que deve ser cuidadosamente controlada para evitar 
-\shape italic
-blowouts
-\shape default
-.
+ usando a qual se modela o fluxo de líquidos em materiais porosos,
+ e a equação de Bernoulli,
+ quando se trata da energia do fluxo em sistemas líquidos,
+ são usadas para modelar a circulação de laminação – não só previsão de perdas de fluidos como calcular a pressão hidrostática necessária para estabilização do poço.
+ Alem disso eles também são mais valiosos porque podem calcular as tensões nas paredes do poço para poder antecipar fraturas ou falhas na camada parede e para determinar as pressões de poro para as quais se deve estar bem atento,.
 \end_layout
 
 \end_deeper
@@ -265,29 +235,28 @@ Programação:
 
 \begin_deeper
 \begin_layout Standard
-O paradigma de programação orientada a objetos (POO) é amplamente utilizado no desenvolvimento de grandes softwares,
- especialmente pela sua capacidade de organizar o código em estruturas modulares e reutilizáveis.
- POO se baseia em conceitos como classes,
+O conceito de programação orientada a objetos continua a se destacar nos grandes sistemas de desenvolvimento de software devido a capacidade de agrupar o código para objetos que podem ser reutilizados,
+ sendo esta uma das definições utilizadas para orientar a melhoria dos módulos de maneira mais simplificadora .
+ Fundado nas classes,
  objetos,
  herança,
  encapsulamento,
- polimorfismo e abstração,
- permitindo que os problemas sejam divididos em partes menores e mais gerenciáveis.
- Isso facilita a manutenção,
- evolução e escalabilidade de sistemas complexos,
- como os usados em engenharia de perfuração,
- simulações e gestão de dados de poços.
- C++ é uma das linguagens mais populares nesse paradigma,
- especialmente em áreas que exigem alto desempenho e controle eficiente de recursos,
- como a perfuração de poços e a simulação geológica.
- Além de suportar POO,
- o C++ é conhecido por sua rapidez,
- principalmente por permitir o gerenciamento manual de memória e por sua rica biblioteca padrão e bibliotecas de terceiros,
- como Qt (para interfaces gráficas) e 
-\shape italic
-Gnuplot
-\shape default
- (para gráficos científicos).
+ polimorfismo e abstração permite gerar pequenos problemas baseados nos problemas maiores que facilitam a prestação de assistência e a manutenção.
+ É uma facilitadora de manutenção,
+ ampliação e escalonamento para sistemas extensos,
+ como processadores de perfuração,
+ simulações e guarda-costas de poço,
+ baseada em C++ W.
+ pois é também uma popular utilização,
+ uma linguagem de computador que exige alta performance em perfuração e recursos de gerenciamento,
+ principalmente no processo de perfuração,
+ bem como uma geológica um .
+ principalmente proveedor do c++ se destaca pelas estruturas que são comuns,
+ uma vez que proporciona POO apenas como memória,
+ pois,
+ é a concepção baseada na seleção de C++ implementada por alguns sistemas de bibliotecas,
+ exemplo Qt para GUI e Gnuplot para uso de gráficos científicos.
+ 
 \end_layout
 
 \end_deeper
@@ -297,17 +266,20 @@ Modelagem Gráfica:
 
 \begin_deeper
 \begin_layout Standard
-A modelagem gráfica é um componente vital em diversas áreas da engenharia,
- especialmente em projetos de perfuração e exploração de petróleo,
- pois permite a visualização e análise de dados complexos de forma intuitiva e acessível.
- Através de representações gráficas,
- como gráficos 2D e 3D,
- mapas de subsuperfície,
- simulações visuais de poços e campos petrolíferos,
- os engenheiros podem tomar decisões mais informadas sobre a operação e planejamento.
- As bibliotecas gráficas como Qt (que integra facilmente com C++) são amplamente utilizadas para criar gráficos científicos e visualizações de dados complexos,
- como perfis de pressão,
- porosidade e velocidades de ondas P e S nas formações geológicas.
+A Modelagem Gráfico desempenha uma função fundamental em várias engenharias áreas,
+ sendo a aplicação para as atividades de perfuração e exploração de petróleo a mais significativa,
+ uma vez que cria meios icônicos e simples de compreensão e análise de informações complexas com o auxílio da exibição dos dados,
+ para o engenheiro,
+ por meio de gráficos 2D e 3D,
+ mapeamento subterrâneo,
+ e visualização de simulações de poço e reservatório,
+ isso ajuda a traçar decisões baseadas em operação e planejamento.
+ Criar tantos desses gráficos científicos e representações binárias complexos,
+ por exemplo,
+ perfis de pressão,
+ porosidade velocity,
+ velocidades de ondas P e S em formação geológica,
+ utilizar a API para fazer uso do idioma Qt uma interface eficiente de integração do C++.
 \end_layout
 
 \end_deeper
