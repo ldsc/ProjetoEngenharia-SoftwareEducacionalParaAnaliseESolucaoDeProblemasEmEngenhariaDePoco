@@ -33,6 +33,8 @@ private slots:
 
     void on_btnRemoverFluido_clicked();
 
+    void on_btnCalcularPressaoHidroestatica_clicked();
+
 private:
     Ui::CSimuladorPoco *ui;
     std::shared_ptr<CPoco> poco;

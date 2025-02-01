@@ -213,3 +213,13 @@ void CSimuladorPoco::on_btnRemoverFluido_clicked()
 }
 
 
+
+void CSimuladorPoco::on_btnCalcularPressaoHidroestatica_clicked()
+{
+    QString profundidadeStr = ui->editProfundidadePressaoHidroestatica->text();
+    double profundidade = profundidadeStr.toDouble();
+
+    ui->lbnPressaoHidroestatica->setText(QString::number(poco->PressaoHidroestaticaNoPonto(profundidade)));
+
+}
+
