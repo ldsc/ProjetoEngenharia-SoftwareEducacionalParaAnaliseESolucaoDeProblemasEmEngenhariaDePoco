@@ -3,15 +3,23 @@
 
 #include "CModeloReologico.h"
 
+#include <iostream>
+#include <fstream>
+#include <QApplication>
+#include <QFileDialog>
+#include <QString>
+#include <QMessageBox>
 
-class CModeloNewtoniano : public CModeloReologico { 
-
+class CModeloNewtoniano : public CModeloReologico {
 
 public:
     //Construtor
     CModeloNewtoniano() {}
     ~CModeloNewtoniano() {}
-    CModeloNewtoniano(CPoco* poco) : CModeloReologico(poco){}
+    CModeloNewtoniano(CPoco* poco) : CModeloReologico(poco){
+        DeterminarFluxoPoco();
+        DeterminarFluxoAnular();
+    }
 
     //Metodos
     std::string DeterminarFluxoPoco() override;

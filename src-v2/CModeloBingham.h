@@ -18,7 +18,10 @@ public:
     //Construtor
     CModeloBingham() {}
     ~CModeloBingham() {}
-    CModeloBingham(CPoco* poco) : CModeloReologico(poco){}
+    CModeloBingham(CPoco* poco) : CModeloReologico(poco){
+        DeterminarFluxoPoco();
+        DeterminarFluxoAnular();
+    }
 
     // Getters
     double PontoDeEscoamento() const { return pontoDeEscoamento; }

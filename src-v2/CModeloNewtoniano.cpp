@@ -8,7 +8,6 @@ std::string CModeloNewtoniano::DeterminarFluxoPoco() {
     DeterminarVelocidadeMediaPoco(poco->Vazao(), poco->DiametroRevestimentoID());
     DeterminarReynoldsPoco(poco->DensidadeEfetivaTotal(), vMediaPoco, poco->DiametroRevestimentoID(), poco->ViscosidadeEfetivaTotal());
     fluxoPoco = (reynoldsPoco <= 2100) ? "Laminar" : "Turbulento"; // Determinacao do fluxo
-
     return fluxoPoco;
 }
 

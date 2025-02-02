@@ -4,6 +4,8 @@
 
 #include "CModeloReologico.h"
 
+
+
 double CModeloReologico::DeterminarReynoldsPoco(double densidade, double VMedioPoco, double diametroRevestimentoID, double viscosidade) {
     reynoldsPoco = (928 * densidade * VMedioPoco * diametroRevestimentoID) / viscosidade;
     return reynoldsPoco;

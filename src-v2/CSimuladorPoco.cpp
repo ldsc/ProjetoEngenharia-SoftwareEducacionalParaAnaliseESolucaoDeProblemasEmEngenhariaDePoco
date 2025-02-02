@@ -223,3 +223,66 @@ void CSimuladorPoco::on_btnCalcularPressaoHidroestatica_clicked()
 
 }
 
+void CSimuladorPoco::on_btnCalcularModeloNewtonianoPoco_clicked()
+{
+    modeloNewtoniano = std::make_shared<CModeloNewtoniano>(poco.get());
+
+    ui->lbnVelocidadePocoNewtoniano->setText(QString::number(modeloNewtoniano->VMediaPoco()));
+    ui->lbnReynoldsPocoNewtoniano->setText(QString::number(modeloNewtoniano->ReynoldsPoco()));
+    ui->lbnTipoFluxoPocoNewtoniano->setText(QString::fromStdString(modeloNewtoniano->FluxoPoco()));
+    ui->lbnPerdaFriccionalPocoNewtoniano->setText(QString::number(modeloNewtoniano->CalcularPerdaPorFriccaoPoco()));
+}
+
+void CSimuladorPoco::on_btnCalcularModeloNewtonianoAnular_clicked()
+{
+    modeloNewtoniano = std::make_shared<CModeloNewtoniano>(poco.get());
+
+    ui->lbnVelocidadeAnularNewtoniano->setText(QString::number(modeloNewtoniano->VMediaAnular()));
+    ui->lbnReynoldsAnularNewtoniano->setText(QString::number(modeloNewtoniano->ReynoldsAnular()));
+    ui->lbnTipoFluxoAnularNewtoniano->setText(QString::fromStdString(modeloNewtoniano->FluxoAnular()));
+    ui->lbnPerdaFriccionalAnularNewtoniano->setText(QString::number(modeloNewtoniano->CalcularPerdaPorFriccaoAnular()));
+}
+
+
+
+
+
+void CSimuladorPoco::on_btnCalcularModeloBighamPoco_clicked()
+{
+    modeloBingham = std::make_shared<CModeloBingham>(poco.get());
+
+#include <QMessageBox>
+#include <QLineEdit>
+
+    if (ui->editPontoEscoamentoPoco->text().isEmpty() && ui->editViscosidadePlasticaPoco->text().isEmpty()) {
+        QMessageBox::warning(nullptr, "Aviso", "Preencha o Ponto de Escoamento e a Viscosidade Plástica.");
+    } else if (ui->editPontoEscoamentoPoco->text().isEmpty()) {
+        QMessageBox::warning(nullptr, "Aviso", "Preencha o Ponto de Escoamento.");
+    } else if (ui->editViscosidadePlasticaPoco->text().isEmpty()) {
+        QMessageBox::warning(nullptr, "Aviso", "Preencha a Viscosidade Plástica.");
+    } else {
+
+        double pontoDeEscoamento = ui->editPontoEscoamentoPoco->text().toDouble();
+        double viscosidadePlastica = ui->editViscosidadePlasticaPoco->text().toDouble();
+
+        modeloBingham->PontoDeEscoamento(pontoDeEscoamento);
+        modeloBingham->ViscosidadePlastica(viscosidadePlastica);
+
+        ui->lbnVelocidadePocoBigham->setText(QString::number(modeloBingham->VMediaPoco()));
+        ui->lbnReynoldsPocoBigham->setText(QString::number(modeloBingham->ReynoldsPoco()));
+        ui->lbnReynoldsHedstromPocoBigham->setText(QString::number(modeloBingham->ReynoldsHedstronPoco()));
+        ui->lbnReynoldsCriticoPocoBigham->setText(QString::number(modeloBingham->ReynoldsCriticoPoco()));
+        ui->lbnTipoFluxoPocoBigham->setText(QString::fromStdString(modeloBingham->FluxoPoco()));
+        ui->lbnPerdaFriccionalPocoBigham->setText(QString::number(modeloBingham->CalcularPerdaPorFriccaoPoco()));
+    }
+}
+
+//Informe o valor do pontoDeEscoamento [lbf/100 sq.ft]: 10
+    //Informe o valor da viscosidade Plastica [cP]: 500
+
+    //Velocidade no Poco: 1.28397 ft/s
+        //Reynolds no Poco: 145.714
+    //Reynolds Hedstrom no Poco: 643.355
+    //Reynolds Critico no Poco: 2225.82
+    //Tipo de Fluxo no Poco: Laminar
+    //Perda Friccional no Poco: 0.00271893 psi/ft

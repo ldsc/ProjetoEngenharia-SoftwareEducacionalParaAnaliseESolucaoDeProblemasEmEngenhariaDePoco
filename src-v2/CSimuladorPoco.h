@@ -35,9 +35,15 @@ private slots:
 
     void on_btnCalcularPressaoHidroestatica_clicked();
 
+    void on_btnCalcularModeloNewtonianoAnular_clicked();
+
+    void on_btnCalcularModeloNewtonianoPoco_clicked();
+
+    void on_btnCalcularModeloBighamPoco_clicked();
+
 private:
     Ui::CSimuladorPoco *ui;
-    std::shared_ptr<CPoco> poco;
+    std::shared_ptr<CPoco> poco = nullptr;
     std::shared_ptr<CTrechoPoco> trechoPoco = nullptr;
     std::shared_ptr<CFluido> fluido = nullptr;
     std::shared_ptr<CModeloNewtoniano> modeloNewtoniano = nullptr;

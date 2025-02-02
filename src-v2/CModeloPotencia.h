@@ -16,7 +16,10 @@ public:
     //Construtor
     CModeloPotencia() {}
     ~CModeloPotencia() {}
-    CModeloPotencia(CPoco* poco) : CModeloReologico(poco){}
+    CModeloPotencia(CPoco* poco) : CModeloReologico(poco){
+        DeterminarFluxoPoco();
+        DeterminarFluxoAnular();
+    }
 
     // Getters
     double ReynoldsCriticoPoco() const { return reynoldsCriticoPoco; }

@@ -13,8 +13,8 @@ protected:
     double reynoldsAnular = 0.0;
     double vMediaPoco = 0.0;
     double vMediaAnular = 0.0;
-    std::string fluxoPoco; 
-    std::string fluxoAnular; 
+    std::string fluxoPoco;
+    std::string fluxoAnular;
     CPoco* poco;
 
 public:
