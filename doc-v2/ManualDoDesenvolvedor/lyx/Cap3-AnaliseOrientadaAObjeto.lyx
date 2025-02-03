@@ -135,7 +135,7 @@ AOO
 
 \end_inset
 
- – análise orientada a objeto
+ – Análise Orientada a Objeto
 \begin_inset CommandInset label
 LatexCommand label
 name "chap:Análise Orientada a Objeto"
@@ -270,7 +270,7 @@ Fonte:
 \end_layout
 
 \begin_layout Subsection
-Dicionário de classes
+Dicionário de Classes
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Dicionário-de-classes"
@@ -290,7 +290,7 @@ O software é composto por um total de 10 classes:
 CSimuladorPoco:
  
 \series default
-Classe responsável por integrar todas as funcionalidades do simulador.
+Classe responsável por integrar todas as funcionalidades do simulador de interface Gráfica.
 \end_layout
 
 \begin_layout Itemize
@@ -357,29 +357,6 @@ CModeloPotencia:
 Classe responsável por calcular perda de pressão friccional para o modelo lei de potência.
 \end_layout
 
-\begin_layout Itemize
-
-\series bold
-CImpressao:
- 
-\series default
-Classe responsável por armazenar e salvar os resultados da simulação em um arquivo .dat.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-CGnuplot:
- 
-\series default
-Classe responsável por gerar gráficos utilizando a biblioteca 
-\shape italic
-Gnuplot
-\shape default
-,
- para visualização dos dados.
-\end_layout
-
 \begin_layout Standard
 O diagrama de classes é apresentado na Figura 
 \begin_inset CommandInset ref
@@ -400,7 +377,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Section
-Diagrama de sequência – eventos
+Diagrama de Sequência – Eventos
 \begin_inset Index idx
 range none
 pageformat default
@@ -412,7 +389,7 @@ Eventos
 
 \end_inset
 
- e mensagens
+ e Mensagens
 \begin_inset Index idx
 range none
 pageformat default
@@ -459,7 +436,7 @@ O diagrama de sequência enfatiza a troca de eventos e mensagens e sua ordem tem
 
 \shape italic
 \emph on
-Diagrama de sequência geral
+Diagrama de Sequência Geral
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec: Diagrama de sequência geral"
@@ -548,7 +525,7 @@ deve mostrar uma sequência geral
 \end_layout
 
 \begin_layout Section
-Diagrama de comunicação
+Diagrama de Comunicação
 \begin_inset Index idx
 range none
 pageformat default
@@ -560,7 +537,7 @@ comunicação
 
 \end_inset
 
- – colaboração
+ – Colaboração
 \begin_inset Index idx
 range none
 pageformat default
@@ -657,7 +634,7 @@ Fonte:
 \end_layout
 
 \begin_layout Section
-Diagrama de máquina de estado
+Diagrama de Máquina de Estado
 \begin_inset Index idx
 range none
 pageformat default
@@ -782,7 +759,7 @@ Fonte:
 \end_layout
 
 \begin_layout Section
-Diagrama de atividades
+Diagrama de Atividades
 \begin_inset CommandInset label
 LatexCommand label
 name "sec: Diagrama de atividades"
