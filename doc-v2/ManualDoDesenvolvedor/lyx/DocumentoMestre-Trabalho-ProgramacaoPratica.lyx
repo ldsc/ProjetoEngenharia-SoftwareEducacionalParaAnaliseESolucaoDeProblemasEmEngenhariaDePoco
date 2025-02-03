@@ -160,6 +160,30 @@ literal "true"
 
 \begin_layout Standard
 \align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap2-Elaboracao.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap3-AnaliseOrientadaAObjeto.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
 \begin_inset Note Note
 status open
 
