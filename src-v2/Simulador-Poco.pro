@@ -16,6 +16,7 @@ SOURCES += \
     CModeloPotencia.cpp \
     CModeloReologico.cpp \
     CPoco.cpp \
+    CPocoGraphicsView.cpp \
     CRelatorioPoco.cpp \
     CSimuladorPoco.cpp \
     CTrechoPoco.cpp \
@@ -30,6 +31,7 @@ HEADERS += \
     CModeloPotencia.h \
     CModeloReologico.h \
     CPoco.h \
+    CPocoGraphicsView.h \
     CRelatorioPoco.h \
     CSimuladorPoco.h \
     CTrechoPoco.h \

@@ -7,6 +7,7 @@
 #include "CModeloNewtoniano.h"
 #include "CModeloBingham.h"
 #include "CModeloPotencia.h"
+#include "CPocoGraphicsView.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

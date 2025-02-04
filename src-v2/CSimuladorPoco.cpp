@@ -14,6 +14,17 @@ CSimuladorPoco::CSimuladorPoco(QWidget *parent)
     , ui(new Ui::CSimuladorPoco)
 {
     ui->setupUi(this);
+    std::vector<SecaoPoco> secoes = {
+        {0.0f, 500.0f, 17.5f},
+        {500.0f, 1500.0f, 12.25f},
+        {1500.0f, 3000.0f, 8.5f}
+    };
+
+    // Chama a função desenharPoco no widget promovido
+    CPocoGraphicsView *pocoView = qobject_cast<CPocoGraphicsView*>(ui->graphicsView);
+    if (pocoView) {
+        pocoView->desenharPoco(secoes);
+    }
 }
 
 CSimuladorPoco::~CSimuladorPoco()
