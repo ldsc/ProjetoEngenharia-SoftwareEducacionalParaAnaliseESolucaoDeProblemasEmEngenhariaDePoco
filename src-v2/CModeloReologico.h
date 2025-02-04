@@ -35,10 +35,12 @@ public:
 
     //Metodos
     double DeterminarFatorFriccao(double re);
-    double DeterminarReynoldsPoco(double densidade, double VMedioPoco, double diametroRevestimentoID, double viscosidade);
-    double DeterminarReynoldsAnular(double densidade, double VMedioAnular, double diametroAnular, double viscosidade);
-    double DeterminarVelocidadeMediaPoco(double vazao, double diametroRevestimentoID);
-    double DeterminarVelocidadeMediaAnular(double vazao, double diametroPoco, double diametroRevestimentoOD);
+    double DeterminarReynoldsPoco();
+    double DeterminarReynoldsPoco(double viscosidade);
+    double DeterminarReynoldsAnular();
+    double DeterminarReynoldsAnular(double viscosidade);
+    double DeterminarVelocidadeMediaPoco();
+    double DeterminarVelocidadeMediaAnular();
     virtual std::string DeterminarFluxoPoco() = 0;
     virtual std::string DeterminarFluxoAnular() = 0;
     virtual double CalcularPerdaPorFriccaoPoco() = 0;

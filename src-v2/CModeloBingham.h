@@ -37,7 +37,7 @@ public:
     //Metodos
     
     double DeterminarReynoldsCritico(double hedstron);
-    double DeterminarReynoldsHedstronPoco(double densidade, double pontoDeEscoamento, double diametroRevestimentoID, double viscosidade);
+    double DeterminarReynoldsHedstronPoco();
     double DeterminarReynoldsHedstronAnular(double densidade, double pontoDeEscoamento, double diametroAnular, double viscosidade);
     std::string DeterminarFluxoPoco() override;
     std::string DeterminarFluxoAnular() override;

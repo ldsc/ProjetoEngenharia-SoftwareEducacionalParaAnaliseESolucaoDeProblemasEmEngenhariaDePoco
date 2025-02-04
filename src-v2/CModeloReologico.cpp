@@ -6,23 +6,33 @@
 
 
 
-double CModeloReologico::DeterminarReynoldsPoco(double densidade, double VMedioPoco, double diametroRevestimentoID, double viscosidade) {
-    reynoldsPoco = (928 * densidade * VMedioPoco * diametroRevestimentoID) / viscosidade;
+double CModeloReologico::DeterminarReynoldsPoco() {
+    reynoldsPoco = (928 * poco->DensidadeEfetivaTotal() * vMediaPoco * poco->DiametroRevestimentoID()) / poco->ViscosidadeEfetivaTotal();
     return reynoldsPoco;
 }
 
-double CModeloReologico::DeterminarReynoldsAnular(double densidade, double VMedioAnular, double diametroAnular, double viscosidade){
-    reynoldsAnular = (757 * densidade * VMedioAnular * diametroAnular) / viscosidade;
+double CModeloReologico::DeterminarReynoldsPoco(double viscosidade) {
+    reynoldsPoco = (928 * poco->DensidadeEfetivaTotal() * vMediaPoco * poco->DiametroRevestimentoID()) / viscosidade;
+    return reynoldsPoco;
+}
+
+double CModeloReologico::DeterminarReynoldsAnular(){
+    reynoldsAnular = (757 * poco->DensidadeEfetivaTotal() * vMediaAnular * poco->DiametroPoco() - poco->DiametroRevestimentoOD()) / poco->ViscosidadeEfetivaTotal();
     return reynoldsAnular;
 }
 
-double CModeloReologico::DeterminarVelocidadeMediaPoco(double vazao, double diametroRevestimentoID){
-    vMediaPoco = vazao / (2.448 * std::pow(diametroRevestimentoID, 2));
+double CModeloReologico::DeterminarReynoldsAnular(double viscosidade){
+    reynoldsAnular = (757 * poco->DensidadeEfetivaTotal() * vMediaAnular * poco->DiametroPoco() - poco->DiametroRevestimentoOD()) / viscosidade;
+    return reynoldsAnular;
+}
+
+double CModeloReologico::DeterminarVelocidadeMediaPoco(){
+    vMediaPoco = poco->Vazao() / (2.448 * std::pow(poco->DiametroRevestimentoID(), 2));
     return vMediaPoco;
 }
 
-double CModeloReologico::DeterminarVelocidadeMediaAnular(double vazao, double diametroPoco, double diametroRevestimentoOD){
-    vMediaAnular = vazao / (2.448 * (std::pow(diametroPoco, 2) - std::pow(diametroRevestimentoOD, 2)));
+double CModeloReologico::DeterminarVelocidadeMediaAnular(){
+    vMediaAnular = poco->Vazao() / (2.448 * (std::pow(poco->DiametroPoco(), 2) - std::pow(poco->DiametroRevestimentoOD(), 2)));
     return vMediaAnular;
 }
 

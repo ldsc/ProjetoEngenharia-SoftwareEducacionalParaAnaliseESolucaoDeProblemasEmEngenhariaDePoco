@@ -38,8 +38,8 @@ public:
     
     //Metodos
     double DeterminarReynoldsCritico(double Reynolds);
-    double DeterminarReynoldsPoco(double densidade, double VMedioPoco, double diametroRevestimentoID, double indiceDeConsistencia, double indiceDeComportamento);
-    double DeterminarReynoldsAnular(double densidade, double VMedioPoco, double diametroAnular, double indiceDeConsistencia, double indiceDeComportamento);
+    double DeterminarReynoldsPoco();
+    double DeterminarReynoldsAnular();
     std::string DeterminarFluxoPoco() override;
     std::string DeterminarFluxoAnular() override;
     double CalcularPerdaPorFriccaoPoco() override;

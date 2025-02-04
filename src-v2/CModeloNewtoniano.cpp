@@ -5,7 +5,7 @@
 // Funcao para determinar o tipo de fluxo no poco
 std::string CModeloNewtoniano::DeterminarFluxoPoco() {
 
-    DeterminarVelocidadeMediaPoco(poco->Vazao(), poco->DiametroRevestimentoID());
+    DeterminarVelocidadeMediaPoco();
     DeterminarReynoldsPoco(poco->DensidadeEfetivaTotal(), vMediaPoco, poco->DiametroRevestimentoID(), poco->ViscosidadeEfetivaTotal());
     fluxoPoco = (reynoldsPoco <= 2100) ? "Laminar" : "Turbulento"; // Determinacao do fluxo
     return fluxoPoco;
@@ -14,10 +14,8 @@ std::string CModeloNewtoniano::DeterminarFluxoPoco() {
 // Funcao para determinar o tipo de fluxo no espaco anular
 std::string CModeloNewtoniano::DeterminarFluxoAnular() {
 
-    double diametroAnular = poco->DiametroPoco() - poco->DiametroRevestimentoOD();
-
-    DeterminarVelocidadeMediaAnular(poco->Vazao(), poco->DiametroPoco(), poco->DiametroRevestimentoOD());
-    DeterminarReynoldsAnular(poco->DensidadeEfetivaTotal(), vMediaAnular, diametroAnular, poco->ViscosidadeEfetivaTotal());
+    DeterminarVelocidadeMediaAnular();
+    DeterminarReynoldsAnular();
     this->fluxoAnular = (reynoldsAnular <= 2100) ? "Laminar" : "Turbulento"; // Determinacao do fluxo
 
     return fluxoAnular;

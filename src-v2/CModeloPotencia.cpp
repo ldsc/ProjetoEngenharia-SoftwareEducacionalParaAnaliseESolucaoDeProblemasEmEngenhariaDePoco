@@ -7,8 +7,8 @@ double CModeloPotencia::DeterminarReynoldsCritico(double Reynolds) {
     return 0.0;
 }
 
-double CModeloPotencia::DeterminarReynoldsPoco(double densidade, double VMedioPoco, double diametroRevestimentoID, double indiceDeConsistencia, double indiceDeComportamento) {
-    reynoldsPoco = ((89100 * densidade * std::pow(VMedioPoco, 2-indiceDeComportamento)) / indiceDeConsistencia) * (std::pow((0.0416 * diametroRevestimentoID)/(3+(1/indiceDeComportamento)),indiceDeComportamento));
+double CModeloPotencia::DeterminarReynoldsPoco() {
+    reynoldsPoco = ((89100 * poco->DensidadeEfetivaTotal() * std::pow(vMediaPoco, 2-indiceDeComportamento)) / indiceDeConsistencia) * (std::pow((0.0416 * poco->DiametroRevestimentoID())/(3+(1/indiceDeComportamento)),indiceDeComportamento));
     
     if (indiceDeComportamento < 0.4){
         reynoldsCriticoPoco = DeterminarReynoldsCritico(reynoldsPoco);
@@ -16,8 +16,8 @@ double CModeloPotencia::DeterminarReynoldsPoco(double densidade, double VMedioPo
     return reynoldsPoco;
 }
 
-double CModeloPotencia::DeterminarReynoldsAnular(double densidade, double VMedioPoco, double diametroAnular, double indiceDeConsistencia, double indiceDeComportamento) {
-    reynoldsAnular = ((109000 * densidade * std::pow(VMedioPoco, 2-indiceDeComportamento)) / indiceDeConsistencia) * (std::pow((0.0208 * diametroAnular)/(2+(1/indiceDeComportamento)),indiceDeComportamento));
+double CModeloPotencia::DeterminarReynoldsAnular() {
+    reynoldsAnular = ((109000 * poco->DensidadeEfetivaTotal() * std::pow(vMediaAnular, 2-indiceDeComportamento)) / indiceDeConsistencia) * (std::pow((0.0208 * poco->DiametroPoco() - poco->DiametroRevestimentoOD())/(2+(1/indiceDeComportamento)),indiceDeComportamento));
     
     if (indiceDeComportamento < 0.4){
         reynoldsCriticoAnular = DeterminarReynoldsCritico(reynoldsAnular);
@@ -29,8 +29,8 @@ double CModeloPotencia::DeterminarReynoldsAnular(double densidade, double VMedio
 // Funcao para determinar o tipo de fluxo no poco
 std::string CModeloPotencia::DeterminarFluxoPoco() {
 
-    vMediaPoco = DeterminarVelocidadeMediaPoco(poco->Vazao(), poco->DiametroRevestimentoID());
-    reynoldsPoco = DeterminarReynoldsPoco(poco->DensidadeEfetivaTotal(), vMediaPoco, poco->DiametroRevestimentoID(), indiceDeConsistencia, indiceDeComportamento);
+    vMediaPoco = DeterminarVelocidadeMediaPoco();
+    reynoldsPoco = DeterminarReynoldsPoco();
 
     fluxoPoco = (reynoldsPoco <= reynoldsCriticoPoco) ? "Laminar" : "Turbulento"; // Determinacao do fluxo
     return fluxoPoco;
@@ -40,8 +40,8 @@ std::string CModeloPotencia::DeterminarFluxoPoco() {
 std::string CModeloPotencia::DeterminarFluxoAnular() {
 
     double diametroAnular = poco->DiametroPoco() - poco->DiametroRevestimentoOD();
-    vMediaAnular = DeterminarVelocidadeMediaAnular(poco->Vazao(), poco->DiametroPoco(), poco->DiametroRevestimentoOD());
-    reynoldsAnular = DeterminarReynoldsAnular(poco->DensidadeEfetivaTotal(), vMediaAnular, diametroAnular, indiceDeConsistencia, indiceDeComportamento);
+    vMediaAnular = DeterminarVelocidadeMediaAnular();
+    reynoldsAnular = DeterminarReynoldsAnular();
 
     fluxoAnular = (reynoldsAnular <= reynoldsCriticoAnular) ? "Laminar" : "Turbulento"; // Determinacao do fluxo
     return fluxoAnular;

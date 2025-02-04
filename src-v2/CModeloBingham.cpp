@@ -39,22 +39,22 @@ double CModeloBingham::DeterminarReynoldsCritico(double hedstron) {
     return ((1 - ((4.0 / 3.0) * y) + ((1.0 / 3.0) * std::pow(y, 4))) * hedstron) / (8 * y);
 }
 
-double CModeloBingham::DeterminarReynoldsHedstronPoco(double densidade, double pontoDeEscoamento, double diametroRevestimentoID, double viscosidade) {
+double CModeloBingham::DeterminarReynoldsHedstronPoco() {
     DeterminarReynoldsCritico(reynoldsHedstronPoco);
-    return (37100 * densidade * pontoDeEscoamento * std::pow(diametroRevestimentoID, 2))/ (std::pow(viscosidade, 2));
+    return (37100 * poco->DensidadeEfetivaTotal() * pontoDeEscoamento * std::pow(poco->DiametroRevestimentoID(), 2))/ (std::pow(viscosidadePlastica, 2));
 }
 
-double CModeloBingham::DeterminarReynoldsHedstronAnular(double densidade, double pontoDeEscoamento, double diametroAnular, double viscosidade) {
+double CModeloBingham::DeterminarReynoldsHedstronAnular() {
     reynoldsCriticoAnular = DeterminarReynoldsCritico(reynoldsHedstronAnular);
-    return (24700 * densidade * pontoDeEscoamento * std::pow(diametroAnular, 2))/ (std::pow(viscosidade, 2));
+    return (24700 * poco->DensidadeEfetivaTotal() * pontoDeEscoamento * std::pow(poco->DiametroPoco() - poco->DiametroRevestimentoOD(), 2))/ (std::pow(viscosidadePlastica, 2));
 }
 // Funcaoo para determinar o tipo de fluxo no poco
 std::string CModeloBingham::DeterminarFluxoPoco() {
 
-    DeterminarVelocidadeMediaPoco(poco->Vazao(), poco->DiametroRevestimentoID());
-    DeterminarReynoldsPoco(poco->DensidadeEfetivaTotal(), vMediaPoco, poco->DiametroRevestimentoID(), viscosidadePlastica);
+    DeterminarVelocidadeMediaPoco();
+    DeterminarReynoldsPoco(viscosidadePlastica);
     
-    DeterminarReynoldsHedstronPoco(poco->DensidadeEfetivaTotal(), pontoDeEscoamento, poco->DiametroRevestimentoID(), viscosidadePlastica);
+    DeterminarReynoldsHedstronPoco();
 
     fluxoPoco = (reynoldsPoco <= reynoldsCriticoPoco) ? "Laminar" : "Turbulento"; // Determinacao do fluxo
 
@@ -69,11 +69,9 @@ std::string CModeloBingham::DeterminarFluxoPoco() {
 // Funcao para determinar o tipo de fluxo no espaco anular
 std::string CModeloBingham::DeterminarFluxoAnular() {
 
-    double diametroAnular = poco->DiametroPoco() - poco->DiametroRevestimentoOD();
-
-    DeterminarVelocidadeMediaAnular(poco->Vazao(), poco->DiametroPoco(), poco->DiametroRevestimentoOD());
-    DeterminarReynoldsAnular(poco->DensidadeEfetivaTotal(), vMediaAnular, diametroAnular, viscosidadePlastica);
-    DeterminarReynoldsHedstronAnular(poco->DensidadeEfetivaTotal(), pontoDeEscoamento, diametroAnular, viscosidadePlastica);
+    DeterminarVelocidadeMediaAnular();
+    DeterminarReynoldsAnular(viscosidadePlastica);
+    DeterminarReynoldsHedstronAnular();
 
     fluxoAnular = (reynoldsAnular <= reynoldsCriticoAnular) ? "Laminar" : "Turbulento"; // Determinacao do fluxo
     return fluxoAnular;
