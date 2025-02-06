@@ -16,7 +16,7 @@ public:
     //Construtor
     CModeloPotencia() {}
     ~CModeloPotencia() {}
-    CModeloPotencia(CPoco* poco) : CModeloReologico(poco){
+    CModeloPotencia(CPoco* poco, double indiceDeConsistencia) : CModeloReologico(poco), indiceDeConsistencia(indiceDeConsistencia){
         DeterminarFluxoPoco();
         DeterminarFluxoAnular();
     }

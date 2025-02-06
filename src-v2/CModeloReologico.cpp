@@ -5,7 +5,6 @@
 #include "CModeloReologico.h"
 
 
-
 double CModeloReologico::DeterminarReynoldsPoco() {
     reynoldsPoco = (928 * poco->DensidadeEfetivaTotal() * vMediaPoco * poco->DiametroRevestimentoID()) / poco->ViscosidadeEfetivaTotal();
     return reynoldsPoco;
@@ -13,16 +12,17 @@ double CModeloReologico::DeterminarReynoldsPoco() {
 
 double CModeloReologico::DeterminarReynoldsPoco(double viscosidade) {
     reynoldsPoco = (928 * poco->DensidadeEfetivaTotal() * vMediaPoco * poco->DiametroRevestimentoID()) / viscosidade;
+
     return reynoldsPoco;
 }
 
 double CModeloReologico::DeterminarReynoldsAnular(){
-    reynoldsAnular = (757 * poco->DensidadeEfetivaTotal() * vMediaAnular * poco->DiametroPoco() - poco->DiametroRevestimentoOD()) / poco->ViscosidadeEfetivaTotal();
+    reynoldsAnular = (757 * poco->DensidadeEfetivaTotal() * vMediaAnular * (poco->DiametroPoco() - poco->DiametroRevestimentoOD())) / poco->ViscosidadeEfetivaTotal();
     return reynoldsAnular;
 }
 
 double CModeloReologico::DeterminarReynoldsAnular(double viscosidade){
-    reynoldsAnular = (757 * poco->DensidadeEfetivaTotal() * vMediaAnular * poco->DiametroPoco() - poco->DiametroRevestimentoOD()) / viscosidade;
+    reynoldsAnular = (757 * poco->DensidadeEfetivaTotal() * vMediaAnular * (poco->DiametroPoco() - poco->DiametroRevestimentoOD())) / viscosidade;
     return reynoldsAnular;
 }
 

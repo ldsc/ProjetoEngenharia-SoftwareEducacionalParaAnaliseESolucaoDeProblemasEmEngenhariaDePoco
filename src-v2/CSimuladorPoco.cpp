@@ -260,11 +260,6 @@ void CSimuladorPoco::on_btnCalcularModeloNewtonianoAnular_clicked()
 
 void CSimuladorPoco::on_btnCalcularModeloBighamPoco_clicked()
 {
-    modeloBingham = std::make_shared<CModeloBingham>(poco.get());
-
-#include <QMessageBox>
-#include <QLineEdit>
-
     if (ui->editPontoEscoamentoPoco->text().isEmpty() && ui->editViscosidadePlasticaPoco->text().isEmpty()) {
         QMessageBox::warning(nullptr, "Aviso", "Preencha o Ponto de Escoamento e a Viscosidade Plástica.");
     } else if (ui->editPontoEscoamentoPoco->text().isEmpty()) {
@@ -273,11 +268,10 @@ void CSimuladorPoco::on_btnCalcularModeloBighamPoco_clicked()
         QMessageBox::warning(nullptr, "Aviso", "Preencha a Viscosidade Plástica.");
     } else {
 
-        double pontoDeEscoamento = ui->editPontoEscoamentoPoco->text().toDouble();
+        double pontoEscoamento = ui->editPontoEscoamentoPoco->text().toDouble();
         double viscosidadePlastica = ui->editViscosidadePlasticaPoco->text().toDouble();
 
-        modeloBingham->PontoDeEscoamento(pontoDeEscoamento);
-        modeloBingham->ViscosidadePlastica(viscosidadePlastica);
+        modeloBingham = std::make_shared<CModeloBingham>(poco.get(), viscosidadePlastica, pontoEscoamento);
 
         ui->lbnVelocidadePocoBigham->setText(QString::number(modeloBingham->VMediaPoco()));
         ui->lbnReynoldsPocoBigham->setText(QString::number(modeloBingham->ReynoldsPoco()));
@@ -297,3 +291,66 @@ void CSimuladorPoco::on_btnCalcularModeloBighamPoco_clicked()
     //Reynolds Critico no Poco: 2225.82
     //Tipo de Fluxo no Poco: Laminar
     //Perda Friccional no Poco: 0.00271893 psi/ft
+
+void CSimuladorPoco::on_btnCalcularModeloBighamAnular_clicked()
+{
+    if (ui->editPontoEscoamentoAnular->text().isEmpty() && ui->editViscosidadePlasticaAnular->text().isEmpty()) {
+        QMessageBox::warning(nullptr, "Aviso", "Preencha o Ponto de Escoamento e a Viscosidade Plástica.");
+    } else if (ui->editPontoEscoamentoAnular->text().isEmpty()) {
+        QMessageBox::warning(nullptr, "Aviso", "Preencha o Ponto de Escoamento.");
+    } else if (ui->editViscosidadePlasticaAnular->text().isEmpty()) {
+        QMessageBox::warning(nullptr, "Aviso", "Preencha a Viscosidade Plástica.");
+    } else {
+
+        double pontoEscoamento = ui->editPontoEscoamentoAnular->text().toDouble();
+        double viscosidadePlastica = ui->editViscosidadePlasticaAnular->text().toDouble();
+
+        modeloBingham = std::make_shared<CModeloBingham>(poco.get(), viscosidadePlastica, pontoEscoamento);
+
+        ui->lbnVelocidadeAnularBigham->setText(QString::number(modeloBingham->VMediaAnular()));
+        ui->lbnReynoldsAnularBigham->setText(QString::number(modeloBingham->ReynoldsAnular()));
+        ui->lbnReynoldsHedstromAnularBigham->setText(QString::number(modeloBingham->ReynoldsHedstronAnular()));
+        ui->lbnReynoldsCriticoAnularBigham->setText(QString::number(modeloBingham->ReynoldsCriticoAnular()));
+        ui->lbnTipoFluxoAnularBigham->setText(QString::fromStdString(modeloBingham->FluxoAnular()));
+        ui->lbnPerdaFriccionalAnularBigham->setText(QString::number(modeloBingham->CalcularPerdaPorFriccaoAnular()));
+    }
+}
+
+
+void CSimuladorPoco::on_btnCalcularModeloPotenciaPoco_clicked()
+{
+    if (ui->editIndiceConsistenciaPotenciaPoco->text().isEmpty()) {
+        QMessageBox::warning(nullptr, "Aviso", "Preencha o Indice de Consistência.");
+    } else {
+
+        double indiceConsistencia = ui->editIndiceConsistenciaPotenciaPoco->text().toDouble();
+
+        modeloPotencia = std::make_shared<CModeloPotencia>(poco.get(), indiceConsistencia);
+
+        ui->lbnVelocidadePocoPotencia->setText(QString::number(modeloPotencia->VMediaPoco()));
+        ui->lbnReynoldsPocoPotencia->setText(QString::number(modeloPotencia->ReynoldsPoco()));
+        ui->lbnReynoldsCriticoPocoPotencia->setText(QString::number(modeloPotencia->ReynoldsCriticoPoco()));
+        ui->lbnTipoFluxoPocoPotencia->setText(QString::fromStdString(modeloPotencia->FluxoPoco()));
+        ui->lbnPerdaFriccionalPocoPotencia->setText(QString::number(modeloPotencia->CalcularPerdaPorFriccaoPoco()));
+    }
+}
+
+
+void CSimuladorPoco::on_btnCalcularModeloPotenciaAnular_clicked()
+{
+    if (ui->editIndiceConsistenciaPotenciaAnular->text().isEmpty()) {
+        QMessageBox::warning(nullptr, "Aviso", "Preencha o Indice de Consistência.");
+    } else {
+
+        double indiceConsistencia = ui->editIndiceConsistenciaPotenciaAnular->text().toDouble();
+
+        modeloPotencia = std::make_shared<CModeloPotencia>(poco.get(), indiceConsistencia);
+
+        ui->lbnVelocidadeAnularPotencia->setText(QString::number(modeloPotencia->VMediaAnular()));
+        ui->lbnReynoldsAnularPotencia->setText(QString::number(modeloPotencia->ReynoldsAnular()));
+        ui->lbnReynoldsCriticoAnularPotencia->setText(QString::number(modeloPotencia->ReynoldsCriticoAnular()));
+        ui->lbnTipoFluxoAnularPotencia->setText(QString::fromStdString(modeloPotencia->FluxoAnular()));
+        ui->lbnPerdaFriccionalAnularPotencia->setText(QString::number(modeloPotencia->CalcularPerdaPorFriccaoAnular()));
+    }
+}
+

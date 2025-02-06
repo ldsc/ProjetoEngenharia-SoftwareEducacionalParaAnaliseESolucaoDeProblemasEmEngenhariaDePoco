@@ -42,6 +42,12 @@ private slots:
 
     void on_btnCalcularModeloBighamPoco_clicked();
 
+    void on_btnCalcularModeloBighamAnular_clicked();
+
+    void on_btnCalcularModeloPotenciaPoco_clicked();
+
+    void on_btnCalcularModeloPotenciaAnular_clicked();
+
 private:
     Ui::CSimuladorPoco *ui;
     std::shared_ptr<CPoco> poco = nullptr;

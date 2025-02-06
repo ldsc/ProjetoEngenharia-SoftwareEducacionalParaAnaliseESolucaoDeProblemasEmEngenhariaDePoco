@@ -18,7 +18,8 @@ public:
     //Construtor
     CModeloBingham() {}
     ~CModeloBingham() {}
-    CModeloBingham(CPoco* poco) : CModeloReologico(poco){
+    CModeloBingham(CPoco* poco) : CModeloReologico(poco){}
+    CModeloBingham(CPoco* poco, double viscosidadePlastica, double pontoDeEscoamento) : CModeloReologico(poco), viscosidadePlastica(viscosidadePlastica), pontoDeEscoamento(pontoDeEscoamento){
         DeterminarFluxoPoco();
         DeterminarFluxoAnular();
     }
@@ -29,7 +30,8 @@ public:
     double ReynoldsCriticoAnular() const { return reynoldsCriticoAnular; }
     double ReynoldsHedstronPoco() const { return reynoldsHedstronPoco; }
     double ReynoldsHedstronAnular() const { return reynoldsHedstronAnular; }
-    
+    double ViscosidadePlastica() const { return viscosidadePlastica; }
+
     // Setters
     void PontoDeEscoamento( double PontoE ) { pontoDeEscoamento = PontoE; }
     void ViscosidadePlastica( double ViscosidadeP ) { viscosidadePlastica = ViscosidadeP; }
@@ -38,7 +40,7 @@ public:
     
     double DeterminarReynoldsCritico(double hedstron);
     double DeterminarReynoldsHedstronPoco();
-    double DeterminarReynoldsHedstronAnular(double densidade, double pontoDeEscoamento, double diametroAnular, double viscosidade);
+    double DeterminarReynoldsHedstronAnular();
     std::string DeterminarFluxoPoco() override;
     std::string DeterminarFluxoAnular() override;
     double CalcularPerdaPorFriccaoPoco() override;

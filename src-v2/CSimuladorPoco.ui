@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1417</width>
-    <height>690</height>
+    <width>1416</width>
+    <height>707</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -272,7 +272,7 @@
      <rect>
       <x>420</x>
       <y>30</y>
-      <width>601</width>
+      <width>631</width>
       <height>311</height>
      </rect>
     </property>
@@ -366,7 +366,7 @@
    <widget class="QWidget" name="gridLayoutWidget_9">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>250</x>
       <y>370</y>
       <width>261</width>
       <height>231</height>
@@ -391,7 +391,7 @@
      <item row="1" column="0">
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="tab">
         <attribute name="title">
@@ -692,7 +692,7 @@
    <widget class="QWidget" name="gridLayoutWidget_10">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>520</x>
       <y>370</y>
       <width>261</width>
       <height>271</height>
@@ -729,7 +729,7 @@
            <x>0</x>
            <y>0</y>
            <width>253</width>
-           <height>226</height>
+           <height>211</height>
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_5">
@@ -794,7 +794,7 @@
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="lbnTituloViscosidadePlastica">
+           <widget class="QLabel" name="lbnTituloViscosidadePlasticaPoco">
             <property name="text">
              <string>Viscosidade Plástica (cP)</string>
             </property>
@@ -817,7 +817,7 @@
            <widget class="QLineEdit" name="editViscosidadePlasticaPoco"/>
           </item>
           <item row="0" column="0">
-           <widget class="QLabel" name="lbnTituloPontoEscoamento">
+           <widget class="QLabel" name="lbnTituloPontoEscoamentoPoco">
             <property name="text">
              <string>Ponto de Escoamento (lbf/100 sq.ft)</string>
             </property>
@@ -898,79 +898,32 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>251</width>
-           <height>171</height>
+           <width>253</width>
+           <height>214</height>
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_6">
-          <item row="3" column="1">
-           <widget class="QLabel" name="lbnPerdaFriccionalAnularBigham">
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="editPontoEscoamentoAnular"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lbnTituloHedstromAnularBigham">
             <property name="text">
-             <string>-</string>
+             <string>Reynolds Hedstrom</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="lbnTituloReynoldsAnularBigham">
-            <property name="text">
-             <string>Reynolds no Anular</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignmentFlag::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0" colspan="2">
+          <item row="8" column="0" colspan="2">
            <widget class="QPushButton" name="btnCalcularModeloBighamAnular">
             <property name="text">
              <string>Calcular</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="lbnTituloPerdaFriccionalAnularBigham">
-            <property name="text">
-             <string>Perda Friccional no Anular (psi/ft)</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignmentFlag::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="lbnTituloTipoFluxoAnularBigham">
-            <property name="text">
-             <string>Tipo de Fluxo no Anular</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignmentFlag::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="lbnTituloVelocidadeAnularBigham">
-            <property name="text">
-             <string>Velocidade do Anular (ft/s)</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignmentFlag::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="lbnReynoldsAnularBigham">
-            <property name="text">
-             <string>-</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignmentFlag::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
+          <item row="2" column="1">
            <widget class="QLabel" name="lbnVelocidadeAnularBigham">
             <property name="text">
              <string>-</string>
@@ -980,8 +933,121 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
+          <item row="5" column="1">
+           <widget class="QLabel" name="lbnReynoldsAnularBigham">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="lbnTituloTipoFluxoAnularBigham">
+            <property name="text">
+             <string>Tipo de Fluxo no Anular</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QLabel" name="lbnPerdaFriccionalAnularBigham">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbnTituloPontoEscoamentoAnular">
+            <property name="text">
+             <string>Ponto de Escoamento (lbf/100 sq.ft)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="lbnTituloReynoldsAnularBigham">
+            <property name="text">
+             <string>Reynolds no Anular</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="editViscosidadePlasticaAnular"/>
+          </item>
+          <item row="6" column="1">
            <widget class="QLabel" name="lbnTipoFluxoAnularBigham">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lbnTituloViscosidadePlasticaAnular">
+            <property name="text">
+             <string>Viscosidade Plástica (cP)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbnTituloVelocidadeAnularBigham">
+            <property name="text">
+             <string>Velocidade do Anular (ft/s)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="lbnTituloPerdaFriccionalAnularBigham">
+            <property name="text">
+             <string>Perda Friccional no Anular (psi/ft)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="lbnTituloCriticoAnularBigham">
+            <property name="text">
+             <string>Reynolds Crítico</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="lbnReynoldsHedstromAnularBigham">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLabel" name="lbnReynoldsCriticoAnularBigham">
             <property name="text">
              <string>-</string>
             </property>
@@ -1000,12 +1066,320 @@
    <widget class="QGraphicsView" name="graphicsView">
     <property name="geometry">
      <rect>
-      <x>1050</x>
+      <x>1060</x>
       <y>30</y>
       <width>311</width>
-      <height>591</height>
+      <height>611</height>
      </rect>
     </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_11">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>370</y>
+      <width>261</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_11">
+     <item row="0" column="0">
+      <widget class="QLabel" name="lbnTituloModeloBigham_2">
+       <property name="font">
+        <font>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Modelo Potência</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QTabWidget" name="tabWidget_3">
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <widget class="QWidget" name="tab_5">
+        <attribute name="title">
+         <string>Poço</string>
+        </attribute>
+        <widget class="QWidget" name="gridLayoutWidget_7">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>253</width>
+           <height>214</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_7">
+          <item row="5" column="1">
+           <widget class="QLabel" name="lbnPerdaFriccionalPocoPotencia">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="lbnTituloPerdaFriccionalPocoPotencia">
+            <property name="text">
+             <string>Perda Friccional no Poço (psi/ft)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="lbnVelocidadePocoPotencia">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLabel" name="lbnTipoFluxoPocoPotencia">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbnTituloCriticoPocoPotencia">
+            <property name="text">
+             <string>Reynolds Crítico</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lbnTituloReynoldsPocoPotencia">
+            <property name="text">
+             <string>Reynolds no Poço</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lbnTituloVelocidadePocoPotencia">
+            <property name="text">
+             <string>Velocidade do Poço (ft/s)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="lbnReynoldsPocoPotencia">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="lbnTituloTipoFluxoPocoPotencia">
+            <property name="text">
+             <string>Tipo de Fluxo no Poço</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="lbnReynoldsCriticoPocoPotencia">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0" colspan="2">
+           <widget class="QPushButton" name="btnCalcularModeloPotenciaPoco">
+            <property name="text">
+             <string>Calcular</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbnTituloIndiceConsistenciaPoco">
+            <property name="text">
+             <string>Indice de Consistencia (cP eq)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="editIndiceConsistenciaPotenciaPoco"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="tab_6">
+        <attribute name="title">
+         <string>Anular</string>
+        </attribute>
+        <widget class="QWidget" name="gridLayoutWidget_8">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>253</width>
+           <height>214</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_8">
+          <item row="4" column="1">
+           <widget class="QLabel" name="lbnTipoFluxoAnularPotencia">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbnTituloCriticoAnularPotencia">
+            <property name="text">
+             <string>Reynolds Crítico</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="lbnTituloTipoFluxoAnularPotencia">
+            <property name="text">
+             <string>Tipo de Fluxo no Anular</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lbnTituloReynoldsAnularPotencia">
+            <property name="text">
+             <string>Reynolds no Anular</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lbnTituloVelocidadeAnularPotencia">
+            <property name="text">
+             <string>Velocidade do Anular (ft/s)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="lbnReynoldsAnularPotencia">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="lbnTituloPerdaFriccionalAnularPotencia">
+            <property name="text">
+             <string>Perda Friccional no Anular (psi/ft)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="lbnVelocidadeAnularPotencia">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbnTituloIndiceConsistenciaAnular">
+            <property name="text">
+             <string>Indice de Consistencia (cP eq)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLabel" name="lbnPerdaFriccionalAnularPotencia">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="lbnReynoldsCriticoAnularPotencia">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0" colspan="2">
+           <widget class="QPushButton" name="btnCalcularModeloPotenciaAnular">
+            <property name="text">
+             <string>Calcular</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="editIndiceConsistenciaPotenciaAnular"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -1013,8 +1387,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1417</width>
-     <height>21</height>
+     <width>1416</width>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArquivo">

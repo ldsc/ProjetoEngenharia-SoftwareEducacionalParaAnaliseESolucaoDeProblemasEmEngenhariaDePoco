@@ -2,11 +2,14 @@
 #include <iostream>
 #include <cmath>
 
+
+
+
 // Funcao para determinar o tipo de fluxo no poco
 std::string CModeloNewtoniano::DeterminarFluxoPoco() {
 
     DeterminarVelocidadeMediaPoco();
-    DeterminarReynoldsPoco(poco->DensidadeEfetivaTotal(), vMediaPoco, poco->DiametroRevestimentoID(), poco->ViscosidadeEfetivaTotal());
+    DeterminarReynoldsPoco();
     fluxoPoco = (reynoldsPoco <= 2100) ? "Laminar" : "Turbulento"; // Determinacao do fluxo
     return fluxoPoco;
 }
