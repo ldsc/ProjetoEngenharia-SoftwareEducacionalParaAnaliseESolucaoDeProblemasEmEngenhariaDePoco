@@ -8,23 +8,15 @@
 #include <QFileDialog>
 #include <QString>
 #include <QMessageBox>
+#include <QMap>
+#include <QColor>
 
 CSimuladorPoco::CSimuladorPoco(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::CSimuladorPoco)
 {
     ui->setupUi(this);
-    std::vector<SecaoPoco> secoes = {
-        {0.0f, 500.0f, 17.5f},
-        {500.0f, 1500.0f, 12.25f},
-        {1500.0f, 3000.0f, 8.5f}
-    };
-
-    // Chama a função desenharPoco no widget promovido
-    CPocoGraphicsView *pocoView = qobject_cast<CPocoGraphicsView*>(ui->graphicsView);
-    if (pocoView) {
-        pocoView->desenharPoco(secoes);
-    }
+    CSimuladorPoco::makePlotPoco();
 }
 
 CSimuladorPoco::~CSimuladorPoco()
@@ -116,6 +108,8 @@ void CSimuladorPoco::on_btnAtualizarDados_clicked()
             ui->tblFluidos->setItem(row, 3, new QTableWidgetItem(QString::number(trecho->ProfundidadeInicial(), 'f', 2)));
             ui->tblFluidos->setItem(row, 4, new QTableWidgetItem(QString::number(trecho->ProfundidadeFinal(), 'f', 2)));
            ++row;
+
+           makePlotPoco();
         }
     }
 }
@@ -354,3 +348,84 @@ void CSimuladorPoco::on_btnCalcularModeloPotenciaAnular_clicked()
     }
 }
 
+void CSimuladorPoco::makePlotPoco()
+{
+    // Limpar o gráfico anterior
+    ui->customPlotPoco->clearItems();
+
+    // Configurar os eixos
+    ui->customPlotPoco->xAxis->setLabel("Diâmetro do Poço (m)");
+    ui->customPlotPoco->yAxis->setLabel("Profundidade (m)");
+
+    ui->customPlotPoco->xAxis->setRange(-10, 10);  // Simulação da largura do poço
+    ui->customPlotPoco->yAxis->setRange(0, 300);   // Profundidade máxima do poço (ajustável)
+    ui->customPlotPoco->yAxis->setRangeReversed(true); // Profundidade cresce para baixo
+
+    // Verifica se o poço está configurado
+    if (!poco || poco->Trechos().empty()) {
+        qDebug() << "Nenhum trecho no poço!";
+        return;
+    }
+
+    // Determinar profundidade máxima real
+    double profundidadeMaxima = 0.0;
+    for (const auto& trecho : poco->Trechos()) {
+        if (trecho->ProfundidadeFinal() > profundidadeMaxima) {
+            profundidadeMaxima = trecho->ProfundidadeFinal();
+        }
+    }
+    ui->customPlotPoco->yAxis->setRange(0, profundidadeMaxima);
+
+    // Mapa para armazenar cores únicas por fluido
+    QMap<QString, QColor> mapaCores;
+    QVector<QColor> coresDisponiveis = {
+        QColor(255, 0, 0, 150),    // Vermelho translúcido
+        QColor(0, 255, 0, 150),    // Verde translúcido
+        QColor(0, 0, 255, 150),    // Azul translúcido
+        QColor(255, 165, 0, 150),  // Laranja translúcido
+        QColor(128, 0, 128, 150),  // Roxo translúcido
+        QColor(0, 255, 255, 150)   // Ciano translúcido
+    };
+    int corIndex = 0;
+
+    // Criar os retângulos para cada seção do poço
+    for (const auto& trecho : poco->Trechos()) {
+        double profundidadeInicial = trecho->ProfundidadeInicial();
+        double profundidadeFinal = trecho->ProfundidadeFinal();
+        double diametroPoco = 8.0;   // Supondo um diâmetro fixo do poço
+        double diametroSecao = 6.0;  // Supondo um diâmetro da seção menor que o do poço
+        QString nomeFluido = QString::fromStdString(trecho->Fluido()->Nome());
+
+        // Definir cor única para cada fluido
+        if (!mapaCores.contains(nomeFluido)) {
+            mapaCores[nomeFluido] = coresDisponiveis[corIndex % coresDisponiveis.size()];
+            corIndex++;
+        }
+        QColor corFluido = mapaCores[nomeFluido];
+
+        // Criar retângulo do poço (cinza translúcido)
+        QCPItemRect *rectPoco = new QCPItemRect(ui->customPlotPoco);
+        rectPoco->topLeft->setCoords(-diametroPoco / 2, profundidadeInicial);
+        rectPoco->bottomRight->setCoords(diametroPoco / 2, profundidadeFinal);
+        rectPoco->setPen(QPen(Qt::black));
+        rectPoco->setBrush(QBrush(QColor(150, 150, 150, 100))); // Cinza translúcido
+
+        // Criar retângulo da seção (fluido)
+        QCPItemRect *rectSecao = new QCPItemRect(ui->customPlotPoco);
+        rectSecao->topLeft->setCoords(-diametroSecao / 2, profundidadeInicial);
+        rectSecao->bottomRight->setCoords(diametroSecao / 2, profundidadeFinal);
+        rectSecao->setPen(QPen(Qt::black));
+        rectSecao->setBrush(QBrush(corFluido)); // Cor do fluido
+
+        // Criar rótulo do fluido dentro do retângulo
+        QCPItemText *textLabel = new QCPItemText(ui->customPlotPoco);
+        textLabel->position->setCoords(0, (profundidadeInicial + profundidadeFinal) / 2); // Centralizado
+        textLabel->setText(nomeFluido);
+        textLabel->setFont(QFont("Arial", 10, QFont::Bold));
+        textLabel->setColor(Qt::black);
+        textLabel->setPositionAlignment(Qt::AlignCenter);
+    }
+
+    // Atualizar o gráfico
+    ui->customPlotPoco->replot();
+}

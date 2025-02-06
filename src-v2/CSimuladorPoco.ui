@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1416</width>
-    <height>707</height>
+    <height>732</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>20</x>
       <y>30</y>
       <width>371</width>
-      <height>326</height>
+      <height>345</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
@@ -367,7 +367,7 @@
     <property name="geometry">
      <rect>
       <x>250</x>
-      <y>370</y>
+      <y>390</y>
       <width>261</width>
       <height>231</height>
      </rect>
@@ -391,7 +391,7 @@
      <item row="1" column="0">
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="tab">
         <attribute name="title">
@@ -511,8 +511,8 @@
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
-          <item row="3" column="1">
-           <widget class="QLabel" name="lbnPerdaFriccionalAnularNewtoniano">
+          <item row="1" column="1">
+           <widget class="QLabel" name="lbnReynoldsAnularNewtoniano">
             <property name="text">
              <string>-</string>
             </property>
@@ -531,10 +531,13 @@
             </property>
            </widget>
           </item>
-          <item row="4" column="0" colspan="2">
-           <widget class="QPushButton" name="btnCalcularModeloNewtonianoAnular">
+          <item row="0" column="1">
+           <widget class="QLabel" name="lbnVelocidadeAnularNewtoniano">
             <property name="text">
-             <string>Calcular</string>
+             <string>-</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -542,6 +545,16 @@
            <widget class="QLabel" name="lbnTituloPerdaFriccionalAnularNewtoniano">
             <property name="text">
              <string>Perda Friccional no Anular (psi/ft)</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="lbnTipoFluxoAnularNewtoniano">
+            <property name="text">
+             <string>-</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -568,8 +581,8 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="lbnReynoldsAnularNewtoniano">
+          <item row="3" column="1">
+           <widget class="QLabel" name="lbnPerdaFriccionalAnularNewtoniano">
             <property name="text">
              <string>-</string>
             </property>
@@ -578,23 +591,10 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="lbnVelocidadeAnularNewtoniano">
+          <item row="4" column="0" colspan="2">
+           <widget class="QPushButton" name="btnCalcularModeloNewtonianoAnular">
             <property name="text">
-             <string>-</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignmentFlag::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QLabel" name="lbnTipoFluxoAnularNewtoniano">
-            <property name="text">
-             <string>-</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignmentFlag::AlignCenter</set>
+             <string>Calcular</string>
             </property>
            </widget>
           </item>
@@ -609,8 +609,8 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>370</y>
-      <width>221</width>
+      <y>390</y>
+      <width>211</width>
       <height>121</height>
      </rect>
     </property>
@@ -693,9 +693,9 @@
     <property name="geometry">
      <rect>
       <x>520</x>
-      <y>370</y>
+      <y>390</y>
       <width>261</width>
-      <height>271</height>
+      <height>281</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_10">
@@ -728,8 +728,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>253</width>
-           <height>211</height>
+           <width>251</width>
+           <height>221</height>
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_5">
@@ -898,8 +898,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>253</width>
-           <height>214</height>
+           <width>251</width>
+           <height>221</height>
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_6">
@@ -1063,23 +1063,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QGraphicsView" name="graphicsView">
-    <property name="geometry">
-     <rect>
-      <x>1060</x>
-      <y>30</y>
-      <width>311</width>
-      <height>611</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QWidget" name="gridLayoutWidget_11">
     <property name="geometry">
      <rect>
       <x>790</x>
-      <y>370</y>
+      <y>390</y>
       <width>261</width>
-      <height>271</height>
+      <height>281</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_11">
@@ -1101,7 +1091,7 @@
      <item row="1" column="0">
       <widget class="QTabWidget" name="tabWidget_3">
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="tab_5">
         <attribute name="title">
@@ -1112,8 +1102,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>253</width>
-           <height>214</height>
+           <width>251</width>
+           <height>221</height>
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_7">
@@ -1249,8 +1239,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>253</width>
-           <height>214</height>
+           <width>251</width>
+           <height>211</height>
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_8">
@@ -1381,6 +1371,16 @@
      </item>
     </layout>
    </widget>
+   <widget class="QCustomPlot" name="customPlotPoco" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1070</x>
+      <y>30</y>
+      <width>301</width>
+      <height>631</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -1388,7 +1388,7 @@
      <x>0</x>
      <y>0</y>
      <width>1416</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArquivo">
@@ -1406,6 +1406,14 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

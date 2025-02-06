@@ -1,6 +1,6 @@
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 CONFIG += c++17
 
@@ -16,12 +16,12 @@ SOURCES += \
     CModeloPotencia.cpp \
     CModeloReologico.cpp \
     CPoco.cpp \
-    CPocoGraphicsView.cpp \
     CRelatorioPoco.cpp \
     CSimuladorPoco.cpp \
     CTrechoPoco.cpp \
     Main.cpp \
-    janelaadicionarfluido.cpp
+    janelaadicionarfluido.cpp \
+    qcustomplot.cpp
 
 HEADERS += \
     CFluido.h \
@@ -31,11 +31,11 @@ HEADERS += \
     CModeloPotencia.h \
     CModeloReologico.h \
     CPoco.h \
-    CPocoGraphicsView.h \
     CRelatorioPoco.h \
     CSimuladorPoco.h \
     CTrechoPoco.h \
-    janelaadicionarfluido.h
+    janelaadicionarfluido.h \
+    qcustomplot.h
 
 FORMS += \
     CSimuladorPoco.ui \

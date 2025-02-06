@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -26,6 +25,7 @@
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
+#include "qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -147,7 +147,6 @@ public:
     QLabel *lbnTituloCriticoAnularBigham;
     QLabel *lbnReynoldsHedstromAnularBigham;
     QLabel *lbnReynoldsCriticoAnularBigham;
-    QGraphicsView *graphicsView;
     QWidget *gridLayoutWidget_11;
     QGridLayout *gridLayout_11;
     QLabel *lbnTituloModeloBigham_2;
@@ -184,6 +183,7 @@ public:
     QLabel *lbnReynoldsCriticoAnularPotencia;
     QPushButton *btnCalcularModeloPotenciaAnular;
     QLineEdit *editIndiceConsistenciaPotenciaAnular;
+    QCustomPlot *customPlotPoco;
     QMenuBar *menubar;
     QMenu *menuArquivo;
     QStatusBar *statusbar;
@@ -192,14 +192,14 @@ public:
     {
         if (CSimuladorPoco->objectName().isEmpty())
             CSimuladorPoco->setObjectName("CSimuladorPoco");
-        CSimuladorPoco->resize(1417, 690);
+        CSimuladorPoco->resize(1416, 707);
         actionImportar_Dados = new QAction(CSimuladorPoco);
         actionImportar_Dados->setObjectName("actionImportar_Dados");
         centralwidget = new QWidget(CSimuladorPoco);
         centralwidget->setObjectName("centralwidget");
         gridLayoutWidget = new QWidget(centralwidget);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(20, 30, 371, 326));
+        gridLayoutWidget->setGeometry(QRect(20, 30, 371, 345));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -533,7 +533,7 @@ public:
 
         gridLayoutWidget_14 = new QWidget(centralwidget);
         gridLayoutWidget_14->setObjectName("gridLayoutWidget_14");
-        gridLayoutWidget_14->setGeometry(QRect(20, 370, 221, 121));
+        gridLayoutWidget_14->setGeometry(QRect(20, 370, 237, 121));
         gridLayout_14 = new QGridLayout(gridLayoutWidget_14);
         gridLayout_14->setObjectName("gridLayout_14");
         gridLayout_14->setContentsMargins(0, 0, 0, 0);
@@ -595,7 +595,7 @@ public:
         tab_3->setObjectName("tab_3");
         gridLayoutWidget_5 = new QWidget(tab_3);
         gridLayoutWidget_5->setObjectName("gridLayoutWidget_5");
-        gridLayoutWidget_5->setGeometry(QRect(0, 0, 253, 211));
+        gridLayoutWidget_5->setGeometry(QRect(0, 0, 307, 251));
         gridLayout_5 = new QGridLayout(gridLayoutWidget_5);
         gridLayout_5->setObjectName("gridLayout_5");
         gridLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -703,7 +703,7 @@ public:
         tab_4->setObjectName("tab_4");
         gridLayoutWidget_6 = new QWidget(tab_4);
         gridLayoutWidget_6->setObjectName("gridLayoutWidget_6");
-        gridLayoutWidget_6->setGeometry(QRect(0, 0, 253, 214));
+        gridLayoutWidget_6->setGeometry(QRect(0, 0, 307, 251));
         gridLayout_6 = new QGridLayout(gridLayoutWidget_6);
         gridLayout_6->setObjectName("gridLayout_6");
         gridLayout_6->setContentsMargins(0, 0, 0, 0);
@@ -810,9 +810,6 @@ public:
 
         gridLayout_10->addWidget(tabWidget_2, 1, 0, 1, 1);
 
-        graphicsView = new QGraphicsView(centralwidget);
-        graphicsView->setObjectName("graphicsView");
-        graphicsView->setGeometry(QRect(1090, 30, 311, 591));
         gridLayoutWidget_11 = new QWidget(centralwidget);
         gridLayoutWidget_11->setObjectName("gridLayoutWidget_11");
         gridLayoutWidget_11->setGeometry(QRect(790, 370, 261, 271));
@@ -832,7 +829,7 @@ public:
         tab_5->setObjectName("tab_5");
         gridLayoutWidget_7 = new QWidget(tab_5);
         gridLayoutWidget_7->setObjectName("gridLayoutWidget_7");
-        gridLayoutWidget_7->setGeometry(QRect(0, 0, 253, 214));
+        gridLayoutWidget_7->setGeometry(QRect(0, 0, 279, 214));
         gridLayout_7 = new QGridLayout(gridLayoutWidget_7);
         gridLayout_7->setObjectName("gridLayout_7");
         gridLayout_7->setContentsMargins(0, 0, 0, 0);
@@ -917,7 +914,7 @@ public:
         tab_6->setObjectName("tab_6");
         gridLayoutWidget_8 = new QWidget(tab_6);
         gridLayoutWidget_8->setObjectName("gridLayoutWidget_8");
-        gridLayoutWidget_8->setGeometry(QRect(0, 0, 253, 214));
+        gridLayoutWidget_8->setGeometry(QRect(0, 0, 290, 214));
         gridLayout_8 = new QGridLayout(gridLayoutWidget_8);
         gridLayout_8->setObjectName("gridLayout_8");
         gridLayout_8->setContentsMargins(0, 0, 0, 0);
@@ -1001,10 +998,13 @@ public:
 
         gridLayout_11->addWidget(tabWidget_3, 1, 0, 1, 1);
 
+        customPlotPoco = new QCustomPlot(centralwidget);
+        customPlotPoco->setObjectName("customPlotPoco");
+        customPlotPoco->setGeometry(QRect(1070, 30, 301, 611));
         CSimuladorPoco->setCentralWidget(centralwidget);
         menubar = new QMenuBar(CSimuladorPoco);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1417, 22));
+        menubar->setGeometry(QRect(0, 0, 1416, 26));
         menuArquivo = new QMenu(menubar);
         menuArquivo->setObjectName("menuArquivo");
         CSimuladorPoco->setMenuBar(menubar);

@@ -1,0 +1,16 @@
+release/CFluido.o
+release/CGnuplot.o
+release/CModeloBingham.o
+release/CModeloNewtoniano.o
+release/CModeloPotencia.o
+release/CModeloReologico.o
+release/CPoco.o
+release/CRelatorioPoco.o
+release/CSimuladorPoco.o
+release/CTrechoPoco.o
+release/Main.o
+release/janelaadicionarfluido.o
+release/qcustomplot.o
+release/moc_CSimuladorPoco.o
+release/moc_janelaadicionarfluido.o
+release/moc_qcustomplot.o

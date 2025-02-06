@@ -7,7 +7,6 @@
 #include "CModeloNewtoniano.h"
 #include "CModeloBingham.h"
 #include "CModeloPotencia.h"
-#include "CPocoGraphicsView.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -47,6 +46,8 @@ private slots:
     void on_btnCalcularModeloPotenciaPoco_clicked();
 
     void on_btnCalcularModeloPotenciaAnular_clicked();
+
+    void makePlotPoco();
 
 private:
     Ui::CSimuladorPoco *ui;
