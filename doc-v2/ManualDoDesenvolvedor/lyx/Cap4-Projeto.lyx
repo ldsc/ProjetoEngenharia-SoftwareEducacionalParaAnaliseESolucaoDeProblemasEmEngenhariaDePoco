@@ -166,10 +166,12 @@ thechapter - Projeto}
 \end_layout
 
 \begin_layout Standard
-Neste capítulo são apresentadas questões relacionadas ao desenvolvimento do projeto,
- como ambiente de desenvolvimento e bibliotecas gráficas,
- comentados juntamente com a evolução de versões.
- Também são apresentados os diagramas de componentes e de implantação.
+Neste capítulo,
+ são abordados aspectos relacionados à elaboração do projeto,
+ incluindo o ambiente de desenvolvimento e as bibliotecas gráficas,
+ discutidos em conjunto com a progressão das versões.
+ Ademais,
+ são exibidos os diagramas de componentes e de implantação.
 \end_layout
 
 \begin_layout Section
@@ -197,10 +199,7 @@ name "sec:Projeto-do-sistema"
 
 \begin_layout Standard
 O paradigma de programação selecionado foi o orientado a objeto.
-\end_layout
-
-\begin_layout Standard
-A linguagem de programação selecionada foi C++ pelos seguintes motivos:
+ A linguagem de programação selecionada foi C++ pelos seguintes motivos:
 \end_layout
 
 \begin_layout Itemize
@@ -243,11 +242,6 @@ profillers
 \begin_layout Itemize
 Compiladores e ferramentas gratuitas disponíveis,
  facilitando o uso por alunos.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Iremos apresentar a seguir os diagramas de componentes e de implementação.
 \end_layout
 
 \begin_layout Section

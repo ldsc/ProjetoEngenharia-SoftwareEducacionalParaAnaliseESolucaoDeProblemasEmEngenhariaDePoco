@@ -151,27 +151,19 @@ Gnuplot
 \end_layout
 
 \begin_layout Standard
-Na primeira versão,
- foi utilizado um sistema de entrada e saída de dados inteiramente pelo terminal,
- sem o uso de bibliotecas de interface gráfica.
- O 
-\shape italic
-Gnuplot
-\shape default
- foi empregado para a geração de gráficos e visualização de dados,
- permitindo uma forma simples e direta de exibir os resultados ao usuário.
- Essa versão foi desenvolvida em um ambiente de desenvolvimento baseado em terminal,
- tudo isso no sistema operacional 
-\shape italic
-Windows
-\shape default
- 11.
+Na versão inicial,
+ um sistema de entrada e saída de dados foi implementado exclusivamente via terminal,
+ sem a integração de bibliotecas de interface gráfica.
+ O Gnuplot foi utilizado para criar gráficos e visualizar informações,
+ proporcionando uma maneira fácil e direta de apresentar os resultados ao usuário.
+ Essa versão foi concebida em um ambiente de desenvolvimento que opera unicamente no terminal,
+ utilizando o sistema Windows 11.
 \end_layout
 
 \begin_layout Standard
-Note que é um software simples,
- com uma interação baseada em texto.
- O usuário pode gerar gráficos e simular diferentes senários.
+Observe que se trata de um software protótipo,
+ onde a interação ocorre principalmente por meio de texto.
+ O usuário tem a capacidade de criar gráficos e simular distintos cenários.
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Versao0.1"
@@ -213,6 +205,199 @@ name "fig:Versao0.1"
 
 \begin_inset Graphics
 	filename ../imagens/Sistema-V0.1.png
+	lyxscale 60
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Versão 0.2 - Correção de Erros e Melhorias no Armazenamento de Dados
+\end_layout
+
+\begin_layout Standard
+A versão 0.2 do programa trouxe melhorias notáveis em termos de usabilidade,
+ efetividade e gestão de dados,
+ preservando sua interação orientada ao terminal e a representação gráfica através do Gnuplot.
+ Esta versão se concentrou em corrigir falhas e adicionar novas funções para aprimorar a experiência do usuário,
+ tornando-a mais suave e intuitiva.
+\end_layout
+
+\begin_layout Standard
+Aprimoramentos Principais :
+\end_layout
+
+\begin_layout Itemize
+Alterações na maneira como os dados são apresentados,
+ assegurando que os resultados sejam exibidos com clareza e exatidão.
+\end_layout
+
+\begin_layout Itemize
+Agora,
+ os usuários podem transitar entre as escolhas apenas digitando o número correspondente,
+ sem a necessidade de pressionar Enter repetidamente,
+ o que agiliza a interação.
+\end_layout
+
+\begin_layout Itemize
+Foi introduzido um sistema que permite ao usuário escolher a forma como os dados serão guardados.
+ Um arquivo é gerado automaticamente,
+ nomeado conforme o poço,
+ registrando todo o histórico das ações executadas.
+\end_layout
+
+\begin_layout Itemize
+Foi implementado um sistema eficaz para checar as entradas dos usuários,
+ minimizando erros causados por valores inadequados ou formatos imprevistos.
+ Essa melhoria evita interrupções indesejadas e assegura um fluxo de execução ininterrupto.
+\end_layout
+
+\begin_layout Standard
+Observe abaixo como ficou algumas dessas mudanças.
+ O usuário tem a capacidade de analisar o histórico dos dados após calculado.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Versao0.2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Versão 0.2,
+ interface do software
+\shape italic
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versao0.2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/Sistema-V0.2.png
+	lyxscale 60
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Versão 1.0 – Interface Gráfica,
+ Amigável e Intuitiva Utilizando o Framework QtCreator
+\end_layout
+
+\begin_layout Standard
+Na versão 1.0,
+ houve uma grande evolução do software,
+ que deixou de ser apenas baseado em comandos no terminal para adotar uma interface gráfica que é amigável e intuitiva.
+ Essa atualização preserva todas as funções da versão anterior,
+ mas proporciona uma experiência de uso muito mais interativa e fácil de acessar.
+\end_layout
+
+\begin_layout Standard
+Agora,
+ o usuário pode:
+\end_layout
+
+\begin_layout Standard
+• Utilizar o mouse para inserir dados através de caixas de texto e botões,
+ sem precisar digitar diretamente no terminal.
+\end_layout
+
+\begin_layout Standard
+• Visualizar as informações dos fluidos do poço organizadas em uma tabela,
+ o que torna os dados mais claros.
+\end_layout
+
+\begin_layout Standard
+• Navegar por um gráfico interativo que representa o poço e os fluidos que o compõem,
+ oferecendo uma visão visual mais intuitiva do sistema.
+\end_layout
+
+\begin_layout Standard
+Com essa atualização,
+ o software evolui de um simples protótipo textual para uma experiência mais suave e acessível,
+ facilitando a análise e a simulação de diferentes cenários relacionados ao poço.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Versão 0.2,
+ interface do software
+\shape italic
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versao1.0"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/Sistema-V1.0.jpg
 	lyxscale 60
 	width 100text%
 
