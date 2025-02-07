@@ -184,6 +184,30 @@ literal "true"
 
 \begin_layout Standard
 \align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap4-Projeto.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap5-Ciclos-Planejamento-Detalhamento.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
 \begin_inset Note Note
 status open
 
