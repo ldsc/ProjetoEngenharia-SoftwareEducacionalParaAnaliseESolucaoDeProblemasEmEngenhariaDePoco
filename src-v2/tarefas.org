@@ -2,7 +2,7 @@
 #+AUTHOR: Nathan Rangel, Thauan Barbosa e André Bueno
 #+DATE: <2024-12-17>
 
-* Lista de correções (Lyx):
+* DONE Lista de correções (Lyx):
 ** DONE Criei um arquivo CMakeLists.txt que e usado pela versao automatizada do make, o cmake.
 ** DONE Cria-se um arquivo CMakeLists.txt e roda-se "cmake ." com isso ele le sua maquina e gera o arquivo Makefile para windows ou linux ou mac-os x.
 ** DONE Referenciar as figuras.
@@ -23,7 +23,7 @@
 ** DONE para versao do TCC gere as bibliotecas separado
 ** DONE Figura 5.1:
 
-* Lista de correções (código):
+* DONE Lista de correções (código):
 ** DONE cabecalho é atributo do simulador 
 ** DONE corrigir arquivos incluidos.
 ** DONE atributos nome minusculo
@@ -50,7 +50,7 @@ ComprimentoTrecho ;
 ** DONE Modificar Poco (flag para o usuario manter o valor)
 ** DONE Verificar entradas invalidas
 
-*  TCC1
+* DONE TCC1
 ** DONE CImpressao CRelatorioPoco ou algo do gênero (Deve ter um nome que faça sentido e encapsule os atributos e métodos).
 ** DONE Retirar necessidade de "enter" após atividade.
 ** TODO A saída de dados de fluido deve estar relacionada à classe CFLuido ou a uma classe que agregue fluidos, estando embutida no poço.
@@ -78,13 +78,157 @@ ComprimentoTrecho ;
        - Arquivo: `nomeUltimoPoco.dat`, `ArquivoPoco-12312NOME.dat`
        - No menu principal, acessar a classe `CConfiguracaoInterfaceCLI` e então definir os valores como true/false.
 ** Solução Qt
-   - ** DONE Renomear doc para doc-v1
-   - ** DONE Criar doc-v2
-   - ** DONE Copiar arquivos de doc-v1
-   - ** DONE Copiar src-v1 para src-v2
-   - ** Adicionar a interface gráfica para os testes apresentados.
-   - ** Defender isso em TCC1.
+*** DONE Renomear doc para doc-v1
+*** DONE Criar doc-v2
+*** DONE Copiar arquivos de doc-v1
+*** DONE Copiar src-v1 para src-v2
+**** Adicionar a interface gráfica para os testes apresentados.
+**** Defender isso em TCC1.
 
 * TODO TCC2
-   - ** Tem de adicionar a parte 2 da disciplina de poço.
+** Tem de adicionar a parte 2 da disciplina de poço.
+** Bruno J. Vicente - Professor de Poço
+**** Reunião com Bruno J.Vicente, identificar pelo menos 5 exemplos práticos a serem implementados.
+**** TODO Obter com Bruno a informação da teoria de cada exemplo
+**** TODO Solicitar a instalação e uso do software para feedback
 
+** Exemplo de sala de aula 1
+*** TODO Exemplo 1: Título
+*** TODO Exemplo 1: Modelagem
+**** TODO Diagrama de caso de uso
+**** TODO Diagrama de sequência  [teste lógico]
+**** TODO Diagrama de classe (atualização)
+**** TODO Diagrama de máquina de estado [se necessário, estado muda cálculos]
+**** TODO Diagrama de atividade [se necessário; cálculo complexo]
+**** TODO Diagrama de comunicação [teste lógico]
+*** TODO Exemplo 1: Implementação
+**** TODO Implementação dos códigos
+*** TODO Exemplo 1: Teste
+***** TODO Rodar no Linux
+***** TODO Rodar no Windows
+*** TODO Exemplo 1: Documentação
+***** TODO Gerar a documentação para o exemplo
+*** TODO Exemplo 1: Retorno dos usuarios
+**** TODO  Retorno do Prof Bueno
+**** TODO  Retorno do Prof Bruno
+**** TODO  Retorno do Aluno 1
+**** TODO  Retorno do Aluno 2
+**** TODO  Retorno do Aluno 3
+**** TODO  Avaliar e fazer as correções solicitadas
+
+** Exemplo de sala de aula 2
+*** TODO Exemplo 2: Título
+*** TODO Exemplo 2: Modelagem
+**** TODO Diagrama de caso de uso
+**** TODO Diagrama de sequência  [teste lógico]
+**** TODO Diagrama de classe (atualização)
+**** TODO Diagrama de máquina de estado [se necessário, estado muda cálculos]
+**** TODO Diagrama de atividade [se necessário; cálculo complexo]
+**** TODO Diagrama de comunicação [teste lógico]
+*** TODO Exemplo 2: Implementação
+**** TODO Implementação dos códigos
+*** TODO Exemplo 2: Teste
+***** TODO Rodar no Linux
+***** TODO Rodar no Windows
+*** TODO Exemplo 2: Documentação
+***** TODO Gerar a documentação para o exemplo
+*** TODO Exemplo 2: Retorno dos usuarios
+**** TODO  Retorno do Prof Bueno
+**** TODO  Retorno do Prof Bruno
+**** TODO  Retorno do Aluno 1
+**** TODO  Retorno do Aluno 2
+**** TODO  Retorno do Aluno 3
+**** TODO  Avaliar e fazer as correções solicitadas
+
+** Exemplo de sala de aula 2
+*** TODO Exemplo 2: Título
+*** TODO Exemplo 2: Modelagem
+**** TODO Diagrama de caso de uso
+**** TODO Diagrama de sequência  [teste lógico]
+**** TODO Diagrama de classe (atualização)
+**** TODO Diagrama de máquina de estado [se necessário, estado muda cálculos]
+**** TODO Diagrama de atividade [se necessário; cálculo complexo]
+**** TODO Diagrama de comunicação [teste lógico]
+*** TODO Exemplo 2: Implementação
+**** TODO Implementação dos códigos
+*** TODO Exemplo 2: Teste
+***** TODO Rodar no Linux
+***** TODO Rodar no Windows
+*** TODO Exemplo 2: Documentação
+***** TODO Gerar a documentação para o exemplo
+*** TODO Exemplo 2: Retorno dos usuarios
+**** TODO  Retorno do Prof Bueno
+**** TODO  Retorno do Prof Bruno
+**** TODO  Retorno do Aluno 1
+**** TODO  Retorno do Aluno 2
+**** TODO  Retorno do Aluno 3
+**** TODO  Avaliar e fazer as correções solicitadas
+** Exemplo de sala de aula 3
+*** TODO Exemplo 3: Título
+*** TODO Exemplo 3: Modelagem
+**** TODO Diagrama de caso de uso
+**** TODO Diagrama de sequência  [teste lógico]
+**** TODO Diagrama de classe (atualização)
+**** TODO Diagrama de máquina de estado [se necessário, estado muda cálculos]
+**** TODO Diagrama de atividade [se necessário; cálculo complexo]
+**** TODO Diagrama de comunicação [teste lógico]
+*** TODO Exemplo 3: Implementação
+**** TODO Implementação dos códigos
+*** TODO Exemplo 3: Teste
+***** TODO Rodar no Linux
+***** TODO Rodar no Windows
+*** TODO Exemplo 3: Documentação
+***** TODO Gerar a documentação para o exemplo
+*** TODO Exemplo 3: Retorno dos usuarios
+**** TODO  Retorno do Prof Bueno
+**** TODO  Retorno do Prof Bruno
+**** TODO  Retorno do Aluno 1
+**** TODO  Retorno do Aluno 2
+**** TODO  Retorno do Aluno 3
+**** TODO  Avaliar e fazer as correções solicitadas
+** Exemplo de sala de aula 4
+*** TODO Exemplo 4: Título
+*** TODO Exemplo 4: Modelagem
+**** TODO Diagrama de caso de uso
+**** TODO Diagrama de sequência  [teste lógico]
+**** TODO Diagrama de classe (atualização)
+**** TODO Diagrama de máquina de estado [se necessário, estado muda cálculos]
+**** TODO Diagrama de atividade [se necessário; cálculo complexo]
+**** TODO Diagrama de comunicação [teste lógico]
+*** TODO Exemplo 4: Implementação
+**** TODO Implementação dos códigos
+*** TODO Exemplo 4: Teste
+***** TODO Rodar no Linux
+***** TODO Rodar no Windows
+*** TODO Exemplo 4: Documentação
+***** TODO Gerar a documentação para o exemplo
+*** TODO Exemplo 4: Retorno dos usuarios
+**** TODO  Retorno do Prof Bueno
+**** TODO  Retorno do Prof Bruno
+**** TODO  Retorno do Aluno 1
+**** TODO  Retorno do Aluno 2
+**** TODO  Retorno do Aluno 3
+**** TODO  Avaliar e fazer as correções solicitadas
+** Exemplo de sala de aula 5
+*** TODO Exemplo 5: Título
+*** TODO Exemplo 5: Modelagem
+**** TODO Diagrama de caso de uso
+**** TODO Diagrama de sequência  [teste lógico]
+**** TODO Diagrama de classe (atualização)
+**** TODO Diagrama de máquina de estado [se necessário, estado muda cálculos]
+**** TODO Diagrama de atividade [se necessário; cálculo complexo]
+**** TODO Diagrama de comunicação [teste lógico]
+*** TODO Exemplo 5: Implementação
+**** TODO Implementação dos códigos
+*** TODO Exemplo 5: Teste
+***** TODO Rodar no Linux
+***** TODO Rodar no Windows
+*** TODO Exemplo 5: Documentação
+***** TODO Gerar a documentação para o exemplo
+*** TODO Exemplo 5: Retorno dos usuarios
+**** TODO  Retorno do Prof Bueno
+**** TODO  Retorno do Prof Bruno
+**** TODO  Retorno do Aluno 1
+**** TODO  Retorno do Aluno 2
+**** TODO  Retorno do Aluno 3
+**** TODO  Avaliar e fazer as correções solicitadas
