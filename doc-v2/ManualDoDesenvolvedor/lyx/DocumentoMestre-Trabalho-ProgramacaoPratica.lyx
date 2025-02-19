@@ -208,6 +208,54 @@ literal "true"
 
 \begin_layout Standard
 \align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap6-Ciclos-Construcao-Implementacao.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap7-Teste.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap8-Documentacao.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap9-Documentacao-ManualUsuario.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
 \begin_inset Note Note
 status open
 

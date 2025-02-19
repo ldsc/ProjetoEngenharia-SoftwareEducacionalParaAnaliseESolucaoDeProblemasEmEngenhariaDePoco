@@ -1,0 +1,8 @@
+Nesta pasta, encontra-se um arquivo .dat com informações para importar um exemplo e utilizar no software sem precisar coletar dados de outras referências. Com ele, você pode entender as funcionalidades e como o simulador se comporta.
+
+O arquivo Simulador V0.2 é a versão de terminal que apresenta todas as funcionalidades desenvolvidas até o momento. Já a V1.0 é a versão com interface gráfica (última versão desenvolvida). Recomendo considerar essa versão como a parte final do projeto.
+
+Observações:
+
+- Caso a V1.0 não abra, tente retornar uma pasta e acessar o seguinte caminho: src-v2\build\Desktop_Qt_6_8_1_MinGW_64_bit-Release\release\Simulador-Poco.exe
+- Para entender a construção do programa e sua fundamentação teórica, você pode consultar a documentação anexada nesta pasta. 
