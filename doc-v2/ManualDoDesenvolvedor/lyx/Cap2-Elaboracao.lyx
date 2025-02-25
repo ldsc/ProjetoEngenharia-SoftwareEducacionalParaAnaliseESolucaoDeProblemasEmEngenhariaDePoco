@@ -1062,6 +1062,14 @@ Onde
 \begin_inset Formula $\left[lb/lb-mol\right]$
 \end_inset
 
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "APPLIED1991"
+literal "false"
+
+\end_inset
+
 .
 \end_layout
 
@@ -1216,7 +1224,15 @@ Em muitas situações de campo é útil comparar uma coluna com vários fluidos 
 \end_layout
 
 \begin_layout Standard
-A densidade da lama equivalente sempre deve ser calculada utilizando uma profundidade de referência específica.
+A densidade da lama equivalente sempre deve ser calculada utilizando uma profundidade de referência específica 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "APPLIED1991"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -2241,6 +2257,26 @@ nolink "false"
 \end_inset
 
 ).
+\end_layout
+
+\begin_layout Standard
+Grande parte das informações apresentadas neste capítulo foram extraídas de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "APPLIED1991"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
