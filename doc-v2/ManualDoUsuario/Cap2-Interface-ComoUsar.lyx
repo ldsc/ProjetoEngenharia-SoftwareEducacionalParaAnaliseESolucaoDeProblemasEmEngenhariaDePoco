@@ -1,0 +1,482 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\options normaltoc, sumarioincompleto
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children no
+\language brazilian
+\language_package auto
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_title "Título da Monografia - Dissertação - Tese"
+\pdf_author "Nome do Autor"
+\pdf_subject "Descrever assunto"
+\pdf_keywords "Copiar do resumo"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style apalike
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 1
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Interface Gráfica
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Interface gráfica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+A Interface Gráfica Geral
+\end_layout
+
+\begin_layout Standard
+A interface do programa é apresentada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Imagem da Interface Gráfica"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Interface-Modulo1.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Imagem da Interface Gráfica
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Imagem da Interface Gráfica"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Interface-Modulo1-descricao.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Imagem da Interface Gráfica Descrita
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Imagem da Interface Gráfica Descrita"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+O Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Imagem da Interface Gráfica Descrita"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ mostra a janela principal do software e foram listadas grupos de funcionalidades importantes ao usuário.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Propriedades dos Poços –
+\series default
+ Permite adicionar e atualizar informações sobre o poço.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Propriedades dos Fluidos –
+\series default
+ Permite adicionar ou remover fluidos do sistema.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Resultados da Pressão Hidrostática –
+\series default
+ Exibe a pressão hidrostática em um ponto específico dentro do intervalo do poço definido pelo usuário.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Resultados dos Modelos Reológicos –
+\series default
+ Calcula a perda friccional com base em três modelos reológicos,
+ permitindo a escolha entre fluxo no poço ou no anular.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Gráfico do Poço com Fluido –
+\series default
+ Gera uma representação visual do poço e da distribuição dos fluidos.
+\end_layout
+
+\begin_layout Subsection
+Propriedades do Poço
+\end_layout
+
+\begin_layout Standard
+Esta funcionalidade permite ao usuário inserir e atualizar as características do poço,
+ como profundidade,
+ diâmetro e pressão na superfície.
+\end_layout
+
+\begin_layout Itemize
+O usuário acessa a aba Propriedades dos Poços.
+\end_layout
+
+\begin_layout Itemize
+Insere os dados necessários,
+ como nome do poço,
+ profundidade total,
+ pressão na superficie,
+ diametro do poço,
+ diametro do revestimento ID e OD e vazão.
+\end_layout
+
+\begin_layout Itemize
+Confirma as informações para que o software armazene e utilize esses valores nos cálculos subsequentes.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Atualização de Dados
+\end_layout
+
+\begin_layout Standard
+Caso os dados do poço precisem ser alterados,
+ o usuário pode editar os valores e salvar as modificações.
+\end_layout
+
+\begin_layout Subsection
+Propriedades dos Fluidos
+\end_layout
+
+\begin_layout Standard
+Permite a inserção e remoção de fluidos,
+ definindo suas propriedades para cálculo de pressão e perdas de carga.
+\end_layout
+
+\begin_layout Itemize
+O usuário define a profundidade onde deseja calcular a pressão.
+\end_layout
+
+\begin_layout Itemize
+O software exibe a pressão hidrostática correspondente com base nos fluidos e na profundidade do poço.
+\end_layout
+
+\begin_layout Subsection
+Cálculo da Pressão Hidroestática
+\end_layout
+
+\begin_layout Standard
+Esta funcionalidade permite calcular a pressão hidrostática em um ponto escolhido pelo usuário dentro do intervalo do poço.
+\end_layout
+
+\begin_layout Itemize
+O usuário define a profundidade onde deseja calcular a pressão.
+\end_layout
+
+\begin_layout Itemize
+O software exibe a pressão hidrostática correspondente com base nos fluidos e na profundidade do poço.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Seleção da Profundidade
+\end_layout
+
+\begin_layout Standard
+O usuário escolhe um valor dentro da faixa de profundidade do poço.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Exibição do Resultado
+\end_layout
+
+\begin_layout Standard
+O software apresenta a pressão hidrostática calculada em psi.
+\end_layout
+
+\begin_layout Subsection
+Modelos Reológicos e Perda Friccional
+\end_layout
+
+\begin_layout Standard
+Permite o cálculo da perda friccional no poço ou no anular utilizando três modelos reológicos diferentes..
+\end_layout
+
+\begin_layout Itemize
+O usuário escolhe um modelo reológico.
+\end_layout
+
+\begin_layout Itemize
+Define se o cálculo será para o poço ou para o anular.
+\end_layout
+
+\begin_layout Itemize
+O software exibe a velocidade,
+ o número de Reynolds,
+ o tipo de fluxo e a perda friccional (em psi/ft).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Escolha do Modelo Reológico
+\end_layout
+
+\begin_layout Standard
+O usuário seleciona entre os três modelos disponíveis.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definição do Meio de Escoamento
+\end_layout
+
+\begin_layout Standard
+O usuário escolhe se deseja calcular no poço ou no anular.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Exibição dos Resultados
+\end_layout
+
+\begin_layout Standard
+São apresentados a velocidade do fluido,
+ Reynolds,
+ tipo de fluxo e perda friccional.
+\end_layout
+
+\begin_layout Subsection
+Propriedades dos Fluidos
+\end_layout
+
+\begin_layout Standard
+Gera uma representação visual do poço e da distribuição dos fluidos ao longo da profundidade.
+\end_layout
+
+\begin_layout Itemize
+O usuário acessa a opção Gráfico do Poço com Fluido.
+\end_layout
+
+\begin_layout Itemize
+O software exibe um diagrama mostrando a profundidade do poço e a presença dos fluidos.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Geração do Gráfico
+\end_layout
+
+\begin_layout Standard
+O software utiliza os dados de profundidade e fluido para gerar a imagem.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Interpretação Visual
+\end_layout
+
+\begin_layout Standard
+O usuário analisa a disposição dos fluidos ao longo do poço.
+\end_layout
+
+\end_body
+\end_document
