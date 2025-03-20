@@ -295,6 +295,341 @@ name "sec:Formulação-teórica"
 \end_layout
 
 \begin_layout Subsection
+Ementa da disciplina
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec: Ementa da disciplina"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A seguir dados da ementa da disciplina cujo software atende.
+\end_layout
+
+\begin_layout Itemize
+Dados básicos:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sigla:
+ LEP01353
+\end_layout
+
+\begin_layout Itemize
+Nome:
+ Engenharia de Poço
+\end_layout
+
+\begin_layout Itemize
+Centro:
+ CCT - Centro de Ciência e Tecnologia
+\end_layout
+
+\begin_layout Itemize
+Laboratório:
+ CCT/LENEP - Laboratório de Engenharia e Exploração de Petróleo
+\end_layout
+
+\begin_layout Itemize
+Criação:
+ 2024/1,
+ 01/01/2024
+\end_layout
+
+\begin_layout Itemize
+Horas teórica:
+ 68
+\end_layout
+
+\begin_layout Itemize
+Horas prática:
+ 0
+\end_layout
+
+\begin_layout Itemize
+Horas extra classe:
+ 0
+\end_layout
+
+\begin_layout Itemize
+Horas extensão:
+ 0
+\end_layout
+
+\begin_layout Itemize
+Carga horária total:
+ 68
+\end_layout
+
+\begin_layout Itemize
+Créditos:
+ 4
+\end_layout
+
+\begin_layout Itemize
+Tipo de aprovação:
+ Média/Frequência
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Objetivos:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Conhecer os tipos de sonda de perfuração de poços de petróleo;
+ conhecer as funções dos componentes da coluna de perfuração e de completação;
+ conhecer o processo de cimentação de poços de poços;
+ conhecer as propriedades,
+ funções e características dos fluidos de perfuração;
+ modelar o escoamento do fluido de perfuração no espaço anular e dentro da coluna de perfuração;
+ analisar a estabilidade de poços de petróleo.
+ calcular as tensões na coluna de produção;
+ selecionar a metalurgia ideal para a completação de poços.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ementa resumida:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Introdução à perfuração e completação de poços de petróleo;
+ Fluidos de perfuração e completação de poços de petróleo;
+ Hidráulica de perfuração;
+ 
+\end_layout
+
+\begin_layout Itemize
+Estabilidade mecânica durante a perfuração de poços de petróleo;
+\end_layout
+
+\begin_layout Itemize
+Seleção de materiais para completação de poços de petróleo;
+ Análise de tensões na coluna de produção;
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Conteúdo programático:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Introdução à perfuração de poços de petróleo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Tipos de sonda de perfuração;
+\end_layout
+
+\begin_layout Itemize
+Elementos da coluna de perfuração e produção;
+\end_layout
+
+\begin_layout Itemize
+Cimentação;
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Fluidos de perfuração e completação de poços de petróleo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Composição dos fluidos de perfuração;
+\end_layout
+
+\begin_layout Itemize
+Função e características dos fluidos;
+\end_layout
+
+\begin_layout Itemize
+Dano de formação;
+\end_layout
+
+\begin_layout Itemize
+Reologia;
+\end_layout
+
+\begin_layout Itemize
+Filtração estática e dinâmica;
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Hidráulica de perfuração:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Transporte de cascalho;
+\end_layout
+
+\begin_layout Itemize
+Fluxo não-newtoniano dentro da coluna de perfuração e no espaço anular;
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Estabilidade mecânica de poços de petróleo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Introdução à mecânica das rochas;
+\end_layout
+
+\begin_layout Itemize
+Gradiente de sobrecarga e de pressão de poros;
+\end_layout
+
+\begin_layout Itemize
+Tensões ao redor de um poço;
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Introdução à completação de poços de petróleo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Elementos da coluna de produção;
+\end_layout
+
+\begin_layout Itemize
+Operações de completação de poços;
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Seleção de materiais para completação de poços de petróleo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Tipo de metais;
+\end_layout
+
+\begin_layout Itemize
+Corrosão;
+\end_layout
+
+\begin_layout Itemize
+Seleção de metalurgia.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Análise de tensões na coluna de produção:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Carga axial;
+\end_layout
+
+\begin_layout Itemize
+Colapso e explosão da coluna de produção;
+\end_layout
+
+\begin_layout Itemize
+Fatores de segurança;
+\end_layout
+
+\begin_layout Itemize
+Obturadores;
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Tópicos especiais
+\end_layout
+
+\begin_layout Itemize
+Avaliação do curso
+\end_layout
+
+\begin_layout Itemize
+Provas escritas
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Bibliografia
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+BELLARBY,
+ J.:
+ Well completion design.
+ Amsterdam:
+ Elsevier,
+ 2009.
+\end_layout
+
+\begin_layout Itemize
+BOURGOYNE,
+ A.;
+ MILLHEIM,
+ K.K.;
+ CHENEVERT,
+ M.E.
+ YOUNG JR.,
+ F.D.
+ Applied drilling engineering.
+ Richardson,
+ TX:
+ Society of Petroleum Engineers,
+ 1986.
+\end_layout
+
+\begin_layout Itemize
+GRAY,
+ G.R.;
+ DARLEY,
+ H.;
+ CAENN,
+ R.
+ Fluidos de perfuração e completação.
+ Rio de Janeiro:
+ LTC,
+ 2014.
+\end_layout
+
+\begin_layout Itemize
+RENPU,
+ W.
+ Engenharia de completação de poços.
+ Amsterdam:
+ Elsevier,
+ 2017.
+\end_layout
+
+\begin_layout Itemize
+ROCHA,
+ L.A.S.;
+ AZEVEDO,
+ C.T.:
+ Projetos de poços de petróleo.
+ Geopressões e assentamento de colunas de revestimento.
+ Rio de Janeiro:
+ Interciência,
+ 2019.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
 Termos e Unidades
 \begin_inset Index idx
 range none
@@ -2285,36 +2620,72 @@ Identificação de Pacotes – Assuntos
 
 \begin_layout Itemize
 Pacote engenharia de poço:
- O pacote engenharia de poço é responsável por relacionar os pacotes mecânica dos fluidos,
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O pacote engenharia de poço é responsável por relacionar os pacotes mecânica dos fluidos,
  mecânica das rochas e equações analíticas de forma a tornar possível e coerente os resultados obtidos pela simulação.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Pacote mecânica dos fluidos:
- É o pacote que relaciona todas as propriedades dos fluidos e como esses fluidos se correlacionam com o poço e com outros fluidos.
+ 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+É o pacote que relaciona todas as propriedades dos fluidos e como esses fluidos se correlacionam com o poço e com outros fluidos.
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Pacote mecânica das rochas:
- É o pacote que relaciona todas as propriedades das rochas presentes no sistema.
+ 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+É o pacote que relaciona todas as propriedades das rochas presentes no sistema.
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Pacote janela principal:
- É o pacote que compreende a interface amigável que o usuário terá contato,
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+É o pacote que compreende a interface amigável que o usuário terá contato,
  é o ambiente onde o usuário poderá enviar comandos para o simulador e é a partir daqui que poderá visualizar os resultados.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Pacote equações analíticas:
- Neste pacote estão agrupadas todas as equações analíticas que são aplicadas durante a simulação
+ 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Neste pacote estão agrupadas todas as equações analíticas que são aplicadas durante a simulação
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Pacote modelagem gráfica:
- Esse é o pacote responsável por montar os gráficos que são obtidos a partir dos resultados da simulação.
+ 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Esse é o pacote responsável por montar os gráficos que são obtidos a partir dos resultados da simulação.
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Diagrama de Pacotes – Assuntos
 \begin_inset CommandInset label
