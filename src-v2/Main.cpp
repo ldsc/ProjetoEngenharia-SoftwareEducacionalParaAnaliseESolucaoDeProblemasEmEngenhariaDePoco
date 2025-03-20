@@ -1,11 +1,11 @@
-#include "CSimuladorPoco.h"
+#include "janelamenu.h"
 
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    CSimuladorPoco w;
+    JanelaMenu w;
     w.show();
     return a.exec();
 }

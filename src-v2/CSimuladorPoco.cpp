@@ -17,6 +17,15 @@ CSimuladorPoco::CSimuladorPoco(QWidget *parent)
 {
     ui->setupUi(this);
     CSimuladorPoco::makePlotPoco();
+
+    //abrir janela no meio do monitor
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QRect screenGeometry = screen->geometry();
+
+    int x = (screenGeometry.width() - this->width()) / 2;
+    int y = (screenGeometry.height() - this->height()) / 2;
+
+    this->move(x, y);
 }
 
 CSimuladorPoco::~CSimuladorPoco()

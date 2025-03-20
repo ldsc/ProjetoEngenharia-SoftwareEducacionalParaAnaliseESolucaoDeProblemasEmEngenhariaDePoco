@@ -85,15 +85,15 @@ public:
     QWidget *tab_2;
     QWidget *gridLayoutWidget_4;
     QGridLayout *gridLayout_4;
-    QLabel *lbnPerdaFriccionalAnularNewtoniano;
+    QLabel *lbnReynoldsAnularNewtoniano;
     QLabel *lbnTituloReynoldsAnularNewtoniano;
-    QPushButton *btnCalcularModeloNewtonianoAnular;
+    QLabel *lbnVelocidadeAnularNewtoniano;
     QLabel *lbnTituloPerdaFriccionalAnularNewtoniano;
+    QLabel *lbnTipoFluxoAnularNewtoniano;
     QLabel *lbnTituloTipoFluxoAnularNewtoniano;
     QLabel *lbnTituloVelocidadeAnularNewtoniano;
-    QLabel *lbnReynoldsAnularNewtoniano;
-    QLabel *lbnVelocidadeAnularNewtoniano;
-    QLabel *lbnTipoFluxoAnularNewtoniano;
+    QLabel *lbnPerdaFriccionalAnularNewtoniano;
+    QPushButton *btnCalcularModeloNewtonianoAnular;
     QWidget *gridLayoutWidget_14;
     QGridLayout *gridLayout_14;
     QPushButton *btnCalcularPressaoHidroestatica;
@@ -192,7 +192,7 @@ public:
     {
         if (CSimuladorPoco->objectName().isEmpty())
             CSimuladorPoco->setObjectName("CSimuladorPoco");
-        CSimuladorPoco->resize(1416, 707);
+        CSimuladorPoco->resize(1416, 732);
         actionImportar_Dados = new QAction(CSimuladorPoco);
         actionImportar_Dados->setObjectName("actionImportar_Dados");
         centralwidget = new QWidget(CSimuladorPoco);
@@ -391,7 +391,7 @@ public:
 
         gridLayoutWidget_9 = new QWidget(centralwidget);
         gridLayoutWidget_9->setObjectName("gridLayoutWidget_9");
-        gridLayoutWidget_9->setGeometry(QRect(250, 370, 261, 231));
+        gridLayoutWidget_9->setGeometry(QRect(250, 390, 261, 231));
         gridLayout_9 = new QGridLayout(gridLayoutWidget_9);
         gridLayout_9->setObjectName("gridLayout_9");
         gridLayout_9->setContentsMargins(0, 0, 0, 0);
@@ -474,11 +474,11 @@ public:
         gridLayout_4 = new QGridLayout(gridLayoutWidget_4);
         gridLayout_4->setObjectName("gridLayout_4");
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        lbnPerdaFriccionalAnularNewtoniano = new QLabel(gridLayoutWidget_4);
-        lbnPerdaFriccionalAnularNewtoniano->setObjectName("lbnPerdaFriccionalAnularNewtoniano");
-        lbnPerdaFriccionalAnularNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        lbnReynoldsAnularNewtoniano = new QLabel(gridLayoutWidget_4);
+        lbnReynoldsAnularNewtoniano->setObjectName("lbnReynoldsAnularNewtoniano");
+        lbnReynoldsAnularNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_4->addWidget(lbnPerdaFriccionalAnularNewtoniano, 3, 1, 1, 1);
+        gridLayout_4->addWidget(lbnReynoldsAnularNewtoniano, 1, 1, 1, 1);
 
         lbnTituloReynoldsAnularNewtoniano = new QLabel(gridLayoutWidget_4);
         lbnTituloReynoldsAnularNewtoniano->setObjectName("lbnTituloReynoldsAnularNewtoniano");
@@ -486,16 +486,23 @@ public:
 
         gridLayout_4->addWidget(lbnTituloReynoldsAnularNewtoniano, 1, 0, 1, 1);
 
-        btnCalcularModeloNewtonianoAnular = new QPushButton(gridLayoutWidget_4);
-        btnCalcularModeloNewtonianoAnular->setObjectName("btnCalcularModeloNewtonianoAnular");
+        lbnVelocidadeAnularNewtoniano = new QLabel(gridLayoutWidget_4);
+        lbnVelocidadeAnularNewtoniano->setObjectName("lbnVelocidadeAnularNewtoniano");
+        lbnVelocidadeAnularNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_4->addWidget(btnCalcularModeloNewtonianoAnular, 4, 0, 1, 2);
+        gridLayout_4->addWidget(lbnVelocidadeAnularNewtoniano, 0, 1, 1, 1);
 
         lbnTituloPerdaFriccionalAnularNewtoniano = new QLabel(gridLayoutWidget_4);
         lbnTituloPerdaFriccionalAnularNewtoniano->setObjectName("lbnTituloPerdaFriccionalAnularNewtoniano");
         lbnTituloPerdaFriccionalAnularNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_4->addWidget(lbnTituloPerdaFriccionalAnularNewtoniano, 3, 0, 1, 1);
+
+        lbnTipoFluxoAnularNewtoniano = new QLabel(gridLayoutWidget_4);
+        lbnTipoFluxoAnularNewtoniano->setObjectName("lbnTipoFluxoAnularNewtoniano");
+        lbnTipoFluxoAnularNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        gridLayout_4->addWidget(lbnTipoFluxoAnularNewtoniano, 2, 1, 1, 1);
 
         lbnTituloTipoFluxoAnularNewtoniano = new QLabel(gridLayoutWidget_4);
         lbnTituloTipoFluxoAnularNewtoniano->setObjectName("lbnTituloTipoFluxoAnularNewtoniano");
@@ -509,23 +516,16 @@ public:
 
         gridLayout_4->addWidget(lbnTituloVelocidadeAnularNewtoniano, 0, 0, 1, 1);
 
-        lbnReynoldsAnularNewtoniano = new QLabel(gridLayoutWidget_4);
-        lbnReynoldsAnularNewtoniano->setObjectName("lbnReynoldsAnularNewtoniano");
-        lbnReynoldsAnularNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        lbnPerdaFriccionalAnularNewtoniano = new QLabel(gridLayoutWidget_4);
+        lbnPerdaFriccionalAnularNewtoniano->setObjectName("lbnPerdaFriccionalAnularNewtoniano");
+        lbnPerdaFriccionalAnularNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_4->addWidget(lbnReynoldsAnularNewtoniano, 1, 1, 1, 1);
+        gridLayout_4->addWidget(lbnPerdaFriccionalAnularNewtoniano, 3, 1, 1, 1);
 
-        lbnVelocidadeAnularNewtoniano = new QLabel(gridLayoutWidget_4);
-        lbnVelocidadeAnularNewtoniano->setObjectName("lbnVelocidadeAnularNewtoniano");
-        lbnVelocidadeAnularNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        btnCalcularModeloNewtonianoAnular = new QPushButton(gridLayoutWidget_4);
+        btnCalcularModeloNewtonianoAnular->setObjectName("btnCalcularModeloNewtonianoAnular");
 
-        gridLayout_4->addWidget(lbnVelocidadeAnularNewtoniano, 0, 1, 1, 1);
-
-        lbnTipoFluxoAnularNewtoniano = new QLabel(gridLayoutWidget_4);
-        lbnTipoFluxoAnularNewtoniano->setObjectName("lbnTipoFluxoAnularNewtoniano");
-        lbnTipoFluxoAnularNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout_4->addWidget(lbnTipoFluxoAnularNewtoniano, 2, 1, 1, 1);
+        gridLayout_4->addWidget(btnCalcularModeloNewtonianoAnular, 4, 0, 1, 2);
 
         tabWidget->addTab(tab_2, QString());
 
@@ -533,7 +533,7 @@ public:
 
         gridLayoutWidget_14 = new QWidget(centralwidget);
         gridLayoutWidget_14->setObjectName("gridLayoutWidget_14");
-        gridLayoutWidget_14->setGeometry(QRect(20, 370, 237, 121));
+        gridLayoutWidget_14->setGeometry(QRect(20, 390, 211, 121));
         gridLayout_14 = new QGridLayout(gridLayoutWidget_14);
         gridLayout_14->setObjectName("gridLayout_14");
         gridLayout_14->setContentsMargins(0, 0, 0, 0);
@@ -578,7 +578,7 @@ public:
 
         gridLayoutWidget_10 = new QWidget(centralwidget);
         gridLayoutWidget_10->setObjectName("gridLayoutWidget_10");
-        gridLayoutWidget_10->setGeometry(QRect(520, 370, 261, 271));
+        gridLayoutWidget_10->setGeometry(QRect(520, 390, 261, 281));
         gridLayout_10 = new QGridLayout(gridLayoutWidget_10);
         gridLayout_10->setObjectName("gridLayout_10");
         gridLayout_10->setContentsMargins(0, 0, 0, 0);
@@ -595,7 +595,7 @@ public:
         tab_3->setObjectName("tab_3");
         gridLayoutWidget_5 = new QWidget(tab_3);
         gridLayoutWidget_5->setObjectName("gridLayoutWidget_5");
-        gridLayoutWidget_5->setGeometry(QRect(0, 0, 307, 251));
+        gridLayoutWidget_5->setGeometry(QRect(0, 0, 253, 221));
         gridLayout_5 = new QGridLayout(gridLayoutWidget_5);
         gridLayout_5->setObjectName("gridLayout_5");
         gridLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -703,7 +703,7 @@ public:
         tab_4->setObjectName("tab_4");
         gridLayoutWidget_6 = new QWidget(tab_4);
         gridLayoutWidget_6->setObjectName("gridLayoutWidget_6");
-        gridLayoutWidget_6->setGeometry(QRect(0, 0, 307, 251));
+        gridLayoutWidget_6->setGeometry(QRect(0, 0, 253, 221));
         gridLayout_6 = new QGridLayout(gridLayoutWidget_6);
         gridLayout_6->setObjectName("gridLayout_6");
         gridLayout_6->setContentsMargins(0, 0, 0, 0);
@@ -812,7 +812,7 @@ public:
 
         gridLayoutWidget_11 = new QWidget(centralwidget);
         gridLayoutWidget_11->setObjectName("gridLayoutWidget_11");
-        gridLayoutWidget_11->setGeometry(QRect(790, 370, 261, 271));
+        gridLayoutWidget_11->setGeometry(QRect(790, 390, 261, 281));
         gridLayout_11 = new QGridLayout(gridLayoutWidget_11);
         gridLayout_11->setObjectName("gridLayout_11");
         gridLayout_11->setContentsMargins(0, 0, 0, 0);
@@ -829,7 +829,7 @@ public:
         tab_5->setObjectName("tab_5");
         gridLayoutWidget_7 = new QWidget(tab_5);
         gridLayoutWidget_7->setObjectName("gridLayoutWidget_7");
-        gridLayoutWidget_7->setGeometry(QRect(0, 0, 279, 214));
+        gridLayoutWidget_7->setGeometry(QRect(0, 0, 251, 221));
         gridLayout_7 = new QGridLayout(gridLayoutWidget_7);
         gridLayout_7->setObjectName("gridLayout_7");
         gridLayout_7->setContentsMargins(0, 0, 0, 0);
@@ -914,7 +914,7 @@ public:
         tab_6->setObjectName("tab_6");
         gridLayoutWidget_8 = new QWidget(tab_6);
         gridLayoutWidget_8->setObjectName("gridLayoutWidget_8");
-        gridLayoutWidget_8->setGeometry(QRect(0, 0, 290, 214));
+        gridLayoutWidget_8->setGeometry(QRect(0, 0, 251, 211));
         gridLayout_8 = new QGridLayout(gridLayoutWidget_8);
         gridLayout_8->setObjectName("gridLayout_8");
         gridLayout_8->setContentsMargins(0, 0, 0, 0);
@@ -1000,11 +1000,11 @@ public:
 
         customPlotPoco = new QCustomPlot(centralwidget);
         customPlotPoco->setObjectName("customPlotPoco");
-        customPlotPoco->setGeometry(QRect(1070, 30, 301, 611));
+        customPlotPoco->setGeometry(QRect(1070, 30, 301, 631));
         CSimuladorPoco->setCentralWidget(centralwidget);
         menubar = new QMenuBar(CSimuladorPoco);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1416, 26));
+        menubar->setGeometry(QRect(0, 0, 1416, 22));
         menuArquivo = new QMenu(menubar);
         menuArquivo->setObjectName("menuArquivo");
         CSimuladorPoco->setMenuBar(menubar);
@@ -1017,7 +1017,7 @@ public:
 
         retranslateUi(CSimuladorPoco);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
         tabWidget_2->setCurrentIndex(0);
         tabWidget_3->setCurrentIndex(1);
 
@@ -1067,15 +1067,15 @@ public:
         lbnTituloTipoFluxoPocoNewtoniano->setText(QCoreApplication::translate("CSimuladorPoco", "Tipo de Fluxo no Po\303\247o", nullptr));
         lbnVelocidadePocoNewtoniano->setText(QCoreApplication::translate("CSimuladorPoco", "-", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("CSimuladorPoco", "Po\303\247o", nullptr));
-        lbnPerdaFriccionalAnularNewtoniano->setText(QCoreApplication::translate("CSimuladorPoco", "-", nullptr));
+        lbnReynoldsAnularNewtoniano->setText(QCoreApplication::translate("CSimuladorPoco", "-", nullptr));
         lbnTituloReynoldsAnularNewtoniano->setText(QCoreApplication::translate("CSimuladorPoco", "Reynolds no Anular", nullptr));
-        btnCalcularModeloNewtonianoAnular->setText(QCoreApplication::translate("CSimuladorPoco", "Calcular", nullptr));
+        lbnVelocidadeAnularNewtoniano->setText(QCoreApplication::translate("CSimuladorPoco", "-", nullptr));
         lbnTituloPerdaFriccionalAnularNewtoniano->setText(QCoreApplication::translate("CSimuladorPoco", "Perda Friccional no Anular (psi/ft)", nullptr));
+        lbnTipoFluxoAnularNewtoniano->setText(QCoreApplication::translate("CSimuladorPoco", "-", nullptr));
         lbnTituloTipoFluxoAnularNewtoniano->setText(QCoreApplication::translate("CSimuladorPoco", "Tipo de Fluxo no Anular", nullptr));
         lbnTituloVelocidadeAnularNewtoniano->setText(QCoreApplication::translate("CSimuladorPoco", "Velocidade do Anular (ft/s)", nullptr));
-        lbnReynoldsAnularNewtoniano->setText(QCoreApplication::translate("CSimuladorPoco", "-", nullptr));
-        lbnVelocidadeAnularNewtoniano->setText(QCoreApplication::translate("CSimuladorPoco", "-", nullptr));
-        lbnTipoFluxoAnularNewtoniano->setText(QCoreApplication::translate("CSimuladorPoco", "-", nullptr));
+        lbnPerdaFriccionalAnularNewtoniano->setText(QCoreApplication::translate("CSimuladorPoco", "-", nullptr));
+        btnCalcularModeloNewtonianoAnular->setText(QCoreApplication::translate("CSimuladorPoco", "Calcular", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("CSimuladorPoco", "Anular", nullptr));
         btnCalcularPressaoHidroestatica->setText(QCoreApplication::translate("CSimuladorPoco", "Calcular", nullptr));
         lbnTituloProfundidadePressaoHidroestatica->setText(QCoreApplication::translate("CSimuladorPoco", "Profundidade (ft)", nullptr));

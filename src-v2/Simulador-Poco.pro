@@ -21,6 +21,7 @@ SOURCES += \
     CTrechoPoco.cpp \
     Main.cpp \
     janelaadicionarfluido.cpp \
+    janelamenu.cpp \
     qcustomplot.cpp
 
 HEADERS += \
@@ -35,11 +36,13 @@ HEADERS += \
     CSimuladorPoco.h \
     CTrechoPoco.h \
     janelaadicionarfluido.h \
+    janelamenu.h \
     qcustomplot.h
 
 FORMS += \
     CSimuladorPoco.ui \
-    janelaadicionarfluido.ui
+    janelaadicionarfluido.ui \
+    janelamenu.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

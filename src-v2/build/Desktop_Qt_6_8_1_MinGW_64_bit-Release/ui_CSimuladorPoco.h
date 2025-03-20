@@ -595,7 +595,7 @@ public:
         tab_3->setObjectName("tab_3");
         gridLayoutWidget_5 = new QWidget(tab_3);
         gridLayoutWidget_5->setObjectName("gridLayoutWidget_5");
-        gridLayoutWidget_5->setGeometry(QRect(0, 0, 251, 221));
+        gridLayoutWidget_5->setGeometry(QRect(0, 0, 253, 221));
         gridLayout_5 = new QGridLayout(gridLayoutWidget_5);
         gridLayout_5->setObjectName("gridLayout_5");
         gridLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -703,7 +703,7 @@ public:
         tab_4->setObjectName("tab_4");
         gridLayoutWidget_6 = new QWidget(tab_4);
         gridLayoutWidget_6->setObjectName("gridLayoutWidget_6");
-        gridLayoutWidget_6->setGeometry(QRect(0, 0, 251, 221));
+        gridLayoutWidget_6->setGeometry(QRect(0, 0, 253, 221));
         gridLayout_6 = new QGridLayout(gridLayoutWidget_6);
         gridLayout_6->setObjectName("gridLayout_6");
         gridLayout_6->setContentsMargins(0, 0, 0, 0);
@@ -1004,7 +1004,7 @@ public:
         CSimuladorPoco->setCentralWidget(centralwidget);
         menubar = new QMenuBar(CSimuladorPoco);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1416, 26));
+        menubar->setGeometry(QRect(0, 0, 1416, 22));
         menuArquivo = new QMenu(menubar);
         menuArquivo->setObjectName("menuArquivo");
         CSimuladorPoco->setMenuBar(menubar);
@@ -1017,9 +1017,9 @@ public:
 
         retranslateUi(CSimuladorPoco);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
         tabWidget_2->setCurrentIndex(0);
-        tabWidget_3->setCurrentIndex(0);
+        tabWidget_3->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(CSimuladorPoco);

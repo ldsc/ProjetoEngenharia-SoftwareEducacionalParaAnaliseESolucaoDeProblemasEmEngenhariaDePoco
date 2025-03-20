@@ -10,7 +10,9 @@ release/CSimuladorPoco.o
 release/CTrechoPoco.o
 release/Main.o
 release/janelaadicionarfluido.o
+release/janelamenu.o
 release/qcustomplot.o
 release/moc_CSimuladorPoco.o
 release/moc_janelaadicionarfluido.o
+release/moc_janelamenu.o
 release/moc_qcustomplot.o
