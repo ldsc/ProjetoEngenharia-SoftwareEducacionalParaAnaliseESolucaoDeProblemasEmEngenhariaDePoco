@@ -6,13 +6,13 @@ debug/CModeloPotencia.o
 debug/CModeloReologico.o
 debug/CPoco.o
 debug/CRelatorioPoco.o
-debug/CSimuladorPoco.o
+debug/CSimuladorPocoHidroestatica.o
 debug/CTrechoPoco.o
 debug/Main.o
 debug/janelaadicionarfluido.o
 debug/janelamenu.o
 debug/qcustomplot.o
-debug/moc_CSimuladorPoco.o
+debug/moc_CSimuladorPocoHidroestatica.o
 debug/moc_janelaadicionarfluido.o
 debug/moc_janelamenu.o
 debug/moc_qcustomplot.o

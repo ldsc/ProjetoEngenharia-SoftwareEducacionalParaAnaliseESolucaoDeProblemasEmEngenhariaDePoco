@@ -17,7 +17,8 @@ SOURCES += \
     CModeloReologico.cpp \
     CPoco.cpp \
     CRelatorioPoco.cpp \
-    CSimuladorPoco.cpp \
+    CSimuladorPocoHidroestatica.cpp \
+    CSimuladorPocoTubos.cpp \
     CTrechoPoco.cpp \
     Main.cpp \
     janelaadicionarfluido.cpp \
@@ -33,14 +34,16 @@ HEADERS += \
     CModeloReologico.h \
     CPoco.h \
     CRelatorioPoco.h \
-    CSimuladorPoco.h \
+    CSimuladorPocoHidroestatica.h \
+    CSimuladorPocoTubos.h \
     CTrechoPoco.h \
     janelaadicionarfluido.h \
     janelamenu.h \
     qcustomplot.h
 
 FORMS += \
-    CSimuladorPoco.ui \
+    CSimuladorPocoHidroestatica.ui \
+    CSimuladorPocoTubos.ui \
     janelaadicionarfluido.ui \
     janelamenu.ui
 

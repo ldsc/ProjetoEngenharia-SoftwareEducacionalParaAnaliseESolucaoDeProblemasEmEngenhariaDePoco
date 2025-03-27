@@ -5,6 +5,7 @@
 #include <memory>
 #include "CFluido.h"
 #include "CTrechoPoco.h"
+std::optional<double> coefPoisson;
 
 class CPoco {
 protected:
@@ -18,12 +19,24 @@ protected:
     double vazao = 0.0;
     std::vector<std::unique_ptr<CTrechoPoco>> trechos;
 
+    // Dados a mais que precisam ser coletados caso rode a simulacao do modulo 02
+    std::optional<double> temperaturaTopoInicial;
+    std::optional<double> temperaturaFundoInicial;
+    std::optional<double> temperaturaTopoFnicial;
+    std::optional<double> tempperaturaFundoFinal;
+
+
+
 public:
     //construtor
     CPoco() {}
     ~CPoco() {}
+    
     CPoco(std::string Nome, double Profund, double PressaoSup, double D , double OD, double ID, double q)
-    : nomePoco(Nome),profundidadeFinal(Profund), pressaoSuperficie(PressaoSup), diametroPoco(D), diametroRevestimentoOD(OD), diametroRevestimentoID(ID), vazao(q) {}
+    : nomePoco(Nome),profundidadeFinal(Profund), pressaoSuperficie(PressaoSup), diametroPoco(D), diametroRevestimentoOD(OD), diametroRevestimentoID(ID), vazao(q) {} // Esse construtor nos leva os atributos que ira rodar na simulacao do Modulo 01
+
+    CPoco(std::string Nome, double Profund, double D, std::optional<double> tempTopoInicial, std::optional<double> tempFundoInicial, std::optional<double> tempTopoFinal, std::optional<double> tempFundoFinal)
+    : nomePoco(Nome),profundidadeFinal(Profund), diametroPoco(D), temperaturaTopoInicial(tempTopoInicial), temperaturaFundoInicial(tempFundoInicial), temperaturaTopoFnicial(tempTopoFinal), tempperaturaFundoFinal(tempFundoFinal) {} // Esse construtor nos leva os atributos que ira rodar na simulacao do Modulo 02
 
     // Getters
     std::string NomePoco() const { return nomePoco; }

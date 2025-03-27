@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -27,6 +28,8 @@ public:
     QTextEdit *textEdit;
     QPushButton *btnModulo01;
     QPushButton *btnModulo02;
+    QLabel *lbnModulo01;
+    QLabel *lbnModulo01_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -46,6 +49,12 @@ public:
         btnModulo02 = new QPushButton(centralwidget);
         btnModulo02->setObjectName("btnModulo02");
         btnModulo02->setGeometry(QRect(460, 140, 311, 111));
+        lbnModulo01 = new QLabel(centralwidget);
+        lbnModulo01->setObjectName("lbnModulo01");
+        lbnModulo01->setGeometry(QRect(460, 30, 301, 101));
+        lbnModulo01_2 = new QLabel(centralwidget);
+        lbnModulo01_2->setObjectName("lbnModulo01_2");
+        lbnModulo01_2->setGeometry(QRect(460, 140, 301, 101));
         JanelaMenu->setCentralWidget(centralwidget);
         menubar = new QMenuBar(JanelaMenu);
         menubar->setObjectName("menubar");
@@ -76,16 +85,10 @@ public:
                         "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Este simulador foi desenvolvido para auxiliar no estudo dos fen\303\264menos de po\303\247o na engenharia, permitindo simula\303\247\303\265es interativas e c\303\241lculos avan\303\247ados.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:700;\">Desenvolvedor:</span> Nathan Rangel Magalh\303\243es<br /><span style=\" font-weight:700;\">Coordenador:</span> Andr\303\251 Duarte Bueno<br /><span style=\" font-weight:700;\">Contato:</span> nathanmagalhaes@lenep.uenf.br / bueno@lenep.uenf.br</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Escolha um dos m\303\263dulos abaixo para iniciar sua simula\303\247\303\243o:</p></body></html>", nullptr));
-        btnModulo01->setText(QCoreApplication::translate("JanelaMenu", "Modulo 01 - Hidr\303\241ulica de perfura\303\247\303\243o\n"
-"\n"
-" - Transporte de cascalho.\n"
-"-Fluxo n\303\243o newtoniano na\n"
-"coluna e espa\303\247o anular na coluna de perfura\303\247\303\243o", nullptr));
-        btnModulo02->setText(QCoreApplication::translate("JanelaMenu", "Modulo 02 - Completa\303\247\303\243o de Po\303\247os\n"
-"\n"
-" \n"
-"-Lorem ipsum dolor sit amet.\n"
-"Lorem ipsum dolor sit amet", nullptr));
+        btnModulo01->setText(QString());
+        btnModulo02->setText(QString());
+        lbnModulo01->setText(QCoreApplication::translate("JanelaMenu", "<html><b>Modulo 01 - Hidr\303\241ulica de perfura\303\247\303\243o</b><br><ul><li>Transporte de cascalho.</li><li>Fluxo n\303\243o newtoniano na coluna e espa\303\247o anular na coluna de perfura\303\247\303\243o</li></ul></html>", nullptr));
+        lbnModulo01_2->setText(QCoreApplication::translate("JanelaMenu", "<html><b>Modulo 02 - Hidr\303\241ulica de perfura\303\247\303\243o</b><br><ul><li>Transporte de cascalho.</li><li>Fluxo n\303\243o newtoniano na coluna e espa\303\247o anular na coluna de perfura\303\247\303\243o</li></ul></html>", nullptr));
     } // retranslateUi
 
 };

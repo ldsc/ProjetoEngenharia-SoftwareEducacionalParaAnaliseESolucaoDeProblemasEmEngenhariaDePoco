@@ -1,7 +1,7 @@
 #include "janelamenu.h"
 #include "ui_janelamenu.h"
 
-#include "CSimuladorPoco.h"
+#include "CSimuladorPocoHidroestatica.h"
 
 JanelaMenu::JanelaMenu(QWidget *parent)
     : QMainWindow(parent)

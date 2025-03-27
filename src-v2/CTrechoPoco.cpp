@@ -6,7 +6,7 @@ double CTrechoPoco::PressaoHidroestatica() {
 }
 
 double CTrechoPoco::PressaoHidroestatica(double profund) {
-    return ( profund * 0.05195 * fluido->Densidade() );
+    return ( profund * 0.05195 * fluido->Densidade() ); 
 }
 
 double CTrechoPoco::DensidadeEquivalente() {
