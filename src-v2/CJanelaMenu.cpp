@@ -36,6 +36,7 @@ JanelaMenu::~JanelaMenu()
 void JanelaMenu::on_btnModulo01_clicked()
 {
     CSimuladorPoco *w = new CSimuladorPoco(this);
+    w->setWindowTitle("SEAPEP - Software Educacional de Engenharia de Poço");
     w->show();
 }
 
