@@ -87,8 +87,8 @@ public:
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Escolha um dos m\303\263dulos abaixo para iniciar sua simula\303\247\303\243o:</p></body></html>", nullptr));
         btnModulo01->setText(QString());
         btnModulo02->setText(QString());
-        lbnModulo01->setText(QCoreApplication::translate("JanelaMenu", "TextLabel", nullptr));
-        lbnModulo01_2->setText(QCoreApplication::translate("JanelaMenu", "TextLabel", nullptr));
+        lbnModulo01->setText(QCoreApplication::translate("JanelaMenu", "<html><b>Modulo 01 - Hidr\303\241ulica de perfura\303\247\303\243o</b><br><ul><li>Transporte de cascalho.</li><li>Fluxo n\303\243o newtoniano na coluna e espa\303\247o anular na coluna de perfura\303\247\303\243o</li></ul></html>", nullptr));
+        lbnModulo01_2->setText(QCoreApplication::translate("JanelaMenu", "<html><b>Modulo 02 - Hidr\303\241ulica de perfura\303\247\303\243o</b><br><ul><li>Transporte de cascalho.</li><li>Fluxo n\303\243o newtoniano na coluna e espa\303\247o anular na coluna de perfura\303\247\303\243o</li></ul></html>", nullptr));
     } // retranslateUi
 
 };
