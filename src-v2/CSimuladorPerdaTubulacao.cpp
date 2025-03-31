@@ -1,5 +1,5 @@
-#include "CSimuladorPocoTubos.h"
-#include "ui_CSimuladorPocoTubos.h"
+#include "CSimuladorPerdaTubulacao.h"
+#include "ui_CSimuladorPerdaTubulacao.h"
 
 CSimuladorPocoTubos::CSimuladorPocoTubos(QWidget *parent)
     : QDialog(parent)

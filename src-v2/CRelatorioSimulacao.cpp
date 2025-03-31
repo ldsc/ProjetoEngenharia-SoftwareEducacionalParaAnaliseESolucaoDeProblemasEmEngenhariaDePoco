@@ -4,7 +4,7 @@
 #include <string>
 #include <iomanip>
 
-#include "CRelatorioPoco.h"
+#include "CRelatorioSimulacao.h"
 
 void CRelatorioPoco::ArmazenarValor(std::string nomePoco, std::string texto, double valor) {
     

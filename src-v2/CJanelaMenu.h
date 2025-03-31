@@ -1,5 +1,5 @@
-#ifndef JANELAMENU_H
-#define JANELAMENU_H
+#ifndef CJANELAMENU_H
+#define CJANELAMENU_H
 
 #include <QMainWindow>
 
@@ -22,4 +22,4 @@ private:
     Ui::JanelaMenu *ui;
 };
 
-#endif // JANELAMENU_H
+#endif // CJANELAMENU_H

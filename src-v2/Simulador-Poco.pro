@@ -11,41 +11,41 @@ CONFIG += c++17
 SOURCES += \
     CFluido.cpp \
     CGnuplot.cpp \
+    CJanelaAdicionarFluido.cpp \
+    CJanelaMenu.cpp \
     CModeloBingham.cpp \
     CModeloNewtoniano.cpp \
     CModeloPotencia.cpp \
     CModeloReologico.cpp \
-    CPoco.cpp \
-    CRelatorioPoco.cpp \
-    CSimuladorPocoHidroestatica.cpp \
-    CSimuladorPocoTubos.cpp \
-    CTrechoPoco.cpp \
+    CObjetoPoco.cpp \
+    CRelatorioSimulacao.cpp \
+    CSimuladorPerdaTubulacao.cpp \
+    CSimuladorReologico.cpp \
+    CTrechoTubulacao.cpp \
     Main.cpp \
-    janelaadicionarfluido.cpp \
-    janelamenu.cpp \
     qcustomplot.cpp
 
 HEADERS += \
     CFluido.h \
     CGnuplot.h \
+    CJanelaAdicionarFluido.h \
+    CJanelaMenu.h \
     CModeloBingham.h \
     CModeloNewtoniano.h \
     CModeloPotencia.h \
     CModeloReologico.h \
-    CPoco.h \
-    CRelatorioPoco.h \
-    CSimuladorPocoHidroestatica.h \
-    CSimuladorPocoTubos.h \
-    CTrechoPoco.h \
-    janelaadicionarfluido.h \
-    janelamenu.h \
+    CObjetoPoco.h \
+    CRelatorioSimulacao.h \
+    CSimuladorPerdaTubulacao.h \
+    CSimuladorReologico.h \
+    CTrechoTubulacao.h \
     qcustomplot.h
 
 FORMS += \
-    CSimuladorPocoHidroestatica.ui \
-    CSimuladorPocoTubos.ui \
-    janelaadicionarfluido.ui \
-    janelamenu.ui
+    CJanelaAdicionarFluido.ui \
+    CJanelaMenu.ui \
+    CSimuladorPerdaTubulacao.ui \
+    CSimuladorReologico.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -2,7 +2,7 @@
 #define CMODELOREOLOGICO_H
 
 #include <string>
-#include "CPoco.h"
+#include "CObjetoPoco.h"
 
 class CModeloReologico {
 

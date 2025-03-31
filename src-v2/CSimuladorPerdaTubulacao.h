@@ -1,5 +1,5 @@
-#ifndef CSIMULADORPOCOTUBOS_H
-#define CSIMULADORPOCOTUBOS_H
+#ifndef CSIMULADORPERDATUBULACAO_H
+#define CSIMULADORPERDATUBULACAO_H
 
 #include <QDialog>
 
@@ -19,4 +19,4 @@ private:
     Ui::CSimuladorPocoTubos *ui;
 };
 
-#endif // CSIMULADORPOCOTUBOS_H
+#endif // CSIMULADORPERDATUBULACAO_H

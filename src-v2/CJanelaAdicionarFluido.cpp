@@ -1,5 +1,5 @@
-#include "janelaadicionarfluido.h"
-#include "ui_janelaadicionarfluido.h"
+#include "CJanelaAdicionarFluido.h"
+#include "ui_CJanelaAdicionarFluido.h"
 #include <QMessageBox>
 
 janelaadicionarfluido::janelaadicionarfluido(QWidget *parent)

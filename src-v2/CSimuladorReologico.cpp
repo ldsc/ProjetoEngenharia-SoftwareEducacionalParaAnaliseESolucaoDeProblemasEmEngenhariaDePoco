@@ -1,6 +1,6 @@
-#include "CSimuladorPocoHidroestatica.h"
-#include "ui_CSimuladorPocoHidroestatica.h"
-#include "janelaadicionarfluido.h"
+#include "CSimuladorReologico.h"
+#include "ui_CSimuladorReologico.h"
+#include "CJanelaAdicionarFluido.h"
 
 #include <iostream>
 #include <fstream>
@@ -372,7 +372,6 @@ void CSimuladorPoco::makePlotPoco()
 
     // Verifica se o poço está configurado
     if (!poco || poco->Trechos().empty()) {
-        qDebug() << "Nenhum trecho no poço!";
         return;
     }
 

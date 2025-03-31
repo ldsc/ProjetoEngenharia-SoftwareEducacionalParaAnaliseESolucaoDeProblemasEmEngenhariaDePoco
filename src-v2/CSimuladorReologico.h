@@ -1,9 +1,9 @@
-#ifndef CSIMULADORPOCOHIDROESTATICA_H
-#define CSIMULADORPOCOHIDROESTATICA_H
+#ifndef CSIMULADORREOLOGICO_H
+#define CSIMULADORREOLOGICO_H
 
 #include <QMainWindow>
-#include "CPoco.h"
-#include "CTrechoPoco.h"
+#include "CObjetoPoco.h"
+#include "CTrechoTubulacao.h"
 #include "CModeloNewtoniano.h"
 #include "CModeloBingham.h"
 #include "CModeloPotencia.h"
@@ -58,4 +58,4 @@ private:
     std::shared_ptr<CModeloBingham> modeloBingham = nullptr;
     std::shared_ptr<CModeloPotencia> modeloPotencia = nullptr;
 };
-#endif // CSIMULADORPOCOHIDROESTATICA_H
+#endif // CSIMULADORREOLOGICO_H

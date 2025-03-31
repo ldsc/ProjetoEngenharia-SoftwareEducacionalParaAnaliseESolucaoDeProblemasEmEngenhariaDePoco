@@ -1,4 +1,4 @@
-#include "CPoco.h"
+#include "CObjetoPoco.h"
 //#include "CGnuplot.h"
 #include <iostream>
 #include <vector>

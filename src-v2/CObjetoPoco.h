@@ -1,10 +1,10 @@
-#ifndef CPOCO_H
-#define CPOCO_H
+#ifndef COBJETOPOCO_H
+#define COBJETOPOCO_H
 
 #include <vector>
 #include <memory>
 #include "CFluido.h"
-#include "CTrechoPoco.h"
+#include "CTrechoTubulacao.h"
 
 class CPoco {
 protected:

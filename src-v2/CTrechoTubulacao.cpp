@@ -1,4 +1,4 @@
-#include "CTrechoPoco.h"
+#include "CTrechoTubulacao.h"
 #include <iostream>
 
 double CTrechoPoco::PressaoHidroestatica() {

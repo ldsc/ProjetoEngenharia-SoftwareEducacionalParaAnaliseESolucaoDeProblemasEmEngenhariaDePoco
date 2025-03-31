@@ -1,5 +1,5 @@
-#ifndef CTRECHOPOCO_H
-#define CTRECHOPOCO_H
+#ifndef CTRECHOTUBULACAO_H
+#define CTRECHOTUBULACAO_H
 
 #include "CFluido.h"
 #include <memory>
@@ -40,4 +40,4 @@ public:
     double DensidadeEquivalente();
 };
 
-#endif // CTRECHOPOCO_H
+#endif // CTRECHOTUBULACAO_H

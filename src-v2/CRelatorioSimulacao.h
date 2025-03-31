@@ -1,8 +1,8 @@
-#ifndef CRELATORIOPOCO_H
-#define CRELATORIOPOCO_H
+#ifndef CRELATORIOSIMULACAO_H
+#define CRELATORIOSIMULACAO_H
 
 #include <string>
-#include "CPoco.h"
+#include "CObjetoPoco.h"
 
 class CRelatorioPoco {
 protected:
