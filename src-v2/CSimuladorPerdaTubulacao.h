@@ -4,19 +4,19 @@
 #include <QDialog>
 
 namespace Ui {
-class CSimuladorPocoTubos;
+class CSimuladorPerdaTubulacao;
 }
 
-class CSimuladorPocoTubos : public QDialog
+class CSimuladorPerdaTubulacao : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit CSimuladorPocoTubos(QWidget *parent = nullptr);
-    ~CSimuladorPocoTubos();
+    explicit CSimuladorPerdaTubulacao(QWidget *parent = nullptr);
+    ~CSimuladorPerdaTubulacao();
 
 private:
-    Ui::CSimuladorPocoTubos *ui;
+    Ui::CSimuladorPerdaTubulacao *ui;
 };
 
 #endif // CSIMULADORPERDATUBULACAO_H

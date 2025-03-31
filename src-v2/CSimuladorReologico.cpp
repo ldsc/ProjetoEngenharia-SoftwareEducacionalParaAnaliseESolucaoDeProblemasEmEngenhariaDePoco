@@ -11,12 +11,12 @@
 #include <QMap>
 #include <QColor>
 
-CSimuladorPoco::CSimuladorPoco(QWidget *parent)
+CSimuladorReologico::CSimuladorReologico(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::CSimuladorPoco)
+    , ui(new Ui::CSimuladorReologico)
 {
     ui->setupUi(this);
-    CSimuladorPoco::makePlotPoco();
+    CSimuladorReologico::makePlotPoco();
 
     //abrir janela no meio do monitor
     QScreen *screen = QGuiApplication::primaryScreen();
@@ -28,12 +28,12 @@ CSimuladorPoco::CSimuladorPoco(QWidget *parent)
     this->move(x, y);
 }
 
-CSimuladorPoco::~CSimuladorPoco()
+CSimuladorReologico::~CSimuladorReologico()
 {
     delete ui;
 }
 
-void CSimuladorPoco::on_actionImportar_Dados_triggered()
+void CSimuladorReologico::on_actionImportar_Dados_triggered()
 {
     QString caminhoDoArquivo = QFileDialog::getOpenFileName(
         this, // Passa a janela principal como pai
@@ -91,7 +91,7 @@ void CSimuladorPoco::on_actionImportar_Dados_triggered()
 
 
 
-void CSimuladorPoco::on_btnAtualizarDados_clicked()
+void CSimuladorReologico::on_btnAtualizarDados_clicked()
 {
     if (poco){
         // Atualiza os valores dos QLineEdits com os dados do objeto poco
@@ -124,7 +124,7 @@ void CSimuladorPoco::on_btnAtualizarDados_clicked()
 }
 
 
-void CSimuladorPoco::on_btnAdicionarPropriedades_clicked()
+void CSimuladorReologico::on_btnAdicionarPropriedades_clicked()
 {
     std::string nome;
     double profundidade, pressaoSuperficie, diametro, OD, ID, vazao;
@@ -164,7 +164,7 @@ void CSimuladorPoco::on_btnAdicionarPropriedades_clicked()
 }
 
 
-void CSimuladorPoco::on_btnAdicionarFluido_clicked()
+void CSimuladorReologico::on_btnAdicionarFluido_clicked()
 {
     ui->tblFluidos->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
@@ -206,7 +206,7 @@ void CSimuladorPoco::on_btnAdicionarFluido_clicked()
 }
 
 
-void CSimuladorPoco::on_btnRemoverFluido_clicked()
+void CSimuladorReologico::on_btnRemoverFluido_clicked()
 {
     int linhaSelecionada = ui->tblFluidos->currentRow();
 
@@ -228,7 +228,7 @@ void CSimuladorPoco::on_btnRemoverFluido_clicked()
 
 
 
-void CSimuladorPoco::on_btnCalcularPressaoHidroestatica_clicked()
+void CSimuladorReologico::on_btnCalcularPressaoHidroestatica_clicked()
 {
     QString profundidadeStr = ui->editProfundidadePressaoHidroestatica->text();
     double profundidade = profundidadeStr.toDouble();
@@ -237,7 +237,7 @@ void CSimuladorPoco::on_btnCalcularPressaoHidroestatica_clicked()
 
 }
 
-void CSimuladorPoco::on_btnCalcularModeloNewtonianoPoco_clicked()
+void CSimuladorReologico::on_btnCalcularModeloNewtonianoPoco_clicked()
 {
     modeloNewtoniano = std::make_shared<CModeloNewtoniano>(poco.get());
 
@@ -247,7 +247,7 @@ void CSimuladorPoco::on_btnCalcularModeloNewtonianoPoco_clicked()
     ui->lbnPerdaFriccionalPocoNewtoniano->setText(QString::number(modeloNewtoniano->CalcularPerdaPorFriccaoPoco()));
 }
 
-void CSimuladorPoco::on_btnCalcularModeloNewtonianoAnular_clicked()
+void CSimuladorReologico::on_btnCalcularModeloNewtonianoAnular_clicked()
 {
     modeloNewtoniano = std::make_shared<CModeloNewtoniano>(poco.get());
 
@@ -261,7 +261,7 @@ void CSimuladorPoco::on_btnCalcularModeloNewtonianoAnular_clicked()
 
 
 
-void CSimuladorPoco::on_btnCalcularModeloBighamPoco_clicked()
+void CSimuladorReologico::on_btnCalcularModeloBighamPoco_clicked()
 {
     if (ui->editPontoEscoamentoPoco->text().isEmpty() && ui->editViscosidadePlasticaPoco->text().isEmpty()) {
         QMessageBox::warning(nullptr, "Aviso", "Preencha o Ponto de Escoamento e a Viscosidade Plástica.");
@@ -295,7 +295,7 @@ void CSimuladorPoco::on_btnCalcularModeloBighamPoco_clicked()
     //Tipo de Fluxo no Poco: Laminar
     //Perda Friccional no Poco: 0.00271893 psi/ft
 
-void CSimuladorPoco::on_btnCalcularModeloBighamAnular_clicked()
+void CSimuladorReologico::on_btnCalcularModeloBighamAnular_clicked()
 {
     if (ui->editPontoEscoamentoAnular->text().isEmpty() && ui->editViscosidadePlasticaAnular->text().isEmpty()) {
         QMessageBox::warning(nullptr, "Aviso", "Preencha o Ponto de Escoamento e a Viscosidade Plástica.");
@@ -320,7 +320,7 @@ void CSimuladorPoco::on_btnCalcularModeloBighamAnular_clicked()
 }
 
 
-void CSimuladorPoco::on_btnCalcularModeloPotenciaPoco_clicked()
+void CSimuladorReologico::on_btnCalcularModeloPotenciaPoco_clicked()
 {
     if (ui->editIndiceConsistenciaPotenciaPoco->text().isEmpty()) {
         QMessageBox::warning(nullptr, "Aviso", "Preencha o Indice de Consistência.");
@@ -339,7 +339,7 @@ void CSimuladorPoco::on_btnCalcularModeloPotenciaPoco_clicked()
 }
 
 
-void CSimuladorPoco::on_btnCalcularModeloPotenciaAnular_clicked()
+void CSimuladorReologico::on_btnCalcularModeloPotenciaAnular_clicked()
 {
     if (ui->editIndiceConsistenciaPotenciaAnular->text().isEmpty()) {
         QMessageBox::warning(nullptr, "Aviso", "Preencha o Indice de Consistência.");
@@ -357,7 +357,7 @@ void CSimuladorPoco::on_btnCalcularModeloPotenciaAnular_clicked()
     }
 }
 
-void CSimuladorPoco::makePlotPoco()
+void CSimuladorReologico::makePlotPoco()
 {
     // Limpar o gráfico anterior
     ui->customPlotPoco->clearItems();

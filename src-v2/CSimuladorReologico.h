@@ -10,17 +10,17 @@
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class CSimuladorPoco;
+class CSimuladorReologico;
 }
 QT_END_NAMESPACE
 
-class CSimuladorPoco : public QMainWindow
+class CSimuladorReologico : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    CSimuladorPoco(QWidget *parent = nullptr);
-    ~CSimuladorPoco();
+    CSimuladorReologico(QWidget *parent = nullptr);
+    ~CSimuladorReologico();
 
 private slots:
     void on_actionImportar_Dados_triggered();
@@ -50,7 +50,7 @@ private slots:
     void makePlotPoco();
 
 private:
-    Ui::CSimuladorPoco *ui;
+    Ui::CSimuladorReologico *ui;
     std::shared_ptr<CPoco> poco = nullptr;
     std::shared_ptr<CTrechoPoco> trechoPoco = nullptr;
     std::shared_ptr<CFluido> fluido = nullptr;

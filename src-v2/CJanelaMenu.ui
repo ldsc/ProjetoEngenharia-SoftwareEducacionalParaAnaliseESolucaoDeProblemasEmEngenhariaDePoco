@@ -77,7 +77,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>&lt;html&gt;&lt;b&gt;Modulo 01 - Hidráulica de perfuração&lt;/b&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;Transporte de cascalho.&lt;/li&gt;&lt;li&gt;Fluxo não newtoniano na coluna e espaço anular na coluna de perfuração&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lbnModulo01_2">
+   <widget class="QLabel" name="lbnModulo02">
     <property name="geometry">
      <rect>
       <x>460</x>

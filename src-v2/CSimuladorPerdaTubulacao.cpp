@@ -1,14 +1,14 @@
 #include "CSimuladorPerdaTubulacao.h"
 #include "ui_CSimuladorPerdaTubulacao.h"
 
-CSimuladorPocoTubos::CSimuladorPocoTubos(QWidget *parent)
+CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::CSimuladorPocoTubos)
+    , ui(new Ui::CSimuladorPerdaTubulacao)
 {
     ui->setupUi(this);
 }
 
-CSimuladorPocoTubos::~CSimuladorPocoTubos()
+CSimuladorPerdaTubulacao::~CSimuladorPerdaTubulacao()
 {
     delete ui;
 }

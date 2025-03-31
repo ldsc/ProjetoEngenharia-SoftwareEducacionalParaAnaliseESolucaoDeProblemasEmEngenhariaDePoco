@@ -18,6 +18,8 @@ public:
 private slots:
     void on_btnModulo01_clicked();
 
+    void on_btnModulo02_clicked();
+
 private:
     Ui::JanelaMenu *ui;
 };
