@@ -12,6 +12,7 @@ SOURCES += \
     CFluido.cpp \
     CGnuplot.cpp \
     CJanelaAdicionarFluido.cpp \
+    CJanelaAdicionarTrechoTubulacao.cpp \
     CJanelaMenu.cpp \
     CModeloBingham.cpp \
     CModeloNewtoniano.cpp \
@@ -29,6 +30,7 @@ HEADERS += \
     CFluido.h \
     CGnuplot.h \
     CJanelaAdicionarFluido.h \
+    CJanelaAdicionarTrechoTubulacao.h \
     CJanelaMenu.h \
     CModeloBingham.h \
     CModeloNewtoniano.h \
@@ -43,6 +45,7 @@ HEADERS += \
 
 FORMS += \
     CJanelaAdicionarFluido.ui \
+    CJanelaAdicionarTrechoTubulacao.ui \
     CJanelaMenu.ui \
     CSimuladorPerdaTubulacao.ui \
     CSimuladorReologico.ui

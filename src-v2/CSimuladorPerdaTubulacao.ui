@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1756</width>
-    <height>1047</height>
+    <width>1509</width>
+    <height>1005</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QCustomPlot" name="customPlotPoco" native="true">
    <property name="geometry">
     <rect>
-     <x>1440</x>
+     <x>1180</x>
      <y>10</y>
      <width>301</width>
-     <height>631</height>
+     <height>651</height>
     </rect>
    </property>
   </widget>
@@ -28,7 +28,7 @@
     <rect>
      <x>390</x>
      <y>10</y>
-     <width>811</width>
+     <width>771</width>
      <height>321</height>
     </rect>
    </property>
@@ -63,7 +63,7 @@
     <item row="0" column="0" colspan="3">
      <widget class="QTableWidget" name="tblFluidos">
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>120</number>
+       <number>153</number>
       </attribute>
       <column>
        <property name="text">
@@ -124,7 +124,7 @@
     <rect>
      <x>10</x>
      <y>350</y>
-     <width>1191</width>
+     <width>1151</width>
      <height>311</height>
     </rect>
    </property>
@@ -159,13 +159,13 @@
     <item row="0" column="0" colspan="3">
      <widget class="QTableWidget" name="tblTrechos">
       <property name="autoScrollMargin">
-       <number>19</number>
+       <number>16</number>
       </property>
       <attribute name="horizontalHeaderMinimumSectionSize">
        <number>37</number>
       </attribute>
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>131</number>
+       <number>126</number>
       </attribute>
       <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
        <bool>false</bool>
@@ -202,7 +202,7 @@
       </column>
       <column>
        <property name="text">
-        <string>ID - Diâmetro Externo (in)</string>
+        <string>Diam. Externo (in)</string>
        </property>
        <property name="font">
         <font>
@@ -212,7 +212,7 @@
       </column>
       <column>
        <property name="text">
-        <string>OD - Diâmetro Interno (in)</string>
+        <string>Diam Interno (in)</string>
        </property>
        <property name="font">
         <font>
@@ -232,7 +232,7 @@
       </column>
       <column>
        <property name="text">
-        <string>Coef. de Expanção térmica (F^-1)</string>
+        <string>Coef. Exp. Térm. (1/F)</string>
        </property>
        <property name="font">
         <font>
@@ -242,7 +242,7 @@
       </column>
       <column>
        <property name="text">
-        <string>Mód. Elasticidade (psi)</string>
+        <string>Mód. Elast. (psi)</string>
        </property>
        <property name="font">
         <font>
@@ -252,7 +252,7 @@
       </column>
       <column>
        <property name="text">
-        <string>Peso p/ Unidade (lb/ft)</string>
+        <string>Peso/unid. (lb/ft)</string>
        </property>
        <property name="font">
         <font>
@@ -496,6 +496,16 @@
      <widget class="QLineEdit" name="editProfundidadePacker"/>
     </item>
    </layout>
+  </widget>
+  <widget class="QCustomPlot" name="customPlotTemperatura" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>670</y>
+     <width>401</width>
+     <height>321</height>
+    </rect>
+   </property>
   </widget>
  </widget>
  <customwidgets>

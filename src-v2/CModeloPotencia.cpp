@@ -1,9 +1,8 @@
 #include "CModeloPotencia.h"
-#include <iostream>
 #include <cmath>
 
 double CModeloPotencia::DeterminarReynoldsCritico(double Reynolds) {
-
+    (void) Reynolds;
     return 0.0;
 }
 

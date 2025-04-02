@@ -27,6 +27,10 @@ private slots:
 
     void on_btnAtualizarDados_clicked();
 
+    void on_btnAdicionarTrecho_clicked();
+
+    void makePlotTemperatura();
+
 private:
     Ui::CSimuladorPerdaTubulacao *ui;
     std::shared_ptr<CPoco> poco = nullptr;

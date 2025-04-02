@@ -285,16 +285,6 @@ void CSimuladorReologico::on_btnCalcularModeloBighamPoco_clicked()
     }
 }
 
-//Informe o valor do pontoDeEscoamento [lbf/100 sq.ft]: 10
-    //Informe o valor da viscosidade Plastica [cP]: 500
-
-    //Velocidade no Poco: 1.28397 ft/s
-        //Reynolds no Poco: 145.714
-    //Reynolds Hedstrom no Poco: 643.355
-    //Reynolds Critico no Poco: 2225.82
-    //Tipo de Fluxo no Poco: Laminar
-    //Perda Friccional no Poco: 0.00271893 psi/ft
-
 void CSimuladorReologico::on_btnCalcularModeloBighamAnular_clicked()
 {
     if (ui->editPontoEscoamentoAnular->text().isEmpty() && ui->editViscosidadePlasticaAnular->text().isEmpty()) {

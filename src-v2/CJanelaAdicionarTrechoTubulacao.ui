@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CJanelaAdicionarTrechoTubulacao</class>
+ <widget class="QDialog" name="CJanelaAdicionarTrechoTubulacao">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>304</width>
+    <height>320</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>271</width>
+     <height>291</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="lbnTituloTrecho">
+          <property name="text">
+           <string>Trecho</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbnTituloProfInicial">
+          <property name="text">
+           <string>Prof. Inicial (ft)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbnTituloProfFinal">
+          <property name="text">
+           <string>Prof. Final (ft)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbnTituloDiametroExterno">
+          <property name="text">
+           <string>Diâmetro Externo</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbnTituloDiametroInterno">
+          <property name="text">
+           <string>Diâmetro Interno</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbnTituloCoefPoisson">
+          <property name="text">
+           <string>Coef. Poisson</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbnTituloCoefExpancao">
+          <property name="text">
+           <string>Coef. Expanção Térmica</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbnTituloModElasticidade">
+          <property name="text">
+           <string>Mód. Elasticidade</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbnTituloPesoUnidade">
+          <property name="text">
+           <string>Peso por Unid.</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLineEdit" name="editTrecho"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="editProfInicial"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="editProfFinal"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="editDiametroExterno"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="editDiametroInterno"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="editCoefPoisson"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="editCoefExpansao"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="editModuloElasticidade"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="editPesoUnid"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QDialogButtonBox" name="btnReturn">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="standardButtons">
+       <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnReturn</sender>
+   <signal>accepted()</signal>
+   <receiver>CJanelaAdicionarTrechoTubulacao</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnReturn</sender>
+   <signal>rejected()</signal>
+   <receiver>CJanelaAdicionarTrechoTubulacao</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
