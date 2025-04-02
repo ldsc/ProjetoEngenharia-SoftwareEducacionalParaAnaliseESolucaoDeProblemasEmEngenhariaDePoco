@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <memory>
-#include "CFluido.h"
 #include "CTrechoTubulacao.h"
 
 class CPoco {
@@ -19,12 +18,11 @@ protected:
     std::vector<std::unique_ptr<CTrechoPoco>> trechos;
 
     // Dados a mais que precisam ser coletados caso rode a simulacao do modulo 02
-    double temperaturaTopoInicial;
-    double temperaturaFundoInicial;
-    double temperaturaTopoFnicial;
-    double tempperaturaFundoFinal;
-
-
+    double temperaturaTopoInicial = 0.0;
+    double temperaturaFundoInicial = 0.0;
+    double temperaturaTopoFinal = 0.0;
+    double temperaturaFundoFinal = 0.0;
+    double profundidadePacker = 0.0;
 
 public:
     //construtor
@@ -33,6 +31,9 @@ public:
     
     CPoco(std::string Nome, double Profund, double PressaoSup, double D , double OD, double ID, double q)
     : nomePoco(Nome),profundidadeFinal(Profund), pressaoSuperficie(PressaoSup), diametroPoco(D), diametroRevestimentoOD(OD), diametroRevestimentoID(ID), vazao(q) {} // Esse construtor nos leva os atributos que ira rodar na simulacao do Modulo 01
+
+    CPoco(std::string Nome, double Profund, double TempTopoInicial, double TempFundoInicial, double TempTopoFinal, double TempFundoFinal)
+        : nomePoco(Nome),profundidadeFinal(Profund), temperaturaTopoInicial(TempTopoInicial), temperaturaFundoInicial(TempFundoInicial), temperaturaTopoFinal(TempTopoFinal), temperaturaFundoFinal(TempFundoFinal) {} // Esse construtor nos leva os atributos que ira rodar na simulacao do Modulo 02
 
     // Getters
     std::string NomePoco() const { return nomePoco; }

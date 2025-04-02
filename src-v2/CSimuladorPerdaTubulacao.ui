@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CSimuladorPocoTubos</class>
- <widget class="QDialog" name="CSimuladorPocoTubos">
+ <class>CSimuladorPerdaTubulacao</class>
+ <widget class="QDialog" name="CSimuladorPerdaTubulacao">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -130,14 +130,14 @@
    </property>
    <layout class="QGridLayout" name="gridLayout_3">
     <item row="1" column="0">
-     <widget class="QPushButton" name="btnAdicionarFluido_2">
+     <widget class="QPushButton" name="btnAdicionarTrecho">
       <property name="text">
        <string>Adicionar Trecho</string>
       </property>
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QPushButton" name="btnRemoverFluido_2">
+     <widget class="QPushButton" name="btnRemoverTrecho">
       <property name="text">
        <string>Remover Trecho</string>
       </property>
@@ -157,7 +157,7 @@
      </spacer>
     </item>
     <item row="0" column="0" colspan="3">
-     <widget class="QTableWidget" name="tblFluidos_2">
+     <widget class="QTableWidget" name="tblTrechos">
       <property name="autoScrollMargin">
        <number>19</number>
       </property>
@@ -301,7 +301,7 @@
      </spacer>
     </item>
     <item row="4" column="0">
-     <widget class="QLabel" name="lbnTituloDiametroPoco">
+     <widget class="QLabel" name="lbnTituloTemperaturaSuperiorInicial">
       <property name="font">
        <font>
         <bold>true</bold>
@@ -316,7 +316,7 @@
      </widget>
     </item>
     <item row="3" column="0" colspan="3">
-     <widget class="QLabel" name="lbnTituloPressaoSuperficie">
+     <widget class="QLabel" name="lbnTituloConfiguraoInicial">
       <property name="font">
        <font>
         <bold>true</bold>
@@ -331,7 +331,7 @@
      </widget>
     </item>
     <item row="9" column="0">
-     <widget class="QLabel" name="lbnTituloDiametroOD_2">
+     <widget class="QLabel" name="lbnTituloTemperaturaFundoFinal">
       <property name="font">
        <font>
         <bold>true</bold>
@@ -346,7 +346,7 @@
      </widget>
     </item>
     <item row="7" column="0" colspan="3">
-     <widget class="QLabel" name="lbnTituloDiametroID">
+     <widget class="QLabel" name="lbnTituloConfiguraoFinal">
       <property name="font">
        <font>
         <bold>true</bold>
@@ -383,7 +383,7 @@
      </widget>
     </item>
     <item row="8" column="0">
-     <widget class="QLabel" name="lbnTituloVazao">
+     <widget class="QLabel" name="lbnTituloTemperaturaSuperiorFinal">
       <property name="font">
        <font>
         <bold>true</bold>
@@ -401,10 +401,10 @@
      <widget class="QLineEdit" name="editProfundidadeTotal"/>
     </item>
     <item row="5" column="1" colspan="2">
-     <widget class="QLineEdit" name="editDiametroOD"/>
+     <widget class="QLineEdit" name="editTemperaturaFundoInicial"/>
     </item>
     <item row="11" column="0" colspan="2">
-     <widget class="QCheckBox" name="checkBox">
+     <widget class="QCheckBox" name="checkBoxPacker">
       <property name="font">
        <font>
         <bold>true</bold>
@@ -416,10 +416,10 @@
      </widget>
     </item>
     <item row="8" column="1" colspan="2">
-     <widget class="QLineEdit" name="editVazao"/>
+     <widget class="QLineEdit" name="editTemperaturaSuperiorFinal"/>
     </item>
     <item row="9" column="1">
-     <widget class="QLineEdit" name="editDiametroOD_2"/>
+     <widget class="QLineEdit" name="editTemperaturaFundoFinal"/>
     </item>
     <item row="0" column="1" colspan="2">
      <widget class="QLineEdit" name="editNomePoco"/>
@@ -460,7 +460,7 @@
      </widget>
     </item>
     <item row="5" column="0">
-     <widget class="QLabel" name="lbnTituloDiametroOD">
+     <widget class="QLabel" name="lbnTituloTemperaturaFundoInicial">
       <property name="font">
        <font>
         <bold>true</bold>
@@ -475,10 +475,10 @@
      </widget>
     </item>
     <item row="4" column="1" colspan="2">
-     <widget class="QLineEdit" name="editDiametroPoco"/>
+     <widget class="QLineEdit" name="editTemperaturaSuperiorInicial"/>
     </item>
     <item row="12" column="0">
-     <widget class="QLabel" name="lbnTituloDiametroOD_3">
+     <widget class="QLabel" name="lbnTituloProfundidadePacker">
       <property name="font">
        <font>
         <bold>true</bold>
@@ -493,7 +493,7 @@
      </widget>
     </item>
     <item row="12" column="1">
-     <widget class="QLineEdit" name="editDiametroOD_3"/>
+     <widget class="QLineEdit" name="editProfundidadePacker"/>
     </item>
    </layout>
   </widget>

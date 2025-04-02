@@ -3,8 +3,6 @@
 
 #include "CFluido.h"
 #include <memory>
-#include <iostream>
-#include <optional>
 
 class CTrechoPoco {
 protected:
@@ -13,10 +11,10 @@ protected:
     std::unique_ptr<CFluido> fluido;
 
     // Dados a mais que precisam ser coletados caso rode a simulacao do modulo 02
-    double coefPoisson;
-    double moduloEslasticidade;
-    double pesoUnid;
-    double coefExpancaoTermica;
+    double coeficientePoisson = 0.0;
+    double moduloEslasticidade = 0.0;
+    double pesoUnidade = 0.0;
+    double coeficienteExpancaoTermica = 0.0;
 
 public:
     // Construtor
@@ -24,6 +22,9 @@ public:
     ~CTrechoPoco() {}
     CTrechoPoco(double ProfundidadeI, double ProfundidadeF, std::unique_ptr<CFluido> fluido)
         : profundidadeInicial(ProfundidadeI), profundidadeFinal(ProfundidadeF), fluido(std::move(fluido)) {} // Esse construtor nos leva os atributos que ira rodar na simulacao do Modulo 01
+
+    CTrechoPoco(double ProfundidadeI, double ProfundidadeF, std::unique_ptr<CFluido> fluido, double coefPoisson, double moduloEslast, double pesoUnid, double coefExpancaoTermica)
+        : profundidadeInicial(ProfundidadeI), profundidadeFinal(ProfundidadeF), fluido(std::move(fluido)), coeficientePoisson(coefPoisson), moduloEslasticidade(moduloEslast), pesoUnidade(pesoUnid), coeficienteExpancaoTermica(coefExpancaoTermica) {} // Esse construtor nos leva os atributos que ira rodar na simulacao do Modulo 02
 
     // Getters
     double ProfundidadeInicial() const { return profundidadeInicial; }
