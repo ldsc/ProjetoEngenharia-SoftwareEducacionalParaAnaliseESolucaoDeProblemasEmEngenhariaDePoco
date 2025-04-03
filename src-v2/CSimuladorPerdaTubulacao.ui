@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1509</width>
-    <height>1005</height>
+    <width>1432</width>
+    <height>631</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <property name="geometry">
     <rect>
      <x>1180</x>
-     <y>10</y>
-     <width>301</width>
-     <height>651</height>
+     <y>230</y>
+     <width>241</width>
+     <height>391</height>
     </rect>
    </property>
   </widget>
@@ -123,9 +123,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>350</y>
+     <y>340</y>
      <width>1151</width>
-     <height>311</height>
+     <height>281</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_3">
@@ -500,10 +500,10 @@
   <widget class="QCustomPlot" name="customPlotTemperatura" native="true">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>670</y>
-     <width>401</width>
-     <height>321</height>
+     <x>1180</x>
+     <y>10</y>
+     <width>241</width>
+     <height>211</height>
     </rect>
    </property>
   </widget>

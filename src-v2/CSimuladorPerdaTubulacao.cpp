@@ -16,6 +16,8 @@ CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
     connect(ui->checkBoxPacker, &QCheckBox::checkStateChanged, this, [=](int state){
         ui->editProfundidadePacker->setEnabled(state == Qt::Checked);
         });
+
+    makePlotTemperatura();
 }
 
 CSimuladorPerdaTubulacao::~CSimuladorPerdaTubulacao()
