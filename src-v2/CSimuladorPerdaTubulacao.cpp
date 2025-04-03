@@ -124,16 +124,18 @@ void CSimuladorPerdaTubulacao::on_btnAtualizarDados_clicked()
 
 void CSimuladorPerdaTubulacao::on_btnAdicionarTrecho_clicked()
 {
-    ui->tblFluidos->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->tblTrechos->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
     if (!poco) {
         QMessageBox::warning(this, "Erro", "As propriedade do poço precisa está preenchida!");
     }
 
     else{
+        qDebug() << "1";
         CJanelaAdicionarTrechoTubulacao JanelaTrecho;
         JanelaTrecho.exec();
 
+        qDebug() << "JanelaTrecho.getProfundidadeInicial()2";
         if (JanelaTrecho.getTrecho() != "" &&
             JanelaTrecho.getProfundidadeInicial() != "" &&
             JanelaTrecho.getProfundidadeFinal() != "" &&
@@ -144,6 +146,9 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarTrecho_clicked()
             JanelaTrecho.getModuloElasticidade() != "" &&
             JanelaTrecho.getPesoUnidade() != ""){
 
+            qDebug() << JanelaTrecho.getProfundidadeInicial();
+            qDebug() << "JanelaTrecho.getProfundidadeInicial()4";
+
 
             int numLinhas = ui->tblTrechos->rowCount();
             ui->tblTrechos->insertRow(numLinhas);
@@ -152,10 +157,10 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarTrecho_clicked()
             ui->tblTrechos->setItem(numLinhas, 2, new QTableWidgetItem(JanelaTrecho.getProfundidadeFinal()));
             ui->tblTrechos->setItem(numLinhas, 3, new QTableWidgetItem(JanelaTrecho.getDiametroExterno()));
             ui->tblTrechos->setItem(numLinhas, 4, new QTableWidgetItem(JanelaTrecho.getDiametroInterno()));
-            ui->tblTrechos->setItem(numLinhas, 4, new QTableWidgetItem(JanelaTrecho.getCoeficientePoisson()));
-            ui->tblTrechos->setItem(numLinhas, 4, new QTableWidgetItem(JanelaTrecho.getCoeficienteExpansaoTermica()));
-            ui->tblTrechos->setItem(numLinhas, 4, new QTableWidgetItem(JanelaTrecho.getModuloElasticidade()));
-            ui->tblTrechos->setItem(numLinhas, 4, new QTableWidgetItem(JanelaTrecho.getPesoUnidade()));
+            ui->tblTrechos->setItem(numLinhas, 6, new QTableWidgetItem(JanelaTrecho.getCoeficientePoisson()));
+            ui->tblTrechos->setItem(numLinhas, 7, new QTableWidgetItem(JanelaTrecho.getCoeficienteExpansaoTermica()));
+            ui->tblTrechos->setItem(numLinhas, 8, new QTableWidgetItem(JanelaTrecho.getModuloElasticidade()));
+            ui->tblTrechos->setItem(numLinhas, 9, new QTableWidgetItem(JanelaTrecho.getPesoUnidade()));
             
             std::string trecho = JanelaTrecho.getTrecho().toStdString();
             double profundInicial = JanelaTrecho.getProfundidadeInicial().toDouble();

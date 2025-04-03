@@ -236,8 +236,7 @@ public:
 
         editVazao = new QLineEdit(gridLayoutWidget);
         editVazao->setObjectName("editVazao");
-        editVazao->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        editVazao->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\\nborder-radius: 5px;"));
 
         gridLayout->addWidget(editVazao, 6, 1, 1, 2);
 
@@ -248,7 +247,7 @@ public:
         editDiametroID = new QLineEdit(gridLayoutWidget);
         editDiametroID->setObjectName("editDiametroID");
         editDiametroID->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+"\\nborder-radius: 5px;"));
 
         gridLayout->addWidget(editDiametroID, 5, 1, 1, 2);
 
@@ -261,15 +260,13 @@ public:
 
         editProfundidadeTotal = new QLineEdit(gridLayoutWidget);
         editProfundidadeTotal->setObjectName("editProfundidadeTotal");
-        editProfundidadeTotal->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        editProfundidadeTotal->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\\nborder-radius: 5px;"));
 
         gridLayout->addWidget(editProfundidadeTotal, 1, 1, 1, 2);
 
         editNomePoco = new QLineEdit(gridLayoutWidget);
         editNomePoco->setObjectName("editNomePoco");
-        editNomePoco->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        editNomePoco->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\\nborder-radius: 5px;"));
 
         gridLayout->addWidget(editNomePoco, 0, 1, 1, 2);
 
@@ -313,31 +310,27 @@ public:
 
         editDiametroOD = new QLineEdit(gridLayoutWidget);
         editDiametroOD->setObjectName("editDiametroOD");
-        editDiametroOD->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        editDiametroOD->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\\nborder-radius: 5px;"));
 
         gridLayout->addWidget(editDiametroOD, 4, 1, 1, 2);
 
         lbnViscosidadeMedia = new QLabel(gridLayoutWidget);
         lbnViscosidadeMedia->setObjectName("lbnViscosidadeMedia");
-        lbnViscosidadeMedia->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        lbnViscosidadeMedia->setStyleSheet(QString::fromUtf8(""));
         lbnViscosidadeMedia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout->addWidget(lbnViscosidadeMedia, 11, 1, 1, 2);
 
         lbnProfundidadeOcupada = new QLabel(gridLayoutWidget);
         lbnProfundidadeOcupada->setObjectName("lbnProfundidadeOcupada");
-        lbnProfundidadeOcupada->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        lbnProfundidadeOcupada->setStyleSheet(QString::fromUtf8(""));
         lbnProfundidadeOcupada->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout->addWidget(lbnProfundidadeOcupada, 9, 1, 1, 2);
 
         editPressaoSuperficie = new QLineEdit(gridLayoutWidget);
         editPressaoSuperficie->setObjectName("editPressaoSuperficie");
-        editPressaoSuperficie->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        editPressaoSuperficie->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\\nborder-radius: 5px;"));
 
         gridLayout->addWidget(editPressaoSuperficie, 2, 1, 1, 2);
 
@@ -357,15 +350,13 @@ public:
 
         editDiametroPoco = new QLineEdit(gridLayoutWidget);
         editDiametroPoco->setObjectName("editDiametroPoco");
-        editDiametroPoco->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        editDiametroPoco->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\\nborder-radius: 5px;"));
 
         gridLayout->addWidget(editDiametroPoco, 3, 1, 1, 2);
 
         lbnDensidadeMedia = new QLabel(gridLayoutWidget);
         lbnDensidadeMedia->setObjectName("lbnDensidadeMedia");
-        lbnDensidadeMedia->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        lbnDensidadeMedia->setStyleSheet(QString::fromUtf8(""));
         lbnDensidadeMedia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout->addWidget(lbnDensidadeMedia, 10, 1, 1, 2);
@@ -480,8 +471,7 @@ public:
 
         lbnPressaoHidroestatica = new QLabel(gridLayoutWidget_14);
         lbnPressaoHidroestatica->setObjectName("lbnPressaoHidroestatica");
-        lbnPressaoHidroestatica->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        lbnPressaoHidroestatica->setStyleSheet(QString::fromUtf8(""));
         lbnPressaoHidroestatica->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_14->addWidget(lbnPressaoHidroestatica, 2, 1, 1, 1);
@@ -540,8 +530,7 @@ public:
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
         lbnReynoldsAnularNewtoniano = new QLabel(gridLayoutWidget_4);
         lbnReynoldsAnularNewtoniano->setObjectName("lbnReynoldsAnularNewtoniano");
-        lbnReynoldsAnularNewtoniano->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        lbnReynoldsAnularNewtoniano->setStyleSheet(QString::fromUtf8(""));
         lbnReynoldsAnularNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_4->addWidget(lbnReynoldsAnularNewtoniano, 1, 1, 1, 1);
@@ -558,8 +547,7 @@ public:
 
         lbnVelocidadeAnularNewtoniano = new QLabel(gridLayoutWidget_4);
         lbnVelocidadeAnularNewtoniano->setObjectName("lbnVelocidadeAnularNewtoniano");
-        lbnVelocidadeAnularNewtoniano->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        lbnVelocidadeAnularNewtoniano->setStyleSheet(QString::fromUtf8(""));
         lbnVelocidadeAnularNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_4->addWidget(lbnVelocidadeAnularNewtoniano, 0, 1, 1, 1);
@@ -573,8 +561,7 @@ public:
 
         lbnTipoFluxoAnularNewtoniano = new QLabel(gridLayoutWidget_4);
         lbnTipoFluxoAnularNewtoniano->setObjectName("lbnTipoFluxoAnularNewtoniano");
-        lbnTipoFluxoAnularNewtoniano->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        lbnTipoFluxoAnularNewtoniano->setStyleSheet(QString::fromUtf8(""));
         lbnTipoFluxoAnularNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_4->addWidget(lbnTipoFluxoAnularNewtoniano, 2, 1, 1, 1);
@@ -595,8 +582,7 @@ public:
 
         lbnPerdaFriccionalAnularNewtoniano = new QLabel(gridLayoutWidget_4);
         lbnPerdaFriccionalAnularNewtoniano->setObjectName("lbnPerdaFriccionalAnularNewtoniano");
-        lbnPerdaFriccionalAnularNewtoniano->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        lbnPerdaFriccionalAnularNewtoniano->setStyleSheet(QString::fromUtf8(""));
         lbnPerdaFriccionalAnularNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_4->addWidget(lbnPerdaFriccionalAnularNewtoniano, 3, 1, 1, 1);
@@ -615,8 +601,7 @@ public:
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
         lbnVelocidadePocoNewtoniano = new QLabel(gridLayoutWidget_3);
         lbnVelocidadePocoNewtoniano->setObjectName("lbnVelocidadePocoNewtoniano");
-        lbnVelocidadePocoNewtoniano->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        lbnVelocidadePocoNewtoniano->setStyleSheet(QString::fromUtf8(""));
         lbnVelocidadePocoNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_3->addWidget(lbnVelocidadePocoNewtoniano, 0, 1, 1, 1);
@@ -630,8 +615,7 @@ public:
 
         lbnTipoFluxoPocoNewtoniano = new QLabel(gridLayoutWidget_3);
         lbnTipoFluxoPocoNewtoniano->setObjectName("lbnTipoFluxoPocoNewtoniano");
-        lbnTipoFluxoPocoNewtoniano->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        lbnTipoFluxoPocoNewtoniano->setStyleSheet(QString::fromUtf8(""));
         lbnTipoFluxoPocoNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_3->addWidget(lbnTipoFluxoPocoNewtoniano, 2, 1, 1, 1);
@@ -645,16 +629,14 @@ public:
 
         lbnPerdaFriccionalPocoNewtoniano = new QLabel(gridLayoutWidget_3);
         lbnPerdaFriccionalPocoNewtoniano->setObjectName("lbnPerdaFriccionalPocoNewtoniano");
-        lbnPerdaFriccionalPocoNewtoniano->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        lbnPerdaFriccionalPocoNewtoniano->setStyleSheet(QString::fromUtf8(""));
         lbnPerdaFriccionalPocoNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_3->addWidget(lbnPerdaFriccionalPocoNewtoniano, 3, 1, 1, 1);
 
         lbnReynoldsPocoNewtoniano = new QLabel(gridLayoutWidget_3);
         lbnReynoldsPocoNewtoniano->setObjectName("lbnReynoldsPocoNewtoniano");
-        lbnReynoldsPocoNewtoniano->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        lbnReynoldsPocoNewtoniano->setStyleSheet(QString::fromUtf8(""));
         lbnReynoldsPocoNewtoniano->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_3->addWidget(lbnReynoldsPocoNewtoniano, 1, 1, 1, 1);
@@ -705,8 +687,7 @@ public:
 
         lbnReynoldsPocoBigham = new QLabel(gridLayoutWidget_5);
         lbnReynoldsPocoBigham->setObjectName("lbnReynoldsPocoBigham");
-        lbnReynoldsPocoBigham->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnReynoldsPocoBigham->setStyleSheet(QString::fromUtf8(""));
         lbnReynoldsPocoBigham->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_5->addWidget(lbnReynoldsPocoBigham, 5, 1, 1, 1);
@@ -720,8 +701,7 @@ public:
 
         lbnVelocidadePocoBigham = new QLabel(gridLayoutWidget_5);
         lbnVelocidadePocoBigham->setObjectName("lbnVelocidadePocoBigham");
-        lbnVelocidadePocoBigham->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnVelocidadePocoBigham->setStyleSheet(QString::fromUtf8(""));
         lbnVelocidadePocoBigham->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_5->addWidget(lbnVelocidadePocoBigham, 2, 1, 1, 1);
@@ -734,6 +714,8 @@ public:
 
         editPontoEscoamentoPoco = new QLineEdit(gridLayoutWidget_5);
         editPontoEscoamentoPoco->setObjectName("editPontoEscoamentoPoco");
+        editPontoEscoamentoPoco->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
+"border-radius: 5px;"));
 
         gridLayout_5->addWidget(editPontoEscoamentoPoco, 0, 1, 1, 1);
 
@@ -753,14 +735,15 @@ public:
 
         lbnPerdaFriccionalPocoBigham = new QLabel(gridLayoutWidget_5);
         lbnPerdaFriccionalPocoBigham->setObjectName("lbnPerdaFriccionalPocoBigham");
-        lbnPerdaFriccionalPocoBigham->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnPerdaFriccionalPocoBigham->setStyleSheet(QString::fromUtf8(""));
         lbnPerdaFriccionalPocoBigham->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_5->addWidget(lbnPerdaFriccionalPocoBigham, 7, 1, 1, 1);
 
         editViscosidadePlasticaPoco = new QLineEdit(gridLayoutWidget_5);
         editViscosidadePlasticaPoco->setObjectName("editViscosidadePlasticaPoco");
+        editViscosidadePlasticaPoco->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
+"border-radius: 5px;"));
 
         gridLayout_5->addWidget(editViscosidadePlasticaPoco, 1, 1, 1, 1);
 
@@ -787,8 +770,7 @@ public:
 
         lbnTipoFluxoPocoBigham = new QLabel(gridLayoutWidget_5);
         lbnTipoFluxoPocoBigham->setObjectName("lbnTipoFluxoPocoBigham");
-        lbnTipoFluxoPocoBigham->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnTipoFluxoPocoBigham->setStyleSheet(QString::fromUtf8(""));
         lbnTipoFluxoPocoBigham->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_5->addWidget(lbnTipoFluxoPocoBigham, 6, 1, 1, 1);
@@ -802,16 +784,14 @@ public:
 
         lbnReynoldsHedstromPocoBigham = new QLabel(gridLayoutWidget_5);
         lbnReynoldsHedstromPocoBigham->setObjectName("lbnReynoldsHedstromPocoBigham");
-        lbnReynoldsHedstromPocoBigham->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnReynoldsHedstromPocoBigham->setStyleSheet(QString::fromUtf8(""));
         lbnReynoldsHedstromPocoBigham->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_5->addWidget(lbnReynoldsHedstromPocoBigham, 3, 1, 1, 1);
 
         lbnReynoldsCriticoPocoBigham = new QLabel(gridLayoutWidget_5);
         lbnReynoldsCriticoPocoBigham->setObjectName("lbnReynoldsCriticoPocoBigham");
-        lbnReynoldsCriticoPocoBigham->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnReynoldsCriticoPocoBigham->setStyleSheet(QString::fromUtf8(""));
         lbnReynoldsCriticoPocoBigham->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_5->addWidget(lbnReynoldsCriticoPocoBigham, 4, 1, 1, 1);
@@ -824,6 +804,8 @@ public:
         gridLayout_6->setContentsMargins(0, 0, 0, 0);
         editPontoEscoamentoAnular = new QLineEdit(gridLayoutWidget_6);
         editPontoEscoamentoAnular->setObjectName("editPontoEscoamentoAnular");
+        editPontoEscoamentoAnular->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
+"border-radius: 5px;"));
 
         gridLayout_6->addWidget(editPontoEscoamentoAnular, 0, 1, 1, 1);
 
@@ -842,16 +824,14 @@ public:
 
         lbnVelocidadeAnularBigham = new QLabel(gridLayoutWidget_6);
         lbnVelocidadeAnularBigham->setObjectName("lbnVelocidadeAnularBigham");
-        lbnVelocidadeAnularBigham->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnVelocidadeAnularBigham->setStyleSheet(QString::fromUtf8(""));
         lbnVelocidadeAnularBigham->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_6->addWidget(lbnVelocidadeAnularBigham, 2, 1, 1, 1);
 
         lbnReynoldsAnularBigham = new QLabel(gridLayoutWidget_6);
         lbnReynoldsAnularBigham->setObjectName("lbnReynoldsAnularBigham");
-        lbnReynoldsAnularBigham->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnReynoldsAnularBigham->setStyleSheet(QString::fromUtf8(""));
         lbnReynoldsAnularBigham->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_6->addWidget(lbnReynoldsAnularBigham, 5, 1, 1, 1);
@@ -865,8 +845,7 @@ public:
 
         lbnPerdaFriccionalAnularBigham = new QLabel(gridLayoutWidget_6);
         lbnPerdaFriccionalAnularBigham->setObjectName("lbnPerdaFriccionalAnularBigham");
-        lbnPerdaFriccionalAnularBigham->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnPerdaFriccionalAnularBigham->setStyleSheet(QString::fromUtf8(""));
         lbnPerdaFriccionalAnularBigham->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_6->addWidget(lbnPerdaFriccionalAnularBigham, 7, 1, 1, 1);
@@ -887,13 +866,14 @@ public:
 
         editViscosidadePlasticaAnular = new QLineEdit(gridLayoutWidget_6);
         editViscosidadePlasticaAnular->setObjectName("editViscosidadePlasticaAnular");
+        editViscosidadePlasticaAnular->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
+"border-radius: 5px;"));
 
         gridLayout_6->addWidget(editViscosidadePlasticaAnular, 1, 1, 1, 1);
 
         lbnTipoFluxoAnularBigham = new QLabel(gridLayoutWidget_6);
         lbnTipoFluxoAnularBigham->setObjectName("lbnTipoFluxoAnularBigham");
-        lbnTipoFluxoAnularBigham->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnTipoFluxoAnularBigham->setStyleSheet(QString::fromUtf8(""));
         lbnTipoFluxoAnularBigham->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_6->addWidget(lbnTipoFluxoAnularBigham, 6, 1, 1, 1);
@@ -928,16 +908,14 @@ public:
 
         lbnReynoldsHedstromAnularBigham = new QLabel(gridLayoutWidget_6);
         lbnReynoldsHedstromAnularBigham->setObjectName("lbnReynoldsHedstromAnularBigham");
-        lbnReynoldsHedstromAnularBigham->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnReynoldsHedstromAnularBigham->setStyleSheet(QString::fromUtf8(""));
         lbnReynoldsHedstromAnularBigham->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_6->addWidget(lbnReynoldsHedstromAnularBigham, 3, 1, 1, 1);
 
         lbnReynoldsCriticoAnularBigham = new QLabel(gridLayoutWidget_6);
         lbnReynoldsCriticoAnularBigham->setObjectName("lbnReynoldsCriticoAnularBigham");
-        lbnReynoldsCriticoAnularBigham->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnReynoldsCriticoAnularBigham->setStyleSheet(QString::fromUtf8(""));
         lbnReynoldsCriticoAnularBigham->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_6->addWidget(lbnReynoldsCriticoAnularBigham, 4, 1, 1, 1);
@@ -961,8 +939,7 @@ public:
         gridLayout_7->setContentsMargins(0, 0, 0, 0);
         lbnPerdaFriccionalPocoPotencia = new QLabel(gridLayoutWidget_7);
         lbnPerdaFriccionalPocoPotencia->setObjectName("lbnPerdaFriccionalPocoPotencia");
-        lbnPerdaFriccionalPocoPotencia->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnPerdaFriccionalPocoPotencia->setStyleSheet(QString::fromUtf8(""));
         lbnPerdaFriccionalPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_7->addWidget(lbnPerdaFriccionalPocoPotencia, 5, 1, 1, 1);
@@ -976,16 +953,14 @@ public:
 
         lbnVelocidadePocoPotencia = new QLabel(gridLayoutWidget_7);
         lbnVelocidadePocoPotencia->setObjectName("lbnVelocidadePocoPotencia");
-        lbnVelocidadePocoPotencia->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnVelocidadePocoPotencia->setStyleSheet(QString::fromUtf8(""));
         lbnVelocidadePocoPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_7->addWidget(lbnVelocidadePocoPotencia, 1, 1, 1, 1);
 
         lbnTipoFluxoPocoPotencia = new QLabel(gridLayoutWidget_7);
         lbnTipoFluxoPocoPotencia->setObjectName("lbnTipoFluxoPocoPotencia");
-        lbnTipoFluxoPocoPotencia->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnTipoFluxoPocoPotencia->setStyleSheet(QString::fromUtf8(""));
         lbnTipoFluxoPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_7->addWidget(lbnTipoFluxoPocoPotencia, 4, 1, 1, 1);
@@ -1013,8 +988,7 @@ public:
 
         lbnReynoldsPocoPotencia = new QLabel(gridLayoutWidget_7);
         lbnReynoldsPocoPotencia->setObjectName("lbnReynoldsPocoPotencia");
-        lbnReynoldsPocoPotencia->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnReynoldsPocoPotencia->setStyleSheet(QString::fromUtf8(""));
         lbnReynoldsPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_7->addWidget(lbnReynoldsPocoPotencia, 3, 1, 1, 1);
@@ -1028,8 +1002,7 @@ public:
 
         lbnReynoldsCriticoPocoPotencia = new QLabel(gridLayoutWidget_7);
         lbnReynoldsCriticoPocoPotencia->setObjectName("lbnReynoldsCriticoPocoPotencia");
-        lbnReynoldsCriticoPocoPotencia->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnReynoldsCriticoPocoPotencia->setStyleSheet(QString::fromUtf8(""));
         lbnReynoldsCriticoPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_7->addWidget(lbnReynoldsCriticoPocoPotencia, 2, 1, 1, 1);
@@ -1050,7 +1023,8 @@ public:
         editIndiceConsistenciaPotenciaPoco = new QLineEdit(gridLayoutWidget_7);
         editIndiceConsistenciaPotenciaPoco->setObjectName("editIndiceConsistenciaPotenciaPoco");
         editIndiceConsistenciaPotenciaPoco->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+"\n"
+"border-radius: 5px;"));
 
         gridLayout_7->addWidget(editIndiceConsistenciaPotenciaPoco, 0, 1, 1, 1);
 
@@ -1062,8 +1036,7 @@ public:
         gridLayout_8->setContentsMargins(0, 0, 0, 0);
         lbnTipoFluxoAnularPotencia = new QLabel(gridLayoutWidget_8);
         lbnTipoFluxoAnularPotencia->setObjectName("lbnTipoFluxoAnularPotencia");
-        lbnTipoFluxoAnularPotencia->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnTipoFluxoAnularPotencia->setStyleSheet(QString::fromUtf8(""));
         lbnTipoFluxoAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_8->addWidget(lbnTipoFluxoAnularPotencia, 4, 1, 1, 1);
@@ -1091,8 +1064,7 @@ public:
 
         lbnReynoldsAnularPotencia = new QLabel(gridLayoutWidget_8);
         lbnReynoldsAnularPotencia->setObjectName("lbnReynoldsAnularPotencia");
-        lbnReynoldsAnularPotencia->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnReynoldsAnularPotencia->setStyleSheet(QString::fromUtf8(""));
         lbnReynoldsAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_8->addWidget(lbnReynoldsAnularPotencia, 3, 1, 1, 1);
@@ -1106,8 +1078,7 @@ public:
 
         lbnVelocidadeAnularPotencia = new QLabel(gridLayoutWidget_8);
         lbnVelocidadeAnularPotencia->setObjectName("lbnVelocidadeAnularPotencia");
-        lbnVelocidadeAnularPotencia->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnVelocidadeAnularPotencia->setStyleSheet(QString::fromUtf8(""));
         lbnVelocidadeAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_8->addWidget(lbnVelocidadeAnularPotencia, 1, 1, 1, 1);
@@ -1121,16 +1092,14 @@ public:
 
         lbnPerdaFriccionalAnularPotencia = new QLabel(gridLayoutWidget_8);
         lbnPerdaFriccionalAnularPotencia->setObjectName("lbnPerdaFriccionalAnularPotencia");
-        lbnPerdaFriccionalAnularPotencia->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnPerdaFriccionalAnularPotencia->setStyleSheet(QString::fromUtf8(""));
         lbnPerdaFriccionalAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_8->addWidget(lbnPerdaFriccionalAnularPotencia, 5, 1, 1, 1);
 
         lbnReynoldsCriticoAnularPotencia = new QLabel(gridLayoutWidget_8);
         lbnReynoldsCriticoAnularPotencia->setObjectName("lbnReynoldsCriticoAnularPotencia");
-        lbnReynoldsCriticoAnularPotencia->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+        lbnReynoldsCriticoAnularPotencia->setStyleSheet(QString::fromUtf8(""));
         lbnReynoldsCriticoAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_8->addWidget(lbnReynoldsCriticoAnularPotencia, 2, 1, 1, 1);
@@ -1144,7 +1113,8 @@ public:
         editIndiceConsistenciaPotenciaAnular = new QLineEdit(gridLayoutWidget_8);
         editIndiceConsistenciaPotenciaAnular->setObjectName("editIndiceConsistenciaPotenciaAnular");
         editIndiceConsistenciaPotenciaAnular->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;"));
+"\n"
+"border-radius: 5px;"));
 
         gridLayout_8->addWidget(editIndiceConsistenciaPotenciaAnular, 0, 1, 1, 1);
 
@@ -1298,13 +1268,9 @@ public:
         lbnTituloPerdaFriccionalPocoBigham->setText(QCoreApplication::translate("CSimuladorReologico", "Perda Friccional no Po\303\247o (psi/ft)", nullptr));
         lbnVelocidadePocoBigham->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
         btnCalcularModeloBighamPoco->setText(QCoreApplication::translate("CSimuladorReologico", "Calcular", nullptr));
-        editPontoEscoamentoPoco->setStyleSheet(QCoreApplication::translate("CSimuladorReologico", "border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;", nullptr));
         lbnTituloHedstromPocoBigham->setText(QCoreApplication::translate("CSimuladorReologico", "Reynolds Hedstrom", nullptr));
         lbnTituloViscosidadePlasticaPoco->setText(QCoreApplication::translate("CSimuladorReologico", "Viscosidade Pl\303\241stica (cP)", nullptr));
         lbnPerdaFriccionalPocoBigham->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
-        editViscosidadePlasticaPoco->setStyleSheet(QCoreApplication::translate("CSimuladorReologico", "border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;", nullptr));
         lbnTituloPontoEscoamentoPoco->setText(QCoreApplication::translate("CSimuladorReologico", "Ponto de Escoamento (lbf/100 sq.ft)", nullptr));
         lbnTituloReynoldsPocoBigham->setText(QCoreApplication::translate("CSimuladorReologico", "Reynolds no Po\303\247o", nullptr));
         lbnTituloTipoFluxoPocoBigham->setText(QCoreApplication::translate("CSimuladorReologico", "Tipo de Fluxo no Po\303\247o", nullptr));
@@ -1312,8 +1278,6 @@ public:
         lbnTituloCriticoPocoBigham->setText(QCoreApplication::translate("CSimuladorReologico", "Reynolds Cr\303\255tico", nullptr));
         lbnReynoldsHedstromPocoBigham->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
         lbnReynoldsCriticoPocoBigham->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
-        editPontoEscoamentoAnular->setStyleSheet(QCoreApplication::translate("CSimuladorReologico", "border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;", nullptr));
         lbnTituloHedstromAnularBigham->setText(QCoreApplication::translate("CSimuladorReologico", "Reynolds Hedstrom", nullptr));
         btnCalcularModeloBighamAnular->setText(QCoreApplication::translate("CSimuladorReologico", "Calcular", nullptr));
         lbnVelocidadeAnularBigham->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
@@ -1322,8 +1286,6 @@ public:
         lbnPerdaFriccionalAnularBigham->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
         lbnTituloPontoEscoamentoAnular->setText(QCoreApplication::translate("CSimuladorReologico", "Ponto de Escoamento (lbf/100 sq.ft)", nullptr));
         lbnTituloReynoldsAnularBigham->setText(QCoreApplication::translate("CSimuladorReologico", "Reynolds no Anular", nullptr));
-        editViscosidadePlasticaAnular->setStyleSheet(QCoreApplication::translate("CSimuladorReologico", "border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"border-radius: 10px;", nullptr));
         lbnTipoFluxoAnularBigham->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
         lbnTituloViscosidadePlasticaAnular->setText(QCoreApplication::translate("CSimuladorReologico", "Viscosidade Pl\303\241stica (cP)", nullptr));
         lbnTituloVelocidadeAnularBigham->setText(QCoreApplication::translate("CSimuladorReologico", "Velocidade do Anular (ft/s)", nullptr));

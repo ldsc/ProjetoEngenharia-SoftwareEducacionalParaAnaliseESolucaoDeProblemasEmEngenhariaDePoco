@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>304</width>
-    <height>320</height>
+    <width>255</width>
+    <height>283</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>271</width>
-     <height>291</height>
+     <width>231</width>
+     <height>261</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -95,31 +95,85 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QLineEdit" name="editTrecho"/>
+         <widget class="QLineEdit" name="editTrecho">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+
+border-radius: 5px;</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="editProfInicial"/>
+         <widget class="QLineEdit" name="editProfInicial">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+
+border-radius: 5px;</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="editProfFinal"/>
+         <widget class="QLineEdit" name="editProfFinal">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+
+border-radius: 5px;</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="editDiametroExterno"/>
+         <widget class="QLineEdit" name="editDiametroExterno">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+
+border-radius: 5px;</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="editDiametroInterno"/>
+         <widget class="QLineEdit" name="editDiametroInterno">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+
+border-radius: 5px;</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="editCoefPoisson"/>
+         <widget class="QLineEdit" name="editCoefPoisson">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+
+border-radius: 5px;</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="editCoefExpansao"/>
+         <widget class="QLineEdit" name="editCoefExpansao">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+
+border-radius: 5px;</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="editModuloElasticidade"/>
+         <widget class="QLineEdit" name="editModuloElasticidade">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+
+border-radius: 5px;</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="editPesoUnid"/>
+         <widget class="QLineEdit" name="editPesoUnid">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+
+border-radius: 5px;</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>

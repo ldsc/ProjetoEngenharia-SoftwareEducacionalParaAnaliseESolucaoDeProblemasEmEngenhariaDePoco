@@ -7,14 +7,6 @@ janelaadicionarfluido::janelaadicionarfluido(QWidget *parent)
     , ui(new Ui::janelaadicionarfluido)
 {
     ui->setupUi(this);
-
-    if (edit){
-        ui->LnValorNome->setText(getNomeFluido());
-        ui->LnValorDensidade->setText(getDensidade());
-        ui->LnValorViscosidade->setText(getViscosidade());
-        ui->LnValorProfundidadeInicial->setDisabled(true);
-        ui->LnValorProfundidadeFinal->setDisabled(true);
-    }
 }
 
 janelaadicionarfluido::~janelaadicionarfluido()

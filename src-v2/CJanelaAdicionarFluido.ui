@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>283</width>
-    <height>250</height>
+    <width>227</width>
+    <height>202</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>261</width>
-     <height>231</height>
+     <width>211</width>
+     <height>181</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -67,19 +67,44 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QLineEdit" name="LnValorNome"/>
+         <widget class="QLineEdit" name="LnValorNome">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+border-radius: 5px;</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="LnValorDensidade"/>
+         <widget class="QLineEdit" name="LnValorDensidade">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+border-radius: 5px;</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="LnValorViscosidade"/>
+         <widget class="QLineEdit" name="LnValorViscosidade">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+border-radius: 5px;</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="LnValorProfundidadeInicial"/>
+         <widget class="QLineEdit" name="LnValorProfundidadeInicial">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+border-radius: 5px;</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="LnValorProfundidadeFinal"/>
+         <widget class="QLineEdit" name="LnValorProfundidadeFinal">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+border-radius: 5px;</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>

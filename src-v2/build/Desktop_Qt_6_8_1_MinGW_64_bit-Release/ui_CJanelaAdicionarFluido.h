@@ -46,10 +46,10 @@ public:
     {
         if (janelaadicionarfluido->objectName().isEmpty())
             janelaadicionarfluido->setObjectName("janelaadicionarfluido");
-        janelaadicionarfluido->resize(283, 250);
+        janelaadicionarfluido->resize(227, 202);
         layoutWidget = new QWidget(janelaadicionarfluido);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(10, 10, 261, 231));
+        layoutWidget->setGeometry(QRect(10, 10, 211, 181));
         verticalLayout_3 = new QVBoxLayout(layoutWidget);
         verticalLayout_3->setObjectName("verticalLayout_3");
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -89,26 +89,36 @@ public:
         verticalLayout_2->setObjectName("verticalLayout_2");
         LnValorNome = new QLineEdit(layoutWidget);
         LnValorNome->setObjectName("LnValorNome");
+        LnValorNome->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
+"border-radius: 5px;"));
 
         verticalLayout_2->addWidget(LnValorNome);
 
         LnValorDensidade = new QLineEdit(layoutWidget);
         LnValorDensidade->setObjectName("LnValorDensidade");
+        LnValorDensidade->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
+"border-radius: 5px;"));
 
         verticalLayout_2->addWidget(LnValorDensidade);
 
         LnValorViscosidade = new QLineEdit(layoutWidget);
         LnValorViscosidade->setObjectName("LnValorViscosidade");
+        LnValorViscosidade->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
+"border-radius: 5px;"));
 
         verticalLayout_2->addWidget(LnValorViscosidade);
 
         LnValorProfundidadeInicial = new QLineEdit(layoutWidget);
         LnValorProfundidadeInicial->setObjectName("LnValorProfundidadeInicial");
+        LnValorProfundidadeInicial->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
+"border-radius: 5px;"));
 
         verticalLayout_2->addWidget(LnValorProfundidadeInicial);
 
         LnValorProfundidadeFinal = new QLineEdit(layoutWidget);
         LnValorProfundidadeFinal->setObjectName("LnValorProfundidadeFinal");
+        LnValorProfundidadeFinal->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
+"border-radius: 5px;"));
 
         verticalLayout_2->addWidget(LnValorProfundidadeFinal);
 
