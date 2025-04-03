@@ -49,6 +49,10 @@ private slots:
 
     void makePlotPoco();
 
+    void on_BtnTableEsqueda_pressed();
+
+    void on_BtnTableDireita_pressed();
+
 private:
     Ui::CSimuladorReologico *ui;
     std::shared_ptr<CPoco> poco = nullptr;

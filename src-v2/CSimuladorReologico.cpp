@@ -18,6 +18,8 @@ CSimuladorReologico::CSimuladorReologico(QWidget *parent)
     ui->setupUi(this);
     CSimuladorReologico::makePlotPoco();
 
+
+
     //abrir janela no meio do monitor
     QScreen *screen = QGuiApplication::primaryScreen();
     QRect screenGeometry = screen->geometry();
@@ -427,3 +429,21 @@ void CSimuladorReologico::makePlotPoco()
     // Atualizar o gráfico
     ui->customPlotPoco->replot();
 }
+
+void CSimuladorReologico::on_BtnTableEsqueda_pressed(){
+    QScrollBar* barra = ui->tblFluidos->horizontalScrollBar();
+    int posicaoAtual = barra->value();
+    int delta = 1;
+    barra->setValue(posicaoAtual - delta);
+}
+
+
+
+void CSimuladorReologico::on_BtnTableDireita_pressed()
+{
+    QScrollBar* barra = ui->tblFluidos->horizontalScrollBar();
+    int posicaoAtual = barra->value();
+    int delta = 1;
+    barra->setValue(posicaoAtual + delta);
+}
+
