@@ -30,8 +30,11 @@ public:
         : trecho(trecho), profundidadeInicial(ProfundidadeI), profundidadeFinal(ProfundidadeF), diametroExterno(diametroE), diametroInterno(diametroI), coeficientePoisson(coefPoisson), moduloEslasticidade(moduloEslast), pesoUnidade(pesoUnid), coeficienteExpancaoTermica(coefExpancaoTermica) {} // Esse construtor nos leva os atributos que ira rodar na simulacao do Modulo 02
 
     // Getters
+    std::string Trecho() const { return trecho; }
     double ProfundidadeInicial() const { return profundidadeInicial; }
     double ProfundidadeFinal() const { return profundidadeFinal; }
+    double DiametroExterno() const { return diametroExterno; }
+    double DiametroInterno() const { return diametroInterno; }
     CFluido* Fluido() const { return fluido.get(); }
 
     // Setters

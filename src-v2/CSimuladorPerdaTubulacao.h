@@ -35,6 +35,8 @@ private slots:
 
     void on_btnRemoverTrecho_clicked();
 
+    void makePlotPoco();
+
 private:
     Ui::CSimuladorPerdaTubulacao *ui;
     std::shared_ptr<CPoco> poco = nullptr;
