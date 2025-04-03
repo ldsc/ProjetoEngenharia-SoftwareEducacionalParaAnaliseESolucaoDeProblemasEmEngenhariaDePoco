@@ -31,6 +31,10 @@ private slots:
 
     void makePlotTemperatura();
 
+    void on_btnRemoverFluido_clicked();
+
+    void on_btnRemoverTrecho_clicked();
+
 private:
     Ui::CSimuladorPerdaTubulacao *ui;
     std::shared_ptr<CPoco> poco = nullptr;

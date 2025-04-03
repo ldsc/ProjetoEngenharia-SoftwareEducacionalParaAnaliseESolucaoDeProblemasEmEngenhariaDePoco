@@ -280,7 +280,7 @@
      <item row="1" column="0">
       <widget class="QPushButton" name="btnAdicionarFluido">
        <property name="text">
-        <string>Adicionar Fluido</string>
+        <string>Adicionar/editar Fluido</string>
        </property>
       </widget>
      </item>

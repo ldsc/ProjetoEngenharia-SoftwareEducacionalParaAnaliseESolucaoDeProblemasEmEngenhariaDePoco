@@ -25,9 +25,25 @@ public:
     QString getModuloElasticidade() const { return moduloElasticidade; }
     QString getPesoUnidade() const { return pesoUnidade; }
 
+    void setTrecho(const QString& value) { trecho = value; }
+    void setProfundidadeInicial(const QString& value) { profundidadeInicial = value; }
+    void setProfundidadeFinal(const QString& value) { profundidadeFinal = value; }
+    void setDiametroExterno(const QString& value) { diametroExterno = value; }
+    void setDiametroInterno(const QString& value) { diametroInterno = value; }
+    void setCoeficientePoisson(const QString& value) { coeficientePoisson = value; }
+    void setCoeficienteExpansaoTermica(const QString& value) { coeficienteExpansaoTermica = value; }
+    void setModuloElasticidade(const QString& value) { moduloElasticidade = value; }
+    void setPesoUnidade(const QString& value) { pesoUnidade = value; }
+    void Edit(bool opcao) {edit = opcao;}
+
+
+private slots:
+    void on_btnReturn_accepted();
+
+    void on_btnReturn_rejected();
 
 private:
-    bool edit = true;
+    bool edit = false;
     Ui::CJanelaAdicionarTrechoTubulacao *ui;
     QString trecho;
     QString profundidadeInicial;

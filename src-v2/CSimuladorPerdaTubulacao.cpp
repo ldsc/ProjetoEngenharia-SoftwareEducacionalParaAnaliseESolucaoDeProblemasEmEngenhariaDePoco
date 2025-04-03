@@ -17,6 +17,15 @@ CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
         ui->editProfundidadePacker->setEnabled(state == Qt::Checked);
         });
 
+    //abrir janela no meio do monitor
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QRect screenGeometry = screen->geometry();
+
+    int x = (screenGeometry.width() - this->width()) / 2;
+    int y = (screenGeometry.height() - this->height()) / 2;
+
+    this->move(x, y);
+
     makePlotTemperatura();
 }
 
@@ -226,5 +235,47 @@ void CSimuladorPerdaTubulacao::makePlotTemperatura()
 
     // Atualizar o gráfico
     ui->customPlotTemperatura->replot();
+}
+
+
+void CSimuladorPerdaTubulacao::on_btnRemoverFluido_clicked()
+{
+    int linhaSelecionada = ui->tblFluidos->currentRow();
+
+    if (linhaSelecionada >= 0) {
+
+        QTableWidgetItem* item = ui->tblFluidos->item(linhaSelecionada, 0);
+
+        if (item) {
+            QString nomeFluido = item->text();
+            ui->tblFluidos->removeRow(linhaSelecionada);
+            poco->RemoverTrechoPoco(nomeFluido.toStdString());
+            on_btnAtualizarDados_clicked();
+        }
+
+    } else {
+        QMessageBox::warning(this, "Erro", "Selecione uma linha para deletar.");
+    }
+}
+
+
+void CSimuladorPerdaTubulacao::on_btnRemoverTrecho_clicked()
+{
+    int linhaSelecionada = ui->tblTrechos->currentRow();
+
+    if (linhaSelecionada >= 0) {
+
+        QTableWidgetItem* item = ui->tblTrechos->item(linhaSelecionada, 0);
+
+        if (item) {
+            QString nomeFluido = item->text();
+            ui->tblTrechos->removeRow(linhaSelecionada);
+            poco->RemoverTrechoPoco(nomeFluido.toStdString());
+            on_btnAtualizarDados_clicked();
+        }
+
+    } else {
+        QMessageBox::warning(this, "Erro", "Selecione uma linha para deletar.");
+    }
 }
 
