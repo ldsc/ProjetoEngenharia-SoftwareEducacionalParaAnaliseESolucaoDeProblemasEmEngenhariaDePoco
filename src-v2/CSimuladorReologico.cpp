@@ -16,7 +16,23 @@ CSimuladorReologico::CSimuladorReologico(QWidget *parent)
     , ui(new Ui::CSimuladorReologico)
 {
     ui->setupUi(this);
+
     CSimuladorReologico::makePlotPoco();
+
+    ui->tblFluidos->setEditTriggers(QAbstractItemView::DoubleClicked | QAbstractItemView::EditKeyPressed);
+
+    // Conectar o sinal de alteração para chamar sua função AtualizarTabela
+    connect(ui->tblFluidos, &QTableWidget::cellChanged,
+            this, &CSimuladorReologico::EditarLinhaTabela);
+
+    // Sinal para alterações das caixas
+    connect(ui->editNomePoco, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
+    connect(ui->editProfundidadeTotal, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
+    connect(ui->editPressaoSuperficie, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
+    connect(ui->editDiametroPoco, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
+    connect(ui->editDiametroOD, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
+    connect(ui->editDiametroID, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
+    connect(ui->editVazao, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
 
 
 
@@ -61,8 +77,6 @@ void CSimuladorReologico::on_actionImportar_Dados_triggered()
             continue;
         }
 
-        ui->tblFluidos->setEditTriggers(QAbstractItemView::NoEditTriggers);
-
         if (!lendoFluidos) {
             // Ler os dados do poço
             std::istringstream iss(linha);
@@ -88,13 +102,72 @@ void CSimuladorReologico::on_actionImportar_Dados_triggered()
     }
 
     file.close();
-    on_btnAtualizarDados_clicked();
+    AtualizarDados();
+    ui->statusbar->showMessage("Dados Importado com Sucesso!");
+}
+
+void CSimuladorReologico::EditarDadosPoco() {
+    QString nome = ui->editNomePoco->text();
+    bool ok1, ok2, ok3, ok4, ok5, ok6;
+    double profund  = ui->editProfundidadeTotal->text().toDouble(&ok1);
+    double pressao  = ui->editPressaoSuperficie->text().toDouble(&ok2);
+    double diametro = ui->editDiametroPoco->text().toDouble(&ok3);
+    double OD       = ui->editDiametroOD->text().toDouble(&ok4);
+    double ID       = ui->editDiametroID->text().toDouble(&ok5);
+    double vazao    = ui->editVazao->text().toDouble(&ok6);
+
+    if (!nome.isEmpty() && ok1 && ok2 && ok3 && ok4 && ok5 && ok6) {
+        if (!poco) {
+            // Cria o poço
+            poco = std::make_shared<CPoco>(nome.toStdString(), profund, pressao, diametro, OD, ID, vazao);
+            ui->statusbar->showMessage("Poço criado com Sucesso!");
+            qDebug() << "Poço criado!";
+        } else {
+            // Atualiza dados do poço já existente
+            poco->NomePoco(nome.toStdString());
+            poco->ProfundidadeTotal(profund);
+            poco->PressaoSuperficie(pressao);
+            poco->DiametroPoco(diametro);
+            poco->DiametroRevestimentoOD(OD);
+            poco->DiametroRevestimentoID(ID);
+            poco->Vazao(vazao);
+            ui->statusbar->showMessage("Dados de Poço Atualizado com Sucesso!");
+        }
+
+        AtualizarDados();  // Atualiza os dados calculados e a interface
+    }
 }
 
 
-
-void CSimuladorReologico::on_btnAtualizarDados_clicked()
+void CSimuladorReologico::EditarLinhaTabela(int row, int column)
 {
+    QString nomeAlvo = ui->tblFluidos->item(row, 0)->text();
+    std::vector<CTrechoPoco*> trechos = poco->Trechos();
+
+    for (CTrechoPoco* trecho : trechos) {
+        CFluido* fluido = trecho->Fluido();
+        if (fluido && QString::fromStdString(fluido->Nome()) == nomeAlvo) {
+            // Atualiza os dados do fluido
+            fluido->Nome(ui->tblFluidos->item(row, 0)->text().toStdString());
+            fluido->Densidade(ui->tblFluidos->item(row, 1)->text().toDouble());
+            fluido->Viscosidade(ui->tblFluidos->item(row, 2)->text().toDouble());
+
+            // Atualiza profundidades
+            trecho->ProfundidadeInicial(ui->tblFluidos->item(row, 3)->text().toDouble());
+            trecho->ProfundidadeFinal(ui->tblFluidos->item(row, 4)->text().toDouble());
+
+            break; // encontrou e atualizou
+        }
+    }
+    AtualizarDados();
+    ui->statusbar->showMessage("Dados de Fluido Atualizado com Sucesso!");
+}
+
+void CSimuladorReologico::AtualizarDados()
+{
+
+    ui->tblFluidos->blockSignals(true);
+
     if (poco){
         // Atualiza os valores dos QLineEdits com os dados do objeto poco
         ui->editNomePoco->setText(QString::fromStdString(poco->NomePoco()));       // Profundidade total do poço
@@ -123,46 +196,8 @@ void CSimuladorReologico::on_btnAtualizarDados_clicked()
            makePlotPoco();
         }
     }
-}
 
-
-void CSimuladorReologico::on_btnAdicionarPropriedades_clicked()
-{
-    std::string nome;
-    double profundidade, pressaoSuperficie, diametro, OD, ID, vazao;
-
-    QString text;
-
-    text = ui->editNomePoco->text();
-    nome = text.toStdString();
-    text = ui->editProfundidadeTotal->text();
-    profundidade = text.toDouble();
-    text = ui->editPressaoSuperficie->text();
-    pressaoSuperficie = text.toDouble();
-    text = ui->editDiametroPoco->text();
-    diametro = text.toDouble();
-    text = ui->editDiametroOD->text();
-    OD = text.toDouble();
-    text = ui->editDiametroID->text();
-    ID = text.toDouble();
-    text = ui->editVazao->text();
-    vazao = text.toDouble();
-
-    if (poco) {
-        QMessageBox::StandardButton resposta = QMessageBox::question(
-            this,
-            "",
-            "Ao confirmar, todos os fluidos serão deletados! Tem certeza?",
-            QMessageBox::Yes | QMessageBox::No
-            );
-
-        if (resposta == QMessageBox::Yes) {
-            poco = std::make_shared<CPoco>(nome, profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
-        }
-        on_btnAtualizarDados_clicked();
-    } else {
-        poco = std::make_shared<CPoco>(nome, profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
-    }
+    ui->tblFluidos->blockSignals(false);
 }
 
 
@@ -202,7 +237,8 @@ void CSimuladorReologico::on_btnAdicionarFluido_clicked()
             auto trechoPoco = std::make_unique<CTrechoPoco>(profundInicial, profundFinal, std::move(fluido));
             poco->AdicionarTrechoPoco(std::move(trechoPoco));
 
-            on_btnAtualizarDados_clicked();
+            AtualizarDados();
+            ui->statusbar->showMessage("Fluido Adicionado com Sucesso!");
         }
     }
 }
@@ -217,10 +253,21 @@ void CSimuladorReologico::on_btnRemoverFluido_clicked()
         QTableWidgetItem* item = ui->tblFluidos->item(linhaSelecionada, 0);
 
         if (item) {
-            QString nomeFluido = item->text();
-            ui->tblFluidos->removeRow(linhaSelecionada);
-            poco->RemoverTrechoPoco(nomeFluido.toStdString());
-            on_btnAtualizarDados_clicked();
+            QMessageBox::StandardButton resposta = QMessageBox::question(
+                this,
+                "",
+                "Tem certeza que deseja remover o fluido?",
+                QMessageBox::Yes | QMessageBox::No
+                );
+
+            if (resposta == QMessageBox::Yes) {
+                QString nomeFluido = item->text();
+                ui->tblFluidos->removeRow(linhaSelecionada);
+                poco->RemoverTrechoPoco(nomeFluido.toStdString());
+                AtualizarDados();
+                ui->statusbar->showMessage("Fluido Removido com Sucesso!");
+            }
+
         }
 
     } else {
@@ -258,9 +305,6 @@ void CSimuladorReologico::on_btnCalcularModeloNewtonianoAnular_clicked()
     ui->lbnTipoFluxoAnularNewtoniano->setText(QString::fromStdString(modeloNewtoniano->FluxoAnular()));
     ui->lbnPerdaFriccionalAnularNewtoniano->setText(QString::number(modeloNewtoniano->CalcularPerdaPorFriccaoAnular()));
 }
-
-
-
 
 
 void CSimuladorReologico::on_btnCalcularModeloBighamPoco_clicked()
@@ -429,21 +473,3 @@ void CSimuladorReologico::makePlotPoco()
     // Atualizar o gráfico
     ui->customPlotPoco->replot();
 }
-
-void CSimuladorReologico::on_BtnTableEsqueda_pressed(){
-    QScrollBar* barra = ui->tblFluidos->horizontalScrollBar();
-    int posicaoAtual = barra->value();
-    int delta = 1;
-    barra->setValue(posicaoAtual - delta);
-}
-
-
-
-void CSimuladorReologico::on_BtnTableDireita_pressed()
-{
-    QScrollBar* barra = ui->tblFluidos->horizontalScrollBar();
-    int posicaoAtual = barra->value();
-    int delta = 1;
-    barra->setValue(posicaoAtual + delta);
-}
-

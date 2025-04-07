@@ -43,15 +43,15 @@ border-radius: 4px;
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="10" column="0">
-       <widget class="QLabel" name="lbnTituloDensidadeMedia">
+      <item row="0" column="0">
+       <widget class="QLabel" name="lbnTituloNomePoco">
         <property name="font">
          <font>
           <bold>false</bold>
          </font>
         </property>
         <property name="text">
-         <string>Densidade Média (lb/gal): </string>
+         <string>Nome Poço</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -73,8 +73,125 @@ border-radius: 4px;
         </property>
        </widget>
       </item>
+      <item row="4" column="1" colspan="2">
+       <widget class="QLineEdit" name="editDiametroOD">
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="1" colspan="2">
+       <widget class="QLabel" name="lbnProfundidadeOcupada">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0" colspan="3">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="lbnTituloPressaoSuperficie">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Pressão Superficie (psi)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QLineEdit" name="editProfundidadeTotal">
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="lbnTituloVazao">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Vazão (gal/min)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
+       <widget class="QLineEdit" name="editNomePoco">
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1" colspan="2">
+       <widget class="QLabel" name="lbnDensidadeMedia">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="2">
+       <widget class="QLineEdit" name="editPressaoSuperficie">
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
+        </property>
+       </widget>
+      </item>
       <item row="6" column="1" colspan="2">
        <widget class="QLineEdit" name="editVazao">
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="1" colspan="2">
+       <widget class="QLabel" name="lbnViscosidadeMedia">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="2">
+       <widget class="QLineEdit" name="editDiametroPoco">
         <property name="styleSheet">
          <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
         </property>
@@ -92,6 +209,66 @@ border-radius: 4px;
          </size>
         </property>
        </spacer>
+      </item>
+      <item row="10" column="0">
+       <widget class="QLabel" name="lbnTituloDensidadeMedia">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Densidade Média (lb/gal): </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0">
+       <widget class="QLabel" name="lbnTituloProfundidadeOcupada">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Produndidade Ocupada (ft): </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="lbnTituloDiametroOD">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Diam. Externo OD (in)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lbnTituloProfunidadeTotal">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Profundidade Total (ft)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
       </item>
       <item row="5" column="1" colspan="2">
        <widget class="QLineEdit" name="editDiametroID">
@@ -116,143 +293,6 @@ border-radius: 4px;
         </property>
        </widget>
       </item>
-      <item row="1" column="1" colspan="2">
-       <widget class="QLineEdit" name="editProfundidadeTotal">
-        <property name="styleSheet">
-         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1" colspan="2">
-       <widget class="QLineEdit" name="editNomePoco">
-        <property name="styleSheet">
-         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="9" column="0">
-       <widget class="QLabel" name="lbnTituloProfundidadeOcupada">
-        <property name="font">
-         <font>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Produndidade Ocupada (ft): </string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="13" column="1" colspan="2">
-       <widget class="QPushButton" name="btnAtualizarDados">
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-        <property name="text">
-         <string>Atualizar Dados</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="0">
-       <widget class="QLabel" name="lbnTituloVazao">
-        <property name="font">
-         <font>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Vazão (gal/min)</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="lbnTituloPressaoSuperficie">
-        <property name="font">
-         <font>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Pressão Superficie (psi)</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="lbnTituloNomePoco">
-        <property name="font">
-         <font>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Nome Poço</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="0" colspan="3">
-       <spacer name="verticalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Orientation::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="4" column="1" colspan="2">
-       <widget class="QLineEdit" name="editDiametroOD">
-        <property name="styleSheet">
-         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="11" column="1" colspan="2">
-       <widget class="QLabel" name="lbnViscosidadeMedia">
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-        <property name="text">
-         <string>-</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="9" column="1" colspan="2">
-       <widget class="QLabel" name="lbnProfundidadeOcupada">
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-        <property name="text">
-         <string>-</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1" colspan="2">
-       <widget class="QLineEdit" name="editPressaoSuperficie">
-        <property name="styleSheet">
-         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
-        </property>
-       </widget>
-      </item>
       <item row="11" column="0">
        <widget class="QLabel" name="lbnTituloViscosidadeMedia">
         <property name="font">
@@ -265,66 +305,6 @@ border-radius: 4px;
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="lbnTituloProfunidadeTotal">
-        <property name="font">
-         <font>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Profundidade Total (ft)</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1" colspan="2">
-       <widget class="QLineEdit" name="editDiametroPoco">
-        <property name="styleSheet">
-         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="10" column="1" colspan="2">
-       <widget class="QLabel" name="lbnDensidadeMedia">
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-        <property name="text">
-         <string>-</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="lbnTituloDiametroOD">
-        <property name="font">
-         <font>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Diam. Externo OD (in)</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="13" column="0">
-       <widget class="QPushButton" name="btnAdicionarPropriedades">
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-        <property name="text">
-         <string>Adicionar Propriedade</string>
         </property>
        </widget>
       </item>
@@ -455,7 +435,7 @@ border-radius: 4px;
          <string notr="true"/>
         </property>
         <property name="text">
-         <string>Remover Fluido</string>
+         <string>Remover</string>
         </property>
        </widget>
       </item>
@@ -465,7 +445,7 @@ border-radius: 4px;
          <string notr="true"/>
         </property>
         <property name="text">
-         <string>Adicionar/editar Fluido</string>
+         <string>Adicionar</string>
         </property>
        </widget>
       </item>
@@ -487,7 +467,7 @@ border-radius: 4px;
       </font>
      </property>
      <property name="text">
-      <string>Fluidos</string>
+      <string>Dados do Fluido</string>
      </property>
     </widget>
    </widget>
@@ -647,7 +627,7 @@ QTabBar::tab:selected {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <property name="iconSize">
      <size>
@@ -2006,7 +1986,7 @@ border-radius: 4px;
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>360</x>
@@ -2052,12 +2032,11 @@ border-radius: 4px;
     <zorder>label_11</zorder>
     <zorder>label_10</zorder>
    </widget>
+   <zorder>layoutWidget</zorder>
    <zorder>groupBox_2</zorder>
    <zorder>groupBox_3</zorder>
    <zorder>groupBox</zorder>
    <zorder>tabWidget_4</zorder>
-   <zorder>label_10</zorder>
-   <zorder>label_11</zorder>
    <zorder>groupBox_4</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -2092,6 +2071,33 @@ border-radius: 4px;
    <container>1</container>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>editNomePoco</tabstop>
+  <tabstop>editProfundidadeTotal</tabstop>
+  <tabstop>editPressaoSuperficie</tabstop>
+  <tabstop>editDiametroPoco</tabstop>
+  <tabstop>editDiametroOD</tabstop>
+  <tabstop>editDiametroID</tabstop>
+  <tabstop>editVazao</tabstop>
+  <tabstop>btnAdicionarFluido</tabstop>
+  <tabstop>btnRemoverFluido</tabstop>
+  <tabstop>editProfundidadePressaoHidroestatica</tabstop>
+  <tabstop>btnCalcularPressaoHidroestatica</tabstop>
+  <tabstop>btnCalcularModeloNewtonianoPoco</tabstop>
+  <tabstop>btnCalcularModeloNewtonianoAnular</tabstop>
+  <tabstop>editPontoEscoamentoPoco</tabstop>
+  <tabstop>editViscosidadePlasticaPoco</tabstop>
+  <tabstop>btnCalcularModeloBighamPoco</tabstop>
+  <tabstop>editPontoEscoamentoAnular</tabstop>
+  <tabstop>editViscosidadePlasticaAnular</tabstop>
+  <tabstop>btnCalcularModeloBighamAnular</tabstop>
+  <tabstop>editIndiceConsistenciaPotenciaPoco</tabstop>
+  <tabstop>btnCalcularModeloPotenciaPoco</tabstop>
+  <tabstop>editIndiceConsistenciaPotenciaAnular</tabstop>
+  <tabstop>btnCalcularModeloPotenciaAnular</tabstop>
+  <tabstop>tabWidget_4</tabstop>
+  <tabstop>tblFluidos</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

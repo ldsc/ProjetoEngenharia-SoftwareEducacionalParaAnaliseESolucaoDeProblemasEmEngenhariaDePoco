@@ -8,6 +8,9 @@
 #include "CModeloBingham.h"
 #include "CModeloPotencia.h"
 
+#include <QTableWidgetItem>
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class CSimuladorReologico;
@@ -25,9 +28,7 @@ public:
 private slots:
     void on_actionImportar_Dados_triggered();
 
-    void on_btnAtualizarDados_clicked();
-
-    void on_btnAdicionarPropriedades_clicked();
+    void AtualizarDados();
 
     void on_btnAdicionarFluido_clicked();
 
@@ -49,9 +50,9 @@ private slots:
 
     void makePlotPoco();
 
-    void on_BtnTableEsqueda_pressed();
+    void EditarLinhaTabela(int row, int column);
 
-    void on_BtnTableDireita_pressed();
+     void EditarDadosPoco();
 
 private:
     Ui::CSimuladorReologico *ui;

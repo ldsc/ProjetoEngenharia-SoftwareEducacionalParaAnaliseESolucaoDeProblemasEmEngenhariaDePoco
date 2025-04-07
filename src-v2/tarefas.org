@@ -94,6 +94,8 @@ ComprimentoTrecho ;
 *** TODO Fazer diagramas associados
 *** TODO Fazer a interface no QTCreator
 *** TODO Testar a usabilidade e fazer ajustes necessários
+
+
 **** TODO Adicionar menu, onde terão os ícones principais associados as simulações
 ***** Simulador de Poço
 ****** Nova simulação [Ctrl-n]
@@ -107,13 +109,15 @@ ComprimentoTrecho ;
 **** TODO Comportamento do ícone
 ***** Se tiver cálculo demorado é normal mudar o ícone para ampulheta, terminou o cálculo volta para o padrão
 **** TODO Adicionar atalhos para as tarefas mais usadas. Por exemplo o botão Calcular pode ter um atalho. Como tem vários o atalho poderia chamar todos os cálculos na sequência correta, tipo atualizar todos os cálculos.
-*** TODO Eliminar botão Adicionar Propriedade pois na verdade esta criando nova simulação
-*** TODO Adicionar classe de controle da simulação, por exemplo:
+*** DONE Eliminar botão Adicionar Propriedade pois na verdade esta criando nova simulação
+*** DONE Adicionar classe de controle da simulação, por exemplo:
 **** após editar um lineEdit já executa a atualização dos cálculos ou só recalcula quando pressionar o botão calcular?
 **** note algo importante, se um botão esta dentro de um box, ele se refere ao box. Se for algo que altera toda a simulação deve estar lá em cima na barra de tarefas
 *** TODO Na cálculo da pressão numa posição qualquer forneça botão para gerar o gráfico de pressão, uma janela que abre e mostra o gráfico de pressão.
-*** TODO Na aba fluidos deve ter: 
+*** DONE Na aba fluidos deve ter: 
 **** Adicionar, adicionar linha nova de fluidos
+
+
 **** Modificar, abre os dados da linha e permite editação
 **** Deletar, deleta a linha seleciona. deve pedir confirmação
 ** Implementar a interface gráfica da parte II (poço com seção variável)

@@ -22,7 +22,7 @@ public:
     double Viscosidade() const { return viscosidade; }
 
     // Setters
-    void Nome(double nome) { nome = nome; }
+    void Nome(std::string nome) { nome = nome; }
     void Densidade(double Dens) { densidade = Dens; }
     void Viscosidade(double visc) { viscosidade = visc; }
 
