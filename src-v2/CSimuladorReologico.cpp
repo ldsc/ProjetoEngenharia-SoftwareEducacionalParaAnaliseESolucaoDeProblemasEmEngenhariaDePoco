@@ -473,3 +473,47 @@ void CSimuladorReologico::makePlotPoco()
     // Atualizar o gráfico
     ui->customPlotPoco->replot();
 }
+
+void CSimuladorReologico::on_actionNova_Simula_o_triggered()
+{
+    ui->tblFluidos->blockSignals(true);
+    ui->editNomePoco->blockSignals(true);
+    ui->editProfundidadeTotal->blockSignals(true);
+    ui->editPressaoSuperficie->blockSignals(true);
+    ui->editDiametroPoco->blockSignals(true);
+    ui->editDiametroOD->blockSignals(true);
+    ui->editDiametroID->blockSignals(true);
+    ui->editVazao->blockSignals(true);
+    ui->tblFluidos->blockSignals(true);
+
+    ui->tblFluidos->setRowCount(0);
+    ui->editNomePoco->clear();
+    ui->editProfundidadeTotal->clear();
+    ui->editPressaoSuperficie->clear();
+    ui->editDiametroPoco->clear();
+    ui->editDiametroOD->clear();
+    ui->editDiametroID->clear();
+    ui->editVazao->clear();
+
+    ui->editIndiceConsistenciaPotenciaPoco->clear();
+    ui->editIndiceConsistenciaPotenciaAnular->clear();
+    ui->editPontoEscoamentoPoco->clear();
+    ui->editPontoEscoamentoAnular->clear();
+    ui->editViscosidadePlasticaPoco->clear();
+    ui->editViscosidadePlasticaAnular->clear();
+
+    poco.reset();
+
+    ui->tblFluidos->blockSignals(false);
+    ui->editNomePoco->blockSignals(false);
+    ui->editProfundidadeTotal->blockSignals(false);
+    ui->editPressaoSuperficie->blockSignals(false);
+    ui->editDiametroPoco->blockSignals(false);
+    ui->editDiametroOD->blockSignals(false);
+    ui->editDiametroID->blockSignals(false);
+    ui->editVazao->blockSignals(false);
+    ui->tblFluidos->blockSignals(false);
+
+
+}
+

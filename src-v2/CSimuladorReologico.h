@@ -54,6 +54,8 @@ private slots:
 
      void EditarDadosPoco();
 
+    void on_actionNova_Simula_o_triggered();
+
 private:
     Ui::CSimuladorReologico *ui;
     std::shared_ptr<CPoco> poco = nullptr;

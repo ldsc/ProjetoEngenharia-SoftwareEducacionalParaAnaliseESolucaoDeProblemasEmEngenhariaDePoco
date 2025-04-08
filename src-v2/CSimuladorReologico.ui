@@ -627,7 +627,7 @@ QTabBar::tab:selected {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <property name="iconSize">
      <size>
@@ -1989,10 +1989,10 @@ border-radius: 4px;
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>230</x>
       <y>0</y>
-      <width>465</width>
-      <height>54</height>
+      <width>830</width>
+      <height>55</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -2005,7 +2005,7 @@ border-radius: 4px;
         </font>
        </property>
        <property name="text">
-        <string>SEAP - Software Educacional de Engenharia de Poço</string>
+        <string>SEAPEP - Software Educacional para Análise e Soluções de Problemas Em Engenharia de Poço</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -2052,14 +2052,102 @@ border-radius: 4px;
     <property name="title">
      <string>Arquivo</string>
     </property>
+    <addaction name="actionNova_Simula_o"/>
+    <addaction name="actionSalvar_Como"/>
+    <addaction name="actionImprimir"/>
+    <addaction name="separator"/>
     <addaction name="actionImportar_Dados"/>
+    <addaction name="actionExportar_como_Imagem"/>
+   </widget>
+   <widget class="QMenu" name="menuAjuda">
+    <property name="title">
+     <string>Referências</string>
+    </property>
+    <addaction name="actionAjuda"/>
+    <addaction name="actionSobre_os_Modelos_Reol_gicos"/>
+    <addaction name="actionSobre_o_Programa"/>
    </widget>
    <addaction name="menuArquivo"/>
+   <addaction name="menuAjuda"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionImportar_Dados">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentOpen"/>
+   </property>
    <property name="text">
     <string>Importar Dados</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionNova_Simula_o">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentNew"/>
+   </property>
+   <property name="text">
+    <string>Nova Simulação</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionSalvar_Como">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentSave"/>
+   </property>
+   <property name="text">
+    <string>Salvar Como...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionImprimir">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::Printer"/>
+   </property>
+   <property name="text">
+    <string>Imprimir como PDF</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionExportar_como_Imagem">
+   <property name="icon">
+    <iconset theme="emblem-photos"/>
+   </property>
+   <property name="text">
+    <string>Exportar como Imagem</string>
+   </property>
+  </action>
+  <action name="actionAjuda">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::HelpFaq"/>
+   </property>
+   <property name="text">
+    <string>Manual do Usuário</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionSobre_os_Modelos_Reol_gicos">
+   <property name="icon">
+    <iconset theme="document-properties"/>
+   </property>
+   <property name="text">
+    <string>Modelos Reológicos Utilizados</string>
+   </property>
+  </action>
+  <action name="actionSobre_o_Programa">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::HelpAbout"/>
+   </property>
+   <property name="text">
+    <string>Sobre o SEEP</string>
    </property>
   </action>
  </widget>
