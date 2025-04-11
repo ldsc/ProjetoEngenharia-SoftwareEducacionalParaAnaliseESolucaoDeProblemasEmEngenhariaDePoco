@@ -34,35 +34,41 @@ QT_BEGIN_NAMESPACE
 class Ui_CSimuladorReologico
 {
 public:
-    QAction *actionImportar_Dados;
+    QAction *actionNova_Simula_o;
+    QAction *actionSalvar_Como;
+    QAction *actionImprimir;
+    QAction *actionExportar_como_Imagem;
+    QAction *actionAjuda;
+    QAction *actionSobre_os_Modelos_Reol_gicos;
+    QAction *actionSobre_o_Programa;
+    QAction *actionArquivo_dat;
+    QAction *actionExcel;
     QWidget *centralwidget;
     QGroupBox *groupBox;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
-    QLabel *lbnTituloDensidadeMedia;
+    QLabel *lbnTituloNomePoco;
     QLabel *lbnTituloDiametroID;
+    QLineEdit *editDiametroOD;
+    QLabel *lbnProfundidadeOcupada;
+    QSpacerItem *verticalSpacer_2;
+    QLabel *lbnTituloPressaoSuperficie;
+    QLineEdit *editProfundidadeTotal;
+    QLabel *lbnTituloVazao;
+    QLineEdit *editNomePoco;
+    QLabel *lbnDensidadeMedia;
+    QLineEdit *editPressaoSuperficie;
     QLineEdit *editVazao;
+    QLabel *lbnViscosidadeMedia;
+    QLineEdit *editDiametroPoco;
     QSpacerItem *verticalSpacer;
+    QLabel *lbnTituloDensidadeMedia;
+    QLabel *lbnTituloProfundidadeOcupada;
+    QLabel *lbnTituloDiametroOD;
+    QLabel *lbnTituloProfunidadeTotal;
     QLineEdit *editDiametroID;
     QLabel *lbnTituloDiametroPoco;
-    QLineEdit *editProfundidadeTotal;
-    QLineEdit *editNomePoco;
-    QLabel *lbnTituloProfundidadeOcupada;
-    QPushButton *btnAtualizarDados;
-    QLabel *lbnTituloVazao;
-    QLabel *lbnTituloPressaoSuperficie;
-    QLabel *lbnTituloNomePoco;
-    QSpacerItem *verticalSpacer_2;
-    QLineEdit *editDiametroOD;
-    QLabel *lbnViscosidadeMedia;
-    QLabel *lbnProfundidadeOcupada;
-    QLineEdit *editPressaoSuperficie;
     QLabel *lbnTituloViscosidadeMedia;
-    QLabel *lbnTituloProfunidadeTotal;
-    QLineEdit *editDiametroPoco;
-    QLabel *lbnDensidadeMedia;
-    QLabel *lbnTituloDiametroOD;
-    QPushButton *btnAdicionarPropriedades;
     QLabel *label;
     QGroupBox *groupBox_3;
     QWidget *gridLayoutWidget_2;
@@ -186,12 +192,14 @@ public:
     QGroupBox *groupBox_4;
     QCustomPlot *customPlotPoco;
     QLabel *label_12;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QLabel *label_10;
     QLabel *label_11;
     QMenuBar *menubar;
     QMenu *menuArquivo;
+    QMenu *menuImportar_Dados;
+    QMenu *menuAjuda;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *CSimuladorReologico)
@@ -199,8 +207,38 @@ public:
         if (CSimuladorReologico->objectName().isEmpty())
             CSimuladorReologico->setObjectName("CSimuladorReologico");
         CSimuladorReologico->resize(1264, 695);
-        actionImportar_Dados = new QAction(CSimuladorReologico);
-        actionImportar_Dados->setObjectName("actionImportar_Dados");
+        actionNova_Simula_o = new QAction(CSimuladorReologico);
+        actionNova_Simula_o->setObjectName("actionNova_Simula_o");
+        QIcon icon(QIcon::fromTheme(QIcon::ThemeIcon::DocumentNew));
+        actionNova_Simula_o->setIcon(icon);
+        actionSalvar_Como = new QAction(CSimuladorReologico);
+        actionSalvar_Como->setObjectName("actionSalvar_Como");
+        QIcon icon1(QIcon::fromTheme(QIcon::ThemeIcon::DocumentSave));
+        actionSalvar_Como->setIcon(icon1);
+        actionImprimir = new QAction(CSimuladorReologico);
+        actionImprimir->setObjectName("actionImprimir");
+        QIcon icon2(QIcon::fromTheme(QIcon::ThemeIcon::Printer));
+        actionImprimir->setIcon(icon2);
+        actionExportar_como_Imagem = new QAction(CSimuladorReologico);
+        actionExportar_como_Imagem->setObjectName("actionExportar_como_Imagem");
+        QIcon icon3(QIcon::fromTheme(QString::fromUtf8("emblem-photos")));
+        actionExportar_como_Imagem->setIcon(icon3);
+        actionAjuda = new QAction(CSimuladorReologico);
+        actionAjuda->setObjectName("actionAjuda");
+        QIcon icon4(QIcon::fromTheme(QIcon::ThemeIcon::HelpFaq));
+        actionAjuda->setIcon(icon4);
+        actionSobre_os_Modelos_Reol_gicos = new QAction(CSimuladorReologico);
+        actionSobre_os_Modelos_Reol_gicos->setObjectName("actionSobre_os_Modelos_Reol_gicos");
+        QIcon icon5(QIcon::fromTheme(QString::fromUtf8("document-properties")));
+        actionSobre_os_Modelos_Reol_gicos->setIcon(icon5);
+        actionSobre_o_Programa = new QAction(CSimuladorReologico);
+        actionSobre_o_Programa->setObjectName("actionSobre_o_Programa");
+        QIcon icon6(QIcon::fromTheme(QIcon::ThemeIcon::HelpAbout));
+        actionSobre_o_Programa->setIcon(icon6);
+        actionArquivo_dat = new QAction(CSimuladorReologico);
+        actionArquivo_dat->setObjectName("actionArquivo_dat");
+        actionExcel = new QAction(CSimuladorReologico);
+        actionExcel->setObjectName("actionExcel");
         centralwidget = new QWidget(CSimuladorReologico);
         centralwidget->setObjectName("centralwidget");
         groupBox = new QGroupBox(centralwidget);
@@ -218,14 +256,14 @@ public:
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        lbnTituloDensidadeMedia = new QLabel(gridLayoutWidget);
-        lbnTituloDensidadeMedia->setObjectName("lbnTituloDensidadeMedia");
+        lbnTituloNomePoco = new QLabel(gridLayoutWidget);
+        lbnTituloNomePoco->setObjectName("lbnTituloNomePoco");
         QFont font;
         font.setBold(false);
-        lbnTituloDensidadeMedia->setFont(font);
-        lbnTituloDensidadeMedia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+        lbnTituloNomePoco->setFont(font);
+        lbnTituloNomePoco->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
-        gridLayout->addWidget(lbnTituloDensidadeMedia, 10, 0, 1, 1);
+        gridLayout->addWidget(lbnTituloNomePoco, 0, 0, 1, 1);
 
         lbnTituloDiametroID = new QLabel(gridLayoutWidget);
         lbnTituloDiametroID->setObjectName("lbnTituloDiametroID");
@@ -234,20 +272,123 @@ public:
 
         gridLayout->addWidget(lbnTituloDiametroID, 5, 0, 1, 1);
 
+        editDiametroOD = new QLineEdit(gridLayoutWidget);
+        editDiametroOD->setObjectName("editDiametroOD");
+        editDiametroOD->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
+
+        gridLayout->addWidget(editDiametroOD, 4, 1, 1, 2);
+
+        lbnProfundidadeOcupada = new QLabel(gridLayoutWidget);
+        lbnProfundidadeOcupada->setObjectName("lbnProfundidadeOcupada");
+        lbnProfundidadeOcupada->setStyleSheet(QString::fromUtf8(""));
+        lbnProfundidadeOcupada->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        gridLayout->addWidget(lbnProfundidadeOcupada, 9, 1, 1, 2);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_2, 8, 0, 1, 3);
+
+        lbnTituloPressaoSuperficie = new QLabel(gridLayoutWidget);
+        lbnTituloPressaoSuperficie->setObjectName("lbnTituloPressaoSuperficie");
+        lbnTituloPressaoSuperficie->setFont(font);
+        lbnTituloPressaoSuperficie->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout->addWidget(lbnTituloPressaoSuperficie, 2, 0, 1, 1);
+
+        editProfundidadeTotal = new QLineEdit(gridLayoutWidget);
+        editProfundidadeTotal->setObjectName("editProfundidadeTotal");
+        editProfundidadeTotal->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
+
+        gridLayout->addWidget(editProfundidadeTotal, 1, 1, 1, 2);
+
+        lbnTituloVazao = new QLabel(gridLayoutWidget);
+        lbnTituloVazao->setObjectName("lbnTituloVazao");
+        lbnTituloVazao->setFont(font);
+        lbnTituloVazao->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout->addWidget(lbnTituloVazao, 6, 0, 1, 1);
+
+        editNomePoco = new QLineEdit(gridLayoutWidget);
+        editNomePoco->setObjectName("editNomePoco");
+        editNomePoco->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
+
+        gridLayout->addWidget(editNomePoco, 0, 1, 1, 2);
+
+        lbnDensidadeMedia = new QLabel(gridLayoutWidget);
+        lbnDensidadeMedia->setObjectName("lbnDensidadeMedia");
+        lbnDensidadeMedia->setStyleSheet(QString::fromUtf8(""));
+        lbnDensidadeMedia->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        gridLayout->addWidget(lbnDensidadeMedia, 10, 1, 1, 2);
+
+        editPressaoSuperficie = new QLineEdit(gridLayoutWidget);
+        editPressaoSuperficie->setObjectName("editPressaoSuperficie");
+        editPressaoSuperficie->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
+
+        gridLayout->addWidget(editPressaoSuperficie, 2, 1, 1, 2);
+
         editVazao = new QLineEdit(gridLayoutWidget);
         editVazao->setObjectName("editVazao");
-        editVazao->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\\nborder-radius: 5px;"));
+        editVazao->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
 
         gridLayout->addWidget(editVazao, 6, 1, 1, 2);
+
+        lbnViscosidadeMedia = new QLabel(gridLayoutWidget);
+        lbnViscosidadeMedia->setObjectName("lbnViscosidadeMedia");
+        lbnViscosidadeMedia->setStyleSheet(QString::fromUtf8(""));
+        lbnViscosidadeMedia->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        gridLayout->addWidget(lbnViscosidadeMedia, 11, 1, 1, 2);
+
+        editDiametroPoco = new QLineEdit(gridLayoutWidget);
+        editDiametroPoco->setObjectName("editDiametroPoco");
+        editDiametroPoco->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
+
+        gridLayout->addWidget(editDiametroPoco, 3, 1, 1, 2);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         gridLayout->addItem(verticalSpacer, 12, 0, 1, 3);
 
+        lbnTituloDensidadeMedia = new QLabel(gridLayoutWidget);
+        lbnTituloDensidadeMedia->setObjectName("lbnTituloDensidadeMedia");
+        lbnTituloDensidadeMedia->setFont(font);
+        lbnTituloDensidadeMedia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout->addWidget(lbnTituloDensidadeMedia, 10, 0, 1, 1);
+
+        lbnTituloProfundidadeOcupada = new QLabel(gridLayoutWidget);
+        lbnTituloProfundidadeOcupada->setObjectName("lbnTituloProfundidadeOcupada");
+        lbnTituloProfundidadeOcupada->setFont(font);
+        lbnTituloProfundidadeOcupada->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout->addWidget(lbnTituloProfundidadeOcupada, 9, 0, 1, 1);
+
+        lbnTituloDiametroOD = new QLabel(gridLayoutWidget);
+        lbnTituloDiametroOD->setObjectName("lbnTituloDiametroOD");
+        lbnTituloDiametroOD->setFont(font);
+        lbnTituloDiametroOD->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout->addWidget(lbnTituloDiametroOD, 4, 0, 1, 1);
+
+        lbnTituloProfunidadeTotal = new QLabel(gridLayoutWidget);
+        lbnTituloProfunidadeTotal->setObjectName("lbnTituloProfunidadeTotal");
+        lbnTituloProfunidadeTotal->setFont(font);
+        lbnTituloProfunidadeTotal->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout->addWidget(lbnTituloProfunidadeTotal, 1, 0, 1, 1);
+
         editDiametroID = new QLineEdit(gridLayoutWidget);
         editDiametroID->setObjectName("editDiametroID");
-        editDiametroID->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-"\\nborder-radius: 5px;"));
+        editDiametroID->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
 
         gridLayout->addWidget(editDiametroID, 5, 1, 1, 2);
 
@@ -258,121 +399,12 @@ public:
 
         gridLayout->addWidget(lbnTituloDiametroPoco, 3, 0, 1, 1);
 
-        editProfundidadeTotal = new QLineEdit(gridLayoutWidget);
-        editProfundidadeTotal->setObjectName("editProfundidadeTotal");
-        editProfundidadeTotal->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\\nborder-radius: 5px;"));
-
-        gridLayout->addWidget(editProfundidadeTotal, 1, 1, 1, 2);
-
-        editNomePoco = new QLineEdit(gridLayoutWidget);
-        editNomePoco->setObjectName("editNomePoco");
-        editNomePoco->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\\nborder-radius: 5px;"));
-
-        gridLayout->addWidget(editNomePoco, 0, 1, 1, 2);
-
-        lbnTituloProfundidadeOcupada = new QLabel(gridLayoutWidget);
-        lbnTituloProfundidadeOcupada->setObjectName("lbnTituloProfundidadeOcupada");
-        lbnTituloProfundidadeOcupada->setFont(font);
-        lbnTituloProfundidadeOcupada->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout->addWidget(lbnTituloProfundidadeOcupada, 9, 0, 1, 1);
-
-        btnAtualizarDados = new QPushButton(gridLayoutWidget);
-        btnAtualizarDados->setObjectName("btnAtualizarDados");
-        btnAtualizarDados->setStyleSheet(QString::fromUtf8(""));
-
-        gridLayout->addWidget(btnAtualizarDados, 13, 1, 1, 2);
-
-        lbnTituloVazao = new QLabel(gridLayoutWidget);
-        lbnTituloVazao->setObjectName("lbnTituloVazao");
-        lbnTituloVazao->setFont(font);
-        lbnTituloVazao->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout->addWidget(lbnTituloVazao, 6, 0, 1, 1);
-
-        lbnTituloPressaoSuperficie = new QLabel(gridLayoutWidget);
-        lbnTituloPressaoSuperficie->setObjectName("lbnTituloPressaoSuperficie");
-        lbnTituloPressaoSuperficie->setFont(font);
-        lbnTituloPressaoSuperficie->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout->addWidget(lbnTituloPressaoSuperficie, 2, 0, 1, 1);
-
-        lbnTituloNomePoco = new QLabel(gridLayoutWidget);
-        lbnTituloNomePoco->setObjectName("lbnTituloNomePoco");
-        lbnTituloNomePoco->setFont(font);
-        lbnTituloNomePoco->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout->addWidget(lbnTituloNomePoco, 0, 0, 1, 1);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-
-        gridLayout->addItem(verticalSpacer_2, 8, 0, 1, 3);
-
-        editDiametroOD = new QLineEdit(gridLayoutWidget);
-        editDiametroOD->setObjectName("editDiametroOD");
-        editDiametroOD->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\\nborder-radius: 5px;"));
-
-        gridLayout->addWidget(editDiametroOD, 4, 1, 1, 2);
-
-        lbnViscosidadeMedia = new QLabel(gridLayoutWidget);
-        lbnViscosidadeMedia->setObjectName("lbnViscosidadeMedia");
-        lbnViscosidadeMedia->setStyleSheet(QString::fromUtf8(""));
-        lbnViscosidadeMedia->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout->addWidget(lbnViscosidadeMedia, 11, 1, 1, 2);
-
-        lbnProfundidadeOcupada = new QLabel(gridLayoutWidget);
-        lbnProfundidadeOcupada->setObjectName("lbnProfundidadeOcupada");
-        lbnProfundidadeOcupada->setStyleSheet(QString::fromUtf8(""));
-        lbnProfundidadeOcupada->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout->addWidget(lbnProfundidadeOcupada, 9, 1, 1, 2);
-
-        editPressaoSuperficie = new QLineEdit(gridLayoutWidget);
-        editPressaoSuperficie->setObjectName("editPressaoSuperficie");
-        editPressaoSuperficie->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\\nborder-radius: 5px;"));
-
-        gridLayout->addWidget(editPressaoSuperficie, 2, 1, 1, 2);
-
         lbnTituloViscosidadeMedia = new QLabel(gridLayoutWidget);
         lbnTituloViscosidadeMedia->setObjectName("lbnTituloViscosidadeMedia");
         lbnTituloViscosidadeMedia->setFont(font);
         lbnTituloViscosidadeMedia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         gridLayout->addWidget(lbnTituloViscosidadeMedia, 11, 0, 1, 1);
-
-        lbnTituloProfunidadeTotal = new QLabel(gridLayoutWidget);
-        lbnTituloProfunidadeTotal->setObjectName("lbnTituloProfunidadeTotal");
-        lbnTituloProfunidadeTotal->setFont(font);
-        lbnTituloProfunidadeTotal->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout->addWidget(lbnTituloProfunidadeTotal, 1, 0, 1, 1);
-
-        editDiametroPoco = new QLineEdit(gridLayoutWidget);
-        editDiametroPoco->setObjectName("editDiametroPoco");
-        editDiametroPoco->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\\nborder-radius: 5px;"));
-
-        gridLayout->addWidget(editDiametroPoco, 3, 1, 1, 2);
-
-        lbnDensidadeMedia = new QLabel(gridLayoutWidget);
-        lbnDensidadeMedia->setObjectName("lbnDensidadeMedia");
-        lbnDensidadeMedia->setStyleSheet(QString::fromUtf8(""));
-        lbnDensidadeMedia->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout->addWidget(lbnDensidadeMedia, 10, 1, 1, 2);
-
-        lbnTituloDiametroOD = new QLabel(gridLayoutWidget);
-        lbnTituloDiametroOD->setObjectName("lbnTituloDiametroOD");
-        lbnTituloDiametroOD->setFont(font);
-        lbnTituloDiametroOD->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout->addWidget(lbnTituloDiametroOD, 4, 0, 1, 1);
-
-        btnAdicionarPropriedades = new QPushButton(gridLayoutWidget);
-        btnAdicionarPropriedades->setObjectName("btnAdicionarPropriedades");
-        btnAdicionarPropriedades->setStyleSheet(QString::fromUtf8(""));
-
-        gridLayout->addWidget(btnAdicionarPropriedades, 13, 0, 1, 1);
 
         label = new QLabel(groupBox);
         label->setObjectName("label");
@@ -458,8 +490,8 @@ public:
         gridLayout_14->setContentsMargins(0, 0, 0, 0);
         editProfundidadePressaoHidroestatica = new QLineEdit(gridLayoutWidget_14);
         editProfundidadePressaoHidroestatica->setObjectName("editProfundidadePressaoHidroestatica");
-        editProfundidadePressaoHidroestatica->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
-""));
+        editProfundidadePressaoHidroestatica->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
 
         gridLayout_14->addWidget(editProfundidadePressaoHidroestatica, 0, 1, 1, 1);
 
@@ -1142,13 +1174,13 @@ public:
         label_12->setObjectName("label_12");
         label_12->setGeometry(QRect(10, 10, 201, 16));
         label_12->setFont(font1);
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(360, 0, 465, 54));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(230, 0, 830, 55));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label_10 = new QLabel(widget);
+        label_10 = new QLabel(layoutWidget);
         label_10->setObjectName("label_10");
         QFont font4;
         font4.setPointSize(14);
@@ -1158,7 +1190,7 @@ public:
 
         verticalLayout->addWidget(label_10);
 
-        label_11 = new QLabel(widget);
+        label_11 = new QLabel(layoutWidget);
         label_11->setObjectName("label_11");
         QFont font5;
         font5.setPointSize(11);
@@ -1171,25 +1203,63 @@ public:
         label_11->raise();
         label_10->raise();
         CSimuladorReologico->setCentralWidget(centralwidget);
+        layoutWidget->raise();
         groupBox_2->raise();
         groupBox_3->raise();
         groupBox->raise();
         tabWidget_4->raise();
-        label_10->raise();
-        label_11->raise();
         groupBox_4->raise();
         menubar = new QMenuBar(CSimuladorReologico);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 1264, 22));
         menuArquivo = new QMenu(menubar);
         menuArquivo->setObjectName("menuArquivo");
+        menuImportar_Dados = new QMenu(menuArquivo);
+        menuImportar_Dados->setObjectName("menuImportar_Dados");
+        menuAjuda = new QMenu(menubar);
+        menuAjuda->setObjectName("menuAjuda");
         CSimuladorReologico->setMenuBar(menubar);
         statusbar = new QStatusBar(CSimuladorReologico);
         statusbar->setObjectName("statusbar");
         CSimuladorReologico->setStatusBar(statusbar);
+        QWidget::setTabOrder(editNomePoco, editProfundidadeTotal);
+        QWidget::setTabOrder(editProfundidadeTotal, editPressaoSuperficie);
+        QWidget::setTabOrder(editPressaoSuperficie, editDiametroPoco);
+        QWidget::setTabOrder(editDiametroPoco, editDiametroOD);
+        QWidget::setTabOrder(editDiametroOD, editDiametroID);
+        QWidget::setTabOrder(editDiametroID, editVazao);
+        QWidget::setTabOrder(editVazao, btnAdicionarFluido);
+        QWidget::setTabOrder(btnAdicionarFluido, btnRemoverFluido);
+        QWidget::setTabOrder(btnRemoverFluido, editProfundidadePressaoHidroestatica);
+        QWidget::setTabOrder(editProfundidadePressaoHidroestatica, btnCalcularPressaoHidroestatica);
+        QWidget::setTabOrder(btnCalcularPressaoHidroestatica, btnCalcularModeloNewtonianoPoco);
+        QWidget::setTabOrder(btnCalcularModeloNewtonianoPoco, btnCalcularModeloNewtonianoAnular);
+        QWidget::setTabOrder(btnCalcularModeloNewtonianoAnular, editPontoEscoamentoPoco);
+        QWidget::setTabOrder(editPontoEscoamentoPoco, editViscosidadePlasticaPoco);
+        QWidget::setTabOrder(editViscosidadePlasticaPoco, btnCalcularModeloBighamPoco);
+        QWidget::setTabOrder(btnCalcularModeloBighamPoco, editPontoEscoamentoAnular);
+        QWidget::setTabOrder(editPontoEscoamentoAnular, editViscosidadePlasticaAnular);
+        QWidget::setTabOrder(editViscosidadePlasticaAnular, btnCalcularModeloBighamAnular);
+        QWidget::setTabOrder(btnCalcularModeloBighamAnular, editIndiceConsistenciaPotenciaPoco);
+        QWidget::setTabOrder(editIndiceConsistenciaPotenciaPoco, btnCalcularModeloPotenciaPoco);
+        QWidget::setTabOrder(btnCalcularModeloPotenciaPoco, editIndiceConsistenciaPotenciaAnular);
+        QWidget::setTabOrder(editIndiceConsistenciaPotenciaAnular, btnCalcularModeloPotenciaAnular);
+        QWidget::setTabOrder(btnCalcularModeloPotenciaAnular, tabWidget_4);
+        QWidget::setTabOrder(tabWidget_4, tblFluidos);
 
         menubar->addAction(menuArquivo->menuAction());
-        menuArquivo->addAction(actionImportar_Dados);
+        menubar->addAction(menuAjuda->menuAction());
+        menuArquivo->addAction(actionNova_Simula_o);
+        menuArquivo->addAction(actionSalvar_Como);
+        menuArquivo->addAction(actionImprimir);
+        menuArquivo->addSeparator();
+        menuArquivo->addAction(menuImportar_Dados->menuAction());
+        menuArquivo->addAction(actionExportar_como_Imagem);
+        menuImportar_Dados->addAction(actionArquivo_dat);
+        menuImportar_Dados->addAction(actionExcel);
+        menuAjuda->addAction(actionAjuda);
+        menuAjuda->addAction(actionSobre_os_Modelos_Reol_gicos);
+        menuAjuda->addAction(actionSobre_o_Programa);
 
         retranslateUi(CSimuladorReologico);
 
@@ -1202,22 +1272,40 @@ public:
     void retranslateUi(QMainWindow *CSimuladorReologico)
     {
         CSimuladorReologico->setWindowTitle(QCoreApplication::translate("CSimuladorReologico", "CSimuladorPoco", nullptr));
-        actionImportar_Dados->setText(QCoreApplication::translate("CSimuladorReologico", "Importar Dados", nullptr));
-        lbnTituloDensidadeMedia->setText(QCoreApplication::translate("CSimuladorReologico", "Densidade M\303\251dia (lb/gal): ", nullptr));
-        lbnTituloDiametroID->setText(QCoreApplication::translate("CSimuladorReologico", "Diam. Interno ID  (in)", nullptr));
-        lbnTituloDiametroPoco->setText(QCoreApplication::translate("CSimuladorReologico", "Diametro Po\303\247o (in)", nullptr));
-        lbnTituloProfundidadeOcupada->setText(QCoreApplication::translate("CSimuladorReologico", "Produndidade Ocupada (ft): ", nullptr));
-        btnAtualizarDados->setText(QCoreApplication::translate("CSimuladorReologico", "Atualizar Dados", nullptr));
-        lbnTituloVazao->setText(QCoreApplication::translate("CSimuladorReologico", "Vaz\303\243o (gal/min)", nullptr));
-        lbnTituloPressaoSuperficie->setText(QCoreApplication::translate("CSimuladorReologico", "Press\303\243o Superficie (psi)", nullptr));
+        actionNova_Simula_o->setText(QCoreApplication::translate("CSimuladorReologico", "Nova Simula\303\247\303\243o", nullptr));
+#if QT_CONFIG(shortcut)
+        actionNova_Simula_o->setShortcut(QCoreApplication::translate("CSimuladorReologico", "Ctrl+N", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionSalvar_Como->setText(QCoreApplication::translate("CSimuladorReologico", "Salvar Como...", nullptr));
+#if QT_CONFIG(shortcut)
+        actionSalvar_Como->setShortcut(QCoreApplication::translate("CSimuladorReologico", "Ctrl+S", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionImprimir->setText(QCoreApplication::translate("CSimuladorReologico", "Imprimir como PDF", nullptr));
+#if QT_CONFIG(shortcut)
+        actionImprimir->setShortcut(QCoreApplication::translate("CSimuladorReologico", "Ctrl+P", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionExportar_como_Imagem->setText(QCoreApplication::translate("CSimuladorReologico", "Exportar como Imagem", nullptr));
+        actionAjuda->setText(QCoreApplication::translate("CSimuladorReologico", "Manual do Usu\303\241rio", nullptr));
+#if QT_CONFIG(shortcut)
+        actionAjuda->setShortcut(QCoreApplication::translate("CSimuladorReologico", "Ctrl+H", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionSobre_os_Modelos_Reol_gicos->setText(QCoreApplication::translate("CSimuladorReologico", "Modelos Reol\303\263gicos Utilizados", nullptr));
+        actionSobre_o_Programa->setText(QCoreApplication::translate("CSimuladorReologico", "Sobre o SEEP", nullptr));
+        actionArquivo_dat->setText(QCoreApplication::translate("CSimuladorReologico", "Arquivo .(dat)", nullptr));
+        actionExcel->setText(QCoreApplication::translate("CSimuladorReologico", "Excel", nullptr));
         lbnTituloNomePoco->setText(QCoreApplication::translate("CSimuladorReologico", "Nome Po\303\247o", nullptr));
-        lbnViscosidadeMedia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
+        lbnTituloDiametroID->setText(QCoreApplication::translate("CSimuladorReologico", "Diam. Interno ID  (in)", nullptr));
         lbnProfundidadeOcupada->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
-        lbnTituloViscosidadeMedia->setText(QCoreApplication::translate("CSimuladorReologico", "Viscosidade M\303\251dia (cP):", nullptr));
-        lbnTituloProfunidadeTotal->setText(QCoreApplication::translate("CSimuladorReologico", "Profundidade Total (ft)", nullptr));
+        lbnTituloPressaoSuperficie->setText(QCoreApplication::translate("CSimuladorReologico", "Press\303\243o Superficie (psi)", nullptr));
+        lbnTituloVazao->setText(QCoreApplication::translate("CSimuladorReologico", "Vaz\303\243o (gal/min)", nullptr));
         lbnDensidadeMedia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
+        lbnViscosidadeMedia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
+        lbnTituloDensidadeMedia->setText(QCoreApplication::translate("CSimuladorReologico", "Densidade M\303\251dia (lb/gal): ", nullptr));
+        lbnTituloProfundidadeOcupada->setText(QCoreApplication::translate("CSimuladorReologico", "Produndidade Ocupada (ft): ", nullptr));
         lbnTituloDiametroOD->setText(QCoreApplication::translate("CSimuladorReologico", "Diam. Externo OD (in)", nullptr));
-        btnAdicionarPropriedades->setText(QCoreApplication::translate("CSimuladorReologico", "Adicionar Propriedade", nullptr));
+        lbnTituloProfunidadeTotal->setText(QCoreApplication::translate("CSimuladorReologico", "Profundidade Total (ft)", nullptr));
+        lbnTituloDiametroPoco->setText(QCoreApplication::translate("CSimuladorReologico", "Diametro Po\303\247o (in)", nullptr));
+        lbnTituloViscosidadeMedia->setText(QCoreApplication::translate("CSimuladorReologico", "Viscosidade M\303\251dia (cP):", nullptr));
         label->setText(QCoreApplication::translate("CSimuladorReologico", "Dados do Po\303\247o", nullptr));
         groupBox_3->setTitle(QString());
         QTableWidgetItem *___qtablewidgetitem = tblFluidos->horizontalHeaderItem(0);
@@ -1230,9 +1318,9 @@ public:
         ___qtablewidgetitem3->setText(QCoreApplication::translate("CSimuladorReologico", "Prof. Inicial (ft)", nullptr));
         QTableWidgetItem *___qtablewidgetitem4 = tblFluidos->horizontalHeaderItem(4);
         ___qtablewidgetitem4->setText(QCoreApplication::translate("CSimuladorReologico", "Prof. Final (ft)", nullptr));
-        btnRemoverFluido->setText(QCoreApplication::translate("CSimuladorReologico", "Remover Fluido", nullptr));
-        btnAdicionarFluido->setText(QCoreApplication::translate("CSimuladorReologico", "Adicionar/editar Fluido", nullptr));
-        label_2->setText(QCoreApplication::translate("CSimuladorReologico", "Fluidos", nullptr));
+        btnRemoverFluido->setText(QCoreApplication::translate("CSimuladorReologico", "Remover", nullptr));
+        btnAdicionarFluido->setText(QCoreApplication::translate("CSimuladorReologico", "Adicionar", nullptr));
+        label_2->setText(QCoreApplication::translate("CSimuladorReologico", "Dados do Fluido", nullptr));
         groupBox_2->setTitle(QString());
         label_3->setText(QCoreApplication::translate("CSimuladorReologico", "Press\303\243o Hidroest\303\241tica", nullptr));
         editProfundidadePressaoHidroestatica->setText(QString());
@@ -1323,9 +1411,11 @@ public:
         tabWidget_4->setTabText(tabWidget_4->indexOf(tab_8), QCoreApplication::translate("CSimuladorReologico", "            Modelo de Pot\303\252ncia           ", nullptr));
         groupBox_4->setTitle(QString());
         label_12->setText(QCoreApplication::translate("CSimuladorReologico", "Fluidos x Profundidade", nullptr));
-        label_10->setText(QCoreApplication::translate("CSimuladorReologico", "SEAP - Software Educacional de Engenharia de Po\303\247o", nullptr));
+        label_10->setText(QCoreApplication::translate("CSimuladorReologico", "SEAPEP - Software Educacional para An\303\241lise e Solu\303\247\303\265es de Problemas Em Engenharia de Po\303\247o", nullptr));
         label_11->setText(QCoreApplication::translate("CSimuladorReologico", "Simula\303\247\303\243o de Press\303\243o Hidrost\303\241tica e Perda por Fric\303\247\303\243o", nullptr));
         menuArquivo->setTitle(QCoreApplication::translate("CSimuladorReologico", "Arquivo", nullptr));
+        menuImportar_Dados->setTitle(QCoreApplication::translate("CSimuladorReologico", "Importar Dados", nullptr));
+        menuAjuda->setTitle(QCoreApplication::translate("CSimuladorReologico", "Refer\303\252ncias", nullptr));
     } // retranslateUi
 
 };

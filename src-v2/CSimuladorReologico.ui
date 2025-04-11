@@ -76,7 +76,8 @@ border-radius: 4px;
       <item row="4" column="1" colspan="2">
        <widget class="QLineEdit" name="editDiametroOD">
         <property name="styleSheet">
-         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
+         <string notr="true">border: 1px solid #dddddd; 
+border-radius: 5px;</string>
         </property>
        </widget>
       </item>
@@ -124,7 +125,8 @@ border-radius: 4px;
       <item row="1" column="1" colspan="2">
        <widget class="QLineEdit" name="editProfundidadeTotal">
         <property name="styleSheet">
-         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
+         <string notr="true">border: 1px solid #dddddd; 
+border-radius: 5px;</string>
         </property>
        </widget>
       </item>
@@ -146,7 +148,8 @@ border-radius: 4px;
       <item row="0" column="1" colspan="2">
        <widget class="QLineEdit" name="editNomePoco">
         <property name="styleSheet">
-         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
+         <string notr="true">border: 1px solid #dddddd; 
+border-radius: 5px;</string>
         </property>
        </widget>
       </item>
@@ -166,14 +169,16 @@ border-radius: 4px;
       <item row="2" column="1" colspan="2">
        <widget class="QLineEdit" name="editPressaoSuperficie">
         <property name="styleSheet">
-         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
+         <string notr="true">border: 1px solid #dddddd; 
+border-radius: 5px;</string>
         </property>
        </widget>
       </item>
       <item row="6" column="1" colspan="2">
        <widget class="QLineEdit" name="editVazao">
         <property name="styleSheet">
-         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
+         <string notr="true">border: 1px solid #dddddd; 
+border-radius: 5px;</string>
         </property>
        </widget>
       </item>
@@ -193,7 +198,8 @@ border-radius: 4px;
       <item row="3" column="1" colspan="2">
        <widget class="QLineEdit" name="editDiametroPoco">
         <property name="styleSheet">
-         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */\nborder-radius: 5px;</string>
+         <string notr="true">border: 1px solid #dddddd; 
+border-radius: 5px;</string>
         </property>
        </widget>
       </item>
@@ -273,8 +279,8 @@ border-radius: 4px;
       <item row="5" column="1" colspan="2">
        <widget class="QLineEdit" name="editDiametroID">
         <property name="styleSheet">
-         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
-\nborder-radius: 5px;</string>
+         <string notr="true">border: 1px solid #dddddd; 
+border-radius: 5px;</string>
         </property>
        </widget>
       </item>
@@ -522,8 +528,8 @@ border-radius: 4px;
       <item row="0" column="1">
        <widget class="QLineEdit" name="editProfundidadePressaoHidroestatica">
         <property name="styleSheet">
-         <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
-</string>
+         <string notr="true">border: 1px solid #dddddd; 
+border-radius: 5px;</string>
         </property>
         <property name="text">
          <string/>
@@ -2052,11 +2058,18 @@ border-radius: 4px;
     <property name="title">
      <string>Arquivo</string>
     </property>
+    <widget class="QMenu" name="menuImportar_Dados">
+     <property name="title">
+      <string>Importar Dados</string>
+     </property>
+     <addaction name="actionArquivo_dat"/>
+     <addaction name="actionExcel"/>
+    </widget>
     <addaction name="actionNova_Simula_o"/>
     <addaction name="actionSalvar_Como"/>
     <addaction name="actionImprimir"/>
     <addaction name="separator"/>
-    <addaction name="actionImportar_Dados"/>
+    <addaction name="menuImportar_Dados"/>
     <addaction name="actionExportar_como_Imagem"/>
    </widget>
    <widget class="QMenu" name="menuAjuda">
@@ -2071,17 +2084,6 @@ border-radius: 4px;
    <addaction name="menuAjuda"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionImportar_Dados">
-   <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::DocumentOpen"/>
-   </property>
-   <property name="text">
-    <string>Importar Dados</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+I</string>
-   </property>
-  </action>
   <action name="actionNova_Simula_o">
    <property name="icon">
     <iconset theme="QIcon::ThemeIcon::DocumentNew"/>
@@ -2148,6 +2150,16 @@ border-radius: 4px;
    </property>
    <property name="text">
     <string>Sobre o SEEP</string>
+   </property>
+  </action>
+  <action name="actionArquivo_dat">
+   <property name="text">
+    <string>Arquivo .(dat)</string>
+   </property>
+  </action>
+  <action name="actionExcel">
+   <property name="text">
+    <string>Excel</string>
    </property>
   </action>
  </widget>

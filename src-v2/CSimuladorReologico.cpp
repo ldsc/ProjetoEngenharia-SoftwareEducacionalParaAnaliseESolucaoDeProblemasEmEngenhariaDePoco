@@ -10,6 +10,8 @@
 #include <QMessageBox>
 #include <QMap>
 #include <QColor>
+#include <QDesktopServices>
+#include <QUrl>
 
 CSimuladorReologico::CSimuladorReologico(QWidget *parent)
     : QMainWindow(parent)
@@ -34,6 +36,14 @@ CSimuladorReologico::CSimuladorReologico(QWidget *parent)
     connect(ui->editDiametroID, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
     connect(ui->editVazao, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
 
+    // iniciar com botões desativado
+    ui->btnCalcularPressaoHidroestatica->setEnabled(false);
+    ui->btnCalcularModeloNewtonianoPoco->setEnabled(false);
+    ui->btnCalcularModeloNewtonianoAnular->setEnabled(false);
+    ui->btnCalcularModeloBighamPoco->setEnabled(false);
+    ui->btnCalcularModeloBighamAnular->setEnabled(false);
+    ui->btnCalcularModeloPotenciaPoco->setEnabled(false);
+    ui->btnCalcularModeloPotenciaAnular->setEnabled(false);
 
 
     //abrir janela no meio do monitor
@@ -53,57 +63,7 @@ CSimuladorReologico::~CSimuladorReologico()
 
 void CSimuladorReologico::on_actionImportar_Dados_triggered()
 {
-    QString caminhoDoArquivo = QFileDialog::getOpenFileName(
-        this, // Passa a janela principal como pai
-        "Selecione um arquivo",
-        "",
-        "Todos os arquivos (*.*)"
-        );
 
-    // Converte o QString para std::string corretamente
-    std::string caminhoDoArquivoStr = caminhoDoArquivo.toStdString();
-
-    std::ifstream file(caminhoDoArquivoStr);
-
-    std::string linha;
-    bool lendoFluidos = false; // Começa lendo dados do poço
-
-    while (std::getline(file, linha)) {
-        // Ignorar linhas vazias ou comentários
-        if (linha.empty() || linha[0] == '#') {
-            if (linha.find("Fluidos") != std::string::npos) {
-                lendoFluidos = true; // Mudar para leitura de fluidos
-            }
-            continue;
-        }
-
-        if (!lendoFluidos) {
-            // Ler os dados do poço
-            std::istringstream iss(linha);
-            std::string nome;
-            double profundidade, pressaoSuperficie, diametro, OD, ID, vazao;
-
-            if (iss >> nome >> profundidade >> pressaoSuperficie >> diametro >> OD >> ID >> vazao) {
-                poco = std::make_unique<CPoco>(nome, profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
-            }
-        } else {
-            // Ler os dados dos fluidos
-            std::istringstream iss(linha);
-            std::string nome;
-            double densidade, viscosidade, profInicial, profFinal;
-
-            if (iss >> nome >> densidade >> viscosidade >> profInicial >> profFinal) {
-                auto fluido = std::make_unique<CFluido>(nome, densidade, viscosidade);
-                auto trechoPoco = std::make_unique<CTrechoPoco>(profInicial, profFinal, std::move(fluido));
-                if (!poco->AdicionarTrechoPoco(std::move(trechoPoco))) {
-                }
-            }
-        }
-    }
-
-    file.close();
-    AtualizarDados();
-    ui->statusbar->showMessage("Dados Importado com Sucesso!");
 }
 
 void CSimuladorReologico::EditarDadosPoco() {
@@ -120,8 +80,16 @@ void CSimuladorReologico::EditarDadosPoco() {
         if (!poco) {
             // Cria o poço
             poco = std::make_shared<CPoco>(nome.toStdString(), profund, pressao, diametro, OD, ID, vazao);
+
+            ui->btnCalcularPressaoHidroestatica->setEnabled(true);
+            ui->btnCalcularModeloNewtonianoPoco->setEnabled(true);
+            ui->btnCalcularModeloNewtonianoAnular->setEnabled(true);
+            ui->btnCalcularModeloBighamPoco->setEnabled(true);
+            ui->btnCalcularModeloBighamAnular->setEnabled(true);
+            ui->btnCalcularModeloPotenciaPoco->setEnabled(true);
+            ui->btnCalcularModeloPotenciaAnular->setEnabled(true);
+
             ui->statusbar->showMessage("Poço criado com Sucesso!");
-            qDebug() << "Poço criado!";
         } else {
             // Atualiza dados do poço já existente
             poco->NomePoco(nome.toStdString());
@@ -476,44 +444,145 @@ void CSimuladorReologico::makePlotPoco()
 
 void CSimuladorReologico::on_actionNova_Simula_o_triggered()
 {
-    ui->tblFluidos->blockSignals(true);
-    ui->editNomePoco->blockSignals(true);
-    ui->editProfundidadeTotal->blockSignals(true);
-    ui->editPressaoSuperficie->blockSignals(true);
-    ui->editDiametroPoco->blockSignals(true);
-    ui->editDiametroOD->blockSignals(true);
-    ui->editDiametroID->blockSignals(true);
-    ui->editVazao->blockSignals(true);
-    ui->tblFluidos->blockSignals(true);
+    QMessageBox::StandardButton resposta = QMessageBox::question(
+        this,
+        "",
+        "Tem certeza que deseja iniciar uma nova simulação?",
+        QMessageBox::Yes | QMessageBox::No
+        );
 
-    ui->tblFluidos->setRowCount(0);
-    ui->editNomePoco->clear();
-    ui->editProfundidadeTotal->clear();
-    ui->editPressaoSuperficie->clear();
-    ui->editDiametroPoco->clear();
-    ui->editDiametroOD->clear();
-    ui->editDiametroID->clear();
-    ui->editVazao->clear();
+    if (resposta == QMessageBox::Yes) {
+        CSimuladorReologico *newWindow = new CSimuladorReologico();
+        newWindow->show();
+        this->close();
+    }
+}
 
-    ui->editIndiceConsistenciaPotenciaPoco->clear();
-    ui->editIndiceConsistenciaPotenciaAnular->clear();
-    ui->editPontoEscoamentoPoco->clear();
-    ui->editPontoEscoamentoAnular->clear();
-    ui->editViscosidadePlasticaPoco->clear();
-    ui->editViscosidadePlasticaAnular->clear();
 
-    poco.reset();
+void CSimuladorReologico::on_actionExportar_como_Imagem_triggered()
+{
+    QString fileName = QFileDialog::getSaveFileName(this, "Salvar imagem", "", "PNG (*.png);;JPEG (*.jpg)");
 
-    ui->tblFluidos->blockSignals(false);
-    ui->editNomePoco->blockSignals(false);
-    ui->editProfundidadeTotal->blockSignals(false);
-    ui->editPressaoSuperficie->blockSignals(false);
-    ui->editDiametroPoco->blockSignals(false);
-    ui->editDiametroOD->blockSignals(false);
-    ui->editDiametroID->blockSignals(false);
-    ui->editVazao->blockSignals(false);
-    ui->tblFluidos->blockSignals(false);
+    if (!fileName.isEmpty()) {
+        QPixmap pixmap = this->grab();
+        pixmap.save(fileName);
+    }
+}
 
+
+void CSimuladorReologico::on_actionSobre_o_Programa_triggered()
+{
+    QDesktopServices::openUrl(QUrl("https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"));
+}
+
+
+void CSimuladorReologico::on_actionSalvar_Como_triggered()
+{
+    QString caminho = QFileDialog::getSaveFileName(this, "Salvar Arquivo", "", "Arquivo DAT (*.dat)");
+    if (caminho.isEmpty()) return;
+
+    QFile arquivo(caminho);
+    if (!arquivo.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::warning(this, "Erro", "Não foi possível salvar o arquivo.");
+        return;
+    }
+
+    QTextStream out(&arquivo);
+
+    // Dados do Poço
+    out << "[DadosDoPoco]\n";
+    out << ui->editNomePoco->text() << "\n";
+    out << ui->editProfundidadeTotal->text() << "\n";
+    out << ui->editPressaoSuperficie->text() << "\n";
+    out << ui->editDiametroPoco->text() << "\n";
+    out << ui->editDiametroOD->text() << "\n";
+    out << ui->editDiametroID->text() << "\n";
+    out << ui->editVazao->text() << "\n";
+
+    // Dados dos Fluidos (pega da tabela)
+    out << "[Fluidos]\n";
+    int linhas = ui->tblFluidos->rowCount();
+    for (int i = 0; i < linhas; ++i) {
+        QString nome = ui->tblFluidos->item(i, 0)->text();
+        QString densidade = ui->tblFluidos->item(i, 1)->text();
+        QString viscosidade = ui->tblFluidos->item(i, 2)->text();
+        QString profIni = ui->tblFluidos->item(i, 3)->text();
+        QString profFim = ui->tblFluidos->item(i, 4)->text();
+
+        out << nome << "," << densidade << "," << viscosidade << "," << profIni << "," << profFim << "\n";
+    }
+
+    arquivo.close();
+    QMessageBox::information(this, "Salvo", "Arquivo salvo com sucesso!");
+}
+
+
+void CSimuladorReologico::on_actionExcel_triggered()
+{
+    QString caminhoDoArquivo = QFileDialog::getOpenFileName(
+        this, // Passa a janela principal como pai
+        "Selecione um arquivo",
+        "",
+        "Todos os arquivos (*.*)"
+        );
+
+    // Converte o QString para std::string corretamente
+    std::string caminhoDoArquivoStr = caminhoDoArquivo.toStdString();
+
+    std::ifstream file(caminhoDoArquivoStr);
+
+    std::string linha;
+    bool lendoFluidos = false; // Começa lendo dados do poço
+
+    while (std::getline(file, linha)) {
+        // Ignorar linhas vazias ou comentários
+        if (linha.empty() || linha[0] == '#') {
+            if (linha.find("Fluidos") != std::string::npos) {
+                lendoFluidos = true; // Mudar para leitura de fluidos
+            }
+            continue;
+        }
+
+        if (!lendoFluidos) {
+            // Ler os dados do poço
+            std::istringstream iss(linha);
+            std::string nome;
+            double profundidade, pressaoSuperficie, diametro, OD, ID, vazao;
+
+            if (iss >> nome >> profundidade >> pressaoSuperficie >> diametro >> OD >> ID >> vazao) {
+
+                ui->btnCalcularPressaoHidroestatica->setEnabled(true);
+                ui->btnCalcularModeloNewtonianoPoco->setEnabled(true);
+                ui->btnCalcularModeloNewtonianoAnular->setEnabled(true);
+                ui->btnCalcularModeloBighamPoco->setEnabled(true);
+                ui->btnCalcularModeloBighamAnular->setEnabled(true);
+                ui->btnCalcularModeloPotenciaPoco->setEnabled(true);
+                ui->btnCalcularModeloPotenciaAnular->setEnabled(true);
+                poco = std::make_unique<CPoco>(nome, profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
+            }
+        } else {
+            // Ler os dados dos fluidos
+            std::istringstream iss(linha);
+            std::string nome;
+            double densidade, viscosidade, profInicial, profFinal;
+
+            if (iss >> nome >> densidade >> viscosidade >> profInicial >> profFinal) {
+                auto fluido = std::make_unique<CFluido>(nome, densidade, viscosidade);
+                auto trechoPoco = std::make_unique<CTrechoPoco>(profInicial, profFinal, std::move(fluido));
+                if (!poco->AdicionarTrechoPoco(std::move(trechoPoco))) {
+                }
+            }
+        }
+    }
+
+    file.close();
+    AtualizarDados();
+    ui->statusbar->showMessage("Dados Importado com Sucesso!");
+}
+
+
+void CSimuladorReologico::on_actionArquivo_dat_triggered()
+{
 
 }
 

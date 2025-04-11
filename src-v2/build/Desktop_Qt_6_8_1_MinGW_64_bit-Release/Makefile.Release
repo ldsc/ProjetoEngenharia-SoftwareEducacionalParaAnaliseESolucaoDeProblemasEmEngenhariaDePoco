@@ -1203,6 +1203,24 @@ release/moc_CSimuladorReologico.cpp: ../../CSimuladorReologico.h \
 		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../CModeloBingham.h \
 		../../CModeloPotencia.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/QTableWidgetItem \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtablewidget.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtableview.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.8.1/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.8.1/mingw_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/6.8.1/mingw_64/include/QtGui/qvalidator.h \
+		C:/Qt/6.8.1/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qslider.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qstyle.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qrubberband.h \
 		release/moc_predefs.h \
 		C:/Qt/6.8.1/mingw_64/bin/moc.exe
 	C:\Qt\6.8.1\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/src-v2/build/Desktop_Qt_6_8_1_MinGW_64_bit-Release/release/moc_predefs.h -IC:/Qt/6.8.1/mingw_64/mkspecs/win32-g++ -IC:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/src-v2 -IC:/Qt/6.8.1/mingw_64/include -IC:/Qt/6.8.1/mingw_64/include/QtPrintSupport -IC:/Qt/6.8.1/mingw_64/include/QtWidgets -IC:/Qt/6.8.1/mingw_64/include/QtGui -IC:/Qt/6.8.1/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\CSimuladorReologico.h -o release\moc_CSimuladorReologico.cpp
@@ -3596,6 +3614,24 @@ release/CJanelaMenu.o: ../../CJanelaMenu.cpp ../../CJanelaMenu.h \
 		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../CModeloBingham.h \
 		../../CModeloPotencia.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/QTableWidgetItem \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtablewidget.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtableview.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.8.1/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.8.1/mingw_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/6.8.1/mingw_64/include/QtGui/qvalidator.h \
+		C:/Qt/6.8.1/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qslider.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qstyle.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qrubberband.h \
 		../../CSimuladorPerdaTubulacao.h \
 		C:/Qt/6.8.1/mingw_64/include/QtWidgets/QDialog
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\CJanelaMenu.o ..\..\CJanelaMenu.cpp
@@ -4483,6 +4519,24 @@ release/CSimuladorReologico.o: ../../CSimuladorReologico.cpp ../../CSimuladorReo
 		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../CModeloBingham.h \
 		../../CModeloPotencia.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/QTableWidgetItem \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtablewidget.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtableview.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.8.1/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.8.1/mingw_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/6.8.1/mingw_64/include/QtGui/qvalidator.h \
+		C:/Qt/6.8.1/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qslider.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qstyle.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/6.8.1/mingw_64/include/QtWidgets/qrubberband.h \
 		ui_CSimuladorReologico.h \
 		../../CJanelaAdicionarFluido.h \
 		C:/Qt/6.8.1/mingw_64/include/QtWidgets/QDialog \

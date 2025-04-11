@@ -96,19 +96,19 @@ ComprimentoTrecho ;
 *** TODO Testar a usabilidade e fazer ajustes necessários
 
 
-**** TODO Adicionar menu, onde terão os ícones principais associados as simulações
+**** DONE Adicionar menu, onde terão os ícones principais associados as simulações
 ***** Simulador de Poço
 ****** Nova simulação [Ctrl-n]
 ****** Abrir arquivo [Ctrl-a]
 ****** Salvar simulação [Ctrl-s]
 ***** 
-**** TODO Adicionar uma barra de tarefas, onde terão os ícones principais associados as simulações. 
+**** DONE Adicionar uma barra de tarefas, onde terão os ícones principais associados as simulações. 
 ***** Basicamente o que tem no menu Simulador de Pocço deve ter na barra de tarefas
-**** TODO Você pode adicionar uma barra de status
+**** DONE Você pode adicionar uma barra de status
 ***** É utilizada para enviar mensagens ao usuário, por exemplo, pediu para calcular algo, na barra de status aparece ...Calculando... e depois ...Calculou perda de carga.
-**** TODO Comportamento do ícone
+**** DONE Comportamento do ícone
 ***** Se tiver cálculo demorado é normal mudar o ícone para ampulheta, terminou o cálculo volta para o padrão
-**** TODO Adicionar atalhos para as tarefas mais usadas. Por exemplo o botão Calcular pode ter um atalho. Como tem vários o atalho poderia chamar todos os cálculos na sequência correta, tipo atualizar todos os cálculos.
+**** DONE Adicionar atalhos para as tarefas mais usadas. Por exemplo o botão Calcular pode ter um atalho. Como tem vários o atalho poderia chamar todos os cálculos na sequência correta, tipo atualizar todos os cálculos.
 *** DONE Eliminar botão Adicionar Propriedade pois na verdade esta criando nova simulação
 *** DONE Adicionar classe de controle da simulação, por exemplo:
 **** após editar um lineEdit já executa a atualização dos cálculos ou só recalcula quando pressionar o botão calcular?

@@ -56,7 +56,17 @@ private slots:
 
     void on_actionNova_Simula_o_triggered();
 
-private:
+     void on_actionExportar_como_Imagem_triggered();
+
+    void on_actionSobre_o_Programa_triggered();
+
+     void on_actionSalvar_Como_triggered();
+
+    void on_actionExcel_triggered();
+
+     void on_actionArquivo_dat_triggered();
+
+ private:
     Ui::CSimuladorReologico *ui;
     std::shared_ptr<CPoco> poco = nullptr;
     std::shared_ptr<CTrechoPoco> trechoPoco = nullptr;
