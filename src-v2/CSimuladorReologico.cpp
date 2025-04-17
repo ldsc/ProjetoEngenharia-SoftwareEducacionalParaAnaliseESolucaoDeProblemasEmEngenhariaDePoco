@@ -1,6 +1,7 @@
 #include "CSimuladorReologico.h"
 #include "ui_CSimuladorReologico.h"
 #include "CJanelaAdicionarFluido.h"
+#include "CJanelaGraficoPressaoHidroestatica.h"
 
 #include <iostream>
 #include <fstream>
@@ -44,6 +45,7 @@ CSimuladorReologico::CSimuladorReologico(QWidget *parent)
     ui->btnCalcularModeloBighamAnular->setEnabled(false);
     ui->btnCalcularModeloPotenciaPoco->setEnabled(false);
     ui->btnCalcularModeloPotenciaAnular->setEnabled(false);
+    ui->btnExibirGraficoPressaoHidroestatica->setEnabled(false);
 
 
     //abrir janela no meio do monitor
@@ -88,6 +90,7 @@ void CSimuladorReologico::EditarDadosPoco() {
             ui->btnCalcularModeloBighamAnular->setEnabled(true);
             ui->btnCalcularModeloPotenciaPoco->setEnabled(true);
             ui->btnCalcularModeloPotenciaAnular->setEnabled(true);
+            ui->btnExibirGraficoPressaoHidroestatica->setEnabled(true);
 
             ui->statusbar->showMessage("Poço criado com Sucesso!");
         } else {
@@ -490,17 +493,19 @@ void CSimuladorReologico::on_actionSalvar_Como_triggered()
     QTextStream out(&arquivo);
 
     // Dados do Poço
-    out << "[DadosDoPoco]\n";
-    out << ui->editNomePoco->text() << "\n";
-    out << ui->editProfundidadeTotal->text() << "\n";
-    out << ui->editPressaoSuperficie->text() << "\n";
-    out << ui->editDiametroPoco->text() << "\n";
-    out << ui->editDiametroOD->text() << "\n";
-    out << ui->editDiametroID->text() << "\n";
-    out << ui->editVazao->text() << "\n";
+    out << "# Configuração do Poço------------------------------------------------------------------------------------\n";
+    out << "# Nome                 Profundidade (ft)    Pressão Superficial (psi)    Diâmetro (in)    OD (in)    ID (in)    Vazão (bbl/d)\n";
+    out << ui->editNomePoco->text() << "           ";
+    out << ui->editProfundidadeTotal->text() << "                ";
+    out << ui->editPressaoSuperficie->text() << "                         ";
+    out << ui->editDiametroPoco->text() << "             ";
+    out << ui->editDiametroOD->text() << "       ";
+    out << ui->editDiametroID->text() << "       ";
+    out << ui->editVazao->text() << "       ";
 
     // Dados dos Fluidos (pega da tabela)
-    out << "[Fluidos]\n";
+    out << "\n\n\n# Configuração dos Fluidos--------------------------------------------------------------------------------\n";
+    out << "# Nome       Densidade (lbm/gal)    Viscosidade (cP)    Prof. Inicial (ft)    Prof. Final (ft)\n";
     int linhas = ui->tblFluidos->rowCount();
     for (int i = 0; i < linhas; ++i) {
         QString nome = ui->tblFluidos->item(i, 0)->text();
@@ -509,7 +514,7 @@ void CSimuladorReologico::on_actionSalvar_Como_triggered()
         QString profIni = ui->tblFluidos->item(i, 3)->text();
         QString profFim = ui->tblFluidos->item(i, 4)->text();
 
-        out << nome << "," << densidade << "," << viscosidade << "," << profIni << "," << profFim << "\n";
+        out << nome << "        " << densidade << "                    " << viscosidade << "                 " << profIni << "                  " << profFim << "\n";
     }
 
     arquivo.close();
@@ -518,6 +523,12 @@ void CSimuladorReologico::on_actionSalvar_Como_triggered()
 
 
 void CSimuladorReologico::on_actionExcel_triggered()
+{
+
+}
+
+
+void CSimuladorReologico::on_actionArquivo_dat_triggered()
 {
     QString caminhoDoArquivo = QFileDialog::getOpenFileName(
         this, // Passa a janela principal como pai
@@ -558,6 +569,7 @@ void CSimuladorReologico::on_actionExcel_triggered()
                 ui->btnCalcularModeloBighamAnular->setEnabled(true);
                 ui->btnCalcularModeloPotenciaPoco->setEnabled(true);
                 ui->btnCalcularModeloPotenciaAnular->setEnabled(true);
+                ui->btnExibirGraficoPressaoHidroestatica->setEnabled(true);
                 poco = std::make_unique<CPoco>(nome, profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
             }
         } else {
@@ -581,8 +593,10 @@ void CSimuladorReologico::on_actionExcel_triggered()
 }
 
 
-void CSimuladorReologico::on_actionArquivo_dat_triggered()
+void CSimuladorReologico::on_btnExibirGraficoPressaoHidroestatica_clicked()
 {
-
+    CJanelaGraficoPressaoHidroestatica grafico(poco->PlotarProfundidadePorPressaoMedia());
+    grafico.exec();
+    ui->statusbar->showMessage("Dados Plotador com Sucesso!");
 }
 

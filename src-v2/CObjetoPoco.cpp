@@ -112,56 +112,19 @@ double CPoco::ViscosidadeEfetivaTotal() const {
     return viscosidadeTotal / trechos.size();
 }
 
-void CPoco::PlotarProfundidadePorDensidade() { 
-    std::vector<double> Profundidade;
-    std::vector<double> Densidade;
+std::pair<std::vector<double>, std::vector<double>> CPoco::PlotarProfundidadePorPressaoMedia() {
 
-    double profundidadeTotal = 0;
+    std::vector<double> profundidades;
+    std::vector<double> pressoes;
 
-    // Coletar dados para a profundidade e densidade
-    for (const auto& trecho : trechos) {
-        
-        double Intervalo = trecho->ProfundidadeFinal() - trecho->ProfundidadeInicial();  
-
-        for (double i = 0; i <= Intervalo; i += 1) { // Usando um incremento menor
-            double ProfundidadeAtual = profundidadeTotal + i; // Atualiza a profundidade em cada iteracao
-            double Dens = PressaoHidroestaticaNoPonto(ProfundidadeAtual) / (ProfundidadeAtual * 0.05195);
-   
-            Densidade.push_back(Dens);
-            Profundidade.push_back(ProfundidadeAtual); // Armazena a profundidade atual
-        }
-        profundidadeTotal += Intervalo; // Avanca a profundidade total
-    }        
-
-    // Escrever dados em arquivo
-    std::ofstream outputFile("dadosSimulacaoPoco_Gnuplot.dat");
-    
-    for (size_t j = 0; j < Profundidade.size(); ++j) {
-        outputFile << Profundidade[j] << "\t" << Densidade[j] << std::endl;
+    for (double z = 0.0; z <= ProfundidadeTotal(); z += 1) {
+        profundidades.push_back(z);
+        pressoes.push_back(PressaoHidroestaticaNoPonto(z));
     }
-    outputFile.close();
 
-    // Comando Gnuplot para plotar os dados
-    std::ofstream gnuplotFile("plot_script.gp");
-    if (!gnuplotFile.is_open()) {
-        std::cerr << "Erro ao abrir o arquivo plot_script.gp para escrita." << std::endl;
-        return;
-    }
-    
-    gnuplotFile << "set title 'Profundidade vs Densidade'\n";
-    gnuplotFile << "set xlabel 'Densidade, lbm/gal'\n"; // Corrigido o label
-    gnuplotFile << "set ylabel 'Profundidade, ft'\n"; // Corrigido o label
-    gnuplotFile << "set yrange [20:0]\n"; // Inverter o eixo Y
-    gnuplotFile << "set grid\n"; // Adicionar grade ao grafico
-    gnuplotFile << "set style data linespoints\n"; // Estilo de linha com pontos
+    return std::make_pair(profundidades, pressoes);
+}
 
-    // Plota apenas uma curva
-    gnuplotFile << "plot 'dados.txt' using 2:1 with linespoints title 'Densidade vs Profundidade'\n"; 
-    gnuplotFile << "set terminal pngcairo size 1920,1080\n";
-    gnuplotFile << "set output 'Profundidade_vs_densidade.png'\n";
-    gnuplotFile << "pause -1\n"; // Pausa para que voce possa ver o grafico
-    gnuplotFile.close();
+std::pair<std::vector<double>, std::vector<double>> CPoco::PlotarProfundidadePorPressao() {
 
-    // Executa o Gnuplot com o script gerado
-    std::system("gnuplot -persist plot_script.gp");
 }

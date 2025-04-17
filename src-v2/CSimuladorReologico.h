@@ -66,7 +66,9 @@ private slots:
 
      void on_actionArquivo_dat_triggered();
 
- private:
+    void on_btnExibirGraficoPressaoHidroestatica_clicked();
+
+private:
     Ui::CSimuladorReologico *ui;
     std::shared_ptr<CPoco> poco = nullptr;
     std::shared_ptr<CTrechoPoco> trechoPoco = nullptr;

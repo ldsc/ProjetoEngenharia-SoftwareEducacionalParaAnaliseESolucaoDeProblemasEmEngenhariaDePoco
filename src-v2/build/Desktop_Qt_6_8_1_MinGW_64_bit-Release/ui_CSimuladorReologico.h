@@ -83,12 +83,13 @@ public:
     QWidget *gridLayoutWidget_14;
     QGridLayout *gridLayout_14;
     QLineEdit *editProfundidadePressaoHidroestatica;
-    QLabel *lbnTituloProfundidadePressaoHidroestatica;
-    QLabel *lbnPressaoHidroestatica;
-    QPushButton *btnCalcularPressaoHidroestatica;
-    QSpacerItem *verticalSpacer_3;
     QLabel *lbnTituloPressaoHidroestatica;
+    QLabel *lbnPressaoHidroestatica;
+    QSpacerItem *verticalSpacer_3;
+    QLabel *lbnTituloProfundidadePressaoHidroestatica;
     QSpacerItem *verticalSpacer_4;
+    QPushButton *btnCalcularPressaoHidroestatica;
+    QPushButton *btnExibirGraficoPressaoHidroestatica;
     QTabWidget *tabWidget_4;
     QWidget *tab_7;
     QLabel *label_6;
@@ -495,11 +496,11 @@ public:
 
         gridLayout_14->addWidget(editProfundidadePressaoHidroestatica, 0, 1, 1, 1);
 
-        lbnTituloProfundidadePressaoHidroestatica = new QLabel(gridLayoutWidget_14);
-        lbnTituloProfundidadePressaoHidroestatica->setObjectName("lbnTituloProfundidadePressaoHidroestatica");
-        lbnTituloProfundidadePressaoHidroestatica->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        lbnTituloPressaoHidroestatica = new QLabel(gridLayoutWidget_14);
+        lbnTituloPressaoHidroestatica->setObjectName("lbnTituloPressaoHidroestatica");
+        lbnTituloPressaoHidroestatica->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_14->addWidget(lbnTituloProfundidadePressaoHidroestatica, 0, 0, 1, 1);
+        gridLayout_14->addWidget(lbnTituloPressaoHidroestatica, 2, 0, 1, 1);
 
         lbnPressaoHidroestatica = new QLabel(gridLayoutWidget_14);
         lbnPressaoHidroestatica->setObjectName("lbnPressaoHidroestatica");
@@ -508,25 +509,31 @@ public:
 
         gridLayout_14->addWidget(lbnPressaoHidroestatica, 2, 1, 1, 1);
 
-        btnCalcularPressaoHidroestatica = new QPushButton(gridLayoutWidget_14);
-        btnCalcularPressaoHidroestatica->setObjectName("btnCalcularPressaoHidroestatica");
-        btnCalcularPressaoHidroestatica->setStyleSheet(QString::fromUtf8(""));
-
-        gridLayout_14->addWidget(btnCalcularPressaoHidroestatica, 4, 0, 1, 2);
-
         verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         gridLayout_14->addItem(verticalSpacer_3, 1, 0, 1, 2);
 
-        lbnTituloPressaoHidroestatica = new QLabel(gridLayoutWidget_14);
-        lbnTituloPressaoHidroestatica->setObjectName("lbnTituloPressaoHidroestatica");
-        lbnTituloPressaoHidroestatica->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        lbnTituloProfundidadePressaoHidroestatica = new QLabel(gridLayoutWidget_14);
+        lbnTituloProfundidadePressaoHidroestatica->setObjectName("lbnTituloProfundidadePressaoHidroestatica");
+        lbnTituloProfundidadePressaoHidroestatica->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_14->addWidget(lbnTituloPressaoHidroestatica, 2, 0, 1, 1);
+        gridLayout_14->addWidget(lbnTituloProfundidadePressaoHidroestatica, 0, 0, 1, 1);
 
         verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
-        gridLayout_14->addItem(verticalSpacer_4, 3, 0, 1, 2);
+        gridLayout_14->addItem(verticalSpacer_4, 3, 0, 1, 3);
+
+        btnCalcularPressaoHidroestatica = new QPushButton(gridLayoutWidget_14);
+        btnCalcularPressaoHidroestatica->setObjectName("btnCalcularPressaoHidroestatica");
+        btnCalcularPressaoHidroestatica->setStyleSheet(QString::fromUtf8(""));
+
+        gridLayout_14->addWidget(btnCalcularPressaoHidroestatica, 4, 0, 1, 1);
+
+        btnExibirGraficoPressaoHidroestatica = new QPushButton(gridLayoutWidget_14);
+        btnExibirGraficoPressaoHidroestatica->setObjectName("btnExibirGraficoPressaoHidroestatica");
+        btnExibirGraficoPressaoHidroestatica->setStyleSheet(QString::fromUtf8(""));
+
+        gridLayout_14->addWidget(btnExibirGraficoPressaoHidroestatica, 4, 1, 1, 2);
 
         tabWidget_4 = new QTabWidget(centralwidget);
         tabWidget_4->setObjectName("tabWidget_4");
@@ -1324,10 +1331,11 @@ public:
         groupBox_2->setTitle(QString());
         label_3->setText(QCoreApplication::translate("CSimuladorReologico", "Press\303\243o Hidroest\303\241tica", nullptr));
         editProfundidadePressaoHidroestatica->setText(QString());
-        lbnTituloProfundidadePressaoHidroestatica->setText(QCoreApplication::translate("CSimuladorReologico", "Profundidade (ft)", nullptr));
-        lbnPressaoHidroestatica->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
-        btnCalcularPressaoHidroestatica->setText(QCoreApplication::translate("CSimuladorReologico", "Calcular", nullptr));
         lbnTituloPressaoHidroestatica->setText(QCoreApplication::translate("CSimuladorReologico", "Pressao Hidrost\303\241tica (psi)", nullptr));
+        lbnPressaoHidroestatica->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
+        lbnTituloProfundidadePressaoHidroestatica->setText(QCoreApplication::translate("CSimuladorReologico", "Profundidade (ft)", nullptr));
+        btnCalcularPressaoHidroestatica->setText(QCoreApplication::translate("CSimuladorReologico", "Calcular", nullptr));
+        btnExibirGraficoPressaoHidroestatica->setText(QCoreApplication::translate("CSimuladorReologico", "Exibir Gr\303\241fico", nullptr));
         label_6->setText(QCoreApplication::translate("CSimuladorReologico", "Anular", nullptr));
         label_7->setText(QCoreApplication::translate("CSimuladorReologico", "Po\303\247o", nullptr));
         lbnReynoldsAnularNewtoniano->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));

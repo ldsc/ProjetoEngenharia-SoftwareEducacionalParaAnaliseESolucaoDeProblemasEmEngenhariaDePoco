@@ -60,7 +60,8 @@ static constexpr auto qt_meta_stringdata_ZN19CSimuladorReologicoE = QtMocHelpers
     "on_actionSobre_o_Programa_triggered",
     "on_actionSalvar_Como_triggered",
     "on_actionExcel_triggered",
-    "on_actionArquivo_dat_triggered"
+    "on_actionArquivo_dat_triggered",
+    "on_btnExibirGraficoPressaoHidroestatica_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -72,7 +73,7 @@ Q_CONSTINIT static const uint qt_meta_data_ZN19CSimuladorReologicoE[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      20,   14, // methods
+      21,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -80,26 +81,27 @@ Q_CONSTINIT static const uint qt_meta_data_ZN19CSimuladorReologicoE[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,  134,    2, 0x08,    1 /* Private */,
-       3,    0,  135,    2, 0x08,    2 /* Private */,
-       4,    0,  136,    2, 0x08,    3 /* Private */,
-       5,    0,  137,    2, 0x08,    4 /* Private */,
-       6,    0,  138,    2, 0x08,    5 /* Private */,
-       7,    0,  139,    2, 0x08,    6 /* Private */,
-       8,    0,  140,    2, 0x08,    7 /* Private */,
-       9,    0,  141,    2, 0x08,    8 /* Private */,
-      10,    0,  142,    2, 0x08,    9 /* Private */,
-      11,    0,  143,    2, 0x08,   10 /* Private */,
-      12,    0,  144,    2, 0x08,   11 /* Private */,
-      13,    0,  145,    2, 0x08,   12 /* Private */,
-      14,    2,  146,    2, 0x08,   13 /* Private */,
-      17,    0,  151,    2, 0x08,   16 /* Private */,
-      18,    0,  152,    2, 0x08,   17 /* Private */,
-      19,    0,  153,    2, 0x08,   18 /* Private */,
-      20,    0,  154,    2, 0x08,   19 /* Private */,
-      21,    0,  155,    2, 0x08,   20 /* Private */,
-      22,    0,  156,    2, 0x08,   21 /* Private */,
-      23,    0,  157,    2, 0x08,   22 /* Private */,
+       1,    0,  140,    2, 0x08,    1 /* Private */,
+       3,    0,  141,    2, 0x08,    2 /* Private */,
+       4,    0,  142,    2, 0x08,    3 /* Private */,
+       5,    0,  143,    2, 0x08,    4 /* Private */,
+       6,    0,  144,    2, 0x08,    5 /* Private */,
+       7,    0,  145,    2, 0x08,    6 /* Private */,
+       8,    0,  146,    2, 0x08,    7 /* Private */,
+       9,    0,  147,    2, 0x08,    8 /* Private */,
+      10,    0,  148,    2, 0x08,    9 /* Private */,
+      11,    0,  149,    2, 0x08,   10 /* Private */,
+      12,    0,  150,    2, 0x08,   11 /* Private */,
+      13,    0,  151,    2, 0x08,   12 /* Private */,
+      14,    2,  152,    2, 0x08,   13 /* Private */,
+      17,    0,  157,    2, 0x08,   16 /* Private */,
+      18,    0,  158,    2, 0x08,   17 /* Private */,
+      19,    0,  159,    2, 0x08,   18 /* Private */,
+      20,    0,  160,    2, 0x08,   19 /* Private */,
+      21,    0,  161,    2, 0x08,   20 /* Private */,
+      22,    0,  162,    2, 0x08,   21 /* Private */,
+      23,    0,  163,    2, 0x08,   22 /* Private */,
+      24,    0,  164,    2, 0x08,   23 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -115,6 +117,7 @@ Q_CONSTINIT static const uint qt_meta_data_ZN19CSimuladorReologicoE[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,   15,   16,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -176,6 +179,8 @@ Q_CONSTINIT const QMetaObject CSimuladorReologico::staticMetaObject = { {
         // method 'on_actionExcel_triggered'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_actionArquivo_dat_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_btnExibirGraficoPressaoHidroestatica_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -206,6 +211,7 @@ void CSimuladorReologico::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 17: _t->on_actionSalvar_Como_triggered(); break;
         case 18: _t->on_actionExcel_triggered(); break;
         case 19: _t->on_actionArquivo_dat_triggered(); break;
+        case 20: _t->on_btnExibirGraficoPressaoHidroestatica_clicked(); break;
         default: ;
         }
     }
@@ -230,14 +236,14 @@ int CSimuladorReologico::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 20)
+        if (_id < 21)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 20;
+        _id -= 21;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 20)
+        if (_id < 21)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 20;
+        _id -= 21;
     }
     return _id;
 }

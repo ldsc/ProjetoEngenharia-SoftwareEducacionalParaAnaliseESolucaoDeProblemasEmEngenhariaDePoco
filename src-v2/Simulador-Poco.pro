@@ -13,6 +13,7 @@ SOURCES += \
     CGnuplot.cpp \
     CJanelaAdicionarFluido.cpp \
     CJanelaAdicionarTrechoTubulacao.cpp \
+    CJanelaGraficoPressaoHidroestatica.cpp \
     CJanelaMenu.cpp \
     CModeloBingham.cpp \
     CModeloNewtoniano.cpp \
@@ -31,6 +32,7 @@ HEADERS += \
     CGnuplot.h \
     CJanelaAdicionarFluido.h \
     CJanelaAdicionarTrechoTubulacao.h \
+    CJanelaGraficoPressaoHidroestatica.h \
     CJanelaMenu.h \
     CModeloBingham.h \
     CModeloNewtoniano.h \
@@ -46,6 +48,7 @@ HEADERS += \
 FORMS += \
     CJanelaAdicionarFluido.ui \
     CJanelaAdicionarTrechoTubulacao.ui \
+    CJanelaGraficoPressaoHidroestatica.ui \
     CJanelaMenu.ui \
     CSimuladorPerdaTubulacao.ui \
     CSimuladorReologico.ui

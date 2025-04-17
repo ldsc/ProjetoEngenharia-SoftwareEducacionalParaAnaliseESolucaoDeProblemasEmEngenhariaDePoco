@@ -63,7 +63,8 @@ public:
     double DensidadeEfetivaTotal() const;
     double ViscosidadeEfetivaTotal() const;
     bool VerificarPreenchimentoColuna();
-    void PlotarProfundidadePorDensidade();
+    std::pair<std::vector<double>, std::vector<double>> PlotarProfundidadePorPressao();
+    std::pair<std::vector<double>, std::vector<double>> PlotarProfundidadePorPressaoMedia();
     void RemoverTrechoPoco(const std::string& nomeFluido);
 
 };
