@@ -1,18 +1,19 @@
 #ifndef CSIMULADORPERDATUBULACAO_H
 #define CSIMULADORPERDATUBULACAO_H
 
-#include <QDialog>
+#include <QMainWindow>
 #include "CObjetoPoco.h"
 #include "CTrechoTubulacao.h"
 #include "CModeloNewtoniano.h"
 #include "CModeloBingham.h"
 #include "CModeloPotencia.h"
+#include "qcustomplot.h"
 
 namespace Ui {
 class CSimuladorPerdaTubulacao;
 }
 
-class CSimuladorPerdaTubulacao : public QDialog
+class CSimuladorPerdaTubulacao : public QMainWindow
 {
     Q_OBJECT
 
@@ -29,7 +30,7 @@ private slots:
 
     void on_btnAdicionarTrecho_clicked();
 
-    void makePlotTemperatura();
+    void makePlotTemperatura(double TempInicial, double TempFinal, double profundidade, QCustomPlot* plot);
 
     void on_btnRemoverFluido_clicked();
 

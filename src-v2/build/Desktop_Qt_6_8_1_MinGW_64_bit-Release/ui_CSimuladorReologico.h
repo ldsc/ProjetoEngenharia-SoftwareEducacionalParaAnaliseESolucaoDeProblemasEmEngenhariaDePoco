@@ -42,7 +42,6 @@ public:
     QAction *actionSobre_os_Modelos_Reol_gicos;
     QAction *actionSobre_o_Programa;
     QAction *actionArquivo_dat;
-    QAction *actionExcel;
     QWidget *centralwidget;
     QGroupBox *groupBox;
     QWidget *gridLayoutWidget;
@@ -238,8 +237,6 @@ public:
         actionSobre_o_Programa->setIcon(icon6);
         actionArquivo_dat = new QAction(CSimuladorReologico);
         actionArquivo_dat->setObjectName("actionArquivo_dat");
-        actionExcel = new QAction(CSimuladorReologico);
-        actionExcel->setObjectName("actionExcel");
         centralwidget = new QWidget(CSimuladorReologico);
         centralwidget->setObjectName("centralwidget");
         groupBox = new QGroupBox(centralwidget);
@@ -1263,7 +1260,6 @@ public:
         menuArquivo->addAction(menuImportar_Dados->menuAction());
         menuArquivo->addAction(actionExportar_como_Imagem);
         menuImportar_Dados->addAction(actionArquivo_dat);
-        menuImportar_Dados->addAction(actionExcel);
         menuAjuda->addAction(actionAjuda);
         menuAjuda->addAction(actionSobre_os_Modelos_Reol_gicos);
         menuAjuda->addAction(actionSobre_o_Programa);
@@ -1299,7 +1295,6 @@ public:
         actionSobre_os_Modelos_Reol_gicos->setText(QCoreApplication::translate("CSimuladorReologico", "Modelos Reol\303\263gicos Utilizados", nullptr));
         actionSobre_o_Programa->setText(QCoreApplication::translate("CSimuladorReologico", "Sobre o SEEP", nullptr));
         actionArquivo_dat->setText(QCoreApplication::translate("CSimuladorReologico", "Arquivo .(dat)", nullptr));
-        actionExcel->setText(QCoreApplication::translate("CSimuladorReologico", "Excel", nullptr));
         lbnTituloNomePoco->setText(QCoreApplication::translate("CSimuladorReologico", "Nome Po\303\247o", nullptr));
         lbnTituloDiametroID->setText(QCoreApplication::translate("CSimuladorReologico", "Diam. Interno ID  (in)", nullptr));
         lbnProfundidadeOcupada->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));

@@ -2073,7 +2073,6 @@ border-radius: 4px;
       <string>Importar Dados</string>
      </property>
      <addaction name="actionArquivo_dat"/>
-     <addaction name="actionExcel"/>
     </widget>
     <addaction name="actionNova_Simula_o"/>
     <addaction name="actionSalvar_Como"/>
@@ -2165,11 +2164,6 @@ border-radius: 4px;
   <action name="actionArquivo_dat">
    <property name="text">
     <string>Arquivo .(dat)</string>
-   </property>
-  </action>
-  <action name="actionExcel">
-   <property name="text">
-    <string>Excel</string>
    </property>
   </action>
  </widget>

@@ -7,6 +7,8 @@
 *****************************************************************************/
 
 #include "../../../CSimuladorPerdaTubulacao.h"
+#include <QtGui/qtextcursor.h>
+#include <QtGui/qscreen.h>
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -44,6 +46,11 @@ static constexpr auto qt_meta_stringdata_ZN24CSimuladorPerdaTubulacaoE = QtMocHe
     "on_btnAtualizarDados_clicked",
     "on_btnAdicionarTrecho_clicked",
     "makePlotTemperatura",
+    "TempInicial",
+    "TempFinal",
+    "profundidade",
+    "QCustomPlot*",
+    "plot",
     "on_btnRemoverFluido_clicked",
     "on_btnRemoverTrecho_clicked",
     "makePlotPoco"
@@ -70,17 +77,17 @@ Q_CONSTINIT static const uint qt_meta_data_ZN24CSimuladorPerdaTubulacaoE[] = {
        3,    0,   63,    2, 0x08,    2 /* Private */,
        4,    0,   64,    2, 0x08,    3 /* Private */,
        5,    0,   65,    2, 0x08,    4 /* Private */,
-       6,    0,   66,    2, 0x08,    5 /* Private */,
-       7,    0,   67,    2, 0x08,    6 /* Private */,
-       8,    0,   68,    2, 0x08,    7 /* Private */,
-       9,    0,   69,    2, 0x08,    8 /* Private */,
+       6,    4,   66,    2, 0x08,    5 /* Private */,
+      12,    0,   75,    2, 0x08,   10 /* Private */,
+      13,    0,   76,    2, 0x08,   11 /* Private */,
+      14,    0,   77,    2, 0x08,   12 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, 0x80000000 | 10,    7,    8,    9,   11,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -89,7 +96,7 @@ Q_CONSTINIT static const uint qt_meta_data_ZN24CSimuladorPerdaTubulacaoE[] = {
 };
 
 Q_CONSTINIT const QMetaObject CSimuladorPerdaTubulacao::staticMetaObject = { {
-    QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
+    QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
     qt_meta_stringdata_ZN24CSimuladorPerdaTubulacaoE.offsetsAndSizes,
     qt_meta_data_ZN24CSimuladorPerdaTubulacaoE,
     qt_static_metacall,
@@ -107,6 +114,10 @@ Q_CONSTINIT const QMetaObject CSimuladorPerdaTubulacao::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'makePlotTemperatura'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<double, std::false_type>,
+        QtPrivate::TypeAndForceComplete<double, std::false_type>,
+        QtPrivate::TypeAndForceComplete<double, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QCustomPlot *, std::false_type>,
         // method 'on_btnRemoverFluido_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_btnRemoverTrecho_clicked'
@@ -126,14 +137,25 @@ void CSimuladorPerdaTubulacao::qt_static_metacall(QObject *_o, QMetaObject::Call
         case 1: _t->on_btnAdicionarPropriedades_clicked(); break;
         case 2: _t->on_btnAtualizarDados_clicked(); break;
         case 3: _t->on_btnAdicionarTrecho_clicked(); break;
-        case 4: _t->makePlotTemperatura(); break;
+        case 4: _t->makePlotTemperatura((*reinterpret_cast< std::add_pointer_t<double>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<QCustomPlot*>>(_a[4]))); break;
         case 5: _t->on_btnRemoverFluido_clicked(); break;
         case 6: _t->on_btnRemoverTrecho_clicked(); break;
         case 7: _t->makePlotPoco(); break;
         default: ;
         }
     }
-    (void)_a;
+    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+        case 4:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 3:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QCustomPlot* >(); break;
+            }
+            break;
+        }
+    }
 }
 
 const QMetaObject *CSimuladorPerdaTubulacao::metaObject() const
@@ -146,12 +168,12 @@ void *CSimuladorPerdaTubulacao::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_ZN24CSimuladorPerdaTubulacaoE.stringdata0))
         return static_cast<void*>(this);
-    return QDialog::qt_metacast(_clname);
+    return QMainWindow::qt_metacast(_clname);
 }
 
 int CSimuladorPerdaTubulacao::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QDialog::qt_metacall(_c, _id, _a);
+    _id = QMainWindow::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
@@ -161,7 +183,7 @@ int CSimuladorPerdaTubulacao::qt_metacall(QMetaObject::Call _c, int _id, void **
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 8)
-            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+            qt_static_metacall(this, _c, _id, _a);
         _id -= 8;
     }
     return _id;
