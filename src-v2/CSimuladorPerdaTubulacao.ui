@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1444</width>
+    <width>1504</width>
     <height>859</height>
    </rect>
   </property>
@@ -17,7 +17,7 @@
    <widget class="QCustomPlot" name="customPlotPoco" native="true">
     <property name="geometry">
      <rect>
-      <x>1050</x>
+      <x>1110</x>
       <y>40</y>
       <width>371</width>
       <height>761</height>
@@ -68,10 +68,26 @@ border-radius: 4px;
        <x>10</x>
        <y>30</y>
        <width>281</width>
-       <height>360</height>
+       <height>368</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
+      <item row="4" column="0" colspan="3">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="editPressaoSup"/>
+      </item>
       <item row="10" column="0">
        <widget class="QLabel" name="lbnTituloTemperaturaSuperiorFinal">
         <property name="font">
@@ -81,111 +97,6 @@ border-radius: 4px;
         </property>
         <property name="text">
          <string>Temperatura de Superfice (ºF)</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="13" column="0" colspan="3">
-       <widget class="QCheckBox" name="checkBoxPacker">
-        <property name="font">
-         <font>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Há packer?</string>
-        </property>
-       </widget>
-      </item>
-      <item row="10" column="1" colspan="2">
-       <widget class="QLineEdit" name="editTemperaturaSuperiorFinal"/>
-      </item>
-      <item row="7" column="1" colspan="2">
-       <widget class="QLineEdit" name="editTemperaturaFundoInicial"/>
-      </item>
-      <item row="0" column="1" colspan="2">
-       <widget class="QLineEdit" name="editNomePoco"/>
-      </item>
-      <item row="14" column="1" colspan="2">
-       <widget class="QLineEdit" name="editProfundidadePacker"/>
-      </item>
-      <item row="11" column="0">
-       <widget class="QLabel" name="lbnTituloTemperaturaFundoFinal">
-        <property name="font">
-         <font>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Temperatura de Fundo (ºF)</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="0" colspan="3">
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Orientation::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="15" column="1" colspan="2">
-       <widget class="QPushButton" name="btnAtualizarDados">
-        <property name="text">
-         <string>Atualizar Dados</string>
-        </property>
-       </widget>
-      </item>
-      <item row="12" column="0" colspan="3">
-       <spacer name="verticalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Orientation::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="5" column="0" colspan="3">
-       <widget class="QLabel" name="lbnTituloConfiguraoInicial">
-        <property name="font">
-         <font>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Configuração Inicial</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="1" colspan="2">
-       <widget class="QLineEdit" name="editTemperaturaSuperiorInicial"/>
-      </item>
-      <item row="14" column="0">
-       <widget class="QLabel" name="lbnTituloProfundidadePacker">
-        <property name="font">
-         <font>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Profundidade do Packer (ft)</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -207,30 +118,77 @@ border-radius: 4px;
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="lbnTituloProfunidadeTotal">
+      <item row="8" column="0" colspan="3">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="11" column="1" colspan="2">
+       <widget class="QLineEdit" name="editTemperaturaFundoFinal"/>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QLineEdit" name="editProfundidadeTotal"/>
+      </item>
+      <item row="12" column="0" colspan="3">
+       <spacer name="verticalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="lbnTituloPressaoSup">
         <property name="font">
          <font>
           <bold>false</bold>
          </font>
         </property>
         <property name="text">
-         <string>Profundidade Total (ft)</string>
+         <string>Pressão na Superficie (psi)</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
         </property>
        </widget>
       </item>
-      <item row="9" column="0" colspan="3">
-       <widget class="QLabel" name="lbnTituloConfiguraoFinal">
+      <item row="5" column="0" colspan="3">
+       <widget class="QLabel" name="lbnTituloConfiguraoInicial">
         <property name="font">
          <font>
           <bold>false</bold>
          </font>
         </property>
         <property name="text">
-         <string>Configuração Final</string>
+         <string>Configuração Inicial</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="14" column="0">
+       <widget class="QLabel" name="lbnTituloProfundidadePacker">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Profundidade do Packer (ft)</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -252,6 +210,21 @@ border-radius: 4px;
         </property>
        </widget>
       </item>
+      <item row="10" column="1" colspan="2">
+       <widget class="QLineEdit" name="editTemperaturaSuperiorFinal"/>
+      </item>
+      <item row="13" column="0" colspan="3">
+       <widget class="QCheckBox" name="checkBoxPacker">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Há packer?</string>
+        </property>
+       </widget>
+      </item>
       <item row="6" column="0">
        <widget class="QLabel" name="lbnTituloTemperaturaSuperiorInicial">
         <property name="font">
@@ -267,24 +240,41 @@ border-radius: 4px;
         </property>
        </widget>
       </item>
-      <item row="4" column="0" colspan="3">
-       <spacer name="verticalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Orientation::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
+      <item row="14" column="1" colspan="2">
+       <widget class="QLineEdit" name="editProfundidadePacker"/>
       </item>
-      <item row="11" column="1" colspan="2">
-       <widget class="QLineEdit" name="editTemperaturaFundoFinal"/>
+      <item row="6" column="1" colspan="2">
+       <widget class="QLineEdit" name="editTemperaturaSuperiorInicial"/>
       </item>
-      <item row="1" column="1" colspan="2">
-       <widget class="QLineEdit" name="editProfundidadeTotal"/>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lbnTituloProfunidadeTotal">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Profundidade Total (ft)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="0">
+       <widget class="QLabel" name="lbnTituloTemperaturaFundoFinal">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Temperatura de Fundo (ºF)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
       </item>
       <item row="15" column="0">
        <widget class="QPushButton" name="btnAdicionarPropriedades">
@@ -293,23 +283,33 @@ border-radius: 4px;
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="lbnTituloPressaoSup">
+      <item row="0" column="1" colspan="2">
+       <widget class="QLineEdit" name="editNomePoco"/>
+      </item>
+      <item row="9" column="0" colspan="3">
+       <widget class="QLabel" name="lbnTituloConfiguraoFinal">
         <property name="font">
          <font>
           <bold>false</bold>
          </font>
         </property>
         <property name="text">
-         <string>Pressão na Superficie (psi)</string>
+         <string>Configuração Final</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QLineEdit" name="editPressaoSup"/>
+      <item row="7" column="1" colspan="2">
+       <widget class="QLineEdit" name="editTemperaturaFundoInicial"/>
+      </item>
+      <item row="15" column="1" colspan="2">
+       <widget class="QPushButton" name="btnAtualizarDados">
+        <property name="text">
+         <string>Atualizar Dados</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -319,7 +319,7 @@ border-radius: 4px;
      <rect>
       <x>10</x>
       <y>420</y>
-      <width>1021</width>
+      <width>1081</width>
       <height>391</height>
      </rect>
     </property>
@@ -333,299 +333,318 @@ border-radius: 4px;
     <property name="title">
      <string/>
     </property>
-    <widget class="QTabWidget" name="tabWidget_4">
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>339</y>
+       <width>1061</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="btnAdicionarTrecho">
+        <property name="text">
+         <string>Adicionar Dados</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnRemoverTrecho">
+        <property name="text">
+         <string>Remover Dados</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QTableWidget" name="tblFluidos">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>50</y>
+       <width>461</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>153</number>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Nome</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Densidade (lbm/gal)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Viscosidade (cP)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+       </font>
+      </property>
+     </column>
+    </widget>
+    <widget class="QTableWidget" name="tblTrechos">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>551</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="autoScrollMargin">
+      <number>16</number>
+     </property>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>37</number>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>126</number>
+     </attribute>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Trecho</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Prof. Inicial (ft)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Prof. Final (ft)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Diam. Externo (in)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Diam Interno (in)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Coef. Poisson</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Coef. Exp. Térm. (1/F)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Mód. Elast. (psi)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Peso/unid. (lb/ft)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+       </font>
+      </property>
+     </column>
+    </widget>
+    <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>1001</width>
-       <height>371</height>
+       <width>211</width>
+       <height>16</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <pointsize>11</pointsize>
        <bold>true</bold>
       </font>
      </property>
+     <property name="text">
+      <string>Dados de Trecho e Fluido</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_7">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>571</width>
+       <height>291</height>
+      </rect>
+     </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);
-
-QTabBar::tab:selected {
-    background-color: #eaeaea;
-    font-weight: bold;
-    border-radius: 8px;
+      <string notr="true">QGroupBox{
+background-color: rgb(250, 250, 250);
+border: none;
+border-radius: 4px;
 }</string>
      </property>
-     <property name="currentIndex">
-      <number>0</number>
+     <property name="title">
+      <string/>
      </property>
-     <property name="iconSize">
-      <size>
-       <width>16</width>
-       <height>16</height>
-      </size>
-     </property>
-     <property name="elideMode">
-      <enum>Qt::TextElideMode::ElideNone</enum>
-     </property>
-     <widget class="QWidget" name="tab_7">
-      <attribute name="title">
-       <string>           Dados das Seções           </string>
-      </attribute>
-      <widget class="QWidget" name="gridLayoutWidget_3">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>981</width>
-         <height>321</height>
-        </rect>
-       </property>
-       <layout class="QGridLayout" name="gridLayout_3">
-        <item row="1" column="0">
-         <widget class="QPushButton" name="btnAdicionarTrecho">
-          <property name="text">
-           <string>Adicionar Trecho</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QPushButton" name="btnRemoverTrecho">
-          <property name="text">
-           <string>Remover Trecho</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Orientation::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="0" colspan="3">
-         <widget class="QTableWidget" name="tblTrechos">
-          <property name="autoScrollMargin">
-           <number>16</number>
-          </property>
-          <attribute name="horizontalHeaderMinimumSectionSize">
-           <number>37</number>
-          </attribute>
-          <attribute name="horizontalHeaderDefaultSectionSize">
-           <number>126</number>
-          </attribute>
-          <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-           <bool>false</bool>
-          </attribute>
-          <column>
-           <property name="text">
-            <string>Trecho</string>
-           </property>
-           <property name="font">
-            <font>
-             <bold>false</bold>
-            </font>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Prof. Inicial (ft)</string>
-           </property>
-           <property name="font">
-            <font>
-             <bold>false</bold>
-            </font>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Prof. Final (ft)</string>
-           </property>
-           <property name="font">
-            <font>
-             <bold>false</bold>
-            </font>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Diam. Externo (in)</string>
-           </property>
-           <property name="font">
-            <font>
-             <bold>false</bold>
-            </font>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Diam Interno (in)</string>
-           </property>
-           <property name="font">
-            <font>
-             <bold>false</bold>
-            </font>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Coef. Poisson</string>
-           </property>
-           <property name="font">
-            <font>
-             <bold>false</bold>
-            </font>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Coef. Exp. Térm. (1/F)</string>
-           </property>
-           <property name="font">
-            <font>
-             <bold>false</bold>
-            </font>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Mód. Elast. (psi)</string>
-           </property>
-           <property name="font">
-            <font>
-             <bold>false</bold>
-            </font>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Peso/unid. (lb/ft)</string>
-           </property>
-           <property name="font">
-            <font>
-             <bold>false</bold>
-            </font>
-           </property>
-          </column>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="tab_9">
-      <attribute name="title">
-       <string>           Dados dos Fluidos            </string>
-      </attribute>
-      <widget class="QWidget" name="gridLayoutWidget_2">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>10</y>
-         <width>921</width>
-         <height>321</height>
-        </rect>
-       </property>
-       <layout class="QGridLayout" name="gridLayout_2">
-        <item row="1" column="0">
-         <widget class="QPushButton" name="btnAdicionarFluido">
-          <property name="text">
-           <string>Adicionar Fluido</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QPushButton" name="btnRemoverFluido">
-          <property name="text">
-           <string>Remover Fluido</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Orientation::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="0" colspan="3">
-         <widget class="QTableWidget" name="tblFluidos">
-          <attribute name="horizontalHeaderDefaultSectionSize">
-           <number>153</number>
-          </attribute>
-          <column>
-           <property name="text">
-            <string>Nome</string>
-           </property>
-           <property name="font">
-            <font>
-             <bold>false</bold>
-            </font>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Densidade (lbm/gal)</string>
-           </property>
-           <property name="font">
-            <font>
-             <bold>false</bold>
-            </font>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Viscosidade (cP)</string>
-           </property>
-           <property name="font">
-            <font>
-             <bold>false</bold>
-            </font>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Prof. Inicial (ft)</string>
-           </property>
-           <property name="font">
-            <font>
-             <bold>false</bold>
-            </font>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Prof. Final (ft)</string>
-           </property>
-           <property name="font">
-            <font>
-             <bold>false</bold>
-            </font>
-           </property>
-          </column>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
     </widget>
+    <widget class="QGroupBox" name="groupBox_8">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>40</y>
+       <width>481</width>
+       <height>291</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+background-color: rgb(250, 250, 250);
+border: none;
+border-radius: 4px;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>571</width>
+       <height>291</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+background-color: rgb(250, 250, 250);
+border: none;
+border-radius: 4px;
+}</string>
+     </property>
+     <property name="title">
+      <string notr="true"/>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_10">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>40</y>
+       <width>461</width>
+       <height>291</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+background-color: rgb(250, 250, 250);
+border: none;
+border-radius: 4px;
+}</string>
+     </property>
+     <property name="title">
+      <string notr="true"/>
+     </property>
+    </widget>
+    <zorder>groupBox_9</zorder>
+    <zorder>groupBox_10</zorder>
+    <zorder>groupBox_8</zorder>
+    <zorder>groupBox_7</zorder>
+    <zorder></zorder>
+    <zorder>tblFluidos</zorder>
+    <zorder>tblTrechos</zorder>
+    <zorder>label_6</zorder>
    </widget>
    <widget class="QGroupBox" name="groupBox_4">
     <property name="geometry">
      <rect>
-      <x>1040</x>
+      <x>1100</x>
       <y>10</y>
       <width>391</width>
       <height>801</height>
@@ -664,10 +683,10 @@ border-radius: 4px;
    <widget class="QTabWidget" name="tabWidget_5">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>690</x>
       <y>10</y>
       <width>401</width>
-      <height>361</height>
+      <height>401</height>
      </rect>
     </property>
     <property name="font">
@@ -707,7 +726,7 @@ QTabBar::tab:selected {
         <x>0</x>
         <y>10</y>
         <width>381</width>
-        <height>311</height>
+        <height>351</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -726,7 +745,7 @@ border-radius: 4px;
          <x>10</x>
          <y>20</y>
          <width>371</width>
-         <height>291</height>
+         <height>331</height>
         </rect>
        </property>
       </widget>
@@ -761,7 +780,7 @@ border-radius: 4px;
         <x>0</x>
         <y>0</y>
         <width>381</width>
-        <height>321</height>
+        <height>361</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -780,7 +799,7 @@ border-radius: 4px;
          <x>10</x>
          <y>30</y>
          <width>371</width>
-         <height>291</height>
+         <height>331</height>
         </rect>
        </property>
       </widget>
@@ -806,18 +825,432 @@ border-radius: 4px;
      </widget>
     </widget>
    </widget>
+   <widget class="QGroupBox" name="groupBox_6">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>10</y>
+      <width>361</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox{
+background-color: rgb(255, 255, 255);
+border: none;
+border-radius: 4px;
+}</string>
+    </property>
+    <property name="title">
+     <string notr="true"/>
+    </property>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>341</width>
+       <height>311</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="lbnTituloProfundidadePacker_3">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Profundidade para medição (ft):</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="editProfundidadeMedicao"/>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <spacer name="verticalSpacer_7">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="lbnTituloNomePoco_2">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Pressão inicial, psi:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="lbnPressaoHidroestatica">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="lbnTituloNomePoco_3">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Carga (condição inicial), lb:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="lbnTituloNomePoco_13">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="lbnTituloNomePoco_4">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>ΔL (temperatura):</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLabel" name="lbnTituloNomePoco_14">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="lbnTituloNomePoco_5">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>ΔL (efeito balão):</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLabel" name="lbnTituloNomePoco_15">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="lbnTituloNomePoco_9">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Variação da carga por pistão, lb</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLabel" name="lbnTituloNomePoco_16">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="lbnTituloNomePoco_6">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>ΔL (Força pistão devido ao packer), ft</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QLabel" name="lbnTituloNomePoco_17">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="lbnTituloNomePoco_7">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>ΔL (Força pistão devido ao crossover), ft</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QLabel" name="lbnTituloNomePoco_18">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0">
+       <widget class="QLabel" name="lbnTituloNomePoco_8">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Carga considerando injeção (coluna livre), lb</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="1">
+       <widget class="QLabel" name="lbnTituloNomePoco_19">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="0">
+       <widget class="QLabel" name="lbnTituloNomePoco_10">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>ΔL (devido força restauradora), ft</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1">
+       <widget class="QLabel" name="lbnTituloNomePoco_20">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="0">
+       <widget class="QLabel" name="lbnTituloNomePoco_11">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Carga considerando injeção (coluna fixa), lb</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="1">
+       <widget class="QLabel" name="lbnTituloNomePoco_21">
+        <property name="font">
+         <font>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="0" colspan="2">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="btnCalcularVariacoes">
+          <property name="text">
+           <string>Calcular</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnAtualizarDados_3">
+          <property name="text">
+           <string>Atualizar Dados</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>291</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Carga e Variações de comprimentos</string>
+     </property>
+    </widget>
+   </widget>
+   <zorder>groupBox_3</zorder>
    <zorder>groupBox_4</zorder>
    <zorder>customPlotPoco</zorder>
    <zorder>groupBox</zorder>
-   <zorder>groupBox_3</zorder>
    <zorder>tabWidget_5</zorder>
+   <zorder>lbnTituloNomePoco_2</zorder>
+   <zorder>lbnTituloNomePoco_3</zorder>
+   <zorder>lbnTituloNomePoco_4</zorder>
+   <zorder>lbnTituloNomePoco_5</zorder>
+   <zorder>lbnTituloNomePoco_6</zorder>
+   <zorder>lbnTituloNomePoco_7</zorder>
+   <zorder>lbnTituloNomePoco_8</zorder>
+   <zorder>lbnTituloNomePoco_9</zorder>
+   <zorder>lbnTituloNomePoco_10</zorder>
+   <zorder>lbnTituloNomePoco_11</zorder>
+   <zorder>groupBox_6</zorder>
+   <zorder>btnAdicionarTrecho</zorder>
+   <zorder>btnRemoverTrecho</zorder>
+   <zorder>horizontalSpacer_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1444</width>
+     <width>1504</width>
      <height>22</height>
     </rect>
    </property>
@@ -861,13 +1294,6 @@ border-radius: 4px;
   <tabstop>editProfundidadePacker</tabstop>
   <tabstop>btnAdicionarPropriedades</tabstop>
   <tabstop>btnAtualizarDados</tabstop>
-  <tabstop>tabWidget_4</tabstop>
-  <tabstop>btnAdicionarFluido</tabstop>
-  <tabstop>btnRemoverFluido</tabstop>
-  <tabstop>tblFluidos</tabstop>
-  <tabstop>btnAdicionarTrecho</tabstop>
-  <tabstop>btnRemoverTrecho</tabstop>
-  <tabstop>tblTrechos</tabstop>
   <tabstop>tabWidget_5</tabstop>
  </tabstops>
  <resources/>

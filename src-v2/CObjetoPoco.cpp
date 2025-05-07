@@ -3,7 +3,35 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include <cstdlib> 
+#include <cstdlib>
+
+
+CPoco CPoco::CriarParaModulo01(std::string nome, double profund, double pressao,
+                               double D, double OD, double ID, double q) {
+    CPoco poco;
+    poco.nomePoco = nome;
+    poco.profundidadeFinal = profund;
+    poco.pressaoSuperficie = pressao;
+    poco.diametroPoco = D;
+    poco.diametroRevestimentoOD = OD;
+    poco.diametroRevestimentoID = ID;
+    poco.vazao = q;
+    return poco;
+}
+
+CPoco CPoco::CriarParaModulo02(std::string nome, double profund, double pressao,
+                               double tempTopoIni, double tempFundoIni,
+                               double tempTopoFim, double tempFundoFim) {
+    CPoco poco;
+    poco.nomePoco = nome;
+    poco.profundidadeFinal = profund;
+    poco.pressaoSuperficie = pressao;
+    poco.temperaturaTopoInicial = tempTopoIni;
+    poco.temperaturaFundoInicial = tempFundoIni;
+    poco.temperaturaTopoFinal = tempTopoFim;
+    poco.temperaturaFundoFinal = tempFundoFim;
+    return poco;
+}
 
 // Metodos
 

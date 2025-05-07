@@ -67,11 +67,15 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarPropriedades_clicked()
             );
 
         if (resposta == QMessageBox::Yes) {
-            poco = std::make_shared<CPoco>(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal);
+            poco = std::make_unique<CPoco>(
+                CPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal)
+                );
         }
         on_btnAtualizarDados_clicked();
     } else {
-        poco = std::make_shared<CPoco>(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal);
+        poco = std::make_unique<CPoco>(
+            CPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal)
+            );
     }
 
     makePlotTemperatura(temperaturaSuperiorInicial, temperaturaFundoInicial, profundidade, ui->customPlotTemperaturaInicial);
@@ -81,6 +85,7 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarPropriedades_clicked()
 
 void CSimuladorPerdaTubulacao::on_btnAdicionarFluido_clicked()
 {
+    /*
     ui->tblFluidos->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
     if (!poco) {
@@ -118,6 +123,7 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarFluido_clicked()
             on_btnAtualizarDados_clicked();
         }
     }
+    */
 }
 
 
@@ -149,11 +155,14 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarTrecho_clicked()
             JanelaTrecho.getCoeficientePoisson() != "" &&
             JanelaTrecho.getCoeficienteExpansaoTermica() != "" &&
             JanelaTrecho.getModuloElasticidade() != "" &&
-            JanelaTrecho.getPesoUnidade() != ""){
+            JanelaTrecho.getPesoUnidade() != "" &&
+            JanelaTrecho.getNomeFluido() != "" &&
+            JanelaTrecho.getDensidade() != "" &&
+            JanelaTrecho.getViscosidade() != ""){
 
-            qDebug() << JanelaTrecho.getProfundidadeInicial();
 
             int numLinhas = ui->tblTrechos->rowCount();
+
             ui->tblTrechos->insertRow(numLinhas);
             ui->tblTrechos->setItem(numLinhas, 0, new QTableWidgetItem(JanelaTrecho.getTrecho()));
             ui->tblTrechos->setItem(numLinhas, 1, new QTableWidgetItem(JanelaTrecho.getProfundidadeInicial()));
@@ -165,6 +174,11 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarTrecho_clicked()
             ui->tblTrechos->setItem(numLinhas, 7, new QTableWidgetItem(JanelaTrecho.getModuloElasticidade()));
             ui->tblTrechos->setItem(numLinhas, 8, new QTableWidgetItem(JanelaTrecho.getPesoUnidade()));
 
+            ui->tblFluidos->insertRow(numLinhas);
+            ui->tblFluidos->setItem(numLinhas, 0, new QTableWidgetItem(JanelaTrecho.getNomeFluido()));
+            ui->tblFluidos->setItem(numLinhas, 1, new QTableWidgetItem(JanelaTrecho.getDensidade()));
+            ui->tblFluidos->setItem(numLinhas, 2, new QTableWidgetItem(JanelaTrecho.getViscosidade()));
+
             std::string trecho = JanelaTrecho.getTrecho().toStdString();
             double profundInicial = JanelaTrecho.getProfundidadeInicial().toDouble();
             double profundFinal = JanelaTrecho.getProfundidadeFinal().toDouble();
@@ -175,7 +189,12 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarTrecho_clicked()
             double moduloElasticidade = JanelaTrecho.getModuloElasticidade().toDouble();
             double pesoUnidade = JanelaTrecho.getPesoUnidade().toDouble();
 
-            auto trechoPoco = std::make_unique<CTrechoPoco>(trecho, profundInicial, profundFinal, diametroExterno, diametroInterno, coeficientePoisson, coeficienteExpansaoTermica, moduloElasticidade, pesoUnidade);
+            std::string nome = JanelaTrecho.getNomeFluido().toStdString();
+            double densidade = JanelaTrecho.getDensidade().toDouble();
+            double viscosidade = JanelaTrecho.getViscosidade().toDouble();
+
+            auto fluido = std::make_unique<CFluido>(nome, densidade, viscosidade);
+            auto trechoPoco = std::make_unique<CTrechoPoco>(profundInicial, profundFinal, std::move(fluido), diametroExterno, diametroInterno, coeficientePoisson, coeficienteExpansaoTermica, moduloElasticidade, pesoUnidade);
             poco->AdicionarTrechoPoco(std::move(trechoPoco));
 
             on_btnAtualizarDados_clicked();
@@ -290,6 +309,7 @@ void CSimuladorPerdaTubulacao::on_btnRemoverTrecho_clicked()
 
 void CSimuladorPerdaTubulacao::makePlotPoco()
 {
+    /*
     ui->customPlotPoco->clearItems();
 
     ui->customPlotPoco->xAxis->setLabel("Diâmetro do Poço (in)");
@@ -434,4 +454,14 @@ void CSimuladorPerdaTubulacao::makePlotPoco()
     }
 
     ui->customPlotPoco->replot();
+    */
 }
+
+void CSimuladorPerdaTubulacao::on_btnCalcularVariacoes_clicked()
+{
+    QString profundidadeStr = ui->editProfundidadeMedicao->text();
+    double profundidade = profundidadeStr.toDouble();
+
+    ui->lbnPressaoHidroestatica->setText(QString::number(poco->PressaoHidroestaticaNoPonto(profundidade)));
+}
+

@@ -81,7 +81,9 @@ void CSimuladorReologico::EditarDadosPoco() {
     if (!nome.isEmpty() && ok1 && ok2 && ok3 && ok4 && ok5 && ok6) {
         if (!poco) {
             // Cria o poço
-            poco = std::make_shared<CPoco>(nome.toStdString(), profund, pressao, diametro, OD, ID, vazao);
+            poco = std::make_unique<CPoco>(
+                CPoco::CriarParaModulo01(nome.toStdString(), profund, pressao, diametro, OD, ID, vazao)
+                );
 
             ui->btnCalcularPressaoHidroestatica->setEnabled(true);
             ui->btnCalcularModeloNewtonianoPoco->setEnabled(true);
@@ -570,7 +572,10 @@ void CSimuladorReologico::on_actionArquivo_dat_triggered()
                 ui->btnCalcularModeloPotenciaPoco->setEnabled(true);
                 ui->btnCalcularModeloPotenciaAnular->setEnabled(true);
                 ui->btnExibirGraficoPressaoHidroestatica->setEnabled(true);
-                poco = std::make_unique<CPoco>(nome, profundidade, pressaoSuperficie, diametro, OD, ID, vazao);
+
+                poco = std::make_unique<CPoco>(
+                    CPoco::CriarParaModulo01(nome, profundidade, pressaoSuperficie, diametro, OD, ID, vazao)
+                    );
             }
         } else {
             // Ler os dados dos fluidos

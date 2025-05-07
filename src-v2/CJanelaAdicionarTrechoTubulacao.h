@@ -25,6 +25,11 @@ public:
     QString getModuloElasticidade() const { return moduloElasticidade; }
     QString getPesoUnidade() const { return pesoUnidade; }
 
+    QString getNomeFluido() const { return nomeFluido; }
+    QString getDensidade() const { return densidade; }
+    QString getViscosidade() const { return viscosidade; }
+
+
     void setTrecho(const QString value) { trecho = value; }
     void setProfundidadeInicial(const QString value) { profundidadeInicial = value; }
     void setProfundidadeFinal(const QString value) { profundidadeFinal = value; }
@@ -35,6 +40,10 @@ public:
     void setModuloElasticidade(const QString value) { moduloElasticidade = value; }
     void setPesoUnidade(const QString value) { pesoUnidade = value; }
     void Edit(bool opcao) {edit = opcao;}
+
+    void setNomeFluido(QString nome) {nomeFluido = nome; }
+    void setDensidade(QString dens) {densidade = dens; }
+    void setViscosidade(QString visc) {viscosidade = visc; }
 
 
 private slots:
@@ -54,6 +63,10 @@ private:
     QString coeficienteExpansaoTermica;
     QString moduloElasticidade;
     QString pesoUnidade;
+
+    QString nomeFluido;
+    QString densidade;
+    QString viscosidade;
 };
 
 #endif // CJANELAADICIONARTRECHOTUBULACAO_H

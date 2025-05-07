@@ -26,14 +26,19 @@ protected:
 
 public:
     //construtor
-    CPoco() {}
-    ~CPoco() {}
-    
-    CPoco(std::string Nome, double Profund, double PressaoSup, double D , double OD, double ID, double q)
-    : nomePoco(Nome),profundidadeFinal(Profund), pressaoSuperficie(PressaoSup), diametroPoco(D), diametroRevestimentoOD(OD), diametroRevestimentoID(ID), vazao(q) {} // Esse construtor nos leva os atributos que ira rodar na simulacao do Modulo 01
+    CPoco() = default;
+    ~CPoco() = default;
 
-    CPoco(std::string Nome, double Profund, double TempTopoInicial, double TempFundoInicial, double TempTopoFinal, double TempFundoFinal)
-        : nomePoco(Nome),profundidadeFinal(Profund), temperaturaTopoInicial(TempTopoInicial), temperaturaFundoInicial(TempFundoInicial), temperaturaTopoFinal(TempTopoFinal), temperaturaFundoFinal(TempFundoFinal) {} // Esse construtor nos leva os atributos que ira rodar na simulacao do Modulo 02
+    // Desativa a cópia
+    CPoco(const CPoco&) = delete;
+    CPoco& operator=(const CPoco&) = delete;
+
+    // Habilita movimento
+    CPoco(CPoco&&) = default;
+    CPoco& operator=(CPoco&&) = default;
+
+    static CPoco CriarParaModulo01(std::string Nome, double Profund, double PressaoSup, double D , double OD, double ID, double q);
+    static CPoco CriarParaModulo02(std::string Nome, double Profund, double PressaoSup, double TempTopoInicial, double TempFundoInicial, double TempTopoFinal, double TempFundoFinal);
 
     // Getters
     std::string NomePoco() const { return nomePoco; }

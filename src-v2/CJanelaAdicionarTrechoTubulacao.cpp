@@ -26,6 +26,9 @@ void CJanelaAdicionarTrechoTubulacao::on_btnReturn_accepted()
         setCoeficienteExpansaoTermica(ui->editCoefExpansao->text());
         setModuloElasticidade(ui->editModuloElasticidade->text());
         setPesoUnidade(ui->editPesoUnid->text());
+        setNomeFluido(ui->editNome->text());
+        setDensidade(ui->editDensidade->text());
+        setViscosidade(ui->editViscosidade->text());
 
         if (ui->editTrecho->text().isEmpty() ||
             ui->editProfInicial->text().isEmpty() ||
@@ -35,7 +38,10 @@ void CJanelaAdicionarTrechoTubulacao::on_btnReturn_accepted()
             ui->editCoefPoisson->text().isEmpty() ||
             ui->editCoefExpansao->text().isEmpty() ||
             ui->editModuloElasticidade->text().isEmpty() ||
-            ui->editPesoUnid->text().isEmpty()) {
+            ui->editPesoUnid->text().isEmpty() ||
+            ui->editNome->text().isEmpty() ||
+            ui->editDensidade->text().isEmpty() ||
+            ui->editViscosidade->text().isEmpty()){
 
             QMessageBox::warning(this, "Erro", "Por favor, preencha todos os campos!");
         }
@@ -50,6 +56,9 @@ void CJanelaAdicionarTrechoTubulacao::on_btnReturn_accepted()
         setCoeficienteExpansaoTermica(ui->editCoefExpansao->text());
         setModuloElasticidade(ui->editModuloElasticidade->text());
         setPesoUnidade(ui->editPesoUnid->text());
+        setNomeFluido(ui->editNome->text());
+        setDensidade(ui->editDensidade->text());
+        setViscosidade(ui->editViscosidade->text());
     }
 }
 
