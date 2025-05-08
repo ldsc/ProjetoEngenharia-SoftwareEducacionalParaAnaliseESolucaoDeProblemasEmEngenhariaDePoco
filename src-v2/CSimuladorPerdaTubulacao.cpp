@@ -17,6 +17,21 @@ CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
         ui->editProfundidadePacker->setEnabled(state == Qt::Checked);
     });
 
+    // Sinal para alterações das caixas
+    connect(ui->editNomePoco, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editProfundidadeTotal, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editPressaoSup, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editTemperaturaSuperiorInicial, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editTemperaturaFundoInicial, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editTemperaturaSuperiorFinal, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editTemperaturaFundoFinal, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editProfundidadePacker, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+
+    // iniciar com botões desativado
+    ui->btnAdicionarTrecho->setEnabled(false);
+    ui->btnRemoverTrecho->setEnabled(false);
+    ui->btnCalcularVariacoes->setEnabled(false);
+
     //abrir janela no meio do monitor
     QScreen *screen = QGuiApplication::primaryScreen();
     QRect screenGeometry = screen->geometry();
@@ -32,6 +47,46 @@ CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
 CSimuladorPerdaTubulacao::~CSimuladorPerdaTubulacao()
 {
     delete ui;
+}
+
+void CSimuladorPerdaTubulacao::EditarDadosPoco() {
+    QString nome = ui->editNomePoco->text();
+    bool ok1, ok2, ok3, ok4, ok5, ok6, ok7;
+    double profund  = ui->editProfundidadeTotal->text().toDouble(&ok1);
+    double pressao  = ui->editPressaoSup->text().toDouble(&ok2);
+    double temperaturaSuperiorInicial = ui->editTemperaturaSuperiorInicial->text().toDouble(&ok3);
+    double temperaturaFundoInicial = ui->editTemperaturaFundoInicial->text().toDouble(&ok4);
+    double temperaturaSuperiorFinal = ui->editTemperaturaSuperiorFinal->text().toDouble(&ok5);
+    double temperaturaFundoFinal = ui->editTemperaturaFundoFinal->text().toDouble(&ok6);
+    double profundPacker = ui->editProfundidadePacker->text().toDouble(&ok7);
+
+    if (!nome.isEmpty() && ok1 && ok2 && ok3 && ok4 && ok5 && ok6 && ok7) {
+        if (!poco) {
+            // Cria o poço
+            poco = std::make_unique<CPoco>(
+                CPoco::CriarParaModulo02(nome.toStdString(), profund, pressao, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, profundPacker)
+                );
+
+            ui->btnAdicionarTrecho->setEnabled(true);
+            ui->btnRemoverTrecho->setEnabled(true);
+            ui->btnCalcularVariacoes->setEnabled(true);
+
+            ui->statusbar->showMessage("Poço criado com Sucesso!");
+        } else {
+            // Atualiza dados do poço já existente
+            poco->NomePoco(nome.toStdString());
+            poco->ProfundidadeTotal(profund);
+            poco->PressaoSuperficie(pressao);
+            poco->TemperaturaTopoInicial(temperaturaSuperiorInicial);
+            poco->TemperaturaFundoInicial(temperaturaFundoInicial);
+            poco->TemperaturaTopoFinal(temperaturaSuperiorFinal);
+            poco->TemperaturaFundoFinal(temperaturaFundoFinal);
+            poco->ProfundidadePacker(profundPacker);
+            ui->statusbar->showMessage("Dados de Poço Atualizado com Sucesso!");
+        }
+
+        on_btnAtualizarDados_clicked();  // Atualiza os dados calculados e a interface
+    }
 }
 
 void CSimuladorPerdaTubulacao::on_btnAdicionarPropriedades_clicked()
@@ -68,13 +123,14 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarPropriedades_clicked()
 
         if (resposta == QMessageBox::Yes) {
             poco = std::make_unique<CPoco>(
-                CPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal)
+                CPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, ProfundidadePacker)
                 );
         }
         on_btnAtualizarDados_clicked();
     } else {
+
         poco = std::make_unique<CPoco>(
-            CPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal)
+            CPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, ProfundidadePacker)
             );
     }
 
@@ -139,6 +195,11 @@ void CSimuladorPerdaTubulacao::on_btnAtualizarDados_clicked()
         ui->editTemperaturaSuperiorFinal->setText(QString::number(poco->TemperaturaTopoFinal()));      // Diâmetro interno do revestimento (ID)
         ui->editTemperaturaFundoFinal->setText(QString::number(poco->TemperaturaFundoFinal()));                            // Vazão do fluido no poço
 
+        if (poco->ProfundidadePacker() != 0){
+            ui->editProfundidadePacker->setEnabled(true);
+            ui->editProfundidadePacker->setText(QString::number(poco->ProfundidadePacker()));
+        }
+
         // Atualizar QTableWidget com os dados dos trechos
         ui->tblTrechos->setRowCount(static_cast<int>(poco->Trechos().size()));
         ui->tblFluidos->setRowCount(static_cast<int>(poco->Trechos().size()));
@@ -146,8 +207,7 @@ void CSimuladorPerdaTubulacao::on_btnAtualizarDados_clicked()
         int row = 0;
         for (const auto& trecho : poco->Trechos()) {
 
-            //ui->tblTrechos->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(trecho->Fluido()->Nome())));
-            ui->tblTrechos->setItem(row, 0, new QTableWidgetItem(QString::fromStdString("teste")));
+            ui->tblTrechos->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(trecho->Nome())));
             ui->tblTrechos->setItem(row, 1, new QTableWidgetItem(QString::number(trecho->ProfundidadeInicial(), 'f', 2)));
             ui->tblTrechos->setItem(row, 2, new QTableWidgetItem(QString::number(trecho->ProfundidadeFinal(), 'f', 2)));
             ui->tblTrechos->setItem(row, 3, new QTableWidgetItem(QString::number(trecho->DiametroExterno(), 'f', 2)));
@@ -178,7 +238,6 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarTrecho_clicked()
     }
 
     else{
-        qDebug() << "1";
         CJanelaAdicionarTrechoTubulacao JanelaTrecho;
         JanelaTrecho.exec();
 
@@ -214,7 +273,7 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarTrecho_clicked()
             ui->tblFluidos->setItem(numLinhas, 1, new QTableWidgetItem(JanelaTrecho.getDensidade()));
             ui->tblFluidos->setItem(numLinhas, 2, new QTableWidgetItem(JanelaTrecho.getViscosidade()));
 
-            std::string trecho = JanelaTrecho.getTrecho().toStdString();
+            std::string NomeTrecho = JanelaTrecho.getTrecho().toStdString();
             double profundInicial = JanelaTrecho.getProfundidadeInicial().toDouble();
             double profundFinal = JanelaTrecho.getProfundidadeFinal().toDouble();
             double diametroExterno = JanelaTrecho.getDiametroExterno().toDouble();
@@ -229,7 +288,7 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarTrecho_clicked()
             double viscosidade = JanelaTrecho.getViscosidade().toDouble();
 
             auto fluido = std::make_unique<CFluido>(nome, densidade, viscosidade);
-            auto trechoPoco = std::make_unique<CTrechoPoco>(profundInicial, profundFinal, std::move(fluido), diametroExterno, diametroInterno, coeficientePoisson, coeficienteExpansaoTermica, moduloElasticidade, pesoUnidade);
+            auto trechoPoco = std::make_unique<CTrechoPoco>(NomeTrecho, profundInicial, profundFinal, std::move(fluido), diametroExterno, diametroInterno, coeficientePoisson, coeficienteExpansaoTermica, moduloElasticidade, pesoUnidade);
             poco->AdicionarTrechoPoco(std::move(trechoPoco));
 
             on_btnAtualizarDados_clicked();
@@ -329,10 +388,21 @@ void CSimuladorPerdaTubulacao::on_btnRemoverTrecho_clicked()
         QTableWidgetItem* item = ui->tblTrechos->item(linhaSelecionada, 0);
 
         if (item) {
-            QString nomeFluido = item->text();
-            ui->tblTrechos->removeRow(linhaSelecionada);
-            poco->RemoverTrechoPoco(nomeFluido.toStdString());
-            on_btnAtualizarDados_clicked();
+            QMessageBox::StandardButton resposta = QMessageBox::question(
+                this,
+                "",
+                "Tem certeza que deseja remover o trecho?",
+                QMessageBox::Yes | QMessageBox::No
+                );
+
+            if (resposta == QMessageBox::Yes) {
+                QString nomeTrecho = item->text();
+                ui->tblTrechos->removeRow(linhaSelecionada);
+                poco->RemoverTrechoPoco(nomeTrecho.toStdString());
+                on_btnAtualizarDados_clicked();
+                ui->statusbar->showMessage("Fluido Removido com Sucesso!");
+            }
+
         }
 
     } else {
@@ -409,7 +479,69 @@ void CSimuladorPerdaTubulacao::makePlotPoco()
         label->setColor(Qt::black);
         label->setPositionAlignment(Qt::AlignCenter);
     }
+    // 6. Desenhar packer se existir
+    double profundidadePacker = poco->ProfundidadePacker();
+    if (profundidadePacker > 0.0) {
+        double alturaPacker = std::max(profundidadeMaxima * 0.01, 12.0);
+        double zTop = profundidadePacker - alturaPacker / 2.0;
+        double zBottom = profundidadePacker + alturaPacker / 2.0;
 
+        // Encontrar o trecho correspondente à profundidade do packer
+        double diametroNoPacker = 0.0;
+        for (const auto& trecho : poco->Trechos()) {
+            if (profundidadePacker >= trecho->ProfundidadeInicial() &&
+                profundidadePacker <= trecho->ProfundidadeFinal()) {
+                diametroNoPacker = trecho->DiametroExterno();
+                break;
+            }
+        }
+
+        // Se não achou trecho correspondente, usa o maior conhecido como fallback
+        if (diametroNoPacker == 0.0)
+            diametroNoPacker = maiorDiametroExterno;
+
+        // Coordenadas horizontais para os quadrados laterais
+        double xEsq1 = -diametroBuraco / 2.0;
+        double xEsq2 = -diametroNoPacker / 2.0;
+        double xDir1 = diametroNoPacker / 2.0;
+        double xDir2 = diametroBuraco / 2.0;
+
+        // === Quadrado esquerdo ===
+        QCPItemRect* rectPackerEsq = new QCPItemRect(ui->customPlotPoco);
+        rectPackerEsq->topLeft->setCoords(xEsq1, zTop);
+        rectPackerEsq->bottomRight->setCoords(xEsq2, zBottom);
+        rectPackerEsq->setPen(QPen(Qt::red, 1.5));
+        rectPackerEsq->setBrush(Qt::NoBrush);
+
+        // === Quadrado direito ===
+        QCPItemRect* rectPackerDir = new QCPItemRect(ui->customPlotPoco);
+        rectPackerDir->topLeft->setCoords(xDir1, zTop);
+        rectPackerDir->bottomRight->setCoords(xDir2, zBottom);
+        rectPackerDir->setPen(QPen(Qt::red, 1.5));
+        rectPackerDir->setBrush(Qt::NoBrush);
+
+        // === X vermelho esquerdo ===
+        QCPItemLine* linha1Esq = new QCPItemLine(ui->customPlotPoco);
+        linha1Esq->start->setCoords(xEsq1, zTop);
+        linha1Esq->end->setCoords(xEsq2, zBottom);
+        linha1Esq->setPen(QPen(Qt::red, 1.5));
+
+        QCPItemLine* linha2Esq = new QCPItemLine(ui->customPlotPoco);
+        linha2Esq->start->setCoords(xEsq2, zTop);
+        linha2Esq->end->setCoords(xEsq1, zBottom);
+        linha2Esq->setPen(QPen(Qt::red, 1.5));
+
+        // === X vermelho direito ===
+        QCPItemLine* linha1Dir = new QCPItemLine(ui->customPlotPoco);
+        linha1Dir->start->setCoords(xDir1, zTop);
+        linha1Dir->end->setCoords(xDir2, zBottom);
+        linha1Dir->setPen(QPen(Qt::red, 1.5));
+
+        QCPItemLine* linha2Dir = new QCPItemLine(ui->customPlotPoco);
+        linha2Dir->start->setCoords(xDir2, zTop);
+        linha2Dir->end->setCoords(xDir1, zBottom);
+        linha2Dir->setPen(QPen(Qt::red, 1.5));
+    }
     ui->customPlotPoco->replot();
 }
 
@@ -466,10 +598,15 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
             if (iss >> nome >> profundidade >> pressaoSup
                 >> temperaturaSuperiorInicial >> temperaturaFundoInicial
                 >> temperaturaSuperiorFinal >> temperaturaFundoFinal >> profundidadePacker) {
+
+                ui->btnAdicionarTrecho->setEnabled(true);
+                ui->btnRemoverTrecho->setEnabled(true);
+                ui->btnCalcularVariacoes->setEnabled(true);
+
                 poco = std::make_unique<CPoco>(
                     CPoco::CriarParaModulo02(nome, profundidade, pressaoSup,
                                              temperaturaSuperiorInicial, temperaturaFundoInicial,
-                                             temperaturaSuperiorFinal, temperaturaFundoFinal)
+                                             temperaturaSuperiorFinal, temperaturaFundoFinal, profundidadePacker)
                     );
             } else {
                 std::cerr << "Erro ao ler linha de poço: " << linha << std::endl;
@@ -491,7 +628,7 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
                 >> nomeFluido >> densidade >> viscosidade) {
 
                 auto fluido = std::make_unique<CFluido>(nomeFluido, densidade, viscosidade);
-                auto trechoPoco = std::make_unique<CTrechoPoco>(
+                auto trechoPoco = std::make_unique<CTrechoPoco>(nomeTrecho,
                     profundInicial, profundFinal, std::move(fluido),
                     diametroExterno, diametroInterno,
                     coeficientePoisson, moduloElasticidade,
@@ -512,5 +649,39 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
     on_btnAtualizarDados_clicked();
     ui->statusbar->showMessage("Dados importados com sucesso!");
 
+}
+
+
+void CSimuladorPerdaTubulacao::on_actionNova_Simula_o_triggered()
+{
+    QMessageBox::StandardButton resposta = QMessageBox::question(
+        this,
+        "",
+        "Tem certeza que deseja iniciar uma nova simulação?",
+        QMessageBox::Yes | QMessageBox::No
+        );
+
+    if (resposta == QMessageBox::Yes) {
+        CSimuladorPerdaTubulacao *newWindow = new CSimuladorPerdaTubulacao();
+        newWindow->show();
+        this->close();
+    }
+}
+
+
+void CSimuladorPerdaTubulacao::on_actionExportar_Como_Imagem_triggered()
+{
+    QString fileName = QFileDialog::getSaveFileName(this, "Salvar imagem", "", "PNG (*.png);;JPEG (*.jpg)");
+
+    if (!fileName.isEmpty()) {
+        QPixmap pixmap = this->grab();
+        pixmap.save(fileName);
+    }
+}
+
+
+void CSimuladorPerdaTubulacao::on_actionSobre_o_SEEP_triggered()
+{
+    QDesktopServices::openUrl(QUrl("https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"));
 }
 

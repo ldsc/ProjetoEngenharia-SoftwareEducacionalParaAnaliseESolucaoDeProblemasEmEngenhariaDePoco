@@ -42,6 +42,14 @@ private slots:
 
     void on_actionArquivo_Dat_triggered();
 
+    void EditarDadosPoco();
+
+    void on_actionNova_Simula_o_triggered();
+
+    void on_actionExportar_Como_Imagem_triggered();
+
+    void on_actionSobre_o_SEEP_triggered();
+
 private:
     Ui::CSimuladorPerdaTubulacao *ui;
     std::shared_ptr<CPoco> poco = nullptr;

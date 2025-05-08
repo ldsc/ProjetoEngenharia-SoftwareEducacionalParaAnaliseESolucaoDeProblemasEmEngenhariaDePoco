@@ -22,7 +22,7 @@ CPoco CPoco::CriarParaModulo01(std::string nome, double profund, double pressao,
 
 CPoco CPoco::CriarParaModulo02(std::string nome, double profund, double pressao,
                                double tempTopoIni, double tempFundoIni,
-                               double tempTopoFim, double tempFundoFim) {
+                               double tempTopoFim, double tempFundoFim, double packer) {
     CPoco poco;
     poco.nomePoco = nome;
     poco.profundidadeFinal = profund;
@@ -31,6 +31,7 @@ CPoco CPoco::CriarParaModulo02(std::string nome, double profund, double pressao,
     poco.temperaturaFundoInicial = tempFundoIni;
     poco.temperaturaTopoFinal = tempTopoFim;
     poco.temperaturaFundoFinal = tempFundoFim;
+    poco.profundidadePacker = packer;
     return poco;
 }
 
@@ -47,20 +48,14 @@ std::vector<CTrechoPoco*> CPoco::Trechos() const {
 bool CPoco::AdicionarTrechoPoco(std::unique_ptr<CTrechoPoco> TrechoPoco) {
     double ProfundidadeFluido = TrechoPoco->ProfundidadeFinal() - TrechoPoco->ProfundidadeInicial();
 
-    // Verifica se a profundidade total ocupada + profundidade do novo fluido excede a profundidade total do poco
-    if (profundidadeOcupada + ProfundidadeFluido <= profundidadeFinal) {
-        trechos.push_back(std::move(TrechoPoco)); 
-        profundidadeOcupada += ProfundidadeFluido;
-        return true;
-    } else {
-        std::cout << "Erro: O fluido excede a profundidade total do poco!\n";
-        return false;
-    }
+    trechos.push_back(std::move(TrechoPoco));
+    profundidadeOcupada += ProfundidadeFluido;
+    return true;
 }
 
 void CPoco::RemoverTrechoPoco(const std::string& nomeFluido) {
     for (auto it = trechos.begin(); it != trechos.end();) {
-        if ((*it)->Fluido()->Nome() == nomeFluido) {
+        if ((*it)->Nome() == nomeFluido) {
             double ProfundidadeFluido = (*it)->ProfundidadeFinal() - (*it)->ProfundidadeInicial();
             it = trechos.erase(it); // Remove o trecho e atualiza o iterador
             profundidadeOcupada -= ProfundidadeFluido;

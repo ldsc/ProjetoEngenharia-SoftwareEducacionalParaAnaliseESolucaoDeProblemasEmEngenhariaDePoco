@@ -38,7 +38,7 @@ public:
     CPoco& operator=(CPoco&&) = default;
 
     static CPoco CriarParaModulo01(std::string Nome, double Profund, double PressaoSup, double D , double OD, double ID, double q);
-    static CPoco CriarParaModulo02(std::string Nome, double Profund, double PressaoSup, double TempTopoInicial, double TempFundoInicial, double TempTopoFinal, double TempFundoFinal);
+    static CPoco CriarParaModulo02(std::string Nome, double Profund, double PressaoSup, double TempTopoInicial, double TempFundoInicial, double TempTopoFinal, double TempFundoFinal, double profundidadePacker);
 
     // Getters
     std::string NomePoco() const { return nomePoco; }
@@ -68,6 +68,7 @@ public:
     void DiametroRevestimentoID( double ID ) { diametroRevestimentoID = ID; }
     void Vazao( double q ) { vazao = q; }
 
+    void TemperaturaTopoInicial(double temperatura) { temperaturaTopoInicial = temperatura; }
     void TemperaturaFundoInicial(double temperatura) { temperaturaFundoInicial = temperatura; }
     void TemperaturaTopoFinal(double temperatura) { temperaturaTopoFinal = temperatura; }
     void TemperaturaFundoFinal(double temperatura) { temperaturaFundoFinal = temperatura; }

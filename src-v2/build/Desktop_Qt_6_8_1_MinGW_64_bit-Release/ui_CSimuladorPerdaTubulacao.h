@@ -28,6 +28,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "qcustomplot.h"
 
@@ -37,36 +38,39 @@ class Ui_CSimuladorPerdaTubulacao
 {
 public:
     QAction *actionArquivo_Dat;
+    QAction *actionNova_Simula_o;
+    QAction *actionExportar_Como_Imagem;
+    QAction *actionManual_do_Usu_rio;
+    QAction *actionF_rmulas_Utilizadas;
+    QAction *actionSobre_o_SEEP;
     QWidget *centralwidget;
     QCustomPlot *customPlotPoco;
     QGroupBox *groupBox;
     QLabel *label;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
-    QSpacerItem *verticalSpacer_2;
-    QLineEdit *editPressaoSup;
-    QLabel *lbnTituloTemperaturaSuperiorFinal;
-    QLabel *lbnTituloNomePoco;
-    QSpacerItem *verticalSpacer;
     QLineEdit *editTemperaturaFundoFinal;
-    QLineEdit *editProfundidadeTotal;
-    QSpacerItem *verticalSpacer_3;
-    QLabel *lbnTituloPressaoSup;
-    QLabel *lbnTituloConfiguraoInicial;
+    QLabel *lbnTituloNomePoco;
     QLabel *lbnTituloProfundidadePacker;
     QLabel *lbnTituloTemperaturaFundoInicial;
-    QLineEdit *editTemperaturaSuperiorFinal;
-    QCheckBox *checkBoxPacker;
-    QLabel *lbnTituloTemperaturaSuperiorInicial;
-    QLineEdit *editProfundidadePacker;
+    QLabel *lbnTituloConfiguraoInicial;
     QLineEdit *editTemperaturaSuperiorInicial;
-    QLabel *lbnTituloProfunidadeTotal;
     QLabel *lbnTituloTemperaturaFundoFinal;
-    QPushButton *btnAdicionarPropriedades;
+    QLineEdit *editProfundidadeTotal;
+    QLineEdit *editTemperaturaSuperiorFinal;
+    QLabel *lbnTituloProfunidadeTotal;
+    QLabel *lbnTituloPressaoSup;
+    QSpacerItem *verticalSpacer;
+    QSpacerItem *verticalSpacer_3;
+    QLabel *lbnTituloTemperaturaSuperiorFinal;
+    QCheckBox *checkBoxPacker;
     QLineEdit *editNomePoco;
+    QLineEdit *editProfundidadePacker;
     QLabel *lbnTituloConfiguraoFinal;
     QLineEdit *editTemperaturaFundoInicial;
-    QPushButton *btnAtualizarDados;
+    QSpacerItem *verticalSpacer_2;
+    QLabel *lbnTituloTemperaturaSuperiorInicial;
+    QLineEdit *editPressaoSup;
     QGroupBox *groupBox_3;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_2;
@@ -115,28 +119,53 @@ public:
     QLabel *lbnTituloNomePoco_21;
     QHBoxLayout *horizontalLayout;
     QPushButton *btnCalcularVariacoes;
-    QPushButton *btnAtualizarDados_3;
+    QSpacerItem *verticalSpacer_8;
     QLabel *label_5;
+    QWidget *layoutWidget_2;
+    QVBoxLayout *verticalLayout;
+    QLabel *label_10;
+    QLabel *label_11;
     QMenuBar *menubar;
     QMenu *menuArquivo;
     QMenu *menuImportar_Dados;
+    QMenu *menuRefer_ncias;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *CSimuladorPerdaTubulacao)
     {
         if (CSimuladorPerdaTubulacao->objectName().isEmpty())
             CSimuladorPerdaTubulacao->setObjectName("CSimuladorPerdaTubulacao");
-        CSimuladorPerdaTubulacao->resize(1504, 859);
+        CSimuladorPerdaTubulacao->resize(1449, 859);
         actionArquivo_Dat = new QAction(CSimuladorPerdaTubulacao);
         actionArquivo_Dat->setObjectName("actionArquivo_Dat");
+        actionNova_Simula_o = new QAction(CSimuladorPerdaTubulacao);
+        actionNova_Simula_o->setObjectName("actionNova_Simula_o");
+        QIcon icon(QIcon::fromTheme(QString::fromUtf8("document-page-setup")));
+        actionNova_Simula_o->setIcon(icon);
+        actionExportar_Como_Imagem = new QAction(CSimuladorPerdaTubulacao);
+        actionExportar_Como_Imagem->setObjectName("actionExportar_Como_Imagem");
+        QIcon icon1(QIcon::fromTheme(QString::fromUtf8("emblem-photos")));
+        actionExportar_Como_Imagem->setIcon(icon1);
+        actionManual_do_Usu_rio = new QAction(CSimuladorPerdaTubulacao);
+        actionManual_do_Usu_rio->setObjectName("actionManual_do_Usu_rio");
+        QIcon icon2(QIcon::fromTheme(QString::fromUtf8("dialog-question")));
+        actionManual_do_Usu_rio->setIcon(icon2);
+        actionF_rmulas_Utilizadas = new QAction(CSimuladorPerdaTubulacao);
+        actionF_rmulas_Utilizadas->setObjectName("actionF_rmulas_Utilizadas");
+        QIcon icon3(QIcon::fromTheme(QString::fromUtf8("document-properties")));
+        actionF_rmulas_Utilizadas->setIcon(icon3);
+        actionSobre_o_SEEP = new QAction(CSimuladorPerdaTubulacao);
+        actionSobre_o_SEEP->setObjectName("actionSobre_o_SEEP");
+        QIcon icon4(QIcon::fromTheme(QString::fromUtf8("dialog-information")));
+        actionSobre_o_SEEP->setIcon(icon4);
         centralwidget = new QWidget(CSimuladorPerdaTubulacao);
         centralwidget->setObjectName("centralwidget");
         customPlotPoco = new QCustomPlot(centralwidget);
         customPlotPoco->setObjectName("customPlotPoco");
-        customPlotPoco->setGeometry(QRect(1110, 40, 371, 761));
+        customPlotPoco->setGeometry(QRect(1110, 100, 321, 691));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(10, 10, 301, 401));
+        groupBox->setGeometry(QRect(10, 70, 301, 401));
         groupBox->setStyleSheet(QString::fromUtf8("QGroupBox{\n"
 "background-color: rgb(255, 255, 255);\n"
 "border: none;\n"
@@ -152,66 +181,25 @@ public:
         label->setFont(font);
         gridLayoutWidget = new QWidget(groupBox);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(10, 30, 281, 368));
+        gridLayoutWidget->setGeometry(QRect(10, 30, 281, 351));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        editTemperaturaFundoFinal = new QLineEdit(gridLayoutWidget);
+        editTemperaturaFundoFinal->setObjectName("editTemperaturaFundoFinal");
+        editTemperaturaFundoFinal->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
 
-        gridLayout->addItem(verticalSpacer_2, 4, 0, 1, 3);
-
-        editPressaoSup = new QLineEdit(gridLayoutWidget);
-        editPressaoSup->setObjectName("editPressaoSup");
-
-        gridLayout->addWidget(editPressaoSup, 2, 1, 1, 1);
-
-        lbnTituloTemperaturaSuperiorFinal = new QLabel(gridLayoutWidget);
-        lbnTituloTemperaturaSuperiorFinal->setObjectName("lbnTituloTemperaturaSuperiorFinal");
-        QFont font1;
-        font1.setBold(false);
-        lbnTituloTemperaturaSuperiorFinal->setFont(font1);
-        lbnTituloTemperaturaSuperiorFinal->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout->addWidget(lbnTituloTemperaturaSuperiorFinal, 10, 0, 1, 1);
+        gridLayout->addWidget(editTemperaturaFundoFinal, 11, 1, 1, 2);
 
         lbnTituloNomePoco = new QLabel(gridLayoutWidget);
         lbnTituloNomePoco->setObjectName("lbnTituloNomePoco");
+        QFont font1;
+        font1.setBold(false);
         lbnTituloNomePoco->setFont(font1);
         lbnTituloNomePoco->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         gridLayout->addWidget(lbnTituloNomePoco, 0, 0, 1, 1);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-
-        gridLayout->addItem(verticalSpacer, 8, 0, 1, 3);
-
-        editTemperaturaFundoFinal = new QLineEdit(gridLayoutWidget);
-        editTemperaturaFundoFinal->setObjectName("editTemperaturaFundoFinal");
-
-        gridLayout->addWidget(editTemperaturaFundoFinal, 11, 1, 1, 2);
-
-        editProfundidadeTotal = new QLineEdit(gridLayoutWidget);
-        editProfundidadeTotal->setObjectName("editProfundidadeTotal");
-
-        gridLayout->addWidget(editProfundidadeTotal, 1, 1, 1, 2);
-
-        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-
-        gridLayout->addItem(verticalSpacer_3, 12, 0, 1, 3);
-
-        lbnTituloPressaoSup = new QLabel(gridLayoutWidget);
-        lbnTituloPressaoSup->setObjectName("lbnTituloPressaoSup");
-        lbnTituloPressaoSup->setFont(font1);
-        lbnTituloPressaoSup->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout->addWidget(lbnTituloPressaoSup, 2, 0, 1, 1);
-
-        lbnTituloConfiguraoInicial = new QLabel(gridLayoutWidget);
-        lbnTituloConfiguraoInicial->setObjectName("lbnTituloConfiguraoInicial");
-        lbnTituloConfiguraoInicial->setFont(font1);
-        lbnTituloConfiguraoInicial->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout->addWidget(lbnTituloConfiguraoInicial, 5, 0, 1, 3);
 
         lbnTituloProfundidadePacker = new QLabel(gridLayoutWidget);
         lbnTituloProfundidadePacker->setObjectName("lbnTituloProfundidadePacker");
@@ -227,40 +215,19 @@ public:
 
         gridLayout->addWidget(lbnTituloTemperaturaFundoInicial, 7, 0, 1, 1);
 
-        editTemperaturaSuperiorFinal = new QLineEdit(gridLayoutWidget);
-        editTemperaturaSuperiorFinal->setObjectName("editTemperaturaSuperiorFinal");
+        lbnTituloConfiguraoInicial = new QLabel(gridLayoutWidget);
+        lbnTituloConfiguraoInicial->setObjectName("lbnTituloConfiguraoInicial");
+        lbnTituloConfiguraoInicial->setFont(font1);
+        lbnTituloConfiguraoInicial->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
-        gridLayout->addWidget(editTemperaturaSuperiorFinal, 10, 1, 1, 2);
-
-        checkBoxPacker = new QCheckBox(gridLayoutWidget);
-        checkBoxPacker->setObjectName("checkBoxPacker");
-        checkBoxPacker->setFont(font1);
-
-        gridLayout->addWidget(checkBoxPacker, 13, 0, 1, 3);
-
-        lbnTituloTemperaturaSuperiorInicial = new QLabel(gridLayoutWidget);
-        lbnTituloTemperaturaSuperiorInicial->setObjectName("lbnTituloTemperaturaSuperiorInicial");
-        lbnTituloTemperaturaSuperiorInicial->setFont(font1);
-        lbnTituloTemperaturaSuperiorInicial->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout->addWidget(lbnTituloTemperaturaSuperiorInicial, 6, 0, 1, 1);
-
-        editProfundidadePacker = new QLineEdit(gridLayoutWidget);
-        editProfundidadePacker->setObjectName("editProfundidadePacker");
-
-        gridLayout->addWidget(editProfundidadePacker, 14, 1, 1, 2);
+        gridLayout->addWidget(lbnTituloConfiguraoInicial, 5, 0, 1, 3);
 
         editTemperaturaSuperiorInicial = new QLineEdit(gridLayoutWidget);
         editTemperaturaSuperiorInicial->setObjectName("editTemperaturaSuperiorInicial");
+        editTemperaturaSuperiorInicial->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
 
         gridLayout->addWidget(editTemperaturaSuperiorInicial, 6, 1, 1, 2);
-
-        lbnTituloProfunidadeTotal = new QLabel(gridLayoutWidget);
-        lbnTituloProfunidadeTotal->setObjectName("lbnTituloProfunidadeTotal");
-        lbnTituloProfunidadeTotal->setFont(font1);
-        lbnTituloProfunidadeTotal->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout->addWidget(lbnTituloProfunidadeTotal, 1, 0, 1, 1);
 
         lbnTituloTemperaturaFundoFinal = new QLabel(gridLayoutWidget);
         lbnTituloTemperaturaFundoFinal->setObjectName("lbnTituloTemperaturaFundoFinal");
@@ -269,15 +236,76 @@ public:
 
         gridLayout->addWidget(lbnTituloTemperaturaFundoFinal, 11, 0, 1, 1);
 
-        btnAdicionarPropriedades = new QPushButton(gridLayoutWidget);
-        btnAdicionarPropriedades->setObjectName("btnAdicionarPropriedades");
+        editProfundidadeTotal = new QLineEdit(gridLayoutWidget);
+        editProfundidadeTotal->setObjectName("editProfundidadeTotal");
+        editProfundidadeTotal->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
 
-        gridLayout->addWidget(btnAdicionarPropriedades, 15, 0, 1, 1);
+        gridLayout->addWidget(editProfundidadeTotal, 1, 1, 1, 2);
+
+        editTemperaturaSuperiorFinal = new QLineEdit(gridLayoutWidget);
+        editTemperaturaSuperiorFinal->setObjectName("editTemperaturaSuperiorFinal");
+        editTemperaturaSuperiorFinal->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
+
+        gridLayout->addWidget(editTemperaturaSuperiorFinal, 10, 1, 1, 2);
+
+        lbnTituloProfunidadeTotal = new QLabel(gridLayoutWidget);
+        lbnTituloProfunidadeTotal->setObjectName("lbnTituloProfunidadeTotal");
+        lbnTituloProfunidadeTotal->setFont(font1);
+        lbnTituloProfunidadeTotal->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout->addWidget(lbnTituloProfunidadeTotal, 1, 0, 1, 1);
+
+        lbnTituloPressaoSup = new QLabel(gridLayoutWidget);
+        lbnTituloPressaoSup->setObjectName("lbnTituloPressaoSup");
+        lbnTituloPressaoSup->setFont(font1);
+        lbnTituloPressaoSup->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout->addWidget(lbnTituloPressaoSup, 2, 0, 1, 1);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout->addItem(verticalSpacer, 8, 0, 1, 3);
+
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_3, 12, 0, 1, 3);
+
+        lbnTituloTemperaturaSuperiorFinal = new QLabel(gridLayoutWidget);
+        lbnTituloTemperaturaSuperiorFinal->setObjectName("lbnTituloTemperaturaSuperiorFinal");
+        lbnTituloTemperaturaSuperiorFinal->setFont(font1);
+        lbnTituloTemperaturaSuperiorFinal->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout->addWidget(lbnTituloTemperaturaSuperiorFinal, 10, 0, 1, 1);
+
+        checkBoxPacker = new QCheckBox(gridLayoutWidget);
+        checkBoxPacker->setObjectName("checkBoxPacker");
+        checkBoxPacker->setFont(font1);
+
+        gridLayout->addWidget(checkBoxPacker, 13, 0, 1, 3);
 
         editNomePoco = new QLineEdit(gridLayoutWidget);
         editNomePoco->setObjectName("editNomePoco");
+        editNomePoco->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
 
         gridLayout->addWidget(editNomePoco, 0, 1, 1, 2);
+
+        editProfundidadePacker = new QLineEdit(gridLayoutWidget);
+        editProfundidadePacker->setObjectName("editProfundidadePacker");
+        editProfundidadePacker->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
+"    border: 1px solid #dddddd;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"QLineEdit:disabled {\n"
+"    background-color: #f0f0f0;\n"
+"    color: #a0a0a0;\n"
+"    border: 1px solid #cccccc;\n"
+"}"));
+
+        gridLayout->addWidget(editProfundidadePacker, 14, 1, 1, 2);
 
         lbnTituloConfiguraoFinal = new QLabel(gridLayoutWidget);
         lbnTituloConfiguraoFinal->setObjectName("lbnTituloConfiguraoFinal");
@@ -288,17 +316,32 @@ public:
 
         editTemperaturaFundoInicial = new QLineEdit(gridLayoutWidget);
         editTemperaturaFundoInicial->setObjectName("editTemperaturaFundoInicial");
+        editTemperaturaFundoInicial->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
 
         gridLayout->addWidget(editTemperaturaFundoInicial, 7, 1, 1, 2);
 
-        btnAtualizarDados = new QPushButton(gridLayoutWidget);
-        btnAtualizarDados->setObjectName("btnAtualizarDados");
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
-        gridLayout->addWidget(btnAtualizarDados, 15, 1, 1, 2);
+        gridLayout->addItem(verticalSpacer_2, 4, 0, 1, 3);
+
+        lbnTituloTemperaturaSuperiorInicial = new QLabel(gridLayoutWidget);
+        lbnTituloTemperaturaSuperiorInicial->setObjectName("lbnTituloTemperaturaSuperiorInicial");
+        lbnTituloTemperaturaSuperiorInicial->setFont(font1);
+        lbnTituloTemperaturaSuperiorInicial->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout->addWidget(lbnTituloTemperaturaSuperiorInicial, 6, 0, 1, 1);
+
+        editPressaoSup = new QLineEdit(gridLayoutWidget);
+        editPressaoSup->setObjectName("editPressaoSup");
+        editPressaoSup->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
+
+        gridLayout->addWidget(editPressaoSup, 2, 1, 1, 2);
 
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName("groupBox_3");
-        groupBox_3->setGeometry(QRect(10, 420, 1081, 391));
+        groupBox_3->setGeometry(QRect(10, 480, 1081, 321));
         groupBox_3->setStyleSheet(QString::fromUtf8("QGroupBox{\n"
 "background-color: rgb(255, 255, 255);\n"
 "border: none;\n"
@@ -306,7 +349,7 @@ public:
 "}"));
         layoutWidget = new QWidget(groupBox_3);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(11, 339, 1061, 41));
+        layoutWidget->setGeometry(QRect(20, 270, 1041, 41));
         horizontalLayout_2 = new QHBoxLayout(layoutWidget);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -337,7 +380,7 @@ public:
         __qtablewidgetitem2->setFont(font1);
         tblFluidos->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         tblFluidos->setObjectName("tblFluidos");
-        tblFluidos->setGeometry(QRect(600, 50, 461, 271));
+        tblFluidos->setGeometry(QRect(600, 50, 461, 211));
         tblFluidos->setStyleSheet(QString::fromUtf8(""));
         tblFluidos->horizontalHeader()->setDefaultSectionSize(153);
         tblTrechos = new QTableWidget(groupBox_3);
@@ -371,7 +414,7 @@ public:
         __qtablewidgetitem11->setFont(font1);
         tblTrechos->setHorizontalHeaderItem(8, __qtablewidgetitem11);
         tblTrechos->setObjectName("tblTrechos");
-        tblTrechos->setGeometry(QRect(20, 50, 551, 271));
+        tblTrechos->setGeometry(QRect(20, 50, 551, 211));
         tblTrechos->setStyleSheet(QString::fromUtf8(""));
         tblTrechos->setAutoScrollMargin(16);
         tblTrechos->horizontalHeader()->setMinimumSectionSize(37);
@@ -383,7 +426,7 @@ public:
         label_6->setFont(font);
         groupBox_4 = new QGroupBox(centralwidget);
         groupBox_4->setObjectName("groupBox_4");
-        groupBox_4->setGeometry(QRect(1100, 10, 391, 801));
+        groupBox_4->setGeometry(QRect(1100, 70, 341, 731));
         groupBox_4->setStyleSheet(QString::fromUtf8("QGroupBox{\n"
 "background-color: rgb(255, 255, 255);\n"
 "border: none;\n"
@@ -396,7 +439,7 @@ public:
         label_4->setFont(font);
         tabWidget_5 = new QTabWidget(centralwidget);
         tabWidget_5->setObjectName("tabWidget_5");
-        tabWidget_5->setGeometry(QRect(690, 10, 401, 401));
+        tabWidget_5->setGeometry(QRect(690, 70, 401, 401));
         QFont font2;
         font2.setPointSize(9);
         font2.setBold(true);
@@ -450,7 +493,7 @@ public:
         tabWidget_5->addTab(tab_8, QString());
         groupBox_6 = new QGroupBox(centralwidget);
         groupBox_6->setObjectName("groupBox_6");
-        groupBox_6->setGeometry(QRect(320, 10, 361, 401));
+        groupBox_6->setGeometry(QRect(320, 70, 361, 401));
         groupBox_6->setStyleSheet(QString::fromUtf8("QGroupBox{\n"
 "background-color: rgb(255, 255, 255);\n"
 "border: none;\n"
@@ -459,7 +502,7 @@ public:
         groupBox_6->setTitle(QString::fromUtf8(""));
         layoutWidget1 = new QWidget(groupBox_6);
         layoutWidget1->setObjectName("layoutWidget1");
-        layoutWidget1->setGeometry(QRect(10, 40, 341, 311));
+        layoutWidget1->setGeometry(QRect(10, 40, 341, 341));
         formLayout = new QFormLayout(layoutWidget1);
         formLayout->setObjectName("formLayout");
         formLayout->setContentsMargins(0, 0, 0, 0);
@@ -472,6 +515,8 @@ public:
 
         editProfundidadeMedicao = new QLineEdit(layoutWidget1);
         editProfundidadeMedicao->setObjectName("editProfundidadeMedicao");
+        editProfundidadeMedicao->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd; \n"
+"border-radius: 5px;"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, editProfundidadeMedicao);
 
@@ -626,18 +671,45 @@ public:
 
         horizontalLayout->addWidget(btnCalcularVariacoes);
 
-        btnAtualizarDados_3 = new QPushButton(layoutWidget1);
-        btnAtualizarDados_3->setObjectName("btnAtualizarDados_3");
 
-        horizontalLayout->addWidget(btnAtualizarDados_3);
+        formLayout->setLayout(13, QFormLayout::SpanningRole, horizontalLayout);
 
+        verticalSpacer_8 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
-        formLayout->setLayout(12, QFormLayout::SpanningRole, horizontalLayout);
+        formLayout->setItem(12, QFormLayout::SpanningRole, verticalSpacer_8);
 
         label_5 = new QLabel(groupBox_6);
         label_5->setObjectName("label_5");
         label_5->setGeometry(QRect(10, 10, 291, 16));
         label_5->setFont(font);
+        layoutWidget_2 = new QWidget(centralwidget);
+        layoutWidget_2->setObjectName("layoutWidget_2");
+        layoutWidget_2->setGeometry(QRect(330, 0, 830, 55));
+        verticalLayout = new QVBoxLayout(layoutWidget_2);
+        verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        label_10 = new QLabel(layoutWidget_2);
+        label_10->setObjectName("label_10");
+        QFont font3;
+        font3.setPointSize(14);
+        font3.setBold(true);
+        label_10->setFont(font3);
+        label_10->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        verticalLayout->addWidget(label_10);
+
+        label_11 = new QLabel(layoutWidget_2);
+        label_11->setObjectName("label_11");
+        QFont font4;
+        font4.setPointSize(11);
+        font4.setBold(false);
+        label_11->setFont(font4);
+        label_11->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        verticalLayout->addWidget(label_11);
+
+        label_11->raise();
+        label_10->raise();
         CSimuladorPerdaTubulacao->setCentralWidget(centralwidget);
         groupBox_3->raise();
         groupBox_4->raise();
@@ -645,13 +717,16 @@ public:
         groupBox->raise();
         tabWidget_5->raise();
         groupBox_6->raise();
+        layoutWidget_2->raise();
         menubar = new QMenuBar(CSimuladorPerdaTubulacao);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1504, 22));
+        menubar->setGeometry(QRect(0, 0, 1449, 22));
         menuArquivo = new QMenu(menubar);
         menuArquivo->setObjectName("menuArquivo");
         menuImportar_Dados = new QMenu(menuArquivo);
         menuImportar_Dados->setObjectName("menuImportar_Dados");
+        menuRefer_ncias = new QMenu(menubar);
+        menuRefer_ncias->setObjectName("menuRefer_ncias");
         CSimuladorPerdaTubulacao->setMenuBar(menubar);
         statusbar = new QStatusBar(CSimuladorPerdaTubulacao);
         statusbar->setObjectName("statusbar");
@@ -663,13 +738,18 @@ public:
         QWidget::setTabOrder(editTemperaturaSuperiorFinal, editTemperaturaFundoFinal);
         QWidget::setTabOrder(editTemperaturaFundoFinal, checkBoxPacker);
         QWidget::setTabOrder(checkBoxPacker, editProfundidadePacker);
-        QWidget::setTabOrder(editProfundidadePacker, btnAdicionarPropriedades);
-        QWidget::setTabOrder(btnAdicionarPropriedades, btnAtualizarDados);
-        QWidget::setTabOrder(btnAtualizarDados, tabWidget_5);
+        QWidget::setTabOrder(editProfundidadePacker, tabWidget_5);
 
         menubar->addAction(menuArquivo->menuAction());
+        menubar->addAction(menuRefer_ncias->menuAction());
+        menuArquivo->addAction(actionNova_Simula_o);
+        menuArquivo->addSeparator();
         menuArquivo->addAction(menuImportar_Dados->menuAction());
+        menuArquivo->addAction(actionExportar_Como_Imagem);
         menuImportar_Dados->addAction(actionArquivo_Dat);
+        menuRefer_ncias->addAction(actionManual_do_Usu_rio);
+        menuRefer_ncias->addAction(actionF_rmulas_Utilizadas);
+        menuRefer_ncias->addAction(actionSobre_o_SEEP);
 
         retranslateUi(CSimuladorPerdaTubulacao);
 
@@ -683,20 +763,23 @@ public:
     {
         CSimuladorPerdaTubulacao->setWindowTitle(QCoreApplication::translate("CSimuladorPerdaTubulacao", "MainWindow", nullptr));
         actionArquivo_Dat->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Arquivo (.Dat)", nullptr));
+        actionNova_Simula_o->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Nova Simula\303\247\303\243o", nullptr));
+        actionExportar_Como_Imagem->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Exportar Como Imagem", nullptr));
+        actionManual_do_Usu_rio->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Manual do Usu\303\241rio", nullptr));
+        actionF_rmulas_Utilizadas->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "F\303\263rmulas Utilizadas", nullptr));
+        actionSobre_o_SEEP->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Sobre o SEEP", nullptr));
         label->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Dados do Po\303\247o", nullptr));
-        lbnTituloTemperaturaSuperiorFinal->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Temperatura de Superfice (\302\272F)", nullptr));
         lbnTituloNomePoco->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Nome Po\303\247o", nullptr));
-        lbnTituloPressaoSup->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Press\303\243o na Superficie (psi)", nullptr));
-        lbnTituloConfiguraoInicial->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Configura\303\247\303\243o Inicial", nullptr));
         lbnTituloProfundidadePacker->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Profundidade do Packer (ft)", nullptr));
         lbnTituloTemperaturaFundoInicial->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Temperatura de Fundo (\302\272F)", nullptr));
-        checkBoxPacker->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "H\303\241 packer?", nullptr));
-        lbnTituloTemperaturaSuperiorInicial->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Temperatura de Superfice (\302\272F)", nullptr));
-        lbnTituloProfunidadeTotal->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Profundidade Total (ft)", nullptr));
+        lbnTituloConfiguraoInicial->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Configura\303\247\303\243o Inicial", nullptr));
         lbnTituloTemperaturaFundoFinal->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Temperatura de Fundo (\302\272F)", nullptr));
-        btnAdicionarPropriedades->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Adicionar Propriedade", nullptr));
+        lbnTituloProfunidadeTotal->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Profundidade Total (ft)", nullptr));
+        lbnTituloPressaoSup->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Press\303\243o na Superficie (psi)", nullptr));
+        lbnTituloTemperaturaSuperiorFinal->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Temperatura de Superfice (\302\272F)", nullptr));
+        checkBoxPacker->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "H\303\241 packer?", nullptr));
         lbnTituloConfiguraoFinal->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Configura\303\247\303\243o Final", nullptr));
-        btnAtualizarDados->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Atualizar Dados", nullptr));
+        lbnTituloTemperaturaSuperiorInicial->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Temperatura de Superfice (\302\272F)", nullptr));
         groupBox_3->setTitle(QString());
         btnAdicionarTrecho->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Adicionar Dados", nullptr));
         btnRemoverTrecho->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Remover Dados", nullptr));
@@ -752,10 +835,12 @@ public:
         lbnTituloNomePoco_11->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Carga considerando inje\303\247\303\243o (coluna fixa), lb", nullptr));
         lbnTituloNomePoco_21->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "-", nullptr));
         btnCalcularVariacoes->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Calcular", nullptr));
-        btnAtualizarDados_3->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Atualizar Dados", nullptr));
         label_5->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Carga e Varia\303\247\303\265es de comprimentos", nullptr));
+        label_10->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "SEAPEP - Software Educacional para An\303\241lise e Solu\303\247\303\265es de Problemas Em Engenharia de Po\303\247o", nullptr));
+        label_11->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Simula\303\247\303\243o de An\303\241lise de tens\303\265es na coluna", nullptr));
         menuArquivo->setTitle(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Arquivo", nullptr));
         menuImportar_Dados->setTitle(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Importar Dados", nullptr));
+        menuRefer_ncias->setTitle(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Refer\303\252ncias", nullptr));
     } // retranslateUi
 
 };
