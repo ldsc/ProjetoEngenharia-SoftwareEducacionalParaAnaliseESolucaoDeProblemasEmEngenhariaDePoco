@@ -465,3 +465,62 @@ void CSimuladorPerdaTubulacao::on_btnCalcularVariacoes_clicked()
     ui->lbnPressaoHidroestatica->setText(QString::number(poco->PressaoHidroestaticaNoPonto(profundidade)));
 }
 
+
+void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
+{
+    QString caminhoDoArquivo = QFileDialog::getOpenFileName(
+        this, // Passa a janela principal como pai
+        "Selecione um arquivo",
+        "",
+        "Todos os arquivos (*.*)"
+        );
+
+    // Converte o QString para std::string corretamente
+    std::string caminhoDoArquivoStr = caminhoDoArquivo.toStdString();
+
+    std::ifstream file(caminhoDoArquivoStr);
+
+    std::string linha;
+    bool lendoFluidos = false; // Começa lendo dados do poço
+
+    while (std::getline(file, linha)) {
+        // Ignorar linhas vazias ou comentários
+        if (linha.empty() || linha[0] == '#') {
+            if (linha.find("Fluidos") != std::string::npos) {
+                lendoFluidos = true; // Mudar para leitura de fluidos
+            }
+            continue;
+        }
+
+        if (!lendoFluidos) {
+            // Ler os dados do poço
+            std::istringstream iss(linha);
+            std::string nome;
+            double profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, ProfundidadePacker;
+
+            if (iss >> nome >> profundidade >> pressaoSup >> temperaturaSuperiorInicial >> temperaturaFundoInicial >> temperaturaSuperiorFinal >> temperaturaFundoFinal) {
+
+                poco = std::make_unique<CPoco>(
+                    CPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal)
+                    );
+            }
+        } else {
+            // Ler os dados dos trechos
+            std::istringstream iss(linha);
+            std::string nomeTrecho, nomeFluido;
+            double profundInicial, profundFinal,diametroExterno, diametroInterno, coeficientePoisson, coeficienteExpansaoTermica, moduloElasticidade, pesoUnidade, densidade, viscosidade;
+
+            if (iss >> nomeTrecho >> profundInicial >> profundFinal >> diametroExterno >> diametroInterno >> coeficientePoisson >> coeficienteExpansaoTermica >> moduloElasticidade >> pesoUnidade >> nomeFluido >> densidade >> viscosidade ) {
+                auto fluido = std::make_unique<CFluido>(nomeFluido, densidade, viscosidade);
+                auto trechoPoco = std::make_unique<CTrechoPoco>(profundInicial, profundFinal, std::move(fluido), diametroExterno, diametroInterno, coeficientePoisson, coeficienteExpansaoTermica, moduloElasticidade, pesoUnidade);
+                if (!poco->AdicionarTrechoPoco(std::move(trechoPoco))) {
+                }
+            }
+        }
+    }
+
+    file.close();
+    on_btnAtualizarDados_clicked();
+    ui->statusbar->showMessage("Dados Importado com Sucesso!");
+}
+

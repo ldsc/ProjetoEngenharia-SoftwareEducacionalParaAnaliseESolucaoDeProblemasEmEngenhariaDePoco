@@ -1,0 +1,10 @@
+# Configuração do Poço------------------------------------------------------------------------------------
+# Nome                 Profundidade (ft)    Pressão Superficial (psi)    Temp. superficie, inicial (ºF)    Temp. Fundo, inicial (ºF)    Temp. superficie, Final (ºF)    Temp. Fundo, Final (ºF)    Profund. Packer (ft)
+7-TES-01-RJS           11483                2175                         8.66                              7.87                         7.09                            158                        -
+
+
+# Configuração dos Trechos--------------------------------------------------------------------------------
+# Nome Trecho   Prof. Inicial (ft)      Prof. Final (ft)    Diam. externo (in)    Diam. interno (in)     Coef. Poisson    Coef. Exp. Térm.(1/F)    Mód. Elast. (psi)   Peso/unid (lb/ft)    Nome fluido    Densidade (lbm/gal)     Viscosidade (cP)
+Fluido_B        8.76                    1.8                 0                     3281                   8.76             1.8                      0                   3281                 Fluido_B       8.76                    1.8
+Fluido_C        8.17                    2.1                 3281                  8202                   8.76             1.8                      0                   3281                 Fluido_B       8.76                    1.8
+Fluido_D        9.17                    1.3                 8202                  11483                  8.76             1.8                      0                   3281                 Fluido_B       8.76                    1.8

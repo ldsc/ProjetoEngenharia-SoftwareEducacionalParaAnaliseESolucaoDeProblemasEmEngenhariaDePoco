@@ -40,6 +40,8 @@ private slots:
 
     void on_btnCalcularVariacoes_clicked();
 
+    void on_actionArquivo_Dat_triggered();
+
 private:
     Ui::CSimuladorPerdaTubulacao *ui;
     std::shared_ptr<CPoco> poco = nullptr;
