@@ -68,7 +68,7 @@ public:
     QLineEdit *editTemperaturaFundoInicial;
     QPushButton *btnAtualizarDados;
     QGroupBox *groupBox_3;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *btnAdicionarTrecho;
     QPushButton *btnRemoverTrecho;
@@ -76,10 +76,6 @@ public:
     QTableWidget *tblFluidos;
     QTableWidget *tblTrechos;
     QLabel *label_6;
-    QGroupBox *groupBox_7;
-    QGroupBox *groupBox_8;
-    QGroupBox *groupBox_9;
-    QGroupBox *groupBox_10;
     QGroupBox *groupBox_4;
     QLabel *label_4;
     QTabWidget *tabWidget_5;
@@ -92,7 +88,7 @@ public:
     QCustomPlot *customPlotTemperaturaFinal;
     QLabel *label_8;
     QGroupBox *groupBox_6;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QFormLayout *formLayout;
     QLabel *lbnTituloProfundidadePacker_3;
     QLineEdit *editProfundidadeMedicao;
@@ -100,9 +96,9 @@ public:
     QLabel *lbnTituloNomePoco_2;
     QLabel *lbnPressaoHidroestatica;
     QLabel *lbnTituloNomePoco_3;
-    QLabel *lbnTituloNomePoco_13;
+    QLabel *lbnCargaInicial;
     QLabel *lbnTituloNomePoco_4;
-    QLabel *lbnTituloNomePoco_14;
+    QLabel *lbnTituloDeltaLTemperatura;
     QLabel *lbnTituloNomePoco_5;
     QLabel *lbnTituloNomePoco_15;
     QLabel *lbnTituloNomePoco_9;
@@ -308,18 +304,18 @@ public:
 "border: none;\n"
 "border-radius: 4px;\n"
 "}"));
-        widget = new QWidget(groupBox_3);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(11, 339, 1061, 41));
-        horizontalLayout_2 = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(groupBox_3);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(11, 339, 1061, 41));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        btnAdicionarTrecho = new QPushButton(widget);
+        btnAdicionarTrecho = new QPushButton(layoutWidget);
         btnAdicionarTrecho->setObjectName("btnAdicionarTrecho");
 
         horizontalLayout_2->addWidget(btnAdicionarTrecho);
 
-        btnRemoverTrecho = new QPushButton(widget);
+        btnRemoverTrecho = new QPushButton(layoutWidget);
         btnRemoverTrecho->setObjectName("btnRemoverTrecho");
 
         horizontalLayout_2->addWidget(btnRemoverTrecho);
@@ -385,48 +381,6 @@ public:
         label_6->setObjectName("label_6");
         label_6->setGeometry(QRect(10, 10, 211, 16));
         label_6->setFont(font);
-        groupBox_7 = new QGroupBox(groupBox_3);
-        groupBox_7->setObjectName("groupBox_7");
-        groupBox_7->setGeometry(QRect(10, 40, 571, 291));
-        groupBox_7->setStyleSheet(QString::fromUtf8("QGroupBox{\n"
-"background-color: rgb(250, 250, 250);\n"
-"border: none;\n"
-"border-radius: 4px;\n"
-"}"));
-        groupBox_8 = new QGroupBox(groupBox_3);
-        groupBox_8->setObjectName("groupBox_8");
-        groupBox_8->setGeometry(QRect(590, 40, 481, 291));
-        groupBox_8->setStyleSheet(QString::fromUtf8("QGroupBox{\n"
-"background-color: rgb(250, 250, 250);\n"
-"border: none;\n"
-"border-radius: 4px;\n"
-"}"));
-        groupBox_9 = new QGroupBox(groupBox_3);
-        groupBox_9->setObjectName("groupBox_9");
-        groupBox_9->setGeometry(QRect(10, 40, 571, 291));
-        groupBox_9->setStyleSheet(QString::fromUtf8("QGroupBox{\n"
-"background-color: rgb(250, 250, 250);\n"
-"border: none;\n"
-"border-radius: 4px;\n"
-"}"));
-        groupBox_9->setTitle(QString::fromUtf8(""));
-        groupBox_10 = new QGroupBox(groupBox_3);
-        groupBox_10->setObjectName("groupBox_10");
-        groupBox_10->setGeometry(QRect(610, 40, 461, 291));
-        groupBox_10->setStyleSheet(QString::fromUtf8("QGroupBox{\n"
-"background-color: rgb(250, 250, 250);\n"
-"border: none;\n"
-"border-radius: 4px;\n"
-"}"));
-        groupBox_10->setTitle(QString::fromUtf8(""));
-        groupBox_9->raise();
-        groupBox_10->raise();
-        groupBox_8->raise();
-        groupBox_7->raise();
-        widget->raise();
-        tblFluidos->raise();
-        tblTrechos->raise();
-        label_6->raise();
         groupBox_4 = new QGroupBox(centralwidget);
         groupBox_4->setObjectName("groupBox_4");
         groupBox_4->setGeometry(QRect(1100, 10, 391, 801));
@@ -503,20 +457,20 @@ public:
 "border-radius: 4px;\n"
 "}"));
         groupBox_6->setTitle(QString::fromUtf8(""));
-        widget1 = new QWidget(groupBox_6);
-        widget1->setObjectName("widget1");
-        widget1->setGeometry(QRect(10, 40, 341, 311));
-        formLayout = new QFormLayout(widget1);
+        layoutWidget1 = new QWidget(groupBox_6);
+        layoutWidget1->setObjectName("layoutWidget1");
+        layoutWidget1->setGeometry(QRect(10, 40, 341, 311));
+        formLayout = new QFormLayout(layoutWidget1);
         formLayout->setObjectName("formLayout");
         formLayout->setContentsMargins(0, 0, 0, 0);
-        lbnTituloProfundidadePacker_3 = new QLabel(widget1);
+        lbnTituloProfundidadePacker_3 = new QLabel(layoutWidget1);
         lbnTituloProfundidadePacker_3->setObjectName("lbnTituloProfundidadePacker_3");
         lbnTituloProfundidadePacker_3->setFont(font1);
         lbnTituloProfundidadePacker_3->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         formLayout->setWidget(0, QFormLayout::LabelRole, lbnTituloProfundidadePacker_3);
 
-        editProfundidadeMedicao = new QLineEdit(widget1);
+        editProfundidadeMedicao = new QLineEdit(layoutWidget1);
         editProfundidadeMedicao->setObjectName("editProfundidadeMedicao");
 
         formLayout->setWidget(0, QFormLayout::FieldRole, editProfundidadeMedicao);
@@ -525,140 +479,140 @@ public:
 
         formLayout->setItem(1, QFormLayout::SpanningRole, verticalSpacer_7);
 
-        lbnTituloNomePoco_2 = new QLabel(widget1);
+        lbnTituloNomePoco_2 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_2->setObjectName("lbnTituloNomePoco_2");
         lbnTituloNomePoco_2->setFont(font1);
         lbnTituloNomePoco_2->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         formLayout->setWidget(2, QFormLayout::LabelRole, lbnTituloNomePoco_2);
 
-        lbnPressaoHidroestatica = new QLabel(widget1);
+        lbnPressaoHidroestatica = new QLabel(layoutWidget1);
         lbnPressaoHidroestatica->setObjectName("lbnPressaoHidroestatica");
         lbnPressaoHidroestatica->setFont(font1);
         lbnPressaoHidroestatica->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         formLayout->setWidget(2, QFormLayout::FieldRole, lbnPressaoHidroestatica);
 
-        lbnTituloNomePoco_3 = new QLabel(widget1);
+        lbnTituloNomePoco_3 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_3->setObjectName("lbnTituloNomePoco_3");
         lbnTituloNomePoco_3->setFont(font1);
         lbnTituloNomePoco_3->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         formLayout->setWidget(3, QFormLayout::LabelRole, lbnTituloNomePoco_3);
 
-        lbnTituloNomePoco_13 = new QLabel(widget1);
-        lbnTituloNomePoco_13->setObjectName("lbnTituloNomePoco_13");
-        lbnTituloNomePoco_13->setFont(font1);
-        lbnTituloNomePoco_13->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        lbnCargaInicial = new QLabel(layoutWidget1);
+        lbnCargaInicial->setObjectName("lbnCargaInicial");
+        lbnCargaInicial->setFont(font1);
+        lbnCargaInicial->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        formLayout->setWidget(3, QFormLayout::FieldRole, lbnTituloNomePoco_13);
+        formLayout->setWidget(3, QFormLayout::FieldRole, lbnCargaInicial);
 
-        lbnTituloNomePoco_4 = new QLabel(widget1);
+        lbnTituloNomePoco_4 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_4->setObjectName("lbnTituloNomePoco_4");
         lbnTituloNomePoco_4->setFont(font1);
         lbnTituloNomePoco_4->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         formLayout->setWidget(4, QFormLayout::LabelRole, lbnTituloNomePoco_4);
 
-        lbnTituloNomePoco_14 = new QLabel(widget1);
-        lbnTituloNomePoco_14->setObjectName("lbnTituloNomePoco_14");
-        lbnTituloNomePoco_14->setFont(font1);
-        lbnTituloNomePoco_14->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        lbnTituloDeltaLTemperatura = new QLabel(layoutWidget1);
+        lbnTituloDeltaLTemperatura->setObjectName("lbnTituloDeltaLTemperatura");
+        lbnTituloDeltaLTemperatura->setFont(font1);
+        lbnTituloDeltaLTemperatura->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        formLayout->setWidget(4, QFormLayout::FieldRole, lbnTituloNomePoco_14);
+        formLayout->setWidget(4, QFormLayout::FieldRole, lbnTituloDeltaLTemperatura);
 
-        lbnTituloNomePoco_5 = new QLabel(widget1);
+        lbnTituloNomePoco_5 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_5->setObjectName("lbnTituloNomePoco_5");
         lbnTituloNomePoco_5->setFont(font1);
         lbnTituloNomePoco_5->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         formLayout->setWidget(5, QFormLayout::LabelRole, lbnTituloNomePoco_5);
 
-        lbnTituloNomePoco_15 = new QLabel(widget1);
+        lbnTituloNomePoco_15 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_15->setObjectName("lbnTituloNomePoco_15");
         lbnTituloNomePoco_15->setFont(font1);
         lbnTituloNomePoco_15->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         formLayout->setWidget(5, QFormLayout::FieldRole, lbnTituloNomePoco_15);
 
-        lbnTituloNomePoco_9 = new QLabel(widget1);
+        lbnTituloNomePoco_9 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_9->setObjectName("lbnTituloNomePoco_9");
         lbnTituloNomePoco_9->setFont(font1);
         lbnTituloNomePoco_9->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         formLayout->setWidget(6, QFormLayout::LabelRole, lbnTituloNomePoco_9);
 
-        lbnTituloNomePoco_16 = new QLabel(widget1);
+        lbnTituloNomePoco_16 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_16->setObjectName("lbnTituloNomePoco_16");
         lbnTituloNomePoco_16->setFont(font1);
         lbnTituloNomePoco_16->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         formLayout->setWidget(6, QFormLayout::FieldRole, lbnTituloNomePoco_16);
 
-        lbnTituloNomePoco_6 = new QLabel(widget1);
+        lbnTituloNomePoco_6 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_6->setObjectName("lbnTituloNomePoco_6");
         lbnTituloNomePoco_6->setFont(font1);
         lbnTituloNomePoco_6->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         formLayout->setWidget(7, QFormLayout::LabelRole, lbnTituloNomePoco_6);
 
-        lbnTituloNomePoco_17 = new QLabel(widget1);
+        lbnTituloNomePoco_17 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_17->setObjectName("lbnTituloNomePoco_17");
         lbnTituloNomePoco_17->setFont(font1);
         lbnTituloNomePoco_17->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         formLayout->setWidget(7, QFormLayout::FieldRole, lbnTituloNomePoco_17);
 
-        lbnTituloNomePoco_7 = new QLabel(widget1);
+        lbnTituloNomePoco_7 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_7->setObjectName("lbnTituloNomePoco_7");
         lbnTituloNomePoco_7->setFont(font1);
         lbnTituloNomePoco_7->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         formLayout->setWidget(8, QFormLayout::LabelRole, lbnTituloNomePoco_7);
 
-        lbnTituloNomePoco_18 = new QLabel(widget1);
+        lbnTituloNomePoco_18 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_18->setObjectName("lbnTituloNomePoco_18");
         lbnTituloNomePoco_18->setFont(font1);
         lbnTituloNomePoco_18->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         formLayout->setWidget(8, QFormLayout::FieldRole, lbnTituloNomePoco_18);
 
-        lbnTituloNomePoco_8 = new QLabel(widget1);
+        lbnTituloNomePoco_8 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_8->setObjectName("lbnTituloNomePoco_8");
         lbnTituloNomePoco_8->setFont(font1);
         lbnTituloNomePoco_8->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         formLayout->setWidget(9, QFormLayout::LabelRole, lbnTituloNomePoco_8);
 
-        lbnTituloNomePoco_19 = new QLabel(widget1);
+        lbnTituloNomePoco_19 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_19->setObjectName("lbnTituloNomePoco_19");
         lbnTituloNomePoco_19->setFont(font1);
         lbnTituloNomePoco_19->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         formLayout->setWidget(9, QFormLayout::FieldRole, lbnTituloNomePoco_19);
 
-        lbnTituloNomePoco_10 = new QLabel(widget1);
+        lbnTituloNomePoco_10 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_10->setObjectName("lbnTituloNomePoco_10");
         lbnTituloNomePoco_10->setFont(font1);
         lbnTituloNomePoco_10->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         formLayout->setWidget(10, QFormLayout::LabelRole, lbnTituloNomePoco_10);
 
-        lbnTituloNomePoco_20 = new QLabel(widget1);
+        lbnTituloNomePoco_20 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_20->setObjectName("lbnTituloNomePoco_20");
         lbnTituloNomePoco_20->setFont(font1);
         lbnTituloNomePoco_20->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         formLayout->setWidget(10, QFormLayout::FieldRole, lbnTituloNomePoco_20);
 
-        lbnTituloNomePoco_11 = new QLabel(widget1);
+        lbnTituloNomePoco_11 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_11->setObjectName("lbnTituloNomePoco_11");
         lbnTituloNomePoco_11->setFont(font1);
         lbnTituloNomePoco_11->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         formLayout->setWidget(11, QFormLayout::LabelRole, lbnTituloNomePoco_11);
 
-        lbnTituloNomePoco_21 = new QLabel(widget1);
+        lbnTituloNomePoco_21 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_21->setObjectName("lbnTituloNomePoco_21");
         lbnTituloNomePoco_21->setFont(font1);
         lbnTituloNomePoco_21->setAlignment(Qt::AlignmentFlag::AlignCenter);
@@ -667,12 +621,12 @@ public:
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
-        btnCalcularVariacoes = new QPushButton(widget1);
+        btnCalcularVariacoes = new QPushButton(layoutWidget1);
         btnCalcularVariacoes->setObjectName("btnCalcularVariacoes");
 
         horizontalLayout->addWidget(btnCalcularVariacoes);
 
-        btnAtualizarDados_3 = new QPushButton(widget1);
+        btnAtualizarDados_3 = new QPushButton(layoutWidget1);
         btnAtualizarDados_3->setObjectName("btnAtualizarDados_3");
 
         horizontalLayout->addWidget(btnAtualizarDados_3);
@@ -690,19 +644,7 @@ public:
         customPlotPoco->raise();
         groupBox->raise();
         tabWidget_5->raise();
-        lbnTituloNomePoco_2->raise();
-        lbnTituloNomePoco_3->raise();
-        lbnTituloNomePoco_4->raise();
-        lbnTituloNomePoco_5->raise();
-        lbnTituloNomePoco_6->raise();
-        lbnTituloNomePoco_7->raise();
-        lbnTituloNomePoco_8->raise();
-        lbnTituloNomePoco_9->raise();
-        lbnTituloNomePoco_10->raise();
-        lbnTituloNomePoco_11->raise();
         groupBox_6->raise();
-        btnAdicionarTrecho->raise();
-        btnRemoverTrecho->raise();
         menubar = new QMenuBar(CSimuladorPerdaTubulacao);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 1504, 22));
@@ -756,8 +698,8 @@ public:
         lbnTituloConfiguraoFinal->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Configura\303\247\303\243o Final", nullptr));
         btnAtualizarDados->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Atualizar Dados", nullptr));
         groupBox_3->setTitle(QString());
-        btnAdicionarTrecho->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Adicionar Trecho", nullptr));
-        btnRemoverTrecho->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Remover Trecho", nullptr));
+        btnAdicionarTrecho->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Adicionar Dados", nullptr));
+        btnRemoverTrecho->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Remover Dados", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tblFluidos->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Nome", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tblFluidos->horizontalHeaderItem(1);
@@ -783,8 +725,6 @@ public:
         QTableWidgetItem *___qtablewidgetitem11 = tblTrechos->horizontalHeaderItem(8);
         ___qtablewidgetitem11->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Peso/unid. (lb/ft)", nullptr));
         label_6->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Dados de Trecho e Fluido", nullptr));
-        groupBox_7->setTitle(QString());
-        groupBox_8->setTitle(QString());
         label_4->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Esquema do Po\303\247o", nullptr));
         label_3->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Profundidade x Temperatura", nullptr));
         tabWidget_5->setTabText(tabWidget_5->indexOf(tab_10), QCoreApplication::translate("CSimuladorPerdaTubulacao", "           Condi\303\247\303\265es Iniciais           ", nullptr));
@@ -794,9 +734,9 @@ public:
         lbnTituloNomePoco_2->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Press\303\243o inicial, psi:", nullptr));
         lbnPressaoHidroestatica->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "-", nullptr));
         lbnTituloNomePoco_3->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Carga (condi\303\247\303\243o inicial), lb:", nullptr));
-        lbnTituloNomePoco_13->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "-", nullptr));
+        lbnCargaInicial->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "-", nullptr));
         lbnTituloNomePoco_4->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "\316\224L (temperatura):", nullptr));
-        lbnTituloNomePoco_14->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "-", nullptr));
+        lbnTituloDeltaLTemperatura->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "-", nullptr));
         lbnTituloNomePoco_5->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "\316\224L (efeito bal\303\243o):", nullptr));
         lbnTituloNomePoco_15->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "-", nullptr));
         lbnTituloNomePoco_9->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Varia\303\247\303\243o da carga por pist\303\243o, lb", nullptr));

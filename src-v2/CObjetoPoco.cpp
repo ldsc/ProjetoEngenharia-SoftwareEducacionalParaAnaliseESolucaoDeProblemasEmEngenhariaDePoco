@@ -4,6 +4,7 @@
 #include <vector>
 #include <fstream>
 #include <cstdlib>
+#include <numbers>
 
 
 CPoco CPoco::CriarParaModulo01(std::string nome, double profund, double pressao,
@@ -155,4 +156,147 @@ std::pair<std::vector<double>, std::vector<double>> CPoco::PlotarProfundidadePor
 
 std::pair<std::vector<double>, std::vector<double>> CPoco::PlotarProfundidadePorPressao() {
 
+}
+
+/*
+double CargaInicial() const;
+double DeltaLTemperatura() const;
+double DeltaLEfeitoBalao() const;
+double VariacaoCargaEfeitoPistao() const;
+double DeltaLPistaoPacker() const;
+double DeltaLPistaoCrossover() const;
+double DeltaLForcaRestauradora() const;
+double CargaInjecao(bool colunaFixa) const; // ou com enum
+*/
+#include <QDebug>
+#include <QDebug>
+
+double CPoco::CargaInicial(double profundidade) const { // calculos errados
+    const double pi = 3.141592653589793;
+    double cargaTotal = 0.0;
+
+    // === 1. Pressão hidrostática interna no ponto ===
+    for (const auto& trecho : trechos) {
+        if (profundidade >= trecho->ProfundidadeInicial() &&
+            profundidade <= trecho->ProfundidadeFinal()) {
+
+            double di = trecho->DiametroInterno(); // polegadas
+            double As = pi / 4.0 * (di * di);       // área da seção interna (in²)
+
+            double rho = trecho->Fluido()->Densidade(); // lb/gal
+            double P = 0.052 * rho * profundidade;      // psi
+
+            double F = P * As; // lbf
+            cargaTotal += F;
+
+            qDebug() << "🔷 Pressão hidrostática interna:";
+            qDebug() << "  Profundidade       =" << profundidade << "ft";
+            qDebug() << "  Densidade (ρ)      =" << rho << "lb/gal";
+            qDebug() << "  Pressão (P)        =" << P << "psi";
+            qDebug() << "  Área seção (As)    =" << As << "in²";
+            qDebug() << "  Força P·As         =" << F << "lbf";
+            break;
+        }
+    }
+
+    // === 2. Efeitos pistão de todos os crossovers acima ===
+    for (size_t i = 1; i < trechos.size(); ++i) {
+        const auto& cima = trechos[i - 1];
+        const auto& baixo = trechos[i];
+
+        double zCross = baixo->ProfundidadeInicial();
+
+        if (zCross >= profundidade)
+            continue;
+
+        double rhoIn = cima->Fluido()->Densidade();
+        double rhoOut = baixo->Fluido()->Densidade();
+
+        double deltaPi = 0.052 * rhoIn * zCross;
+        double deltaPo = 0.052 * rhoOut * zCross;
+
+        double Ain = pi / 4.0 * (cima->DiametroInterno() * cima->DiametroInterno());
+        double Aout = pi / 4.0 * (baixo->DiametroExterno() * baixo->DiametroExterno());
+
+        double deltaF = deltaPi * Ain + deltaPo * Aout;
+        cargaTotal += deltaF;
+
+        qDebug() << "🔶 Efeito pistão no crossover em" << zCross << "ft:";
+        qDebug() << "  ΔPi (P interno)     =" << deltaPi << "psi";
+        qDebug() << "  ΔPo (P externo)     =" << deltaPo << "psi";
+        qDebug() << "  Ain (área interna)  =" << Ain << "in²";
+        qDebug() << "  Aout (área externa) =" << Aout << "in²";
+        qDebug() << "  ΔF (empuxo pistão)  =" << deltaF << "lbf";
+    }
+
+    // === 3. Peso da coluna acima da profundidade ===
+    for (const auto& trecho : trechos) {
+        double zi = trecho->ProfundidadeInicial();
+        double zf = trecho->ProfundidadeFinal();
+
+        if (zf <= profundidade)
+            continue;
+
+        double z1 = std::max(profundidade, zi);
+        double L = zf - z1;
+        if (L > 0.0) {
+            double pesoLinear = trecho->PesoUnidade(); // lb/ft
+            double pesoTotal = pesoLinear * L;
+            cargaTotal += pesoTotal;
+
+            qDebug() << "🔷 Peso da coluna (trecho de" << z1 << "a" << zf << "ft):";
+            qDebug() << "  Comprimento (L)     =" << L << "ft";
+            qDebug() << "  Peso específico      =" << pesoLinear << "lb/ft";
+            qDebug() << "  Força peso           =" << pesoTotal << "lbf";
+        }
+    }
+
+    qDebug() << "✅ Carga total em" << profundidade << "ft = " << cargaTotal << "lbf";
+    return cargaTotal;
+}
+
+double CPoco::DeltaLTemperaturaTotal() const {
+    double deltaLTotal = 0.0;
+    double Tref = TemperaturaTopoInicial(); // Temperatura inicial do poço (referência)
+
+    for (const auto& trecho : trechos) {
+        double z1 = trecho->ProfundidadeInicial();
+        double z2 = trecho->ProfundidadeFinal();
+        double L = z2 - z1;
+        if (L <= 0.0)
+            continue;
+
+        double alpha = trecho->CoeficienteExpancaoTermica();
+
+        double Tz1 = TemperaturaNoPonto(z1);
+        double Tz2 = TemperaturaNoPonto(z2);
+        double Tmed = (Tz1 + Tz2) / 2.0;
+        double deltaT = Tref - Tmed;
+
+        double deltaL = alpha * L * deltaT;
+        deltaLTotal += deltaL;
+
+        qDebug() << "Trecho:" << z1 << "→" << z2 << "ft";
+        qDebug() << "  L       =" << L << "ft";
+        qDebug() << "  α       =" << alpha;
+        qDebug() << "  T(z1)   =" << Tz1 << "°F";
+        qDebug() << "  T(z2)   =" << Tz2 << "°F";
+        qDebug() << "  ΔT      =" << deltaT << "°F";
+        qDebug() << "  ΔL      =" << deltaL << "ft";
+    }
+
+    qDebug() << "✅ ΔL térmico total da coluna = " << deltaLTotal << "ft";
+    return deltaLTotal;
+}
+
+
+double CPoco::TemperaturaNoPonto(double profundidade) const {
+    double Ttopo = TemperaturaTopoInicial();
+    double Tfundo = TemperaturaFundoInicial();
+    double H = ProfundidadeTotal();
+
+    if (H <= 0.0)
+        return Ttopo; // evita divisão por zero
+
+    return Ttopo + (Tfundo - Ttopo) * (profundidade / H);
 }

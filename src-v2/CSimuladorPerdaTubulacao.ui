@@ -333,7 +333,7 @@ border-radius: 4px;
     <property name="title">
      <string/>
     </property>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>11</x>
@@ -552,94 +552,6 @@ border-radius: 4px;
       <string>Dados de Trecho e Fluido</string>
      </property>
     </widget>
-    <widget class="QGroupBox" name="groupBox_7">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>40</y>
-       <width>571</width>
-       <height>291</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QGroupBox{
-background-color: rgb(250, 250, 250);
-border: none;
-border-radius: 4px;
-}</string>
-     </property>
-     <property name="title">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QGroupBox" name="groupBox_8">
-     <property name="geometry">
-      <rect>
-       <x>590</x>
-       <y>40</y>
-       <width>481</width>
-       <height>291</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QGroupBox{
-background-color: rgb(250, 250, 250);
-border: none;
-border-radius: 4px;
-}</string>
-     </property>
-     <property name="title">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QGroupBox" name="groupBox_9">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>40</y>
-       <width>571</width>
-       <height>291</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QGroupBox{
-background-color: rgb(250, 250, 250);
-border: none;
-border-radius: 4px;
-}</string>
-     </property>
-     <property name="title">
-      <string notr="true"/>
-     </property>
-    </widget>
-    <widget class="QGroupBox" name="groupBox_10">
-     <property name="geometry">
-      <rect>
-       <x>610</x>
-       <y>40</y>
-       <width>461</width>
-       <height>291</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QGroupBox{
-background-color: rgb(250, 250, 250);
-border: none;
-border-radius: 4px;
-}</string>
-     </property>
-     <property name="title">
-      <string notr="true"/>
-     </property>
-    </widget>
-    <zorder>groupBox_9</zorder>
-    <zorder>groupBox_10</zorder>
-    <zorder>groupBox_8</zorder>
-    <zorder>groupBox_7</zorder>
-    <zorder></zorder>
-    <zorder>tblFluidos</zorder>
-    <zorder>tblTrechos</zorder>
-    <zorder>label_6</zorder>
    </widget>
    <widget class="QGroupBox" name="groupBox_4">
     <property name="geometry">
@@ -844,7 +756,7 @@ border-radius: 4px;
     <property name="title">
      <string notr="true"/>
     </property>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -931,7 +843,7 @@ border-radius: 4px;
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="QLabel" name="lbnTituloNomePoco_13">
+       <widget class="QLabel" name="lbnCargaInicial">
         <property name="font">
          <font>
           <bold>false</bold>
@@ -961,7 +873,7 @@ border-radius: 4px;
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="QLabel" name="lbnTituloNomePoco_14">
+       <widget class="QLabel" name="lbnTituloDeltaLTemperatura">
         <property name="font">
          <font>
           <bold>false</bold>
@@ -1230,20 +1142,7 @@ border-radius: 4px;
    <zorder>customPlotPoco</zorder>
    <zorder>groupBox</zorder>
    <zorder>tabWidget_5</zorder>
-   <zorder>lbnTituloNomePoco_2</zorder>
-   <zorder>lbnTituloNomePoco_3</zorder>
-   <zorder>lbnTituloNomePoco_4</zorder>
-   <zorder>lbnTituloNomePoco_5</zorder>
-   <zorder>lbnTituloNomePoco_6</zorder>
-   <zorder>lbnTituloNomePoco_7</zorder>
-   <zorder>lbnTituloNomePoco_8</zorder>
-   <zorder>lbnTituloNomePoco_9</zorder>
-   <zorder>lbnTituloNomePoco_10</zorder>
-   <zorder>lbnTituloNomePoco_11</zorder>
    <zorder>groupBox_6</zorder>
-   <zorder>btnAdicionarTrecho</zorder>
-   <zorder>btnRemoverTrecho</zorder>
-   <zorder>horizontalSpacer_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

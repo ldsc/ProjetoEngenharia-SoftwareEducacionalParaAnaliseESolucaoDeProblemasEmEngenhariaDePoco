@@ -126,13 +126,48 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarFluido_clicked()
     */
 }
 
-
 void CSimuladorPerdaTubulacao::on_btnAtualizarDados_clicked()
 {
+
+    if (poco){
+        // Atualiza os valores dos QLineEdits com os dados do objeto poco
+        ui->editNomePoco->setText(QString::fromStdString(poco->NomePoco()));       // Profundidade total do poço
+        ui->editProfundidadeTotal->setText(QString::number(poco->ProfundidadeTotal()));       // Profundidade total do poço
+        ui->editPressaoSup->setText(QString::number(poco->PressaoSuperficie())); // Profundidade ocupada
+        ui->editTemperaturaSuperiorInicial->setText(QString::number(poco->TemperaturaTopoInicial()));              // Diâmetro do poço
+        ui->editTemperaturaFundoInicial->setText(QString::number(poco->TemperaturaFundoInicial()));      // Diâmetro externo do revestimento (OD)
+        ui->editTemperaturaSuperiorFinal->setText(QString::number(poco->TemperaturaTopoFinal()));      // Diâmetro interno do revestimento (ID)
+        ui->editTemperaturaFundoFinal->setText(QString::number(poco->TemperaturaFundoFinal()));                            // Vazão do fluido no poço
+
+        // Atualizar QTableWidget com os dados dos trechos
+        ui->tblTrechos->setRowCount(static_cast<int>(poco->Trechos().size()));
+        ui->tblFluidos->setRowCount(static_cast<int>(poco->Trechos().size()));
+        qDebug() << "Número de trechos:" << poco->Trechos().size();
+        int row = 0;
+        for (const auto& trecho : poco->Trechos()) {
+
+            //ui->tblTrechos->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(trecho->Fluido()->Nome())));
+            ui->tblTrechos->setItem(row, 0, new QTableWidgetItem(QString::fromStdString("teste")));
+            ui->tblTrechos->setItem(row, 1, new QTableWidgetItem(QString::number(trecho->ProfundidadeInicial(), 'f', 2)));
+            ui->tblTrechos->setItem(row, 2, new QTableWidgetItem(QString::number(trecho->ProfundidadeFinal(), 'f', 2)));
+            ui->tblTrechos->setItem(row, 3, new QTableWidgetItem(QString::number(trecho->DiametroExterno(), 'f', 2)));
+            ui->tblTrechos->setItem(row, 4, new QTableWidgetItem(QString::number(trecho->DiametroInterno(), 'f', 2)));
+            ui->tblTrechos->setItem(row, 5, new QTableWidgetItem(QString::number(trecho->CoeficientePoisson(), 'f', 3)));
+            ui->tblTrechos->setItem(row, 6, new QTableWidgetItem(QString::number(trecho->CoeficienteExpancaoTermica(), 'f', 7)));
+            ui->tblTrechos->setItem(row, 7, new QTableWidgetItem(QString::number(trecho->ModuloEslasticidade(), 'f', 7)));
+            ui->tblTrechos->setItem(row, 8, new QTableWidgetItem(QString::number(trecho->PesoUnidade(), 'f', 2)));
+
+            ui->tblFluidos->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(trecho->Fluido()->Nome())));
+            ui->tblFluidos->setItem(row, 1, new QTableWidgetItem(QString::number(trecho->Fluido()->Densidade(), 'f', 2)));
+            ui->tblFluidos->setItem(row, 2, new QTableWidgetItem(QString::number(trecho->Fluido()->Viscosidade(), 'f', 2)));
+
+            ++row;
+        }
+    }
+    makePlotTemperatura(poco->TemperaturaTopoInicial(), poco->TemperaturaFundoInicial(), poco->ProfundidadeTotal(), ui->customPlotTemperaturaInicial);
+    makePlotTemperatura(poco->TemperaturaTopoFinal(), poco->TemperaturaFundoFinal(), poco->ProfundidadeTotal(), ui->customPlotTemperaturaFinal);
     makePlotPoco();
-
 }
-
 
 void CSimuladorPerdaTubulacao::on_btnAdicionarTrecho_clicked()
 {
@@ -265,7 +300,6 @@ void CSimuladorPerdaTubulacao::makePlotTemperatura(double TempInicial, double Te
     plot->replot();
 }
 
-
 void CSimuladorPerdaTubulacao::on_btnRemoverFluido_clicked()
 {
     int linhaSelecionada = ui->tblFluidos->currentRow();
@@ -285,7 +319,6 @@ void CSimuladorPerdaTubulacao::on_btnRemoverFluido_clicked()
         QMessageBox::warning(this, "Erro", "Selecione uma linha para deletar.");
     }
 }
-
 
 void CSimuladorPerdaTubulacao::on_btnRemoverTrecho_clicked()
 {
@@ -309,18 +342,15 @@ void CSimuladorPerdaTubulacao::on_btnRemoverTrecho_clicked()
 
 void CSimuladorPerdaTubulacao::makePlotPoco()
 {
-    /*
     ui->customPlotPoco->clearItems();
-
-    ui->customPlotPoco->xAxis->setLabel("Diâmetro do Poço (in)");
-    ui->customPlotPoco->yAxis->setLabel("Profundidade (ft)");
-    ui->customPlotPoco->xAxis->setRange(-10, 10);
-    ui->customPlotPoco->yAxis->setRange(0, 300);
+    ui->customPlotPoco->xAxis->setLabel("Diâmetro (pol)");
+    ui->customPlotPoco->yAxis->setLabel("Profundidade (pol)");
     ui->customPlotPoco->yAxis->setRangeReversed(true);
 
     if (!poco || poco->Trechos().empty())
         return;
 
+    // 1. Profundidade máxima e maior diâmetro externo
     double profundidadeMaxima = 0.0;
     double maiorDiametroExterno = 0.0;
     for (const auto& trecho : poco->Trechos()) {
@@ -328,133 +358,59 @@ void CSimuladorPerdaTubulacao::makePlotPoco()
         maiorDiametroExterno = std::max(maiorDiametroExterno, trecho->DiametroExterno());
     }
 
-    double diametroBuraco = maiorDiametroExterno + 5;
+    // 2. Buraco = maior diâmetro externo + 3 polegadas
+    double diametroBuraco = maiorDiametroExterno + 3.0;
+
+    // 3. Ajuste visual no eixo X: 1.5 vezes o furo
+    double larguraGrafico = diametroBuraco * 1.5;
+    ui->customPlotPoco->xAxis->setRange(-larguraGrafico / 2.0, larguraGrafico / 2.0);
     ui->customPlotPoco->yAxis->setRange(0, profundidadeMaxima);
 
-    // Desenhar trechos
+    // 4. Cores dos fluidos
+    QMap<QString, QColor> mapaCores;
+    QVector<QColor> coresDisponiveis = {
+        QColor(173, 216, 230, 150), QColor(255, 0, 0, 150),
+        QColor(0, 255, 0, 150), QColor(0, 0, 255, 150),
+        QColor(255, 165, 0, 150), QColor(128, 0, 128, 150)
+    };
+    int corIndex = 0;
+
+    // 5. Desenho dos trechos
     for (const auto& trecho : poco->Trechos()) {
-        double z0 = trecho->ProfundidadeInicial();
-        double z1 = trecho->ProfundidadeFinal();
-        double d_ext = trecho->DiametroExterno();
-        double d_int = trecho->DiametroInterno();
-        QString nome = QString::fromStdString(trecho->Trecho());
+        double z1 = trecho->ProfundidadeInicial();
+        double z2 = trecho->ProfundidadeFinal();
+        double dExt = trecho->DiametroExterno();
+        QString nomeFluido = QString::fromStdString(trecho->Fluido()->Nome());
 
-        auto* fundo = new QCPItemRect(ui->customPlotPoco);
-        fundo->topLeft->setCoords(-diametroBuraco / 2, z0);
-        fundo->bottomRight->setCoords(diametroBuraco / 2, z1);
-        fundo->setPen(Qt::NoPen);
-        fundo->setBrush(QColor("#E6E6E6"));
-
-        auto* parede = new QCPItemRect(ui->customPlotPoco);
-        parede->topLeft->setCoords(-d_ext / 2, z0);
-        parede->bottomRight->setCoords(d_ext / 2, z1);
-        parede->setPen(QPen(Qt::black));
-        parede->setBrush(QColor("#999999"));
-
-        auto* fluido = new QCPItemRect(ui->customPlotPoco);
-        fluido->topLeft->setCoords(-d_int / 2, z0);
-        fluido->bottomRight->setCoords(d_int / 2, z1);
-        fluido->setPen(Qt::NoPen);
-        fluido->setBrush(QColor("#E6E6E6"));
-
-        auto* texto = new QCPItemText(ui->customPlotPoco);
-        texto->position->setCoords(0, (z0 + z1) / 2);
-        texto->setText(nome);
-        texto->setFont(QFont("Arial", 10, QFont::Bold));
-        texto->setColor(Qt::black);
-        texto->setPositionAlignment(Qt::AlignCenter);
-    }
-
-    // Determinar altura visual do crossover baseada na menor seção
-    double menorAltura = std::numeric_limits<double>::max();
-    for (const auto& trecho : poco->Trechos()) {
-        double altura = trecho->ProfundidadeFinal() - trecho->ProfundidadeInicial();
-        if (altura < menorAltura) menorAltura = altura;
-    }
-    double h = std::min(50.0, menorAltura * 0.2);  // até 50 ft ou 20% da menor seção
-
-    // Desenhar crossovers com QCPItemLine (versão compatível com QCustomPlot 1.x)
-    for (size_t i = 0; i + 1 < poco->Trechos().size(); ++i) {
-        auto& t1 = poco->Trechos()[i];
-        auto& t2 = poco->Trechos()[i + 1];
-
-        double z = t1->ProfundidadeFinal();
-        double d1 = t1->DiametroExterno();
-        double d2 = t2->DiametroExterno();
-
-        if (d1 == d2) continue;
-
-        // Lado esquerdo
-        auto* l1 = new QCPItemLine(ui->customPlotPoco);
-        l1->start->setCoords(-d1 / 2, z);
-        l1->end->setCoords(-d2 / 2, z + h);
-        l1->setPen(QPen(Qt::black));
-
-        auto* l2 = new QCPItemLine(ui->customPlotPoco);
-        l2->start->setCoords(-d2 / 2, z + h);
-        l2->end->setCoords(-d1 / 2, z);
-        l2->setPen(QPen(Qt::black));
-
-        // Lado direito
-        auto* r1 = new QCPItemLine(ui->customPlotPoco);
-        r1->start->setCoords(d1 / 2, z);
-        r1->end->setCoords(d2 / 2, z + h);
-        r1->setPen(QPen(Qt::black));
-
-        auto* r2 = new QCPItemLine(ui->customPlotPoco);
-        r2->start->setCoords(d2 / 2, z + h);
-        r2->end->setCoords(d1 / 2, z);
-        r2->setPen(QPen(Qt::black));
-    }
-
-    // Desenhar packer se habilitado
-    if (ui->checkBoxPacker->isChecked()) {
-        double prof = ui->editProfundidadePacker->text().toDouble();
-        double altura = 0.5;
-        double d_poco = maiorDiametroExterno;
-
-        for (const auto& trecho : poco->Trechos()) {
-            if (trecho->ProfundidadeInicial() <= prof && prof <= trecho->ProfundidadeFinal()) {
-                d_poco = trecho->DiametroExterno();
-                break;
-            }
+        if (!mapaCores.contains(nomeFluido)) {
+            mapaCores[nomeFluido] = coresDisponiveis[corIndex++ % coresDisponiveis.size()];
         }
+        QColor corFluido = mapaCores[nomeFluido];
 
-        auto* retEsq = new QCPItemRect(ui->customPlotPoco);
-        retEsq->topLeft->setCoords(-diametroBuraco / 2, prof - altura / 2);
-        retEsq->bottomRight->setCoords(-d_poco / 2, prof + altura / 2);
-        retEsq->setPen(QPen(Qt::black));
-        retEsq->setBrush(Qt::white);
+        // === Retângulo cinza (buraco do poço) ===
+        QCPItemRect *rectBuraco = new QCPItemRect(ui->customPlotPoco);
+        rectBuraco->topLeft->setCoords(-diametroBuraco / 2.0, z1);
+        rectBuraco->bottomRight->setCoords(diametroBuraco / 2.0, z2);
+        rectBuraco->setPen(QPen(Qt::black));
+        rectBuraco->setBrush(QBrush(QColor(150, 150, 150, 100)));
 
-        auto* x1 = new QCPItemLine(ui->customPlotPoco);
-        x1->start->setCoords(-diametroBuraco / 2, prof - altura / 2);
-        x1->end->setCoords(-d_poco / 2, prof + altura / 2);
-        x1->setPen(QPen(Qt::black));
+        // === Retângulo da seção (fluido) ===
+        QCPItemRect *rectSecao = new QCPItemRect(ui->customPlotPoco);
+        rectSecao->topLeft->setCoords(-dExt / 2.0, z1);
+        rectSecao->bottomRight->setCoords(dExt / 2.0, z2);
+        rectSecao->setPen(QPen(Qt::black));
+        rectSecao->setBrush(QBrush(corFluido));
 
-        auto* x2 = new QCPItemLine(ui->customPlotPoco);
-        x2->start->setCoords(-d_poco / 2, prof - altura / 2);
-        x2->end->setCoords(-diametroBuraco / 2, prof + altura / 2);
-        x2->setPen(QPen(Qt::black));
-
-        auto* retDir = new QCPItemRect(ui->customPlotPoco);
-        retDir->topLeft->setCoords(d_poco / 2, prof - altura / 2);
-        retDir->bottomRight->setCoords(diametroBuraco / 2, prof + altura / 2);
-        retDir->setPen(QPen(Qt::black));
-        retDir->setBrush(Qt::white);
-
-        auto* x3 = new QCPItemLine(ui->customPlotPoco);
-        x3->start->setCoords(d_poco / 2, prof - altura / 2);
-        x3->end->setCoords(diametroBuraco / 2, prof + altura / 2);
-        x3->setPen(QPen(Qt::black));
-
-        auto* x4 = new QCPItemLine(ui->customPlotPoco);
-        x4->start->setCoords(diametroBuraco / 2, prof - altura / 2);
-        x4->end->setCoords(d_poco / 2, prof + altura / 2);
-        x4->setPen(QPen(Qt::black));
+        // === Rótulo ===
+        QCPItemText *label = new QCPItemText(ui->customPlotPoco);
+        label->position->setCoords(0, (z1 + z2) / 2.0);
+        label->setText(nomeFluido);
+        label->setFont(QFont("Arial", 10, QFont::Bold));
+        label->setColor(Qt::black);
+        label->setPositionAlignment(Qt::AlignCenter);
     }
 
     ui->customPlotPoco->replot();
-    */
 }
 
 void CSimuladorPerdaTubulacao::on_btnCalcularVariacoes_clicked()
@@ -462,65 +418,99 @@ void CSimuladorPerdaTubulacao::on_btnCalcularVariacoes_clicked()
     QString profundidadeStr = ui->editProfundidadeMedicao->text();
     double profundidade = profundidadeStr.toDouble();
 
-    ui->lbnPressaoHidroestatica->setText(QString::number(poco->PressaoHidroestaticaNoPonto(profundidade)));
-}
+    ui->lbnPressaoHidroestatica->setText(QString::number( (poco->PressaoHidroestaticaNoPonto(profundidade)) ));
+    ui->lbnCargaInicial->setText(QString::number(poco->CargaInicial(profundidade)));
+    ui->lbnTituloDeltaLTemperatura->setText(QString::number(poco->DeltaLTemperaturaTotal()));
 
+}
 
 void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
 {
     QString caminhoDoArquivo = QFileDialog::getOpenFileName(
-        this, // Passa a janela principal como pai
+        this,
         "Selecione um arquivo",
         "",
         "Todos os arquivos (*.*)"
         );
 
-    // Converte o QString para std::string corretamente
     std::string caminhoDoArquivoStr = caminhoDoArquivo.toStdString();
-
     std::ifstream file(caminhoDoArquivoStr);
 
+    if (!file.is_open()) {
+        ui->statusbar->showMessage("Falha ao abrir o arquivo!");
+        return;
+    }
+
     std::string linha;
-    bool lendoFluidos = false; // Começa lendo dados do poço
+    bool lendoTrechos = false;
 
     while (std::getline(file, linha)) {
-        // Ignorar linhas vazias ou comentários
-        if (linha.empty() || linha[0] == '#') {
-            if (linha.find("Fluidos") != std::string::npos) {
-                lendoFluidos = true; // Mudar para leitura de fluidos
-            }
+        if (linha.find("Configuração dos Trechos") != std::string::npos) {
+            lendoTrechos = true;
             continue;
         }
 
-        if (!lendoFluidos) {
-            // Ler os dados do poço
+        if (linha.empty() || linha[0] == '#') {
+            continue;
+        }
+
+        if (!lendoTrechos) {
+            // Leitura dos dados do poço
             std::istringstream iss(linha);
             std::string nome;
-            double profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, ProfundidadePacker;
+            double profundidade, pressaoSup;
+            double temperaturaSuperiorInicial, temperaturaFundoInicial;
+            double temperaturaSuperiorFinal, temperaturaFundoFinal;
+            double profundidadePacker;
 
-            if (iss >> nome >> profundidade >> pressaoSup >> temperaturaSuperiorInicial >> temperaturaFundoInicial >> temperaturaSuperiorFinal >> temperaturaFundoFinal) {
-
+            if (iss >> nome >> profundidade >> pressaoSup
+                >> temperaturaSuperiorInicial >> temperaturaFundoInicial
+                >> temperaturaSuperiorFinal >> temperaturaFundoFinal >> profundidadePacker) {
                 poco = std::make_unique<CPoco>(
-                    CPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal)
+                    CPoco::CriarParaModulo02(nome, profundidade, pressaoSup,
+                                             temperaturaSuperiorInicial, temperaturaFundoInicial,
+                                             temperaturaSuperiorFinal, temperaturaFundoFinal)
                     );
+            } else {
+                std::cerr << "Erro ao ler linha de poço: " << linha << std::endl;
             }
         } else {
-            // Ler os dados dos trechos
+            // Leitura dos dados dos trechos
             std::istringstream iss(linha);
             std::string nomeTrecho, nomeFluido;
-            double profundInicial, profundFinal,diametroExterno, diametroInterno, coeficientePoisson, coeficienteExpansaoTermica, moduloElasticidade, pesoUnidade, densidade, viscosidade;
+            double profundInicial, profundFinal;
+            double diametroExterno, diametroInterno;
+            double coeficientePoisson, coeficienteExpansaoTermica;
+            double moduloElasticidade, pesoUnidade;
+            double densidade, viscosidade;
 
-            if (iss >> nomeTrecho >> profundInicial >> profundFinal >> diametroExterno >> diametroInterno >> coeficientePoisson >> coeficienteExpansaoTermica >> moduloElasticidade >> pesoUnidade >> nomeFluido >> densidade >> viscosidade ) {
+            if (iss >> nomeTrecho >> profundInicial >> profundFinal
+                >> diametroExterno >> diametroInterno
+                >> coeficientePoisson >> coeficienteExpansaoTermica
+                >> moduloElasticidade >> pesoUnidade
+                >> nomeFluido >> densidade >> viscosidade) {
+
                 auto fluido = std::make_unique<CFluido>(nomeFluido, densidade, viscosidade);
-                auto trechoPoco = std::make_unique<CTrechoPoco>(profundInicial, profundFinal, std::move(fluido), diametroExterno, diametroInterno, coeficientePoisson, coeficienteExpansaoTermica, moduloElasticidade, pesoUnidade);
+                auto trechoPoco = std::make_unique<CTrechoPoco>(
+                    profundInicial, profundFinal, std::move(fluido),
+                    diametroExterno, diametroInterno,
+                    coeficientePoisson, moduloElasticidade,
+                    pesoUnidade, coeficienteExpansaoTermica
+                    );
+
                 if (!poco->AdicionarTrechoPoco(std::move(trechoPoco))) {
+                    std::cerr << "Falha ao adicionar trecho ao poço.\n";
                 }
+
+            } else {
+                std::cerr << "Erro ao ler trecho: " << linha << std::endl;
             }
         }
     }
 
     file.close();
     on_btnAtualizarDados_clicked();
-    ui->statusbar->showMessage("Dados Importado com Sucesso!");
+    ui->statusbar->showMessage("Dados importados com sucesso!");
+
 }
 

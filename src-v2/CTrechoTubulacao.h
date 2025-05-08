@@ -33,6 +33,12 @@ public:
     double ProfundidadeFinal() const { return profundidadeFinal; }
     double DiametroExterno() const { return diametroExterno; }
     double DiametroInterno() const { return diametroInterno; }
+
+    double CoeficientePoisson() const { return coeficientePoisson; }
+    double ModuloEslasticidade() const { return moduloEslasticidade; }
+    double PesoUnidade() const { return pesoUnidade; }
+    double CoeficienteExpancaoTermica() const { return coeficienteExpancaoTermica; }
+
     CFluido* Fluido() const { return fluido.get(); }
 
     // Setters

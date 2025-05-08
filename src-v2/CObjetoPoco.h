@@ -49,6 +49,13 @@ public:
     double DiametroRevestimentoOD() const { return diametroRevestimentoOD; }
     double DiametroRevestimentoID() const { return diametroRevestimentoID; }
     double Vazao() const { return vazao; }
+
+    double TemperaturaTopoInicial() const { return temperaturaTopoInicial; }
+    double TemperaturaFundoInicial() const { return temperaturaFundoInicial; }
+    double TemperaturaTopoFinal() const { return temperaturaTopoFinal; }
+    double TemperaturaFundoFinal() const { return temperaturaFundoFinal; }
+    double ProfundidadePacker() const { return profundidadePacker; }
+
     std::vector<CTrechoPoco*> Trechos() const;
     
     // Setters
@@ -61,6 +68,11 @@ public:
     void DiametroRevestimentoID( double ID ) { diametroRevestimentoID = ID; }
     void Vazao( double q ) { vazao = q; }
 
+    void TemperaturaFundoInicial(double temperatura) { temperaturaFundoInicial = temperatura; }
+    void TemperaturaTopoFinal(double temperatura) { temperaturaTopoFinal = temperatura; }
+    void TemperaturaFundoFinal(double temperatura) { temperaturaFundoFinal = temperatura; }
+    void ProfundidadePacker(double profundidade) { profundidadePacker = profundidade; }
+
     // Metodos
     bool AdicionarTrechoPoco(std::unique_ptr<CTrechoPoco> TrechoPoco);
     double PressaoHidroestaticaTotal() const;
@@ -71,6 +83,17 @@ public:
     std::pair<std::vector<double>, std::vector<double>> PlotarProfundidadePorPressao();
     std::pair<std::vector<double>, std::vector<double>> PlotarProfundidadePorPressaoMedia();
     void RemoverTrechoPoco(const std::string& nomeFluido);
+
+    double CargaInicial(double profundidade) const;
+    double DeltaLTemperaturaTotal() const;
+    double DeltaLEfeitoBalao(double profundidade) const;
+    double VariacaoCargaEfeitoPistao(double profundidade) const;
+    double DeltaLPistaoPacker(double profundidade) const;
+    double DeltaLPistaoCrossover(double profundidade) const;
+    double DeltaLForcaRestauradora(double profundidade) const;
+    double CargaInjecao(double profundidade, bool colunaFixa) const;
+
+    double TemperaturaNoPonto(double profundidade) const;
 
 };
 
