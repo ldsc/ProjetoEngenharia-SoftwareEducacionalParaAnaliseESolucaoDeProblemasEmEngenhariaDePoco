@@ -128,7 +128,6 @@ ComprimentoTrecho ;
 *** TODO Fazer diagramas associados
 *** TODO Fazer a interface no QTCreator
 *** TODO Testar a usabilidade e fazer ajustes necessários
-
 ** Exemplo de sala de aula 1
 *** TODO Exemplo 1: Título
 *** TODO Exemplo 1: Modelagem
@@ -248,6 +247,40 @@ ComprimentoTrecho ;
 **** TODO  Retorno do Aluno 2
 **** TODO  Retorno do Aluno 3
 **** TODO  Avaliar e fazer as correções solicitadas
+** Ajustes finais na compilação
+*** Testar com flag c++20 c++-23.
+*** Atualizar o compilador, tente baixar o gcc5 (mais fácil é testar no fedora 42 que já vem com tudo atualizado).
+*** Podemos marcar um dia, você vem no lenep e faz esta verificação no meu laptop que já tem o fedora 42.
+*** Se tiver colega que usa Mac, considere testar nele.
+*** No TCC vai colocar imagens de testes em diferentes sistemas operacionais (captura a tela toda).
+*** Normalmente temos no diretório inicial um arquivo install, com instruções de instalação nas diferentes plataformas. É a mesma informação que tem no manual do desenvolvedor, mas no formato txt.
+** Ajustes finais na interface
+*** Salvar - salva com mesmo nome.
+*** Salvar como - permite alterar o nome.
+*** Verificar porque alterou o valor e o gráfico não atualizou.
+*** No poço 2 você define uma profundidade e são feitos cálculos, poderia incluir na imagem a direita uma linha pontilhada (ou seta) indicando a posição de cálculo.
+*** Sobre
+**** Sobre o software:
+***** Didático poço código disciplina e nome disciplina e professor...
+**** Sobre o LDSC:
+***** LDSC - Laboratório Desenvolvimento Software Científico e Aplicado
+***** github : https://github.com/ldsc/
+***** Link para o repositório do projeto: https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco
+**** Sobre equipe desenvolvimento:
+***** (seus dados e meus; links para: email, linkedin, conta git).
+****** Bueno
+******* E-mail: bueno@lenep.uenf.br andreduartebueno@gmail.com
+******* Site: https://sites.google.com/view/professorandreduartebueno/
+******* Git: https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fldsc&sa=D&sntz=1&usg=AOvVaw2NTgB80yPKPsaTK1CXiyTk
+******* Linkedin: https://www.google.com/url?q=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fandre-duarte-bueno-a685b134%2F&sa=D&sntz=1&usg=AOvVaw0w1_xeGmBSr_xTLOWkxIko
+**** Sobre plataforma:
+***** link biblitoeca Qt,
+***** link software Qt creator
+***** link cppreference. https://en.cppreference.com/w/
+***** link isocpp. https://isocpp.org/
+
+** Ajustes finais nos testes
+** Conferir se os testes poço 1 e poço 2 estão funcionando.
 
 ** Manual Técnico (do software educacional desenvolvido)
 *** Contém a ementa da disciplina.
@@ -255,7 +288,6 @@ ComprimentoTrecho ;
 *** Pode ter como base o capítulo de elaboração (que já esta pronto) ou ser material de aula do professor, desde que tenha todas as informações teóricas necessárias para rodar o programa. Ou seja, deve ter INFORMAÇÕES TÉCNICAS DE ENGENHARIA DE POÇO. O Bruno deve ter material da disciplina, podemos ver se ele adiciona no material dele estes 5 exemplos (mostrando a interface desenvolvida), daí o material de aula dele seria o manual técnico.
 *** Neste manual logo após a teoria você inclui o exemplo de uso (copia os exemplos de uso).
 *** Próxima reunião conversamos sobre este manual, é basicamente uma cópia do que já vai fazer mas em outro formato, logo após a teoria o exemplo aplicado.
-
 
 ** Manual do Usuário
 *** TODO Contém todas as instruções para baixar e usar o programa (Windows e Linux - arquivos executáveis e de entrada).
@@ -282,4 +314,36 @@ ComprimentoTrecho ;
 **** PS: uso o editor emacs, consigo exportar este arquivo para latex. Sendo fácil importar no lyx.
 **** Note que neste manual colocamos problemas resolvidos, problemas não resolvidos (pendências) e sugestões para trabalhos futuros. É um manual para os engenheiros. Falamos de acertos e erros, de tarefas. 
 **** O manual do usuário é um manual de venda do produto, mostra o que dá certo, fala de limites operacionais, pode citar algum bug, mas não entra nos detalhes internos como fazemos aqui.
+** No TCC coloque seção Sugestões para Trabalhos Futuros
+*** Possibilidade trabalhar com dois fluidos na mesma seção.
+*** Possibilidade trabalhar com n fluidos na mesma seção.
+*** Sugestões de melhoria em geral.
+** Apresentação do TCC
+*** Use o modelo do lyx.
+*** Basicamente você cria uma cópia do diretório que gera o pdf do seu TCC.
+*** Muda o formato do pwf para WIDE.
+*** Aumenta o tamanho da fonte para 17.
+*** Gera o pdf. Vai ficar gigante.
+*** Daí é só ir apagando quase todo, deixa apenas os pontos fundamentais para a apresentação.
+*** Enfase é o objetivo do projeto
+**** O foco é o objetivo, um simulador educativo para disciplina de Poço
+**** Didático
+*** Metodologia
+**** TODO Para fazer o tcc usou:
+****  a ajuda disponibilizada https://github.com/ldsc/LDSC-Ajuda-DocumentosAuxiliares
+****  a metodologia apresentada na disciplina "Introdução ao Projeto de Engenharia" [coloque os links, o lyx adiciona a ligação no pdf]
+***** https://sites.google.com/view/professorandreduartebueno/ensino/introdu%C3%A7%C3%A3o-ao-projeto-de-engenharia
+***** https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas
+***** Pode baixar este github e aproveitar alguma parte se achar
+**** o modelo de projeto disponibilizado no github
+***** https://github.com/ldsc/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto
+**** os conhecimentos e habilidades aprendidos na disciplina de
+***** Programação Orientada a Objeto com C++ (2024)
+***** https://sites.google.com/view/professorandreduartebueno/ensino/prog-orientada-objeto-c-2024
 
+*** Desenvolvimento
+**** Metodologia ágil.
+**** Ferramentas modernas:
+**** C++ 23
+**** Qt
+**** Git
