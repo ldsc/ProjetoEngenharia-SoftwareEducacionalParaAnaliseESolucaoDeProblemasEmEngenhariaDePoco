@@ -1461,13 +1461,12 @@ Resumo
 \end_layout
 
 \begin_layout Standard
-O presente trabalho descreve o desenvolvimento de um software educacional voltado para alunos de Engenharia de Petróleo e áreas afins,
- com ênfase no estudo e na aplicação dos principais conceitos da disciplina de Engenharia de Poços.
- O software reúne ferramentas de visualização,
+O presente trabalho consiste no desenvolvimento de um software educacional voltado para alunos de Engenharia de Petróleo e as demais áreas correlatas,
+ com foco no estudo e aplicação de conceitos da Engenharia de Poços.
+ O software integra ferramentas para visualização,
  análise,
- simulação e cálculo,
- abordando os principais tópicos da ementa da disciplina LEP01353,
- ministrada no Laboratório de Engenharia e Exploração de Petróleo (LENEP/UENF) desde o período letivo 2024/01.
+ simulação e cálculos,
+ reunindo os principais tópicos da ementa da disciplina de Engenharia de Poço (LEP01353) aprovada e ministrada desde 2024/01 no Laboratório de Engenharia e Exploração de Petróleo na UENF.
 \begin_inset VSpace 0.5cm
 \end_inset
 
@@ -1475,12 +1474,10 @@ O presente trabalho descreve o desenvolvimento de um software educacional voltad
 \end_layout
 
 \begin_layout Standard
-Com uma interface intuitiva,
- o sistema visa facilitar o aprendizado e o aprofundamento dos usuários,
+O projeto traz uma experiência intuitiva,
+ facilitando o aprendizado e aprofundamento dos usuários,
  podendo ser utilizado tanto por estudantes da disciplina quanto por outros interessados,
- independentemente de sua vinculação institucional.
- Sua proposta é contribuir com o ensino de Engenharia de Poços em contextos didáticos diversos,
- reforçando o caráter educacional do projeto.
+ independentemente de estarem na UENF/LENEP ou em outras instituições
 \begin_inset VSpace 0.5cm
 \end_inset
 
@@ -1488,12 +1485,17 @@ Com uma interface intuitiva,
 \end_layout
 
 \begin_layout Standard
-Este documento apresenta a estruturação e o desenvolvimento do projeto,
- destacando as metodologias utilizadas para garantir sua funcionalidade e relevância no processo de ensino-aprendizagem.
- O desenvolvimento foi conduzido com base em metodologias ágeis e no uso de controle de versões via Git/GitHub,
- práticas amplamente adotadas no mercado de trabalho.
- O software estará disponível publicamente por meio de repositório específico,
- conforme o link abaixo:
+É importante ressaltar que o software tem um cunho educacional,
+ com o objetivo de auxiliar o ensino de Engenharia de Poços em diversas situações didáticas aplicadas à Engenharia de Petróleo.
+\end_layout
+
+\begin_layout Standard
+Este documento tem como foco apresentar a estrutura e o desenvolvimento do projeto,
+ abordando as metodologias utilizadas para garantir sua funcionalidade e aplicabilidade no ensino de Engenharia de Poços.
+ Nele,
+ são documentadas a estrutura e a sequência de um projeto de engenharia desenvolvido com metodologias ágeis e com o uso de sistema de controle de versões (Git/GitHub),
+ práticas comuns no mercado de trabalho.
+ O software pode ser obtido no seguinte endereço:
 \end_layout
 
 \begin_layout Standard
