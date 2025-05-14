@@ -167,11 +167,11 @@ thechapter - Projeto}
 
 \begin_layout Standard
 Neste capítulo,
- são abordados aspectos relacionados à elaboração do projeto,
- incluindo o ambiente de desenvolvimento e as bibliotecas gráficas,
- discutidos em conjunto com a progressão das versões.
- Ademais,
- são exibidos os diagramas de componentes e de implantação.
+ são apresentados os principais aspectos relacionados à implementação do projeto,
+ incluindo a descrição do ambiente de desenvolvimento,
+ as bibliotecas gráficas utilizadas e a evolução das versões do sistema ao longo do processo.
+ Também são incluídos os diagramas de componentes e de implantação,
+ que auxiliam na visualização da estrutura física e lógica da aplicação.
 \end_layout
 
 \begin_layout Section
@@ -198,50 +198,53 @@ name "sec:Projeto-do-sistema"
 \end_layout
 
 \begin_layout Standard
-O paradigma de programação selecionado foi o orientado a objeto.
- A linguagem de programação selecionada foi C++ pelos seguintes motivos:
+O projeto foi desenvolvido com base no paradigma da programação orientada a objetos,
+ o qual possibilita maior modularidade,
+ reutilização de código e organização lógica das funcionalidades.
+\end_layout
+
+\begin_layout Standard
+A linguagem escolhida foi o C++,
+ em virtude de suas características que a tornam especialmente adequada para o desenvolvimento de aplicações técnicas e científicas.
+ Os principais fatores que motivaram essa escolha incluem:
 \end_layout
 
 \begin_layout Itemize
-Linguagem de programação de alto desempenho,
- adequada para cálculos numéricos intensivos.
+Capacidade de alto desempenho,
+ adequada à realização de cálculos numéricos intensivos;
 \end_layout
 
 \begin_layout Itemize
-Amplo suporte a orientação a objeto e diversos vínculos com UML.
+Suporte robusto ao paradigma orientado a objetos,
+ com ampla compatibilidade com ferramentas baseadas em UML;
 \end_layout
 
 \begin_layout Itemize
-Dezenas de bibliotecas de suporte prontas,
- gráficos (biblioteca 
-\shape italic
-Gnuplot
-\shape default
-) e bibliotecas para gerar saídas em arquivo .dat.
+Disponibilidade de bibliotecas consolidadas para gráficos (como a Gnuplot) e geração de arquivos de saída no formato .dat;
 \end_layout
 
 \begin_layout Itemize
-Programação de alto nível com vários graus de abstração.
+Permite diferentes níveis de abstração,
+ viabilizando tanto programação de baixo nível quanto de alto nível;
 \end_layout
 
 \begin_layout Itemize
-Diversos ambientes de desenvolvimento - IDEs,
+Compatibilidade com diversos ambientes de desenvolvimento (
+\emph on
+IDEs
+\emph default
+),
  compiladores,
- 
-\shape italic
-debugers
-\shape default
-,
- 
-\shape italic
-profillers
-\shape default
-.
+ depuradores e analisadores de desempenho (
+\emph on
+profilers
+\emph default
+);
 \end_layout
 
 \begin_layout Itemize
-Compiladores e ferramentas gratuitas disponíveis,
- facilitando o uso por alunos.
+Acesso gratuito a compiladores e ferramentas,
+ o que facilita a adoção da linguagem por estudantes e instituições de ensino.
 \end_layout
 
 \begin_layout Section
@@ -261,7 +264,9 @@ Diagrama de componentes
 \end_layout
 
 \begin_layout Standard
-O diagrama de componentes mostra as relações entre todos os componentes do software e é apresentado na Figura 
+O diagrama de componentes tem como objetivo representar a organização modular do sistema,
+ evidenciando as dependências e relações entre os principais componentes de software.
+ Esse diagrama é apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Diagrama-de-componentes"
@@ -272,7 +277,11 @@ nolink "false"
 
 \end_inset
 
+,
+ onde é possível visualizar a estrutura lógica da aplicação e como seus módulos interagem entre si.
+\end_layout
 
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document

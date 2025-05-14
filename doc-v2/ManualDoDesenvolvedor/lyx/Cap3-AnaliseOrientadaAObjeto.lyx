@@ -165,16 +165,16 @@ name "sec:AOO"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo são apresentadas as classes desenvolvidas no projeto,
- suas relações,
+Neste capítulo apresentam-se as classes desenvolvidas no projeto,
+ suas respectivas relações,
  atributos e métodos.
- Ainda teremos um breve conceito de cada classe.
- Todos os diagramas respeitam a estrutura UML (Linguagem de Modelagem Unificada) para auxiliar na padronização e compreensão.
- Ainda veremos,
- além do diagrama de classes,
- os diagramas de sequência,
+ Apresenta-se também um breve conceito de cada classe.
+ Todos os diagramas foram elaborados seguindo a estrutura da UML (Linguagem de Modelagem Unificada),
+ com o objetivo de padronizar e facilitar a compreensão do sistema.
+ Além do diagrama de classes,
+ são incluídos os diagramas de sequência,
  de comunicação,
- de máquina de estado e de atividades
+ de máquina de estado e de atividades 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bueno2003"
@@ -206,6 +206,24 @@ nolink "false"
 \end_inset
 
 .
+ Seu objetivo é representar graficamente a estrutura estática do sistema,
+ evidenciando todas as classes envolvidas,
+ seus respectivos atributos,
+ métodos,
+ relações de herança e associações entre as classes.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+Essa representação segue a notação da UML (Linguagem de Modelagem Unificada) e serve como base para o entendimento da arquitetura do software,
+ permitindo uma visão clara da organização interna dos componentes e de suas interdependências.
+\end_layout
+
+\begin_layout Standard
+O diagrama de classes é apresentado na Figura .
  Ele tem como objetivo apresentar todas as classes,
  seus atributos,
  métodos,
@@ -247,7 +265,7 @@ name "cap:Diagrama-de-classes"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/bueno/Documentos/workdir/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/DiagramaClasse.png
+	filename C:/home/bueno/Documentos/workdir/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/DiagramaClasse.png
 	lyxscale 10
 	width 100text%
 	height 100theight%
@@ -281,35 +299,14 @@ name "subsec:Dicionário-de-classes"
 \end_layout
 
 \begin_layout Standard
-O software é composto por um total de 10 classes:
+O software foi desenvolvido com base em uma arquitetura modular orientada a objetos,
+ utilizando linguagem C++ e as bibliotecas Qt e QCustomPlot.
+ A estrutura é composta por múltiplas classes organizadas conforme suas responsabilidades funcionais e hierarquia de dependência.
 \end_layout
 
-\begin_layout Itemize
-
-\series bold
-CSimuladorPoco:
- 
-\series default
-Classe responsável por integrar todas as funcionalidades do simulador de interface Gráfica.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-CPoco:
-
-\series default
- Classe responsável por fornecer os valores e propriedades do poço.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-CTrechoPoco:
- 
-\series default
-Classe herdeira responsável por subdividir as diferentes partes do poço,
- permitindo uma análise detalhada das seções.
+\begin_layout Standard
+A seguir,
+ apresentam-se as principais classes e suas funcionalidades:
 \end_layout
 
 \begin_layout Itemize
@@ -318,47 +315,114 @@ Classe herdeira responsável por subdividir as diferentes partes do poço,
 CFluido:
 
 \series default
- Classe responsável por prover os valores e propriedades do fluido.
+ armazena os atributos físicos do fluido e realiza todos os cálculos relacionados às suas propriedades.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-CModeloReologico:
- 
+CObjetoPoco:
+
 \series default
-Classe responsável pelos modelos utilizados para calcular a perda de pressão friccional.
+ responsável por armazenar as propriedades gerais do poço e integrar os diferentes trechos que o compõem.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-CModeloNewtoniano:
- 
+CTrechoTubulacao:
+
 \series default
-Classe responsável por calcular perda de pressão friccional para o modelo Newtoniano.
+ representa cada seção tubular do poço,
+ permitindo uma modelagem segmentada.
+ Os objetos dessa classe contêm fluido e estão organizados dentro da estrutura de CObjetoPoco.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-CModeloBingham:
- 
+CModeloReologico 
 \series default
-Classe responsável por calcular perda de pressão friccional para o modelo plástico de Bingham.
+(classe base) e suas derivadas:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+CModeloNewtoniano
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-CModeloPotencia:
+CModeloBingham
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+CModeloPotencia
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Essas classes implementam os cálculos de perda de pressão friccional com base nos respectivos modelos reológicos,
+ sendo aplicadas conforme o comportamento do fluido analisado.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+CSimuladorReologico:
+
+\series default
+ classe principal do simulador.
+ Esta janela integra os modelos reológicos e executa os cálculos associados às propriedades dos fluidos e trechos do poço.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+CSimuladorPerdaTubulacao:
  
 \series default
-Classe responsável por calcular perda de pressão friccional para o modelo lei de potência.
+segunda janela do sistema,
+ voltada para a análise de perda de pressão por fricção ao longo dos trechos,
+ incluindo variações de comprimento (ΔL) e outros fatores associados ao escoamento.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+CJanelaAdicionarFluido,
+ CJanelaAdicionarTrechoTubulacao,
+ CJanelaGraficoPressaoHidrostatica,
+ CJanelaMenu:
+
+\series default
+ classes auxiliares criadas com o Qt Creator,
+ responsáveis por fornecer interfaces gráficas para entrada e visualização de dados.
+ Cada janela é especializada em uma função específica,
+ como adição de trechos,
+ inserção de fluido ou exibição de gráficos.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+QCustomPlot:
+
+\series default
+ biblioteca externa utilizada para renderização de gráficos científicos,
+ como perfis de pressão e densidade.
 \end_layout
 
 \begin_layout Standard
-O diagrama de classes é apresentado na Figura 
+O diagrama de classes,
+ apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-classes"
@@ -369,11 +433,11 @@ nolink "false"
 
 \end_inset
 
-.
- Nele podemos observar todas as classes,
+,
+ resume as relações entre as principais entidades do sistema,
  seus atributos,
- métodos,
- heranças e seus relacionamentos.
+ métodos e heranças,
+ seguindo a notação da Linguagem de Modelagem Unificada (UML)
 \end_layout
 
 \begin_layout Section
@@ -427,9 +491,20 @@ name "subsec:diagrama de sequência"
 
 \shape italic
 \emph on
-O diagrama de sequência enfatiza a troca de eventos e mensagens e sua ordem temporal.
- Contém informações sobre o fluxo de controle do software.
- Costuma ser montado a partir de um diagrama de caso de uso e estabelece o relacionamento dos atores (usuários e sistemas externos) com alguns objetos do sistema.
+O diagrama de sequência descreve a interação entre os objetos do sistema e os elementos externos,
+ evidenciando a ordem temporal das mensagens trocadas durante a execução de uma funcionalidade.
+ Ele apresenta o fluxo de controle do sistema de forma cronológica,
+ detalhando as chamadas de métodos e as respostas entre os elementos envolvidos.
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+\emph on
+Sua construção geralmente tem como base os cenários definidos nos diagramas de casos de uso.
+ A partir disso,
+ é possível representar a comunicação entre os participantes e os objetos do sistema,
+ permitindo uma visualização clara da lógica de execução dos processos.
 \end_layout
 
 \begin_layout Subsection
@@ -579,8 +654,10 @@ name "par:Diagrama-de-colaboração:"
 \end_layout
 
 \begin_layout Standard
-O diagrama de comunicação tem como objetivo apresentar as interações dos objetos,
- juntamente com sua sequência de processos.
+O diagrama de comunicação representa as interações entre os objetos do sistema em um determinado contexto,
+ evidenciando a troca de mensagens e a sequência dos processos envolvidos.
+ A disposição dos elementos enfatiza os relacionamentos estruturais,
+ ao mesmo tempo em que indica a ordem numérica das mensagens trocadas durante a execução de uma tarefa específica.
 \end_layout
 
 \begin_layout Standard
@@ -669,7 +746,8 @@ name "subsec:diagrama de máquina de estado"
 \end_layout
 
 \begin_layout Standard
-Um diagrama de máquina de estado representa os diversos estados que o objeto assume e os eventos que ocorrem ao longo de sua vida ou mesmo ao longo de um processo (histórico do objeto).
+O diagrama de máquina de estados descreve os diferentes estados que um objeto pode assumir ao longo de seu ciclo de vida,
+ bem como os eventos que provocam mudanças entre esses estados.
  A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -681,31 +759,28 @@ nolink "false"
 
 \end_inset
 
- mostra um diagrama de máquina de estado para o objeto modelo newtoniano.
+apresenta esse diagrama aplicado ao objeto relacionado ao modelo reológico newtoniano.
 \end_layout
 
 \begin_layout Standard
-Inicialmente,
- os dados são recebidos pela classe responsável pela simulação do poço.
- Em seguida,
- seus atributos são criados,
- e o processo de definição do poço é iniciado.
- Conforme a configuração do número de seções,
- a simulação pode seguir para uma seção ou diversas seções.
- 
+O processo tem início com o recebimento dos dados pela classe responsável pela simulação.
+ A partir disso,
+ os atributos necessários são criados e o sistema passa para a fase de definição do poço.
+ Dependendo da configuração estabelecida,
+ a simulação pode ser direcionada para uma única seção ou para múltiplas seções.
 \end_layout
 
 \begin_layout Standard
-Após essa definição,
- o fluido do poço é configurado,
- podendo ser gás ou óleo.
- A partir daí,
- é realizada a simulação do poço,
- onde os cálculos são processados para determinar os parâmetros necessários.
- Por fim,
- os resultados da simulação são plotados e apresentados para análise.
- Caso o processo seja concluído com sucesso,
- ele finaliza suas ações.
+Na sequência,
+ é realizada a configuração do fluido presente no poço,
+ que pode ser do tipo gás ou óleo.
+ Com todas as definições realizadas,
+ os cálculos da simulação são executados a fim de determinar os parâmetros operacionais.
+ Os resultados obtidos são,
+ então,
+ processados e exibidos graficamente para análise.
+ Ao final da execução,
+ o processo é encerrado de forma automática.
 \end_layout
 
 \begin_layout Standard
@@ -770,29 +845,45 @@ name "sec: Diagrama de atividades"
 \end_layout
 
 \begin_layout Standard
-No diagrama de atividades apresentado,
- é mostrado em detalhes uma atividade específica.
- Para o presente caso,
- será apresentado o diagrama do método CalcularPerdaPorFriccaoPoco da classe CModeloNewtoniano.
+O diagrama de atividades apresentado descreve,
+ em detalhe,
+ a execução de uma atividade específica do sistema.
+ No caso em questão,
+ é representado o método 
+\series bold
+CalcularPerdaPorFriccaoPoco
+\series default
+,
+ pertencente à classe 
+\series bold
+CModeloNewtoniano
+\series default
+.
 \end_layout
 
 \begin_layout Standard
-Inicialmente,
- os dados são recebidos pela classe responsável pela simulação de fluidos.
- Seus atributos são atualizados conforme os dados de entrada.
- O primeiro passo realizado pelo método e calcular a velocidade média do poço,
- após esse cálculo o método realiza uma verificação para saber se o número de Reynolds foi calculado,
- caso não tenha sido o programa apresentara uma mensagem de erro,
- caso tenha sido o método segue para a determinação do fluxo.
- O fluxo pode ser laminar ou turbulento existindo uma ação específica para cada um dos caminhos.
+O processo se inicia com o recebimento dos dados pela classe responsável pela simulação dos fluidos.
+ Os atributos do objeto são atualizados conforme os valores de entrada fornecidos.
+ O primeiro passo do método consiste no cálculo da velocidade média do fluido no poço.
+ Em seguida,
+ é realizada uma verificação para identificar se o número de Reynolds foi previamente determinado.
+ Caso essa informação esteja ausente,
+ o sistema emite uma mensagem de erro.
+ Caso contrário,
+ o método prossegue para a classificação do tipo de escoamento.
 \end_layout
 
 \begin_layout Standard
-Os cálculos são realizados com base nas características específicas de cada fluido,
- sendo necessárias as respectivas propriedades físicas para completar o processo.
- Após a conclusão dos cálculos,
- o sistema finaliza suas operações,
- retornando os resultados da simulação.
+A partir do valor do número de Reynolds,
+ o escoamento pode ser classificado como laminar ou turbulento,
+ e o cálculo é ajustado conforme o regime identificado.
+ Os procedimentos subsequentes utilizam as propriedades físicas específicas do fluido em questão para concluir os cálculos de perda de carga por fricção.
+\end_layout
+
+\begin_layout Standard
+Ao final,
+ os resultados são processados e retornados para o sistema,
+ encerrando a execução do método.
 \end_layout
 
 \begin_layout Standard

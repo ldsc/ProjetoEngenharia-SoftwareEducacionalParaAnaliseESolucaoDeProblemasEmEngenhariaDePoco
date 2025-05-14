@@ -143,27 +143,26 @@ Apresenta-se neste capítulo as versões do software desenvolvido.
 \end_layout
 
 \begin_layout Section
-Versão 0.1 - Uso modo terminal e 
-\shape italic
-Gnuplot
-\shape default
- para saída de gráfico
+Versão Inicial – Interação via Terminal e Geração de Gráficos com Gnuplot
 \end_layout
 
 \begin_layout Standard
-Na versão inicial,
- um sistema de entrada e saída de dados foi implementado exclusivamente via terminal,
- sem a integração de bibliotecas de interface gráfica.
- O Gnuplot foi utilizado para criar gráficos e visualizar informações,
- proporcionando uma maneira fácil e direta de apresentar os resultados ao usuário.
- Essa versão foi concebida em um ambiente de desenvolvimento que opera unicamente no terminal,
- utilizando o sistema Windows 11.
+Na versão inicial do sistema,
+ a entrada e saída de dados foi implementada exclusivamente por meio do terminal,
+ sem o uso de bibliotecas gráficas.
+ Para a visualização dos resultados,
+ foi incorporado o uso do Gnuplot,
+ permitindo a geração de gráficos de forma simples e direta,
+ o que facilitou a apresentação dos dados ao usuário.
 \end_layout
 
 \begin_layout Standard
-Observe que se trata de um software protótipo,
- onde a interação ocorre principalmente por meio de texto.
- O usuário tem a capacidade de criar gráficos e simular distintos cenários.
+Essa versão foi desenvolvida em um ambiente de linha de comando,
+ operando no sistema Windows 11.
+ Trata-se de uma versão protótipo do software,
+ em que a interação ocorre essencialmente por meio de texto.
+ Mesmo com essa limitação,
+ o usuário já era capaz de gerar gráficos e realizar simulações em diferentes cenários de forma funcional.
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Versao0.1"
@@ -225,49 +224,56 @@ Fonte:
 \end_layout
 
 \begin_layout Section
-Versão 0.2 - Correção de Erros e Melhorias no Armazenamento de Dados
+Versão 0.2 – Otimização de Entrada,
+ Validação e Armazenamento Automático de Dados
 \end_layout
 
 \begin_layout Standard
-A versão 0.2 do programa trouxe melhorias notáveis em termos de usabilidade,
+A versão 0.2 do programa introduziu melhorias significativas em termos de usabilidade,
  efetividade e gestão de dados,
- preservando sua interação orientada ao terminal e a representação gráfica através do Gnuplot.
- Esta versão se concentrou em corrigir falhas e adicionar novas funções para aprimorar a experiência do usuário,
- tornando-a mais suave e intuitiva.
+ mantendo a interação orientada ao terminal e a visualização de resultados por meio do Gnuplot.
+ Essa atualização teve como foco a correção de falhas identificadas na versão anterior e a inclusão de novas funcionalidades que aprimoraram a experiência do usuário,
+ tornando-a mais fluida e intuitiva.
 \end_layout
 
 \begin_layout Standard
-Aprimoramentos Principais :
+
+\end_layout
+
+\begin_layout Standard
+Principais aprimoramentos implementados:
 \end_layout
 
 \begin_layout Itemize
-Alterações na maneira como os dados são apresentados,
- assegurando que os resultados sejam exibidos com clareza e exatidão.
+Reformulação na forma de apresentação dos dados,
+ garantindo maior clareza e precisão na exibição dos resultados.
 \end_layout
 
 \begin_layout Itemize
-Agora,
- os usuários podem transitar entre as escolhas apenas digitando o número correspondente,
+Otimização da navegação no menu de opções,
+ permitindo a seleção de comandos por meio da digitação direta de números,
  sem a necessidade de pressionar Enter repetidamente,
- o que agiliza a interação.
+ o que tornou o processo mais ágil.
 \end_layout
 
 \begin_layout Itemize
-Foi introduzido um sistema que permite ao usuário escolher a forma como os dados serão guardados.
- Um arquivo é gerado automaticamente,
- nomeado conforme o poço,
- registrando todo o histórico das ações executadas.
+Implementação de um sistema de salvamento automático,
+ no qual os dados são armazenados em arquivos nomeados conforme o poço em questão,
+ contendo o histórico completo das ações realizadas durante a simulação.
 \end_layout
 
 \begin_layout Itemize
-Foi implementado um sistema eficaz para checar as entradas dos usuários,
- minimizando erros causados por valores inadequados ou formatos imprevistos.
- Essa melhoria evita interrupções indesejadas e assegura um fluxo de execução ininterrupto.
+Adição de um mecanismo de verificação de entradas,
+ capaz de detectar valores inválidos ou formatos inadequados,
+ reduzindo significativamente erros de execução e assegurando a continuidade do processo de forma estável.
 \end_layout
 
 \begin_layout Standard
-Observe abaixo como ficou algumas dessas mudanças.
- O usuário tem a capacidade de analisar o histórico dos dados após calculado.
+Após a conclusão dos cálculos,
+ o usuário pode acessar o histórico completo dos dados gerados durante a simulação.
+ Esse recurso contribui para uma análise mais detalhada dos resultados,
+ permitindo maior controle sobre as etapas executadas e facilitando a rastreabilidade das informações.
+ A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Versao0.2"
@@ -278,7 +284,11 @@ nolink "false"
 
 \end_inset
 
-.
+ exemplifica algumas dessas melhorias implementadas na versão 0.2,
+ evidenciando a evolução da interface textual e das funcionalidades associadas à gestão dos dados.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document
@@ -330,41 +340,42 @@ Fonte:
 
 \begin_layout Section
 Versão 1.0 – Interface Gráfica,
- Amigável e Intuitiva Utilizando o Framework QtCreator
+ Amigável e Intuitiva Utilizando o Framework Qt Creator
 \end_layout
 
 \begin_layout Standard
-Na versão 1.0,
- houve uma grande evolução do software,
- que deixou de ser apenas baseado em comandos no terminal para adotar uma interface gráfica que é amigável e intuitiva.
- Essa atualização preserva todas as funções da versão anterior,
- mas proporciona uma experiência de uso muito mais interativa e fácil de acessar.
+A versão 1.0 do software marcou uma transição significativa em sua arquitetura e usabilidade,
+ ao substituir a interface baseada exclusivamente em comandos de terminal por uma interface gráfica interativa,
+ desenvolvida com foco na acessibilidade e na experiência do usuário.
+ Essa atualização manteve todas as funcionalidades implementadas nas versões anteriores,
+ porém incorporou novos recursos visuais que tornaram a navegação mais intuitiva.
 \end_layout
 
 \begin_layout Standard
-Agora,
- o usuário pode:
+Com a introdução da interface gráfica,
+ o usuário passou a contar com as seguintes facilidades:
+\end_layout
+
+\begin_layout Itemize
+Inserção de dados por meio de campos de texto e botões,
+ dispensando a digitação direta no terminal;
+\end_layout
+
+\begin_layout Itemize
+Visualização das propriedades dos fluidos do poço organizadas em tabelas,
+ o que proporciona maior clareza e organização das informações;
+\end_layout
+
+\begin_layout Itemize
+Interação com gráficos que representam o poço e os fluidos ao longo da profundidade,
+ permitindo uma análise visual mais intuitiva da configuração do sistema.
 \end_layout
 
 \begin_layout Standard
-• Utilizar o mouse para inserir dados através de caixas de texto e botões,
- sem precisar digitar diretamente no terminal.
-\end_layout
-
-\begin_layout Standard
-• Visualizar as informações dos fluidos do poço organizadas em uma tabela,
- o que torna os dados mais claros.
-\end_layout
-
-\begin_layout Standard
-• Navegar por um gráfico interativo que representa o poço e os fluidos que o compõem,
- oferecendo uma visão visual mais intuitiva do sistema.
-\end_layout
-
-\begin_layout Standard
-Com essa atualização,
- o software evolui de um simples protótipo textual para uma experiência mais suave e acessível,
- facilitando a análise e a simulação de diferentes cenários relacionados ao poço.
+Essa versão consolida a transição do sistema,
+ antes concebido como um protótipo textual,
+ para uma aplicação interativa com maior usabilidade.
+ A nova abordagem contribui diretamente para o aprendizado dos usuários e facilita a análise de diferentes cenários de simulação relacionados à Engenharia de Poço.
 \end_layout
 
 \begin_layout Standard
@@ -380,7 +391,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Versão 0.2,
+Versão 1.0,
  interface do software
 \shape italic
 
@@ -398,6 +409,359 @@ name "fig:Versao1.0"
 
 \begin_inset Graphics
 	filename ../imagens/Sistema-V1.0.jpg
+	lyxscale 60
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Versão 1.1 – Consolidação Visual,
+ Barra de Tarefas e Automação de Processos
+\end_layout
+
+\begin_layout Standard
+A versão 1.1 do software manteve todas as funcionalidades introduzidas na versão 1.0,
+ porém trouxe importantes avanços no aspecto visual e na eficiência da interface.
+ Houve uma consolidação da estrutura gráfica,
+ com ajustes que tornaram o ambiente mais limpo,
+ responsivo e funcional para o usuário.
+\end_layout
+
+\begin_layout Standard
+Uma das principais melhorias foi a automação do processo de cálculo:
+ o software passou a detectar alterações nas propriedades dos elementos simulados e a recalcular os parâmetros automaticamente,
+ sem a necessidade de o usuário acionar repetidamente o botão "Calcular".
+ Essa otimização reduziu interações redundantes e tornou o fluxo de trabalho mais ágil.
+\end_layout
+
+\begin_layout Standard
+Além disso,
+ foi implementada uma barra de tarefas com novas funcionalidades organizadas em menus acessíveis,
+ incluindo:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Arquivo:
+
+\series default
+ opções para iniciar nova simulação,
+ salvar o projeto atual,
+ importar dados e exportar a interface como imagem;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Referências:
+
+\series default
+ acesso ao manual do usuário e à documentação dos modelos reológicos implementados;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Atalhos de teclado:
+ 
+\series default
+comandos como Ctrl+N para nova simulação e Ctrl+S para salvar,
+ otimizando a navegação do sistema.
+\end_layout
+
+\begin_layout Standard
+Outro recurso adicionado foi a possibilidade de exibir o gráfico da pressão hidrostática ao longo da profundidade do poço,
+ oferecendo uma visualização detalhada do comportamento do fluido em função da profundidade.
+ Essa nova ferramenta complementa os gráficos já existentes,
+ enriquecendo a análise dos resultados simulados.
+\end_layout
+
+\begin_layout Standard
+Com essas melhorias,
+ a versão 1.1 reforça a transição do software de uma ferramenta educacional básica para uma aplicação mais robusta,
+ interativa e alinhada às necessidades dos usuários no contexto da Engenharia de Poço.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Versão 1.1,
+ interface do software
+\shape italic
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versao1.1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/Sistema-V1.1.png
+	lyxscale 60
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Versão 2.0 – Navegação por Módulos e Simulação Mecânica de Variação de Comprimento (ΔL)
+\end_layout
+
+\begin_layout Standard
+A versão 2.0 do software introduziu uma das mudanças mais significativas desde o início do projeto,
+ ao implementar um sistema de navegação baseado em módulos.
+ Logo ao iniciar o programa,
+ o usuário se depara com um menu principal contendo dois botões de acesso:
+ Módulo 1 e Módulo 2,
+ além de informações institucionais como nome do software,
+ desenvolvedor,
+ coordenador e contatos.
+\end_layout
+
+\begin_layout Standard
+O Módulo 1 direciona para o simulador hidráulico de perfuração,
+ que engloba todas as funcionalidades desenvolvidas até a versão 1.1,
+ incluindo a simulação de escoamento,
+ cálculo de pressão hidrostática e perdas por fricção com base em modelos reológicos.
+ Esse módulo mantém a interface gráfica interativa e os recursos de visualização consolidados nas versões anteriores.
+\end_layout
+
+\begin_layout Standard
+O Módulo 2,
+ por sua vez,
+ representa a nova funcionalidade da versão 2.0:
+ o módulo de análise de tensões em colunas.
+ Essa segunda interface tem como foco principal o estudo de variações de comprimento (ΔL) de colunas de completação,
+ levando em consideração efeitos como:
+\end_layout
+
+\begin_layout Itemize
+Variações de temperatura (dilatação térmica);
+\end_layout
+
+\begin_layout Itemize
+Efeito balão (ballooning);
+\end_layout
+
+\begin_layout Itemize
+Força pistão gerada por packer ou crossover;
+\end_layout
+
+\begin_layout Itemize
+Força restauradora;
+\end_layout
+
+\begin_layout Itemize
+Pressões aplicadas ao longo da coluna.
+\end_layout
+
+\begin_layout Standard
+Para viabilizar essas análises,
+ o usuário pode inserir propriedades adicionais,
+ como coeficiente de expansão térmica,
+ coeficiente de Poisson e módulo de elasticidade do material da coluna.
+ A interface também permite modelar o poço com múltiplas seções,
+ o que possibilita simulações mais precisas e segmentadas,
+ inclusive em cenários com ou sem a presença de packer.
+\end_layout
+
+\begin_layout Standard
+Além disso,
+ o poço continua sendo visualizado graficamente conforme a profundidade,
+ agora com suporte ao novo conjunto de propriedades exigidas pela análise mecânica.
+\end_layout
+
+\begin_layout Standard
+O software mantém todos os recursos consolidados nas versões anteriores,
+ incluindo a barra de menu com funções de nova simulação,
+ salvamento,
+ exportação de gráficos como imagem,
+ além do acesso ao manual do usuário e às fórmulas utilizadas nos cálculos do sistema.
+\end_layout
+
+\begin_layout Standard
+Com essa versão,
+ o sistema passa a incorporar,
+ além da análise hidráulica,
+ uma abordagem mecânica de simulação,
+ ampliando significativamente seu escopo didático e técnico na área de Engenharia de Poço.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Versão 1.1,
+ Menu de interface do software
+\shape italic
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versao2.0"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/MenuSistema-V2.0.png
+	lyxscale 60
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Versão 1.1,
+ interface do modulo 01 do software
+\shape italic
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versao2.0.1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/Sistema-V1.1.png
+	lyxscale 60
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Versão 1.1,
+ interface do modulo 02 software
+\shape italic
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versao2.0.2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/Sistema-V2.0.png
 	lyxscale 60
 	width 100text%
 
