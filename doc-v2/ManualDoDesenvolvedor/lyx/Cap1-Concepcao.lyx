@@ -214,33 +214,29 @@ name "sec: Nome do sistema/produto"
 \end_layout
 
 \begin_layout Standard
-O Programa Educacional para Análise e Solução de Desafios em Engenharia de Poço foi criado em C++,
- empregando o modelo de programação orientada a objetos e a estrutura Qt,
- que facilita a criação de aplicações tanto gráficas quanto não gráficas.
+O sistema desenvolvido,
+ denominado Software Educacional para Análise e Solução de Problemas em Engenharia de Poço,
+ foi construído em linguagem C++ com uso do framework Qt.
+ Essa base tecnológica permitiu a criação de uma interface gráfica robusta,
+ que facilita a navegação e oferece recursos visuais para apoio ao ensino.
 \end_layout
 
 \begin_layout Standard
-Esse programa oferece várias funções,
- como o cálculo da pressão hidrostática em qualquer ponto do poço e a análise das propriedades médias dos fluidos,
- que inclui a viscosidade e a densidade.
- Ademais,
- possui a capacidade de detectar possíveis falhas nas entradas,
- como volumes de fluido que superam a capacidade do poço ou propriedades que estão fora dos limites esperados.
+Entre suas funcionalidades,
+ o programa realiza o cálculo de propriedades como pressão hidrostática,
+ densidade e viscosidade média dos fluidos,
+ além de permitir a seleção entre diferentes modelos reológicos:
+ newtoniano,
+ plástico de Bingham e lei das potências.
+ Também simula cenários operacionais com variações de temperatura e pressão,
+ incluindo efeitos como deslocamentos axiais (ΔL) da coluna de completação,
+ efeito balão e atuação de packers e pistões.
 \end_layout
 
 \begin_layout Standard
-Uma função significativa é a identificação do tipo de escoamento,
- que pode ser tanto laminar quanto turbulento.
- O programa também integra três modelos reológicos—
-Newtoniano,
- Plástico de Bingham e Lei das Potências—
-para avaliar a queda de pressão gerada pela perda de carga friccional.
-\end_layout
-
-\begin_layout Standard
-Além dessas funcionalidades,
- o software possibilita a interação com gráficos e o armazenamento de dados em arquivos com a extensão .dat,
- proporcionando uma experiência mais satisfatória para o usuário.
+O sistema aceita entrada de dados por meio de arquivos .dat,
+ oferece visualização gráfica dos resultados e permite a exportação dos dados,
+ apoiando tanto o estudo individual quanto a elaboração de relatórios acadêmicos.
 \end_layout
 
 \begin_layout Standard
@@ -271,7 +267,9 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Características básicas do programa
+Características básicas do Software Educacional Para Análise e Solução de Problemas em Engenharia de Poço.
+ Fonte:
+ Elaborado pelo autor (2025).
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Características-básicas-do"
@@ -419,32 +417,11 @@ especificação
 \end_layout
 
 \begin_layout Standard
-O programa criado apresenta uma interface intuitiva que possibilita ao usuário selecionar livremente a função que deseja acessar em um determinado momento.
- As operações realizadas pelo programa se fundamentam em fórmulas estabelecidas na área de Engenharia de Poço,
- conforme a grade curricular de 2024/01 e o código LEP01353.
-\end_layout
-
-\begin_layout Standard
-Primeiramente,
- o usuário deverá definir as características do poço e adicionar os fluidos que nele estão presentes.
- Essa ação pode ser feita de duas maneiras:
- através da importação de um arquivo .dat ou pela entrada manual dos dados na tela principal do programa.
- Após realizar essas configurações,
- o usuário poderá observar as características do poço e,
- a partir daí,
- executar simulações pertinentes ao conteúdo da matéria.
-\end_layout
-
-\begin_layout Standard
-Dentre as opções oferecidas,
- o software possibilita calcular a pressão hidrostática em um ponto determinado do poço,
- criar gráficos de perfis,
- como o gráfico de profundidade em relação à densidade,
- além de determinar a perda de pressão resultante da perda de carga por fricção.
- Este cálculo pode ser efetuado para o fluxo dentro do poço e/ou no anular,
- levando em consideração três modelos reológicos disponíveis no programa:
- o modelo Newtoniano,
- o modelo de Plástico de Bingham e o modelo de Lei de Potências.
+O software educacional desenvolvido apresenta uma interface gráfica intuitiva que permite ao usuário selecionar,
+ a qualquer momento,
+ as funções desejadas.
+ As operações implementadas baseiam-se em modelos e equações consolidados na área de Engenharia de Poço,
+ conforme a ementa da disciplina (LEP01353/2024-01).
 \end_layout
 
 \begin_layout Section
@@ -831,6 +808,87 @@ O usuário poderá visualizar seus resultados em um gráfico.
 \end_inset
 
 
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-09
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve permitir a análise dos deslocamentos axiais (ΔL) da coluna de completação em diferentes condições operacionais.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve contemplar variações térmicas,
+ efeito balão,
+ atuação de pistão,
+ packer e crossover nas análises de carga.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -919,7 +977,7 @@ RNF-02
 \begin_inset Text
 
 \begin_layout Plain Layout
-A linguagem predominante a ser utilizada é C++.
+A linguagem predominante a ser utilizada no desenvolvimento é C++.
 \end_layout
 
 \end_inset
@@ -958,7 +1016,7 @@ RNF-03
 \begin_inset Text
 
 \begin_layout Plain Layout
-Os gráficos devem ser ferados usando a biblioteca QCustomPlot
+A geração dos gráficos deve ser realizada por meio da biblioteca QCustomPlot.
 \end_layout
 
 \end_inset
@@ -997,7 +1055,7 @@ RNF-04
 \begin_inset Text
 
 \begin_layout Plain Layout
-Possibilitar exportação dos estudos realizados em saída de texto.
+O sistema deve permitir a exportação dos resultados em arquivos de texto e no formato .dat.
 \end_layout
 
 \end_inset
@@ -1036,7 +1094,87 @@ RNF-05
 \begin_inset Text
 
 \begin_layout Plain Layout
-Apresentar interface gráfica construida com o Qt Framework
+A interface gráfica deve ser desenvolvida com o Qt Framework,
+ oferecendo usabilidade intuitiva.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RNF-06
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve manter organização modular do código,
+ facilitando manutenção e futuras expansões.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RNF-07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Os arquivos de entrada e saída devem seguir padrões consistentes e documentados para garantir interoperabilidade.
 \end_layout
 
 \end_inset

@@ -150,6 +150,18 @@ literal "true"
 \align block
 \begin_inset CommandInset include
 LatexCommand include
+filename "Cap0-Introducao-Escopo-Objetivo.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset include
+LatexCommand include
 filename "Cap1-Concepcao.lyx"
 literal "true"
 
@@ -160,218 +172,6 @@ literal "true"
 
 \begin_layout Standard
 \align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap2-Elaboracao.lyx"
-literal "true"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap3-AnaliseOrientadaAObjeto.lyx"
-literal "true"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap4-Projeto.lyx"
-literal "true"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap5-Ciclos-Planejamento-Detalhamento.lyx"
-literal "true"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap6-Ciclos-Construcao-Implementacao.lyx"
-literal "true"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap7-Teste.lyx"
-literal "true"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap8-Documentacao.lyx"
-literal "true"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap9-Documentacao-ManualUsuario.lyx"
-literal "true"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-precisamos adicionar uma seção para 
-\end_layout
-
-\begin_layout Plain Layout
-Conclusões e sugestões para trabalhos futuros:
-\end_layout
-
-\begin_layout Plain Layout
-- Possibilidade de salvar uma configuração de simulação e carregar depois.
- (carregar imagens de simulações anteriores).
-\end_layout
-
-\begin_layout Plain Layout
-- Possibilidade de somar duas imagens de simulações anteriores.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{Referências} 
-\backslash
-chead{} 
-\backslash
-rhead{}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Depois de gerar o documento procure por 
-\begin_inset Quotes eld
-\end_inset
-
-abaixo
-\begin_inset Quotes erd
-\end_inset
-
-,
- 
-\begin_inset Quotes eld
-\end_inset
-
-acima
-\begin_inset Quotes erd
-\end_inset
-
- e troque por referência a Figura/Tabela.
-\end_layout
-
-\begin_layout Plain Layout
-Com o tempo os documentos crescem e estes abaixo/acima ficam perdidos,
- por isso não usamos.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{Referências} 
-\backslash
-chead{} 
-\backslash
-rhead{}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
