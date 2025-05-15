@@ -3,21 +3,21 @@
 #include <QMessageBox>
 
 // Construtor da janela - inicializa a interface grafica
-janelaadicionarfluido::janelaadicionarfluido(QWidget *parent)
+CJanelaAdicionarFluido::CJanelaAdicionarFluido(QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::janelaadicionarfluido)
+    , ui(new Ui::CJanelaAdicionarFluido)
 {
     ui->setupUi(this);
 }
 
 // Destrutor - limpa a interface da memoria
-janelaadicionarfluido::~janelaadicionarfluido()
+CJanelaAdicionarFluido::~CJanelaAdicionarFluido()
 {
     delete ui;
 }
 
 // Acao quando o usuario clica em "OK"
-void janelaadicionarfluido::on_btnReturn_accepted()
+void CJanelaAdicionarFluido::on_btnReturn_accepted()
 {
     // Se for modo de edicao, habilita todos os campos
     if (ModoEdicao()) {
@@ -54,7 +54,7 @@ void janelaadicionarfluido::on_btnReturn_accepted()
 }
 
 // Acao quando o usuario clica em "Cancelar"
-void janelaadicionarfluido::on_btnReturn_rejected()
+void CJanelaAdicionarFluido::on_btnReturn_rejected()
 {
     close();
 }

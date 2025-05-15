@@ -3,31 +3,55 @@
 
 #include "CFluido.h"
 #include <memory>
+#include <string>
 
+// Essa classe representa um trecho da coluna do poço, contendo as informacoes geometricas
+// e termomecanicas, alem do fluido presente nesse intervalo
 class CTrechoPoco {
 protected:
-
     std::string nome;
     double profundidadeInicial = 0.0;
     double profundidadeFinal = 0.0;
-    double diametroExterno = 0.0; // Dados a mais que precisam ser coletados caso rode a simulacao do modulo 02
-    double diametroInterno = 0.0; // Dados a mais que precisam ser coletados caso rode a simulacao do modulo 02
-    double coeficientePoisson = 0.0; // Dados a mais que precisam ser coletados caso rode a simulacao do modulo 02
-    double moduloEslasticidade = 0.0; // Dados a mais que precisam ser coletados caso rode a simulacao do modulo 02
-    double pesoUnidade = 0.0; // Dados a mais que precisam ser coletados caso rode a simulacao do modulo 02
-    double coeficienteExpancaoTermica = 0.0; // Dados a mais que precisam ser coletados caso rode a simulacao do modulo 02
-
     std::unique_ptr<CFluido> fluido;
 
-public:
-    // Construtor
-    CTrechoPoco() {}
-    ~CTrechoPoco() {}
-    CTrechoPoco(double ProfundidadeI, double ProfundidadeF, std::unique_ptr<CFluido> fluido)
-        : profundidadeInicial(ProfundidadeI), profundidadeFinal(ProfundidadeF), fluido(std::move(fluido)) {} // Esse construtor nos leva os atributos que ira rodar na simulacao do Modulo 01
+    // Parametros adicionais para simulacoes mecanicas (Modulo 02)
+    double diametroExterno = 0.0;
+    double diametroInterno = 0.0;
+    double coeficientePoisson = 0.0;
+    double moduloEslasticidade = 0.0;
+    double pesoUnidade = 0.0;
+    double coeficienteExpancaoTermica = 0.0;
 
-    CTrechoPoco(std::string nome, double ProfundidadeI, double ProfundidadeF, std::unique_ptr<CFluido> fluido, double diametroE, double diametroI, double coefPoisson, double moduloEslast, double pesoUnid, double coefExpancaoTermica)
-        : nome(nome), profundidadeInicial(ProfundidadeI), profundidadeFinal(ProfundidadeF), fluido(std::move(fluido)), diametroExterno(diametroE), diametroInterno(diametroI), coeficientePoisson(coefPoisson), moduloEslasticidade(moduloEslast), pesoUnidade(pesoUnid), coeficienteExpancaoTermica(coefExpancaoTermica) {} // Esse construtor nos leva os atributos que ira rodar na simulacao do Modulo 02
+public:
+    // Construtor padrao (sem dados iniciais)
+    CTrechoPoco() = default;
+
+    // Destrutor padrao
+    ~CTrechoPoco() = default;
+
+    // Construtor para o Modulo 01 (fluido + profundidades)
+    CTrechoPoco(double profundI, double profundF, std::unique_ptr<CFluido> fluidoPtr)
+        : profundidadeInicial(profundI),
+        profundidadeFinal(profundF),
+        fluido(std::move(fluidoPtr)) {}
+
+    // Construtor completo para o Modulo 02 (inclui dados mecanicos e nome do trecho)
+    CTrechoPoco(std::string nomeTrecho,
+                double profundI, double profundF,
+                std::unique_ptr<CFluido> fluidoPtr,
+                double diamExt, double diamInt,
+                double coefPoisson, double moduloE,
+                double pesoUnit, double coefExp)
+        : nome(std::move(nomeTrecho)),
+        profundidadeInicial(profundI),
+        profundidadeFinal(profundF),
+        fluido(std::move(fluidoPtr)),
+        diametroExterno(diamExt),
+        diametroInterno(diamInt),
+        coeficientePoisson(coefPoisson),
+        moduloEslasticidade(moduloE),
+        pesoUnidade(pesoUnit),
+        coeficienteExpancaoTermica(coefExp) {}
 
     // Getters
     std::string Nome() const { return nome; }
@@ -35,20 +59,18 @@ public:
     double ProfundidadeFinal() const { return profundidadeFinal; }
     double DiametroExterno() const { return diametroExterno; }
     double DiametroInterno() const { return diametroInterno; }
-
     double CoeficientePoisson() const { return coeficientePoisson; }
     double ModuloEslasticidade() const { return moduloEslasticidade; }
     double PesoUnidade() const { return pesoUnidade; }
     double CoeficienteExpancaoTermica() const { return coeficienteExpancaoTermica; }
-
     CFluido* Fluido() const { return fluido.get(); }
 
     // Setters
-    void Nome(std::string Nome) const { Nome = nome; }
-    void ProfundidadeInicial(double ProfundI) { profundidadeInicial = ProfundI; }
-    void ProfundidadeFinal(double ProfundF) { profundidadeFinal = ProfundF; }
+    void Nome(const std::string& novoNome) { nome = novoNome; }
+    void ProfundidadeInicial(double profundI) { profundidadeInicial = profundI; }
+    void ProfundidadeFinal(double profundF) { profundidadeFinal = profundF; }
 
-    // Metodos
+    // Metodos de calculo
     double PressaoHidroestatica();
     double PressaoHidroestatica(double profund);
     double DensidadeEquivalente();

@@ -17,7 +17,7 @@ public:
     ~CModeloNewtoniano() {}
 
     // Construtor que recebe o objeto do poco
-    CModeloNewtoniano(CPoco* poco) : CModeloReologico(poco) {
+    CModeloNewtoniano(CObjetoPoco* poco) : CModeloReologico(poco) {
         DeterminarFluxoPoco();
         DeterminarFluxoAnular();
     }

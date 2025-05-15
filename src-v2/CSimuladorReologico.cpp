@@ -20,15 +20,15 @@ CSimuladorReologico::CSimuladorReologico(QWidget *parent)
 {
     ui->setupUi(this);
 
-    CSimuladorReologico::makePlotPoco();
+     makePlotPoco(); // gera o grafico inicial do poco (mesmo vazio)
 
+    // ativa edicao de celulas da tabela com clique duplo ou tecla Enter
     ui->tblFluidos->setEditTriggers(QAbstractItemView::DoubleClicked | QAbstractItemView::EditKeyPressed);
 
-    // Conectar o sinal de alteração para chamar sua função AtualizarTabela
-    connect(ui->tblFluidos, &QTableWidget::cellChanged,
-            this, &CSimuladorReologico::EditarLinhaTabela);
+    // conecta a edicao de celulas na tabela a uma funcao que atualiza os dados do fluido
+    connect(ui->tblFluidos, &QTableWidget::cellChanged, this, &CSimuladorReologico::EditarLinhaTabela);
 
-    // Sinal para alterações das caixas
+    // conecta a alteracao dos campos de entrada para atualizar o objeto do poco
     connect(ui->editNomePoco, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
     connect(ui->editProfundidadeTotal, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
     connect(ui->editPressaoSuperficie, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
@@ -37,7 +37,8 @@ CSimuladorReologico::CSimuladorReologico(QWidget *parent)
     connect(ui->editDiametroID, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
     connect(ui->editVazao, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
 
-    // iniciar com botões desativado
+
+    // desativa todos os botoes de calculo inicialmente (só ativa quando preencher dados do poco)
     ui->btnCalcularPressaoHidroestatica->setEnabled(false);
     ui->btnCalcularModeloNewtonianoPoco->setEnabled(false);
     ui->btnCalcularModeloNewtonianoAnular->setEnabled(false);
@@ -47,14 +48,11 @@ CSimuladorReologico::CSimuladorReologico(QWidget *parent)
     ui->btnCalcularModeloPotenciaAnular->setEnabled(false);
     ui->btnExibirGraficoPressaoHidroestatica->setEnabled(false);
 
-
-    //abrir janela no meio do monitor
+    // centraliza a janela no meio da tela do computador
     QScreen *screen = QGuiApplication::primaryScreen();
     QRect screenGeometry = screen->geometry();
-
     int x = (screenGeometry.width() - this->width()) / 2;
     int y = (screenGeometry.height() - this->height()) / 2;
-
     this->move(x, y);
 }
 
@@ -63,14 +61,15 @@ CSimuladorReologico::~CSimuladorReologico()
     delete ui;
 }
 
-void CSimuladorReologico::on_actionImportar_Dados_triggered()
-{
-
-}
 
 void CSimuladorReologico::EditarDadosPoco() {
+    // pega os valores digitados nos campos da interface
     QString nome = ui->editNomePoco->text();
+
+    // cria variaveis booleanas pra saber se a conversao pra double deu certo
     bool ok1, ok2, ok3, ok4, ok5, ok6;
+
+    // converte os textos digitados em numeros reais (double)
     double profund  = ui->editProfundidadeTotal->text().toDouble(&ok1);
     double pressao  = ui->editPressaoSuperficie->text().toDouble(&ok2);
     double diametro = ui->editDiametroPoco->text().toDouble(&ok3);
@@ -78,13 +77,16 @@ void CSimuladorReologico::EditarDadosPoco() {
     double ID       = ui->editDiametroID->text().toDouble(&ok5);
     double vazao    = ui->editVazao->text().toDouble(&ok6);
 
+    // verifica se todos os valores sao validos e o nome nao ta vazio
     if (!nome.isEmpty() && ok1 && ok2 && ok3 && ok4 && ok5 && ok6) {
+
+        // se ainda nao tiver criado o objeto do poco, entao cria agora
         if (!poco) {
-            // Cria o poço
-            poco = std::make_unique<CPoco>(
-                CPoco::CriarParaModulo01(nome.toStdString(), profund, pressao, diametro, OD, ID, vazao)
+            poco = std::make_unique<CObjetoPoco>(
+                CObjetoPoco::CriarParaModulo01(nome.toStdString(), profund, pressao, diametro, OD, ID, vazao)
                 );
 
+            // ativa os botoes de calculo, ja que agora temos um poco valido
             ui->btnCalcularPressaoHidroestatica->setEnabled(true);
             ui->btnCalcularModeloNewtonianoPoco->setEnabled(true);
             ui->btnCalcularModeloNewtonianoAnular->setEnabled(true);
@@ -94,9 +96,9 @@ void CSimuladorReologico::EditarDadosPoco() {
             ui->btnCalcularModeloPotenciaAnular->setEnabled(true);
             ui->btnExibirGraficoPressaoHidroestatica->setEnabled(true);
 
-            ui->statusbar->showMessage("Poço criado com Sucesso!");
+            ui->statusbar->showMessage("Poco criado com sucesso!");
         } else {
-            // Atualiza dados do poço já existente
+            // se o poco ja existe, entao atualiza os valores com os novos que o usuario digitou
             poco->NomePoco(nome.toStdString());
             poco->ProfundidadeTotal(profund);
             poco->PressaoSuperficie(pressao);
@@ -104,59 +106,74 @@ void CSimuladorReologico::EditarDadosPoco() {
             poco->DiametroRevestimentoOD(OD);
             poco->DiametroRevestimentoID(ID);
             poco->Vazao(vazao);
-            ui->statusbar->showMessage("Dados de Poço Atualizado com Sucesso!");
+
+            ui->statusbar->showMessage("Dados de poco atualizados com sucesso!");
         }
 
-        AtualizarDados();  // Atualiza os dados calculados e a interface
+        // atualiza a interface e os calculos apos alterar os dados
+        AtualizarDados();
     }
 }
 
-
-void CSimuladorReologico::EditarLinhaTabela(int row, int column)
+void CSimuladorReologico::EditarLinhaTabela(int row)
 {
+    // pega o nome do fluido da linha editada da tabela
     QString nomeAlvo = ui->tblFluidos->item(row, 0)->text();
+
+    // pega a lista de trechos do poco pra procurar qual fluido foi alterado
     std::vector<CTrechoPoco*> trechos = poco->Trechos();
 
+    // percorre os trechos do poco pra encontrar o fluido correspondente
     for (CTrechoPoco* trecho : trechos) {
         CFluido* fluido = trecho->Fluido();
+
+        // compara se o nome do fluido do trecho bate com o nome da linha da tabela
         if (fluido && QString::fromStdString(fluido->Nome()) == nomeAlvo) {
-            // Atualiza os dados do fluido
+
+            // atualiza os valores do fluido com os dados editados na linha da tabela
             fluido->Nome(ui->tblFluidos->item(row, 0)->text().toStdString());
             fluido->Densidade(ui->tblFluidos->item(row, 1)->text().toDouble());
             fluido->Viscosidade(ui->tblFluidos->item(row, 2)->text().toDouble());
 
-            // Atualiza profundidades
+            // atualiza as profundidades do trecho correspondente a esse fluido
             trecho->ProfundidadeInicial(ui->tblFluidos->item(row, 3)->text().toDouble());
             trecho->ProfundidadeFinal(ui->tblFluidos->item(row, 4)->text().toDouble());
 
-            break; // encontrou e atualizou
+            break; // sai do loop pois ja achou e atualizou o fluido certo
         }
     }
+
+    // atualiza os dados gerais na interface (como densidade e viscosidade media)
     AtualizarDados();
-    ui->statusbar->showMessage("Dados de Fluido Atualizado com Sucesso!");
+
+    // mostra mensagem informando que o fluido foi atualizado
+    ui->statusbar->showMessage("Dados de fluido atualizado com sucesso!");
 }
+
 
 void CSimuladorReologico::AtualizarDados()
 {
-
+    // desativa os sinais da tabela temporariamente pra evitar chamadas de funcoes durante a atualizacao
     ui->tblFluidos->blockSignals(true);
 
-    if (poco){
-        // Atualiza os valores dos QLineEdits com os dados do objeto poco
-        ui->editNomePoco->setText(QString::fromStdString(poco->NomePoco()));       // Profundidade total do poço
-        ui->editProfundidadeTotal->setText(QString::number(poco->ProfundidadeTotal()));       // Profundidade total do poço
-        ui->lbnProfundidadeOcupada->setText(QString::number(poco->ProfundidadeOcupada())); // Profundidade ocupada
-        ui->editPressaoSuperficie->setText(QString::number(poco->PressaoSuperficie()));           // Pressão na superfície
-        ui->editDiametroPoco->setText(QString::number(poco->DiametroPoco()));              // Diâmetro do poço
-        ui->editDiametroOD->setText(QString::number(poco->DiametroRevestimentoOD()));      // Diâmetro externo do revestimento (OD)
-        ui->editDiametroID->setText(QString::number(poco->DiametroRevestimentoID()));      // Diâmetro interno do revestimento (ID)
-        ui->editVazao->setText(QString::number(poco->Vazao()));                            // Vazão do fluido no poço
-        ui->lbnDensidadeMedia->setText(QString::number(poco->DensidadeEfetivaTotal()));   // Densidade efetiva média dos fluidos
-        ui->lbnViscosidadeMedia->setText(QString::number(poco->ViscosidadeEfetivaTotal())); // Viscosidade efetiva média dos fluidos
+    // verifica se o objeto poco ja foi criado (ou seja, se ja tem dados carregados)
+    if (poco) {
+        // atualiza os campos de entrada com os valores do objeto poco
+        ui->editNomePoco->setText(QString::fromStdString(poco->NomePoco()));
+        ui->editProfundidadeTotal->setText(QString::number(poco->ProfundidadeTotal()));
+        ui->lbnProfundidadeOcupada->setText(QString::number(poco->ProfundidadeOcupada()));
+        ui->editPressaoSuperficie->setText(QString::number(poco->PressaoSuperficie()));
+        ui->editDiametroPoco->setText(QString::number(poco->DiametroPoco()));
+        ui->editDiametroOD->setText(QString::number(poco->DiametroRevestimentoOD()));
+        ui->editDiametroID->setText(QString::number(poco->DiametroRevestimentoID()));
+        ui->editVazao->setText(QString::number(poco->Vazao()));
+        ui->lbnDensidadeMedia->setText(QString::number(poco->DensidadeEfetivaTotal()));
+        ui->lbnViscosidadeMedia->setText(QString::number(poco->ViscosidadeEfetivaTotal()));
 
-        // Atualizar QTableWidget com os dados dos trechos
+        // atualiza o numero de linhas da tabela de fluidos de acordo com os trechos cadastrados no poco
         ui->tblFluidos->setRowCount(static_cast<int>(poco->Trechos().size()));
 
+        // percorre os trechos do poco e preenche cada linha da tabela com os dados do fluido
         int row = 0;
         for (const auto& trecho : poco->Trechos()) {
             ui->tblFluidos->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(trecho->Fluido()->Nome())));
@@ -164,34 +181,39 @@ void CSimuladorReologico::AtualizarDados()
             ui->tblFluidos->setItem(row, 2, new QTableWidgetItem(QString::number(trecho->Fluido()->Viscosidade(), 'f', 2)));
             ui->tblFluidos->setItem(row, 3, new QTableWidgetItem(QString::number(trecho->ProfundidadeInicial(), 'f', 2)));
             ui->tblFluidos->setItem(row, 4, new QTableWidgetItem(QString::number(trecho->ProfundidadeFinal(), 'f', 2)));
-           ++row;
-
-           makePlotPoco();
+            ++row;
         }
+
+        // atualiza o grafico visual do poco com base nos trechos e profundidades
+        makePlotPoco();
     }
 
+    // reativa os sinais da tabela agora que a atualizacao terminou
     ui->tblFluidos->blockSignals(false);
 }
 
-
 void CSimuladorReologico::on_btnAdicionarFluido_clicked()
 {
+    // desativa edicao direta da tabela (evita conflito enquanto adiciona novo fluido)
     ui->tblFluidos->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
+    // se o poco ainda nao foi criado, nao permite adicionar fluido
     if (!poco) {
-        QMessageBox::warning(this, "Erro", "As propriedade do poço precisa está preenchida!");
+        QMessageBox::warning(this, "Erro", "As propriedade do poco precisa estar preenchida!");
     }
+    else {
+        // abre a janela onde o usuario preenche os dados do novo fluido
+        CJanelaAdicionarFluido JanelaFluido;
+        JanelaFluido.exec(); // abre em modo bloqueante (espera fechar)
 
-    else{
-        janelaadicionarfluido JanelaFluido;
-        JanelaFluido.exec();
-
+        // so continua se todos os campos foram preenchidos
         if (JanelaFluido.NomeFluido() != "" &&
             JanelaFluido.Densidade() != "" &&
             JanelaFluido.Viscosidade() != "" &&
             JanelaFluido.ProfundidadeInicial() != "" &&
-            JanelaFluido.ProfundidadeFinal() != ""){
+            JanelaFluido.ProfundidadeFinal() != "") {
 
+            // adiciona uma nova linha na tabela da interface
             int numLinhas = ui->tblFluidos->rowCount();
             ui->tblFluidos->insertRow(numLinhas);
             ui->tblFluidos->setItem(numLinhas, 0, new QTableWidgetItem(JanelaFluido.NomeFluido()));
@@ -200,32 +222,34 @@ void CSimuladorReologico::on_btnAdicionarFluido_clicked()
             ui->tblFluidos->setItem(numLinhas, 3, new QTableWidgetItem(JanelaFluido.ProfundidadeInicial()));
             ui->tblFluidos->setItem(numLinhas, 4, new QTableWidgetItem(JanelaFluido.ProfundidadeFinal()));
 
+            // converte os valores da janela pra tipos numericos
             std::string nome = JanelaFluido.NomeFluido().toStdString();
             double densidade = JanelaFluido.Densidade().toDouble();
             double viscosidade = JanelaFluido.Viscosidade().toDouble();
             double profundInicial = JanelaFluido.ProfundidadeInicial().toDouble();
             double profundFinal = JanelaFluido.ProfundidadeFinal().toDouble();
 
+            // cria o novo fluido e trecho com base nas informacoes
             auto fluido = std::make_unique<CFluido>(nome, densidade, viscosidade);
             auto trechoPoco = std::make_unique<CTrechoPoco>(profundInicial, profundFinal, std::move(fluido));
-            poco->AdicionarTrechoPoco(std::move(trechoPoco));
+            poco->AdicionarTrechoPoco(std::move(trechoPoco)); // adiciona ao poco
 
-            AtualizarDados();
-            ui->statusbar->showMessage("Fluido Adicionado com Sucesso!");
+            AtualizarDados(); // atualiza a interface com o novo trecho
+            ui->statusbar->showMessage("Fluido adicionado com sucesso!");
         }
     }
 }
-
 
 void CSimuladorReologico::on_btnRemoverFluido_clicked()
 {
     int linhaSelecionada = ui->tblFluidos->currentRow();
 
+    // verifica se alguma linha foi selecionada
     if (linhaSelecionada >= 0) {
-
-        QTableWidgetItem* item = ui->tblFluidos->item(linhaSelecionada, 0);
+        QTableWidgetItem* item = ui->tblFluidos->item(linhaSelecionada, 0); // nome do fluido
 
         if (item) {
+            // confirma se o usuario quer mesmo remover o fluido
             QMessageBox::StandardButton resposta = QMessageBox::question(
                 this,
                 "",
@@ -233,36 +257,39 @@ void CSimuladorReologico::on_btnRemoverFluido_clicked()
                 QMessageBox::Yes | QMessageBox::No
                 );
 
+            // se o usuario confirmar, remove o trecho do objeto poco e da tabela
             if (resposta == QMessageBox::Yes) {
                 QString nomeFluido = item->text();
                 ui->tblFluidos->removeRow(linhaSelecionada);
                 poco->RemoverTrechoPoco(nomeFluido.toStdString());
                 AtualizarDados();
-                ui->statusbar->showMessage("Fluido Removido com Sucesso!");
+                ui->statusbar->showMessage("Fluido removido com sucesso!");
             }
-
         }
-
     } else {
+        // caso nenhuma linha esteja selecionada
         QMessageBox::warning(this, "Erro", "Selecione uma linha para deletar.");
     }
 }
 
-
-
 void CSimuladorReologico::on_btnCalcularPressaoHidroestatica_clicked()
 {
+    // pega a profundidade digitada pelo usuario
     QString profundidadeStr = ui->editProfundidadePressaoHidroestatica->text();
     double profundidade = profundidadeStr.toDouble();
 
-    ui->lbnPressaoHidroestatica->setText(QString::number(poco->PressaoHidroestaticaNoPonto(profundidade)));
-
+    // calcula a pressao usando o objeto poco e mostra o valor no label
+    ui->lbnPressaoHidroestatica->setText(
+        QString::number(poco->PressaoHidroestaticaNoPonto(profundidade))
+        );
 }
 
 void CSimuladorReologico::on_btnCalcularModeloNewtonianoPoco_clicked()
 {
+    // cria o modelo passando o objeto poco como base
     modeloNewtoniano = std::make_shared<CModeloNewtoniano>(poco.get());
 
+    // atualiza os campos da interface com os resultados do modelo
     ui->lbnVelocidadePocoNewtoniano->setText(QString::number(modeloNewtoniano->VMediaPoco()));
     ui->lbnReynoldsPocoNewtoniano->setText(QString::number(modeloNewtoniano->ReynoldsPoco()));
     ui->lbnTipoFluxoPocoNewtoniano->setText(QString::fromStdString(modeloNewtoniano->FluxoPoco()));
@@ -280,8 +307,10 @@ void CSimuladorReologico::on_btnCalcularModeloNewtonianoAnular_clicked()
 }
 
 
+
 void CSimuladorReologico::on_btnCalcularModeloBighamPoco_clicked()
 {
+    // verifica se os campos estao vazios e avisa o usuario se faltar algum dado
     if (ui->editPontoEscoamentoPoco->text().isEmpty() && ui->editViscosidadePlasticaPoco->text().isEmpty()) {
         QMessageBox::warning(nullptr, "Aviso", "Preencha o Ponto de Escoamento e a Viscosidade Plástica.");
     } else if (ui->editPontoEscoamentoPoco->text().isEmpty()) {
@@ -289,12 +318,14 @@ void CSimuladorReologico::on_btnCalcularModeloBighamPoco_clicked()
     } else if (ui->editViscosidadePlasticaPoco->text().isEmpty()) {
         QMessageBox::warning(nullptr, "Aviso", "Preencha a Viscosidade Plástica.");
     } else {
-
+        // se os dois valores estiverem preenchidos, converte para double
         double pontoEscoamento = ui->editPontoEscoamentoPoco->text().toDouble();
         double viscosidadePlastica = ui->editViscosidadePlasticaPoco->text().toDouble();
 
+        // cria o modelo reologico de Bingham com os dados do poco e os parametros fornecidos
         modeloBingham = std::make_shared<CModeloBingham>(poco.get(), viscosidadePlastica, pontoEscoamento);
 
+        // atualiza a interface com os resultados dos calculos no espaco do tubo
         ui->lbnVelocidadePocoBigham->setText(QString::number(modeloBingham->VMediaPoco()));
         ui->lbnReynoldsPocoBigham->setText(QString::number(modeloBingham->ReynoldsPoco()));
         ui->lbnReynoldsHedstromPocoBigham->setText(QString::number(modeloBingham->ReynoldsHedstronPoco()));
@@ -306,6 +337,7 @@ void CSimuladorReologico::on_btnCalcularModeloBighamPoco_clicked()
 
 void CSimuladorReologico::on_btnCalcularModeloBighamAnular_clicked()
 {
+    // checa se os campos de entrada estao vazios e avisa o usuario
     if (ui->editPontoEscoamentoAnular->text().isEmpty() && ui->editViscosidadePlasticaAnular->text().isEmpty()) {
         QMessageBox::warning(nullptr, "Aviso", "Preencha o Ponto de Escoamento e a Viscosidade Plástica.");
     } else if (ui->editPontoEscoamentoAnular->text().isEmpty()) {
@@ -313,12 +345,14 @@ void CSimuladorReologico::on_btnCalcularModeloBighamAnular_clicked()
     } else if (ui->editViscosidadePlasticaAnular->text().isEmpty()) {
         QMessageBox::warning(nullptr, "Aviso", "Preencha a Viscosidade Plástica.");
     } else {
-
+        // converte os valores digitados para numeros reais
         double pontoEscoamento = ui->editPontoEscoamentoAnular->text().toDouble();
         double viscosidadePlastica = ui->editViscosidadePlasticaAnular->text().toDouble();
 
+        // cria o modelo de Bingham para calcular no anular (entre tubo e revestimento)
         modeloBingham = std::make_shared<CModeloBingham>(poco.get(), viscosidadePlastica, pontoEscoamento);
 
+        // preenche os campos com os valores calculados para o anular
         ui->lbnVelocidadeAnularBigham->setText(QString::number(modeloBingham->VMediaAnular()));
         ui->lbnReynoldsAnularBigham->setText(QString::number(modeloBingham->ReynoldsAnular()));
         ui->lbnReynoldsHedstromAnularBigham->setText(QString::number(modeloBingham->ReynoldsHedstronAnular()));
@@ -331,14 +365,17 @@ void CSimuladorReologico::on_btnCalcularModeloBighamAnular_clicked()
 
 void CSimuladorReologico::on_btnCalcularModeloPotenciaPoco_clicked()
 {
+    // verifica se o campo do indice de consistencia esta vazio
     if (ui->editIndiceConsistenciaPotenciaPoco->text().isEmpty()) {
-        QMessageBox::warning(nullptr, "Aviso", "Preencha o Indice de Consistência.");
+        QMessageBox::warning(nullptr, "Aviso", "Preencha o Indice de Consistencia.");
     } else {
-
+        // se estiver preenchido, converte pra double
         double indiceConsistencia = ui->editIndiceConsistenciaPotenciaPoco->text().toDouble();
 
+        // cria o modelo da lei da potencia com o indice fornecido
         modeloPotencia = std::make_shared<CModeloPotencia>(poco.get(), indiceConsistencia);
 
+        // atualiza os campos da interface com os valores calculados no espaco do tubo
         ui->lbnVelocidadePocoPotencia->setText(QString::number(modeloPotencia->VMediaPoco()));
         ui->lbnReynoldsPocoPotencia->setText(QString::number(modeloPotencia->ReynoldsPoco()));
         ui->lbnReynoldsCriticoPocoPotencia->setText(QString::number(modeloPotencia->ReynoldsCriticoPoco()));
@@ -347,17 +384,19 @@ void CSimuladorReologico::on_btnCalcularModeloPotenciaPoco_clicked()
     }
 }
 
-
 void CSimuladorReologico::on_btnCalcularModeloPotenciaAnular_clicked()
 {
+    // verifica se o campo do indice de consistencia do anular esta vazio
     if (ui->editIndiceConsistenciaPotenciaAnular->text().isEmpty()) {
-        QMessageBox::warning(nullptr, "Aviso", "Preencha o Indice de Consistência.");
+        QMessageBox::warning(nullptr, "Aviso", "Preencha o Indice de Consistencia.");
     } else {
-
+        // se estiver preenchido, converte pra double
         double indiceConsistencia = ui->editIndiceConsistenciaPotenciaAnular->text().toDouble();
 
+        // cria o modelo da lei da potencia com os dados do poco
         modeloPotencia = std::make_shared<CModeloPotencia>(poco.get(), indiceConsistencia);
 
+        // atualiza os campos com os resultados dos calculos no anular
         ui->lbnVelocidadeAnularPotencia->setText(QString::number(modeloPotencia->VMediaAnular()));
         ui->lbnReynoldsAnularPotencia->setText(QString::number(modeloPotencia->ReynoldsAnular()));
         ui->lbnReynoldsCriticoAnularPotencia->setText(QString::number(modeloPotencia->ReynoldsCriticoAnular()));
@@ -368,23 +407,24 @@ void CSimuladorReologico::on_btnCalcularModeloPotenciaAnular_clicked()
 
 void CSimuladorReologico::makePlotPoco()
 {
-    // Limpar o gráfico anterior
+    // limpa o grafico anterior (caso ja tenha algo desenhado)
     ui->customPlotPoco->clearItems();
 
-    // Configurar os eixos
-    ui->customPlotPoco->xAxis->setLabel("Diâmetro do Poço (m)");
+    // configura os nomes dos eixos
+    ui->customPlotPoco->xAxis->setLabel("Diametro do Poco (m)");
     ui->customPlotPoco->yAxis->setLabel("Profundidade (m)");
 
-    ui->customPlotPoco->xAxis->setRange(-10, 10);  // Simulação da largura do poço
-    ui->customPlotPoco->yAxis->setRange(0, 300);   // Profundidade máxima do poço (ajustável)
-    ui->customPlotPoco->yAxis->setRangeReversed(true); // Profundidade cresce para baixo
+    // define uma faixa inicial de visualizacao nos eixos
+    ui->customPlotPoco->xAxis->setRange(-10, 10);   // largura do poco no grafico
+    ui->customPlotPoco->yAxis->setRange(0, 300);    // profundidade inicial do grafico
+    ui->customPlotPoco->yAxis->setRangeReversed(true); // deixa o zero em cima e profundidade pra baixo
 
-    // Verifica se o poço está configurado
+    // verifica se o objeto poco existe e se ja tem trechos adicionados
     if (!poco || poco->Trechos().empty()) {
-        return;
+        return; // nao desenha nada se o poco nao estiver pronto
     }
 
-    // Determinar profundidade máxima real
+    // pega a maior profundidade entre todos os trechos pra ajustar o eixo Y
     double profundidadeMaxima = 0.0;
     for (const auto& trecho : poco->Trechos()) {
         if (trecho->ProfundidadeFinal() > profundidadeMaxima) {
@@ -393,61 +433,63 @@ void CSimuladorReologico::makePlotPoco()
     }
     ui->customPlotPoco->yAxis->setRange(0, profundidadeMaxima);
 
-    // Mapa para armazenar cores únicas por fluido
+    // cria um mapa que associa um nome de fluido a uma cor
     QMap<QString, QColor> mapaCores;
+
+    // define algumas cores diferentes pra usar nos fluidos
     QVector<QColor> coresDisponiveis = {
-        QColor(255, 0, 0, 150),    // Vermelho translúcido
-        QColor(0, 255, 0, 150),    // Verde translúcido
-        QColor(0, 0, 255, 150),    // Azul translúcido
-        QColor(255, 165, 0, 150),  // Laranja translúcido
-        QColor(128, 0, 128, 150),  // Roxo translúcido
-        QColor(0, 255, 255, 150)   // Ciano translúcido
+        QColor(255, 0, 0, 150),    // vermelho claro
+        QColor(0, 255, 0, 150),    // verde claro
+        QColor(0, 0, 255, 150),    // azul claro
+        QColor(255, 165, 0, 150),  // laranja
+        QColor(128, 0, 128, 150),  // roxo
+        QColor(0, 255, 255, 150)   // ciano
     };
     int corIndex = 0;
 
-    // Criar os retângulos para cada seção do poço
+    // para cada trecho do poco, desenha um retangulo com o fluido correspondente
     for (const auto& trecho : poco->Trechos()) {
-        double profundidadeInicial = trecho->ProfundidadeInicial();
-        double profundidadeFinal = trecho->ProfundidadeFinal();
-        double diametroPoco = 8.0;   // Supondo um diâmetro fixo do poço
-        double diametroSecao = 6.0;  // Supondo um diâmetro da seção menor que o do poço
+        double profundInicial = trecho->ProfundidadeInicial();
+        double profundFinal = trecho->ProfundidadeFinal();
+        double diametroPoco = 8.0;  // valor fixo usado aqui como referencia visual
+        double diametroSecao = 6.0; // o diametro da tubulacao eh menor que o do buraco
         QString nomeFluido = QString::fromStdString(trecho->Fluido()->Nome());
 
-        // Definir cor única para cada fluido
+        // se for a primeira vez que esse fluido aparece, define uma cor nova pra ele
         if (!mapaCores.contains(nomeFluido)) {
             mapaCores[nomeFluido] = coresDisponiveis[corIndex % coresDisponiveis.size()];
             corIndex++;
         }
         QColor corFluido = mapaCores[nomeFluido];
 
-        // Criar retângulo do poço (cinza translúcido)
-        QCPItemRect *rectPoco = new QCPItemRect(ui->customPlotPoco);
-        rectPoco->topLeft->setCoords(-diametroPoco / 2, profundidadeInicial);
-        rectPoco->bottomRight->setCoords(diametroPoco / 2, profundidadeFinal);
-        rectPoco->setPen(QPen(Qt::black));
-        rectPoco->setBrush(QBrush(QColor(150, 150, 150, 100))); // Cinza translúcido
+        // desenha o buraco do poco (cinza claro)
+        QCPItemRect *retanguloPoco = new QCPItemRect(ui->customPlotPoco);
+        retanguloPoco->topLeft->setCoords(-diametroPoco / 2, profundInicial);
+        retanguloPoco->bottomRight->setCoords(diametroPoco / 2, profundFinal);
+        retanguloPoco->setPen(QPen(Qt::black));
+        retanguloPoco->setBrush(QBrush(QColor(150, 150, 150, 100))); // cinza transparente
 
-        // Criar retângulo da seção (fluido)
-        QCPItemRect *rectSecao = new QCPItemRect(ui->customPlotPoco);
-        rectSecao->topLeft->setCoords(-diametroSecao / 2, profundidadeInicial);
-        rectSecao->bottomRight->setCoords(diametroSecao / 2, profundidadeFinal);
-        rectSecao->setPen(QPen(Qt::black));
-        rectSecao->setBrush(QBrush(corFluido)); // Cor do fluido
+        // desenha a tubulacao com o fluido dentro (com a cor do fluido)
+        QCPItemRect *retanguloSecao = new QCPItemRect(ui->customPlotPoco);
+        retanguloSecao->topLeft->setCoords(-diametroSecao / 2, profundInicial);
+        retanguloSecao->bottomRight->setCoords(diametroSecao / 2, profundFinal);
+        retanguloSecao->setPen(QPen(Qt::black));
+        retanguloSecao->setBrush(QBrush(corFluido));
 
-        // Criar rótulo do fluido dentro do retângulo
-        QCPItemText *textLabel = new QCPItemText(ui->customPlotPoco);
-        textLabel->position->setCoords(0, (profundidadeInicial + profundidadeFinal) / 2); // Centralizado
-        textLabel->setText(nomeFluido);
-        textLabel->setFont(QFont("Arial", 10, QFont::Bold));
-        textLabel->setColor(Qt::black);
-        textLabel->setPositionAlignment(Qt::AlignCenter);
+        // coloca o nome do fluido centralizado na altura da secao
+        QCPItemText *rotulo = new QCPItemText(ui->customPlotPoco);
+        rotulo->position->setCoords(0, (profundInicial + profundFinal) / 2); // centro vertical
+        rotulo->setText(nomeFluido);
+        rotulo->setFont(QFont("Arial", 10, QFont::Bold));
+        rotulo->setColor(Qt::black);
+        rotulo->setPositionAlignment(Qt::AlignCenter);
     }
 
-    // Atualizar o gráfico
+    // redesenha o grafico com os novos elementos
     ui->customPlotPoco->replot();
 }
 
-void CSimuladorReologico::on_actionNova_Simula_o_triggered()
+void CSimuladorReologico::on_actionNova_Simulacao_triggered()
 {
     QMessageBox::StandardButton resposta = QMessageBox::question(
         this,
@@ -524,46 +566,46 @@ void CSimuladorReologico::on_actionSalvar_Como_triggered()
 }
 
 
-void CSimuladorReologico::on_actionExcel_triggered()
-{
-
-}
-
-
 void CSimuladorReologico::on_actionArquivo_dat_triggered()
 {
+    // Abre uma janelinha pra o usuario escolher o arquivo que ele quer carregar
     QString caminhoDoArquivo = QFileDialog::getOpenFileName(
-        this, // Passa a janela principal como pai
+        this,
         "Selecione um arquivo",
         "",
         "Todos os arquivos (*.*)"
         );
 
-    // Converte o QString para std::string corretamente
+    // Converte o caminho pra string padrao do C++ (std::string)
     std::string caminhoDoArquivoStr = caminhoDoArquivo.toStdString();
 
+    // Abre o arquivo selecionado pra leitura
     std::ifstream file(caminhoDoArquivoStr);
 
     std::string linha;
-    bool lendoFluidos = false; // Começa lendo dados do poço
+    bool lendoFluidos = false; // começa assumindo que vamos ler os dados do poço
 
+    // le linha por linha do arquivo
     while (std::getline(file, linha)) {
-        // Ignorar linhas vazias ou comentários
+        // ignora linhas em branco ou que comecam com '#' (comentario)
         if (linha.empty() || linha[0] == '#') {
+            // se encontrar a palavra "Fluidos", troca pro modo de leitura dos fluidos
             if (linha.find("Fluidos") != std::string::npos) {
-                lendoFluidos = true; // Mudar para leitura de fluidos
+                lendoFluidos = true;
             }
             continue;
         }
 
+        // se ainda estamos lendo os dados do poço (linha unica)
         if (!lendoFluidos) {
-            // Ler os dados do poço
-            std::istringstream iss(linha);
+            std::istringstream iss(linha); // transforma a linha em stream pra extrair os dados
             std::string nome;
             double profundidade, pressaoSuperficie, diametro, OD, ID, vazao;
 
+            // extrai os valores na ordem correta
             if (iss >> nome >> profundidade >> pressaoSuperficie >> diametro >> OD >> ID >> vazao) {
 
+                // ativa os botoes de calculo, ja que agora temos um poço valido
                 ui->btnCalcularPressaoHidroestatica->setEnabled(true);
                 ui->btnCalcularModeloNewtonianoPoco->setEnabled(true);
                 ui->btnCalcularModeloNewtonianoAnular->setEnabled(true);
@@ -573,28 +615,34 @@ void CSimuladorReologico::on_actionArquivo_dat_triggered()
                 ui->btnCalcularModeloPotenciaAnular->setEnabled(true);
                 ui->btnExibirGraficoPressaoHidroestatica->setEnabled(true);
 
-                poco = std::make_unique<CPoco>(
-                    CPoco::CriarParaModulo01(nome, profundidade, pressaoSuperficie, diametro, OD, ID, vazao)
+                // cria o objeto do poço com os dados lidos
+                poco = std::make_unique<CObjetoPoco>(
+                    CObjetoPoco::CriarParaModulo01(nome, profundidade, pressaoSuperficie, diametro, OD, ID, vazao)
                     );
             }
+
         } else {
-            // Ler os dados dos fluidos
+            // aqui ja estamos lendo os trechos dos fluidos
             std::istringstream iss(linha);
             std::string nome;
             double densidade, viscosidade, profInicial, profFinal;
 
+            // le os valores do fluido e da faixa de profundidade
             if (iss >> nome >> densidade >> viscosidade >> profInicial >> profFinal) {
                 auto fluido = std::make_unique<CFluido>(nome, densidade, viscosidade);
                 auto trechoPoco = std::make_unique<CTrechoPoco>(profInicial, profFinal, std::move(fluido));
-                if (!poco->AdicionarTrechoPoco(std::move(trechoPoco))) {
-                }
+
+                // adiciona o trecho no objeto do poço
+                poco->AdicionarTrechoPoco(std::move(trechoPoco));
             }
         }
     }
 
-    file.close();
+    file.close(); // fecha o arquivo depois de terminar a leitura
+
+    // atualiza a interface com os dados lidos
     AtualizarDados();
-    ui->statusbar->showMessage("Dados Importado com Sucesso!");
+    ui->statusbar->showMessage("Dados importados com sucesso!");
 }
 
 

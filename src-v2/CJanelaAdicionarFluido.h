@@ -9,16 +9,16 @@ Armazena os dados digitados: nome, densidade, viscosidade e faixa de profundidad
 */
 
 namespace Ui {
-class janelaadicionarfluido;
+class CJanelaAdicionarFluido;
 }
 
-class janelaadicionarfluido : public QDialog
+class CJanelaAdicionarFluido : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit janelaadicionarfluido(QWidget *parent = nullptr);
-    ~janelaadicionarfluido();
+    explicit CJanelaAdicionarFluido(QWidget *parent = nullptr);
+    ~CJanelaAdicionarFluido();
 
     // metodos para alterar os dados
     void NomeFluido(const QString& nome) { nomeFluido = nome; }
@@ -42,7 +42,7 @@ private slots:
 
 private:
     bool modoEdicao = true;
-    Ui::janelaadicionarfluido *ui = nullptr;
+    Ui::CJanelaAdicionarFluido *ui = nullptr;
 
     QString nomeFluido;
     QString densidade;

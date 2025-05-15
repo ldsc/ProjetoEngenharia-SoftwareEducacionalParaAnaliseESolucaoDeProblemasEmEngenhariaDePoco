@@ -40,9 +40,8 @@ struct qt_meta_tag_ZN24CSimuladorPerdaTubulacaoE_t {};
 #ifdef QT_MOC_HAS_STRINGDATA
 static constexpr auto qt_meta_stringdata_ZN24CSimuladorPerdaTubulacaoE = QtMocHelpers::stringData(
     "CSimuladorPerdaTubulacao",
-    "on_btnAdicionarFluido_clicked",
-    "",
     "on_btnAdicionarPropriedades_clicked",
+    "",
     "on_btnAtualizarDados_clicked",
     "on_btnAdicionarTrecho_clicked",
     "makePlotTemperatura",
@@ -71,7 +70,7 @@ Q_CONSTINIT static const uint qt_meta_data_ZN24CSimuladorPerdaTubulacaoE[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      14,   14, // methods
+      13,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -79,27 +78,25 @@ Q_CONSTINIT static const uint qt_meta_data_ZN24CSimuladorPerdaTubulacaoE[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   98,    2, 0x08,    1 /* Private */,
-       3,    0,   99,    2, 0x08,    2 /* Private */,
-       4,    0,  100,    2, 0x08,    3 /* Private */,
-       5,    0,  101,    2, 0x08,    4 /* Private */,
-       6,    4,  102,    2, 0x08,    5 /* Private */,
-      12,    0,  111,    2, 0x08,   10 /* Private */,
-      13,    0,  112,    2, 0x08,   11 /* Private */,
-      14,    0,  113,    2, 0x08,   12 /* Private */,
-      15,    0,  114,    2, 0x08,   13 /* Private */,
-      16,    0,  115,    2, 0x08,   14 /* Private */,
-      17,    0,  116,    2, 0x08,   15 /* Private */,
-      18,    0,  117,    2, 0x08,   16 /* Private */,
-      19,    0,  118,    2, 0x08,   17 /* Private */,
-      20,    0,  119,    2, 0x08,   18 /* Private */,
+       1,    0,   92,    2, 0x08,    1 /* Private */,
+       3,    0,   93,    2, 0x08,    2 /* Private */,
+       4,    0,   94,    2, 0x08,    3 /* Private */,
+       5,    4,   95,    2, 0x08,    4 /* Private */,
+      11,    0,  104,    2, 0x08,    9 /* Private */,
+      12,    0,  105,    2, 0x08,   10 /* Private */,
+      13,    0,  106,    2, 0x08,   11 /* Private */,
+      14,    0,  107,    2, 0x08,   12 /* Private */,
+      15,    0,  108,    2, 0x08,   13 /* Private */,
+      16,    0,  109,    2, 0x08,   14 /* Private */,
+      17,    0,  110,    2, 0x08,   15 /* Private */,
+      18,    0,  111,    2, 0x08,   16 /* Private */,
+      19,    0,  112,    2, 0x08,   17 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, 0x80000000 | 10,    7,    8,    9,   11,
+    QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, 0x80000000 | 9,    6,    7,    8,   10,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -122,8 +119,6 @@ Q_CONSTINIT const QMetaObject CSimuladorPerdaTubulacao::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_tag_ZN24CSimuladorPerdaTubulacaoE_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<CSimuladorPerdaTubulacao, std::true_type>,
-        // method 'on_btnAdicionarFluido_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_btnAdicionarPropriedades_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_btnAtualizarDados_clicked'
@@ -163,27 +158,26 @@ void CSimuladorPerdaTubulacao::qt_static_metacall(QObject *_o, QMetaObject::Call
     auto *_t = static_cast<CSimuladorPerdaTubulacao *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->on_btnAdicionarFluido_clicked(); break;
-        case 1: _t->on_btnAdicionarPropriedades_clicked(); break;
-        case 2: _t->on_btnAtualizarDados_clicked(); break;
-        case 3: _t->on_btnAdicionarTrecho_clicked(); break;
-        case 4: _t->makePlotTemperatura((*reinterpret_cast< std::add_pointer_t<double>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<QCustomPlot*>>(_a[4]))); break;
-        case 5: _t->on_btnRemoverFluido_clicked(); break;
-        case 6: _t->on_btnRemoverTrecho_clicked(); break;
-        case 7: _t->makePlotPoco(); break;
-        case 8: _t->on_btnCalcularVariacoes_clicked(); break;
-        case 9: _t->on_actionArquivo_Dat_triggered(); break;
-        case 10: _t->EditarDadosPoco(); break;
-        case 11: _t->on_actionNova_Simula_o_triggered(); break;
-        case 12: _t->on_actionExportar_Como_Imagem_triggered(); break;
-        case 13: _t->on_actionSobre_o_SEEP_triggered(); break;
+        case 0: _t->on_btnAdicionarPropriedades_clicked(); break;
+        case 1: _t->on_btnAtualizarDados_clicked(); break;
+        case 2: _t->on_btnAdicionarTrecho_clicked(); break;
+        case 3: _t->makePlotTemperatura((*reinterpret_cast< std::add_pointer_t<double>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<QCustomPlot*>>(_a[4]))); break;
+        case 4: _t->on_btnRemoverFluido_clicked(); break;
+        case 5: _t->on_btnRemoverTrecho_clicked(); break;
+        case 6: _t->makePlotPoco(); break;
+        case 7: _t->on_btnCalcularVariacoes_clicked(); break;
+        case 8: _t->on_actionArquivo_Dat_triggered(); break;
+        case 9: _t->EditarDadosPoco(); break;
+        case 10: _t->on_actionNova_Simula_o_triggered(); break;
+        case 11: _t->on_actionExportar_Como_Imagem_triggered(); break;
+        case 12: _t->on_actionSobre_o_SEEP_triggered(); break;
         default: ;
         }
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
-        case 4:
+        case 3:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
             case 3:
@@ -213,14 +207,14 @@ int CSimuladorPerdaTubulacao::qt_metacall(QMetaObject::Call _c, int _id, void **
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 14)
+        if (_id < 13)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 14;
+        _id -= 13;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 14)
+        if (_id < 13)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 14;
+        _id -= 13;
     }
     return _id;
 }

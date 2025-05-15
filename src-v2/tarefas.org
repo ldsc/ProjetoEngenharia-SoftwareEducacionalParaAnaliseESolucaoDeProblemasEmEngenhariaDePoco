@@ -30,20 +30,6 @@
 ** DONE PressaoTotal -> pressaoTotal
 ** DONE acrescentar booleano | bool VerificarPreenchimentoColuna { preenchimentoColuna = true/false;}
 
-73 double CPoco :: DensidadeEfetivaTotal () const {
-74 double DensidadeTotal = 0.0;
-75 double ComprimentoTotal = 0.0;
-76double ComprimentoTrecho =0;
-77 for ( const auto & Trecho : trechos ) {
-78 ComprimentoTrecho = Trecho -> ProfundidadeFinal () -
-Trecho -> ProfundidadeInicial () ;
-79 DensidadeTotal += Trecho - > DensidadeEquivalente () *
-ComprimentoTrecho ;
-80 ComprimentoTotal += ComprimentoTrecho ;
-81 }
-82
-83 return DensidadeTotal / ComprimentoTotal ;
-84 }
 
 ** DONE renomear todos os atributos | profunTotal
 ** DONE std :: ofstream outputFile (" dados.txt") | (" dadosSimulacaoPoco.Gnuplot.dat") ;
@@ -52,7 +38,7 @@ ComprimentoTrecho ;
 * DONE TCC1
 ** DONE CImpressao CRelatorioPoco ou algo do gênero (Deve ter um nome que faça sentido e encapsule os atributos e métodos).
 ** DONE Retirar necessidade de "enter" após atividade.
-** TODO A saída de dados de fluido deve estar relacionada à classe CFLuido ou a uma classe que agregue fluidos, estando embutida no poço.
+** DONE A saída de dados de fluido deve estar relacionada à classe CFLuido ou a uma classe que agregue fluidos, estando embutida no poço.
 ** Entrada
    - ** DONE Adicionar Fluido - padrão -> Criar Fluido
    - ** DONE Carregar Dados a Partir de Arquivo (.dat) -> Carregar Dados do Poço e Fluido a Partir de Arquivo (.dat)
@@ -91,9 +77,9 @@ ComprimentoTrecho ;
 **** TODO Obter com Bruno a informação da teoria de cada exemplo
 **** TODO Solicitar a instalação e uso do software para feedback
 ** Implementar a interface gráfica da parte I (poço com seção única)
-*** TODO Fazer diagramas associados
-*** TODO Fazer a interface no QTCreator
-*** TODO Testar a usabilidade e fazer ajustes necessários
+*** DONE Fazer diagramas associados
+*** DONE Fazer a interface no QTCreator
+*** DONE Testar a usabilidade e fazer ajustes necessários
 
 
 **** DONE Adicionar menu, onde terão os ícones principais associados as simulações
@@ -300,7 +286,7 @@ ComprimentoTrecho ;
 **** Deve ter os 5 exemplos de uso listados acima, de forma que o usuário que baixou o programa execute tais exemplos para ganhar confiança. Neste caso os exemplos de uso devem ser todos para casos válidos e funcionais.
 **** Note que se os exemplos contém arquivos de dados você deve incluir estes arquivos na distribuição, no zip que irão baixar (pasta test).
 **** Note que a pasta test deve ter TODOS OS ARQUIVOS NECESSÁRIOS PARA RODAR O PROGRAMA NO WINDOWS E LINUX, isto inclui os arquivos dos exemplos. Eu criei as pastas. Você deve testar o funcionamento dos 5 exemplos nas duas plataformas para garantir o funcionamento do sofwtare e da leitura dos arquivos. Use arquivos com codificação UTF8.
-*** TODO Adicionar ementa [copiar do capítulo de elaboração; pode ser como Apêndice ou capítulo]
+*** DONE Adicionar ementa [copiar do capítulo de elaboração; pode ser como Apêndice ou capítulo]
 *** 
 
 ** Manual do Desenvolvedor

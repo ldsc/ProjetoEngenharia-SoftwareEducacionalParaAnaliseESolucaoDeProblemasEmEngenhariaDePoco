@@ -29,11 +29,11 @@ public:
     CModeloBingham() {}
     ~CModeloBingham() {}
 
-    // Construtor com ponteiro para o objeto CPoco
-    CModeloBingham(CPoco* poco) : CModeloReologico(poco) {}
+    // Construtor com ponteiro para o objeto CObjetoPoco
+    CModeloBingham(CObjetoPoco* poco) : CModeloReologico(poco) {}
 
     // Construtor completo com parametros do modelo
-    CModeloBingham(CPoco* poco, double viscosidadePlastica, double pontoDeEscoamento)
+    CModeloBingham(CObjetoPoco* poco, double viscosidadePlastica, double pontoDeEscoamento)
         : CModeloReologico(poco),
         viscosidadePlastica(viscosidadePlastica),
         pontoDeEscoamento(pontoDeEscoamento)

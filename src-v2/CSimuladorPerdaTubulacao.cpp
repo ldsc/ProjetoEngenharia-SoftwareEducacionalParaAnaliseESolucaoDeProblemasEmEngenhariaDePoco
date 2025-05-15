@@ -66,8 +66,8 @@ void CSimuladorPerdaTubulacao::EditarDadosPoco() {
     if (!nome.isEmpty() && ok1 && ok2 && ok3 && ok4 && ok5 && ok6 && ok7) {
         if (!poco) {
             // Cria o poço
-            poco = std::make_unique<CPoco>(
-                CPoco::CriarParaModulo02(nome.toStdString(), profund, pressao, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, profundPacker)
+            poco = std::make_unique<CObjetoPoco>(
+                CObjetoPoco::CriarParaModulo02(nome.toStdString(), profund, pressao, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, profundPacker)
                 );
 
             ui->btnAdicionarTrecho->setEnabled(true);
@@ -125,64 +125,21 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarPropriedades_clicked()
             );
 
         if (resposta == QMessageBox::Yes) {
-            poco = std::make_unique<CPoco>(
-                CPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, ProfundidadePacker)
+            poco = std::make_unique<CObjetoPoco>(
+                CObjetoPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, ProfundidadePacker)
                 );
         }
         on_btnAtualizarDados_clicked();
     } else {
 
-        poco = std::make_unique<CPoco>(
-            CPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, ProfundidadePacker)
+        poco = std::make_unique<CObjetoPoco>(
+            CObjetoPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, ProfundidadePacker)
             );
     }
 
     makePlotTemperatura(temperaturaSuperiorInicial, temperaturaFundoInicial, profundidade, ui->customPlotTemperaturaInicial);
     makePlotTemperatura(temperaturaSuperiorFinal, temperaturaFundoFinal, profundidade, ui->customPlotTemperaturaFinal);
     makePlotPoco();
-}
-
-void CSimuladorPerdaTubulacao::on_btnAdicionarFluido_clicked()
-{
-    /*
-    ui->tblFluidos->setEditTriggers(QAbstractItemView::NoEditTriggers);
-
-    if (!poco) {
-        QMessageBox::warning(this, "Erro", "As propriedade do poço precisa está preenchida!");
-    }
-
-    else{
-        janelaadicionarfluido JanelaFluido;
-        JanelaFluido.exec();
-
-        if (JanelaFluido.getNomeFluido() != "" &&
-            JanelaFluido.getDensidade() != "" &&
-            JanelaFluido.getViscosidade() != "" &&
-            JanelaFluido.getProfunidadeInicial() != "" &&
-            JanelaFluido.getProfunidadeFinal() != ""){
-
-            int numLinhas = ui->tblFluidos->rowCount();
-            ui->tblFluidos->insertRow(numLinhas);
-            ui->tblFluidos->setItem(numLinhas, 0, new QTableWidgetItem(JanelaFluido.getNomeFluido()));
-            ui->tblFluidos->setItem(numLinhas, 1, new QTableWidgetItem(JanelaFluido.getDensidade()));
-            ui->tblFluidos->setItem(numLinhas, 2, new QTableWidgetItem(JanelaFluido.getViscosidade()));
-            ui->tblFluidos->setItem(numLinhas, 3, new QTableWidgetItem(JanelaFluido.getProfunidadeInicial()));
-            ui->tblFluidos->setItem(numLinhas, 4, new QTableWidgetItem(JanelaFluido.getProfunidadeFinal()));
-
-            std::string nome = JanelaFluido.getNomeFluido().toStdString();
-            double densidade = JanelaFluido.getDensidade().toDouble();
-            double viscosidade = JanelaFluido.getViscosidade().toDouble();
-            double profundInicial = JanelaFluido.getProfunidadeInicial().toDouble();
-            double profundFinal = JanelaFluido.getProfunidadeFinal().toDouble();
-
-            auto fluido = std::make_unique<CFluido>(nome, densidade, viscosidade);
-            auto trechoPoco = std::make_unique<CTrechoPoco>(profundInicial, profundFinal, std::move(fluido));
-            poco->AdicionarTrechoPoco(std::move(trechoPoco));
-
-            on_btnAtualizarDados_clicked();
-        }
-    }
-    */
 }
 
 void CSimuladorPerdaTubulacao::on_btnAtualizarDados_clicked()
@@ -606,8 +563,8 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
                 ui->btnRemoverTrecho->setEnabled(true);
                 ui->btnCalcularVariacoes->setEnabled(true);
 
-                poco = std::make_unique<CPoco>(
-                    CPoco::CriarParaModulo02(nome, profundidade, pressaoSup,
+                poco = std::make_unique<CObjetoPoco>(
+                    CObjetoPoco::CriarParaModulo02(nome, profundidade, pressaoSup,
                                              temperaturaSuperiorInicial, temperaturaFundoInicial,
                                              temperaturaSuperiorFinal, temperaturaFundoFinal, profundidadePacker)
                     );

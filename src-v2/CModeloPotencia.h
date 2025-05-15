@@ -26,7 +26,7 @@ public:
     ~CModeloPotencia() {}
 
     // Construtor com inicializacao do poco e do indice de consistencia
-    CModeloPotencia(CPoco* poco, double indiceDeConsistencia)
+    CModeloPotencia(CObjetoPoco* poco, double indiceDeConsistencia)
         : CModeloReologico(poco),
         indiceDeConsistencia(indiceDeConsistencia)
     {

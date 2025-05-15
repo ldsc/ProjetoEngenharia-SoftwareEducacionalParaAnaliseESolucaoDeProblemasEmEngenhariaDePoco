@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>janelaadicionarfluido</class>
- <widget class="QDialog" name="janelaadicionarfluido">
+ <class>CJanelaAdicionarFluido</class>
+ <widget class="QDialog" name="CJanelaAdicionarFluido">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -19,7 +19,7 @@
      <x>10</x>
      <y>10</y>
      <width>211</width>
-     <height>181</height>
+     <height>185</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -128,7 +128,7 @@ border-radius: 5px;</string>
   <connection>
    <sender>btnReturn</sender>
    <signal>accepted()</signal>
-   <receiver>janelaadicionarfluido</receiver>
+   <receiver>CJanelaAdicionarFluido</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -144,7 +144,7 @@ border-radius: 5px;</string>
   <connection>
    <sender>btnReturn</sender>
    <signal>rejected()</signal>
-   <receiver>janelaadicionarfluido</receiver>
+   <receiver>CJanelaAdicionarFluido</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

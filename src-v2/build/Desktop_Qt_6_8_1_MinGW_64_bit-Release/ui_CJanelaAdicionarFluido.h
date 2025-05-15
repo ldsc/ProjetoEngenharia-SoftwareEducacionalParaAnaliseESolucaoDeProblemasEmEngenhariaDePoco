@@ -22,7 +22,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_janelaadicionarfluido
+class Ui_CJanelaAdicionarFluido
 {
 public:
     QWidget *layoutWidget;
@@ -42,14 +42,14 @@ public:
     QLineEdit *LnValorProfundidadeFinal;
     QDialogButtonBox *btnReturn;
 
-    void setupUi(QDialog *janelaadicionarfluido)
+    void setupUi(QDialog *CJanelaAdicionarFluido)
     {
-        if (janelaadicionarfluido->objectName().isEmpty())
-            janelaadicionarfluido->setObjectName("janelaadicionarfluido");
-        janelaadicionarfluido->resize(227, 202);
-        layoutWidget = new QWidget(janelaadicionarfluido);
+        if (CJanelaAdicionarFluido->objectName().isEmpty())
+            CJanelaAdicionarFluido->setObjectName("CJanelaAdicionarFluido");
+        CJanelaAdicionarFluido->resize(227, 202);
+        layoutWidget = new QWidget(CJanelaAdicionarFluido);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(10, 10, 211, 181));
+        layoutWidget->setGeometry(QRect(10, 10, 211, 185));
         verticalLayout_3 = new QVBoxLayout(layoutWidget);
         verticalLayout_3->setObjectName("verticalLayout_3");
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -136,27 +136,27 @@ public:
         verticalLayout_3->addWidget(btnReturn);
 
 
-        retranslateUi(janelaadicionarfluido);
-        QObject::connect(btnReturn, &QDialogButtonBox::accepted, janelaadicionarfluido, qOverload<>(&QDialog::accept));
-        QObject::connect(btnReturn, &QDialogButtonBox::rejected, janelaadicionarfluido, qOverload<>(&QDialog::reject));
+        retranslateUi(CJanelaAdicionarFluido);
+        QObject::connect(btnReturn, &QDialogButtonBox::accepted, CJanelaAdicionarFluido, qOverload<>(&QDialog::accept));
+        QObject::connect(btnReturn, &QDialogButtonBox::rejected, CJanelaAdicionarFluido, qOverload<>(&QDialog::reject));
 
-        QMetaObject::connectSlotsByName(janelaadicionarfluido);
+        QMetaObject::connectSlotsByName(CJanelaAdicionarFluido);
     } // setupUi
 
-    void retranslateUi(QDialog *janelaadicionarfluido)
+    void retranslateUi(QDialog *CJanelaAdicionarFluido)
     {
-        janelaadicionarfluido->setWindowTitle(QCoreApplication::translate("janelaadicionarfluido", "Dialog", nullptr));
-        lbnTituloNome->setText(QCoreApplication::translate("janelaadicionarfluido", "Nome:", nullptr));
-        lbnTituloDensidade->setText(QCoreApplication::translate("janelaadicionarfluido", "Densidade:", nullptr));
-        lbnTituloViscosidade->setText(QCoreApplication::translate("janelaadicionarfluido", "Viscosidade:", nullptr));
-        lbnTituloProfundidadeInicial->setText(QCoreApplication::translate("janelaadicionarfluido", "Profunidade Inicial:", nullptr));
-        lbnTituloProfundidadeFinal->setText(QCoreApplication::translate("janelaadicionarfluido", "Profundidade Final:", nullptr));
+        CJanelaAdicionarFluido->setWindowTitle(QCoreApplication::translate("CJanelaAdicionarFluido", "Dialog", nullptr));
+        lbnTituloNome->setText(QCoreApplication::translate("CJanelaAdicionarFluido", "Nome:", nullptr));
+        lbnTituloDensidade->setText(QCoreApplication::translate("CJanelaAdicionarFluido", "Densidade:", nullptr));
+        lbnTituloViscosidade->setText(QCoreApplication::translate("CJanelaAdicionarFluido", "Viscosidade:", nullptr));
+        lbnTituloProfundidadeInicial->setText(QCoreApplication::translate("CJanelaAdicionarFluido", "Profunidade Inicial:", nullptr));
+        lbnTituloProfundidadeFinal->setText(QCoreApplication::translate("CJanelaAdicionarFluido", "Profundidade Final:", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class janelaadicionarfluido: public Ui_janelaadicionarfluido {};
+    class CJanelaAdicionarFluido: public Ui_CJanelaAdicionarFluido {};
 } // namespace Ui
 
 QT_END_NAMESPACE

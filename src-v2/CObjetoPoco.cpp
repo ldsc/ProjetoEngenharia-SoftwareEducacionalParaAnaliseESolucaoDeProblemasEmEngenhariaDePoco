@@ -1,297 +1,284 @@
 #include "CObjetoPoco.h"
-//#include "CGnuplot.h"
 #include <iostream>
 #include <vector>
 #include <fstream>
 #include <cstdlib>
 #include <numbers>
+#include <math.h>
 
 
-CPoco CPoco::CriarParaModulo01(std::string nome, double profund, double pressao,
-                               double D, double OD, double ID, double q) {
-    CPoco poco;
-    poco.nomePoco = nome;
-    poco.profundidadeFinal = profund;
-    poco.pressaoSuperficie = pressao;
-    poco.diametroPoco = D;
-    poco.diametroRevestimentoOD = OD;
-    poco.diametroRevestimentoID = ID;
-    poco.vazao = q;
-    return poco;
+CObjetoPoco CObjetoPoco::CriarParaModulo01(std::string nomeDoPoco, double profundidadeFinalDoPoco, double pressaoNaSuperficie,
+                                           double diametroDoPoco, double diametroRevestimentoExterno, double diametroRevestimentoInterno, double vazaoDoPoco) {
+    CObjetoPoco objetoPoco;
+
+    objetoPoco.nomePoco = nomeDoPoco;
+    objetoPoco.profundidadeFinal = profundidadeFinalDoPoco;
+    objetoPoco.pressaoSuperficie = pressaoNaSuperficie;
+    objetoPoco.diametroPoco = diametroDoPoco;
+    objetoPoco.diametroRevestimentoOD = diametroRevestimentoExterno;
+    objetoPoco.diametroRevestimentoID = diametroRevestimentoInterno;
+    objetoPoco.vazao = vazaoDoPoco;
+
+    return objetoPoco;
 }
 
-CPoco CPoco::CriarParaModulo02(std::string nome, double profund, double pressao,
-                               double tempTopoIni, double tempFundoIni,
-                               double tempTopoFim, double tempFundoFim, double packer) {
-    CPoco poco;
-    poco.nomePoco = nome;
-    poco.profundidadeFinal = profund;
-    poco.pressaoSuperficie = pressao;
-    poco.temperaturaTopoInicial = tempTopoIni;
-    poco.temperaturaFundoInicial = tempFundoIni;
-    poco.temperaturaTopoFinal = tempTopoFim;
-    poco.temperaturaFundoFinal = tempFundoFim;
-    poco.profundidadePacker = packer;
-    return poco;
+
+CObjetoPoco CObjetoPoco::CriarParaModulo02(std::string nomeDoPoco, double profundidadeFinalDoPoco, double pressaoNaSuperficie,
+                                           double temperaturaTopoInicial, double temperaturaFundoInicial,
+                                           double temperaturaTopoFinal, double temperaturaFundoFinal, double profundidadeDoPacker) {
+    CObjetoPoco objetoPoco;
+
+    objetoPoco.nomePoco = nomeDoPoco;
+    objetoPoco.profundidadeFinal = profundidadeFinalDoPoco;
+    objetoPoco.pressaoSuperficie = pressaoNaSuperficie;
+    objetoPoco.temperaturaTopoInicial = temperaturaTopoInicial;
+    objetoPoco.temperaturaFundoInicial = temperaturaFundoInicial;
+    objetoPoco.temperaturaTopoFinal = temperaturaTopoFinal;
+    objetoPoco.temperaturaFundoFinal = temperaturaFundoFinal;
+    objetoPoco.profundidadePacker = profundidadeDoPacker;
+
+    return objetoPoco;
 }
 
-// Metodos
 
-std::vector<CTrechoPoco*> CPoco::Trechos() const {
-    std::vector<CTrechoPoco*> trechosPonteiros;
-    for (const auto& trecho : trechos) {
-        trechosPonteiros.push_back(trecho.get()); // Adiciona o ponteiro do trecho ao vetor
+std::vector<CTrechoPoco*> CObjetoPoco::Trechos() const {
+    std::vector<CTrechoPoco*> vetorDePonteirosParaTrechos;
+
+    // percorre todos os trechos armazenados no poço
+    for (const auto& trechoUnico : trechos) {
+        // adiciona o ponteiro cru (não único) de cada trecho ao vetor de saída
+        vetorDePonteirosParaTrechos.push_back(trechoUnico.get());
     }
-    return trechosPonteiros; // Retorna o vetor de ponteiros
+
+    // retorna o vetor contendo os ponteiros dos trechos
+    return vetorDePonteirosParaTrechos;
 }
 
-bool CPoco::AdicionarTrechoPoco(std::unique_ptr<CTrechoPoco> TrechoPoco) {
-    double ProfundidadeFluido = TrechoPoco->ProfundidadeFinal() - TrechoPoco->ProfundidadeInicial();
+bool CObjetoPoco::AdicionarTrechoPoco(std::unique_ptr<CTrechoPoco> trechoParaAdicionar) {
+    // calcula o comprimento do trecho com base nas profundidades inicial e final
+    double comprimentoDoTrecho = trechoParaAdicionar->ProfundidadeFinal() - trechoParaAdicionar->ProfundidadeInicial();
 
-    trechos.push_back(std::move(TrechoPoco));
-    profundidadeOcupada += ProfundidadeFluido;
-    return true;
+    // move o trecho para dentro do vetor principal do poço
+    trechos.push_back(std::move(trechoParaAdicionar));
+
+    // atualiza a profundidade total ocupada no poço somando o novo trecho
+    profundidadeOcupada += comprimentoDoTrecho;
+
+    return true; // operação realizada com sucesso
 }
 
-void CPoco::RemoverTrechoPoco(const std::string& nomeFluido) {
+
+void CObjetoPoco::RemoverTrechoPoco(const std::string& nomeFluido) {
     for (auto it = trechos.begin(); it != trechos.end();) {
-        if ((*it)->Nome() == nomeFluido) {
-            double ProfundidadeFluido = (*it)->ProfundidadeFinal() - (*it)->ProfundidadeInicial();
-            it = trechos.erase(it); // Remove o trecho e atualiza o iterador
-            profundidadeOcupada -= ProfundidadeFluido;
+        if ((*it)->Fluido()->Nome() == nomeFluido) {
+            double comprimento = (*it)->ProfundidadeFinal() - (*it)->ProfundidadeInicial();
+            it = trechos.erase(it);
+            profundidadeOcupada -= comprimento;
         } else {
-            ++it; // Apenas avança para o próximo
+            ++it;
         }
     }
 }
 
-double CPoco::PressaoHidroestaticaTotal() const {
+double CObjetoPoco::PressaoHidroestaticaTotal() const {
+    double pressaoTotalHidrostatica = 0.0;
 
-    double pressaoTotal = 0.0;
-
-    for (const auto& Trecho : trechos) {
-        pressaoTotal += Trecho->PressaoHidroestatica();
+    // soma a pressao hidrostatica de todos os trechos do poço
+    for (const auto& trechoAtual : trechos) {
+        pressaoTotalHidrostatica += trechoAtual->PressaoHidroestatica();
     }
-    return pressaoTotal + pressaoSuperficie;
+
+    // adiciona a pressao da superficie para obter a pressao total
+    return pressaoTotalHidrostatica + pressaoSuperficie;
 }
 
-double CPoco::PressaoHidroestaticaNoPonto(double profundidade) const {
-    double pressaoTotal = pressaoSuperficie;
-    double profundidadeAcumulada = 0.0;
+double CObjetoPoco::PressaoHidroestaticaNoPonto(double profundidadeDesejada) const {
+    double pressaoAcumulada = pressaoSuperficie;
+    double profundidadeJaCalculada = 0.0;
 
-    for (const auto& Trecho : trechos) {
-        double profundidadeTrecho = Trecho->ProfundidadeFinal() - Trecho->ProfundidadeInicial();
-        
-        // Verifica se a profundidade esta dentro do trecho atual
-        if (profundidade <= profundidadeAcumulada + profundidadeTrecho) {
-            // Calcula a contribuicao do trecho ate a profundidade desejada
-            pressaoTotal += Trecho->PressaoHidroestatica(profundidade - profundidadeAcumulada);
+    // percorre cada trecho verificando se ele contem a profundidade desejada
+    for (const auto& trechoAtual : trechos) {
+        double comprimentoDoTrecho = trechoAtual->ProfundidadeFinal() - trechoAtual->ProfundidadeInicial();
+
+        // se a profundidade estiver dentro do trecho atual
+        if (profundidadeDesejada <= profundidadeJaCalculada + comprimentoDoTrecho) {
+            double profundidadeDentroDoTrecho = profundidadeDesejada - profundidadeJaCalculada;
+
+            // adiciona somente a parte proporcional da pressao no trecho
+            pressaoAcumulada += trechoAtual->PressaoHidroestatica(profundidadeDentroDoTrecho);
             break;
         } else {
-            // Adiciona a pressao hidrostatica do trecho completo
-            pressaoTotal += Trecho->PressaoHidroestatica();
-            profundidadeAcumulada += profundidadeTrecho;
+            // adiciona a pressao total do trecho completo
+            pressaoAcumulada += trechoAtual->PressaoHidroestatica();
+            profundidadeJaCalculada += comprimentoDoTrecho;
         }
     }
 
-    return pressaoTotal;
+    return pressaoAcumulada;
 }
 
-bool CPoco::VerificarPreenchimentoColuna() {
-    double ProfundidadeNaoOcupada = profundidadeFinal - profundidadeOcupada;
+bool CObjetoPoco::VerificarPreenchimentoColuna() {
+    double profundidadeNaoPreenchida = profundidadeFinal - profundidadeOcupada;
 
-    if (ProfundidadeNaoOcupada > 0) {
-        std::cout << "Uma coluna de " << ProfundidadeNaoOcupada << " ft de fluido precisa ser adicionada!\n";
-        std::cout << std::endl;
-        return false; // Caluna nao preenchida
+    if (profundidadeNaoPreenchida > 0) {
+        std::cout << "Uma coluna de " << profundidadeNaoPreenchida << " ft de fluido precisa ser adicionada!" << std::endl;
+        return false; // coluna incompleta
     } else {
-        std::cout << "A coluna de fluidos equivale à profundidade da coluna do poco!\n";
-        std::cout << std::endl;
-        return true; // coluna preenchida
+        std::cout << "A coluna de fluidos equivale à profundidade total do poço!" << std::endl;
+        return true; // coluna completamente preenchida
     }
 }
 
 
-double CPoco::DensidadeEfetivaTotal() const {
-    double densidadeTotal = 0.0;
-    double comprimentoTotal = 0.0;
-    double comprimentoTrecho =0.0;
+double CObjetoPoco::DensidadeEfetivaTotal() const {
+    double somaDensidadePonderada = 0.0;
+    double comprimentoTotalDaColuna = 0.0;
 
-    for (const auto& Trecho : trechos) {
-        comprimentoTrecho = Trecho->ProfundidadeFinal() - Trecho->ProfundidadeInicial();
-        densidadeTotal += Trecho->DensidadeEquivalente() * comprimentoTrecho;
-        comprimentoTotal += comprimentoTrecho;
+    for (const auto& trechoAtual : trechos) {
+        double comprimentoTrecho = trechoAtual->ProfundidadeFinal() - trechoAtual->ProfundidadeInicial();
+
+        // multiplica a densidade equivalente pelo comprimento do trecho para ponderar
+        somaDensidadePonderada += trechoAtual->DensidadeEquivalente() * comprimentoTrecho;
+        comprimentoTotalDaColuna += comprimentoTrecho;
     }
 
-    return densidadeTotal / comprimentoTotal;
+    return somaDensidadePonderada / comprimentoTotalDaColuna;
 }
 
-double CPoco::ViscosidadeEfetivaTotal() const {
-    
-    double viscosidadeTotal = 0.0;
+double CObjetoPoco::ViscosidadeEfetivaTotal() const {
+    double somaDasViscosidades = 0.0;
 
-    for (const auto& Trecho : trechos) {
-        viscosidadeTotal += Trecho->Fluido()->Viscosidade();
-    }
-    return viscosidadeTotal / trechos.size();
-}
-
-std::pair<std::vector<double>, std::vector<double>> CPoco::PlotarProfundidadePorPressaoMedia() {
-
-    std::vector<double> profundidades;
-    std::vector<double> pressoes;
-
-    for (double z = 0.0; z <= ProfundidadeTotal(); z += 1) {
-        profundidades.push_back(z);
-        pressoes.push_back(PressaoHidroestaticaNoPonto(z));
+    // percorre todos os trechos para somar as viscosidades dos fluidos
+    for (const auto& trechoAtual : trechos) {
+        somaDasViscosidades += trechoAtual->Fluido()->Viscosidade();
     }
 
-    return std::make_pair(profundidades, pressoes);
+    // retorna a media simples das viscosidades
+    return somaDasViscosidades / trechos.size();
 }
 
-std::pair<std::vector<double>, std::vector<double>> CPoco::PlotarProfundidadePorPressao() {
+std::pair<std::vector<double>, std::vector<double>> CObjetoPoco::PlotarProfundidadePorPressaoMedia() {
+    std::vector<double> vetorDeProfundidades;
+    std::vector<double> vetorDePressoes;
 
+    // percorre cada metro ao longo da profundidade total do poço
+    for (double profundidadeAtual = 0.0; profundidadeAtual <= ProfundidadeTotal(); profundidadeAtual += 1.0) {
+        vetorDeProfundidades.push_back(profundidadeAtual);
+
+        // calcula a pressao no ponto atual usando a funcao apropriada
+        double pressaoNoPonto = PressaoHidroestaticaNoPonto(profundidadeAtual);
+        vetorDePressoes.push_back(pressaoNoPonto);
+    }
+
+    // retorna as duas listas para serem usadas na geracao do grafico
+    return std::make_pair(vetorDeProfundidades, vetorDePressoes);
 }
 
-/*
-double CargaInicial() const;
-double DeltaLTemperatura() const;
-double DeltaLEfeitoBalao() const;
-double VariacaoCargaEfeitoPistao() const;
-double DeltaLPistaoPacker() const;
-double DeltaLPistaoCrossover() const;
-double DeltaLForcaRestauradora() const;
-double CargaInjecao(bool colunaFixa) const; // ou com enum
-*/
-#include <QDebug>
-#include <QDebug>
-
-double CPoco::CargaInicial(double profundidade) const { // calculos errados
+double CObjetoPoco::CargaInicial(double profundidadeAlvo) const {
     const double pi = 3.141592653589793;
     double cargaTotal = 0.0;
 
-    // === 1. Pressão hidrostática interna no ponto ===
-    for (const auto& trecho : trechos) {
-        if (profundidade >= trecho->ProfundidadeInicial() &&
-            profundidade <= trecho->ProfundidadeFinal()) {
+    // === 1. Pressao hidrostática interna no ponto analisado ===
+    for (const auto& trechoAtual : trechos) {
+        if (profundidadeAlvo >= trechoAtual->ProfundidadeInicial() &&
+            profundidadeAlvo <= trechoAtual->ProfundidadeFinal()) {
 
-            double di = trecho->DiametroInterno(); // polegadas
-            double As = pi / 4.0 * (di * di);       // área da seção interna (in²)
+            double diametroInterno = trechoAtual->DiametroInterno(); // polegadas
+            double areaInterna = pi / 4.0 * (diametroInterno * diametroInterno); // in²
 
-            double rho = trecho->Fluido()->Densidade(); // lb/gal
-            double P = 0.052 * rho * profundidade;      // psi
+            double densidadeFluido = trechoAtual->Fluido()->Densidade(); // lb/gal
+            double pressaoNoPonto = 0.052 * densidadeFluido * profundidadeAlvo; // psi
 
-            double F = P * As; // lbf
-            cargaTotal += F;
+            double forcaInterna = pressaoNoPonto * areaInterna; // lbf
+            cargaTotal += forcaInterna;
 
-            qDebug() << "🔷 Pressão hidrostática interna:";
-            qDebug() << "  Profundidade       =" << profundidade << "ft";
-            qDebug() << "  Densidade (ρ)      =" << rho << "lb/gal";
-            qDebug() << "  Pressão (P)        =" << P << "psi";
-            qDebug() << "  Área seção (As)    =" << As << "in²";
-            qDebug() << "  Força P·As         =" << F << "lbf";
-            break;
+            break; // só considera o primeiro trecho que cobre a profundidade
         }
     }
 
-    // === 2. Efeitos pistão de todos os crossovers acima ===
+    // === 2. Efeito pistao (crossovers acima do ponto) ===
     for (size_t i = 1; i < trechos.size(); ++i) {
-        const auto& cima = trechos[i - 1];
-        const auto& baixo = trechos[i];
+        const auto& trechoAcima = trechos[i - 1];
+        const auto& trechoAbaixo = trechos[i];
 
-        double zCross = baixo->ProfundidadeInicial();
+        double profundidadeCrossover = trechoAbaixo->ProfundidadeInicial();
 
-        if (zCross >= profundidade)
+        if (profundidadeCrossover >= profundidadeAlvo)
             continue;
 
-        double rhoIn = cima->Fluido()->Densidade();
-        double rhoOut = baixo->Fluido()->Densidade();
+        double densidadeInterna = trechoAcima->Fluido()->Densidade();
+        double densidadeExterna = trechoAbaixo->Fluido()->Densidade();
 
-        double deltaPi = 0.052 * rhoIn * zCross;
-        double deltaPo = 0.052 * rhoOut * zCross;
+        double pressaoInterna = 0.052 * densidadeInterna * profundidadeCrossover;
+        double pressaoExterna = 0.052 * densidadeExterna * profundidadeCrossover;
 
-        double Ain = pi / 4.0 * (cima->DiametroInterno() * cima->DiametroInterno());
-        double Aout = pi / 4.0 * (baixo->DiametroExterno() * baixo->DiametroExterno());
+        double areaInterna = pi / 4.0 * pow(trechoAcima->DiametroInterno(), 2);
+        double areaExterna = pi / 4.0 * pow(trechoAbaixo->DiametroExterno(), 2);
 
-        double deltaF = deltaPi * Ain + deltaPo * Aout;
-        cargaTotal += deltaF;
-
-        qDebug() << "🔶 Efeito pistão no crossover em" << zCross << "ft:";
-        qDebug() << "  ΔPi (P interno)     =" << deltaPi << "psi";
-        qDebug() << "  ΔPo (P externo)     =" << deltaPo << "psi";
-        qDebug() << "  Ain (área interna)  =" << Ain << "in²";
-        qDebug() << "  Aout (área externa) =" << Aout << "in²";
-        qDebug() << "  ΔF (empuxo pistão)  =" << deltaF << "lbf";
+        double forcaPistao = pressaoInterna * areaInterna + pressaoExterna * areaExterna;
+        cargaTotal += forcaPistao;
     }
 
     // === 3. Peso da coluna acima da profundidade ===
-    for (const auto& trecho : trechos) {
-        double zi = trecho->ProfundidadeInicial();
-        double zf = trecho->ProfundidadeFinal();
+    for (const auto& trechoAtual : trechos) {
+        double profundidadeInicialTrecho = trechoAtual->ProfundidadeInicial();
+        double profundidadeFinalTrecho = trechoAtual->ProfundidadeFinal();
 
-        if (zf <= profundidade)
+        if (profundidadeFinalTrecho <= profundidadeAlvo)
             continue;
 
-        double z1 = std::max(profundidade, zi);
-        double L = zf - z1;
-        if (L > 0.0) {
-            double pesoLinear = trecho->PesoUnidade(); // lb/ft
-            double pesoTotal = pesoLinear * L;
-            cargaTotal += pesoTotal;
+        double profundidadeUtil = std::max(profundidadeAlvo, profundidadeInicialTrecho);
+        double comprimentoConsiderado = profundidadeFinalTrecho - profundidadeUtil;
 
-            qDebug() << "🔷 Peso da coluna (trecho de" << z1 << "a" << zf << "ft):";
-            qDebug() << "  Comprimento (L)     =" << L << "ft";
-            qDebug() << "  Peso específico      =" << pesoLinear << "lb/ft";
-            qDebug() << "  Força peso           =" << pesoTotal << "lbf";
+        if (comprimentoConsiderado > 0.0) {
+            double pesoPorMetro = trechoAtual->PesoUnidade(); // lb/ft
+            double pesoTotal = pesoPorMetro * comprimentoConsiderado;
+            cargaTotal += pesoTotal;
         }
     }
 
-    qDebug() << "✅ Carga total em" << profundidade << "ft = " << cargaTotal << "lbf";
     return cargaTotal;
 }
 
-double CPoco::DeltaLTemperaturaTotal() const {
-    double deltaLTotal = 0.0;
-    double Tref = TemperaturaTopoInicial(); // Temperatura inicial do poço (referência)
+double CObjetoPoco::DeltaLTemperaturaTotal() const {
+    double variacaoTotalComprimento = 0.0;
+    double temperaturaReferencia = TemperaturaTopoInicial(); // temperatura do topo como base
 
-    for (const auto& trecho : trechos) {
-        double z1 = trecho->ProfundidadeInicial();
-        double z2 = trecho->ProfundidadeFinal();
-        double L = z2 - z1;
-        if (L <= 0.0)
-            continue;
+    for (const auto& trechoAtual : trechos) {
+        double profundidadeInicial = trechoAtual->ProfundidadeInicial();
+        double profundidadeFinal = trechoAtual->ProfundidadeFinal();
+        double comprimentoTrecho = profundidadeFinal - profundidadeInicial;
 
-        double alpha = trecho->CoeficienteExpancaoTermica();
+        if (comprimentoTrecho <= 0.0)
+            continue; // ignora trechos nulos ou invertidos
 
-        double Tz1 = TemperaturaNoPonto(z1);
-        double Tz2 = TemperaturaNoPonto(z2);
-        double Tmed = (Tz1 + Tz2) / 2.0;
-        double deltaT = Tref - Tmed;
+        double coefExpansaoTermica = trechoAtual->CoeficienteExpancaoTermica();
 
-        double deltaL = alpha * L * deltaT;
-        deltaLTotal += deltaL;
+        // temperatura média do trecho considerando variação linear
+        double temperaturaInicial = TemperaturaNoPonto(profundidadeInicial);
+        double temperaturaFinal = TemperaturaNoPonto(profundidadeFinal);
+        double temperaturaMedia = (temperaturaInicial + temperaturaFinal) / 2.0;
 
-        qDebug() << "Trecho:" << z1 << "→" << z2 << "ft";
-        qDebug() << "  L       =" << L << "ft";
-        qDebug() << "  α       =" << alpha;
-        qDebug() << "  T(z1)   =" << Tz1 << "°F";
-        qDebug() << "  T(z2)   =" << Tz2 << "°F";
-        qDebug() << "  ΔT      =" << deltaT << "°F";
-        qDebug() << "  ΔL      =" << deltaL << "ft";
+        double variacaoTemperatura = temperaturaReferencia - temperaturaMedia;
+
+        // aplica a fórmula de dilatação linear: ΔL = α * L * ΔT
+        double deltaComprimento = coefExpansaoTermica * comprimentoTrecho * variacaoTemperatura;
+        variacaoTotalComprimento += deltaComprimento;
     }
 
-    qDebug() << "✅ ΔL térmico total da coluna = " << deltaLTotal << "ft";
-    return deltaLTotal;
+    return variacaoTotalComprimento;
 }
 
 
-double CPoco::TemperaturaNoPonto(double profundidade) const {
-    double Ttopo = TemperaturaTopoInicial();
-    double Tfundo = TemperaturaFundoInicial();
-    double H = ProfundidadeTotal();
+double CObjetoPoco::TemperaturaNoPonto(double profundidadeDesejada) const {
+    double temperaturaNoTopo = TemperaturaTopoInicial();
+    double temperaturaNoFundo = TemperaturaFundoInicial();
+    double profundidadeTotalDoPoco = ProfundidadeTotal();
 
-    if (H <= 0.0)
-        return Ttopo; // evita divisão por zero
+    // evita divisão por zero no caso de profundidade inválida
+    if (profundidadeTotalDoPoco <= 0.0)
+        return temperaturaNoTopo;
 
-    return Ttopo + (Tfundo - Ttopo) * (profundidade / H);
+    // aplica interpolação linear para calcular a temperatura no ponto
+    return temperaturaNoTopo + (temperaturaNoFundo - temperaturaNoTopo) * (profundidadeDesejada / profundidadeTotalDoPoco);
 }

@@ -26,13 +26,13 @@ protected:
     std::string fluxoAnular;
 
     // Objeto que contem as propriedades do poco
-    CPoco* poco;
+    CObjetoPoco* poco;
 
 public:
     // Construtores
     CModeloReologico() {}
     virtual ~CModeloReologico() {}
-    CModeloReologico(CPoco* poco) : poco(poco) {}
+    CModeloReologico(CObjetoPoco* poco) : poco(poco) {}
 
     // Getters
     double FatorFriccaoPoco() const { return fatorFriccaoPoco; }

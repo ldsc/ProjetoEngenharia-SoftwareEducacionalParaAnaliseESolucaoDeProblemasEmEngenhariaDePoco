@@ -5,7 +5,9 @@
 #include <memory>
 #include "CTrechoTubulacao.h"
 
-class CPoco {
+// Classe CObjetoPoco representa o objeto principal que armazena os dados do poço e permite a execução de cálculos e simulações
+
+class CObjetoPoco {
 protected:
     std::string nomePoco;
     double profundidadeFinal = 0.0;
@@ -17,7 +19,6 @@ protected:
     double vazao = 0.0;
     std::vector<std::unique_ptr<CTrechoPoco>> trechos;
 
-    // Dados a mais que precisam ser coletados caso rode a simulacao do modulo 02
     double temperaturaTopoInicial = 0.0;
     double temperaturaFundoInicial = 0.0;
     double temperaturaTopoFinal = 0.0;
@@ -25,22 +26,23 @@ protected:
     double profundidadePacker = 0.0;
 
 public:
-    //construtor
-    CPoco() = default;
-    ~CPoco() = default;
+    // Construtor e destrutor padrão
+     CObjetoPoco() = default;
+    ~CObjetoPoco() = default;
 
-    // Desativa a cópia
-    CPoco(const CPoco&) = delete;
-    CPoco& operator=(const CPoco&) = delete;
+    // Evita cópia (pra evitar duplicação desnecessária dos trechos)
+    CObjetoPoco(const CObjetoPoco&) = delete;
+    CObjetoPoco& operator=(const CObjetoPoco&) = delete;
 
-    // Habilita movimento
-    CPoco(CPoco&&) = default;
-    CPoco& operator=(CPoco&&) = default;
+    // Permite movimentação (move semantics)
+    CObjetoPoco(CObjetoPoco&&) = default;
+    CObjetoPoco& operator=(CObjetoPoco&&) = default;
 
-    static CPoco CriarParaModulo01(std::string Nome, double Profund, double PressaoSup, double D , double OD, double ID, double q);
-    static CPoco CriarParaModulo02(std::string Nome, double Profund, double PressaoSup, double TempTopoInicial, double TempFundoInicial, double TempTopoFinal, double TempFundoFinal, double profundidadePacker);
+    // Métodos de criação estáticos, separando claramente os dados exigidos por cada módulo
+    static CObjetoPoco CriarParaModulo01(std::string Nome, double Profund, double PressaoSup, double D , double OD, double ID, double q);
+    static CObjetoPoco CriarParaModulo02(std::string Nome, double Profund, double PressaoSup, double TempTopoInicial, double TempFundoInicial, double TempTopoFinal, double TempFundoFinal, double profundidadePacker);
 
-    // Getters
+    // Getters para acessar os atributos de forma segura
     std::string NomePoco() const { return nomePoco; }
     double ProfundidadeTotal() const { return profundidadeFinal; }
     double ProfundidadeOcupada() const { return profundidadeOcupada; }
@@ -49,42 +51,37 @@ public:
     double DiametroRevestimentoOD() const { return diametroRevestimentoOD; }
     double DiametroRevestimentoID() const { return diametroRevestimentoID; }
     double Vazao() const { return vazao; }
-
     double TemperaturaTopoInicial() const { return temperaturaTopoInicial; }
     double TemperaturaFundoInicial() const { return temperaturaFundoInicial; }
     double TemperaturaTopoFinal() const { return temperaturaTopoFinal; }
     double TemperaturaFundoFinal() const { return temperaturaFundoFinal; }
     double ProfundidadePacker() const { return profundidadePacker; }
 
+    // Retorna os trechos adicionados ao poço (em forma de ponteiros brutos)
     std::vector<CTrechoPoco*> Trechos() const;
-    
-    // Setters
-    void NomePoco( std::string Nome ) { nomePoco = Nome; }
-    void ProfundidadeTotal( double Profund ) { profundidadeFinal = Profund; }
-    void ProfundidadeOcupada( double Profund ) { profundidadeOcupada = Profund; }
-    void PressaoSuperficie( double PressaoSup ) { pressaoSuperficie = PressaoSup; }
-    void DiametroPoco( double D ) { diametroPoco = D; }
-    void DiametroRevestimentoOD( double OD ) { diametroRevestimentoOD = OD; }
-    void DiametroRevestimentoID( double ID ) { diametroRevestimentoID = ID; }
-    void Vazao( double q ) { vazao = q; }
 
+    // Setters permitem modificar os atributos do poço
+    void NomePoco(std::string Nome) { nomePoco = Nome; }
+    void ProfundidadeTotal(double Profundidade) { profundidadeFinal = Profundidade; }
+    void ProfundidadeOcupada(double Profundidade) { profundidadeOcupada = Profundidade; }
+    void PressaoSuperficie(double PressaoSuperior) { pressaoSuperficie = PressaoSuperior; }
+    void DiametroPoco(double D) { diametroPoco = D; }
+    void DiametroRevestimentoOD(double DiametroExterno) { diametroRevestimentoOD = DiametroExterno; }
+    void DiametroRevestimentoID(double DiametroInterno) { diametroRevestimentoID = DiametroInterno; }
+    void Vazao(double q) { vazao = q; }
     void TemperaturaTopoInicial(double temperatura) { temperaturaTopoInicial = temperatura; }
     void TemperaturaFundoInicial(double temperatura) { temperaturaFundoInicial = temperatura; }
     void TemperaturaTopoFinal(double temperatura) { temperaturaTopoFinal = temperatura; }
     void TemperaturaFundoFinal(double temperatura) { temperaturaFundoFinal = temperatura; }
     void ProfundidadePacker(double profundidade) { profundidadePacker = profundidade; }
 
-    // Metodos
-    bool AdicionarTrechoPoco(std::unique_ptr<CTrechoPoco> TrechoPoco);
+
+    // Métodos de cálculo
     double PressaoHidroestaticaTotal() const;
     double PressaoHidroestaticaNoPonto(double profundidade) const;
     double DensidadeEfetivaTotal() const;
     double ViscosidadeEfetivaTotal() const;
     bool VerificarPreenchimentoColuna();
-    std::pair<std::vector<double>, std::vector<double>> PlotarProfundidadePorPressao();
-    std::pair<std::vector<double>, std::vector<double>> PlotarProfundidadePorPressaoMedia();
-    void RemoverTrechoPoco(const std::string& nomeFluido);
-
     double CargaInicial(double profundidade) const;
     double DeltaLTemperaturaTotal() const;
     double DeltaLEfeitoBalao(double profundidade) const;
@@ -93,9 +90,14 @@ public:
     double DeltaLPistaoCrossover(double profundidade) const;
     double DeltaLForcaRestauradora(double profundidade) const;
     double CargaInjecao(double profundidade, bool colunaFixa) const;
-
     double TemperaturaNoPonto(double profundidade) const;
 
+    bool AdicionarTrechoPoco(std::unique_ptr<CTrechoPoco> trechoParaAdicionar); // Função para adicionar um novo trecho ao poço
+    void RemoverTrechoPoco(const std::string& nomeFluido); // Remove trecho do poço com base no nome do fluido
+
+    // Métodos que retornam dados para gráficos
+    std::pair<std::vector<double>, std::vector<double>> PlotarProfundidadePorPressao();
+    std::pair<std::vector<double>, std::vector<double>> PlotarProfundidadePorPressaoMedia();
 };
 
 #endif

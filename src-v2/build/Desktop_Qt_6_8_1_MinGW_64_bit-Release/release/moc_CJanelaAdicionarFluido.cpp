@@ -31,13 +31,13 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN21janelaadicionarfluidoE_t {};
+struct qt_meta_tag_ZN22CJanelaAdicionarFluidoE_t {};
 } // unnamed namespace
 
 
 #ifdef QT_MOC_HAS_STRINGDATA
-static constexpr auto qt_meta_stringdata_ZN21janelaadicionarfluidoE = QtMocHelpers::stringData(
-    "janelaadicionarfluido",
+static constexpr auto qt_meta_stringdata_ZN22CJanelaAdicionarFluidoE = QtMocHelpers::stringData(
+    "CJanelaAdicionarFluido",
     "on_btnReturn_accepted",
     "",
     "on_btnReturn_rejected"
@@ -46,7 +46,7 @@ static constexpr auto qt_meta_stringdata_ZN21janelaadicionarfluidoE = QtMocHelpe
 #error "qtmochelpers.h not found or too old."
 #endif // !QT_MOC_HAS_STRINGDATA
 
-Q_CONSTINIT static const uint qt_meta_data_ZN21janelaadicionarfluidoE[] = {
+Q_CONSTINIT static const uint qt_meta_data_ZN22CJanelaAdicionarFluidoE[] = {
 
  // content:
       12,       // revision
@@ -70,15 +70,15 @@ Q_CONSTINIT static const uint qt_meta_data_ZN21janelaadicionarfluidoE[] = {
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject janelaadicionarfluido::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject CJanelaAdicionarFluido::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_ZN21janelaadicionarfluidoE.offsetsAndSizes,
-    qt_meta_data_ZN21janelaadicionarfluidoE,
+    qt_meta_stringdata_ZN22CJanelaAdicionarFluidoE.offsetsAndSizes,
+    qt_meta_data_ZN22CJanelaAdicionarFluidoE,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_tag_ZN21janelaadicionarfluidoE_t,
+    qt_incomplete_metaTypeArray<qt_meta_tag_ZN22CJanelaAdicionarFluidoE_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<janelaadicionarfluido, std::true_type>,
+        QtPrivate::TypeAndForceComplete<CJanelaAdicionarFluido, std::true_type>,
         // method 'on_btnReturn_accepted'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_btnReturn_rejected'
@@ -87,9 +87,9 @@ Q_CONSTINIT const QMetaObject janelaadicionarfluido::staticMetaObject = { {
     nullptr
 } };
 
-void janelaadicionarfluido::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void CJanelaAdicionarFluido::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<janelaadicionarfluido *>(_o);
+    auto *_t = static_cast<CJanelaAdicionarFluido *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->on_btnReturn_accepted(); break;
@@ -100,20 +100,20 @@ void janelaadicionarfluido::qt_static_metacall(QObject *_o, QMetaObject::Call _c
     (void)_a;
 }
 
-const QMetaObject *janelaadicionarfluido::metaObject() const
+const QMetaObject *CJanelaAdicionarFluido::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *janelaadicionarfluido::qt_metacast(const char *_clname)
+void *CJanelaAdicionarFluido::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_ZN21janelaadicionarfluidoE.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_ZN22CJanelaAdicionarFluidoE.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
 
-int janelaadicionarfluido::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int CJanelaAdicionarFluido::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
