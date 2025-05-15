@@ -1,6 +1,10 @@
 #include "CJanelaGraficoPressaoHidroestatica.h"
 #include "ui_CJanelaGraficoPressaoHidroestatica.h"
+#include <QFileDialog>
+#include <QMessageBox>
+#include <algorithm>
 
+// Construtor: recebe os dados de profundidade e pressao e plota o grafico
 CJanelaGraficoPressaoHidroestatica::CJanelaGraficoPressaoHidroestatica(
     const std::pair<std::vector<double>, std::vector<double>>& dados,
     QWidget *parent)
@@ -13,12 +17,23 @@ CJanelaGraficoPressaoHidroestatica::CJanelaGraficoPressaoHidroestatica(
     PlotarGraficoPressaoxProfundidade();
 }
 
+// Destrutor: libera memoria
 CJanelaGraficoPressaoHidroestatica::~CJanelaGraficoPressaoHidroestatica()
 {
     delete ui;
 }
 
+// Permite atualizar os dados apos a criacao da janela
+void CJanelaGraficoPressaoHidroestatica::PerfilHidrostatico(
+    const std::pair<std::vector<double>, std::vector<double>>& novoPerfil)
+{
+    profundidades = novoPerfil.first;
+    pressoes = novoPerfil.second;
+    PlotarGraficoPressaoxProfundidade();
+}
 
+// Funcao que plota o grafico com base na relacao profundidade x pressao
+// Parte da logica para segmentacao por inclinacao foi adaptada com auxilio de IA (ChatGPT)
 void CJanelaGraficoPressaoHidroestatica::PlotarGraficoPressaoxProfundidade()
 {
     QVector<double> x(profundidades.begin(), profundidades.end());
@@ -29,6 +44,7 @@ void CJanelaGraficoPressaoHidroestatica::PlotarGraficoPressaoxProfundidade()
 
     QVector<double> trechoX, trechoY;
 
+    // Funcao lambda para comparar inclinacao entre segmentos
     auto isMesmaInclinacao = [](double dy1, double dy2, double tolerancia) {
         return std::abs(dy1 - dy2) < tolerancia;
     };
@@ -42,18 +58,20 @@ void CJanelaGraficoPressaoHidroestatica::PlotarGraficoPressaoxProfundidade()
     for (int i = 1; i < x.size(); ++i) {
         double inclinacaoAtual = (y[i] - y[i - 1]) / (x[i] - x[i - 1]);
 
+        // Se mudou muito a inclinacao, cria um novo trecho no grafico
         if (!isMesmaInclinacao(inclinacaoAtual, inclinacaoAnterior, tolerancia)) {
             int index = plot->graphCount();
             plot->addGraph();
             plot->graph(index)->setData(trechoX, trechoY);
 
+            // Uso de cor e estilo dinamico inspirado em sugestao de IA para melhorar visualizacao
             QPen pen;
-            pen.setWidth(1); // Linha mais fina
+            pen.setWidth(1);
             pen.setColor(QColor::fromHsv((index * 70) % 360, 255, 200));
             plot->graph(index)->setPen(pen);
 
-            QCPScatterStyle estiloPonto(QCPScatterStyle::ssCircle, 4); // marcadores menores
-            plot->graph(index)->setScatterStyle(estiloPonto);
+            QCPScatterStyle estilo(QCPScatterStyle::ssCircle, 4);
+            plot->graph(index)->setScatterStyle(estilo);
             plot->graph(index)->setLineStyle(QCPGraph::lsLine);
 
             plot->graph(index)->setName(QString("Fluido %1").arg(index + 1));
@@ -67,7 +85,7 @@ void CJanelaGraficoPressaoHidroestatica::PlotarGraficoPressaoxProfundidade()
         inclinacaoAnterior = inclinacaoAtual;
     }
 
-    // Último trecho
+    // adiciona ultimo trecho
     int index = plot->graphCount();
     plot->addGraph();
     plot->graph(index)->setData(trechoX, trechoY);
@@ -77,34 +95,34 @@ void CJanelaGraficoPressaoHidroestatica::PlotarGraficoPressaoxProfundidade()
     pen.setColor(QColor::fromHsv((index * 70) % 360, 255, 200));
     plot->graph(index)->setPen(pen);
 
-    QCPScatterStyle estiloPonto(QCPScatterStyle::ssCircle, 4);
-    plot->graph(index)->setScatterStyle(estiloPonto);
+    QCPScatterStyle estilo(QCPScatterStyle::ssCircle, 4);
+    plot->graph(index)->setScatterStyle(estilo);
     plot->graph(index)->setLineStyle(QCPGraph::lsLine);
-
     plot->graph(index)->setName(QString("Fluido %1").arg(index + 1));
 
-    // Eixos
+    // Configura rotulos dos eixos
     plot->xAxis->setLabel("Profundidade (ft)");
     plot->yAxis->setLabel("Pressão Hidrostática (psi)");
 
+    // Define o intervalo dos eixos com base nos dados
     plot->xAxis->setRange(*std::min_element(x.begin(), x.end()),
                           *std::max_element(x.begin(), x.end()));
     plot->yAxis->setRange(*std::min_element(y.begin(), y.end()),
                           *std::max_element(y.begin(), y.end()));
 
-    // Legenda: canto inferior direito
+    // Legenda posicionada no canto inferior direito
     plot->legend->setVisible(true);
     plot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight | Qt::AlignBottom);
     plot->legend->setBrush(QBrush(Qt::white));
     plot->legend->setBorderPen(QPen(Qt::gray));
     plot->legend->setFont(QFont("Arial", 9));
 
-    // Zoom e pan com mouse
+    // Ativacao do zoom, arrastar e selecao com mouse (configuracao sugerida com base em IA)
     plot->setInteraction(QCP::iRangeDrag, true);
     plot->setInteraction(QCP::iRangeZoom, true);
     plot->setInteraction(QCP::iSelectPlottables, true);
 
-    // Mostrar coordenadas com o mouse
+    // Mostra tooltip com coordenadas ao passar o mouse (recurso inserido com apoio de IA)
     connect(plot, &QCustomPlot::mouseMove, this, [=](QMouseEvent *event) {
         double xVal = plot->xAxis->pixelToCoord(event->pos().x());
         double yVal = plot->yAxis->pixelToCoord(event->pos().y());
@@ -117,14 +135,13 @@ void CJanelaGraficoPressaoHidroestatica::PlotarGraficoPressaoxProfundidade()
     plot->replot();
 }
 
-
+// Botao de exportar imagem do grafico (logica de exportacao por QPixmap)
 void CJanelaGraficoPressaoHidroestatica::on_BntnExportarGrafico_clicked()
 {
-    QString fileName = QFileDialog::getSaveFileName(this, "Salvar gr", "", "PNG (*.png);;JPEG (*.jpg)");
+    QString fileName = QFileDialog::getSaveFileName(this, "Salvar grafico", "", "PNG (*.png);;JPEG (*.jpg)");
 
     if (!fileName.isEmpty()) {
-        QPixmap pixmap = ui->customPlotPressaoMediaProfundidade->toPixmap(800, 600);
-        pixmap.save(fileName);
+        QPixmap imagem = ui->customPlotPressaoMediaProfundidade->toPixmap(800, 600);
+        imagem.save(fileName);
     }
 }
-

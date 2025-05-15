@@ -3,29 +3,35 @@
 
 #include <string>
 
+/*
+Classe que representa um fluido qualquer do sistema
+Aqui sao armazenados nome, densidade e viscosidade
+Essas informacoes sao usadas nos calculos de pressao, perda de carga, etc
+*/
+
 class CFluido {
 protected:
-    std::string nome;
-    double densidade = 0.0;
-    double viscosidade = 0.0;
+    std::string nomeFluido;         // nome do fluido (ex: oleo ou agua)
+    double densidadeFluido = 0.0;   // densidade em lbm/gal
+    double viscosidadeFluido = 0.0; // viscosidade em cP
 
 public:
-    // Construtor
     CFluido() {}
     ~CFluido() {}
-    CFluido(std::string nome, double Dens, double visc)
-    : nome(nome), densidade(Dens), viscosidade(visc) {}
 
-    // Getters
-    std::string Nome() const { return nome; }
-    double Densidade() const { return densidade; }
-    double Viscosidade() const { return viscosidade; }
+    // Construtor para inicializar com todos os dados
+    CFluido(std::string nome, double densidade, double viscosidade)
+        : nomeFluido(nome), densidadeFluido(densidade), viscosidadeFluido(viscosidade) {}
 
-    // Setters
-    void Nome(std::string nome) { nome = nome; }
-    void Densidade(double Dens) { densidade = Dens; }
-    void Viscosidade(double visc) { viscosidade = visc; }
+    // getters
+    std::string Nome() const { return nomeFluido; }
+    double Densidade() const { return densidadeFluido; }
+    double Viscosidade() const { return viscosidadeFluido; }
 
+    // setters
+    void Nome(const std::string& novoNome) { nomeFluido = novoNome; }
+    void Densidade(double novaDensidade) { densidadeFluido = novaDensidade; }
+    void Viscosidade(double novaViscosidade) { viscosidadeFluido = novaViscosidade; }
 };
 
 #endif

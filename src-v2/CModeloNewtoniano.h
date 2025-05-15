@@ -3,30 +3,30 @@
 
 #include "CModeloReologico.h"
 
-#include <iostream>
-#include <fstream>
-#include <QApplication>
-#include <QFileDialog>
-#include <QString>
-#include <QMessageBox>
+/*
+Classe que representa o modelo reologico newtoniano
+Nesse caso, a viscosidade e constante e independe da taxa de deformacao
+A classe herda de CModeloReologico e implementa os metodos especificos para esse tipo de fluido
+*/
 
 class CModeloNewtoniano : public CModeloReologico {
 
 public:
-    //Construtor
+    // Construtores
     CModeloNewtoniano() {}
     ~CModeloNewtoniano() {}
-    CModeloNewtoniano(CPoco* poco) : CModeloReologico(poco){
+
+    // Construtor que recebe o objeto do poco
+    CModeloNewtoniano(CPoco* poco) : CModeloReologico(poco) {
         DeterminarFluxoPoco();
         DeterminarFluxoAnular();
     }
 
-    //Metodos
+    // Metodos obrigatorios sobrescritos do modelo base
     std::string DeterminarFluxoPoco() override;
     std::string DeterminarFluxoAnular() override;
     double CalcularPerdaPorFriccaoPoco() override;
     double CalcularPerdaPorFriccaoAnular() override;
-
 };
 
-#endif
+#endif // CMODELONEWTONIANO_H

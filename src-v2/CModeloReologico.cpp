@@ -4,56 +4,67 @@
 
 #include "CModeloReologico.h"
 
-
+// Calcula o número de Reynolds no poco usando a viscosidade total do fluido
 double CModeloReologico::DeterminarReynoldsPoco() {
-    reynoldsPoco = (928 * poco->DensidadeEfetivaTotal() * vMediaPoco * poco->DiametroRevestimentoID()) / poco->ViscosidadeEfetivaTotal();
+    reynoldsPoco = (928 * poco->DensidadeEfetivaTotal() * vMediaPoco * poco->DiametroRevestimentoID()) /
+                   poco->ViscosidadeEfetivaTotal();
     return reynoldsPoco;
 }
 
+// Mesmo calculo, mas permitindo passar a viscosidade como parametro
 double CModeloReologico::DeterminarReynoldsPoco(double viscosidade) {
-    reynoldsPoco = (928 * poco->DensidadeEfetivaTotal() * vMediaPoco * poco->DiametroRevestimentoID()) / viscosidade;
-
+    reynoldsPoco = (928 * poco->DensidadeEfetivaTotal() * vMediaPoco * poco->DiametroRevestimentoID()) /
+                   viscosidade;
     return reynoldsPoco;
 }
 
-double CModeloReologico::DeterminarReynoldsAnular(){
-    reynoldsAnular = (757 * poco->DensidadeEfetivaTotal() * vMediaAnular * (poco->DiametroPoco() - poco->DiametroRevestimentoOD())) / poco->ViscosidadeEfetivaTotal();
+// Calcula o número de Reynolds no espaco anular
+double CModeloReologico::DeterminarReynoldsAnular() {
+    reynoldsAnular = (757 * poco->DensidadeEfetivaTotal() * vMediaAnular *
+                      (poco->DiametroPoco() - poco->DiametroRevestimentoOD())) /
+                     poco->ViscosidadeEfetivaTotal();
     return reynoldsAnular;
 }
 
-double CModeloReologico::DeterminarReynoldsAnular(double viscosidade){
-    reynoldsAnular = (757 * poco->DensidadeEfetivaTotal() * vMediaAnular * (poco->DiametroPoco() - poco->DiametroRevestimentoOD())) / viscosidade;
+// Mesmo calculo para o anular, com viscosidade recebida externamente
+double CModeloReologico::DeterminarReynoldsAnular(double viscosidade) {
+    reynoldsAnular = (757 * poco->DensidadeEfetivaTotal() * vMediaAnular *
+                      (poco->DiametroPoco() - poco->DiametroRevestimentoOD())) /
+                     viscosidade;
     return reynoldsAnular;
 }
 
-double CModeloReologico::DeterminarVelocidadeMediaPoco(){
+// Calcula a velocidade média do fluido no interior da coluna (poco)
+double CModeloReologico::DeterminarVelocidadeMediaPoco() {
     vMediaPoco = poco->Vazao() / (2.448 * std::pow(poco->DiametroRevestimentoID(), 2));
     return vMediaPoco;
 }
 
-double CModeloReologico::DeterminarVelocidadeMediaAnular(){
-    vMediaAnular = poco->Vazao() / (2.448 * (std::pow(poco->DiametroPoco(), 2) - std::pow(poco->DiametroRevestimentoOD(), 2)));
+// Calcula a velocidade média no espaco anular entre a coluna e o revestimento
+double CModeloReologico::DeterminarVelocidadeMediaAnular() {
+    vMediaAnular = poco->Vazao() /
+                   (2.448 * (std::pow(poco->DiametroPoco(), 2) - std::pow(poco->DiametroRevestimentoOD(), 2)));
     return vMediaAnular;
 }
 
-
+// Calcula o fator de fricção usando a equação implícita de Fanning com Newton-Raphson
 double CModeloReologico::DeterminarFatorFriccao(double re) {
-    // Funcao auxiliar para o calculo do fator laminar (este nao esta sendo usado, mas se precisar, pode ser ativado)
+    // Estimativa inicial baseada em escoamento laminar (nao e usada diretamente, mas serve como chute)
     auto laminar_fator = [](double re) {
         return 0.0791 / std::pow(re, 0.25);
     };
 
-    // Definir a equacao f(x) que precisa ser resolvida
+    // Equacao de Fanning: 1/sqrt(f) - 4log10(Re*sqrt(f)) + 0.395 = 0
     auto f = [re](double x) {
         return 1 / std::sqrt(x) - 4 * std::log10(re * std::sqrt(x)) + 0.395;
     };
 
-    // Definir a derivada de f(x) para o metodo de Newton-Raphson
+    // Derivada da equacao de Fanning
     auto df = [](double x) {
         return -0.5 / (x * std::sqrt(x)) - (2 / (x * std::log(10)));
     };
 
-    // Metodo de Newton-Raphson para resolver f(x) = 0
+    // Metodo de Newton-Raphson para resolver a equacao
     auto newtonRaphson = [&](double x0, double tol = 1e-6, int max_iter = 1000000) {
         double x = x0;
         for (int i = 0; i < max_iter; i++) {
@@ -67,9 +78,9 @@ double CModeloReologico::DeterminarFatorFriccao(double re) {
         return x;
     };
 
-    // Estimar o chute inicial usando o fator laminar
+    // Chute inicial com base no fator para fluxo laminar
     double x0 = laminar_fator(re);
 
-    // Resolver a equacao de Fanning usando Newton-Raphson
+    // Retorna o valor resolvido
     return newtonRaphson(x0);
 }

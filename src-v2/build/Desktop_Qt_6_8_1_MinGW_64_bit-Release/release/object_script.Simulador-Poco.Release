@@ -1,5 +1,4 @@
 release/CFluido.o
-release/CGnuplot.o
 release/CJanelaAdicionarFluido.o
 release/CJanelaAdicionarTrechoTubulacao.o
 release/CJanelaGraficoPressaoHidroestatica.o
@@ -9,7 +8,6 @@ release/CModeloNewtoniano.o
 release/CModeloPotencia.o
 release/CModeloReologico.o
 release/CObjetoPoco.o
-release/CRelatorioSimulacao.o
 release/CSimuladorPerdaTubulacao.o
 release/CSimuladorReologico.o
 release/CTrechoTubulacao.o

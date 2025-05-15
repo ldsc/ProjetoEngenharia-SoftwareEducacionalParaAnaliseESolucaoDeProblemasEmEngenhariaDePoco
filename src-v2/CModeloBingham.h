@@ -3,41 +3,58 @@
 
 #include "CModeloReologico.h"
 
+/*
+Classe que representa o modelo reologico de Bingham
+Esse modelo e usado para fluidos com um ponto de escoamento definido
+A implementacao baseia-se na heranca da classe CModeloReologico
+*/
 
 class CModeloBingham : public CModeloReologico {
 
 protected:
+    // Parametros especificos do modelo de Bingham
     double viscosidadePlastica = 0.0;
     double pontoDeEscoamento = 0.0;
+
+    // Valores criticos de Reynolds (poco e anular)
     double reynoldsCriticoPoco = 0.0;
     double reynoldsCriticoAnular = 0.0;
+
+    // Numeros de Hedstron (relacionados ao tipo de escoamento)
     double reynoldsHedstronPoco = 0.0;
     double reynoldsHedstronAnular = 0.0;
 
 public:
-    //Construtor
+    // Construtores
     CModeloBingham() {}
     ~CModeloBingham() {}
-    CModeloBingham(CPoco* poco) : CModeloReologico(poco){}
-    CModeloBingham(CPoco* poco, double viscosidadePlastica, double pontoDeEscoamento) : CModeloReologico(poco), viscosidadePlastica(viscosidadePlastica), pontoDeEscoamento(pontoDeEscoamento){
+
+    // Construtor com ponteiro para o objeto CPoco
+    CModeloBingham(CPoco* poco) : CModeloReologico(poco) {}
+
+    // Construtor completo com parametros do modelo
+    CModeloBingham(CPoco* poco, double viscosidadePlastica, double pontoDeEscoamento)
+        : CModeloReologico(poco),
+        viscosidadePlastica(viscosidadePlastica),
+        pontoDeEscoamento(pontoDeEscoamento)
+    {
         DeterminarFluxoPoco();
         DeterminarFluxoAnular();
     }
 
     // Getters
+    double ViscosidadePlastica() const { return viscosidadePlastica; }
     double PontoDeEscoamento() const { return pontoDeEscoamento; }
     double ReynoldsCriticoPoco() const { return reynoldsCriticoPoco; }
     double ReynoldsCriticoAnular() const { return reynoldsCriticoAnular; }
     double ReynoldsHedstronPoco() const { return reynoldsHedstronPoco; }
     double ReynoldsHedstronAnular() const { return reynoldsHedstronAnular; }
-    double ViscosidadePlastica() const { return viscosidadePlastica; }
 
     // Setters
-    void PontoDeEscoamento( double PontoE ) { pontoDeEscoamento = PontoE; }
-    void ViscosidadePlastica( double ViscosidadeP ) { viscosidadePlastica = ViscosidadeP; }
-    
-    //Metodos
-    
+    void ViscosidadePlastica(double valor) { viscosidadePlastica = valor; }
+    void PontoDeEscoamento(double valor) { pontoDeEscoamento = valor; }
+
+    // Metodos especificos do modelo de Bingham
     double DeterminarReynoldsCritico(double hedstron);
     double DeterminarReynoldsHedstronPoco();
     double DeterminarReynoldsHedstronAnular();
@@ -45,7 +62,6 @@ public:
     std::string DeterminarFluxoAnular() override;
     double CalcularPerdaPorFriccaoPoco() override;
     double CalcularPerdaPorFriccaoAnular() override;
-
 };
 
-#endif
+#endif // CMODELOBINGHAM_H

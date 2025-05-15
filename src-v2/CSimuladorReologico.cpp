@@ -186,25 +186,25 @@ void CSimuladorReologico::on_btnAdicionarFluido_clicked()
         janelaadicionarfluido JanelaFluido;
         JanelaFluido.exec();
 
-        if (JanelaFluido.getNomeFluido() != "" &&
-            JanelaFluido.getDensidade() != "" &&
-            JanelaFluido.getViscosidade() != "" &&
-            JanelaFluido.getProfunidadeInicial() != "" &&
-            JanelaFluido.getProfunidadeFinal() != ""){
+        if (JanelaFluido.NomeFluido() != "" &&
+            JanelaFluido.Densidade() != "" &&
+            JanelaFluido.Viscosidade() != "" &&
+            JanelaFluido.ProfundidadeInicial() != "" &&
+            JanelaFluido.ProfundidadeFinal() != ""){
 
             int numLinhas = ui->tblFluidos->rowCount();
             ui->tblFluidos->insertRow(numLinhas);
-            ui->tblFluidos->setItem(numLinhas, 0, new QTableWidgetItem(JanelaFluido.getNomeFluido()));
-            ui->tblFluidos->setItem(numLinhas, 1, new QTableWidgetItem(JanelaFluido.getDensidade()));
-            ui->tblFluidos->setItem(numLinhas, 2, new QTableWidgetItem(JanelaFluido.getViscosidade()));
-            ui->tblFluidos->setItem(numLinhas, 3, new QTableWidgetItem(JanelaFluido.getProfunidadeInicial()));
-            ui->tblFluidos->setItem(numLinhas, 4, new QTableWidgetItem(JanelaFluido.getProfunidadeFinal()));
+            ui->tblFluidos->setItem(numLinhas, 0, new QTableWidgetItem(JanelaFluido.NomeFluido()));
+            ui->tblFluidos->setItem(numLinhas, 1, new QTableWidgetItem(JanelaFluido.Densidade()));
+            ui->tblFluidos->setItem(numLinhas, 2, new QTableWidgetItem(JanelaFluido.Viscosidade()));
+            ui->tblFluidos->setItem(numLinhas, 3, new QTableWidgetItem(JanelaFluido.ProfundidadeInicial()));
+            ui->tblFluidos->setItem(numLinhas, 4, new QTableWidgetItem(JanelaFluido.ProfundidadeFinal()));
 
-            std::string nome = JanelaFluido.getNomeFluido().toStdString();
-            double densidade = JanelaFluido.getDensidade().toDouble();
-            double viscosidade = JanelaFluido.getViscosidade().toDouble();
-            double profundInicial = JanelaFluido.getProfunidadeInicial().toDouble();
-            double profundFinal = JanelaFluido.getProfunidadeFinal().toDouble();
+            std::string nome = JanelaFluido.NomeFluido().toStdString();
+            double densidade = JanelaFluido.Densidade().toDouble();
+            double viscosidade = JanelaFluido.Viscosidade().toDouble();
+            double profundInicial = JanelaFluido.ProfundidadeInicial().toDouble();
+            double profundFinal = JanelaFluido.ProfundidadeFinal().toDouble();
 
             auto fluido = std::make_unique<CFluido>(nome, densidade, viscosidade);
             auto trechoPoco = std::make_unique<CTrechoPoco>(profundInicial, profundFinal, std::move(fluido));

@@ -3,6 +3,9 @@
 #include "CJanelaAdicionarFluido.h"
 #include "CJanelaAdicionarTrechoTubulacao.h"
 
+#include <iostream>   // para std::cerr e std::endl
+#include <fstream>    // para std::ifstream
+
 CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::CSimuladorPerdaTubulacao)
@@ -241,51 +244,51 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarTrecho_clicked()
         CJanelaAdicionarTrechoTubulacao JanelaTrecho;
         JanelaTrecho.exec();
 
-        if (JanelaTrecho.getTrecho() != "" &&
-            JanelaTrecho.getProfundidadeInicial() != "" &&
-            JanelaTrecho.getProfundidadeFinal() != "" &&
-            JanelaTrecho.getDiametroExterno() != "" &&
-            JanelaTrecho.getDiametroInterno() != "" &&
-            JanelaTrecho.getCoeficientePoisson() != "" &&
-            JanelaTrecho.getCoeficienteExpansaoTermica() != "" &&
-            JanelaTrecho.getModuloElasticidade() != "" &&
-            JanelaTrecho.getPesoUnidade() != "" &&
-            JanelaTrecho.getNomeFluido() != "" &&
-            JanelaTrecho.getDensidade() != "" &&
-            JanelaTrecho.getViscosidade() != ""){
+        if (JanelaTrecho.Trecho() != "" &&
+            JanelaTrecho.ProfundidadeInicial() != "" &&
+            JanelaTrecho.ProfundidadeFinal() != "" &&
+            JanelaTrecho.DiametroExterno() != "" &&
+            JanelaTrecho.DiametroInterno() != "" &&
+            JanelaTrecho.CoeficientePoisson() != "" &&
+            JanelaTrecho.CoeficienteExpansaoTermica() != "" &&
+            JanelaTrecho.ModuloElasticidade() != "" &&
+            JanelaTrecho.PesoUnidade() != "" &&
+            JanelaTrecho.NomeFluido() != "" &&
+            JanelaTrecho.Densidade() != "" &&
+            JanelaTrecho.Viscosidade() != ""){
 
 
             int numLinhas = ui->tblTrechos->rowCount();
 
             ui->tblTrechos->insertRow(numLinhas);
-            ui->tblTrechos->setItem(numLinhas, 0, new QTableWidgetItem(JanelaTrecho.getTrecho()));
-            ui->tblTrechos->setItem(numLinhas, 1, new QTableWidgetItem(JanelaTrecho.getProfundidadeInicial()));
-            ui->tblTrechos->setItem(numLinhas, 2, new QTableWidgetItem(JanelaTrecho.getProfundidadeFinal()));
-            ui->tblTrechos->setItem(numLinhas, 3, new QTableWidgetItem(JanelaTrecho.getDiametroExterno()));
-            ui->tblTrechos->setItem(numLinhas, 4, new QTableWidgetItem(JanelaTrecho.getDiametroInterno()));
-            ui->tblTrechos->setItem(numLinhas, 5, new QTableWidgetItem(JanelaTrecho.getCoeficientePoisson()));
-            ui->tblTrechos->setItem(numLinhas, 6, new QTableWidgetItem(JanelaTrecho.getCoeficienteExpansaoTermica()));
-            ui->tblTrechos->setItem(numLinhas, 7, new QTableWidgetItem(JanelaTrecho.getModuloElasticidade()));
-            ui->tblTrechos->setItem(numLinhas, 8, new QTableWidgetItem(JanelaTrecho.getPesoUnidade()));
+            ui->tblTrechos->setItem(numLinhas, 0, new QTableWidgetItem(JanelaTrecho.Trecho()));
+            ui->tblTrechos->setItem(numLinhas, 1, new QTableWidgetItem(JanelaTrecho.ProfundidadeInicial()));
+            ui->tblTrechos->setItem(numLinhas, 2, new QTableWidgetItem(JanelaTrecho.ProfundidadeFinal()));
+            ui->tblTrechos->setItem(numLinhas, 3, new QTableWidgetItem(JanelaTrecho.DiametroExterno()));
+            ui->tblTrechos->setItem(numLinhas, 4, new QTableWidgetItem(JanelaTrecho.DiametroInterno()));
+            ui->tblTrechos->setItem(numLinhas, 5, new QTableWidgetItem(JanelaTrecho.CoeficientePoisson()));
+            ui->tblTrechos->setItem(numLinhas, 6, new QTableWidgetItem(JanelaTrecho.CoeficienteExpansaoTermica()));
+            ui->tblTrechos->setItem(numLinhas, 7, new QTableWidgetItem(JanelaTrecho.ModuloElasticidade()));
+            ui->tblTrechos->setItem(numLinhas, 8, new QTableWidgetItem(JanelaTrecho.PesoUnidade()));
 
             ui->tblFluidos->insertRow(numLinhas);
-            ui->tblFluidos->setItem(numLinhas, 0, new QTableWidgetItem(JanelaTrecho.getNomeFluido()));
-            ui->tblFluidos->setItem(numLinhas, 1, new QTableWidgetItem(JanelaTrecho.getDensidade()));
-            ui->tblFluidos->setItem(numLinhas, 2, new QTableWidgetItem(JanelaTrecho.getViscosidade()));
+            ui->tblFluidos->setItem(numLinhas, 0, new QTableWidgetItem(JanelaTrecho.NomeFluido()));
+            ui->tblFluidos->setItem(numLinhas, 1, new QTableWidgetItem(JanelaTrecho.Densidade()));
+            ui->tblFluidos->setItem(numLinhas, 2, new QTableWidgetItem(JanelaTrecho.Viscosidade()));
 
-            std::string NomeTrecho = JanelaTrecho.getTrecho().toStdString();
-            double profundInicial = JanelaTrecho.getProfundidadeInicial().toDouble();
-            double profundFinal = JanelaTrecho.getProfundidadeFinal().toDouble();
-            double diametroExterno = JanelaTrecho.getDiametroExterno().toDouble();
-            double diametroInterno = JanelaTrecho.getDiametroInterno().toDouble();
-            double coeficientePoisson = JanelaTrecho.getCoeficientePoisson().toDouble();
-            double coeficienteExpansaoTermica = JanelaTrecho.getCoeficienteExpansaoTermica().toDouble();
-            double moduloElasticidade = JanelaTrecho.getModuloElasticidade().toDouble();
-            double pesoUnidade = JanelaTrecho.getPesoUnidade().toDouble();
+            std::string NomeTrecho = JanelaTrecho.Trecho().toStdString();
+            double profundInicial = JanelaTrecho.ProfundidadeInicial().toDouble();
+            double profundFinal = JanelaTrecho.ProfundidadeFinal().toDouble();
+            double diametroExterno = JanelaTrecho.DiametroExterno().toDouble();
+            double diametroInterno = JanelaTrecho.DiametroInterno().toDouble();
+            double coeficientePoisson = JanelaTrecho.CoeficientePoisson().toDouble();
+            double coeficienteExpansaoTermica = JanelaTrecho.CoeficienteExpansaoTermica().toDouble();
+            double moduloElasticidade = JanelaTrecho.ModuloElasticidade().toDouble();
+            double pesoUnidade = JanelaTrecho.PesoUnidade().toDouble();
 
-            std::string nome = JanelaTrecho.getNomeFluido().toStdString();
-            double densidade = JanelaTrecho.getDensidade().toDouble();
-            double viscosidade = JanelaTrecho.getViscosidade().toDouble();
+            std::string nome = JanelaTrecho.NomeFluido().toStdString();
+            double densidade = JanelaTrecho.Densidade().toDouble();
+            double viscosidade = JanelaTrecho.Viscosidade().toDouble();
 
             auto fluido = std::make_unique<CFluido>(nome, densidade, viscosidade);
             auto trechoPoco = std::make_unique<CTrechoPoco>(NomeTrecho, profundInicial, profundFinal, std::move(fluido), diametroExterno, diametroInterno, coeficientePoisson, coeficienteExpansaoTermica, moduloElasticidade, pesoUnidade);

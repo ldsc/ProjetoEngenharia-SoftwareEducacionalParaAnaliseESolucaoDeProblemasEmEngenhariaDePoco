@@ -3,6 +3,11 @@
 
 #include <QDialog>
 
+/*
+Classe da interface grafica que permite ao usuario adicionar ou editar um fluido
+Armazena os dados digitados: nome, densidade, viscosidade e faixa de profundidade
+*/
+
 namespace Ui {
 class janelaadicionarfluido;
 }
@@ -15,37 +20,35 @@ public:
     explicit janelaadicionarfluido(QWidget *parent = nullptr);
     ~janelaadicionarfluido();
 
-    void setNomeFluido(QString nome) {nomeFluido = nome; }
-    void setDensidade(QString dens) {densidade = dens; }
-    void setViscosidade(QString visc) {viscosidade = visc; }
-    void setProfunidadeInicial(QString profI) {profunidadeInicial = profI; }
-    void setProfunidadeFinal(QString profF) {profunidadeFinal = profF; }
+    // metodos para alterar os dados
+    void NomeFluido(const QString& nome) { nomeFluido = nome; }
+    void Densidade(const QString& valor) { densidade = valor; }
+    void Viscosidade(const QString& valor) { viscosidade = valor; }
+    void ProfundidadeInicial(const QString& valor) { profundidadeInicial = valor; }
+    void ProfundidadeFinal(const QString& valor) { profundidadeFinal = valor; }
+    void ModoEdicao(bool opcao) { modoEdicao = opcao; }
 
-    QString getNomeFluido() const { return nomeFluido; }
-    QString getDensidade() const { return densidade; }
-    QString getViscosidade() const { return viscosidade; }
-    QString getProfunidadeInicial() const { return profunidadeInicial; }
-    QString getProfunidadeFinal() const { return profunidadeFinal; }
-    void Edit(bool opcao) {edit = opcao;}
+    // metodos para acessar os dados
+    QString NomeFluido() const { return nomeFluido; }
+    QString Densidade() const { return densidade; }
+    QString Viscosidade() const { return viscosidade; }
+    QString ProfundidadeInicial() const { return profundidadeInicial; }
+    QString ProfundidadeFinal() const { return profundidadeFinal; }
+    bool ModoEdicao() const { return modoEdicao; }
 
 private slots:
-    void on_btnReturn_accepted();
-
-    void on_btnReturn_rejected();
-
-
-
+    void on_btnReturn_accepted();  // confirma os dados
+    void on_btnReturn_rejected();  // cancela a edicao
 
 private:
-    bool edit = true;
-    Ui::janelaadicionarfluido *ui;
+    bool modoEdicao = true;
+    Ui::janelaadicionarfluido *ui = nullptr;
+
     QString nomeFluido;
     QString densidade;
     QString viscosidade;
-    QString profunidadeInicial;
-    QString profunidadeFinal;
-
-
+    QString profundidadeInicial;
+    QString profundidadeFinal;
 };
 
 #endif // CJANELAADICIONARFLUIDO_H

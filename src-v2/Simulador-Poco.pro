@@ -10,7 +10,6 @@ CONFIG += c++17
 
 SOURCES += \
     CFluido.cpp \
-    CGnuplot.cpp \
     CJanelaAdicionarFluido.cpp \
     CJanelaAdicionarTrechoTubulacao.cpp \
     CJanelaGraficoPressaoHidroestatica.cpp \
@@ -20,7 +19,6 @@ SOURCES += \
     CModeloPotencia.cpp \
     CModeloReologico.cpp \
     CObjetoPoco.cpp \
-    CRelatorioSimulacao.cpp \
     CSimuladorPerdaTubulacao.cpp \
     CSimuladorReologico.cpp \
     CTrechoTubulacao.cpp \
@@ -29,7 +27,6 @@ SOURCES += \
 
 HEADERS += \
     CFluido.h \
-    CGnuplot.h \
     CJanelaAdicionarFluido.h \
     CJanelaAdicionarTrechoTubulacao.h \
     CJanelaGraficoPressaoHidroestatica.h \
@@ -39,7 +36,6 @@ HEADERS += \
     CModeloPotencia.h \
     CModeloReologico.h \
     CObjetoPoco.h \
-    CRelatorioSimulacao.h \
     CSimuladorPerdaTubulacao.h \
     CSimuladorReologico.h \
     CTrechoTubulacao.h \
