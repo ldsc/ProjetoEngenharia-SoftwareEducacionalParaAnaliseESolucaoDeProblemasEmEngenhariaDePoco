@@ -140,10 +140,11 @@ name "sec:Elaboração"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo será apresentada a elaboração do simulador,
- que envolve o desenvolvimento teórico,
- as equações analíticas,
- identificação dos pacotes e algoritmos adicionais relacionados ao software a ser desenvolvido.
+Neste capítulo,
+ apresenta-se a elaboração do simulador,
+ abrangendo o desenvolvimento teórico,
+ a formulação das equações analíticas,
+ a definição dos pacotes computacionais utilizados e os algoritmos adicionais integrados ao software.
 \end_layout
 
 \begin_layout Section
@@ -159,7 +160,10 @@ name "sec:Análise-de-domínio"
 
 \begin_layout Standard
 A análise de domínio é uma etapa essencial no desenvolvimento de um projeto,
- pois envolve a identificação e compreensão dos conceitos fundamentais que nortearão a criação do simulad
+ pois envolve a identificação e compreensão dos conceitos fundamentais que orientarão a construção do simulador.
+ Essa fase permite mapear os elementos-chave do problema,
+ definindo as entidades,
+ relações e comportamentos que deverão ser representados no sistema.
 \end_layout
 
 \begin_layout Standard
@@ -1009,17 +1013,27 @@ Hidráulica de Perfuração
 \end_layout
 
 \begin_layout Standard
-Na engenharia de perfuração um fluido de perfuração tem três funções principais:
+Na engenharia de perfuração,
+ um fluido de perfuração possui três funções principais:
  transportar cascalho,
  prevenir o influxo de fluidos e manter a estabilidade do poço.
- Para que possa cumprir tais funções o fluido depende do seu fluxo na tubulação e das pressões associadas a esse fluxo.
- Para que um engenheiro poça formular o melhor fluido de perfuração para cada situação especifica ele deve ser capaz de prever as pressões e fluxos de fluidos no poço.
+ Para cumprir essas funções,
+ o fluido depende do seu escoamento na tubulação e das pressões associadas.
+ Para que o engenheiro possa formular o fluido mais adequado a cada situação específica,
+ é essencial que ele seja capaz de prever as pressões e os escoamentos ao longo do poço.
 \end_layout
 
 \begin_layout Standard
-Os fluidos de perfuração podem ser bem variados em temos de composição e propriedades indo desde fluidos incompressíveis como a água até fluidos muito compressíveis como a espuma.
- O simulador se propõe a resolver dois tipos de problema,
- o primeiro deles sendo problemas estáticos que envolvem o cálculo de pressão hidrostática e o segundo deles com a movimentação de fluidos pelo tubo.
+Os fluidos de perfuração podem variar amplamente em termos de composição e propriedades,
+ indo desde fluidos incompressíveis,
+ como a água,
+ até fluidos altamente compressíveis,
+ como a espuma.
+ O simulador desenvolvido neste trabalho se propõe a resolver dois tipos de problemas:
+ os estáticos,
+ que envolvem o cálculo da pressão hidrostática,
+ e os dinâmicos,
+ relacionados ao escoamento dos fluidos no interior da tubulação.
 \end_layout
 
 \begin_layout Standard
@@ -1058,9 +1072,9 @@ name "subsec:Pressão-Hidrostática"
 \end_layout
 
 \begin_layout Standard
-A pressão hidrostática é a variação da pressão com a profundidade em uma coluna de fluido,
- que normalmente é mais facilmente calculada em condições de poço estático.
- Essa pressão pode ser deduzida considerando o diagrama de corpo livre mostrado na Figura 
+A pressão hidrostática corresponde à variação da pressão em função da profundidade ao longo de uma coluna de fluido,
+ sendo comumente mais facilmente calculada em condições de poço estático.
+ Sua dedução pode ser realizada a partir da análise do diagrama de corpo livre apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Diagrama-corpo-livre"
@@ -1196,10 +1210,13 @@ Fluidos incompressíveis
 \end_layout
 
 \begin_layout Standard
-Sabemos que alguns fluidos usados como lama de perfuração tem um comportamento aproximadamente incompressível,
- como por exemplo o uso de água salgada,
- nesses casos a compressibilidade do fluido para baixas temperaturas pode ser desprezada e o peso específico pode ser considerado constante com a profundidade.
- De forma que a partir da integração da Equação (
+Sabemos que alguns fluidos utilizados como lama de perfuração apresentam um comportamento aproximadamente incompressível,
+ como é o caso da água salgada.
+ Nesses casos,
+ a compressibilidade do fluido em baixas temperaturas pode ser desprezada,
+ permitindo considerar o peso específico constante ao longo da profundidade.
+ Assim,
+ a partir da integração da Equação (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:EquacaoPressao"
@@ -1210,7 +1227,8 @@ nolink "false"
 
 \end_inset
 
-) podemos chegar na equação hidrostática para fluidos incompressíveis:
+),
+ obtém-se a equação hidrostática para fluidos incompressíveis:
 \end_layout
 
 \begin_layout Standard
@@ -1230,7 +1248,7 @@ Onde
 \end_inset
 
  é a constante de integração,
- é igual a pressão na superfície 
+ igual a pressão na superfície 
 \begin_inset Formula $\left[psi\right]$
 \end_inset
 
@@ -1280,18 +1298,20 @@ Onde
 \end_inset
 
 .
- Uma importante aplicação para essa equação é determinar a densidade correta de um fluido de perfuração,
- de forma que o mesmo seja capaz de evitar o influxo de fluidos da formação para o poço,
- evitando dessa forma 
+ Uma importante aplicação dessa equação é determinar a densidade correta de um fluido de perfuração,
+ de modo que ele seja capaz de evitar o influxo de fluidos da formação para o poço,
+ prevenindo,
+ assim,
+ sutuações de 
 \shape italic
-kiks
+kik
 \shape default
  ou 
 \shape italic
-blowouts
+blowout
 \shape default
 ,
- além de não causar fraturas na formação que poderia provocar uma perda de circulação de fluido que também é indesejada 
+ além de não causar fraturas na formação as quais poderiam provocar uma perda de circulação de fluido que também é indesejada 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "APPLIED1991"
@@ -1307,10 +1327,13 @@ Fluidos compressíveis
 \end_layout
 
 \begin_layout Standard
-Em muitas operações temos a presença de gás em algum momento da perfuração ou completação,
- podendo ser injetado ou fluir de alguma formação.
- Calcular a pressão hidrostática de uma coluna de gás estática é um tanto quanto mais complicado devido ao fato da compressibilidade fazer com que a densidade do gás mude com a variação de pressão.
- O comportamento do gás é modelado utilizando a equação do gás real:
+Em diversas operações de perfuração ou completação,
+ a presença de gás é comum,
+ seja por injeção planejada ou por fluxo proveniente de formações geológicas.
+ O cálculo da pressão hidrostática em uma coluna de gás estática é mais complexo,
+ pois a compressibilidade do gás faz com que sua densidade varie com a pressão.
+ Para representar esse comportamento,
+ utiliza-se a equação do gás real:
 \end_layout
 
 \begin_layout Standard
@@ -1398,9 +1421,10 @@ Pressão Hidrostática em Colunas Com Mais de Um Tipo de Fluido
 \end_layout
 
 \begin_layout Standard
-Outra situação muito comum durante a perfuração é a existência de seções com diferentes densidades de fluidos na coluna.
- Para se calcular a pressão hidrostática nesse tipo de situação precisamos determinar a variação de pressão separadamente para cada seção,
- como na Figura 
+Outra situação bastante comum durante a perfuração é a presença de seções contendo fluidos com diferentes densidades ao longo da coluna.
+ Para calcular a pressão hidrostática nesse tipo de condição,
+ é necessário determinar a variação de pressão separadamente para cada seção,
+ conforme ilustrado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Coluna-multiplos-fluidos"
@@ -1533,19 +1557,33 @@ Modelos Reológicos de Fluidos de Perfuração
 \end_layout
 
 \begin_layout Standard
-Durante o processo de perfuração de um poço muitas vezes forças viscoelásticas extremamente grandes precisam ser vencidas para que o fluido de perfuração se mova pelos conduítes longos e finos utilizados nesse processo,
- dessa forma se faz essencial a análise da perda de pressão por atrito.
- Na maioria dos casos as propriedades elásticas dos fluidos de perfuração e seus efeitos durante o fluxo de um poço são desprezíveis,
- sendo consideradas para o cálculo apenas as forças viscosas.
- Entretanto com o avanço tecnológico lamas cada vez mais complexas estão sendo formuladas de forma que os testes devem consideras as propriedades elásticas da deformação que ocorre durante o fluxo.
+Durante o processo de perfuração de um poço,
+ é frequentemente necessário vencer forças viscoelásticas consideráveis para que o fluido de perfuração possa escoar através dos conduítes longos e estreitos utilizados nessa operação.
+ Por isso,
+ torna-se essencial a análise da perda de pressão por atrito.
 \end_layout
 
 \begin_layout Standard
-Para tal,
- se faz necessária uma descrição matemática e desenvolvimento de equações para a perda por atrito,
- de forma que modelos reológicos são geralmente utilizados por engenheiros de perfuração para aproximar o comportamento de um fluido,
- nesse projeto abordaremos três modelos sendo eles o modelo Newtoniano,
- o modelo plástico de Bingham e o modelo de lei de potências 
+Na maioria dos casos,
+ as propriedades elásticas dos fluidos de perfuração e seus efeitos durante o escoamento no poço são desprezíveis,
+ sendo consideradas apenas as forças viscosas nos cálculos.
+ Entretanto,
+ com o avanço tecnológico,
+ lamas cada vez mais complexas vêm sendo desenvolvidas,
+ e,
+ portanto,
+ os testes devem considerar também as propriedades elásticas associadas à deformação do fluido durante o escoamento.
+\end_layout
+
+\begin_layout Standard
+Para isso,
+ é necessário descrever matematicamente e desenvolver equações que representem as perdas por atrito.
+ Nesse contexto,
+ engenheiros de perfuração costumam utilizar modelos reológicos para representar o comportamento dos fluidos.
+ Neste trabalho,
+ são abordados três modelos principais:
+ o modelo Newtoniano,
+ o modelo plástico de Bingham e o modelo da lei das potências 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "FUNDAMENTALS2011"
@@ -1554,7 +1592,8 @@ literal "false"
 \end_inset
 
 .
- É importante ressaltar a existência de outros modelos que podem futuramente ser acrescentados no aprimoramento desse projeto.
+ Ressalta-se ainda que outros modelos poderão ser incorporados em versões futuras do simulador,
+ visando seu aprimoramento contínuo.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1855,7 +1894,7 @@ nolink "false"
 
 \end_inset
 
-) só e válida para o fluxo laminar,
+) só é válida para o fluxo laminar,
  quando o fluido se move em camadas,
  que ocorre apenas em taxas de cisalhamento baixas.
  Em altas taxas de cisalhamento o fluxo deixa de ser laminar e se torna turbulento,
@@ -1981,7 +2020,7 @@ Perda de Pressão Friccional em um Tubo de Perfuração
 
 \begin_layout Standard
 A perda de pressão friccional durante a circulação de fluidos em operações de perfuração pode ser calculada através de diferentes modelos de fluido.
- O primeiro paço é determinar o tipo de escoamento,
+ O primeiro passo é determinar o tipo de escoamento,
  para isso utilizamos o número de Reynolds 
 \begin_inset Formula $N_{_{re}}$
 \end_inset
@@ -2570,6 +2609,266 @@ literal "false"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection
+Variações de Carga Axial e Deslocamento em Colunas de Poço
+\end_layout
+
+\begin_layout Standard
+Durante a operação de perfuração ou completação,
+ as colunas de revestimento e produção estão sujeitas a variações de pressão e temperatura que afetam diretamente sua integridade estrutural.
+ Essas variações resultam em alterações na carga axial e no deslocamento da coluna,
+ o que pode comprometer sua função caso não sejam corretamente previstas e monitoradas.
+\end_layout
+
+\begin_layout Standard
+Com base em Bourgoyne et al.
+ (2011),
+ apresenta-se nesta seção a descrição dos principais efeitos envolvidos na variação da carga e do deslocamento axial de colunas tubulares em poços de petróleo.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Efeito da Variação de Temperatura
+\end_layout
+
+\begin_layout Standard
+A variação de temperatura ao longo da coluna provoca expansão ou contração térmica.
+ Essa deformação axial é diretamente proporcional ao comprimento da coluna,
+ ao coeficiente de dilatação térmica do material e à variação de temperatura:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\triangle L_{t}=\alpha_{T}L\triangle T
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esse efeito é abordado por Bourgoyne et al.
+ (2011),
+ que destacam sua relevância especialmente em colunas com extremidades restritas,
+ como no caso de instalação de packers,
+ onde a expansão térmica gera tensões axiais significativas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Efeito Balão (Ballooning Effect)
+\end_layout
+
+\begin_layout Standard
+Quando ocorre variação na pressão interna e externa da coluna,
+ há expansão ou contração radial da parede tubular.
+ Essa deformação radial acarreta uma reação axial,
+ denominada efeito balão,
+ especialmente significativa em colunas de paredes finas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\triangle L_{b}=\frac{2v[\Delta P_{in}A_{in}-\Delta P_{out}A_{out}]}{E(A_{out}-A_{in})}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Segundo Bourgoyne et al.
+ (2011),
+ esse efeito é crucial em operações com injeção de fluido ou sob variações bruscas de pressão.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Variação Axial Devido à Força de Pistão (ΔF)
+\end_layout
+
+\begin_layout Standard
+Além de alterar diretamente a carga axial,
+ a força de pistão pode provocar variação de comprimento na coluna de forma semelhante ao efeito balão,
+ especialmente quando o fluido pressiona diferencialmente regiões com diferentes seções transversais.
+\end_layout
+
+\begin_layout Standard
+A equação que representa esse deslocamento axial é:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\triangle F=\triangle P_{i}A_{i}+\triangle P_{out}A_{out}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esse termo representa o efeito pistão global sobre a coluna,
+ sendo fundamental para simular condições com packer ativado,
+ crossover,
+ ou colunas parcialmente cimentadas.
+\end_layout
+
+\begin_layout Standard
+Em aplicações práticas,
+ a força de pistão pode causar deslocamentos significativos,
+ inclusive contribuindo para falhas por flambagem,
+ se não houver alívio de carga ou previsão de expansão térmica.
+\end_layout
+
+\begin_layout Subsubsection
+Força de Pistão Gerada por Packer
+\end_layout
+
+\begin_layout Standard
+A presença de um packer impede o deslocamento axial livre da coluna.
+ Assim,
+ quando há diferença de pressão entre o interior e o exterior da coluna,
+ gera-se uma força de pistão sobre a seção da coluna confinada,
+ dada por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\triangle L_{packer}=\frac{(\triangle F)L}{EA_{s}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bourgoyne et al.
+ (2011) ressaltam que esse efeito pode causar variações expressivas no carregamento axial,
+ afetando diretamente o desempenho da completação.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Força de Pistão em Crossovers
+\end_layout
+
+\begin_layout Standard
+Em transições entre tubulações com diferentes geometrias (conhecidas como crossovers),
+ o diferencial de área provoca uma força de pistão adicional,
+ resultando em alongamento ou encurtamento da coluna:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\triangle L_{crossover}=\frac{(\triangle F)L}{EA_{s}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esse comportamento deve ser contemplado em modelos estruturais de colunas com acessórios ou elementos de transição,
+ conforme apontado por Bourgoyne et al.
+ (2011).
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Efeitos de Injeção:
+ Coluna Livre vs.
+ Coluna Fixa
+\end_layout
+
+\begin_layout Standard
+A maneira como a coluna está confinada impacta significativamente a reação à injeção de fluidos:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Coluna livre:
+
+\series default
+ permite deslocamento axial,
+ dissipando parte da carga;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Coluna fixa:
+ 
+\series default
+restringe deslocamento e transforma toda a variação em aumento de carga axial.
+\end_layout
+
+\begin_layout Standard
+Segundo Bourgoyne et al.
+ (2011,
+ p.
+ 407),
+ as restrições impostas nas extremidades da coluna modificam significativamente a resposta estrutural da tubulação,
+ influenciando tanto a distribuição das cargas quanto os deslocamentos axiais.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

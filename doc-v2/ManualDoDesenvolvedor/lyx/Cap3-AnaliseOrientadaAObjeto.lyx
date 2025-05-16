@@ -265,7 +265,7 @@ name "cap:Diagrama-de-classes"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/home/bueno/Documentos/workdir/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/DiagramaClasse.png
+	filename ../imagens/DiagramaClasse.png
 	lyxscale 10
 	width 100text%
 	height 100theight%
