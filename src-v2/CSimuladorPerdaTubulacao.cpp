@@ -5,6 +5,7 @@
 
 #include <iostream>   // para std::cerr e std::endl
 #include <fstream>    // para std::ifstream
+#include <sstream>
 
 CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
     : QMainWindow(parent)
@@ -16,7 +17,7 @@ CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
     ui->editProfundidadePacker->setEnabled(false);
 
     // Conecta o sinal stateChanged do checkBox à função lambda
-    connect(ui->checkBoxPacker, &QCheckBox::checkStateChanged, this, [=](int state){
+    connect(ui->checkBoxPacker, &QCheckBox::stateChanged, this, [=](int state){
         ui->editProfundidadePacker->setEnabled(state == Qt::Checked);
     });
 

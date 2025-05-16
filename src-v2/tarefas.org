@@ -99,7 +99,7 @@
 *** DONE Adicionar classe de controle da simulação, por exemplo:
 **** após editar um lineEdit já executa a atualização dos cálculos ou só recalcula quando pressionar o botão calcular?
 **** note algo importante, se um botão esta dentro de um box, ele se refere ao box. Se for algo que altera toda a simulação deve estar lá em cima na barra de tarefas
-*** TODO Na cálculo da pressão numa posição qualquer forneça botão para gerar o gráfico de pressão, uma janela que abre e mostra o gráfico de pressão.
+*** DONE Na cálculo da pressão numa posição qualquer forneça botão para gerar o gráfico de pressão, uma janela que abre e mostra o gráfico de pressão.
 *** DONE Na aba fluidos deve ter: 
 **** Adicionar, adicionar linha nova de fluidos
 
@@ -108,7 +108,7 @@
 **** Deletar, deleta a linha seleciona. deve pedir confirmação
 ** Implementar a interface gráfica da parte II (poço com seção variável)
 *** TODO Fazer diagramas associados
-*** TODO Fazer a interface no QTCreator
+*** DONE Fazer a interface no QTCreator
 *** TODO Testar a usabilidade e fazer ajustes necessários
 ** Implementar a interface gráfica da parte III (poço horizontal)
 *** TODO Fazer diagramas associados
@@ -221,9 +221,9 @@
 **** TODO Diagrama de comunicação [teste lógico]
 *** TODO Exemplo 5: Implementação
 **** TODO Implementação dos códigos
-*** TODO Exemplo 5: Teste
-***** TODO Rodar no Linux
-***** TODO Rodar no Windows
+*** DONE Exemplo 5: Teste
+***** DONE Rodar no Linux
+***** DONE Rodar no Windows
 *** TODO Exemplo 5: Documentação
 ***** TODO Gerar a documentação para o exemplo
 *** TODO Exemplo 5: Retorno dos usuarios

@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <QApplication>
 #include <QFileDialog>
 #include <QString>
