@@ -23,6 +23,8 @@ public:
     // construtor e destrutor
     explicit CSimuladorPerdaTubulacao(QWidget *parent = nullptr);
     ~CSimuladorPerdaTubulacao();
+    QString nomeArquivo;
+    QString caminhoArquivo;
 
 private slots:
     // esses são os slots que reagem aos botoes da interface
@@ -43,6 +45,14 @@ private slots:
     void on_actionNova_Simula_o_triggered();
     void on_actionExportar_Como_Imagem_triggered();
     void on_actionSobre_o_SEEP_triggered();
+
+    //getters
+    QString NomeArquivo() { return nomeArquivo; }
+    QString CaminhoArquivo() { return caminhoArquivo; }
+
+    //setters
+    void NomeArquivo(QString nome) { nomeArquivo = nome; }
+    void CaminhoArquivo(QString caminho) { caminhoArquivo = caminho; }
 
 private:
     Ui::CSimuladorPerdaTubulacao *ui; // ponteiro pra interface gerada pelo Qt Designer

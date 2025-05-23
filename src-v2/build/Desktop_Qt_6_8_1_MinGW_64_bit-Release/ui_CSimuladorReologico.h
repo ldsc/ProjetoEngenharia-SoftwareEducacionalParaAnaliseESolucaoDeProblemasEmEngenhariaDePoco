@@ -36,12 +36,12 @@ class Ui_CSimuladorReologico
 public:
     QAction *actionNova_Simula_o;
     QAction *actionSalvar_Como;
-    QAction *actionImprimir;
     QAction *actionExportar_como_Imagem;
     QAction *actionAjuda;
     QAction *actionSobre_os_Modelos_Reol_gicos;
     QAction *actionSobre_o_Programa;
     QAction *actionArquivo_dat;
+    QAction *actionSalvar;
     QWidget *centralwidget;
     QGroupBox *groupBox;
     QWidget *gridLayoutWidget;
@@ -196,11 +196,11 @@ public:
     QVBoxLayout *verticalLayout;
     QLabel *label_10;
     QLabel *label_11;
+    QStatusBar *statusbar;
     QMenuBar *menubar;
     QMenu *menuArquivo;
     QMenu *menuImportar_Dados;
     QMenu *menuAjuda;
-    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *CSimuladorReologico)
     {
@@ -215,28 +215,27 @@ public:
         actionSalvar_Como->setObjectName("actionSalvar_Como");
         QIcon icon1(QIcon::fromTheme(QIcon::ThemeIcon::DocumentSave));
         actionSalvar_Como->setIcon(icon1);
-        actionImprimir = new QAction(CSimuladorReologico);
-        actionImprimir->setObjectName("actionImprimir");
-        QIcon icon2(QIcon::fromTheme(QIcon::ThemeIcon::Printer));
-        actionImprimir->setIcon(icon2);
         actionExportar_como_Imagem = new QAction(CSimuladorReologico);
         actionExportar_como_Imagem->setObjectName("actionExportar_como_Imagem");
-        QIcon icon3(QIcon::fromTheme(QString::fromUtf8("emblem-photos")));
-        actionExportar_como_Imagem->setIcon(icon3);
+        QIcon icon2(QIcon::fromTheme(QString::fromUtf8("emblem-photos")));
+        actionExportar_como_Imagem->setIcon(icon2);
         actionAjuda = new QAction(CSimuladorReologico);
         actionAjuda->setObjectName("actionAjuda");
-        QIcon icon4(QIcon::fromTheme(QIcon::ThemeIcon::HelpFaq));
-        actionAjuda->setIcon(icon4);
+        QIcon icon3(QIcon::fromTheme(QIcon::ThemeIcon::HelpFaq));
+        actionAjuda->setIcon(icon3);
         actionSobre_os_Modelos_Reol_gicos = new QAction(CSimuladorReologico);
         actionSobre_os_Modelos_Reol_gicos->setObjectName("actionSobre_os_Modelos_Reol_gicos");
-        QIcon icon5(QIcon::fromTheme(QString::fromUtf8("document-properties")));
-        actionSobre_os_Modelos_Reol_gicos->setIcon(icon5);
+        QIcon icon4(QIcon::fromTheme(QString::fromUtf8("document-properties")));
+        actionSobre_os_Modelos_Reol_gicos->setIcon(icon4);
         actionSobre_o_Programa = new QAction(CSimuladorReologico);
         actionSobre_o_Programa->setObjectName("actionSobre_o_Programa");
-        QIcon icon6(QIcon::fromTheme(QIcon::ThemeIcon::HelpAbout));
-        actionSobre_o_Programa->setIcon(icon6);
+        QIcon icon5(QIcon::fromTheme(QIcon::ThemeIcon::HelpAbout));
+        actionSobre_o_Programa->setIcon(icon5);
         actionArquivo_dat = new QAction(CSimuladorReologico);
         actionArquivo_dat->setObjectName("actionArquivo_dat");
+        actionSalvar = new QAction(CSimuladorReologico);
+        actionSalvar->setObjectName("actionSalvar");
+        actionSalvar->setIcon(icon1);
         centralwidget = new QWidget(CSimuladorReologico);
         centralwidget->setObjectName("centralwidget");
         groupBox = new QGroupBox(centralwidget);
@@ -1213,6 +1212,9 @@ public:
         groupBox->raise();
         tabWidget_4->raise();
         groupBox_4->raise();
+        statusbar = new QStatusBar(CSimuladorReologico);
+        statusbar->setObjectName("statusbar");
+        CSimuladorReologico->setStatusBar(statusbar);
         menubar = new QMenuBar(CSimuladorReologico);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 1264, 22));
@@ -1223,9 +1225,6 @@ public:
         menuAjuda = new QMenu(menubar);
         menuAjuda->setObjectName("menuAjuda");
         CSimuladorReologico->setMenuBar(menubar);
-        statusbar = new QStatusBar(CSimuladorReologico);
-        statusbar->setObjectName("statusbar");
-        CSimuladorReologico->setStatusBar(statusbar);
         QWidget::setTabOrder(editNomePoco, editProfundidadeTotal);
         QWidget::setTabOrder(editProfundidadeTotal, editPressaoSuperficie);
         QWidget::setTabOrder(editPressaoSuperficie, editDiametroPoco);
@@ -1254,8 +1253,8 @@ public:
         menubar->addAction(menuArquivo->menuAction());
         menubar->addAction(menuAjuda->menuAction());
         menuArquivo->addAction(actionNova_Simula_o);
+        menuArquivo->addAction(actionSalvar);
         menuArquivo->addAction(actionSalvar_Como);
-        menuArquivo->addAction(actionImprimir);
         menuArquivo->addSeparator();
         menuArquivo->addAction(menuImportar_Dados->menuAction());
         menuArquivo->addAction(actionExportar_como_Imagem);
@@ -1281,11 +1280,7 @@ public:
 #endif // QT_CONFIG(shortcut)
         actionSalvar_Como->setText(QCoreApplication::translate("CSimuladorReologico", "Salvar Como...", nullptr));
 #if QT_CONFIG(shortcut)
-        actionSalvar_Como->setShortcut(QCoreApplication::translate("CSimuladorReologico", "Ctrl+S", nullptr));
-#endif // QT_CONFIG(shortcut)
-        actionImprimir->setText(QCoreApplication::translate("CSimuladorReologico", "Imprimir como PDF", nullptr));
-#if QT_CONFIG(shortcut)
-        actionImprimir->setShortcut(QCoreApplication::translate("CSimuladorReologico", "Ctrl+P", nullptr));
+        actionSalvar_Como->setShortcut(QCoreApplication::translate("CSimuladorReologico", "Ctrl+Shift+S", nullptr));
 #endif // QT_CONFIG(shortcut)
         actionExportar_como_Imagem->setText(QCoreApplication::translate("CSimuladorReologico", "Exportar como Imagem", nullptr));
         actionAjuda->setText(QCoreApplication::translate("CSimuladorReologico", "Manual do Usu\303\241rio", nullptr));
@@ -1295,6 +1290,10 @@ public:
         actionSobre_os_Modelos_Reol_gicos->setText(QCoreApplication::translate("CSimuladorReologico", "Modelos Reol\303\263gicos Utilizados", nullptr));
         actionSobre_o_Programa->setText(QCoreApplication::translate("CSimuladorReologico", "Sobre o SEEP", nullptr));
         actionArquivo_dat->setText(QCoreApplication::translate("CSimuladorReologico", "Arquivo .(dat)", nullptr));
+        actionSalvar->setText(QCoreApplication::translate("CSimuladorReologico", "Salvar", nullptr));
+#if QT_CONFIG(shortcut)
+        actionSalvar->setShortcut(QCoreApplication::translate("CSimuladorReologico", "Ctrl+S", nullptr));
+#endif // QT_CONFIG(shortcut)
         lbnTituloNomePoco->setText(QCoreApplication::translate("CSimuladorReologico", "Nome Po\303\247o", nullptr));
         lbnTituloDiametroID->setText(QCoreApplication::translate("CSimuladorReologico", "Diam. Interno ID  (in)", nullptr));
         lbnProfundidadeOcupada->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));

@@ -2055,6 +2055,7 @@ border-radius: 4px;
    <zorder>tabWidget_4</zorder>
    <zorder>groupBox_4</zorder>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -2075,8 +2076,8 @@ border-radius: 4px;
      <addaction name="actionArquivo_dat"/>
     </widget>
     <addaction name="actionNova_Simula_o"/>
+    <addaction name="actionSalvar"/>
     <addaction name="actionSalvar_Como"/>
-    <addaction name="actionImprimir"/>
     <addaction name="separator"/>
     <addaction name="menuImportar_Dados"/>
     <addaction name="actionExportar_como_Imagem"/>
@@ -2092,7 +2093,6 @@ border-radius: 4px;
    <addaction name="menuArquivo"/>
    <addaction name="menuAjuda"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNova_Simula_o">
    <property name="icon">
     <iconset theme="QIcon::ThemeIcon::DocumentNew"/>
@@ -2112,18 +2112,7 @@ border-radius: 4px;
     <string>Salvar Como...</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+S</string>
-   </property>
-  </action>
-  <action name="actionImprimir">
-   <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::Printer"/>
-   </property>
-   <property name="text">
-    <string>Imprimir como PDF</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+P</string>
+    <string>Ctrl+Shift+S</string>
    </property>
   </action>
   <action name="actionExportar_como_Imagem">
@@ -2164,6 +2153,17 @@ border-radius: 4px;
   <action name="actionArquivo_dat">
    <property name="text">
     <string>Arquivo .(dat)</string>
+   </property>
+  </action>
+  <action name="actionSalvar">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentSave"/>
+   </property>
+   <property name="text">
+    <string>Salvar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
  </widget>

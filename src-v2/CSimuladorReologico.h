@@ -27,6 +27,8 @@ public:
     // construtor e destrutor da interface
     CSimuladorReologico(QWidget *parent = nullptr);
     ~CSimuladorReologico();
+    QString nomeArquivo;
+    QString caminhoArquivo;
 
 private slots:
     // atualiza os dados na interface quando ha alteracao
@@ -65,6 +67,17 @@ private slots:
 
     // exibe o grafico da pressao hidrostática ao longo da profundidade
     void on_btnExibirGraficoPressaoHidroestatica_clicked();
+
+    //getters
+    QString NomeArquivo() { return nomeArquivo; }
+    QString CaminhoArquivo() { return caminhoArquivo; }
+
+
+    //setters
+    void NomeArquivo(QString nome) { nomeArquivo = nome; }
+    void CaminhoArquivo(QString caminho) { caminhoArquivo = caminho; }
+
+    void on_actionSalvar_triggered();
 
 private:
     Ui::CSimuladorReologico *ui; // interface grafica do Qt

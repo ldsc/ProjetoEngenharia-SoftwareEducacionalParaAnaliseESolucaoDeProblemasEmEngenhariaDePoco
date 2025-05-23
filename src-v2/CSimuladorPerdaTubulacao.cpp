@@ -2,7 +2,7 @@
 #include "ui_CSimuladorPerdaTubulacao.h"
 #include "CJanelaAdicionarFluido.h"
 #include "CJanelaAdicionarTrechoTubulacao.h"
-#include "CJanelaSobreSoftware.h".h"
+#include "CJanelaSobreSoftware.h"
 
 #include <iostream>   // para std::cerr e std::endl
 #include <fstream>    // para std::ifstream

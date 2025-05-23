@@ -567,6 +567,9 @@ void CSimuladorReologico::on_actionSalvar_Como_triggered()
 
     arquivo.close();
     QMessageBox::information(this, "Salvo", "Arquivo salvo com sucesso!");
+
+    NomeArquivo(QFileInfo(caminho).fileName());
+    CaminhoArquivo(caminho);
 }
 
 
@@ -647,6 +650,9 @@ void CSimuladorReologico::on_actionArquivo_dat_triggered()
     // atualiza a interface com os dados lidos
     AtualizarDados();
     ui->statusbar->showMessage("Dados importados com sucesso!");
+
+    NomeArquivo(QFileInfo(caminhoDoArquivo).fileName());
+    CaminhoArquivo(caminhoDoArquivo);
 }
 
 
@@ -657,3 +663,42 @@ void CSimuladorReologico::on_btnExibirGraficoPressaoHidroestatica_clicked()
     ui->statusbar->showMessage("Dados Plotador com Sucesso!");
 }
 
+
+void CSimuladorReologico::on_actionSalvar_triggered()
+{
+    QFile arquivo(CaminhoArquivo());
+
+    if (CaminhoArquivo() != "") {
+        QTextStream out(&arquivo);
+
+        // Salva os dados exatamente como na função SalvarComo()
+        out << "# Configuração do Poço------------------------------------------------------------------------------------\n";
+        out << "# Nome                 Profundidade (ft)    Pressão Superficial (psi)    Diâmetro (in)    OD (in)    ID (in)    Vazão (bbl/d)\n";
+        out << ui->editNomePoco->text() << "           ";
+        out << ui->editProfundidadeTotal->text() << "                ";
+        out << ui->editPressaoSuperficie->text() << "                         ";
+        out << ui->editDiametroPoco->text() << "             ";
+        out << ui->editDiametroOD->text() << "       ";
+        out << ui->editDiametroID->text() << "       ";
+        out << ui->editVazao->text() << "       ";
+
+        // Dados dos Fluidos
+        out << "\n\n\n# Configuração dos Fluidos--------------------------------------------------------------------------------\n";
+        out << "# Nome       Densidade (lbm/gal)    Viscosidade (cP)    Prof. Inicial (ft)    Prof. Final (ft)\n";
+        int linhas = ui->tblFluidos->rowCount();
+        for (int i = 0; i < linhas; ++i) {
+            QString nome = ui->tblFluidos->item(i, 0)->text();
+            QString densidade = ui->tblFluidos->item(i, 1)->text();
+            QString viscosidade = ui->tblFluidos->item(i, 2)->text();
+            QString profIni = ui->tblFluidos->item(i, 3)->text();
+            QString profFim = ui->tblFluidos->item(i, 4)->text();
+
+            out << nome << "        " << densidade << "                    " << viscosidade << "                 " << profIni << "                  " << profFim << "\n";
+        }
+
+        arquivo.close();
+        QMessageBox::information(this, "Salvo", "Arquivo salvo com sucesso!");
+    } else {
+        on_actionSalvar_triggered(); // chama a função de "Salvar Como" que você já tem
+    }
+}
