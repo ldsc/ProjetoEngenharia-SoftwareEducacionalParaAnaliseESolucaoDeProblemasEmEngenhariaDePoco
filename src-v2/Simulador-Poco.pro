@@ -14,6 +14,7 @@ SOURCES += \
     CJanelaAdicionarTrechoTubulacao.cpp \
     CJanelaGraficoPressaoHidroestatica.cpp \
     CJanelaMenu.cpp \
+    CJanelaSobreSoftware.cpp \
     CModeloBingham.cpp \
     CModeloNewtoniano.cpp \
     CModeloPotencia.cpp \
@@ -31,6 +32,7 @@ HEADERS += \
     CJanelaAdicionarTrechoTubulacao.h \
     CJanelaGraficoPressaoHidroestatica.h \
     CJanelaMenu.h \
+    CJanelaSobreSoftware.h \
     CModeloBingham.h \
     CModeloNewtoniano.h \
     CModeloPotencia.h \
@@ -46,6 +48,7 @@ FORMS += \
     CJanelaAdicionarTrechoTubulacao.ui \
     CJanelaGraficoPressaoHidroestatica.ui \
     CJanelaMenu.ui \
+    CJanelaSobreSoftware.ui \
     CSimuladorPerdaTubulacao.ui \
     CSimuladorReologico.ui
 

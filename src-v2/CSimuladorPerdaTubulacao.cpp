@@ -2,6 +2,7 @@
 #include "ui_CSimuladorPerdaTubulacao.h"
 #include "CJanelaAdicionarFluido.h"
 #include "CJanelaAdicionarTrechoTubulacao.h"
+#include "CJanelaSobreSoftware.h".h"
 
 #include <iostream>   // para std::cerr e std::endl
 #include <fstream>    // para std::ifstream
@@ -643,6 +644,8 @@ void CSimuladorPerdaTubulacao::on_actionExportar_Como_Imagem_triggered()
 
 void CSimuladorPerdaTubulacao::on_actionSobre_o_SEEP_triggered()
 {
-    QDesktopServices::openUrl(QUrl("https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"));
+    CJanelaSobreSofware janelaSobre;
+    janelaSobre.setWindowTitle("Sobre o Software");
+    janelaSobre.exec();
 }
 

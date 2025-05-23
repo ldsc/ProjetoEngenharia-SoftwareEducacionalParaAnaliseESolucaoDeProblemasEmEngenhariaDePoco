@@ -2,6 +2,7 @@
 #include "ui_CSimuladorReologico.h"
 #include "CJanelaAdicionarFluido.h"
 #include "CJanelaGraficoPressaoHidroestatica.h"
+#include "CJanelaSobreSoftware.h".h"
 
 #include <iostream>
 #include <fstream>
@@ -520,7 +521,9 @@ void CSimuladorReologico::on_actionExportar_como_Imagem_triggered()
 
 void CSimuladorReologico::on_actionSobre_o_Programa_triggered()
 {
-    QDesktopServices::openUrl(QUrl("https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"));
+    CJanelaSobreSofware janelaSobre;
+    janelaSobre.setWindowTitle("Sobre o Software");
+    janelaSobre.exec();
 }
 
 
