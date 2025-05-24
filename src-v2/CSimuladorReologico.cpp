@@ -511,14 +511,18 @@ void CSimuladorReologico::on_actionSobre_o_Programa_triggered()
 }
 
 
-void CSimuladorReologico::on_actionSalvar_Como_triggered()
+void CSimuladorReologico::SalvarArquivo(bool salvarComo)
 {
-    QString caminho = CaminhoArquivo();
+    QString caminho;
 
-    // Se o caminho ainda nao existe, pede para o usuario escolher
-    if (caminho.isEmpty()) {
+    // Se for salvarComo ou ainda não tiver caminho, abrir o diálogo
+    if (salvarComo || CaminhoArquivo().isEmpty()) {
         caminho = QFileDialog::getSaveFileName(this, "Salvar Arquivo", "", "Arquivo DAT (*.dat)");
-        if (caminho.isEmpty()) return; // Usuario cancelou
+        if (caminho.isEmpty()) return; // usuário cancelou
+        CaminhoArquivo(caminho);
+        NomeArquivo(QFileInfo(caminho).fileName());
+    } else {
+        caminho = CaminhoArquivo(); // salva direto
     }
 
     QFile arquivo(caminho);
@@ -529,38 +533,51 @@ void CSimuladorReologico::on_actionSalvar_Como_triggered()
 
     QTextStream out(&arquivo);
 
-    // Escreve os dados do pouco
-    out << "# Configuracao do Poco ------------------------------------------------------------------------------------\n";
-    out << "# Nome                 Profundidade (ft)    Pressao Superficial (psi)    Diametro (in)    OD (in)    ID (in)    Vazao (bbl/d)\n";
-    out << ui->editNomePoco->text() << "           ";
-    out << ui->editProfundidadeTotal->text() << "                ";
-    out << ui->editPressaoSuperficie->text() << "                         ";
-    out << ui->editDiametroPoco->text() << "             ";
-    out << ui->editDiametroOD->text() << "       ";
-    out << ui->editDiametroID->text() << "       ";
-    out << ui->editVazao->text() << "       ";
+    out << "# Configuracao do Poco -----------------------------------------------------------------------------------------------------\n";
+    out << "# "
+        << QString("Nome").leftJustified(15, ' ')
+        << QString("Profund (ft)").leftJustified(15, ' ')
+        << QString("Pressao (psi)").leftJustified(15, ' ')
+        << QString("Diametro (in)").leftJustified(15, ' ')
+        << QString("OD (in)").leftJustified(15, ' ')
+        << QString("ID (in)").leftJustified(15, ' ')
+        << QString("Vazao (bbl/d)").leftJustified(15, ' ')
+        << "\n";
+
+    // dados também com 15 caracteres por campo
+    out << "  ";
+    out << ui->editNomePoco->text().leftJustified(15, ' ');
+    out << ui->editProfundidadeTotal->text().leftJustified(15, ' ');
+    out << ui->editPressaoSuperficie->text().leftJustified(15, ' ');
+    out << ui->editDiametroPoco->text().leftJustified(15, ' ');
+    out << ui->editDiametroOD->text().leftJustified(15, ' ');
+    out << ui->editDiametroID->text().leftJustified(15, ' ');
+    out << ui->editVazao->text().leftJustified(15, ' ');
+    out << "\n";
+
 
     // Escreve os dados dos fluidos
     out << "\n\n\n# Configuracao dos Fluidos --------------------------------------------------------------------------------\n";
-    out << "# Nome       Densidade (lbm/gal)    Viscosidade (cP)    Prof. Inicial (ft)    Prof. Final (ft)\n";
+    out << "# "
+        << QString("Nome").leftJustified(15, ' ')
+        << QString("Densidade (lbm/gal)").leftJustified(23, ' ')
+        << QString("Viscosidade (cP)").leftJustified(23, ' ')
+        << QString("Prof. Inicial (ft)").leftJustified(23, ' ')
+        << QString("Prof. Final (ft)").leftJustified(20, ' ')
+        << "\n";
+
     int linhas = ui->tblFluidos->rowCount();
     for (int i = 0; i < linhas; ++i) {
-        out << ui->tblFluidos->item(i, 0)->text() << "        "
-            << ui->tblFluidos->item(i, 1)->text() << "                    "
-            << ui->tblFluidos->item(i, 2)->text() << "                 "
-            << ui->tblFluidos->item(i, 3)->text() << "                  "
-            << ui->tblFluidos->item(i, 4)->text() << "\n";
+        out << "  "
+            << ui->tblFluidos->item(i, 0)->text().leftJustified(15, ' ')
+            << ui->tblFluidos->item(i, 1)->text().leftJustified(23, ' ')
+            << ui->tblFluidos->item(i, 2)->text().leftJustified(23, ' ')
+            << ui->tblFluidos->item(i, 3)->text().leftJustified(23, ' ')
+            << ui->tblFluidos->item(i, 4)->text().leftJustified(20, ' ')
+            << "\n";
     }
 
     arquivo.close();
-
-    // Atualiza o caminho salvo apenas se for novo
-    if (CaminhoArquivo().isEmpty())
-    {
-        CaminhoArquivo(caminho);
-        NomeArquivo(QFileInfo(caminho).fileName());
-    }
-
     QMessageBox::information(this, "Salvo", "Arquivo salvo com sucesso!");
 }
 
@@ -657,14 +674,12 @@ void CSimuladorReologico::on_btnExibirGraficoPressaoHidroestatica_clicked()
 
 void CSimuladorReologico::on_actionSalvar_triggered()
 {
-    // Se ja existe um caminho, salva diretamente
-    if (!CaminhoArquivo().isEmpty()) {
-        // Simula um "salvar como" com o caminho ja definido
-        on_actionSalvar_Como_triggered();
-    } else {
-        // Se ainda nao foi salvo antes, forca o usuario a escolher um caminho
-        on_actionSalvar_Como_triggered();
-    }
+    SalvarArquivo(false);  // salvar direto
+}
+
+void CSimuladorReologico::on_actionSalvar_Como_triggered()
+{
+    SalvarArquivo(true);  // forçar abrir QFileDialog
 }
 
 void CSimuladorReologico::on_actionNova_Simula_o_triggered()

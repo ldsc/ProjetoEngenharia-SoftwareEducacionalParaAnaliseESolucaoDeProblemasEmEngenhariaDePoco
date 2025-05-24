@@ -45,6 +45,9 @@ private slots:
     void on_actionNova_Simula_o_triggered();
     void on_actionExportar_Como_Imagem_triggered();
     void on_actionSobre_o_SEEP_triggered();
+    void SalvarArquivo(bool salvarComo);
+    void on_actionSalvar_como_triggered();
+    void on_actionSalvar_triggered();
 
     //getters
     QString NomeArquivo() { return nomeArquivo; }

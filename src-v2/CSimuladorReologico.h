@@ -60,7 +60,10 @@ private slots:
     void on_actionExportar_como_Imagem_triggered();
     void on_actionSobre_o_Programa_triggered();
     void on_actionSalvar_Como_triggered();
+    void SalvarArquivo(bool salvarComo);
     void on_actionArquivo_dat_triggered();
+    void on_actionSalvar_triggered();
+    void on_actionNova_Simula_o_triggered();
 
     // exibe o grafico da pressao hidrostática ao longo da profundidade
     void on_btnExibirGraficoPressaoHidroestatica_clicked();
@@ -74,9 +77,7 @@ private slots:
     void NomeArquivo(QString nome) { nomeArquivo = nome; }
     void CaminhoArquivo(QString caminho) { caminhoArquivo = caminho; }
 
-    void on_actionSalvar_triggered();
 
-    void on_actionNova_Simula_o_triggered();
 
 private:
     Ui::CSimuladorReologico *ui; // interface grafica do Qt

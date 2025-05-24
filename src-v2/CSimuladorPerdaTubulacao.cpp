@@ -65,11 +65,11 @@ void CSimuladorPerdaTubulacao::EditarDadosPoco() {
     double temperaturaFundoFinal = ui->editTemperaturaFundoFinal->text().toDouble(&ok6);
     double profundPacker = ui->editProfundidadePacker->text().toDouble(&ok7);
 
-    if (!nome.isEmpty() && ok1 && ok2 && ok3 && ok4 && ok5 && ok6 && ok7) {
+    if (!nome.isEmpty() && ok1 && ok2 && ok3 && ok4 && ok5 && ok6) {
         if (!poco) {
             // Cria o poço
             poco = std::make_unique<CObjetoPoco>(
-                CObjetoPoco::CriarParaModulo02(nome.toStdString(), profund, pressao, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, profundPacker)
+                CObjetoPoco::CriarParaModulo02(nome.toStdString(), profund, pressao, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, 0)
                 );
 
             ui->btnAdicionarTrecho->setEnabled(true);
@@ -648,4 +648,110 @@ void CSimuladorPerdaTubulacao::on_actionSobre_o_SEEP_triggered()
     janelaSobre.setWindowTitle("Sobre o Software");
     janelaSobre.exec();
 }
+
+
+void CSimuladorPerdaTubulacao::SalvarArquivo(bool salvarComo)
+{
+    QString caminho;
+
+    // Se for salvarComo ou ainda não tiver caminho, abrir o diálogo
+    if (salvarComo || CaminhoArquivo().isEmpty()) {
+        caminho = QFileDialog::getSaveFileName(this, "Salvar Arquivo", "", "Arquivo DAT (*.dat)");
+        if (caminho.isEmpty()) return; // usuário cancelou
+        CaminhoArquivo(caminho);
+        NomeArquivo(QFileInfo(caminho).fileName());
+    } else {
+        caminho = CaminhoArquivo(); // salva direto
+    }
+
+    QFile arquivo(caminho);
+    if (!arquivo.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::warning(this, "Erro", "Nao foi possivel salvar o arquivo.");
+        return;
+    }
+
+    QTextStream out(&arquivo);
+
+    out << "# Configuracao do Poco ------------------------------------------------------------------------------------\n";
+    out << "# "
+        << QString("Nome").leftJustified(15, ' ')
+        << QString("Profundidade (ft)").leftJustified(23, ' ')
+        << QString("Pressao Sup. (psi)").leftJustified(28, ' ')
+        << QString("Temp Sup. Ini (°F)").leftJustified(28, ' ')
+        << QString("Temp Fund. Ini (°F)").leftJustified(28, ' ')
+        << QString("Temp Sup. Fim (°F)").leftJustified(28, ' ')
+        << QString("Temp Fund. Fim (°F)").leftJustified(28, ' ')
+        << QString("Prof Packer (ft)").leftJustified(23, ' ')
+        << "\n";
+
+    // agora escrevemos os dados com os mesmos tamanhos das colunas acima
+    out << "  "
+        << ui->editNomePoco->text().leftJustified(15, ' ')
+        << ui->editProfundidadeTotal->text().leftJustified(23, ' ')
+        << ui->editPressaoSup->text().leftJustified(28, ' ')
+        << ui->editTemperaturaSuperiorInicial->text().leftJustified(28, ' ')
+        << ui->editTemperaturaFundoInicial->text().leftJustified(28, ' ')
+        << ui->editTemperaturaSuperiorFinal->text().leftJustified(28, ' ')
+        << ui->editTemperaturaFundoFinal->text().leftJustified(28, ' ')
+        << ui->editProfundidadePacker->text().leftJustified(23, ' ')
+        << "\n";
+
+
+    // Escreve os dados dos fluidos
+    out << "\n\n\n# Configuracao dos Fluidos --------------------------------------------------------------------------------\n";
+    out << "# "
+        << QString("Nome Trecho").leftJustified(20, ' ')
+        << QString("Prof. Inicial (ft)").leftJustified(23, ' ')
+        << QString("Prof. Final (ft)").leftJustified(23, ' ')
+        << QString("Diam. externo (in)").leftJustified(23, ' ')
+        << QString("Diam. interno (in)").leftJustified(23, ' ')
+        << QString("Coef. Poisson").leftJustified(20, ' ')
+        << QString("Coef. Exp. Term. (1/F)").leftJustified(28, ' ')
+        << QString("Mod. Elast. (psi)").leftJustified(23, ' ')
+        << QString("Peso/unid (lb/ft)").leftJustified(23, ' ')
+        << QString("Nome fluido").leftJustified(20, ' ')
+        << QString("Densidade (lbm/gal)").leftJustified(25, ' ')
+        << QString("Viscosidade (cP)").leftJustified(23, ' ')
+        << "\n";
+
+    int linhas = ui->tblFluidos->rowCount();
+    for (int i = 0; i < linhas; ++i) {
+        out << "  " // recuo
+            << ui->tblTrechos->item(i, 0)->text().leftJustified(20, ' ')
+            << ui->tblTrechos->item(i, 1)->text().leftJustified(23, ' ')
+            << ui->tblTrechos->item(i, 2)->text().leftJustified(23, ' ')
+            << ui->tblTrechos->item(i, 3)->text().leftJustified(23, ' ')
+            << ui->tblTrechos->item(i, 4)->text().leftJustified(23, ' ')
+            << ui->tblTrechos->item(i, 5)->text().leftJustified(20, ' ')
+            << ui->tblTrechos->item(i, 6)->text().leftJustified(28, ' ')
+            << ui->tblTrechos->item(i, 7)->text().leftJustified(23, ' ')
+            << ui->tblTrechos->item(i, 8)->text().leftJustified(23, ' ')
+            << ui->tblFluidos->item(i, 0)->text().leftJustified(20, ' ')
+            << ui->tblFluidos->item(i, 1)->text().leftJustified(25, ' ')
+            << ui->tblFluidos->item(i, 2)->text().leftJustified(23, ' ')
+            << "\n";
+    }
+
+    arquivo.close();
+
+    // Atualiza o caminho salvo apenas se for novo
+    if (CaminhoArquivo().isEmpty())
+    {
+        CaminhoArquivo(caminho);
+        NomeArquivo(QFileInfo(caminho).fileName());
+    }
+
+    QMessageBox::information(this, "Salvo", "Arquivo salvo com sucesso!");
+}
+
+void CSimuladorPerdaTubulacao::on_actionSalvar_triggered()
+{
+    SalvarArquivo(false);  // salvar direto
+}
+
+void CSimuladorPerdaTubulacao::on_actionSalvar_como_triggered()
+{
+    SalvarArquivo(true);  // forçar abrir QFileDialog
+}
+
 

@@ -1256,6 +1256,8 @@ border-radius: 5px;</string>
      <addaction name="actionArquivo_Dat"/>
     </widget>
     <addaction name="actionNova_Simula_o"/>
+    <addaction name="actionSalvar"/>
+    <addaction name="actionSalvar_como"/>
     <addaction name="separator"/>
     <addaction name="menuImportar_Dados"/>
     <addaction name="actionExportar_Como_Imagem"/>
@@ -1284,6 +1286,9 @@ border-radius: 5px;</string>
    <property name="text">
     <string>Nova Simulação</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
   </action>
   <action name="actionExportar_Como_Imagem">
    <property name="icon">
@@ -1300,6 +1305,9 @@ border-radius: 5px;</string>
    <property name="text">
     <string>Manual do Usuário</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
   </action>
   <action name="actionF_rmulas_Utilizadas">
    <property name="icon">
@@ -1315,6 +1323,28 @@ border-radius: 5px;</string>
    </property>
    <property name="text">
     <string>Sobre o SEEP</string>
+   </property>
+  </action>
+  <action name="actionSalvar">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentSave"/>
+   </property>
+   <property name="text">
+    <string>Salvar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSalvar_como">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentSave"/>
+   </property>
+   <property name="text">
+    <string>Salvar como...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
    </property>
   </action>
  </widget>

@@ -43,6 +43,8 @@ public:
     QAction *actionManual_do_Usu_rio;
     QAction *actionF_rmulas_Utilizadas;
     QAction *actionSobre_o_SEEP;
+    QAction *actionSalvar;
+    QAction *actionSalvar_como;
     QWidget *centralwidget;
     QCustomPlot *customPlotPoco;
     QGroupBox *groupBox;
@@ -158,6 +160,13 @@ public:
         actionSobre_o_SEEP->setObjectName("actionSobre_o_SEEP");
         QIcon icon4(QIcon::fromTheme(QString::fromUtf8("dialog-information")));
         actionSobre_o_SEEP->setIcon(icon4);
+        actionSalvar = new QAction(CSimuladorPerdaTubulacao);
+        actionSalvar->setObjectName("actionSalvar");
+        QIcon icon5(QIcon::fromTheme(QIcon::ThemeIcon::DocumentSave));
+        actionSalvar->setIcon(icon5);
+        actionSalvar_como = new QAction(CSimuladorPerdaTubulacao);
+        actionSalvar_como->setObjectName("actionSalvar_como");
+        actionSalvar_como->setIcon(icon5);
         centralwidget = new QWidget(CSimuladorPerdaTubulacao);
         centralwidget->setObjectName("centralwidget");
         customPlotPoco = new QCustomPlot(centralwidget);
@@ -743,6 +752,8 @@ public:
         menubar->addAction(menuArquivo->menuAction());
         menubar->addAction(menuRefer_ncias->menuAction());
         menuArquivo->addAction(actionNova_Simula_o);
+        menuArquivo->addAction(actionSalvar);
+        menuArquivo->addAction(actionSalvar_como);
         menuArquivo->addSeparator();
         menuArquivo->addAction(menuImportar_Dados->menuAction());
         menuArquivo->addAction(actionExportar_Como_Imagem);
@@ -764,10 +775,24 @@ public:
         CSimuladorPerdaTubulacao->setWindowTitle(QCoreApplication::translate("CSimuladorPerdaTubulacao", "MainWindow", nullptr));
         actionArquivo_Dat->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Arquivo (.Dat)", nullptr));
         actionNova_Simula_o->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Nova Simula\303\247\303\243o", nullptr));
+#if QT_CONFIG(shortcut)
+        actionNova_Simula_o->setShortcut(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Ctrl+N", nullptr));
+#endif // QT_CONFIG(shortcut)
         actionExportar_Como_Imagem->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Exportar Como Imagem", nullptr));
         actionManual_do_Usu_rio->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Manual do Usu\303\241rio", nullptr));
+#if QT_CONFIG(shortcut)
+        actionManual_do_Usu_rio->setShortcut(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Ctrl+H", nullptr));
+#endif // QT_CONFIG(shortcut)
         actionF_rmulas_Utilizadas->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "F\303\263rmulas Utilizadas", nullptr));
         actionSobre_o_SEEP->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Sobre o SEEP", nullptr));
+        actionSalvar->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Salvar", nullptr));
+#if QT_CONFIG(shortcut)
+        actionSalvar->setShortcut(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Ctrl+S", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionSalvar_como->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Salvar como...", nullptr));
+#if QT_CONFIG(shortcut)
+        actionSalvar_como->setShortcut(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Ctrl+Shift+S", nullptr));
+#endif // QT_CONFIG(shortcut)
         label->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Dados do Po\303\247o", nullptr));
         lbnTituloNomePoco->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Nome Po\303\247o", nullptr));
         lbnTituloProfundidadePacker->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Profundidade do Packer (ft)", nullptr));

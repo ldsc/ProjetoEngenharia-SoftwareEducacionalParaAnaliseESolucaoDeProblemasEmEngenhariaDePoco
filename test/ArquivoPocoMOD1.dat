@@ -1,10 +1,11 @@
-# Configuração do Poço------------------------------------------------------------------------------------
-# Nome                 Profundidade (ft)    Pressão Superficial (psi)    Diâmetro (in)    OD (in)    ID (in)    Vazão (bbl/d)
-7-TES-01-RJS           11483                2175                         8.66             7.87       7.09       158
+# Configuracao do Poco -----------------------------------------------------------------------------------------------------
+# Nome           Profund (ft)   Pressao (psi)  Diametro (in)  OD (in)        ID (in)        Vazao (bbl/d)  
+  7-TES-01-RJS   1              2              3              6              4              5              
 
 
-# Configuração dos Fluidos--------------------------------------------------------------------------------
-# Nome       Densidade (lbm/gal)    Viscosidade (cP)    Prof. Inicial (ft)    Prof. Final (ft)
-Fluido_B        8.76                    1.8                 0                    3281
-Fluido_C        8.17                    2.1                 3281                 8202
-Fluido_D        9.17                    1.3                 8202                 11483
+
+        # Configuracao dos Fluidos --------------------------------------------------------------------------------
+# Nome           Densidade (lbm/gal)    Viscosidade (cP)       Prof. Inicial (ft)     Prof. Final (ft)    
+  Fluido_B       8.76                   1.80                   0.00                   3281.00             
+  Fluido_C       8.17                   2.10                   3281.00                8202.00             
+  Fluido_D       9.17                   1.30                   8202.00                11483.00            
