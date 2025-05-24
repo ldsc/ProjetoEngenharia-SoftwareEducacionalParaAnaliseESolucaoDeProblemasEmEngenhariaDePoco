@@ -1,10 +1,10 @@
 # Configuracao do Poco ------------------------------------------------------------------------------------
-# Nome           Profundidade (ft)      Pressao Sup. (psi)          Temp Sup. Ini (°F)          Temp Fund. Ini (°F)         Temp Sup. Fim (°F)          Temp Fund. Fim (°F)         Prof Packer (ft)       
-  7-TES-01-RJS   8000                   0                           50                          300                         50                          300                                                
+# Nome                               Profundidade (ft)                  Pressao Sup. (psi)                 Temp Sup. Inicial (°F)             Temp Fund. Inicial (°F)            Temp Sup. Final (°F)               Temp Fund. Final (°F)              Prof Packer (ft)                   
+  7-TES-01-RJS                       8000                               0                                  50                                 300                                50                                 300                                0                                   
 
 
 
 # Configuracao dos Fluidos --------------------------------------------------------------------------------
-# Nome Trecho         Prof. Inicial (ft)     Prof. Final (ft)       Diam. externo (in)     Diam. interno (in)     Coef. Poisson       Coef. Exp. Term. (1/F)      Mod. Elast. (psi)      Peso/unid (lb/ft)      Nome fluido         Densidade (lbm/gal)      Viscosidade (cP)       
-  Trecho_A            0.00                   4000.00                5.50                   4.89                   0.300               0.0000030                   0.0000030              22.00                  AguaMar             8.51                     1.80                   
-  Fluido_B            4000.00                8000.00                4.50                   3.96                   0.300               0.0000030                   0.0000035              15.00                  AguaMar             8.51                     1.80                   
+# Nome Trecho              Prof. Inicial (ft)       Prof. Final (ft)         Diam. externo (in)       Diam. interno (in)       Coef. Poisson            Coef. Exp. Term. (1/F)   Mod. Elast. (psi)        Peso/unid (lb/ft)        Nome fluido              Densidade (lbm/gal)      Viscosidade (cP)         
+  Trecho_A                 0.00                     4000.00                  5.50                     4.89                     0.300                    0.0000030                0.0000030                22.00                    AguaMar                  8.51                     1.80                     
+  Fluido_B                 4000.00                  8000.00                  4.50                     3.96                     0.300                    0.0000030                0.0000035                15.00                    AguaMar                  8.51                     1.80                     

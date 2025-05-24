@@ -65,11 +65,11 @@ void CSimuladorPerdaTubulacao::EditarDadosPoco() {
     double temperaturaFundoFinal = ui->editTemperaturaFundoFinal->text().toDouble(&ok6);
     double profundPacker = ui->editProfundidadePacker->text().toDouble(&ok7);
 
-    if (!nome.isEmpty() && ok1 && ok2 && ok3 && ok4 && ok5 && ok6) {
+    if (!nome.isEmpty() && ok1 && ok2 && ok3 && ok4 && ok5 && ok6 && ok7) {
         if (!poco) {
             // Cria o poço
             poco = std::make_unique<CObjetoPoco>(
-                CObjetoPoco::CriarParaModulo02(nome.toStdString(), profund, pressao, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, 0)
+                CObjetoPoco::CriarParaModulo02(nome.toStdString(), profund, pressao, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, profundPacker)
                 );
 
             ui->btnAdicionarTrecho->setEnabled(true);
@@ -539,7 +539,7 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
     bool lendoTrechos = false;
 
     while (std::getline(file, linha)) {
-        if (linha.find("Configuração dos Trechos") != std::string::npos) {
+        if (linha.find("Configuracao dos Fluidos") != std::string::npos) {
             lendoTrechos = true;
             continue;
         }
@@ -674,61 +674,61 @@ void CSimuladorPerdaTubulacao::SalvarArquivo(bool salvarComo)
 
     out << "# Configuracao do Poco ------------------------------------------------------------------------------------\n";
     out << "# "
-        << QString("Nome").leftJustified(15, ' ')
-        << QString("Profundidade (ft)").leftJustified(23, ' ')
-        << QString("Pressao Sup. (psi)").leftJustified(28, ' ')
-        << QString("Temp Sup. Ini (°F)").leftJustified(28, ' ')
-        << QString("Temp Fund. Ini (°F)").leftJustified(28, ' ')
-        << QString("Temp Sup. Fim (°F)").leftJustified(28, ' ')
-        << QString("Temp Fund. Fim (°F)").leftJustified(28, ' ')
-        << QString("Prof Packer (ft)").leftJustified(23, ' ')
+        << QString("Nome").leftJustified(35, ' ')
+        << QString("Profundidade (ft)").leftJustified(35, ' ')
+        << QString("Pressao Sup. (psi)").leftJustified(35, ' ')
+        << QString("Temp Sup. Inicial (°F)").leftJustified(35, ' ')
+        << QString("Temp Fund. Inicial (°F)").leftJustified(35, ' ')
+        << QString("Temp Sup. Final (°F)").leftJustified(35, ' ')
+        << QString("Temp Fund. Final (°F)").leftJustified(35, ' ')
+        << QString("Prof Packer (ft)").leftJustified(35, ' ')
         << "\n";
 
     // agora escrevemos os dados com os mesmos tamanhos das colunas acima
     out << "  "
-        << ui->editNomePoco->text().leftJustified(15, ' ')
-        << ui->editProfundidadeTotal->text().leftJustified(23, ' ')
-        << ui->editPressaoSup->text().leftJustified(28, ' ')
-        << ui->editTemperaturaSuperiorInicial->text().leftJustified(28, ' ')
-        << ui->editTemperaturaFundoInicial->text().leftJustified(28, ' ')
-        << ui->editTemperaturaSuperiorFinal->text().leftJustified(28, ' ')
-        << ui->editTemperaturaFundoFinal->text().leftJustified(28, ' ')
-        << ui->editProfundidadePacker->text().leftJustified(23, ' ')
+        << ui->editNomePoco->text().leftJustified(35, ' ')
+        << ui->editProfundidadeTotal->text().leftJustified(35, ' ')
+        << ui->editPressaoSup->text().leftJustified(35, ' ')
+        << ui->editTemperaturaSuperiorInicial->text().leftJustified(35, ' ')
+        << ui->editTemperaturaFundoInicial->text().leftJustified(35, ' ')
+        << ui->editTemperaturaSuperiorFinal->text().leftJustified(35, ' ')
+        << ui->editTemperaturaFundoFinal->text().leftJustified(35, ' ')
+        << ui->editProfundidadePacker->text().leftJustified(35, ' ')
         << "\n";
 
 
     // Escreve os dados dos fluidos
     out << "\n\n\n# Configuracao dos Fluidos --------------------------------------------------------------------------------\n";
     out << "# "
-        << QString("Nome Trecho").leftJustified(20, ' ')
-        << QString("Prof. Inicial (ft)").leftJustified(23, ' ')
-        << QString("Prof. Final (ft)").leftJustified(23, ' ')
-        << QString("Diam. externo (in)").leftJustified(23, ' ')
-        << QString("Diam. interno (in)").leftJustified(23, ' ')
-        << QString("Coef. Poisson").leftJustified(20, ' ')
-        << QString("Coef. Exp. Term. (1/F)").leftJustified(28, ' ')
-        << QString("Mod. Elast. (psi)").leftJustified(23, ' ')
-        << QString("Peso/unid (lb/ft)").leftJustified(23, ' ')
-        << QString("Nome fluido").leftJustified(20, ' ')
+        << QString("Nome Trecho").leftJustified(25, ' ')
+        << QString("Prof. Inicial (ft)").leftJustified(25, ' ')
+        << QString("Prof. Final (ft)").leftJustified(25, ' ')
+        << QString("Diam. externo (in)").leftJustified(25, ' ')
+        << QString("Diam. interno (in)").leftJustified(25, ' ')
+        << QString("Coef. Poisson").leftJustified(25, ' ')
+        << QString("Coef. Exp. Term. (1/F)").leftJustified(25, ' ')
+        << QString("Mod. Elast. (psi)").leftJustified(25, ' ')
+        << QString("Peso/unid (lb/ft)").leftJustified(25, ' ')
+        << QString("Nome fluido").leftJustified(25, ' ')
         << QString("Densidade (lbm/gal)").leftJustified(25, ' ')
-        << QString("Viscosidade (cP)").leftJustified(23, ' ')
+        << QString("Viscosidade (cP)").leftJustified(25, ' ')
         << "\n";
 
     int linhas = ui->tblFluidos->rowCount();
     for (int i = 0; i < linhas; ++i) {
         out << "  " // recuo
-            << ui->tblTrechos->item(i, 0)->text().leftJustified(20, ' ')
-            << ui->tblTrechos->item(i, 1)->text().leftJustified(23, ' ')
-            << ui->tblTrechos->item(i, 2)->text().leftJustified(23, ' ')
-            << ui->tblTrechos->item(i, 3)->text().leftJustified(23, ' ')
-            << ui->tblTrechos->item(i, 4)->text().leftJustified(23, ' ')
-            << ui->tblTrechos->item(i, 5)->text().leftJustified(20, ' ')
-            << ui->tblTrechos->item(i, 6)->text().leftJustified(28, ' ')
-            << ui->tblTrechos->item(i, 7)->text().leftJustified(23, ' ')
-            << ui->tblTrechos->item(i, 8)->text().leftJustified(23, ' ')
-            << ui->tblFluidos->item(i, 0)->text().leftJustified(20, ' ')
+            << ui->tblTrechos->item(i, 0)->text().leftJustified(25, ' ')
+            << ui->tblTrechos->item(i, 1)->text().leftJustified(25, ' ')
+            << ui->tblTrechos->item(i, 2)->text().leftJustified(25, ' ')
+            << ui->tblTrechos->item(i, 3)->text().leftJustified(25, ' ')
+            << ui->tblTrechos->item(i, 4)->text().leftJustified(25, ' ')
+            << ui->tblTrechos->item(i, 5)->text().leftJustified(25, ' ')
+            << ui->tblTrechos->item(i, 6)->text().leftJustified(25, ' ')
+            << ui->tblTrechos->item(i, 7)->text().leftJustified(25, ' ')
+            << ui->tblTrechos->item(i, 8)->text().leftJustified(25, ' ')
+            << ui->tblFluidos->item(i, 0)->text().leftJustified(25, ' ')
             << ui->tblFluidos->item(i, 1)->text().leftJustified(25, ' ')
-            << ui->tblFluidos->item(i, 2)->text().leftJustified(23, ' ')
+            << ui->tblFluidos->item(i, 2)->text().leftJustified(25, ' ')
             << "\n";
     }
 
