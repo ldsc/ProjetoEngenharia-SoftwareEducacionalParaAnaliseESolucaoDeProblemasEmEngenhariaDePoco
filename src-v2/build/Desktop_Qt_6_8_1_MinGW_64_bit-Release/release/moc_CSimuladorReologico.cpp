@@ -53,7 +53,6 @@ static constexpr auto qt_meta_stringdata_ZN19CSimuladorReologicoE = QtMocHelpers
     "EditarLinhaTabela",
     "row",
     "EditarDadosPoco",
-    "on_actionNova_Simulacao_triggered",
     "on_actionExportar_como_Imagem_triggered",
     "on_actionSobre_o_Programa_triggered",
     "on_actionSalvar_Como_triggered",
@@ -63,7 +62,8 @@ static constexpr auto qt_meta_stringdata_ZN19CSimuladorReologicoE = QtMocHelpers
     "CaminhoArquivo",
     "nome",
     "caminho",
-    "on_actionSalvar_triggered"
+    "on_actionSalvar_triggered",
+    "on_actionNova_Simula_o_triggered"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -103,9 +103,9 @@ Q_CONSTINIT static const uint qt_meta_data_ZN19CSimuladorReologicoE[] = {
       20,    0,  177,    2, 0x08,   19 /* Private */,
       21,    0,  178,    2, 0x08,   20 /* Private */,
       22,    0,  179,    2, 0x08,   21 /* Private */,
-      23,    0,  180,    2, 0x08,   22 /* Private */,
-      22,    1,  181,    2, 0x08,   23 /* Private */,
-      23,    1,  184,    2, 0x08,   25 /* Private */,
+      21,    1,  180,    2, 0x08,   22 /* Private */,
+      22,    1,  183,    2, 0x08,   24 /* Private */,
+      25,    0,  186,    2, 0x08,   26 /* Private */,
       26,    0,  187,    2, 0x08,   27 /* Private */,
 
  // slots: parameters
@@ -127,11 +127,11 @@ Q_CONSTINIT static const uint qt_meta_data_ZN19CSimuladorReologicoE[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
     QMetaType::QString,
     QMetaType::QString,
+    QMetaType::Void, QMetaType::QString,   23,
     QMetaType::Void, QMetaType::QString,   24,
-    QMetaType::Void, QMetaType::QString,   25,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -173,8 +173,6 @@ Q_CONSTINIT const QMetaObject CSimuladorReologico::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'EditarDadosPoco'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_actionNova_Simulacao_triggered'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_actionExportar_como_Imagem_triggered'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_actionSobre_o_Programa_triggered'
@@ -196,6 +194,8 @@ Q_CONSTINIT const QMetaObject CSimuladorReologico::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
         // method 'on_actionSalvar_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionNova_Simula_o_triggered'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -219,19 +219,19 @@ void CSimuladorReologico::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 10: _t->makePlotPoco(); break;
         case 11: _t->EditarLinhaTabela((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 12: _t->EditarDadosPoco(); break;
-        case 13: _t->on_actionNova_Simulacao_triggered(); break;
-        case 14: _t->on_actionExportar_como_Imagem_triggered(); break;
-        case 15: _t->on_actionSobre_o_Programa_triggered(); break;
-        case 16: _t->on_actionSalvar_Como_triggered(); break;
-        case 17: _t->on_actionArquivo_dat_triggered(); break;
-        case 18: _t->on_btnExibirGraficoPressaoHidroestatica_clicked(); break;
-        case 19: { QString _r = _t->NomeArquivo();
+        case 13: _t->on_actionExportar_como_Imagem_triggered(); break;
+        case 14: _t->on_actionSobre_o_Programa_triggered(); break;
+        case 15: _t->on_actionSalvar_Como_triggered(); break;
+        case 16: _t->on_actionArquivo_dat_triggered(); break;
+        case 17: _t->on_btnExibirGraficoPressaoHidroestatica_clicked(); break;
+        case 18: { QString _r = _t->NomeArquivo();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        case 20: { QString _r = _t->CaminhoArquivo();
+        case 19: { QString _r = _t->CaminhoArquivo();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        case 21: _t->NomeArquivo((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 22: _t->CaminhoArquivo((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 23: _t->on_actionSalvar_triggered(); break;
+        case 20: _t->NomeArquivo((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 21: _t->CaminhoArquivo((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 22: _t->on_actionSalvar_triggered(); break;
+        case 23: _t->on_actionNova_Simula_o_triggered(); break;
         default: ;
         }
     }

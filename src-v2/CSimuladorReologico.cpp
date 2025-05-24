@@ -2,7 +2,7 @@
 #include "ui_CSimuladorReologico.h"
 #include "CJanelaAdicionarFluido.h"
 #include "CJanelaGraficoPressaoHidroestatica.h"
-#include "CJanelaSobreSoftware.h".h"
+#include "CJanelaSobreSoftware.h"
 
 #include <iostream>
 #include <fstream>
@@ -491,22 +491,6 @@ void CSimuladorReologico::makePlotPoco()
     ui->customPlotPoco->replot();
 }
 
-void CSimuladorReologico::on_actionNova_Simulacao_triggered()
-{
-    QMessageBox::StandardButton resposta = QMessageBox::question(
-        this,
-        "",
-        "Tem certeza que deseja iniciar uma nova simulação?",
-        QMessageBox::Yes | QMessageBox::No
-        );
-
-    if (resposta == QMessageBox::Yes) {
-        CSimuladorReologico *newWindow = new CSimuladorReologico();
-        newWindow->show();
-        this->close();
-    }
-}
-
 
 void CSimuladorReologico::on_actionExportar_como_Imagem_triggered()
 {
@@ -529,20 +513,25 @@ void CSimuladorReologico::on_actionSobre_o_Programa_triggered()
 
 void CSimuladorReologico::on_actionSalvar_Como_triggered()
 {
-    QString caminho = QFileDialog::getSaveFileName(this, "Salvar Arquivo", "", "Arquivo DAT (*.dat)");
-    if (caminho.isEmpty()) return;
+    QString caminho = CaminhoArquivo();
+
+    // Se o caminho ainda nao existe, pede para o usuario escolher
+    if (caminho.isEmpty()) {
+        caminho = QFileDialog::getSaveFileName(this, "Salvar Arquivo", "", "Arquivo DAT (*.dat)");
+        if (caminho.isEmpty()) return; // Usuario cancelou
+    }
 
     QFile arquivo(caminho);
     if (!arquivo.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        QMessageBox::warning(this, "Erro", "Não foi possível salvar o arquivo.");
+        QMessageBox::warning(this, "Erro", "Nao foi possivel salvar o arquivo.");
         return;
     }
 
     QTextStream out(&arquivo);
 
-    // Dados do Poço
-    out << "# Configuração do Poço------------------------------------------------------------------------------------\n";
-    out << "# Nome                 Profundidade (ft)    Pressão Superficial (psi)    Diâmetro (in)    OD (in)    ID (in)    Vazão (bbl/d)\n";
+    // Escreve os dados do pouco
+    out << "# Configuracao do Poco ------------------------------------------------------------------------------------\n";
+    out << "# Nome                 Profundidade (ft)    Pressao Superficial (psi)    Diametro (in)    OD (in)    ID (in)    Vazao (bbl/d)\n";
     out << ui->editNomePoco->text() << "           ";
     out << ui->editProfundidadeTotal->text() << "                ";
     out << ui->editPressaoSuperficie->text() << "                         ";
@@ -551,27 +540,29 @@ void CSimuladorReologico::on_actionSalvar_Como_triggered()
     out << ui->editDiametroID->text() << "       ";
     out << ui->editVazao->text() << "       ";
 
-    // Dados dos Fluidos (pega da tabela)
-    out << "\n\n\n# Configuração dos Fluidos--------------------------------------------------------------------------------\n";
+    // Escreve os dados dos fluidos
+    out << "\n\n\n# Configuracao dos Fluidos --------------------------------------------------------------------------------\n";
     out << "# Nome       Densidade (lbm/gal)    Viscosidade (cP)    Prof. Inicial (ft)    Prof. Final (ft)\n";
     int linhas = ui->tblFluidos->rowCount();
     for (int i = 0; i < linhas; ++i) {
-        QString nome = ui->tblFluidos->item(i, 0)->text();
-        QString densidade = ui->tblFluidos->item(i, 1)->text();
-        QString viscosidade = ui->tblFluidos->item(i, 2)->text();
-        QString profIni = ui->tblFluidos->item(i, 3)->text();
-        QString profFim = ui->tblFluidos->item(i, 4)->text();
-
-        out << nome << "        " << densidade << "                    " << viscosidade << "                 " << profIni << "                  " << profFim << "\n";
+        out << ui->tblFluidos->item(i, 0)->text() << "        "
+            << ui->tblFluidos->item(i, 1)->text() << "                    "
+            << ui->tblFluidos->item(i, 2)->text() << "                 "
+            << ui->tblFluidos->item(i, 3)->text() << "                  "
+            << ui->tblFluidos->item(i, 4)->text() << "\n";
     }
 
     arquivo.close();
+
+    // Atualiza o caminho salvo apenas se for novo
+    if (CaminhoArquivo().isEmpty())
+    {
+        CaminhoArquivo(caminho);
+        NomeArquivo(QFileInfo(caminho).fileName());
+    }
+
     QMessageBox::information(this, "Salvo", "Arquivo salvo com sucesso!");
-
-    NomeArquivo(QFileInfo(caminho).fileName());
-    CaminhoArquivo(caminho);
 }
-
 
 void CSimuladorReologico::on_actionArquivo_dat_triggered()
 {
@@ -666,39 +657,30 @@ void CSimuladorReologico::on_btnExibirGraficoPressaoHidroestatica_clicked()
 
 void CSimuladorReologico::on_actionSalvar_triggered()
 {
-    QFile arquivo(CaminhoArquivo());
-
-    if (CaminhoArquivo() != "") {
-        QTextStream out(&arquivo);
-
-        // Salva os dados exatamente como na função SalvarComo()
-        out << "# Configuração do Poço------------------------------------------------------------------------------------\n";
-        out << "# Nome                 Profundidade (ft)    Pressão Superficial (psi)    Diâmetro (in)    OD (in)    ID (in)    Vazão (bbl/d)\n";
-        out << ui->editNomePoco->text() << "           ";
-        out << ui->editProfundidadeTotal->text() << "                ";
-        out << ui->editPressaoSuperficie->text() << "                         ";
-        out << ui->editDiametroPoco->text() << "             ";
-        out << ui->editDiametroOD->text() << "       ";
-        out << ui->editDiametroID->text() << "       ";
-        out << ui->editVazao->text() << "       ";
-
-        // Dados dos Fluidos
-        out << "\n\n\n# Configuração dos Fluidos--------------------------------------------------------------------------------\n";
-        out << "# Nome       Densidade (lbm/gal)    Viscosidade (cP)    Prof. Inicial (ft)    Prof. Final (ft)\n";
-        int linhas = ui->tblFluidos->rowCount();
-        for (int i = 0; i < linhas; ++i) {
-            QString nome = ui->tblFluidos->item(i, 0)->text();
-            QString densidade = ui->tblFluidos->item(i, 1)->text();
-            QString viscosidade = ui->tblFluidos->item(i, 2)->text();
-            QString profIni = ui->tblFluidos->item(i, 3)->text();
-            QString profFim = ui->tblFluidos->item(i, 4)->text();
-
-            out << nome << "        " << densidade << "                    " << viscosidade << "                 " << profIni << "                  " << profFim << "\n";
-        }
-
-        arquivo.close();
-        QMessageBox::information(this, "Salvo", "Arquivo salvo com sucesso!");
+    // Se ja existe um caminho, salva diretamente
+    if (!CaminhoArquivo().isEmpty()) {
+        // Simula um "salvar como" com o caminho ja definido
+        on_actionSalvar_Como_triggered();
     } else {
-        on_actionSalvar_triggered(); // chama a função de "Salvar Como" que você já tem
+        // Se ainda nao foi salvo antes, forca o usuario a escolher um caminho
+        on_actionSalvar_Como_triggered();
     }
 }
+
+void CSimuladorReologico::on_actionNova_Simula_o_triggered()
+{
+    QMessageBox::StandardButton resposta = QMessageBox::question(
+        this,
+        "",
+        "Tem certeza que deseja iniciar uma nova simulação?",
+        QMessageBox::Yes | QMessageBox::No
+        );
+
+    if (resposta == QMessageBox::Yes) {
+        CSimuladorReologico *newWindow = new CSimuladorReologico();
+        newWindow->show();
+        this->close();
+    }
+}
+
+

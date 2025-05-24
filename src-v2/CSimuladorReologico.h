@@ -11,11 +11,9 @@
 #include "CModeloBingham.h"
 #include "CModeloPotencia.h"
 
-QT_BEGIN_NAMESPACE
 namespace Ui {
 class CSimuladorReologico;
 }
-QT_END_NAMESPACE
 
 // classe principal da interface grafica do simulador reologico
 // herda de QMainWindow pois usa os recursos visuais do Qt
@@ -27,8 +25,8 @@ public:
     // construtor e destrutor da interface
     CSimuladorReologico(QWidget *parent = nullptr);
     ~CSimuladorReologico();
-    QString nomeArquivo;
-    QString caminhoArquivo;
+    QString nomeArquivo = "";
+    QString caminhoArquivo = "";
 
 private slots:
     // atualiza os dados na interface quando ha alteracao
@@ -59,7 +57,6 @@ private slots:
     void EditarDadosPoco();
 
     // opcoes do menu superior da interface (arquivo, sobre, exportar etc)
-    void on_actionNova_Simulacao_triggered();
     void on_actionExportar_como_Imagem_triggered();
     void on_actionSobre_o_Programa_triggered();
     void on_actionSalvar_Como_triggered();
@@ -78,6 +75,8 @@ private slots:
     void CaminhoArquivo(QString caminho) { caminhoArquivo = caminho; }
 
     void on_actionSalvar_triggered();
+
+    void on_actionNova_Simula_o_triggered();
 
 private:
     Ui::CSimuladorReologico *ui; // interface grafica do Qt

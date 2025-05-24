@@ -39,7 +39,7 @@ border-radius: 4px;
        <x>10</x>
        <y>40</y>
        <width>261</width>
-       <height>296</height>
+       <height>307</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
@@ -520,7 +520,7 @@ border-radius: 4px;
       <rect>
        <x>10</x>
        <y>40</y>
-       <width>261</width>
+       <width>275</width>
        <height>171</height>
       </rect>
      </property>
@@ -1026,8 +1026,8 @@ QTabBar::tab:selected {
        <rect>
         <x>10</x>
         <y>31</y>
-        <width>263</width>
-        <height>226</height>
+        <width>283</width>
+        <height>255</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_5">
@@ -1273,8 +1273,8 @@ border-radius: 5px;</string>
        <rect>
         <x>320</x>
         <y>30</y>
-        <width>281</width>
-        <height>226</height>
+        <width>283</width>
+        <height>255</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_6">
@@ -2007,8 +2007,8 @@ border-radius: 4px;
      <rect>
       <x>230</x>
       <y>0</y>
-      <width>830</width>
-      <height>55</height>
+      <width>996</width>
+      <height>64</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -2062,7 +2062,7 @@ border-radius: 4px;
      <x>0</x>
      <y>0</y>
      <width>1264</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArquivo">

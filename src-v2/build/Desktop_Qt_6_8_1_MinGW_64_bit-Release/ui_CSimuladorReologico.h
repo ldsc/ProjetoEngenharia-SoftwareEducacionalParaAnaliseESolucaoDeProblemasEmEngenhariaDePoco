@@ -249,7 +249,7 @@ public:
         groupBox->setTitle(QString::fromUtf8(""));
         gridLayoutWidget = new QWidget(groupBox);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(10, 40, 261, 296));
+        gridLayoutWidget->setGeometry(QRect(10, 40, 261, 307));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -481,7 +481,7 @@ public:
         label_3->setFont(font1);
         gridLayoutWidget_14 = new QWidget(groupBox_2);
         gridLayoutWidget_14->setObjectName("gridLayoutWidget_14");
-        gridLayoutWidget_14->setGeometry(QRect(10, 40, 261, 171));
+        gridLayoutWidget_14->setGeometry(QRect(10, 40, 275, 171));
         gridLayout_14 = new QGridLayout(gridLayoutWidget_14);
         gridLayout_14->setObjectName("gridLayout_14");
         gridLayout_14->setContentsMargins(0, 0, 0, 0);
@@ -709,7 +709,7 @@ public:
         label_9->setFont(font1);
         gridLayoutWidget_5 = new QWidget(tab_9);
         gridLayoutWidget_5->setObjectName("gridLayoutWidget_5");
-        gridLayoutWidget_5->setGeometry(QRect(10, 31, 263, 226));
+        gridLayoutWidget_5->setGeometry(QRect(10, 31, 283, 255));
         gridLayout_5 = new QGridLayout(gridLayoutWidget_5);
         gridLayout_5->setObjectName("gridLayout_5");
         gridLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -833,7 +833,7 @@ public:
 
         gridLayoutWidget_6 = new QWidget(tab_9);
         gridLayoutWidget_6->setObjectName("gridLayoutWidget_6");
-        gridLayoutWidget_6->setGeometry(QRect(320, 30, 281, 226));
+        gridLayoutWidget_6->setGeometry(QRect(320, 30, 283, 255));
         gridLayout_6 = new QGridLayout(gridLayoutWidget_6);
         gridLayout_6->setObjectName("gridLayout_6");
         gridLayout_6->setContentsMargins(0, 0, 0, 0);
@@ -1179,7 +1179,7 @@ public:
         label_12->setFont(font1);
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(230, 0, 830, 55));
+        layoutWidget->setGeometry(QRect(230, 0, 996, 64));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -1217,7 +1217,7 @@ public:
         CSimuladorReologico->setStatusBar(statusbar);
         menubar = new QMenuBar(CSimuladorReologico);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1264, 22));
+        menubar->setGeometry(QRect(0, 0, 1264, 26));
         menuArquivo = new QMenu(menubar);
         menuArquivo->setObjectName("menuArquivo");
         menuImportar_Dados = new QMenu(menuArquivo);
