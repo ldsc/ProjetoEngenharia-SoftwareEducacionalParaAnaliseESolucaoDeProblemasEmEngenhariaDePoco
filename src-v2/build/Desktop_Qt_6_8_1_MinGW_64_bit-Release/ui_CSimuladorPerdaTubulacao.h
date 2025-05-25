@@ -103,12 +103,12 @@ public:
     QLabel *lbnPressaoHidroestatica;
     QLabel *lbnTituloNomePoco_3;
     QLabel *lbnCargaInicial;
-    QLabel *lbnTituloNomePoco_4;
+    QLabel *lbnTituloDeltaTemperatura;
     QLabel *lbnTituloDeltaLTemperatura;
     QLabel *lbnTituloNomePoco_5;
     QLabel *lbnTituloNomePoco_15;
-    QLabel *lbnTituloNomePoco_9;
-    QLabel *lbnTituloNomePoco_16;
+    QLabel *lbnTituloVariacaoCargaPista;
+    QLabel *lbnTituloVariacaoCargaPistao;
     QLabel *lbnTituloNomePoco_6;
     QLabel *lbnTituloNomePoco_17;
     QLabel *lbnTituloNomePoco_7;
@@ -563,12 +563,12 @@ public:
 
         formLayout->setWidget(3, QFormLayout::FieldRole, lbnCargaInicial);
 
-        lbnTituloNomePoco_4 = new QLabel(layoutWidget1);
-        lbnTituloNomePoco_4->setObjectName("lbnTituloNomePoco_4");
-        lbnTituloNomePoco_4->setFont(font1);
-        lbnTituloNomePoco_4->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+        lbnTituloDeltaTemperatura = new QLabel(layoutWidget1);
+        lbnTituloDeltaTemperatura->setObjectName("lbnTituloDeltaTemperatura");
+        lbnTituloDeltaTemperatura->setFont(font1);
+        lbnTituloDeltaTemperatura->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
-        formLayout->setWidget(4, QFormLayout::LabelRole, lbnTituloNomePoco_4);
+        formLayout->setWidget(4, QFormLayout::LabelRole, lbnTituloDeltaTemperatura);
 
         lbnTituloDeltaLTemperatura = new QLabel(layoutWidget1);
         lbnTituloDeltaLTemperatura->setObjectName("lbnTituloDeltaLTemperatura");
@@ -591,19 +591,19 @@ public:
 
         formLayout->setWidget(5, QFormLayout::FieldRole, lbnTituloNomePoco_15);
 
-        lbnTituloNomePoco_9 = new QLabel(layoutWidget1);
-        lbnTituloNomePoco_9->setObjectName("lbnTituloNomePoco_9");
-        lbnTituloNomePoco_9->setFont(font1);
-        lbnTituloNomePoco_9->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+        lbnTituloVariacaoCargaPista = new QLabel(layoutWidget1);
+        lbnTituloVariacaoCargaPista->setObjectName("lbnTituloVariacaoCargaPista");
+        lbnTituloVariacaoCargaPista->setFont(font1);
+        lbnTituloVariacaoCargaPista->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
-        formLayout->setWidget(6, QFormLayout::LabelRole, lbnTituloNomePoco_9);
+        formLayout->setWidget(6, QFormLayout::LabelRole, lbnTituloVariacaoCargaPista);
 
-        lbnTituloNomePoco_16 = new QLabel(layoutWidget1);
-        lbnTituloNomePoco_16->setObjectName("lbnTituloNomePoco_16");
-        lbnTituloNomePoco_16->setFont(font1);
-        lbnTituloNomePoco_16->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        lbnTituloVariacaoCargaPistao = new QLabel(layoutWidget1);
+        lbnTituloVariacaoCargaPistao->setObjectName("lbnTituloVariacaoCargaPistao");
+        lbnTituloVariacaoCargaPistao->setFont(font1);
+        lbnTituloVariacaoCargaPistao->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        formLayout->setWidget(6, QFormLayout::FieldRole, lbnTituloNomePoco_16);
+        formLayout->setWidget(6, QFormLayout::FieldRole, lbnTituloVariacaoCargaPistao);
 
         lbnTituloNomePoco_6 = new QLabel(layoutWidget1);
         lbnTituloNomePoco_6->setObjectName("lbnTituloNomePoco_6");
@@ -845,12 +845,12 @@ public:
         lbnPressaoHidroestatica->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "-", nullptr));
         lbnTituloNomePoco_3->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Carga (condi\303\247\303\243o inicial), lb:", nullptr));
         lbnCargaInicial->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "-", nullptr));
-        lbnTituloNomePoco_4->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "\316\224L (temperatura):", nullptr));
+        lbnTituloDeltaTemperatura->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "\316\224L (temperatura), ft:", nullptr));
         lbnTituloDeltaLTemperatura->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "-", nullptr));
         lbnTituloNomePoco_5->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "\316\224L (efeito bal\303\243o):", nullptr));
         lbnTituloNomePoco_15->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "-", nullptr));
-        lbnTituloNomePoco_9->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Varia\303\247\303\243o da carga por pist\303\243o, lb", nullptr));
-        lbnTituloNomePoco_16->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "-", nullptr));
+        lbnTituloVariacaoCargaPista->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "Varia\303\247\303\243o da carga por pist\303\243o, lb", nullptr));
+        lbnTituloVariacaoCargaPistao->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "-", nullptr));
         lbnTituloNomePoco_6->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "\316\224L (For\303\247a pist\303\243o devido ao packer), ft", nullptr));
         lbnTituloNomePoco_17->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "-", nullptr));
         lbnTituloNomePoco_7->setText(QCoreApplication::translate("CSimuladorPerdaTubulacao", "\316\224L (For\303\247a pist\303\243o devido ao crossover), ft", nullptr));

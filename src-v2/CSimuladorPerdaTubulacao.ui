@@ -903,14 +903,14 @@ border-radius: 5px;</string>
        </widget>
       </item>
       <item row="4" column="0">
-       <widget class="QLabel" name="lbnTituloNomePoco_4">
+       <widget class="QLabel" name="lbnTituloDeltaTemperatura">
         <property name="font">
          <font>
           <bold>false</bold>
          </font>
         </property>
         <property name="text">
-         <string>ΔL (temperatura):</string>
+         <string>ΔL (temperatura), ft:</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -963,7 +963,7 @@ border-radius: 5px;</string>
        </widget>
       </item>
       <item row="6" column="0">
-       <widget class="QLabel" name="lbnTituloNomePoco_9">
+       <widget class="QLabel" name="lbnTituloVariacaoCargaPista">
         <property name="font">
          <font>
           <bold>false</bold>
@@ -978,7 +978,7 @@ border-radius: 5px;</string>
        </widget>
       </item>
       <item row="6" column="1">
-       <widget class="QLabel" name="lbnTituloNomePoco_16">
+       <widget class="QLabel" name="lbnTituloVariacaoCargaPistao">
         <property name="font">
          <font>
           <bold>false</bold>

@@ -83,9 +83,12 @@ public:
     double ViscosidadeEfetivaTotal() const;
     bool VerificarPreenchimentoColuna();
     double CargaInicial(double profundidade) const;
-    double DeltaLTemperaturaTotal() const;
+
+    double DeltaLTemperatura(double profundidade) const;
     double DeltaLEfeitoBalao(double profundidade) const;
+
     double VariacaoCargaEfeitoPistao(double profundidade) const;
+
     double DeltaLPistaoPacker(double profundidade) const;
     double DeltaLPistaoCrossover(double profundidade) const;
     double DeltaLForcaRestauradora(double profundidade) const;

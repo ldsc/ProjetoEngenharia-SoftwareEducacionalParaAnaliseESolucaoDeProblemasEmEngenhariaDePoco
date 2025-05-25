@@ -543,7 +543,9 @@ void CSimuladorPerdaTubulacao::on_btnCalcularVariacoes_clicked()
 
     ui->lbnPressaoHidroestatica->setText(QString::number( (poco->PressaoHidroestaticaNoPonto(profundidade)) ));
     ui->lbnCargaInicial->setText(QString::number(poco->CargaInicial(profundidade)));
-    ui->lbnTituloDeltaLTemperatura->setText(QString::number(poco->DeltaLTemperaturaTotal()));
+
+    ui->lbnTituloDeltaLTemperatura->setText(QString::number(poco->DeltaLTemperatura(profundidade)));
+    ui->lbnTituloVariacaoCargaPistao->setText(QString::number(poco->VariacaoCargaEfeitoPistao(profundidade)));
 
 }
 
