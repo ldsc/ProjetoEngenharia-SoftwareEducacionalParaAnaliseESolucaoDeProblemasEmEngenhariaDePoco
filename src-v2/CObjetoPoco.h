@@ -82,17 +82,15 @@ public:
     double DensidadeEfetivaTotal() const;
     double ViscosidadeEfetivaTotal() const;
     bool VerificarPreenchimentoColuna();
-    double CargaInicial(double profundidade) const;
-
+    double Carga(double profundidade, double pressaoCabecaPoco = -1) const;
     double DeltaLTemperatura(double profundidade) const;
-    double DeltaLEfeitoBalao(double profundidade) const;
-
-    double VariacaoCargaEfeitoPistao(double profundidade) const;
-
-    double DeltaLPistaoPacker(double profundidade) const;
-    double DeltaLPistaoCrossover(double profundidade) const;
-    double DeltaLForcaRestauradora(double profundidade) const;
-    double CargaInjecao(double profundidade, bool colunaFixa) const;
+    double DeltaLEfeitoBalao(double profundidade, double pressaoCabecaPoco) const;
+    double VariacaoCargaDevidoCrossover(double profundidade, double pressaoCabecaPoco = -1) const;
+    double VariacaoCargaEfeitoPistao(double profundidade, double pressaoCabecaPoco = -1) const;
+    double DeltaLPistaoPacker(double profundidade, double CargaPistao) const;
+    double DeltaLPistaoCrossover(double profundidade, double pressaoCabecaPoco) const;
+    double DeltaLForcaRestauradora(double profundidade, double pressaoCabecaPoco) const;
+    double CargaInjecao(double profundidade, double pressaoCabecaPoco) const;
     double TemperaturaNoPonto(double profundidade) const;
 
     bool AdicionarTrechoPoco(std::unique_ptr<CTrechoPoco> trechoParaAdicionar); // Função para adicionar um novo trecho ao poço

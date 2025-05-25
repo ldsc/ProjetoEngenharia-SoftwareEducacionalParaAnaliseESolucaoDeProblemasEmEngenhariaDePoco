@@ -538,16 +538,25 @@ void CSimuladorPerdaTubulacao::makePlotPoco()
 
 void CSimuladorPerdaTubulacao::on_btnCalcularVariacoes_clicked()
 {
+
+    double pressaoCabeca = ui->editPressaoCabecaPoco->text().toDouble();
+
     QString profundidadeStr = ui->editProfundidadeMedicao->text();
     double profundidade = profundidadeStr.toDouble();
 
     ui->lbnPressaoHidroestatica->setText(QString::number( (poco->PressaoHidroestaticaNoPonto(profundidade)) ));
-    ui->lbnCargaInicial->setText(QString::number(poco->CargaInicial(profundidade)));
+    ui->lbnCargaInicial->setText(QString::number(poco->Carga(profundidade)));
 
     ui->lbnTituloDeltaLTemperatura->setText(QString::number(poco->DeltaLTemperatura(profundidade)));
-    ui->lbnTituloVariacaoCargaPistao->setText(QString::number(poco->VariacaoCargaEfeitoPistao(profundidade)));
 
+    ui->lbnCargaInjecaoColunaLivre->setText(QString::number(poco->Carga(profundidade, pressaoCabeca)));
+    ui->lbnDeltaLPistaoPacker->setText(QString::number(poco->DeltaLPistaoPacker(profundidade, pressaoCabeca)));
+    ui->lbnTituloDeltaLBalao->setText(QString::number(poco->DeltaLEfeitoBalao(profundidade, pressaoCabeca)));
+    ui->lbnDeltaLPistaoCrossover->setText(QString::number(poco->DeltaLPistaoCrossover(profundidade, pressaoCabeca)));
+    ui->lbnDeltaLForcaRestauradora->setText(QString::number(poco->DeltaLForcaRestauradora(profundidade, pressaoCabeca)));
+    ui->lbnVariacaoCarga->setText(QString::number(poco->VariacaoCargaEfeitoPistao(profundidade, pressaoCabeca)));
 }
+
 
 void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
 {
