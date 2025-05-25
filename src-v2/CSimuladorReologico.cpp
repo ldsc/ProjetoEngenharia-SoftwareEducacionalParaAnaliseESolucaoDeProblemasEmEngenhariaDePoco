@@ -442,8 +442,8 @@ void CSimuladorReologico::makePlotPoco()
     for (const auto& trecho : poco->Trechos()) {
         double profundInicial = trecho->ProfundidadeInicial();
         double profundFinal = trecho->ProfundidadeFinal();
-        double diametroPoco = 8.0;  // valor fixo usado aqui como referencia visual
-        double diametroSecao = 6.0; // o diametro da tubulacao eh menor que o do buraco
+        double diametroPoco = poco->DiametroPoco();  // valor fixo usado aqui como referencia visual
+        double diametroSecao = poco->DiametroRevestimentoOD(); // o diametro da tubulacao eh menor que o do buraco
         QString nomeFluido = QString::fromStdString(trecho->Fluido()->Nome());
 
         // se for a primeira vez que esse fluido aparece, define uma cor nova pra ele
