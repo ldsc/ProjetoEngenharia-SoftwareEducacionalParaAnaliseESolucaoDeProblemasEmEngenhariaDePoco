@@ -14,12 +14,15 @@ CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // Inicialmente, desativa o lineEdit
+    // Conecta o sinal stateChanged do checkBox à função lambda
     ui->editProfundidadePacker->setEnabled(false);
 
-    // Conecta o sinal stateChanged do checkBox à função lambda
-    connect(ui->checkBoxPacker, &QCheckBox::stateChanged, this, [=](int state){
-        ui->editProfundidadePacker->setEnabled(state == Qt::Checked);
+    connect(ui->checkBoxPacker, &QCheckBox::stateChanged, this, [=](int state) {
+        bool ativar = (state == Qt::Checked);
+        ui->editProfundidadePacker->setEnabled(ativar);
+        if (!ativar) {
+            ui->editProfundidadePacker->clear(); // limpa o campo quando desativado
+        }
     });
 
     // Sinal para alterações das caixas
@@ -31,11 +34,16 @@ CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
     connect(ui->editTemperaturaSuperiorFinal, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
     connect(ui->editTemperaturaFundoFinal, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
     connect(ui->editProfundidadePacker, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editProfundidadeMedicao, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::AtualizarDados);
+
 
     // iniciar com botões desativado
     ui->btnAdicionarTrecho->setEnabled(false);
     ui->btnRemoverTrecho->setEnabled(false);
     ui->btnCalcularVariacoes->setEnabled(false);
+
+    connect(ui->tblFluidos, &QTableWidget::cellChanged, this, &CSimuladorPerdaTubulacao::EditarLinhaTabela);
+    connect(ui->tblTrechos, &QTableWidget::cellChanged, this, &CSimuladorPerdaTubulacao::EditarLinhaTabela);
 
     //abrir janela no meio do monitor
     QScreen *screen = QGuiApplication::primaryScreen();
@@ -56,18 +64,19 @@ CSimuladorPerdaTubulacao::~CSimuladorPerdaTubulacao()
 
 void CSimuladorPerdaTubulacao::EditarDadosPoco() {
     QString nome = ui->editNomePoco->text();
-    bool ok1, ok2, ok3, ok4, ok5, ok6, ok7;
+    bool ok1, ok2, ok3, ok4, ok5, ok6;
     double profund  = ui->editProfundidadeTotal->text().toDouble(&ok1);
     double pressao  = ui->editPressaoSup->text().toDouble(&ok2);
     double temperaturaSuperiorInicial = ui->editTemperaturaSuperiorInicial->text().toDouble(&ok3);
     double temperaturaFundoInicial = ui->editTemperaturaFundoInicial->text().toDouble(&ok4);
     double temperaturaSuperiorFinal = ui->editTemperaturaSuperiorFinal->text().toDouble(&ok5);
     double temperaturaFundoFinal = ui->editTemperaturaFundoFinal->text().toDouble(&ok6);
-    double profundPacker = ui->editProfundidadePacker->text().toDouble(&ok7);
+    double profundPacker = ui->editProfundidadePacker->text().toDouble();
 
-    if (!nome.isEmpty() && ok1 && ok2 && ok3 && ok4 && ok5 && ok6 && ok7) {
+    if (!nome.isEmpty() && ok1 && ok2 && ok3 && ok4 && ok5 && ok6) {
         if (!poco) {
             // Cria o poço
+
             poco = std::make_unique<CObjetoPoco>(
                 CObjetoPoco::CriarParaModulo02(nome.toStdString(), profund, pressao, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, profundPacker)
                 );
@@ -90,7 +99,7 @@ void CSimuladorPerdaTubulacao::EditarDadosPoco() {
             ui->statusbar->showMessage("Dados de Poço Atualizado com Sucesso!");
         }
 
-        on_btnAtualizarDados_clicked();  // Atualiza os dados calculados e a interface
+        AtualizarDados();  // Atualiza os dados calculados e a interface
     }
 }
 
@@ -131,7 +140,7 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarPropriedades_clicked()
                 CObjetoPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, ProfundidadePacker)
                 );
         }
-        on_btnAtualizarDados_clicked();
+        AtualizarDados();
     } else {
 
         poco = std::make_unique<CObjetoPoco>(
@@ -144,8 +153,10 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarPropriedades_clicked()
     makePlotPoco();
 }
 
-void CSimuladorPerdaTubulacao::on_btnAtualizarDados_clicked()
+void CSimuladorPerdaTubulacao::AtualizarDados()
 {
+    ui->tblFluidos->blockSignals(true);
+    ui->tblTrechos->blockSignals(true);
 
     if (poco){
         // Atualiza os valores dos QLineEdits com os dados do objeto poco
@@ -156,16 +167,21 @@ void CSimuladorPerdaTubulacao::on_btnAtualizarDados_clicked()
         ui->editTemperaturaFundoInicial->setText(QString::number(poco->TemperaturaFundoInicial()));      // Diâmetro externo do revestimento (OD)
         ui->editTemperaturaSuperiorFinal->setText(QString::number(poco->TemperaturaTopoFinal()));      // Diâmetro interno do revestimento (ID)
         ui->editTemperaturaFundoFinal->setText(QString::number(poco->TemperaturaFundoFinal()));                            // Vazão do fluido no poço
-
-        if (poco->ProfundidadePacker() != 0){
+        if (poco->ProfundidadePacker() != 0.0) {
+            ui->checkBoxPacker->setChecked(true);
             ui->editProfundidadePacker->setEnabled(true);
             ui->editProfundidadePacker->setText(QString::number(poco->ProfundidadePacker()));
+        } else {
+            ui->checkBoxPacker->setChecked(false);
+            ui->editProfundidadePacker->setEnabled(false);
+            ui->editProfundidadePacker->clear(); // apaga o campo se não tiver packer
         }
+
+
 
         // Atualizar QTableWidget com os dados dos trechos
         ui->tblTrechos->setRowCount(static_cast<int>(poco->Trechos().size()));
         ui->tblFluidos->setRowCount(static_cast<int>(poco->Trechos().size()));
-        qDebug() << "Número de trechos:" << poco->Trechos().size();
         int row = 0;
         for (const auto& trecho : poco->Trechos()) {
 
@@ -189,11 +205,15 @@ void CSimuladorPerdaTubulacao::on_btnAtualizarDados_clicked()
     makePlotTemperatura(poco->TemperaturaTopoInicial(), poco->TemperaturaFundoInicial(), poco->ProfundidadeTotal(), ui->customPlotTemperaturaInicial);
     makePlotTemperatura(poco->TemperaturaTopoFinal(), poco->TemperaturaFundoFinal(), poco->ProfundidadeTotal(), ui->customPlotTemperaturaFinal);
     makePlotPoco();
+
+    ui->tblFluidos->blockSignals(false);
+    ui->tblTrechos->blockSignals(false);
 }
 
 void CSimuladorPerdaTubulacao::on_btnAdicionarTrecho_clicked()
 {
     ui->tblTrechos->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->tblFluidos->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
     if (!poco) {
         QMessageBox::warning(this, "Erro", "As propriedade do poço precisa está preenchida!");
@@ -253,7 +273,7 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarTrecho_clicked()
             auto trechoPoco = std::make_unique<CTrechoPoco>(NomeTrecho, profundInicial, profundFinal, std::move(fluido), diametroExterno, diametroInterno, coeficientePoisson, coeficienteExpansaoTermica, moduloElasticidade, pesoUnidade);
             poco->AdicionarTrechoPoco(std::move(trechoPoco));
 
-            on_btnAtualizarDados_clicked();
+            AtualizarDados();
         }
     }
 }
@@ -321,56 +341,47 @@ void CSimuladorPerdaTubulacao::makePlotTemperatura(double TempInicial, double Te
     plot->replot();
 }
 
-void CSimuladorPerdaTubulacao::on_btnRemoverFluido_clicked()
-{
-    int linhaSelecionada = ui->tblFluidos->currentRow();
-
-    if (linhaSelecionada >= 0) {
-
-        QTableWidgetItem* item = ui->tblFluidos->item(linhaSelecionada, 0);
-
-        if (item) {
-            QString nomeFluido = item->text();
-            ui->tblFluidos->removeRow(linhaSelecionada);
-            poco->RemoverTrechoPoco(nomeFluido.toStdString());
-            on_btnAtualizarDados_clicked();
-        }
-
-    } else {
-        QMessageBox::warning(this, "Erro", "Selecione uma linha para deletar.");
-    }
-}
 
 void CSimuladorPerdaTubulacao::on_btnRemoverTrecho_clicked()
 {
-    int linhaSelecionada = ui->tblTrechos->currentRow();
+    // pega qual linha ta selecionada em cada tabela
+    int linhaSelecionadaTrecho = ui->tblTrechos->currentRow();
+    int linhaSelecionadaFluido = ui->tblFluidos->currentRow();
 
-    if (linhaSelecionada >= 0) {
+    // se a selecao for feita na tabela de trecho, faz a remocao
+    if (linhaSelecionadaTrecho >= 0) {
+        QMessageBox::StandardButton resposta = QMessageBox::question(
+            this,
+            "Confirmação",
+            "Deseja remover o trecho e o fluido associado?",
+            QMessageBox::Yes | QMessageBox::No
+            );
 
-        QTableWidgetItem* item = ui->tblTrechos->item(linhaSelecionada, 0);
+        if (resposta == QMessageBox::Yes) {
+            // pega o nome do trecho pela tabela (pra remover do objeto poco)
+            QString nomeTrecho = ui->tblTrechos->item(linhaSelecionadaTrecho, 0)->text();
 
-        if (item) {
-            QMessageBox::StandardButton resposta = QMessageBox::question(
-                this,
-                "",
-                "Tem certeza que deseja remover o trecho?",
-                QMessageBox::Yes | QMessageBox::No
-                );
+            // remove a mesma linha das duas tabelas
+            ui->tblTrechos->removeRow(linhaSelecionadaTrecho);
+            ui->tblFluidos->removeRow(linhaSelecionadaTrecho);
 
-            if (resposta == QMessageBox::Yes) {
-                QString nomeTrecho = item->text();
-                ui->tblTrechos->removeRow(linhaSelecionada);
-                poco->RemoverTrechoPoco(nomeTrecho.toStdString());
-                on_btnAtualizarDados_clicked();
-                ui->statusbar->showMessage("Fluido Removido com Sucesso!");
-            }
+            // remove o trecho (e junto o fluido) do objeto poco
+            poco->RemoverTrechoPoco(nomeTrecho.toStdString());
 
+            // atualiza visualmente os dados
+            AtualizarDados();
+            ui->statusbar->showMessage("Trecho removido com sucesso!");
         }
 
+    } else if (linhaSelecionadaFluido >= 0) {
+        // se clicou so na tabela de fluido, avisa que deve usar a outra
+        QMessageBox::warning(this, "Aviso", "A remoção deve ser feita pela tabela de trechos.");
     } else {
-        QMessageBox::warning(this, "Erro", "Selecione uma linha para deletar.");
+        // nenhuma linha foi selecionada
+        QMessageBox::warning(this, "Erro", "Nenhuma linha foi selecionada.");
     }
 }
+
 
 void CSimuladorPerdaTubulacao::makePlotPoco()
 {
@@ -504,6 +515,24 @@ void CSimuladorPerdaTubulacao::makePlotPoco()
         linha2Dir->end->setCoords(xDir1, zBottom);
         linha2Dir->setPen(QPen(Qt::red, 1.5));
     }
+
+    // 7. Linha tracejada indicando profundidade de medição, se válida
+    bool ok = false;
+    double profundidadeMedicao = ui->editProfundidadeMedicao->text().toDouble(&ok);
+
+    // So desenha se a conversao foi bem-sucedida e o valor for maior que zero
+    if (ok && profundidadeMedicao > 0.0) {
+        QCPItemLine* linhaMedicao = new QCPItemLine(ui->customPlotPoco);
+        linhaMedicao->start->setCoords(-larguraGrafico / 2.0, profundidadeMedicao);
+        linhaMedicao->end->setCoords(larguraGrafico / 2.0, profundidadeMedicao);
+
+        // Define o estilo como linha tracejada preta
+        QPen pen(Qt::black);
+        pen.setStyle(Qt::DashLine);
+        pen.setWidthF(1.5);
+        linhaMedicao->setPen(pen);
+    }
+
     ui->customPlotPoco->replot();
 }
 
@@ -565,6 +594,16 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
                 ui->btnRemoverTrecho->setEnabled(true);
                 ui->btnCalcularVariacoes->setEnabled(true);
 
+                if (profundidadePacker == 0){
+                    ui->checkBoxPacker->setChecked(false);
+                    ui->editProfundidadePacker->setEnabled(false);
+                    ui->editProfundidadePacker->clear();
+                } else {
+                    ui->checkBoxPacker->setChecked(true);
+                    ui->editProfundidadePacker->setEnabled(true);
+                    ui->editProfundidadePacker->setText(QString::number(profundidadePacker));
+                }
+
                 poco = std::make_unique<CObjetoPoco>(
                     CObjetoPoco::CriarParaModulo02(nome, profundidade, pressaoSup,
                                              temperaturaSuperiorInicial, temperaturaFundoInicial,
@@ -608,9 +647,8 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
     }
 
     file.close();
-    on_btnAtualizarDados_clicked();
+    AtualizarDados();
     ui->statusbar->showMessage("Dados importados com sucesso!");
-
 }
 
 
@@ -754,4 +792,36 @@ void CSimuladorPerdaTubulacao::on_actionSalvar_como_triggered()
     SalvarArquivo(true);  // forçar abrir QFileDialog
 }
 
+// essa funcao edita os dados do fluido e do trecho com base na linha da tabela de fluidos
+void CSimuladorPerdaTubulacao::EditarLinhaTabela(int row)
+{
+    // garante que o índice da linha é válido
+    if (row < 0 || row >= poco->Trechos().size()) {
+        return;
+    }
 
+    // obtem o trecho e fluido da mesma linha
+    CTrechoPoco* trecho = poco->Trechos().at(row);
+    CFluido* fluido = trecho->Fluido();
+
+    if (!fluido) return;
+
+    trecho->Nome(ui->tblTrechos->item(row, 0)->text().toStdString());
+    trecho->ProfundidadeInicial(ui->tblTrechos->item(row, 1)->text().toDouble());
+    trecho->ProfundidadeFinal(ui->tblTrechos->item(row, 2)->text().toDouble());
+    trecho->DiametroExterno(ui->tblTrechos->item(row, 3)->text().toDouble());
+    trecho->DiametroInterno(ui->tblTrechos->item(row, 4)->text().toDouble());
+    trecho->CoeficientePoisson(ui->tblTrechos->item(row, 5)->text().toDouble());
+    trecho->CoeficienteExpancaoTermica(ui->tblTrechos->item(row, 6)->text().toDouble());
+    trecho->ModuloEslasticidade(ui->tblTrechos->item(row, 7)->text().toDouble());
+    trecho->PesoUnidade(ui->tblTrechos->item(row, 8)->text().toDouble());
+
+    fluido->Nome(ui->tblFluidos->item(row, 0)->text().toStdString());
+    fluido->Densidade(ui->tblFluidos->item(row, 1)->text().toDouble());
+    fluido->Viscosidade(ui->tblFluidos->item(row, 2)->text().toDouble());
+
+    // atualiza valores globais do simulador
+    AtualizarDados();
+
+    ui->statusbar->showMessage("Fluido e profundidades atualizados com sucesso!");
+}

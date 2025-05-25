@@ -30,16 +30,18 @@ private slots:
     // esses são os slots que reagem aos botoes da interface
 
     void on_btnAdicionarPropriedades_clicked();     // adiciona as propriedades termicas e mecanicas do fluido
-    void on_btnAtualizarDados_clicked();            // atualiza os dados na tela com base no objeto do poço
+    void AtualizarDados();            // atualiza os dados na tela com base no objeto do poço
     void on_btnAdicionarTrecho_clicked();           // adiciona um novo trecho de tubulacao ao poço
     void makePlotTemperatura(double TempInicial, double TempFinal, double profundidade, QCustomPlot* plot); // gera grafico de temperatura com profundidade
-    void on_btnRemoverFluido_clicked();             // remove um fluido da tabela e do poço
     void on_btnRemoverTrecho_clicked();             // remove um trecho da tubulacao
     void makePlotPoco();                            // desenha o perfil visual do poço
     void on_btnCalcularVariacoes_clicked();         // calcula ΔL, efeito balao, forca etc
 
     void on_actionArquivo_Dat_triggered();          // importa dados do arquivo .dat
     void EditarDadosPoco();                         // edita os dados gerais do poço (nome, pressao etc)
+
+    // edita uma linha da tabela de fluidos ou trechos do poco
+    void EditarLinhaTabela(int row);
 
     // opcoes do menu da interface
     void on_actionNova_Simula_o_triggered();
@@ -56,6 +58,7 @@ private slots:
     //setters
     void NomeArquivo(QString nome) { nomeArquivo = nome; }
     void CaminhoArquivo(QString caminho) { caminhoArquivo = caminho; }
+
 
 private:
     Ui::CSimuladorPerdaTubulacao *ui; // ponteiro pra interface gerada pelo Qt Designer

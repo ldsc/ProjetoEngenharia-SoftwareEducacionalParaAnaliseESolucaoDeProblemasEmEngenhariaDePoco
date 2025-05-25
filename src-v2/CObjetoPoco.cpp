@@ -68,9 +68,21 @@ bool CObjetoPoco::AdicionarTrechoPoco(std::unique_ptr<CTrechoPoco> trechoParaAdi
 }
 
 
-void CObjetoPoco::RemoverTrechoPoco(const std::string& nomeFluido) {
+void CObjetoPoco::RemoverFluidoPoco(const std::string& nomeFluido) {
     for (auto it = trechos.begin(); it != trechos.end();) {
         if ((*it)->Fluido()->Nome() == nomeFluido) {
+            double comprimento = (*it)->ProfundidadeFinal() - (*it)->ProfundidadeInicial();
+            it = trechos.erase(it);
+            profundidadeOcupada -= comprimento;
+        } else {
+            ++it;
+        }
+    }
+}
+
+void CObjetoPoco::RemoverTrechoPoco(const std::string& nomeTrecho) {
+    for (auto it = trechos.begin(); it != trechos.end();) {
+        if ((*it)->Nome() == nomeTrecho) {
             double comprimento = (*it)->ProfundidadeFinal() - (*it)->ProfundidadeInicial();
             it = trechos.erase(it);
             profundidadeOcupada -= comprimento;

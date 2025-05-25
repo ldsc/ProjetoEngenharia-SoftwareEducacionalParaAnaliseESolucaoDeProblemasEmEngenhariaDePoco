@@ -119,37 +119,29 @@ void CSimuladorReologico::EditarDadosPoco() {
 
 void CSimuladorReologico::EditarLinhaTabela(int row)
 {
-    // pega o nome do fluido da linha editada da tabela
-    QString nomeAlvo = ui->tblFluidos->item(row, 0)->text();
+    // valida se o indice da linha e valido
+    if (row < 0 || row >= poco->Trechos().size()) return;
 
-    // pega a lista de trechos do poco pra procurar qual fluido foi alterado
-    std::vector<CTrechoPoco*> trechos = poco->Trechos();
+    // pega o trecho e o fluido da linha correspondente
+    CTrechoPoco* trecho = poco->Trechos().at(row);
+    CFluido* fluido = trecho->Fluido();
 
-    // percorre os trechos do poco pra encontrar o fluido correspondente
-    for (CTrechoPoco* trecho : trechos) {
-        CFluido* fluido = trecho->Fluido();
+    if (!fluido) return;
 
-        // compara se o nome do fluido do trecho bate com o nome da linha da tabela
-        if (fluido && QString::fromStdString(fluido->Nome()) == nomeAlvo) {
+    // atualiza os dados do fluido com base na tabela de fluidos
+    fluido->Nome(ui->tblFluidos->item(row, 0)->text().toStdString());
+    fluido->Densidade(ui->tblFluidos->item(row, 1)->text().toDouble());
+    fluido->Viscosidade(ui->tblFluidos->item(row, 2)->text().toDouble());
 
-            // atualiza os valores do fluido com os dados editados na linha da tabela
-            fluido->Nome(ui->tblFluidos->item(row, 0)->text().toStdString());
-            fluido->Densidade(ui->tblFluidos->item(row, 1)->text().toDouble());
-            fluido->Viscosidade(ui->tblFluidos->item(row, 2)->text().toDouble());
+    // atualiza profundidades com base na tabela de trechos (onde elas estao de verdade)
+    trecho->ProfundidadeInicial(ui->tblFluidos->item(row, 3)->text().toDouble()); // coluna 1 = Profund. inicial
+    trecho->ProfundidadeFinal(ui->tblFluidos->item(row, 4)->text().toDouble());   // coluna 2 = Profund. final
 
-            // atualiza as profundidades do trecho correspondente a esse fluido
-            trecho->ProfundidadeInicial(ui->tblFluidos->item(row, 3)->text().toDouble());
-            trecho->ProfundidadeFinal(ui->tblFluidos->item(row, 4)->text().toDouble());
-
-            break; // sai do loop pois ja achou e atualizou o fluido certo
-        }
-    }
-
-    // atualiza os dados gerais na interface (como densidade e viscosidade media)
+    // atualiza valores calculados
     AtualizarDados();
 
-    // mostra mensagem informando que o fluido foi atualizado
-    ui->statusbar->showMessage("Dados de fluido atualizado com sucesso!");
+    // mensagem de sucesso
+    ui->statusbar->showMessage("Dados do fluido e trecho atualizados com sucesso!");
 }
 
 
@@ -196,9 +188,6 @@ void CSimuladorReologico::AtualizarDados()
 
 void CSimuladorReologico::on_btnAdicionarFluido_clicked()
 {
-    // desativa edicao direta da tabela (evita conflito enquanto adiciona novo fluido)
-    ui->tblFluidos->setEditTriggers(QAbstractItemView::NoEditTriggers);
-
     // se o poco ainda nao foi criado, nao permite adicionar fluido
     if (!poco) {
         QMessageBox::warning(this, "Erro", "As propriedade do poco precisa estar preenchida!");
@@ -263,7 +252,7 @@ void CSimuladorReologico::on_btnRemoverFluido_clicked()
             if (resposta == QMessageBox::Yes) {
                 QString nomeFluido = item->text();
                 ui->tblFluidos->removeRow(linhaSelecionada);
-                poco->RemoverTrechoPoco(nomeFluido.toStdString());
+                poco->RemoverFluidoPoco(nomeFluido.toStdString());
                 AtualizarDados();
                 ui->statusbar->showMessage("Fluido removido com sucesso!");
             }

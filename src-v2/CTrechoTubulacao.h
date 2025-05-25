@@ -69,6 +69,13 @@ public:
     void Nome(const std::string& novoNome) { nome = novoNome; }
     void ProfundidadeInicial(double profundI) { profundidadeInicial = profundI; }
     void ProfundidadeFinal(double profundF) { profundidadeFinal = profundF; }
+    void DiametroExterno(double diam) { diametroExterno = diam; }
+    void DiametroInterno(double diam) { diametroInterno = diam; }
+    void CoeficientePoisson(double coef) { coeficientePoisson = coef; }
+    void ModuloEslasticidade(double coef) { moduloEslasticidade = coef; }
+    void PesoUnidade(double peso) { pesoUnidade = peso; }
+    void CoeficienteExpancaoTermica(double coef) { coeficienteExpancaoTermica = coef; }
+
 
     // Metodos de calculo
     double PressaoHidroestatica();

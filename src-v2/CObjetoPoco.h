@@ -93,7 +93,8 @@ public:
     double TemperaturaNoPonto(double profundidade) const;
 
     bool AdicionarTrechoPoco(std::unique_ptr<CTrechoPoco> trechoParaAdicionar); // Função para adicionar um novo trecho ao poço
-    void RemoverTrechoPoco(const std::string& nomeFluido); // Remove trecho do poço com base no nome do fluido
+    void RemoverFluidoPoco(const std::string& nomeFluido); // Remove trecho do poço com base no nome do fluido
+    void RemoverTrechoPoco(const std::string& nomeTrecho);
 
     // Métodos que retornam dados para gráficos
     std::pair<std::vector<double>, std::vector<double>> PlotarProfundidadePorPressao();

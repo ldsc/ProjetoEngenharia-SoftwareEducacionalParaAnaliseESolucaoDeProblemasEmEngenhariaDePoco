@@ -42,7 +42,7 @@ static constexpr auto qt_meta_stringdata_ZN24CSimuladorPerdaTubulacaoE = QtMocHe
     "CSimuladorPerdaTubulacao",
     "on_btnAdicionarPropriedades_clicked",
     "",
-    "on_btnAtualizarDados_clicked",
+    "AtualizarDados",
     "on_btnAdicionarTrecho_clicked",
     "makePlotTemperatura",
     "TempInicial",
@@ -50,12 +50,13 @@ static constexpr auto qt_meta_stringdata_ZN24CSimuladorPerdaTubulacaoE = QtMocHe
     "profundidade",
     "QCustomPlot*",
     "plot",
-    "on_btnRemoverFluido_clicked",
     "on_btnRemoverTrecho_clicked",
     "makePlotPoco",
     "on_btnCalcularVariacoes_clicked",
     "on_actionArquivo_Dat_triggered",
     "EditarDadosPoco",
+    "EditarLinhaTabela",
+    "row",
     "on_actionNova_Simula_o_triggered",
     "on_actionExportar_Como_Imagem_triggered",
     "on_actionSobre_o_SEEP_triggered",
@@ -95,17 +96,17 @@ Q_CONSTINIT static const uint qt_meta_data_ZN24CSimuladorPerdaTubulacaoE[] = {
       13,    0,  148,    2, 0x08,   11 /* Private */,
       14,    0,  149,    2, 0x08,   12 /* Private */,
       15,    0,  150,    2, 0x08,   13 /* Private */,
-      16,    0,  151,    2, 0x08,   14 /* Private */,
-      17,    0,  152,    2, 0x08,   15 /* Private */,
-      18,    0,  153,    2, 0x08,   16 /* Private */,
-      19,    0,  154,    2, 0x08,   17 /* Private */,
-      20,    1,  155,    2, 0x08,   18 /* Private */,
-      22,    0,  158,    2, 0x08,   20 /* Private */,
-      23,    0,  159,    2, 0x08,   21 /* Private */,
-      24,    0,  160,    2, 0x08,   22 /* Private */,
-      25,    0,  161,    2, 0x08,   23 /* Private */,
-      24,    1,  162,    2, 0x08,   24 /* Private */,
-      25,    1,  165,    2, 0x08,   26 /* Private */,
+      16,    1,  151,    2, 0x08,   14 /* Private */,
+      18,    0,  154,    2, 0x08,   16 /* Private */,
+      19,    0,  155,    2, 0x08,   17 /* Private */,
+      20,    0,  156,    2, 0x08,   18 /* Private */,
+      21,    1,  157,    2, 0x08,   19 /* Private */,
+      23,    0,  160,    2, 0x08,   21 /* Private */,
+      24,    0,  161,    2, 0x08,   22 /* Private */,
+      25,    0,  162,    2, 0x08,   23 /* Private */,
+      26,    0,  163,    2, 0x08,   24 /* Private */,
+      25,    1,  164,    2, 0x08,   25 /* Private */,
+      26,    1,  167,    2, 0x08,   27 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -117,17 +118,17 @@ Q_CONSTINIT static const uint qt_meta_data_ZN24CSimuladorPerdaTubulacaoE[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   17,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   21,
+    QMetaType::Void, QMetaType::Bool,   22,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::QString,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString,   26,
     QMetaType::Void, QMetaType::QString,   27,
+    QMetaType::Void, QMetaType::QString,   28,
 
        0        // eod
 };
@@ -143,7 +144,7 @@ Q_CONSTINIT const QMetaObject CSimuladorPerdaTubulacao::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<CSimuladorPerdaTubulacao, std::true_type>,
         // method 'on_btnAdicionarPropriedades_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_btnAtualizarDados_clicked'
+        // method 'AtualizarDados'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_btnAdicionarTrecho_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -153,8 +154,6 @@ Q_CONSTINIT const QMetaObject CSimuladorPerdaTubulacao::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<double, std::false_type>,
         QtPrivate::TypeAndForceComplete<double, std::false_type>,
         QtPrivate::TypeAndForceComplete<QCustomPlot *, std::false_type>,
-        // method 'on_btnRemoverFluido_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_btnRemoverTrecho_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'makePlotPoco'
@@ -165,6 +164,9 @@ Q_CONSTINIT const QMetaObject CSimuladorPerdaTubulacao::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'EditarDadosPoco'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'EditarLinhaTabela'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'on_actionNova_Simula_o_triggered'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_actionExportar_Como_Imagem_triggered'
@@ -198,15 +200,15 @@ void CSimuladorPerdaTubulacao::qt_static_metacall(QObject *_o, QMetaObject::Call
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->on_btnAdicionarPropriedades_clicked(); break;
-        case 1: _t->on_btnAtualizarDados_clicked(); break;
+        case 1: _t->AtualizarDados(); break;
         case 2: _t->on_btnAdicionarTrecho_clicked(); break;
         case 3: _t->makePlotTemperatura((*reinterpret_cast< std::add_pointer_t<double>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<QCustomPlot*>>(_a[4]))); break;
-        case 4: _t->on_btnRemoverFluido_clicked(); break;
-        case 5: _t->on_btnRemoverTrecho_clicked(); break;
-        case 6: _t->makePlotPoco(); break;
-        case 7: _t->on_btnCalcularVariacoes_clicked(); break;
-        case 8: _t->on_actionArquivo_Dat_triggered(); break;
-        case 9: _t->EditarDadosPoco(); break;
+        case 4: _t->on_btnRemoverTrecho_clicked(); break;
+        case 5: _t->makePlotPoco(); break;
+        case 6: _t->on_btnCalcularVariacoes_clicked(); break;
+        case 7: _t->on_actionArquivo_Dat_triggered(); break;
+        case 8: _t->EditarDadosPoco(); break;
+        case 9: _t->EditarLinhaTabela((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 10: _t->on_actionNova_Simula_o_triggered(); break;
         case 11: _t->on_actionExportar_Como_Imagem_triggered(); break;
         case 12: _t->on_actionSobre_o_SEEP_triggered(); break;

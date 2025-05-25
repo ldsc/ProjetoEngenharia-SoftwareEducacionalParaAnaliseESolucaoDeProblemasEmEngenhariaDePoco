@@ -137,6 +137,7 @@ public:
     {
         if (CSimuladorPerdaTubulacao->objectName().isEmpty())
             CSimuladorPerdaTubulacao->setObjectName("CSimuladorPerdaTubulacao");
+        CSimuladorPerdaTubulacao->setEnabled(true);
         CSimuladorPerdaTubulacao->resize(1449, 859);
         actionArquivo_Dat = new QAction(CSimuladorPerdaTubulacao);
         actionArquivo_Dat->setObjectName("actionArquivo_Dat");
@@ -291,6 +292,7 @@ public:
         checkBoxPacker = new QCheckBox(gridLayoutWidget);
         checkBoxPacker->setObjectName("checkBoxPacker");
         checkBoxPacker->setFont(font1);
+        checkBoxPacker->setChecked(false);
 
         gridLayout->addWidget(checkBoxPacker, 13, 0, 1, 3);
 

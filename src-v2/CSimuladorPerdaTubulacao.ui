@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>CSimuladorPerdaTubulacao</class>
  <widget class="QMainWindow" name="CSimuladorPerdaTubulacao">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -259,6 +262,9 @@ border-radius: 5px;</string>
         </property>
         <property name="text">
          <string>Há packer?</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
         </property>
        </widget>
       </item>

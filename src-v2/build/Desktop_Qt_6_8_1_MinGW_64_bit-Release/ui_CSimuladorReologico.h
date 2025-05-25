@@ -481,7 +481,7 @@ public:
         label_3->setFont(font1);
         gridLayoutWidget_14 = new QWidget(groupBox_2);
         gridLayoutWidget_14->setObjectName("gridLayoutWidget_14");
-        gridLayoutWidget_14->setGeometry(QRect(10, 40, 275, 171));
+        gridLayoutWidget_14->setGeometry(QRect(10, 40, 261, 171));
         gridLayout_14 = new QGridLayout(gridLayoutWidget_14);
         gridLayout_14->setObjectName("gridLayout_14");
         gridLayout_14->setContentsMargins(0, 0, 0, 0);
@@ -1217,7 +1217,7 @@ public:
         CSimuladorReologico->setStatusBar(statusbar);
         menubar = new QMenuBar(CSimuladorReologico);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1264, 26));
+        menubar->setGeometry(QRect(0, 0, 1264, 22));
         menuArquivo = new QMenu(menubar);
         menuArquivo->setObjectName("menuArquivo");
         menuImportar_Dados = new QMenu(menuArquivo);
