@@ -1,6 +1,6 @@
 # Configuracao do Poco ------------------------------------------------------------------------------------
 # Nome                               Profundidade (ft)                  Pressao Sup. (psi)                 Temp Sup. Inicial (°F)             Temp Fund. Inicial (°F)            Temp Sup. Final (°F)               Temp Fund. Final (°F)              Prof Packer (ft)                   
-  7-TES-01-RJS                       8000                               0                                  50                                 300                                50                                 300                                                                   
+  7-TES-01-RJS                       8000                               0                                  50                                 300                                50                                 300                                0                                   
 
 
 
