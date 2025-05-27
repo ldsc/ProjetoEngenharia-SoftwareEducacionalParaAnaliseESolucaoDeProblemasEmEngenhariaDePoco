@@ -1344,7 +1344,7 @@ public:
         lbnTituloProfunidadeTotal->setText(QCoreApplication::translate("CSimuladorReologico", "Profundidade Total (ft)", nullptr));
         lbnTituloDiametroPoco->setText(QCoreApplication::translate("CSimuladorReologico", "Diametro Po\303\247o (in)", nullptr));
         lbnTituloViscosidadeMedia->setText(QCoreApplication::translate("CSimuladorReologico", "Viscosidade M\303\251dia (cP):", nullptr));
-        label->setText(QCoreApplication::translate("CSimuladorReologico", "Dados do Po\303\247o", nullptr));
+        label->setText(QCoreApplication::translate("CSimuladorReologico", "Dados do Po\303\247oa", nullptr));
         groupBox_3->setTitle(QString());
         QTableWidgetItem *___qtablewidgetitem = tblFluidos->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("CSimuladorReologico", "Nome", nullptr));

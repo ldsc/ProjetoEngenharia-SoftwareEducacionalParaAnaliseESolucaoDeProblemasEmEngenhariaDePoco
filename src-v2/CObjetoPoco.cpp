@@ -38,7 +38,7 @@ CObjetoPoco CObjetoPoco::CriarParaModulo02(std::string nomeDoPoco, double profun
     objetoPoco.temperaturaFundoInicial = temperaturaFundoInicial;
     objetoPoco.temperaturaTopoFinal = temperaturaTopoFinal;
     objetoPoco.temperaturaFundoFinal = temperaturaFundoFinal;
-    objetoPoco.haPacker = packer;
+    objetoPoco.packer = haPacker;
 
     return objetoPoco;
 }
@@ -189,8 +189,6 @@ std::pair<std::vector<double>, std::vector<double>> CObjetoPoco::PlotarProfundid
     return std::make_pair(vetorDeProfundidades, vetorDePressoes);
 }
 
-#include <QDebug>
-
 double CObjetoPoco::Carga(double profundidade, bool inicio) const {
     double cargaTotal = 0.0;
     double pi = 3.141592653589793;
@@ -213,12 +211,12 @@ double CObjetoPoco::Carga(double profundidade, bool inicio) const {
 
     // 2. Carga por pressao no fundo (negativa)
     double pressaoBase = PressaoHidroestaticaNoPonto(profundidadeBase);
-    if (inicio != false){
+    if (inicio == false){
         pressaoBase = PressaoHidroestaticaNoPonto(profundidadeBase) + PressaoSuperficieFim();
     }
+
     double areaBase = (pi / 4.0) * (OD_base * OD_base - ID_base * ID_base);
     double cargaPressao = -1.0 * pressaoBase * areaBase;
-
     cargaTotal += cargaPressao;
 
     // 3. Soma pesos de trechos abaixo da profundidade
@@ -239,17 +237,17 @@ double CObjetoPoco::Carga(double profundidade, bool inicio) const {
             double L_parcial = z_f - profundidade;
             double cargaPeso = L_parcial * pesoUnit;
             cargaTotal += cargaPeso;
+
         }
 
     }
 
     // 4. considerando as Cargas por efeito pistão
-
-    if (inicio != false){
-        cargaTotal += VariacaoCargaDevidoCrossover(profundidade, PressaoSuperficieFim());
+    if (inicio){
+        cargaTotal += VariacaoCargaDevidoCrossover(profundidade, false, true);
     }
-    else {
-        cargaTotal += VariacaoCargaDevidoCrossover(profundidade);
+    else{
+        cargaTotal += VariacaoCargaDevidoCrossover(profundidade, false, false);
     }
 
     return cargaTotal;
@@ -263,10 +261,11 @@ double CObjetoPoco::DeltaLTemperatura(double profundidade) const {
         double z_f = trecho->ProfundidadeFinal();
         double ct = trecho->CoeficienteExpancaoTermica();
 
-        // Ignora trechos mais profundos que a profundidade analisada
+        // Ignora trechos que estao totalmente abaixo da profundidade informada
         if (z_i >= profundidade)
             continue;
 
+        // Calcula temperatura media inicial e final do trecho
         double tMedioInicial = (
                                    TemperaturaNoPonto(z_i, TemperaturaTopoInicial(), TemperaturaFundoInicial()) +
                                    TemperaturaNoPonto(z_f, TemperaturaTopoInicial(), TemperaturaFundoInicial())
@@ -277,24 +276,38 @@ double CObjetoPoco::DeltaLTemperatura(double profundidade) const {
                                  TemperaturaNoPonto(z_f, TemperaturaTopoFinal(), TemperaturaFundoFinal())
                                  ) / 2.0;
 
+        // Variacao de temperatura final - inicial
         double deltaT = tMedioFinal - tMedioInicial;
+
+        // Caso raro onde nao houve variacao de temperatura entre as duas condicoes
+        // A gente força um deltaT usando a temperatura no ponto zero como referencia
+        if (deltaT == 0) {
+            double media = (
+                               TemperaturaNoPonto(z_i, TemperaturaTopoFinal(), TemperaturaFundoFinal()) +
+                               TemperaturaNoPonto(z_f, TemperaturaTopoFinal(), TemperaturaFundoFinal())
+                               ) / 2.0;
+
+            deltaT = TemperaturaNoPonto(0, TemperaturaTopoFinal(), TemperaturaFundoFinal()) - media;
+        }
+
         double L = 0.0;
 
-        // Profundidade dentro do trecho → considera parte de zi ate profundidade
+        // Se a profundidade estiver dentro do trecho, calcula o comprimento parcial
         if (profundidade > z_i && profundidade < z_f) {
             L = profundidade - z_i;
         }
-
-        // Trecho completamente acima da profundidade → usa L total
+        // Se o trecho estiver totalmente acima da profundidade, considera L total
         else if (z_f <= profundidade) {
             L = z_f - z_i;
         }
 
+        // Soma o deltaL do trecho na variavel acumuladora
         deltaLTotal += ct * L * deltaT;
     }
 
     return deltaLTotal;
 }
+
 
 
 
@@ -306,50 +319,74 @@ double CObjetoPoco::TemperaturaNoPonto(double profundidade, double T_topo, doubl
 
 }
 
-double CObjetoPoco::VariacaoCargaDevidoCrossover(double profundidade, double pressaoCabecaPoco) const {
+double CObjetoPoco::VariacaoCargaDevidoCrossover(double profundidade, bool deCimaParaBaixo, bool inicio) const {
     double pi = 3.141592653589793;
-    double variacaoTotal = 0.0;
-    double variacaoCarga;
+    double variacao_total = 0.0;
+
+    // tolerancia para comparacoes de ponto flutuante
+    constexpr double tolerancia = 1e-5;
 
     if (trechos.size() < 2)
         return 0.0;
 
-    // Varre todas as interfaces abaixo da profundidade fornecida
+    // percorre todas as interfaces entre os trechos consecutivos
     for (size_t i = 1; i < trechos.size(); ++i) {
-        const auto& trechoAcima = trechos[i - 1];
-        const auto& trechoAbaixo = trechos[i];
+        const auto& trecho_acima = trechos[i - 1];
+        const auto& trecho_abaixo = trechos[i];
 
-        double z_interface = trechoAbaixo->ProfundidadeInicial();
+        double z_interface = trecho_abaixo->ProfundidadeInicial();
 
-        if ((z_interface - profundidade) > 1e-6) {
-            double ID_acima = trechoAcima->DiametroInterno();
-            double ID_abaixo = trechoAbaixo->DiametroInterno();
-            double OD_acima = trechoAcima->DiametroExterno();
-            double OD_abaixo = trechoAbaixo->DiametroExterno();
+        // define se a interface deve ser considerada com base na direcao da analise
+        bool considerar = false;
+        if (!deCimaParaBaixo && z_interface >= profundidade - tolerancia)
+            considerar = true;
+        if ( deCimaParaBaixo && z_interface <= profundidade + tolerancia)
+            considerar = true;
 
-            if (std::abs(ID_acima - ID_abaixo) < 1e-6 &&
-                std::abs(OD_acima - OD_abaixo) < 1e-6) {
-                continue;
-            }
+        if (!considerar)
+            continue;
 
-            // Diferenca de area: sempre acima - abaixo
-            double Ai = (pi / 4.0) * (ID_acima * ID_acima - ID_abaixo * ID_abaixo);
-            double Ao = (pi / 4.0) * (OD_acima * OD_acima - OD_abaixo * OD_abaixo);
-            double pressao = PressaoHidroestaticaNoPonto(z_interface);
+        // coleta diametros internos e externos dos dois trechos
+        double ID_acima = trecho_acima->DiametroInterno();
+        double ID_abaixo = trecho_abaixo->DiametroInterno();
+        double OD_acima = trecho_acima->DiametroExterno();
+        double OD_abaixo = trecho_abaixo->DiametroExterno();
 
-            if (pressaoCabecaPoco != -1){
-                variacaoCarga = ((pressao + pressaoCabecaPoco - PressaoSuperficie()) * Ai) - ((pressao - PressaoSuperficie()) * Ao);
-            }
-            else{
-                variacaoCarga = pressao * (Ai - Ao);
-            }
-
-
-            variacaoTotal += variacaoCarga;
+        // se nao houver mudanca de diametro, nao ha efeito pistao
+        if (std::abs(ID_acima - ID_abaixo) < 1e-6 &&
+            std::abs(OD_acima - OD_abaixo) < 1e-6) {
+            continue;
         }
+
+        // calcula diferenca de area interna e externa
+        double Ai = (pi / 4.0) * (ID_acima * ID_acima - ID_abaixo * ID_abaixo);
+        double Ao = (pi / 4.0) * (OD_acima * OD_acima - OD_abaixo * OD_abaixo);
+
+        // pressao no ponto da interface
+        double pressao = PressaoHidroestaticaNoPonto(z_interface);
+        double carga_crossover = 0.0;
+
+        // tratamento com ou sem packer
+        if (Packer()) {
+            if (inicio) {
+                // no inicio da coluna: pressao interna = externa = pressao hidrostática
+                carga_crossover = pressao * (Ai - Ao);
+            } else {
+                // no fim da coluna: pressao interna = pressao hidrostática + pressao superficial final
+                carga_crossover = (pressao - (pressao + PressaoSuperficieFim())) * Ai;
+            }
+        } else {
+            // sem packer: pressao interna e externa sao iguais
+            carga_crossover = pressao * (Ai - Ao);
+        }
+
+        variacao_total += carga_crossover;
     }
-    return variacaoTotal;
+
+    return variacao_total;
 }
+
+
 #include <QDebug>
 double CObjetoPoco::VariacaoCargaEfeitoPistao(double profundidade, double ID, double OD) const {
     const double pi = 3.141592653589793;
@@ -371,11 +408,11 @@ double CObjetoPoco::VariacaoCargaEfeitoPistao(double profundidade, double ID, do
     double Pout_fim;
 
     if (Packer() == true) {
-        Pout_inicio = PressaoHidroestaticaNoPonto(PressaoSuperficie());
-        Pout_fim = PressaoHidroestaticaNoPonto(PressaoSuperficie());
+        Pout_inicio = 0;
+        Pout_fim = 0;
     } else {
-        Pout_inicio = PressaoHidroestaticaNoPonto(PressaoSuperficie());
-        Pout_fim = PressaoHidroestaticaNoPonto(PressaoSuperficieFim());
+        Pout_inicio = 0;
+        Pout_fim = 0;
     }
 
     double deltaPout = Pout_fim - Pout_inicio;
@@ -389,12 +426,19 @@ double CObjetoPoco::VariacaoCargaEfeitoPistao(double profundidade, double ID, do
     }
 }
 
-double CObjetoPoco::DeltaLPistaoPacker(double profundidade, double pressaoCabecaPoco) const {
+double CObjetoPoco::DeltaLPistaoPacker(double profundidade) const {
     double pi = 3.141592653589793;
     double deltaL_total = 0.0;
 
-    if (trechos.empty() || pressaoCabecaPoco < 0.0)
-        return 0.0;
+    // verifica se ha qualquer mudanca de diametro externo entre os trechos
+    bool possuiDiferencaOD = false;
+    double primeiroOD = trechos[0]->DiametroExterno();
+    for (const auto& trecho : trechos) {
+        if (std::abs(trecho->DiametroExterno() - primeiroOD) > 1e-6) {
+            possuiDiferencaOD = true;
+            break;
+        }
+    }
 
     for (size_t i = 0; i < trechos.size(); ++i) {
         const auto& trecho = trechos[i];
@@ -405,29 +449,35 @@ double CObjetoPoco::DeltaLPistaoPacker(double profundidade, double pressaoCabeca
         double E = trecho->ModuloEslasticidade();
 
         double area_anular = (pi / 4.0) * (OD * OD - ID * ID);
-
         if (E <= 0.0 || area_anular <= 0.0)
             continue;
 
         double L = 0.0;
 
         if (profundidade > z_i && profundidade < z_f) {
-            // trecho parcialmente acima da profundidade
             L = profundidade - z_i;
         } else if (z_f <= profundidade) {
-            // trecho totalmente acima da profundidade
             L = z_f - z_i;
         } else {
-            continue; // trecho abaixo da profundidade, ignora
+            continue;
         }
 
-        double CargaPistao = VariacaoCargaEfeitoPistao(z_i, ID, DiametroPoco());
-        double deltaL_trecho = (CargaPistao * (L)) / (E * area_anular); // o x12 é uma unidade de conversão de ft para in
+        double CargaPistao = 0.0;
+        if (possuiDiferencaOD) {
+            // qualquer mudanca de OD: usa ID e OD do trecho
+            CargaPistao = VariacaoCargaEfeitoPistao(z_i, ID, OD);
+        } else {
+            // todos os trechos iguais: usa ID e o diametro total do poco
+            CargaPistao = VariacaoCargaEfeitoPistao(z_i, ID, DiametroPoco());
+        }
+
+        double deltaL_trecho = (CargaPistao * L) / (E * area_anular);
         deltaL_total += deltaL_trecho;
     }
 
     return deltaL_total;
 }
+
 
 
 double CObjetoPoco::DeltaLEfeitoBalao(double profundidade) const {
@@ -469,40 +519,48 @@ double CObjetoPoco::DeltaLEfeitoBalao(double profundidade) const {
     return deltaL_total;
 }
 
-double CObjetoPoco::DeltaLPistaoCrossover(double profundidade, double pressaoCabecaPoco) const {
+double CObjetoPoco::DeltaLPistaoCrossover(double profundidade) const {
     double pi = 3.141592653589793;
     double deltaL_total = 0.0;
-
-    if (trechos.size() < 2)
-        return 0.0;
 
     for (size_t i = 1; i < trechos.size(); ++i) {
         const auto& trechoAcima = trechos[i - 1];
         const auto& trechoAbaixo = trechos[i];
 
+        // Profundidade onde ocorre a mudanca de trecho
         double z_interface = trechoAbaixo->ProfundidadeInicial();
-        if (z_interface < profundidade)
+
+        // Ignora se a interface estiver abaixo da profundidade analisada
+        if (z_interface > profundidade)
             continue;
 
+        // Coleta os diametros externos para comparar se ha mudanca
         double OD_acima = trechoAcima->DiametroExterno();
         double ID_acima = trechoAcima->DiametroInterno();
         double OD_abaixo = trechoAbaixo->DiametroExterno();
 
+        // Se os diametros forem quase iguais, nao ha efeito pistao relevante
         if (std::abs(OD_acima - OD_abaixo) < 1e-6)
             continue;
 
-        double cargaPistao = VariacaoCargaEfeitoPistao(z_interface - 100, 1, 1);
-        double L = z_interface;
+        // Area da secao transversal da coluna acima (quem vai deformar)
+        double area_secao = (pi / 4.0) * (OD_acima * OD_acima - ID_acima * ID_acima);
 
+        // Obtem o modulo de elasticidade medio entre os dois trechos
         double E1 = trechoAcima->ModuloEslasticidade();
         double E2 = trechoAbaixo->ModuloEslasticidade();
         double E_medio = (E1 + E2) / 2.0;
 
-        double area_secao = (pi / 4.0) * (OD_acima * OD_acima - ID_acima * ID_acima);
-
         if (E_medio <= 0.0 || area_secao <= 0.0)
             continue;
 
+        // Carga causada pelo efeito pistao na interface
+        double cargaPistao = VariacaoCargaEfeitoPistao(z_interface, OD_abaixo, OD_acima);
+
+        // L = comprimento da coluna acima da interface
+        double L = z_interface;
+
+        // Deformacao axial provocada pela carga
         double deltaL = (cargaPistao * L) / (E_medio * area_secao);
         deltaL_total += deltaL;
     }
@@ -510,52 +568,51 @@ double CObjetoPoco::DeltaLPistaoCrossover(double profundidade, double pressaoCab
     return deltaL_total;
 }
 
-double CObjetoPoco::DeltaLForcaRestauradora(double profundidade, double pressaoCabecaPoco) const{
+double CObjetoPoco::DeltaLForcaRestauradora(double profundidade) const{
 
     double deltaLTemperatura = DeltaLTemperatura(profundidade);
     double deltaLBalao = DeltaLEfeitoBalao(profundidade);
-    double deltaLPacker = DeltaLPistaoPacker(profundidade, pressaoCabecaPoco);
-    double deltaLCrossover = DeltaLPistaoCrossover(profundidade, pressaoCabecaPoco);
+    double deltaLPacker = DeltaLPistaoPacker(profundidade);
+    double deltaLCrossover = DeltaLPistaoCrossover(profundidade);
 
     return deltaLTemperatura + deltaLBalao + deltaLPacker + deltaLCrossover;
 
 }
 
 double CObjetoPoco::CargaInjecao(double profundidade) const {
-    double numerador = 0.0;
-    double denominador = 0.0;
     const double pi = 3.141592653589793;
+    double denominador = 0.0;
+
+    // Deformacao total desejada
+    double deltaL = DeltaLForcaRestauradora(profundidade);
 
     for (const auto& trecho : trechos) {
         double z_i = trecho->ProfundidadeInicial();
         double z_f = trecho->ProfundidadeFinal();
 
-        // Pular trechos que estao acima da profundidade desejada
+        // Pula trechos abaixo da profundidade desejada
         if (z_i > profundidade)
             continue;
 
-        // Determinar quanto do trecho esta dentro da profundidade desejada
         double limiteSuperior = std::min(z_f, profundidade);
         double comprimentoUtil = limiteSuperior - z_i;
 
         if (comprimentoUtil <= 0.0)
             continue;
 
-        double E = trecho->ModuloEslasticidade(); // modulo de elasticidade
-        double F = DeltaLForcaRestauradora((double)profundidade, PressaoSuperficieFim());  // forca restauradora da classe
-        double OD = trecho->DiametroExterno();   // diametro interno para calcular area
-        double ID = trecho->DiametroInterno();   // diametro interno para calcular area
-
-        // Area da secao circular interna (em m², se diametro estiver em metros)
+        double E = trecho->ModuloEslasticidade();
+        double OD = trecho->DiametroExterno();
+        double ID = trecho->DiametroInterno();
         double area = (pi / 4.0) * (OD * OD - ID * ID);
 
-        numerador += E * F;
-        denominador += comprimentoUtil / area;
+        // soma das flexibilidades: L / (E*A)
+        denominador += comprimentoUtil / (E * area);
     }
 
-    // Evita divisao por zero
     if (denominador == 0.0)
         return 0.0;
 
-    return - numerador / denominador;
+    // pressao = deformacao total / soma das flexibilidades
+    return deltaL / denominador;
 }
+

@@ -1,6 +1,6 @@
 # Configuracao do Poco ------------------------------------------------------------------------------------
 # Nome                               Profundidade (ft)                  Diametro do Poçp (ft)              Pressao Sup. Inicial (psi)         Pressao Sup. Final (psi)           Temp Sup. Inicial (°F)             Temp Fund. Inicial (°F)            Temp Sup. Final (°F)               Temp Fund. Final (°F)              Prof Packer (ft)                   
-  7-TEST-1-RJS                       8000                               5                                  0                                  2000                               80                                 200                                80                                 220                                8000                               
+  7-TEST-1-RJS                       8000                               5                                  0                                  2000                               80                                 200                                80                                 220                                true                               
 
 
 

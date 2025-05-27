@@ -88,11 +88,11 @@ public:
     double Carga(double profundidade, bool inicio) const;
     double DeltaLTemperatura(double profundidade) const;
     double DeltaLEfeitoBalao(double profundidade) const;
-    double VariacaoCargaDevidoCrossover(double profundidade, double pressaoCabecaPoco = -1) const;
+    double VariacaoCargaDevidoCrossover(double profundidade, bool deCimaParaBaixo, bool inicio) const;
     double VariacaoCargaEfeitoPistao(double profundidade, double ID, double OD) const;
-    double DeltaLPistaoPacker(double profundidade, double CargaPistao) const;
-    double DeltaLPistaoCrossover(double profundidade, double pressaoCabecaPoco) const;
-    double DeltaLForcaRestauradora(double profundidade, double pressaoCabecaPoco) const;
+    double DeltaLPistaoPacker(double profundidade) const;
+    double DeltaLPistaoCrossover(double profundidade) const;
+    double DeltaLForcaRestauradora(double profundidade) const;
     double CargaInjecao(double profundidade) const;
     double TemperaturaNoPonto(double profundidade, double T_topo, double T_Fundo) const;
 

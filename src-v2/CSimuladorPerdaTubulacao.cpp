@@ -19,11 +19,13 @@ CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
     connect(ui->editNomePoco, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
     connect(ui->editProfundidadeTotal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
     connect(ui->editPressaoSupInicial, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editPressaoSupFinal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
     connect(ui->editTemperaturaSuperiorInicial, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
     connect(ui->editTemperaturaFundoInicial, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
     connect(ui->editTemperaturaSuperiorFinal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
     connect(ui->editTemperaturaFundoFinal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editProfundidadeMedicao, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::AtualizarDados);
+    connect(ui->editProfundidadeMedicao, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->checkBoxPacker, &QCheckBox::stateChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
 
 
     // iniciar com botões desativado
@@ -62,13 +64,14 @@ void CSimuladorPerdaTubulacao::EditarDadosPoco() {
     double temperaturaFundoInicial = ui->editTemperaturaFundoInicial->text().toDouble(&ok6);
     double temperaturaSuperiorFinal = ui->editTemperaturaSuperiorFinal->text().toDouble(&ok7);
     double temperaturaFundoFinal = ui->editTemperaturaFundoFinal->text().toDouble(&ok8);
+    bool haPacker = ui->checkBoxPacker->isChecked();
 
     if (!nome.isEmpty() && ok1 && ok2 && ok3 && ok4 && ok5 && ok6 && ok7 && ok8) {
         if (!poco) {
             // Cria o poço
 
             poco = std::make_unique<CObjetoPoco>(
-                CObjetoPoco::CriarParaModulo02(nome.toStdString(), profund, diamPoco, pressao, pressaoFim, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, 8000)
+                CObjetoPoco::CriarParaModulo02(nome.toStdString(), profund, diamPoco, pressao, pressaoFim, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, haPacker)
                 );
 
             ui->btnAdicionarTrecho->setEnabled(true);
@@ -81,10 +84,12 @@ void CSimuladorPerdaTubulacao::EditarDadosPoco() {
             poco->NomePoco(nome.toStdString());
             poco->ProfundidadeTotal(profund);
             poco->PressaoSuperficie(pressao);
+            poco->PressaoSuperficieFim(pressaoFim);
             poco->TemperaturaTopoInicial(temperaturaSuperiorInicial);
             poco->TemperaturaFundoInicial(temperaturaFundoInicial);
             poco->TemperaturaTopoFinal(temperaturaSuperiorFinal);
             poco->TemperaturaFundoFinal(temperaturaFundoFinal);
+            poco->Packer(haPacker);
             ui->statusbar->showMessage("Dados de Poço Atualizado com Sucesso!");
         }
 
@@ -95,7 +100,8 @@ void CSimuladorPerdaTubulacao::EditarDadosPoco() {
 void CSimuladorPerdaTubulacao::on_btnAdicionarPropriedades_clicked()
 {
     std::string nome;
-    double profundidade,diamPoco, pressaoSup, pressaoSupFim,  temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, ProfundidadePacker;
+    double profundidade,diamPoco, pressaoSup, pressaoSupFim,  temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal;
+    bool haPacker;
 
     QString text;
 
@@ -117,6 +123,7 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarPropriedades_clicked()
     temperaturaSuperiorFinal = text.toDouble();
     text = ui->editTemperaturaFundoFinal->text();
     temperaturaFundoFinal = text.toDouble();
+    haPacker = ui->checkBoxPacker->isChecked();
 
 
     if (poco) {
@@ -129,14 +136,14 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarPropriedades_clicked()
 
         if (resposta == QMessageBox::Yes) {
             poco = std::make_unique<CObjetoPoco>(
-                CObjetoPoco::CriarParaModulo02(nome, profundidade, diamPoco, pressaoSup, pressaoSupFim, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, 8000)
+                CObjetoPoco::CriarParaModulo02(nome, profundidade, diamPoco, pressaoSup, pressaoSupFim, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, haPacker)
                 );
         }
         AtualizarDados();
     } else {
 
         poco = std::make_unique<CObjetoPoco>(
-            CObjetoPoco::CriarParaModulo02(nome, profundidade, diamPoco, pressaoSup, pressaoSupFim, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, 8000)
+            CObjetoPoco::CriarParaModulo02(nome, profundidade, diamPoco, pressaoSup, pressaoSupFim, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, haPacker)
             );
     }
 
@@ -565,10 +572,10 @@ void CSimuladorPerdaTubulacao::on_btnCalcularVariacoes_clicked()
     ui->lbnTituloDeltaLTemperatura->setText(QString::number(poco->DeltaLTemperatura(profundidade)));
     ui->lbnCargaInjecaoColunaFixa->setText(QString::number(poco->CargaInjecao(profundidade)));
     ui->lbnCargaInjecaoColunaLivre->setText(QString::number(poco->Carga(profundidade, false)));
-    ui->lbnDeltaLPistaoPacker->setText(QString::number(poco->DeltaLPistaoPacker(profundidade, pressaoCabeca)));
+    ui->lbnDeltaLPistaoPacker->setText(QString::number(poco->DeltaLPistaoPacker(profundidade)));
     ui->lbnTituloDeltaLBalao->setText(QString::number(poco->DeltaLEfeitoBalao(profundidade)));
-    ui->lbnDeltaLPistaoCrossover->setText(QString::number(poco->DeltaLPistaoCrossover(profundidade, pressaoCabeca)));
-    ui->lbnDeltaLForcaRestauradora->setText(QString::number(poco->DeltaLForcaRestauradora(profundidade, pressaoCabeca)));
+    ui->lbnDeltaLPistaoCrossover->setText(QString::number(poco->DeltaLPistaoCrossover(profundidade)));
+    ui->lbnDeltaLForcaRestauradora->setText(QString::number(poco->DeltaLForcaRestauradora(profundidade)));
 }
 
 
@@ -609,15 +616,17 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
             double profundidade, diamPoco, pressaoSup, pressaoSupFim;
             double temperaturaSuperiorInicial, temperaturaFundoInicial;
             double temperaturaSuperiorFinal, temperaturaFundoFinal;
-            bool haPacker;
+            std::string strHaPacker;
 
             if (iss >> nome >> profundidade >>  diamPoco >> pressaoSup >> pressaoSupFim
                 >> temperaturaSuperiorInicial >> temperaturaFundoInicial
-                >> temperaturaSuperiorFinal >> temperaturaFundoFinal >> haPacker) {
+                >> temperaturaSuperiorFinal >> temperaturaFundoFinal >> strHaPacker) {
 
                 ui->btnAdicionarTrecho->setEnabled(true);
                 ui->btnRemoverTrecho->setEnabled(true);
                 ui->btnCalcularVariacoes->setEnabled(true);
+
+                bool haPacker = (strHaPacker == "true" || strHaPacker == "1");
 
                 if (haPacker == false){
                     ui->checkBoxPacker->setChecked(false);

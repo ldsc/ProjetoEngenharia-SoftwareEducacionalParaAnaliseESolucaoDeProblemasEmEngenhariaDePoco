@@ -1,0 +1,10 @@
+# Configuracao do Poco ------------------------------------------------------------------------------------
+# Nome                               Profundidade (ft)                  Diametro do Poçp (ft)              Pressao Sup. Inicial (psi)         Pressao Sup. Final (psi)           Temp Sup. Inicial (°F)             Temp Fund. Inicial (°F)            Temp Sup. Final (°F)               Temp Fund. Final (°F)              Prof Packer (ft)                   
+  7-TES-01-RJS                       8000                               8                                  0                                  3000                               50                                 300                                50                                 300                                true
+
+
+
+# Configuracao dos Fluidos --------------------------------------------------------------------------------
+# Nome Trecho              Prof. Inicial (ft)       Prof. Final (ft)         Diam. externo (in)       Diam. interno (in)       Coef. Poisson            Coef. Exp. Term. (1/F)   Mod. Elast. (psi)        Peso/unid (lb/ft)        Nome fluido              Densidade (lbm/gal)      Viscosidade (cP)         
+  Trecho_A                 0.00                     3999.99                  5.50                     4.89                     0.30                     0.00003000               30000000.00              22.00                    AguaMar                  8.49                     1.80                     
+  Trecho_B                 4000.00                  8000.00                  4.50                     3.96                     0.30                     0.00003000               35000000.00              15.00                    AguaMar                  8.49                     1.80                     
