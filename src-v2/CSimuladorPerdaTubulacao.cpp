@@ -14,27 +14,16 @@ CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // Conecta o sinal stateChanged do checkBox à função lambda
-    ui->editProfundidadePacker->setEnabled(false);
-
-    connect(ui->checkBoxPacker, &QCheckBox::stateChanged, this, [=](int state) {
-        bool ativar = (state == Qt::Checked);
-        ui->editProfundidadePacker->setEnabled(ativar);
-        if (!ativar) {
-            ui->editProfundidadePacker->clear(); // limpa o campo quando desativado
-        }
-    });
 
     // Sinal para alterações das caixas
-    connect(ui->editNomePoco, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editProfundidadeTotal, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editPressaoSup, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editTemperaturaSuperiorInicial, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editTemperaturaFundoInicial, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editTemperaturaSuperiorFinal, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editTemperaturaFundoFinal, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editProfundidadePacker, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editProfundidadeMedicao, &QLineEdit::textChanged, this, &CSimuladorPerdaTubulacao::AtualizarDados);
+    connect(ui->editNomePoco, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editProfundidadeTotal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editPressaoSupInicial, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editTemperaturaSuperiorInicial, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editTemperaturaFundoInicial, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editTemperaturaSuperiorFinal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editTemperaturaFundoFinal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    connect(ui->editProfundidadeMedicao, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::AtualizarDados);
 
 
     // iniciar com botões desativado
@@ -64,21 +53,22 @@ CSimuladorPerdaTubulacao::~CSimuladorPerdaTubulacao()
 
 void CSimuladorPerdaTubulacao::EditarDadosPoco() {
     QString nome = ui->editNomePoco->text();
-    bool ok1, ok2, ok3, ok4, ok5, ok6;
+    bool ok1, ok2, ok3, ok4, ok5, ok6, ok7, ok8;
     double profund  = ui->editProfundidadeTotal->text().toDouble(&ok1);
-    double pressao  = ui->editPressaoSup->text().toDouble(&ok2);
-    double temperaturaSuperiorInicial = ui->editTemperaturaSuperiorInicial->text().toDouble(&ok3);
-    double temperaturaFundoInicial = ui->editTemperaturaFundoInicial->text().toDouble(&ok4);
-    double temperaturaSuperiorFinal = ui->editTemperaturaSuperiorFinal->text().toDouble(&ok5);
-    double temperaturaFundoFinal = ui->editTemperaturaFundoFinal->text().toDouble(&ok6);
-    double profundPacker = ui->editProfundidadePacker->text().toDouble();
+    double diamPoco  = ui->editDiametroPoco->text().toDouble(&ok2);
+    double pressao  = ui->editPressaoSupInicial->text().toDouble(&ok3);
+    double pressaoFim  = ui->editPressaoSupFinal->text().toDouble(&ok4);
+    double temperaturaSuperiorInicial = ui->editTemperaturaSuperiorInicial->text().toDouble(&ok5);
+    double temperaturaFundoInicial = ui->editTemperaturaFundoInicial->text().toDouble(&ok6);
+    double temperaturaSuperiorFinal = ui->editTemperaturaSuperiorFinal->text().toDouble(&ok7);
+    double temperaturaFundoFinal = ui->editTemperaturaFundoFinal->text().toDouble(&ok8);
 
-    if (!nome.isEmpty() && ok1 && ok2 && ok3 && ok4 && ok5 && ok6) {
+    if (!nome.isEmpty() && ok1 && ok2 && ok3 && ok4 && ok5 && ok6 && ok7 && ok8) {
         if (!poco) {
             // Cria o poço
 
             poco = std::make_unique<CObjetoPoco>(
-                CObjetoPoco::CriarParaModulo02(nome.toStdString(), profund, pressao, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, profundPacker)
+                CObjetoPoco::CriarParaModulo02(nome.toStdString(), profund, diamPoco, pressao, pressaoFim, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, 8000)
                 );
 
             ui->btnAdicionarTrecho->setEnabled(true);
@@ -95,7 +85,6 @@ void CSimuladorPerdaTubulacao::EditarDadosPoco() {
             poco->TemperaturaFundoInicial(temperaturaFundoInicial);
             poco->TemperaturaTopoFinal(temperaturaSuperiorFinal);
             poco->TemperaturaFundoFinal(temperaturaFundoFinal);
-            poco->ProfundidadePacker(profundPacker);
             ui->statusbar->showMessage("Dados de Poço Atualizado com Sucesso!");
         }
 
@@ -106,16 +95,20 @@ void CSimuladorPerdaTubulacao::EditarDadosPoco() {
 void CSimuladorPerdaTubulacao::on_btnAdicionarPropriedades_clicked()
 {
     std::string nome;
-    double profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, ProfundidadePacker;
+    double profundidade,diamPoco, pressaoSup, pressaoSupFim,  temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, ProfundidadePacker;
 
     QString text;
 
     text = ui->editNomePoco->text();
     nome = text.toStdString();
-    text = ui->editPressaoSup->text();
+    text = ui->editPressaoSupInicial->text();
     pressaoSup = text.toDouble();
+    text = ui->editPressaoSupFinal->text();
+    pressaoSupFim = text.toDouble();
     text = ui->editProfundidadeTotal->text();
     profundidade = text.toDouble();
+    text = ui->editDiametroPoco->text();
+    diamPoco = text.toDouble();
     text = ui->editTemperaturaSuperiorInicial->text();
     temperaturaSuperiorInicial = text.toDouble();
     text = ui->editTemperaturaFundoInicial->text();
@@ -124,8 +117,7 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarPropriedades_clicked()
     temperaturaSuperiorFinal = text.toDouble();
     text = ui->editTemperaturaFundoFinal->text();
     temperaturaFundoFinal = text.toDouble();
-    text = ui->editProfundidadePacker->text();
-    ProfundidadePacker = text.toDouble();
+
 
     if (poco) {
         QMessageBox::StandardButton resposta = QMessageBox::question(
@@ -137,14 +129,14 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarPropriedades_clicked()
 
         if (resposta == QMessageBox::Yes) {
             poco = std::make_unique<CObjetoPoco>(
-                CObjetoPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, ProfundidadePacker)
+                CObjetoPoco::CriarParaModulo02(nome, profundidade, diamPoco, pressaoSup, pressaoSupFim, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, 8000)
                 );
         }
         AtualizarDados();
     } else {
 
         poco = std::make_unique<CObjetoPoco>(
-            CObjetoPoco::CriarParaModulo02(nome, profundidade, pressaoSup, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, ProfundidadePacker)
+            CObjetoPoco::CriarParaModulo02(nome, profundidade, diamPoco, pressaoSup, pressaoSupFim, temperaturaSuperiorInicial, temperaturaFundoInicial, temperaturaSuperiorFinal, temperaturaFundoFinal, 8000)
             );
     }
 
@@ -162,19 +154,17 @@ void CSimuladorPerdaTubulacao::AtualizarDados()
         // Atualiza os valores dos QLineEdits com os dados do objeto poco
         ui->editNomePoco->setText(QString::fromStdString(poco->NomePoco()));       // Profundidade total do poço
         ui->editProfundidadeTotal->setText(QString::number(poco->ProfundidadeTotal()));       // Profundidade total do poço
-        ui->editPressaoSup->setText(QString::number(poco->PressaoSuperficie())); // Profundidade ocupada
+        ui->editDiametroPoco->setText(QString::number(poco->DiametroPoco()));
+        ui->editPressaoSupInicial->setText(QString::number(poco->PressaoSuperficie())); // Profundidade ocupada
+        ui->editPressaoSupFinal->setText(QString::number(poco->PressaoSuperficieFim()));
         ui->editTemperaturaSuperiorInicial->setText(QString::number(poco->TemperaturaTopoInicial()));              // Diâmetro do poço
         ui->editTemperaturaFundoInicial->setText(QString::number(poco->TemperaturaFundoInicial()));      // Diâmetro externo do revestimento (OD)
         ui->editTemperaturaSuperiorFinal->setText(QString::number(poco->TemperaturaTopoFinal()));      // Diâmetro interno do revestimento (ID)
         ui->editTemperaturaFundoFinal->setText(QString::number(poco->TemperaturaFundoFinal()));                            // Vazão do fluido no poço
         if (poco->ProfundidadePacker() != 0.0) {
             ui->checkBoxPacker->setChecked(true);
-            ui->editProfundidadePacker->setEnabled(true);
-            ui->editProfundidadePacker->setText(QString::number(poco->ProfundidadePacker()));
         } else {
             ui->checkBoxPacker->setChecked(false);
-            ui->editProfundidadePacker->setEnabled(false);
-            ui->editProfundidadePacker->clear(); // apaga o campo se não tiver packer
         }
 
 
@@ -190,9 +180,9 @@ void CSimuladorPerdaTubulacao::AtualizarDados()
             ui->tblTrechos->setItem(row, 2, new QTableWidgetItem(QString::number(trecho->ProfundidadeFinal(), 'f', 2)));
             ui->tblTrechos->setItem(row, 3, new QTableWidgetItem(QString::number(trecho->DiametroExterno(), 'f', 2)));
             ui->tblTrechos->setItem(row, 4, new QTableWidgetItem(QString::number(trecho->DiametroInterno(), 'f', 2)));
-            ui->tblTrechos->setItem(row, 5, new QTableWidgetItem(QString::number(trecho->CoeficientePoisson(), 'f', 3)));
-            ui->tblTrechos->setItem(row, 6, new QTableWidgetItem(QString::number(trecho->CoeficienteExpancaoTermica(), 'f', 7)));
-            ui->tblTrechos->setItem(row, 7, new QTableWidgetItem(QString::number(trecho->ModuloEslasticidade(), 'f', 7)));
+            ui->tblTrechos->setItem(row, 5, new QTableWidgetItem(QString::number(trecho->CoeficientePoisson(), 'f', 2)));
+            ui->tblTrechos->setItem(row, 6, new QTableWidgetItem(QString::number(trecho->CoeficienteExpancaoTermica(), 'f', 8)));
+            ui->tblTrechos->setItem(row, 7, new QTableWidgetItem(QString::number(trecho->ModuloEslasticidade(), 'f', 2)));
             ui->tblTrechos->setItem(row, 8, new QTableWidgetItem(QString::number(trecho->PesoUnidade(), 'f', 2)));
 
             ui->tblFluidos->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(trecho->Fluido()->Nome())));
@@ -280,66 +270,76 @@ void CSimuladorPerdaTubulacao::on_btnAdicionarTrecho_clicked()
 
 void CSimuladorPerdaTubulacao::makePlotTemperatura(double TempInicial, double TempFinal, double profundidade, QCustomPlot* plot)
 {
-    // Limpar o gráfico anterior
+    // Limpa graficos anteriores
     plot->clearItems();
     plot->clearPlottables();
 
-    // Configurar os eixos
+    // Configura eixos
     plot->xAxis->setLabel("Temperatura (°F)");
     plot->yAxis->setLabel("Profundidade (ft)");
-    plot->yAxis->setRangeReversed(true); // profundidade cresce para baixo
+    plot->yAxis->setRangeReversed(true); // profundidade cresce pra baixo
 
-    // Definir os pontos do perfil de temperatura
-    QVector<double> temperaturas = {TempInicial, (TempInicial+TempFinal)/2, TempFinal};     // Temperaturas em °F
-    QVector<double> profundidades = {0, (profundidade/2), profundidade};    // Profundidades em ft
+    // Adiciona "respiro" nos extremos
+    double margemProfundidade = profundidade * 0.05; // 5% de margem visual
 
-    // Ajustar ranges com base nos dados
+    // Define pontos
+    double tempMeio = (TempInicial + TempFinal) / 2.0;
+    QVector<double> temperaturas = {TempInicial, tempMeio, TempFinal};
+    QVector<double> profundidades = {0.0 + margemProfundidade, profundidade / 2.0, profundidade - margemProfundidade};
+
+    // Ajuste de range
     double tempMin = *std::min_element(temperaturas.begin(), temperaturas.end());
     double tempMax = *std::max_element(temperaturas.begin(), temperaturas.end());
-    double profMin = 0;
-    double profMax = *std::max_element(profundidades.begin(), profundidades.end());
 
-    plot->xAxis->setRange(tempMin - 20, tempMax + 20);
-    plot->yAxis->setRange(profMin, profMax);
+    plot->xAxis->setRange(tempMin - 5, tempMax + 5);
+    plot->yAxis->setRange(0.0, profundidade); // Mantem 0 a profundidade total, o respiro e visual apenas
 
-    // Criar linha do perfil de temperatura (vermelha)
+    // Grid leve
+    plot->xAxis->grid()->setVisible(true);
+    plot->yAxis->grid()->setVisible(true);
+    plot->xAxis->grid()->setPen(QPen(QColor(220, 220, 220)));
+    plot->yAxis->grid()->setPen(QPen(QColor(220, 220, 220)));
+
+    // Linha do perfil
     QCPGraph *perfilTemp = plot->addGraph();
     perfilTemp->setData(temperaturas, profundidades);
-    perfilTemp->setPen(QPen(Qt::red, 2));
-    perfilTemp->setName("Condição inicial");
+    perfilTemp->setPen(QPen(QColor(200, 0, 0), 2));
 
-    // Criar linha azul vertical (por exemplo, linha guia em 50°F)
-    double linhaAzulX = 50; // ou alguma variável
-    QCPItemLine *linhaAzul = new QCPItemLine(plot);
-    linhaAzul->start->setCoords(linhaAzulX, profMin);
-    linhaAzul->end->setCoords(linhaAzulX, profMax);
-    linhaAzul->setPen(QPen(Qt::blue, 1, Qt::SolidLine));
-
-    // Adicionar texto "condição inicial"
-    QCPItemText *label = new QCPItemText(plot);
-    label->position->setCoords(temperaturas[0] + 10, profundidades[1]); // próximo ao meio
-    label->setText("condição inicial");
-    label->setFont(QFont("Arial", 10));
-    label->setColor(Qt::red);
-
-    // Marcar os pontos principais
+    // Marcar e rotular os 3 pontos (topo, meio e fundo)
     for (int i = 0; i < temperaturas.size(); ++i) {
         QCPItemEllipse *ponto = new QCPItemEllipse(plot);
-        ponto->topLeft->setCoords(temperaturas[i] - 5, profundidades[i] - 100);
-        ponto->bottomRight->setCoords(temperaturas[i] + 5, profundidades[i] + 100);
-        ponto->setPen(QPen(Qt::black));
-        ponto->setBrush(Qt::gray);
+        ponto->topLeft->setCoords(temperaturas[i] - 2, profundidades[i] - 20);
+        ponto->bottomRight->setCoords(temperaturas[i] + 2, profundidades[i] + 20);
+        ponto->setPen(Qt::NoPen);
+        ponto->setBrush(QBrush(Qt::darkGray));
 
         QCPItemText *rotulo = new QCPItemText(plot);
-        rotulo->position->setCoords(temperaturas[i], profundidades[i]);
-        rotulo->setText(QString::number(temperaturas[i]) + "°F");
-        rotulo->setFont(QFont("Arial", 9));
-        rotulo->setPositionAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        rotulo->position->setCoords(temperaturas[i] + 4, profundidades[i]);
+        rotulo->setText(QString::number(temperaturas[i], 'f', 1) + " °F");
+        rotulo->setFont(QFont("Arial", 8));
+        rotulo->setColor(Qt::darkGray);
+        // Ajusta alinhamento do rotulo do ultimo ponto para dentro do grafico
+        if (i == temperaturas.size() - 1)
+            rotulo->setPositionAlignment(Qt::AlignRight | Qt::AlignVCenter); // alinha para a esquerda do ponto final
+        else
+            rotulo->setPositionAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     }
 
-    // Atualizar o gráfico
+    // Limpeza estética
+    plot->legend->setVisible(false);
+    plot->setBackground(Qt::white);
+    plot->xAxis->setBasePen(QPen(Qt::black));
+    plot->yAxis->setBasePen(QPen(Qt::black));
+    plot->xAxis->setTickPen(QPen(Qt::black));
+    plot->yAxis->setTickPen(QPen(Qt::black));
+    plot->xAxis->setTickLabelColor(Qt::black);
+    plot->yAxis->setTickLabelColor(Qt::black);
+
+    // Replotar
     plot->replot();
 }
+
+
 
 
 void CSimuladorPerdaTubulacao::on_btnRemoverTrecho_clicked()
@@ -412,7 +412,7 @@ void CSimuladorPerdaTubulacao::makePlotPoco()
     // 4. Cores dos fluidos
     QMap<QString, QColor> mapaCores;
     QVector<QColor> coresDisponiveis = {
-        QColor(173, 216, 230, 150), QColor(255, 0, 0, 150),
+        QColor(70, 130, 180, 180), QColor(255, 0, 0, 150),
         QColor(0, 255, 0, 150), QColor(0, 0, 255, 150),
         QColor(255, 165, 0, 150), QColor(128, 0, 128, 150)
     };
@@ -456,8 +456,16 @@ void CSimuladorPerdaTubulacao::makePlotPoco()
     double profundidadePacker = poco->ProfundidadePacker();
     if (profundidadePacker > 0.0) {
         double alturaPacker = std::max(profundidadeMaxima * 0.01, 12.0);
-        double zTop = profundidadePacker - alturaPacker / 2.0;
-        double zBottom = profundidadePacker + alturaPacker / 2.0;
+        double zTop, zBottom;
+
+        // Se o packer estiver exatamente na profundidade máxima, desenha ele todo acima
+        if (std::abs(profundidadePacker - profundidadeMaxima) < 1e-3) {
+            zBottom = profundidadePacker;
+            zTop = profundidadePacker - alturaPacker;
+        } else {
+            zTop = profundidadePacker - alturaPacker / 2.0;
+            zBottom = profundidadePacker + alturaPacker / 2.0;
+        }
 
         // Encontrar o trecho correspondente à profundidade do packer
         double diametroNoPacker = 0.0;
@@ -539,22 +547,21 @@ void CSimuladorPerdaTubulacao::makePlotPoco()
 void CSimuladorPerdaTubulacao::on_btnCalcularVariacoes_clicked()
 {
 
-    double pressaoCabeca = ui->editPressaoCabecaPoco->text().toDouble();
+    double pressaoCabeca = ui->editPressaoSupFinal->text().toDouble();
 
     QString profundidadeStr = ui->editProfundidadeMedicao->text();
     double profundidade = profundidadeStr.toDouble();
 
     ui->lbnPressaoHidroestatica->setText(QString::number( (poco->PressaoHidroestaticaNoPonto(profundidade)) ));
-    ui->lbnCargaInicial->setText(QString::number(poco->Carga(profundidade)));
+    ui->lbnCargaInicial->setText(QString::number(poco->Carga(profundidade, true)));
 
     ui->lbnTituloDeltaLTemperatura->setText(QString::number(poco->DeltaLTemperatura(profundidade)));
-
-    ui->lbnCargaInjecaoColunaLivre->setText(QString::number(poco->Carga(profundidade, pressaoCabeca)));
+    ui->lbnCargaInjecaoColunaFixa->setText(QString::number(poco->CargaInjecao(profundidade)));
+    ui->lbnCargaInjecaoColunaLivre->setText(QString::number(poco->Carga(profundidade, false)));
     ui->lbnDeltaLPistaoPacker->setText(QString::number(poco->DeltaLPistaoPacker(profundidade, pressaoCabeca)));
-    ui->lbnTituloDeltaLBalao->setText(QString::number(poco->DeltaLEfeitoBalao(profundidade, pressaoCabeca)));
+    ui->lbnTituloDeltaLBalao->setText(QString::number(poco->DeltaLEfeitoBalao(profundidade)));
     ui->lbnDeltaLPistaoCrossover->setText(QString::number(poco->DeltaLPistaoCrossover(profundidade, pressaoCabeca)));
     ui->lbnDeltaLForcaRestauradora->setText(QString::number(poco->DeltaLForcaRestauradora(profundidade, pressaoCabeca)));
-    ui->lbnVariacaoCarga->setText(QString::number(poco->VariacaoCargaEfeitoPistao(profundidade, pressaoCabeca)));
 }
 
 
@@ -592,12 +599,12 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
             // Leitura dos dados do poço
             std::istringstream iss(linha);
             std::string nome;
-            double profundidade, pressaoSup;
+            double profundidade, diamPoco, pressaoSup, pressaoSupFim;
             double temperaturaSuperiorInicial, temperaturaFundoInicial;
             double temperaturaSuperiorFinal, temperaturaFundoFinal;
             double profundidadePacker;
 
-            if (iss >> nome >> profundidade >> pressaoSup
+            if (iss >> nome >> profundidade >>  diamPoco >> pressaoSup >> pressaoSupFim
                 >> temperaturaSuperiorInicial >> temperaturaFundoInicial
                 >> temperaturaSuperiorFinal >> temperaturaFundoFinal >> profundidadePacker) {
 
@@ -607,16 +614,12 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
 
                 if (profundidadePacker == 0){
                     ui->checkBoxPacker->setChecked(false);
-                    ui->editProfundidadePacker->setEnabled(false);
-                    ui->editProfundidadePacker->clear();
                 } else {
                     ui->checkBoxPacker->setChecked(true);
-                    ui->editProfundidadePacker->setEnabled(true);
-                    ui->editProfundidadePacker->setText(QString::number(profundidadePacker));
                 }
 
                 poco = std::make_unique<CObjetoPoco>(
-                    CObjetoPoco::CriarParaModulo02(nome, profundidade, pressaoSup,
+                    CObjetoPoco::CriarParaModulo02(nome, profundidade, diamPoco, pressaoSup,pressaoSupFim,
                                              temperaturaSuperiorInicial, temperaturaFundoInicial,
                                              temperaturaSuperiorFinal, temperaturaFundoFinal, profundidadePacker)
                     );
@@ -643,8 +646,8 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
                 auto trechoPoco = std::make_unique<CTrechoPoco>(nomeTrecho,
                     profundInicial, profundFinal, std::move(fluido),
                     diametroExterno, diametroInterno,
-                    coeficientePoisson, moduloElasticidade,
-                    pesoUnidade, coeficienteExpansaoTermica
+                    coeficientePoisson, coeficienteExpansaoTermica,
+                    moduloElasticidade, pesoUnidade
                     );
 
                 if (!poco->AdicionarTrechoPoco(std::move(trechoPoco))) {
@@ -725,7 +728,9 @@ void CSimuladorPerdaTubulacao::SalvarArquivo(bool salvarComo)
     out << "# "
         << QString("Nome").leftJustified(35, ' ')
         << QString("Profundidade (ft)").leftJustified(35, ' ')
-        << QString("Pressao Sup. (psi)").leftJustified(35, ' ')
+        << QString("Diametro do Poçp (ft)").leftJustified(35, ' ')
+        << QString("Pressao Sup. Inicial (psi)").leftJustified(35, ' ')
+        << QString("Pressao Sup. Final (psi)").leftJustified(35, ' ')
         << QString("Temp Sup. Inicial (°F)").leftJustified(35, ' ')
         << QString("Temp Fund. Inicial (°F)").leftJustified(35, ' ')
         << QString("Temp Sup. Final (°F)").leftJustified(35, ' ')
@@ -733,17 +738,25 @@ void CSimuladorPerdaTubulacao::SalvarArquivo(bool salvarComo)
         << QString("Prof Packer (ft)").leftJustified(35, ' ')
         << "\n";
 
-    // agora escrevemos os dados com os mesmos tamanhos das colunas acima
     out << "  "
         << ui->editNomePoco->text().leftJustified(35, ' ')
         << ui->editProfundidadeTotal->text().leftJustified(35, ' ')
-        << ui->editPressaoSup->text().leftJustified(35, ' ')
+        << ui->editDiametroPoco->text().leftJustified(35, ' ')
+        << ui->editPressaoSupInicial->text().leftJustified(35, ' ')
+        << ui->editPressaoSupFinal->text().leftJustified(35, ' ')
         << ui->editTemperaturaSuperiorInicial->text().leftJustified(35, ' ')
         << ui->editTemperaturaFundoInicial->text().leftJustified(35, ' ')
         << ui->editTemperaturaSuperiorFinal->text().leftJustified(35, ' ')
-        << ui->editTemperaturaFundoFinal->text().leftJustified(35, ' ')
-        << ui->editProfundidadePacker->text().leftJustified(35, ' ')
-        << "\n";
+        << ui->editTemperaturaFundoFinal->text().leftJustified(35, ' ');
+
+    // Checkbox de saida
+    if (ui->checkBoxPacker->isChecked()) {
+        out << "true";
+    } else {
+        out << "false";
+    }
+
+    out << "\n";
 
 
     // Escreve os dados dos fluidos

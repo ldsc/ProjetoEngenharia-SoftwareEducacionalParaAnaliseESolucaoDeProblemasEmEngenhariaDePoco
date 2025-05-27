@@ -31,13 +31,13 @@ CSimuladorReologico::CSimuladorReologico(QWidget *parent)
     connect(ui->tblFluidos, &QTableWidget::cellChanged, this, &CSimuladorReologico::EditarLinhaTabela);
 
     // conecta a alteracao dos campos de entrada para atualizar o objeto do poco
-    connect(ui->editNomePoco, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
-    connect(ui->editProfundidadeTotal, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
-    connect(ui->editPressaoSuperficie, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
-    connect(ui->editDiametroPoco, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
-    connect(ui->editDiametroOD, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
-    connect(ui->editDiametroID, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
-    connect(ui->editVazao, &QLineEdit::textChanged, this, &CSimuladorReologico::EditarDadosPoco);
+    connect(ui->editNomePoco, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
+    connect(ui->editProfundidadeTotal, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
+    connect(ui->editPressaoSuperficie, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
+    connect(ui->editDiametroPoco, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
+    connect(ui->editDiametroOD, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
+    connect(ui->editDiametroID, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
+    connect(ui->editVazao, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
 
 
     // desativa todos os botoes de calculo inicialmente (só ativa quando preencher dados do poco)
@@ -284,7 +284,7 @@ void CSimuladorReologico::on_btnCalcularModeloNewtonianoPoco_clicked()
     ui->lbnVelocidadePocoNewtoniano->setText(QString::number(modeloNewtoniano->VMediaPoco()));
     ui->lbnReynoldsPocoNewtoniano->setText(QString::number(modeloNewtoniano->ReynoldsPoco()));
     ui->lbnTipoFluxoPocoNewtoniano->setText(QString::fromStdString(modeloNewtoniano->FluxoPoco()));
-    ui->lbnPerdaFriccionalPocoNewtoniano->setText(QString::number(modeloNewtoniano->CalcularPerdaPorFriccaoPoco()));
+    ui->lbnPerdaFriccionalPocoNewtoniano->setText(QString::number(modeloNewtoniano->CalcularPerdaPorFriccaoPoco(), 'f', 6));
 }
 
 void CSimuladorReologico::on_btnCalcularModeloNewtonianoAnular_clicked()
@@ -294,7 +294,7 @@ void CSimuladorReologico::on_btnCalcularModeloNewtonianoAnular_clicked()
     ui->lbnVelocidadeAnularNewtoniano->setText(QString::number(modeloNewtoniano->VMediaAnular()));
     ui->lbnReynoldsAnularNewtoniano->setText(QString::number(modeloNewtoniano->ReynoldsAnular()));
     ui->lbnTipoFluxoAnularNewtoniano->setText(QString::fromStdString(modeloNewtoniano->FluxoAnular()));
-    ui->lbnPerdaFriccionalAnularNewtoniano->setText(QString::number(modeloNewtoniano->CalcularPerdaPorFriccaoAnular()));
+    ui->lbnPerdaFriccionalAnularNewtoniano->setText(QString::number(modeloNewtoniano->CalcularPerdaPorFriccaoAnular(), 'f', 6));
 }
 
 
@@ -322,7 +322,7 @@ void CSimuladorReologico::on_btnCalcularModeloBighamPoco_clicked()
         ui->lbnReynoldsHedstromPocoBigham->setText(QString::number(modeloBingham->ReynoldsHedstronPoco()));
         ui->lbnReynoldsCriticoPocoBigham->setText(QString::number(modeloBingham->ReynoldsCriticoPoco()));
         ui->lbnTipoFluxoPocoBigham->setText(QString::fromStdString(modeloBingham->FluxoPoco()));
-        ui->lbnPerdaFriccionalPocoBigham->setText(QString::number(modeloBingham->CalcularPerdaPorFriccaoPoco()));
+        ui->lbnPerdaFriccionalPocoBigham->setText(QString::number(modeloBingham->CalcularPerdaPorFriccaoPoco(), 'f', 6));
     }
 }
 
@@ -349,50 +349,58 @@ void CSimuladorReologico::on_btnCalcularModeloBighamAnular_clicked()
         ui->lbnReynoldsHedstromAnularBigham->setText(QString::number(modeloBingham->ReynoldsHedstronAnular()));
         ui->lbnReynoldsCriticoAnularBigham->setText(QString::number(modeloBingham->ReynoldsCriticoAnular()));
         ui->lbnTipoFluxoAnularBigham->setText(QString::fromStdString(modeloBingham->FluxoAnular()));
-        ui->lbnPerdaFriccionalAnularBigham->setText(QString::number(modeloBingham->CalcularPerdaPorFriccaoAnular()));
+        ui->lbnPerdaFriccionalAnularBigham->setText(QString::number(modeloBingham->CalcularPerdaPorFriccaoAnular(), 'f', 6));
     }
 }
 
 
 void CSimuladorReologico::on_btnCalcularModeloPotenciaPoco_clicked()
 {
-    // verifica se o campo do indice de consistencia esta vazio
-    if (ui->editIndiceConsistenciaPotenciaPoco->text().isEmpty()) {
+    if (ui->editIndiceConsistenciaPotenciaPoco->text().isEmpty() && ui->editIndiceComportamentoPoco->text().isEmpty()) {
+        QMessageBox::warning(nullptr, "Aviso", "Preencha o Indice de Consistencia e de Comportamento.");
+    } else if (ui->editIndiceConsistenciaPotenciaPoco->text().isEmpty()) {
         QMessageBox::warning(nullptr, "Aviso", "Preencha o Indice de Consistencia.");
+    } else if (ui->editIndiceComportamentoPoco->text().isEmpty()) {
+        QMessageBox::warning(nullptr, "Aviso", "Preencha o Indice de Comportamento");
     } else {
-        // se estiver preenchido, converte pra double
+        // converte os valores digitados para numeros reais
         double indiceConsistencia = ui->editIndiceConsistenciaPotenciaPoco->text().toDouble();
+        double indiceComportamento = ui->editIndiceComportamentoPoco->text().toDouble();
 
         // cria o modelo da lei da potencia com o indice fornecido
-        modeloPotencia = std::make_shared<CModeloPotencia>(poco.get(), indiceConsistencia);
+        modeloPotencia = std::make_shared<CModeloPotencia>(poco.get(), indiceConsistencia, indiceComportamento);
 
         // atualiza os campos da interface com os valores calculados no espaco do tubo
         ui->lbnVelocidadePocoPotencia->setText(QString::number(modeloPotencia->VMediaPoco()));
         ui->lbnReynoldsPocoPotencia->setText(QString::number(modeloPotencia->ReynoldsPoco()));
         ui->lbnReynoldsCriticoPocoPotencia->setText(QString::number(modeloPotencia->ReynoldsCriticoPoco()));
         ui->lbnTipoFluxoPocoPotencia->setText(QString::fromStdString(modeloPotencia->FluxoPoco()));
-        ui->lbnPerdaFriccionalPocoPotencia->setText(QString::number(modeloPotencia->CalcularPerdaPorFriccaoPoco()));
+        ui->lbnPerdaFriccionalPocoPotencia->setText(QString::number(modeloPotencia->CalcularPerdaPorFriccaoPoco(), 'f', 6));
     }
 }
 
 void CSimuladorReologico::on_btnCalcularModeloPotenciaAnular_clicked()
 {
-    // verifica se o campo do indice de consistencia do anular esta vazio
-    if (ui->editIndiceConsistenciaPotenciaAnular->text().isEmpty()) {
+    if (ui->editIndiceConsistenciaPotenciaAnular->text().isEmpty() && ui->editIndiceComportamentoPoco->text().isEmpty()) {
+        QMessageBox::warning(nullptr, "Aviso", "Preencha o Indice de Consistencia e de Comportamento.");
+    } else if (ui->editIndiceConsistenciaPotenciaAnular->text().isEmpty()) {
         QMessageBox::warning(nullptr, "Aviso", "Preencha o Indice de Consistencia.");
+    } else if (ui->editIndiceComportamentoAnular->text().isEmpty()) {
+        QMessageBox::warning(nullptr, "Aviso", "Preencha o Indice de Comportamento");
     } else {
-        // se estiver preenchido, converte pra double
+        // converte os valores digitados para numeros reais
         double indiceConsistencia = ui->editIndiceConsistenciaPotenciaAnular->text().toDouble();
+        double indiceComportamento = ui->editIndiceComportamentoAnular->text().toDouble();
 
-        // cria o modelo da lei da potencia com os dados do poco
-        modeloPotencia = std::make_shared<CModeloPotencia>(poco.get(), indiceConsistencia);
+        // cria o modelo da lei da potencia com o indice fornecido
+        modeloPotencia = std::make_shared<CModeloPotencia>(poco.get(), indiceConsistencia, indiceComportamento);
 
         // atualiza os campos com os resultados dos calculos no anular
         ui->lbnVelocidadeAnularPotencia->setText(QString::number(modeloPotencia->VMediaAnular()));
         ui->lbnReynoldsAnularPotencia->setText(QString::number(modeloPotencia->ReynoldsAnular()));
         ui->lbnReynoldsCriticoAnularPotencia->setText(QString::number(modeloPotencia->ReynoldsCriticoAnular()));
         ui->lbnTipoFluxoAnularPotencia->setText(QString::fromStdString(modeloPotencia->FluxoAnular()));
-        ui->lbnPerdaFriccionalAnularPotencia->setText(QString::number(modeloPotencia->CalcularPerdaPorFriccaoAnular()));
+        ui->lbnPerdaFriccionalAnularPotencia->setText(QString::number(modeloPotencia->CalcularPerdaPorFriccaoAnular(), 'f', 6));
     }
 }
 

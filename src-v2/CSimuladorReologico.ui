@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1264</width>
-    <height>695</height>
+    <height>711</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,7 +39,7 @@ border-radius: 4px;
        <x>10</x>
        <y>40</y>
        <width>261</width>
-       <height>307</height>
+       <height>301</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
@@ -483,7 +483,7 @@ border-radius: 4px;
       <x>10</x>
       <y>410</y>
       <width>281</width>
-      <height>231</height>
+      <height>241</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -521,7 +521,7 @@ border-radius: 4px;
        <x>10</x>
        <y>40</y>
        <width>261</width>
-       <height>171</height>
+       <height>191</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_14">
@@ -624,7 +624,7 @@ border-radius: 5px;</string>
       <x>310</x>
       <y>340</y>
       <width>641</width>
-      <height>301</height>
+      <height>311</height>
      </rect>
     </property>
     <property name="font">
@@ -981,7 +981,7 @@ QTabBar::tab:selected {
     </widget>
     <widget class="QWidget" name="tab_9">
      <attribute name="title">
-      <string>           Modelo de Bigham            </string>
+      <string>           Modelo de Bingham            </string>
      </attribute>
      <widget class="QLabel" name="label_8">
       <property name="geometry">
@@ -1027,7 +1027,7 @@ QTabBar::tab:selected {
         <x>10</x>
         <y>31</y>
         <width>283</width>
-        <height>255</height>
+        <height>241</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_5">
@@ -1274,7 +1274,7 @@ border-radius: 5px;</string>
         <x>320</x>
         <y>30</y>
         <width>283</width>
-        <height>255</height>
+        <height>241</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_6">
@@ -1568,62 +1568,7 @@ border-radius: 5px;</string>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_7">
-       <item row="5" column="1">
-        <widget class="QLabel" name="lbnPerdaFriccionalPocoPotencia">
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string>-</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="lbnTituloPerdaFriccionalPocoPotencia">
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Perda Friccional no Poço (psi/ft)</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="lbnVelocidadePocoPotencia">
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string>-</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLabel" name="lbnTipoFluxoPocoPotencia">
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string>-</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
+       <item row="3" column="0">
         <widget class="QLabel" name="lbnTituloCriticoPocoPotencia">
          <property name="font">
           <font>
@@ -1639,23 +1584,7 @@ border-radius: 5px;</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="lbnTituloReynoldsPocoPotencia">
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Reynolds no Poço</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
+       <item row="2" column="0">
         <widget class="QLabel" name="lbnTituloVelocidadePocoPotencia">
          <property name="font">
           <font>
@@ -1671,7 +1600,20 @@ border-radius: 5px;</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
+       <item row="5" column="1">
+        <widget class="QLabel" name="lbnTipoFluxoPocoPotencia">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>-</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
         <widget class="QLabel" name="lbnReynoldsPocoPotencia">
          <property name="styleSheet">
           <string notr="true"/>
@@ -1684,8 +1626,8 @@ border-radius: 5px;</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="lbnTituloTipoFluxoPocoPotencia">
+       <item row="6" column="0">
+        <widget class="QLabel" name="lbnTituloPerdaFriccionalPocoPotencia">
          <property name="font">
           <font>
            <pointsize>9</pointsize>
@@ -1693,14 +1635,23 @@ border-radius: 5px;</string>
           </font>
          </property>
          <property name="text">
-          <string>Tipo de Fluxo no Poço</string>
+          <string>Perda Friccional no Poço (psi/ft)</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="editIndiceConsistenciaPotenciaPoco">
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+
+border-radius: 5px;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
         <widget class="QLabel" name="lbnReynoldsCriticoPocoPotencia">
          <property name="styleSheet">
           <string notr="true"/>
@@ -1713,8 +1664,21 @@ border-radius: 5px;</string>
          </property>
         </widget>
        </item>
-       <item row="6" column="0" colspan="2">
-        <widget class="QPushButton" name="btnCalcularModeloPotenciaPoco">
+       <item row="6" column="1">
+        <widget class="QLabel" name="lbnPerdaFriccionalPocoPotencia">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>-</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="lbnTituloTipoFluxoPocoPotencia">
          <property name="font">
           <font>
            <pointsize>9</pointsize>
@@ -1722,7 +1686,10 @@ border-radius: 5px;</string>
           </font>
          </property>
          <property name="text">
-          <string>Calcular</string>
+          <string>Tipo de Fluxo no Poço</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -1742,8 +1709,66 @@ border-radius: 5px;</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="editIndiceConsistenciaPotenciaPoco">
+       <item row="7" column="0" colspan="2">
+        <widget class="QPushButton" name="btnCalcularModeloPotenciaPoco">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Calcular</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="lbnVelocidadePocoPotencia">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>-</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="lbnTituloReynoldsPocoPotencia">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Reynolds no Poço</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lbnTituloIndiceComportamentoPoco">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Indice de comportamento</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="editIndiceComportamentoPoco">
          <property name="styleSheet">
           <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
 
@@ -1763,8 +1788,8 @@ border-radius: 5px;</string>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_8">
-       <item row="4" column="1">
-        <widget class="QLabel" name="lbnTipoFluxoAnularPotencia">
+       <item row="6" column="1">
+        <widget class="QLabel" name="lbnPerdaFriccionalAnularPotencia">
          <property name="styleSheet">
           <string notr="true"/>
          </property>
@@ -1777,38 +1802,6 @@ border-radius: 5px;</string>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QLabel" name="lbnTituloCriticoAnularPotencia">
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Reynolds Crítico</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="lbnTituloReynoldsAnularPotencia">
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Reynolds no Anular</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
         <widget class="QLabel" name="lbnTituloVelocidadeAnularPotencia">
          <property name="font">
           <font>
@@ -1824,7 +1817,7 @@ border-radius: 5px;</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
+       <item row="4" column="1">
         <widget class="QLabel" name="lbnReynoldsAnularPotencia">
          <property name="styleSheet">
           <string notr="true"/>
@@ -1838,7 +1831,7 @@ border-radius: 5px;</string>
         </widget>
        </item>
        <item row="5" column="0">
-        <widget class="QLabel" name="lbnTituloPerdaFriccionalAnularPotencia">
+        <widget class="QLabel" name="lbnTituloTipoFluxoAnularPotencia">
          <property name="font">
           <font>
            <pointsize>9</pointsize>
@@ -1846,14 +1839,30 @@ border-radius: 5px;</string>
           </font>
          </property>
          <property name="text">
-          <string>Perda Friccional no Anular (psi/ft)</string>
+          <string>Tipo de Fluxo no Anular</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
+       <item row="4" column="0">
+        <widget class="QLabel" name="lbnTituloReynoldsAnularPotencia">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Reynolds no Anular</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
         <widget class="QLabel" name="lbnVelocidadeAnularPotencia">
          <property name="styleSheet">
           <string notr="true"/>
@@ -1882,33 +1891,23 @@ border-radius: 5px;</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="1">
-        <widget class="QLabel" name="lbnPerdaFriccionalAnularPotencia">
-         <property name="styleSheet">
-          <string notr="true"/>
+       <item row="6" column="0">
+        <widget class="QLabel" name="lbnTituloPerdaFriccionalAnularPotencia">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>false</bold>
+          </font>
          </property>
          <property name="text">
-          <string>-</string>
+          <string>Perda Friccional no Anular (psi/ft)</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
-        <widget class="QLabel" name="lbnReynoldsCriticoAnularPotencia">
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string>-</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0" colspan="2">
+       <item row="7" column="0" colspan="2">
         <widget class="QPushButton" name="btnCalcularModeloPotenciaAnular">
          <property name="font">
           <font>
@@ -1921,6 +1920,22 @@ border-radius: 5px;</string>
          </property>
         </widget>
        </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="lbnTituloCriticoAnularPotencia">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Reynolds Crítico</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="editIndiceConsistenciaPotenciaAnular">
          <property name="styleSheet">
@@ -1930,8 +1945,34 @@ border-radius: 5px;</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="lbnTituloTipoFluxoAnularPotencia">
+       <item row="5" column="1">
+        <widget class="QLabel" name="lbnTipoFluxoAnularPotencia">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>-</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="lbnReynoldsCriticoAnularPotencia">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>-</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lbnTituloIndiceComportamentoAnular">
          <property name="font">
           <font>
            <pointsize>9</pointsize>
@@ -1939,10 +1980,19 @@ border-radius: 5px;</string>
           </font>
          </property>
          <property name="text">
-          <string>Tipo de Fluxo no Anular</string>
+          <string>Indice de comportamento</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="editIndiceComportamentoAnular">
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid #dddddd;  /* borda cinza bem leve */
+
+border-radius: 5px;</string>
          </property>
         </widget>
        </item>
@@ -1956,7 +2006,7 @@ border-radius: 5px;</string>
       <x>970</x>
       <y>60</y>
       <width>281</width>
-      <height>581</height>
+      <height>591</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1975,7 +2025,7 @@ border-radius: 4px;
        <x>10</x>
        <y>40</y>
        <width>261</width>
-       <height>531</height>
+       <height>541</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -2183,10 +2233,13 @@ border-radius: 4px;
   <tabstop>editDiametroOD</tabstop>
   <tabstop>editDiametroID</tabstop>
   <tabstop>editVazao</tabstop>
-  <tabstop>btnAdicionarFluido</tabstop>
-  <tabstop>btnRemoverFluido</tabstop>
   <tabstop>editProfundidadePressaoHidroestatica</tabstop>
   <tabstop>btnCalcularPressaoHidroestatica</tabstop>
+  <tabstop>btnExibirGraficoPressaoHidroestatica</tabstop>
+  <tabstop>tblFluidos</tabstop>
+  <tabstop>btnAdicionarFluido</tabstop>
+  <tabstop>btnRemoverFluido</tabstop>
+  <tabstop>tabWidget_4</tabstop>
   <tabstop>btnCalcularModeloNewtonianoPoco</tabstop>
   <tabstop>btnCalcularModeloNewtonianoAnular</tabstop>
   <tabstop>editPontoEscoamentoPoco</tabstop>
@@ -2196,11 +2249,11 @@ border-radius: 4px;
   <tabstop>editViscosidadePlasticaAnular</tabstop>
   <tabstop>btnCalcularModeloBighamAnular</tabstop>
   <tabstop>editIndiceConsistenciaPotenciaPoco</tabstop>
+  <tabstop>editIndiceComportamentoPoco</tabstop>
   <tabstop>btnCalcularModeloPotenciaPoco</tabstop>
   <tabstop>editIndiceConsistenciaPotenciaAnular</tabstop>
+  <tabstop>editIndiceComportamentoAnular</tabstop>
   <tabstop>btnCalcularModeloPotenciaAnular</tabstop>
-  <tabstop>tabWidget_4</tabstop>
-  <tabstop>tblFluidos</tabstop>
  </tabstops>
  <resources/>
  <connections/>

@@ -161,34 +161,38 @@ public:
     QLabel *label_5;
     QWidget *gridLayoutWidget_7;
     QGridLayout *gridLayout_7;
-    QLabel *lbnPerdaFriccionalPocoPotencia;
-    QLabel *lbnTituloPerdaFriccionalPocoPotencia;
-    QLabel *lbnVelocidadePocoPotencia;
-    QLabel *lbnTipoFluxoPocoPotencia;
     QLabel *lbnTituloCriticoPocoPotencia;
-    QLabel *lbnTituloReynoldsPocoPotencia;
     QLabel *lbnTituloVelocidadePocoPotencia;
+    QLabel *lbnTipoFluxoPocoPotencia;
     QLabel *lbnReynoldsPocoPotencia;
-    QLabel *lbnTituloTipoFluxoPocoPotencia;
-    QLabel *lbnReynoldsCriticoPocoPotencia;
-    QPushButton *btnCalcularModeloPotenciaPoco;
-    QLabel *lbnTituloIndiceConsistenciaPoco;
+    QLabel *lbnTituloPerdaFriccionalPocoPotencia;
     QLineEdit *editIndiceConsistenciaPotenciaPoco;
+    QLabel *lbnReynoldsCriticoPocoPotencia;
+    QLabel *lbnPerdaFriccionalPocoPotencia;
+    QLabel *lbnTituloTipoFluxoPocoPotencia;
+    QLabel *lbnTituloIndiceConsistenciaPoco;
+    QPushButton *btnCalcularModeloPotenciaPoco;
+    QLabel *lbnVelocidadePocoPotencia;
+    QLabel *lbnTituloReynoldsPocoPotencia;
+    QLabel *lbnTituloIndiceComportamentoPoco;
+    QLineEdit *editIndiceComportamentoPoco;
     QWidget *gridLayoutWidget_8;
     QGridLayout *gridLayout_8;
-    QLabel *lbnTipoFluxoAnularPotencia;
-    QLabel *lbnTituloCriticoAnularPotencia;
-    QLabel *lbnTituloReynoldsAnularPotencia;
+    QLabel *lbnPerdaFriccionalAnularPotencia;
     QLabel *lbnTituloVelocidadeAnularPotencia;
     QLabel *lbnReynoldsAnularPotencia;
-    QLabel *lbnTituloPerdaFriccionalAnularPotencia;
+    QLabel *lbnTituloTipoFluxoAnularPotencia;
+    QLabel *lbnTituloReynoldsAnularPotencia;
     QLabel *lbnVelocidadeAnularPotencia;
     QLabel *lbnTituloIndiceConsistenciaAnular;
-    QLabel *lbnPerdaFriccionalAnularPotencia;
-    QLabel *lbnReynoldsCriticoAnularPotencia;
+    QLabel *lbnTituloPerdaFriccionalAnularPotencia;
     QPushButton *btnCalcularModeloPotenciaAnular;
+    QLabel *lbnTituloCriticoAnularPotencia;
     QLineEdit *editIndiceConsistenciaPotenciaAnular;
-    QLabel *lbnTituloTipoFluxoAnularPotencia;
+    QLabel *lbnTipoFluxoAnularPotencia;
+    QLabel *lbnReynoldsCriticoAnularPotencia;
+    QLabel *lbnTituloIndiceComportamentoAnular;
+    QLineEdit *editIndiceComportamentoAnular;
     QGroupBox *groupBox_4;
     QCustomPlot *customPlotPoco;
     QLabel *label_12;
@@ -206,7 +210,7 @@ public:
     {
         if (CSimuladorReologico->objectName().isEmpty())
             CSimuladorReologico->setObjectName("CSimuladorReologico");
-        CSimuladorReologico->resize(1264, 695);
+        CSimuladorReologico->resize(1264, 711);
         actionNova_Simula_o = new QAction(CSimuladorReologico);
         actionNova_Simula_o->setObjectName("actionNova_Simula_o");
         QIcon icon(QIcon::fromTheme(QIcon::ThemeIcon::DocumentNew));
@@ -249,7 +253,7 @@ public:
         groupBox->setTitle(QString::fromUtf8(""));
         gridLayoutWidget = new QWidget(groupBox);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(10, 40, 261, 307));
+        gridLayoutWidget->setGeometry(QRect(10, 40, 261, 301));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -469,7 +473,7 @@ public:
         label_2->setFont(font1);
         groupBox_2 = new QGroupBox(centralwidget);
         groupBox_2->setObjectName("groupBox_2");
-        groupBox_2->setGeometry(QRect(10, 410, 281, 231));
+        groupBox_2->setGeometry(QRect(10, 410, 281, 241));
         groupBox_2->setStyleSheet(QString::fromUtf8("QGroupBox{\n"
 "background-color: rgb(255, 255, 255);\n"
 "border: none;\n"
@@ -481,7 +485,7 @@ public:
         label_3->setFont(font1);
         gridLayoutWidget_14 = new QWidget(groupBox_2);
         gridLayoutWidget_14->setObjectName("gridLayoutWidget_14");
-        gridLayoutWidget_14->setGeometry(QRect(10, 40, 261, 171));
+        gridLayoutWidget_14->setGeometry(QRect(10, 40, 261, 191));
         gridLayout_14 = new QGridLayout(gridLayoutWidget_14);
         gridLayout_14->setObjectName("gridLayout_14");
         gridLayout_14->setContentsMargins(0, 0, 0, 0);
@@ -533,7 +537,7 @@ public:
 
         tabWidget_4 = new QTabWidget(centralwidget);
         tabWidget_4->setObjectName("tabWidget_4");
-        tabWidget_4->setGeometry(QRect(310, 340, 641, 301));
+        tabWidget_4->setGeometry(QRect(310, 340, 641, 311));
         QFont font2;
         font2.setPointSize(9);
         font2.setBold(true);
@@ -709,7 +713,7 @@ public:
         label_9->setFont(font1);
         gridLayoutWidget_5 = new QWidget(tab_9);
         gridLayoutWidget_5->setObjectName("gridLayoutWidget_5");
-        gridLayoutWidget_5->setGeometry(QRect(10, 31, 283, 255));
+        gridLayoutWidget_5->setGeometry(QRect(10, 31, 283, 241));
         gridLayout_5 = new QGridLayout(gridLayoutWidget_5);
         gridLayout_5->setObjectName("gridLayout_5");
         gridLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -833,7 +837,7 @@ public:
 
         gridLayoutWidget_6 = new QWidget(tab_9);
         gridLayoutWidget_6->setObjectName("gridLayoutWidget_6");
-        gridLayoutWidget_6->setGeometry(QRect(320, 30, 283, 255));
+        gridLayoutWidget_6->setGeometry(QRect(320, 30, 283, 241));
         gridLayout_6 = new QGridLayout(gridLayoutWidget_6);
         gridLayout_6->setObjectName("gridLayout_6");
         gridLayout_6->setContentsMargins(0, 0, 0, 0);
@@ -972,88 +976,40 @@ public:
         gridLayout_7 = new QGridLayout(gridLayoutWidget_7);
         gridLayout_7->setObjectName("gridLayout_7");
         gridLayout_7->setContentsMargins(0, 0, 0, 0);
-        lbnPerdaFriccionalPocoPotencia = new QLabel(gridLayoutWidget_7);
-        lbnPerdaFriccionalPocoPotencia->setObjectName("lbnPerdaFriccionalPocoPotencia");
-        lbnPerdaFriccionalPocoPotencia->setStyleSheet(QString::fromUtf8(""));
-        lbnPerdaFriccionalPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout_7->addWidget(lbnPerdaFriccionalPocoPotencia, 5, 1, 1, 1);
-
-        lbnTituloPerdaFriccionalPocoPotencia = new QLabel(gridLayoutWidget_7);
-        lbnTituloPerdaFriccionalPocoPotencia->setObjectName("lbnTituloPerdaFriccionalPocoPotencia");
-        lbnTituloPerdaFriccionalPocoPotencia->setFont(font3);
-        lbnTituloPerdaFriccionalPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout_7->addWidget(lbnTituloPerdaFriccionalPocoPotencia, 5, 0, 1, 1);
-
-        lbnVelocidadePocoPotencia = new QLabel(gridLayoutWidget_7);
-        lbnVelocidadePocoPotencia->setObjectName("lbnVelocidadePocoPotencia");
-        lbnVelocidadePocoPotencia->setStyleSheet(QString::fromUtf8(""));
-        lbnVelocidadePocoPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout_7->addWidget(lbnVelocidadePocoPotencia, 1, 1, 1, 1);
-
-        lbnTipoFluxoPocoPotencia = new QLabel(gridLayoutWidget_7);
-        lbnTipoFluxoPocoPotencia->setObjectName("lbnTipoFluxoPocoPotencia");
-        lbnTipoFluxoPocoPotencia->setStyleSheet(QString::fromUtf8(""));
-        lbnTipoFluxoPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout_7->addWidget(lbnTipoFluxoPocoPotencia, 4, 1, 1, 1);
-
         lbnTituloCriticoPocoPotencia = new QLabel(gridLayoutWidget_7);
         lbnTituloCriticoPocoPotencia->setObjectName("lbnTituloCriticoPocoPotencia");
         lbnTituloCriticoPocoPotencia->setFont(font3);
         lbnTituloCriticoPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
-        gridLayout_7->addWidget(lbnTituloCriticoPocoPotencia, 2, 0, 1, 1);
-
-        lbnTituloReynoldsPocoPotencia = new QLabel(gridLayoutWidget_7);
-        lbnTituloReynoldsPocoPotencia->setObjectName("lbnTituloReynoldsPocoPotencia");
-        lbnTituloReynoldsPocoPotencia->setFont(font3);
-        lbnTituloReynoldsPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout_7->addWidget(lbnTituloReynoldsPocoPotencia, 3, 0, 1, 1);
+        gridLayout_7->addWidget(lbnTituloCriticoPocoPotencia, 3, 0, 1, 1);
 
         lbnTituloVelocidadePocoPotencia = new QLabel(gridLayoutWidget_7);
         lbnTituloVelocidadePocoPotencia->setObjectName("lbnTituloVelocidadePocoPotencia");
         lbnTituloVelocidadePocoPotencia->setFont(font3);
         lbnTituloVelocidadePocoPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
-        gridLayout_7->addWidget(lbnTituloVelocidadePocoPotencia, 1, 0, 1, 1);
+        gridLayout_7->addWidget(lbnTituloVelocidadePocoPotencia, 2, 0, 1, 1);
+
+        lbnTipoFluxoPocoPotencia = new QLabel(gridLayoutWidget_7);
+        lbnTipoFluxoPocoPotencia->setObjectName("lbnTipoFluxoPocoPotencia");
+        lbnTipoFluxoPocoPotencia->setStyleSheet(QString::fromUtf8(""));
+        lbnTipoFluxoPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        gridLayout_7->addWidget(lbnTipoFluxoPocoPotencia, 5, 1, 1, 1);
 
         lbnReynoldsPocoPotencia = new QLabel(gridLayoutWidget_7);
         lbnReynoldsPocoPotencia->setObjectName("lbnReynoldsPocoPotencia");
         lbnReynoldsPocoPotencia->setStyleSheet(QString::fromUtf8(""));
         lbnReynoldsPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_7->addWidget(lbnReynoldsPocoPotencia, 3, 1, 1, 1);
+        gridLayout_7->addWidget(lbnReynoldsPocoPotencia, 4, 1, 1, 1);
 
-        lbnTituloTipoFluxoPocoPotencia = new QLabel(gridLayoutWidget_7);
-        lbnTituloTipoFluxoPocoPotencia->setObjectName("lbnTituloTipoFluxoPocoPotencia");
-        lbnTituloTipoFluxoPocoPotencia->setFont(font3);
-        lbnTituloTipoFluxoPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+        lbnTituloPerdaFriccionalPocoPotencia = new QLabel(gridLayoutWidget_7);
+        lbnTituloPerdaFriccionalPocoPotencia->setObjectName("lbnTituloPerdaFriccionalPocoPotencia");
+        lbnTituloPerdaFriccionalPocoPotencia->setFont(font3);
+        lbnTituloPerdaFriccionalPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
-        gridLayout_7->addWidget(lbnTituloTipoFluxoPocoPotencia, 4, 0, 1, 1);
-
-        lbnReynoldsCriticoPocoPotencia = new QLabel(gridLayoutWidget_7);
-        lbnReynoldsCriticoPocoPotencia->setObjectName("lbnReynoldsCriticoPocoPotencia");
-        lbnReynoldsCriticoPocoPotencia->setStyleSheet(QString::fromUtf8(""));
-        lbnReynoldsCriticoPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout_7->addWidget(lbnReynoldsCriticoPocoPotencia, 2, 1, 1, 1);
-
-        btnCalcularModeloPotenciaPoco = new QPushButton(gridLayoutWidget_7);
-        btnCalcularModeloPotenciaPoco->setObjectName("btnCalcularModeloPotenciaPoco");
-        btnCalcularModeloPotenciaPoco->setFont(font3);
-
-        gridLayout_7->addWidget(btnCalcularModeloPotenciaPoco, 6, 0, 1, 2);
-
-        lbnTituloIndiceConsistenciaPoco = new QLabel(gridLayoutWidget_7);
-        lbnTituloIndiceConsistenciaPoco->setObjectName("lbnTituloIndiceConsistenciaPoco");
-        lbnTituloIndiceConsistenciaPoco->setFont(font3);
-        lbnTituloIndiceConsistenciaPoco->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout_7->addWidget(lbnTituloIndiceConsistenciaPoco, 0, 0, 1, 1);
+        gridLayout_7->addWidget(lbnTituloPerdaFriccionalPocoPotencia, 6, 0, 1, 1);
 
         editIndiceConsistenciaPotenciaPoco = new QLineEdit(gridLayoutWidget_7);
         editIndiceConsistenciaPotenciaPoco->setObjectName("editIndiceConsistenciaPotenciaPoco");
@@ -1063,60 +1019,116 @@ public:
 
         gridLayout_7->addWidget(editIndiceConsistenciaPotenciaPoco, 0, 1, 1, 1);
 
+        lbnReynoldsCriticoPocoPotencia = new QLabel(gridLayoutWidget_7);
+        lbnReynoldsCriticoPocoPotencia->setObjectName("lbnReynoldsCriticoPocoPotencia");
+        lbnReynoldsCriticoPocoPotencia->setStyleSheet(QString::fromUtf8(""));
+        lbnReynoldsCriticoPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        gridLayout_7->addWidget(lbnReynoldsCriticoPocoPotencia, 3, 1, 1, 1);
+
+        lbnPerdaFriccionalPocoPotencia = new QLabel(gridLayoutWidget_7);
+        lbnPerdaFriccionalPocoPotencia->setObjectName("lbnPerdaFriccionalPocoPotencia");
+        lbnPerdaFriccionalPocoPotencia->setStyleSheet(QString::fromUtf8(""));
+        lbnPerdaFriccionalPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        gridLayout_7->addWidget(lbnPerdaFriccionalPocoPotencia, 6, 1, 1, 1);
+
+        lbnTituloTipoFluxoPocoPotencia = new QLabel(gridLayoutWidget_7);
+        lbnTituloTipoFluxoPocoPotencia->setObjectName("lbnTituloTipoFluxoPocoPotencia");
+        lbnTituloTipoFluxoPocoPotencia->setFont(font3);
+        lbnTituloTipoFluxoPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout_7->addWidget(lbnTituloTipoFluxoPocoPotencia, 5, 0, 1, 1);
+
+        lbnTituloIndiceConsistenciaPoco = new QLabel(gridLayoutWidget_7);
+        lbnTituloIndiceConsistenciaPoco->setObjectName("lbnTituloIndiceConsistenciaPoco");
+        lbnTituloIndiceConsistenciaPoco->setFont(font3);
+        lbnTituloIndiceConsistenciaPoco->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout_7->addWidget(lbnTituloIndiceConsistenciaPoco, 0, 0, 1, 1);
+
+        btnCalcularModeloPotenciaPoco = new QPushButton(gridLayoutWidget_7);
+        btnCalcularModeloPotenciaPoco->setObjectName("btnCalcularModeloPotenciaPoco");
+        btnCalcularModeloPotenciaPoco->setFont(font3);
+
+        gridLayout_7->addWidget(btnCalcularModeloPotenciaPoco, 7, 0, 1, 2);
+
+        lbnVelocidadePocoPotencia = new QLabel(gridLayoutWidget_7);
+        lbnVelocidadePocoPotencia->setObjectName("lbnVelocidadePocoPotencia");
+        lbnVelocidadePocoPotencia->setStyleSheet(QString::fromUtf8(""));
+        lbnVelocidadePocoPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        gridLayout_7->addWidget(lbnVelocidadePocoPotencia, 2, 1, 1, 1);
+
+        lbnTituloReynoldsPocoPotencia = new QLabel(gridLayoutWidget_7);
+        lbnTituloReynoldsPocoPotencia->setObjectName("lbnTituloReynoldsPocoPotencia");
+        lbnTituloReynoldsPocoPotencia->setFont(font3);
+        lbnTituloReynoldsPocoPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout_7->addWidget(lbnTituloReynoldsPocoPotencia, 4, 0, 1, 1);
+
+        lbnTituloIndiceComportamentoPoco = new QLabel(gridLayoutWidget_7);
+        lbnTituloIndiceComportamentoPoco->setObjectName("lbnTituloIndiceComportamentoPoco");
+        lbnTituloIndiceComportamentoPoco->setFont(font3);
+        lbnTituloIndiceComportamentoPoco->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout_7->addWidget(lbnTituloIndiceComportamentoPoco, 1, 0, 1, 1);
+
+        editIndiceComportamentoPoco = new QLineEdit(gridLayoutWidget_7);
+        editIndiceComportamentoPoco->setObjectName("editIndiceComportamentoPoco");
+        editIndiceComportamentoPoco->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
+"\n"
+"border-radius: 5px;"));
+
+        gridLayout_7->addWidget(editIndiceComportamentoPoco, 1, 1, 1, 1);
+
         gridLayoutWidget_8 = new QWidget(tab_8);
         gridLayoutWidget_8->setObjectName("gridLayoutWidget_8");
         gridLayoutWidget_8->setGeometry(QRect(330, 40, 281, 201));
         gridLayout_8 = new QGridLayout(gridLayoutWidget_8);
         gridLayout_8->setObjectName("gridLayout_8");
         gridLayout_8->setContentsMargins(0, 0, 0, 0);
-        lbnTipoFluxoAnularPotencia = new QLabel(gridLayoutWidget_8);
-        lbnTipoFluxoAnularPotencia->setObjectName("lbnTipoFluxoAnularPotencia");
-        lbnTipoFluxoAnularPotencia->setStyleSheet(QString::fromUtf8(""));
-        lbnTipoFluxoAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        lbnPerdaFriccionalAnularPotencia = new QLabel(gridLayoutWidget_8);
+        lbnPerdaFriccionalAnularPotencia->setObjectName("lbnPerdaFriccionalAnularPotencia");
+        lbnPerdaFriccionalAnularPotencia->setStyleSheet(QString::fromUtf8(""));
+        lbnPerdaFriccionalAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_8->addWidget(lbnTipoFluxoAnularPotencia, 4, 1, 1, 1);
-
-        lbnTituloCriticoAnularPotencia = new QLabel(gridLayoutWidget_8);
-        lbnTituloCriticoAnularPotencia->setObjectName("lbnTituloCriticoAnularPotencia");
-        lbnTituloCriticoAnularPotencia->setFont(font3);
-        lbnTituloCriticoAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout_8->addWidget(lbnTituloCriticoAnularPotencia, 2, 0, 1, 1);
-
-        lbnTituloReynoldsAnularPotencia = new QLabel(gridLayoutWidget_8);
-        lbnTituloReynoldsAnularPotencia->setObjectName("lbnTituloReynoldsAnularPotencia");
-        lbnTituloReynoldsAnularPotencia->setFont(font3);
-        lbnTituloReynoldsAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-
-        gridLayout_8->addWidget(lbnTituloReynoldsAnularPotencia, 3, 0, 1, 1);
+        gridLayout_8->addWidget(lbnPerdaFriccionalAnularPotencia, 6, 1, 1, 1);
 
         lbnTituloVelocidadeAnularPotencia = new QLabel(gridLayoutWidget_8);
         lbnTituloVelocidadeAnularPotencia->setObjectName("lbnTituloVelocidadeAnularPotencia");
         lbnTituloVelocidadeAnularPotencia->setFont(font3);
         lbnTituloVelocidadeAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
-        gridLayout_8->addWidget(lbnTituloVelocidadeAnularPotencia, 1, 0, 1, 1);
+        gridLayout_8->addWidget(lbnTituloVelocidadeAnularPotencia, 2, 0, 1, 1);
 
         lbnReynoldsAnularPotencia = new QLabel(gridLayoutWidget_8);
         lbnReynoldsAnularPotencia->setObjectName("lbnReynoldsAnularPotencia");
         lbnReynoldsAnularPotencia->setStyleSheet(QString::fromUtf8(""));
         lbnReynoldsAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_8->addWidget(lbnReynoldsAnularPotencia, 3, 1, 1, 1);
+        gridLayout_8->addWidget(lbnReynoldsAnularPotencia, 4, 1, 1, 1);
 
-        lbnTituloPerdaFriccionalAnularPotencia = new QLabel(gridLayoutWidget_8);
-        lbnTituloPerdaFriccionalAnularPotencia->setObjectName("lbnTituloPerdaFriccionalAnularPotencia");
-        lbnTituloPerdaFriccionalAnularPotencia->setFont(font3);
-        lbnTituloPerdaFriccionalAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+        lbnTituloTipoFluxoAnularPotencia = new QLabel(gridLayoutWidget_8);
+        lbnTituloTipoFluxoAnularPotencia->setObjectName("lbnTituloTipoFluxoAnularPotencia");
+        lbnTituloTipoFluxoAnularPotencia->setFont(font3);
+        lbnTituloTipoFluxoAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
-        gridLayout_8->addWidget(lbnTituloPerdaFriccionalAnularPotencia, 5, 0, 1, 1);
+        gridLayout_8->addWidget(lbnTituloTipoFluxoAnularPotencia, 5, 0, 1, 1);
+
+        lbnTituloReynoldsAnularPotencia = new QLabel(gridLayoutWidget_8);
+        lbnTituloReynoldsAnularPotencia->setObjectName("lbnTituloReynoldsAnularPotencia");
+        lbnTituloReynoldsAnularPotencia->setFont(font3);
+        lbnTituloReynoldsAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout_8->addWidget(lbnTituloReynoldsAnularPotencia, 4, 0, 1, 1);
 
         lbnVelocidadeAnularPotencia = new QLabel(gridLayoutWidget_8);
         lbnVelocidadeAnularPotencia->setObjectName("lbnVelocidadeAnularPotencia");
         lbnVelocidadeAnularPotencia->setStyleSheet(QString::fromUtf8(""));
         lbnVelocidadeAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_8->addWidget(lbnVelocidadeAnularPotencia, 1, 1, 1, 1);
+        gridLayout_8->addWidget(lbnVelocidadeAnularPotencia, 2, 1, 1, 1);
 
         lbnTituloIndiceConsistenciaAnular = new QLabel(gridLayoutWidget_8);
         lbnTituloIndiceConsistenciaAnular->setObjectName("lbnTituloIndiceConsistenciaAnular");
@@ -1125,25 +1137,25 @@ public:
 
         gridLayout_8->addWidget(lbnTituloIndiceConsistenciaAnular, 0, 0, 1, 1);
 
-        lbnPerdaFriccionalAnularPotencia = new QLabel(gridLayoutWidget_8);
-        lbnPerdaFriccionalAnularPotencia->setObjectName("lbnPerdaFriccionalAnularPotencia");
-        lbnPerdaFriccionalAnularPotencia->setStyleSheet(QString::fromUtf8(""));
-        lbnPerdaFriccionalAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        lbnTituloPerdaFriccionalAnularPotencia = new QLabel(gridLayoutWidget_8);
+        lbnTituloPerdaFriccionalAnularPotencia->setObjectName("lbnTituloPerdaFriccionalAnularPotencia");
+        lbnTituloPerdaFriccionalAnularPotencia->setFont(font3);
+        lbnTituloPerdaFriccionalAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
-        gridLayout_8->addWidget(lbnPerdaFriccionalAnularPotencia, 5, 1, 1, 1);
-
-        lbnReynoldsCriticoAnularPotencia = new QLabel(gridLayoutWidget_8);
-        lbnReynoldsCriticoAnularPotencia->setObjectName("lbnReynoldsCriticoAnularPotencia");
-        lbnReynoldsCriticoAnularPotencia->setStyleSheet(QString::fromUtf8(""));
-        lbnReynoldsCriticoAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout_8->addWidget(lbnReynoldsCriticoAnularPotencia, 2, 1, 1, 1);
+        gridLayout_8->addWidget(lbnTituloPerdaFriccionalAnularPotencia, 6, 0, 1, 1);
 
         btnCalcularModeloPotenciaAnular = new QPushButton(gridLayoutWidget_8);
         btnCalcularModeloPotenciaAnular->setObjectName("btnCalcularModeloPotenciaAnular");
         btnCalcularModeloPotenciaAnular->setFont(font3);
 
-        gridLayout_8->addWidget(btnCalcularModeloPotenciaAnular, 6, 0, 1, 2);
+        gridLayout_8->addWidget(btnCalcularModeloPotenciaAnular, 7, 0, 1, 2);
+
+        lbnTituloCriticoAnularPotencia = new QLabel(gridLayoutWidget_8);
+        lbnTituloCriticoAnularPotencia->setObjectName("lbnTituloCriticoAnularPotencia");
+        lbnTituloCriticoAnularPotencia->setFont(font3);
+        lbnTituloCriticoAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout_8->addWidget(lbnTituloCriticoAnularPotencia, 3, 0, 1, 1);
 
         editIndiceConsistenciaPotenciaAnular = new QLineEdit(gridLayoutWidget_8);
         editIndiceConsistenciaPotenciaAnular->setObjectName("editIndiceConsistenciaPotenciaAnular");
@@ -1153,17 +1165,39 @@ public:
 
         gridLayout_8->addWidget(editIndiceConsistenciaPotenciaAnular, 0, 1, 1, 1);
 
-        lbnTituloTipoFluxoAnularPotencia = new QLabel(gridLayoutWidget_8);
-        lbnTituloTipoFluxoAnularPotencia->setObjectName("lbnTituloTipoFluxoAnularPotencia");
-        lbnTituloTipoFluxoAnularPotencia->setFont(font3);
-        lbnTituloTipoFluxoAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+        lbnTipoFluxoAnularPotencia = new QLabel(gridLayoutWidget_8);
+        lbnTipoFluxoAnularPotencia->setObjectName("lbnTipoFluxoAnularPotencia");
+        lbnTipoFluxoAnularPotencia->setStyleSheet(QString::fromUtf8(""));
+        lbnTipoFluxoAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_8->addWidget(lbnTituloTipoFluxoAnularPotencia, 4, 0, 1, 1);
+        gridLayout_8->addWidget(lbnTipoFluxoAnularPotencia, 5, 1, 1, 1);
+
+        lbnReynoldsCriticoAnularPotencia = new QLabel(gridLayoutWidget_8);
+        lbnReynoldsCriticoAnularPotencia->setObjectName("lbnReynoldsCriticoAnularPotencia");
+        lbnReynoldsCriticoAnularPotencia->setStyleSheet(QString::fromUtf8(""));
+        lbnReynoldsCriticoAnularPotencia->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        gridLayout_8->addWidget(lbnReynoldsCriticoAnularPotencia, 3, 1, 1, 1);
+
+        lbnTituloIndiceComportamentoAnular = new QLabel(gridLayoutWidget_8);
+        lbnTituloIndiceComportamentoAnular->setObjectName("lbnTituloIndiceComportamentoAnular");
+        lbnTituloIndiceComportamentoAnular->setFont(font3);
+        lbnTituloIndiceComportamentoAnular->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout_8->addWidget(lbnTituloIndiceComportamentoAnular, 1, 0, 1, 1);
+
+        editIndiceComportamentoAnular = new QLineEdit(gridLayoutWidget_8);
+        editIndiceComportamentoAnular->setObjectName("editIndiceComportamentoAnular");
+        editIndiceComportamentoAnular->setStyleSheet(QString::fromUtf8("border: 1px solid #dddddd;  /* borda cinza bem leve */\n"
+"\n"
+"border-radius: 5px;"));
+
+        gridLayout_8->addWidget(editIndiceComportamentoAnular, 1, 1, 1, 1);
 
         tabWidget_4->addTab(tab_8, QString());
         groupBox_4 = new QGroupBox(centralwidget);
         groupBox_4->setObjectName("groupBox_4");
-        groupBox_4->setGeometry(QRect(970, 60, 281, 581));
+        groupBox_4->setGeometry(QRect(970, 60, 281, 591));
         groupBox_4->setStyleSheet(QString::fromUtf8("QGroupBox{\n"
 "background-color: rgb(255, 255, 255);\n"
 "border: none;\n"
@@ -1171,7 +1205,7 @@ public:
 "}"));
         customPlotPoco = new QCustomPlot(groupBox_4);
         customPlotPoco->setObjectName("customPlotPoco");
-        customPlotPoco->setGeometry(QRect(10, 40, 261, 531));
+        customPlotPoco->setGeometry(QRect(10, 40, 261, 541));
         customPlotPoco->setStyleSheet(QString::fromUtf8(""));
         label_12 = new QLabel(groupBox_4);
         label_12->setObjectName("label_12");
@@ -1231,11 +1265,14 @@ public:
         QWidget::setTabOrder(editDiametroPoco, editDiametroOD);
         QWidget::setTabOrder(editDiametroOD, editDiametroID);
         QWidget::setTabOrder(editDiametroID, editVazao);
-        QWidget::setTabOrder(editVazao, btnAdicionarFluido);
-        QWidget::setTabOrder(btnAdicionarFluido, btnRemoverFluido);
-        QWidget::setTabOrder(btnRemoverFluido, editProfundidadePressaoHidroestatica);
+        QWidget::setTabOrder(editVazao, editProfundidadePressaoHidroestatica);
         QWidget::setTabOrder(editProfundidadePressaoHidroestatica, btnCalcularPressaoHidroestatica);
-        QWidget::setTabOrder(btnCalcularPressaoHidroestatica, btnCalcularModeloNewtonianoPoco);
+        QWidget::setTabOrder(btnCalcularPressaoHidroestatica, btnExibirGraficoPressaoHidroestatica);
+        QWidget::setTabOrder(btnExibirGraficoPressaoHidroestatica, tblFluidos);
+        QWidget::setTabOrder(tblFluidos, btnAdicionarFluido);
+        QWidget::setTabOrder(btnAdicionarFluido, btnRemoverFluido);
+        QWidget::setTabOrder(btnRemoverFluido, tabWidget_4);
+        QWidget::setTabOrder(tabWidget_4, btnCalcularModeloNewtonianoPoco);
         QWidget::setTabOrder(btnCalcularModeloNewtonianoPoco, btnCalcularModeloNewtonianoAnular);
         QWidget::setTabOrder(btnCalcularModeloNewtonianoAnular, editPontoEscoamentoPoco);
         QWidget::setTabOrder(editPontoEscoamentoPoco, editViscosidadePlasticaPoco);
@@ -1244,11 +1281,11 @@ public:
         QWidget::setTabOrder(editPontoEscoamentoAnular, editViscosidadePlasticaAnular);
         QWidget::setTabOrder(editViscosidadePlasticaAnular, btnCalcularModeloBighamAnular);
         QWidget::setTabOrder(btnCalcularModeloBighamAnular, editIndiceConsistenciaPotenciaPoco);
-        QWidget::setTabOrder(editIndiceConsistenciaPotenciaPoco, btnCalcularModeloPotenciaPoco);
+        QWidget::setTabOrder(editIndiceConsistenciaPotenciaPoco, editIndiceComportamentoPoco);
+        QWidget::setTabOrder(editIndiceComportamentoPoco, btnCalcularModeloPotenciaPoco);
         QWidget::setTabOrder(btnCalcularModeloPotenciaPoco, editIndiceConsistenciaPotenciaAnular);
-        QWidget::setTabOrder(editIndiceConsistenciaPotenciaAnular, btnCalcularModeloPotenciaAnular);
-        QWidget::setTabOrder(btnCalcularModeloPotenciaAnular, tabWidget_4);
-        QWidget::setTabOrder(tabWidget_4, tblFluidos);
+        QWidget::setTabOrder(editIndiceConsistenciaPotenciaAnular, editIndiceComportamentoAnular);
+        QWidget::setTabOrder(editIndiceComportamentoAnular, btnCalcularModeloPotenciaAnular);
 
         menubar->addAction(menuArquivo->menuAction());
         menubar->addAction(menuAjuda->menuAction());
@@ -1383,33 +1420,35 @@ public:
         lbnTituloCriticoAnularBigham->setText(QCoreApplication::translate("CSimuladorReologico", "Reynolds Cr\303\255tico", nullptr));
         lbnReynoldsHedstromAnularBigham->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
         lbnReynoldsCriticoAnularBigham->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
-        tabWidget_4->setTabText(tabWidget_4->indexOf(tab_9), QCoreApplication::translate("CSimuladorReologico", "           Modelo de Bigham            ", nullptr));
+        tabWidget_4->setTabText(tabWidget_4->indexOf(tab_9), QCoreApplication::translate("CSimuladorReologico", "           Modelo de Bingham            ", nullptr));
         label_4->setText(QCoreApplication::translate("CSimuladorReologico", "Po\303\247o", nullptr));
         label_5->setText(QCoreApplication::translate("CSimuladorReologico", "Anular", nullptr));
-        lbnPerdaFriccionalPocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
-        lbnTituloPerdaFriccionalPocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Perda Friccional no Po\303\247o (psi/ft)", nullptr));
-        lbnVelocidadePocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
-        lbnTipoFluxoPocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
         lbnTituloCriticoPocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Reynolds Cr\303\255tico", nullptr));
-        lbnTituloReynoldsPocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Reynolds no Po\303\247o", nullptr));
         lbnTituloVelocidadePocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Velocidade do Po\303\247o (ft/s)", nullptr));
+        lbnTipoFluxoPocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
         lbnReynoldsPocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
-        lbnTituloTipoFluxoPocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Tipo de Fluxo no Po\303\247o", nullptr));
+        lbnTituloPerdaFriccionalPocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Perda Friccional no Po\303\247o (psi/ft)", nullptr));
         lbnReynoldsCriticoPocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
-        btnCalcularModeloPotenciaPoco->setText(QCoreApplication::translate("CSimuladorReologico", "Calcular", nullptr));
+        lbnPerdaFriccionalPocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
+        lbnTituloTipoFluxoPocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Tipo de Fluxo no Po\303\247o", nullptr));
         lbnTituloIndiceConsistenciaPoco->setText(QCoreApplication::translate("CSimuladorReologico", "Indice de Consistencia (cP eq)", nullptr));
-        lbnTipoFluxoAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
-        lbnTituloCriticoAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Reynolds Cr\303\255tico", nullptr));
-        lbnTituloReynoldsAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Reynolds no Anular", nullptr));
+        btnCalcularModeloPotenciaPoco->setText(QCoreApplication::translate("CSimuladorReologico", "Calcular", nullptr));
+        lbnVelocidadePocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
+        lbnTituloReynoldsPocoPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Reynolds no Po\303\247o", nullptr));
+        lbnTituloIndiceComportamentoPoco->setText(QCoreApplication::translate("CSimuladorReologico", "Indice de comportamento", nullptr));
+        lbnPerdaFriccionalAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
         lbnTituloVelocidadeAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Velocidade do Anular (ft/s)", nullptr));
         lbnReynoldsAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
-        lbnTituloPerdaFriccionalAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Perda Friccional no Anular (psi/ft)", nullptr));
+        lbnTituloTipoFluxoAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Tipo de Fluxo no Anular", nullptr));
+        lbnTituloReynoldsAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Reynolds no Anular", nullptr));
         lbnVelocidadeAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
         lbnTituloIndiceConsistenciaAnular->setText(QCoreApplication::translate("CSimuladorReologico", "Indice de Consistencia (cP eq)", nullptr));
-        lbnPerdaFriccionalAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
-        lbnReynoldsCriticoAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
+        lbnTituloPerdaFriccionalAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Perda Friccional no Anular (psi/ft)", nullptr));
         btnCalcularModeloPotenciaAnular->setText(QCoreApplication::translate("CSimuladorReologico", "Calcular", nullptr));
-        lbnTituloTipoFluxoAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Tipo de Fluxo no Anular", nullptr));
+        lbnTituloCriticoAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "Reynolds Cr\303\255tico", nullptr));
+        lbnTipoFluxoAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
+        lbnReynoldsCriticoAnularPotencia->setText(QCoreApplication::translate("CSimuladorReologico", "-", nullptr));
+        lbnTituloIndiceComportamentoAnular->setText(QCoreApplication::translate("CSimuladorReologico", "Indice de comportamento", nullptr));
         tabWidget_4->setTabText(tabWidget_4->indexOf(tab_8), QCoreApplication::translate("CSimuladorReologico", "            Modelo de Pot\303\252ncia           ", nullptr));
         groupBox_4->setTitle(QString());
         label_12->setText(QCoreApplication::translate("CSimuladorReologico", "Fluidos x Profundidade", nullptr));

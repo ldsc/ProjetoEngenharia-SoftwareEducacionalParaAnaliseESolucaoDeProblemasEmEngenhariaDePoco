@@ -40,8 +40,8 @@ public:
                 double profundI, double profundF,
                 std::unique_ptr<CFluido> fluidoPtr,
                 double diamExt, double diamInt,
-                double coefPoisson, double moduloE,
-                double pesoUnit, double coefExp)
+                double coefPoisson, double coefExp,
+                double moduloE, double pesoUnit)
         : nome(std::move(nomeTrecho)),
         profundidadeInicial(profundI),
         profundidadeFinal(profundF),
@@ -49,9 +49,9 @@ public:
         diametroExterno(diamExt),
         diametroInterno(diamInt),
         coeficientePoisson(coefPoisson),
+        coeficienteExpancaoTermica(coefExp),
         moduloEslasticidade(moduloE),
-        pesoUnidade(pesoUnit),
-        coeficienteExpancaoTermica(coefExp) {}
+        pesoUnidade(pesoUnit) {}
 
     // Getters
     std::string Nome() const { return nome; }

@@ -13,12 +13,12 @@ class CModeloPotencia : public CModeloReologico {
 
 protected:
     // Parametros do modelo da potencia
-    double indiceDeConsistencia = 0.0;     // K
-    double indiceDeComportamento = 1.0;    // n
+    double indiceDeConsistencia;     // K
+    double indiceDeComportamento;    // n
 
     // Reynolds critico arbitrario (2100 como base de separacao)
-    double reynoldsCriticoPoco = 2100.0;
-    double reynoldsCriticoAnular = 2100.0;
+    double reynoldsCriticoPoco;
+    double reynoldsCriticoAnular;
 
 public:
     // Construtores
@@ -26,12 +26,15 @@ public:
     ~CModeloPotencia() {}
 
     // Construtor com inicializacao do poco e do indice de consistencia
-    CModeloPotencia(CObjetoPoco* poco, double indiceDeConsistencia)
+    CModeloPotencia(CObjetoPoco* poco, double indiceDeConsistencia, double indiceDeComportamento)
         : CModeloReologico(poco),
-        indiceDeConsistencia(indiceDeConsistencia)
+        indiceDeConsistencia(indiceDeConsistencia),
+        indiceDeComportamento(indiceDeComportamento)
+
     {
         DeterminarFluxoPoco();
         DeterminarFluxoAnular();
+        IndiceDeComportamento(indiceDeComportamento);
     }
 
     // Getters
@@ -49,6 +52,7 @@ public:
     void FluxoAnular(const std::string& fluxo) { fluxoAnular = fluxo; }
 
     // Metodos especificos do modelo de potencia
+    double DeterminarFatorFriccao(double reynolds, double n);
     double DeterminarReynoldsCritico(double reynolds);
     double DeterminarReynoldsPoco();
     double DeterminarReynoldsAnular();

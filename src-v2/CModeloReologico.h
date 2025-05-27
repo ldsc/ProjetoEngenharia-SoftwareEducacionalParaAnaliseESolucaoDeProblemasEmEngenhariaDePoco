@@ -45,7 +45,7 @@ public:
     std::string FluxoAnular() const { return fluxoAnular; }
 
     // Métodos para determinar fatores e velocidades
-    double DeterminarFatorFriccao(double re);
+    double DeterminarFatorFriccao(double re, double n);
     double DeterminarReynoldsPoco();
     double DeterminarReynoldsPoco(double viscosidade);
     double DeterminarReynoldsAnular();

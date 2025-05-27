@@ -26,14 +26,13 @@ double CModeloNewtoniano::CalcularPerdaPorFriccaoPoco() {
         DeterminarFluxoPoco();
     }
 
-    fatorFriccaoPoco = DeterminarFatorFriccao(reynoldsPoco);
-
     if (fluxoPoco == "Laminar") {
         return (poco->ViscosidadeEfetivaTotal() * vMediaPoco) /
                (1500 * std::pow(poco->DiametroRevestimentoID(), 2));
     } else {
-        return (fatorFriccaoPoco * poco->DensidadeEfetivaTotal() * std::pow(vMediaPoco, 2)) /
-               (25.8 * poco->DiametroRevestimentoID());
+        return (std::pow(poco->DensidadeEfetivaTotal(), 0.75) * std::pow(vMediaPoco, 1.75) *
+                std::pow(poco->ViscosidadeEfetivaTotal(), 0.25)) /
+               (1800 * std::pow(poco->DiametroRevestimentoID(), 1.25));
     }
 }
 
@@ -44,13 +43,13 @@ double CModeloNewtoniano::CalcularPerdaPorFriccaoAnular() {
     }
 
     double diametroAnular = poco->DiametroPoco() - poco->DiametroRevestimentoOD();
-    fatorFriccaoAnular = DeterminarFatorFriccao(reynoldsAnular);
 
     if (fluxoAnular == "Laminar") {
         return (poco->ViscosidadeEfetivaTotal() * vMediaAnular) /
                (1000 * std::pow(diametroAnular, 2));
     } else {
-        return (fatorFriccaoAnular * poco->DensidadeEfetivaTotal() * std::pow(vMediaAnular, 2)) /
-               (21.1 * diametroAnular);
+        return (std::pow(poco->DensidadeEfetivaTotal(), 0.75) * std::pow(vMediaAnular, 1.75) *
+                std::pow(poco->ViscosidadeEfetivaTotal(), 0.25)) /
+               (1396 * std::pow(diametroAnular, 1.25));
     }
 }
