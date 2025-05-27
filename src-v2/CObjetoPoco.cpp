@@ -26,7 +26,7 @@ CObjetoPoco CObjetoPoco::CriarParaModulo01(std::string nomeDoPoco, double profun
 
 CObjetoPoco CObjetoPoco::CriarParaModulo02(std::string nomeDoPoco, double profundidadeFinalDoPoco, double diamPoco, double pressaoNaSuperficie, double pressaoNaSuperficieFim,
                                            double temperaturaTopoInicial, double temperaturaFundoInicial,
-                                           double temperaturaTopoFinal, double temperaturaFundoFinal, double profundidadeDoPacker) {
+                                           double temperaturaTopoFinal, double temperaturaFundoFinal, bool haPacker) {
     CObjetoPoco objetoPoco;
 
     objetoPoco.nomePoco = nomeDoPoco;
@@ -38,7 +38,7 @@ CObjetoPoco CObjetoPoco::CriarParaModulo02(std::string nomeDoPoco, double profun
     objetoPoco.temperaturaFundoInicial = temperaturaFundoInicial;
     objetoPoco.temperaturaTopoFinal = temperaturaTopoFinal;
     objetoPoco.temperaturaFundoFinal = temperaturaFundoFinal;
-    objetoPoco.profundidadePacker = profundidadeDoPacker;
+    objetoPoco.haPacker = packer;
 
     return objetoPoco;
 }
@@ -370,7 +370,7 @@ double CObjetoPoco::VariacaoCargaEfeitoPistao(double profundidade, double ID, do
     double Pout_inicio;
     double Pout_fim;
 
-    if (ProfundidadePacker() != 0) {
+    if (Packer() == true) {
         Pout_inicio = PressaoHidroestaticaNoPonto(PressaoSuperficie());
         Pout_fim = PressaoHidroestaticaNoPonto(PressaoSuperficie());
     } else {
@@ -381,7 +381,7 @@ double CObjetoPoco::VariacaoCargaEfeitoPistao(double profundidade, double ID, do
     double deltaPout = Pout_fim - Pout_inicio;
 
     // Resultado final
-    if (ProfundidadePacker() != 0) {
+    if (Packer() == true) {
         return -deltaPin * Ain - deltaPout * Aout;
     } else {
         return deltaPin * Ain - deltaPout * Aout;

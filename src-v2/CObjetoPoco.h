@@ -24,7 +24,7 @@ protected:
     double temperaturaFundoInicial = 0.0;
     double temperaturaTopoFinal = 0.0;
     double temperaturaFundoFinal = 0.0;
-    double profundidadePacker = 0.0;
+    double packer = true;
 
 public:
     // Construtor e destrutor padrão
@@ -41,7 +41,7 @@ public:
 
     // Métodos de criação estáticos, separando claramente os dados exigidos por cada módulo
     static CObjetoPoco CriarParaModulo01(std::string Nome, double Profund, double PressaoSup, double D , double OD, double ID, double q);
-    static CObjetoPoco CriarParaModulo02(std::string Nome, double Profund, double diamPoco, double PressaoSup, double PressaoSupFinal, double TempTopoInicial, double TempFundoInicial, double TempTopoFinal, double TempFundoFinal, double profundidadePacker);
+    static CObjetoPoco CriarParaModulo02(std::string Nome, double Profund, double diamPoco, double PressaoSup, double PressaoSupFinal, double TempTopoInicial, double TempFundoInicial, double TempTopoFinal, double TempFundoFinal, bool haPacker);
 
     // Getters para acessar os atributos de forma segura
     std::string NomePoco() const { return nomePoco; }
@@ -57,7 +57,7 @@ public:
     double TemperaturaFundoInicial() const { return temperaturaFundoInicial; }
     double TemperaturaTopoFinal() const { return temperaturaTopoFinal; }
     double TemperaturaFundoFinal() const { return temperaturaFundoFinal; }
-    double ProfundidadePacker() const { return profundidadePacker; }
+    bool Packer() const { return packer; }
 
     // Retorna os trechos adicionados ao poço (em forma de ponteiros brutos)
     std::vector<CTrechoPoco*> Trechos() const;
@@ -76,7 +76,7 @@ public:
     void TemperaturaFundoInicial(double temperatura) { temperaturaFundoInicial = temperatura; }
     void TemperaturaTopoFinal(double temperatura) { temperaturaTopoFinal = temperatura; }
     void TemperaturaFundoFinal(double temperatura) { temperaturaFundoFinal = temperatura; }
-    void ProfundidadePacker(double profundidade) { profundidadePacker = profundidade; }
+    void Packer(bool haPacker) { packer = haPacker; }
 
 
     // Métodos de cálculo

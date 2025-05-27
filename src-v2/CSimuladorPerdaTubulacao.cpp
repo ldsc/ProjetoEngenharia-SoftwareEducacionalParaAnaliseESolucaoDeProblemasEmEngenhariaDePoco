@@ -161,7 +161,7 @@ void CSimuladorPerdaTubulacao::AtualizarDados()
         ui->editTemperaturaFundoInicial->setText(QString::number(poco->TemperaturaFundoInicial()));      // Diâmetro externo do revestimento (OD)
         ui->editTemperaturaSuperiorFinal->setText(QString::number(poco->TemperaturaTopoFinal()));      // Diâmetro interno do revestimento (ID)
         ui->editTemperaturaFundoFinal->setText(QString::number(poco->TemperaturaFundoFinal()));                            // Vazão do fluido no poço
-        if (poco->ProfundidadePacker() != 0.0) {
+        if (poco->Packer() == true) {
             ui->checkBoxPacker->setChecked(true);
         } else {
             ui->checkBoxPacker->setChecked(false);
@@ -453,39 +453,46 @@ void CSimuladorPerdaTubulacao::makePlotPoco()
         label->setPositionAlignment(Qt::AlignCenter);
     }
     // 6. Desenhar packer se existir
-    double profundidadePacker = poco->ProfundidadePacker();
-    if (profundidadePacker > 0.0) {
-        double alturaPacker = std::max(profundidadeMaxima * 0.01, 12.0);
-        double zTop, zBottom;
+bool haPacker = poco->Packer();
+if (haPacker == true) {
 
-        // Se o packer estiver exatamente na profundidade máxima, desenha ele todo acima
-        if (std::abs(profundidadePacker - profundidadeMaxima) < 1e-3) {
-            zBottom = profundidadePacker;
-            zTop = profundidadePacker - alturaPacker;
-        } else {
-            zTop = profundidadePacker - alturaPacker / 2.0;
-            zBottom = profundidadePacker + alturaPacker / 2.0;
+    // Pega a profundidade do último trecho como profundidade do packer
+    double profundidadePacker = 0.0;
+    if (!poco->Trechos().empty()) {
+        profundidadePacker = poco->Trechos().back()->ProfundidadeFinal();
+    }
+
+    double alturaPacker = std::max(profundidadeMaxima * 0.01, 12.0);
+    double zTop, zBottom;
+
+    // Se o packer estiver exatamente na profundidade máxima, desenha ele todo acima
+    if (std::abs(profundidadePacker - profundidadeMaxima) < 1e-3) {
+        zBottom = profundidadePacker;
+        zTop = profundidadePacker - alturaPacker;
+    } else {
+        zTop = profundidadePacker - alturaPacker / 2.0;
+        zBottom = profundidadePacker + alturaPacker / 2.0;
+    }
+
+    // Encontrar o trecho correspondente à profundidade do packer
+    double diametroNoPacker = 0.0;
+    for (const auto& trecho : poco->Trechos()) {
+        if (profundidadePacker >= trecho->ProfundidadeInicial() &&
+            profundidadePacker <= trecho->ProfundidadeFinal()) {
+            diametroNoPacker = trecho->DiametroExterno();
+            break;
         }
+    }
 
-        // Encontrar o trecho correspondente à profundidade do packer
-        double diametroNoPacker = 0.0;
-        for (const auto& trecho : poco->Trechos()) {
-            if (profundidadePacker >= trecho->ProfundidadeInicial() &&
-                profundidadePacker <= trecho->ProfundidadeFinal()) {
-                diametroNoPacker = trecho->DiametroExterno();
-                break;
-            }
-        }
+    // Se não achou trecho correspondente, usa o maior conhecido como fallback
+    if (diametroNoPacker == 0.0)
+        diametroNoPacker = maiorDiametroExterno;
 
-        // Se não achou trecho correspondente, usa o maior conhecido como fallback
-        if (diametroNoPacker == 0.0)
-            diametroNoPacker = maiorDiametroExterno;
-
-        // Coordenadas horizontais para os quadrados laterais
-        double xEsq1 = -diametroBuraco / 2.0;
-        double xEsq2 = -diametroNoPacker / 2.0;
-        double xDir1 = diametroNoPacker / 2.0;
-        double xDir2 = diametroBuraco / 2.0;
+    // Coordenadas horizontais para os quadrados laterais
+    double xEsq1 = -diametroBuraco / 2.0;
+    double xEsq2 = -diametroNoPacker / 2.0;
+    double xDir1 = diametroNoPacker / 2.0;
+    double xDir2 = diametroBuraco / 2.0;
 
         // === Quadrado esquerdo ===
         QCPItemRect* rectPackerEsq = new QCPItemRect(ui->customPlotPoco);
@@ -602,17 +609,17 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
             double profundidade, diamPoco, pressaoSup, pressaoSupFim;
             double temperaturaSuperiorInicial, temperaturaFundoInicial;
             double temperaturaSuperiorFinal, temperaturaFundoFinal;
-            double profundidadePacker;
+            bool haPacker;
 
             if (iss >> nome >> profundidade >>  diamPoco >> pressaoSup >> pressaoSupFim
                 >> temperaturaSuperiorInicial >> temperaturaFundoInicial
-                >> temperaturaSuperiorFinal >> temperaturaFundoFinal >> profundidadePacker) {
+                >> temperaturaSuperiorFinal >> temperaturaFundoFinal >> haPacker) {
 
                 ui->btnAdicionarTrecho->setEnabled(true);
                 ui->btnRemoverTrecho->setEnabled(true);
                 ui->btnCalcularVariacoes->setEnabled(true);
 
-                if (profundidadePacker == 0){
+                if (haPacker == false){
                     ui->checkBoxPacker->setChecked(false);
                 } else {
                     ui->checkBoxPacker->setChecked(true);
@@ -621,7 +628,7 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
                 poco = std::make_unique<CObjetoPoco>(
                     CObjetoPoco::CriarParaModulo02(nome, profundidade, diamPoco, pressaoSup,pressaoSupFim,
                                              temperaturaSuperiorInicial, temperaturaFundoInicial,
-                                             temperaturaSuperiorFinal, temperaturaFundoFinal, profundidadePacker)
+                                             temperaturaSuperiorFinal, temperaturaFundoFinal, haPacker)
                     );
             } else {
                 std::cerr << "Erro ao ler linha de poço: " << linha << std::endl;
