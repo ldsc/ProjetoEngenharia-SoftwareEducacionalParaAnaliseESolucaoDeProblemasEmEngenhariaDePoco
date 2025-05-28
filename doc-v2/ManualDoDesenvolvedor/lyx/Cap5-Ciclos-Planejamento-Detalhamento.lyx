@@ -527,7 +527,7 @@ name "fig:Versao1.1"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/Sistema-V1.1.png
+	filename ../imagens/Sistema-V1.1.png
 	lyxscale 60
 	width 100text%
 
@@ -661,7 +661,7 @@ name "fig:Versao2.0"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/MenuSistema-V2.0.png
+	filename ../imagens/MenuSistema-V2.0.png
 	lyxscale 60
 	width 100text%
 
@@ -711,7 +711,7 @@ name "fig:Versao2.0.1"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/Sistema-V1.1.png
+	filename ../imagens/Sistema-V1.1.png
 	lyxscale 60
 	width 100text%
 
@@ -761,7 +761,7 @@ name "fig:Versao2.0.2"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/Sistema-V2.0.png
+	filename ../imagens/Sistema-V2.0.png
 	lyxscale 60
 	width 100text%
 

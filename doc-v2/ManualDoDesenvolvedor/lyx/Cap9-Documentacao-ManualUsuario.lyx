@@ -306,7 +306,7 @@ name "fig:Versao2.0"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/MenuSistema-V2.0.png
+	filename ../imagens/MenuSistema-V2.0.png
 	lyxscale 60
 	width 100text%
 
@@ -356,7 +356,7 @@ name "fig:Versao2.0.1"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/Sistema-V1.1.png
+	filename ../imagens/Sistema-V1.1.png
 	lyxscale 60
 	width 100text%
 
@@ -406,7 +406,7 @@ name "fig:Versao2.0.2"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/Sistema-V2.0.png
+	filename ../imagens/Sistema-V2.0.png
 	lyxscale 60
 	width 100text%
 
@@ -668,7 +668,7 @@ name "fig:ComoConfigurarPoco"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/ManualCriaçaoPoco.png
+	filename ../imagens/ManualCriaçaoPoco.png
 	lyxscale 80
 	width 100text%
 
@@ -885,7 +885,7 @@ name "fig:ArquivoDat2"
 
 
 \begin_inset Graphics
-	filename C:/Users/Nathan/Downloads/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/doc-v2/ManualDoDesenvolvedor/imagens/funcionalidade-carregar-poco2.png
+	filename ../imagens/funcionalidade-carregar-poco2.png
 	lyxscale 80
 	width 100text%
 

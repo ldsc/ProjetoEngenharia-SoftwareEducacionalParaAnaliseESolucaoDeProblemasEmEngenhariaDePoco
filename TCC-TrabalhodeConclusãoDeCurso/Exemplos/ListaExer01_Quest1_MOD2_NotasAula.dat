@@ -1,0 +1,9 @@
+# Configuracao do Poco ------------------------------------------------------------------------------------
+# Nome                               Profundidade (ft)                  Diametro do Poçp (ft)              Pressao Sup. Inicial (psi)         Pressao Sup. Final (psi)           Temp Sup. Inicial (°F)             Temp Fund. Inicial (°F)            Temp Sup. Final (°F)               Temp Fund. Final (°F)              Prof Packer (ft)                   
+  7-TEST-1-RJS                       8000                               5                                  0                                  2000                               80                                 200                                80                                 220                                true                               
+
+
+
+# Configuracao dos Fluidos --------------------------------------------------------------------------------
+# Nome Trecho              Prof. Inicial (ft)       Prof. Final (ft)         Diam. externo (in)       Diam. interno (in)       Coef. Poisson            Coef. Exp. Term. (1/F)   Mod. Elast. (psi)        Peso/unid (lb/ft)        Nome fluido              Densidade (lbm/gal)      Viscosidade (cP)         
+  TrechoA                  0.00                     8000.00                  4.50                     3.86                     0.30                     0.00000700               10000000.00              17.00                    Fluido                   10.00                    1.00                     

@@ -549,7 +549,7 @@ Resposta esperada:
 \end_layout
 
 \begin_layout Subsubsection
-Regime de escoamento no tubo
+Cálculos no tubo
 \end_layout
 
 \begin_layout Standard
@@ -637,7 +637,7 @@ dp_{f} (Perda Friccional);
 \end_layout
 
 \begin_layout Subsubsection
-Regime de escoamento no anular
+Cálculos no anular
 \end_layout
 
 \begin_layout Standard
@@ -871,7 +871,7 @@ Perda de pressão no anular:
 \end_layout
 
 \begin_layout Subsubsection
-Regime de escoamento no tubo
+Cálculos no tubo
 \end_layout
 
 \begin_layout Standard
@@ -899,7 +899,7 @@ N_{He}=\frac{37100\rho\tau_{y}d^{2}}{\mu_{p}^{2}}\frac{37100(10)(5)(3.826)^{2}}{
 \begin_layout Standard
 \begin_inset Formula 
 \[
-N_{rec}=5000(fig.433,[APPLIED1991])
+N_{rec}=5000(fig.4.33,[APPLIED1991])
 \]
 
 \end_inset
@@ -937,7 +937,7 @@ turbulento.
 \end_layout
 
 \begin_layout Subsubsection
-Regime de escoamento no anular
+Cálculos no anular
 \end_layout
 
 \begin_layout Standard
@@ -965,7 +965,7 @@ N_{He}=\frac{24700\rho\tau_{y}(d_{2}-d_{1})^{2}}{\mu_{p}^{2}}\frac{24700(10)(5)(
 \begin_layout Standard
 \begin_inset Formula 
 \[
-N_{rec}=3000(fig.433,[APPLIED1991])
+N_{rec}=3000(fig.4.33,[APPLIED1991])
 \]
 
 \end_inset
@@ -1069,22 +1069,292 @@ Fonte:
 
 \begin_layout Subsection
 Validação da perda de fricção pelo modelo Potência no Poço e Anular 
-\begin_inset Note Note
+\end_layout
+
+\begin_layout Standard
+Neste subtópico,
+ valida-se o modelo reológico Lei da Potência para cálculo da perda de carga por fricção em fluidos não-newtonianos,
+ aplicando os mesmos parâmetros geométricos do exercício 4.40.
+ Utiliza-se o exercício 4.42 do livro Applied Drilling Engineering como referência,
+ alterando-se apenas as propriedades reológicas do fluido para refletir um comportamento pseudoplástico.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "default"
+backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
-\begin_inset ERT
-status open
+Resolva o Exercício 4.40 para um fluido do tipo potência com densidade de 12 lbm/gal,
+ índice de comportamento de fluxo (n) igual a 0,75 e índice de consistência (K) igual a 200 eq cP.
+ (traduzido,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "APPLIED1991"
+literal "false"
+
+\end_inset
+
+)
+\end_layout
 
 \begin_layout Plain Layout
 
-todos os tópicos abaixos já estão prontos com imagens geradas,
- falta apenas escreve (seguirá o padrão acima
+\series bold
+Resposta esperada:
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Regime de escoamento no tubo:
+ turbulento
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Perda de pressão no tubo:
+ 144 psi/1.000 ft
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Regime no anular:
+ turbulento
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Perda de pressão no anular:
+ 205 psi/1.000 ft
 \end_layout
 
 \end_inset
 
-dfdfdf
+
+\end_layout
+
+\begin_layout Subsubsection
+Cálculos no tubo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{v}=\frac{q}{2.448d²}=\frac{500}{2.448\left(3.826^{2}\right)}=13.95ft/s
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{re}=\frac{89100\rho\bar{v}^{2-n}}{k}(\frac{0.0416d}{3+1/n})^{n}=\frac{89100(12)(13.95)^{2-0.75}}{200}(\frac{0.0416(3.826)}{3+1/0.75})^{0.75}=12092.29
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{rec}=3500(fig.4.33,[APPLIED1991])
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Comparando o Reynolds com Reynolds critico,
+ determinamos ser 
+\series bold
+turbulento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f=0.006(fig.4.34,[APPLIED1991])
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dp_{f}}{dL}=\frac{f\rho\bar{v}^{2}}{25.8d}=\frac{0.006(12)(13.95)^{2}}{25.8(3.826)}=0.1419psi/ft
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Cálculos no anular
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{v}=\frac{q}{2.448(d_{2}²-d_{1}²)}=\frac{500}{2.448\left(6.5^{2}-4.5^{2}\right)}=9.284ft/s
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{re}=\frac{109000\rho\bar{v}^{2-n}}{k}(\frac{0.0.208(d_{2}-d_{1})}{2+1/n})^{n}=\frac{109000(12)(9.284)^{2-0.75}}{200}(\frac{0.0208(6.5-4.5)}{2+1/0.75})^{0.75}=3957.37
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{rec}=2500(fig.4.33,[APPLIED1991])
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Comparando o Reynolds com Reynolds critico,
+ determinamos ser 
+\series bold
+turbulento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f=0.008(fig.4.34,[APPLIED1991])
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dp_{f}}{dL}=\frac{f\rho\bar{v}^{2}}{21.1(d_{2}-d_{1})}=\frac{0.008(12)(9.284)^{2}}{21.1(6.5-4.5)}=0.196psi/ft
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O teste com o modelo da lei da potência apresentou resultados bastante próximos aos esperados na literatura,
+ validando tanto o cálculo do número de Reynolds quanto a perda de pressão por fricção para um fluido real.
+\end_layout
+
+\begin_layout Standard
+Os resultados não são completamente idênticos,
+ pois na resolução analítica é necessário consultar tabelas com escala logarítmica,
+ o que pode introduzir erros de leitura ou interpolação manual.
+ O software,
+ por outro lado,
+ obtém esses valores por meio de aproximações lineares,
+ baseadas nos principais pontos da curva log-log,
+ utilizando um método de regressão linear para melhor ajuste.
+ A ferramenta demonstrou,
+ como ilustrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Software-Modelo-Potencia"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ capacidade confiável de tratar modelos reológicos mais complexos,
+ indo além dos comportamentos já validados nos modelos anteriores.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Soluções geradas pelo código para modelo Newtoniano no anular considerando regime turbulento 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Software-Modelo-Potencia"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/Cap4_Ex42_MOD1_AppliedDrillingEng.png
+	lyxscale 70
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
 \end_layout
 
 \end_inset
@@ -1093,12 +1363,731 @@ dfdfdf
 \end_layout
 
 \begin_layout Subsection
-Validação MOD2 delta temperatura,
- efeito balão...
+Validação da variação do comprimento do tubo devido a força pistão
+\end_layout
+
+\begin_layout Standard
+Neste subtópico,
+ valida-se o módulo do software que calcula a variação do comprimento axial do tubo causada pela força pistão,
+ efeito resultante da diferença de área entre o tubo e o packer em presença de variação de pressão interna e externa.
+ Para validar os modelos de variação axial implementados no software,
+ foi utilizado um cenário adaptado de exercício aplicado em sala de aula.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "default"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+A completação analisada contém um packer instalado a 8.000 ft de profundidade.
+ O tubo é livre para se mover e possui diâmetro externo de 4,5 polegadas e diâmetro interno de 3,862 polegadas,
+ enquanto o packer apresenta diâmetro externo de 5,0 polegadas.
+ Inicialmente,
+ o poço estava preenchido com fluido de densidade igual a 10 lb/gal.
+ A temperatura na superfície foi mantida constante em 80 ºF,
+ enquanto no fundo variou de 200 ºF para 220 ºF entre a condição inicial e final.
+ O tubo apresenta módulo de elasticidade igual a 10^6 psi,
+ coeficiente de Poisson de 0,3,
+ peso por unidade de comprimento de 17,0 lb/ft e coeficiente de expansão térmica igual a 7,0 × 10^-6 ºF⁻¹.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Resposta esperada:
+ 3ft
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta L=\frac{\Delta F.L}{E.A_{s}}
+\]
+
+\end_inset
+
+Onde :
+\begin_inset Formula 
+\[
+\Delta F=\Delta P_{in}A_{in}-\Delta P_{out}A_{out}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta P_{in}=[0.052(10)(8000)+2000]-[0.052(10)(8000)]=2000psi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta P_{out}=0psi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{in}=\frac{π}{4}(d_{2}^{2}-d_{1}^{2})=\frac{π}{4}(5^{2}-3.862^{2})=7.92in^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta F=2000(7.92)-0.A_{out}=-15840lb
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta L=\frac{\Delta F.L}{E.A_{s}}=\frac{-15840(8000)}{10.10^{6}[\frac{π}{4}(4.5^{2}-3.862^{2})]}==3.04ft
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A simulação realizada no software resultou em uma variação de comprimento compatível com o esperado teoricamente.
+ A deformação foi calculada utilizando a equação de carga axial para efeito pistão,
+ considerando o diferencial de área e a variação de pressão induzida pela substituição do fluido.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Soluções geradas pelo código para modelo Newtoniano no anular considerando regime turbulento 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Software-Modelo-Potencia-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/ListaExer01_Quest1a_MOD2_NotasAula.png
+	lyxscale 70
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Validação importação e exportação do documento (salvar como...)
+Validação da variação do comprimento do tubo devido ao efeito balão
+\end_layout
+
+\begin_layout Standard
+Este subtópico trata da validação do efeito balão,
+ fenômeno associado à deformação radial e longitudinal do tubo sob diferentes pressões interna e externa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "default"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Utilizando o mesmo cenário descrito no item anterior,
+ o efeito balão foi avaliado com base na mudança de pressão devido à substituição do fluido no tubo e no anular.
+ A diferença de pressão provoca a expansão (ou contração) do tubo,
+ afetando seu comprimento axial.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Resposta esperada:
+ -2.6ft
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta L_{b}=\frac{2.v.\Delta F.L}{E.A_{s}}
+\]
+
+\end_inset
+
+Utilizandos os dados já calculados na validação acima:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta F=\Delta P_{in}A_{in}-\Delta P_{out}A_{out}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta P_{in}=2000psi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta P_{out}=0psi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{in}=\frac{π}{4}(d_{2}^{2}-d_{1}^{2})=\frac{π}{4}(3.862^{2})=11.71in^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta F=2000(11.71)-0.A_{out}=-23428.49lb
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta L_{b}=\frac{-2(0.3)(23428.49)(8000)}{10.10^{6}[\frac{π}{4}(4.5^{2}-3.862^{2})]}=-2.68ft
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O software foi capaz de calcular a deformação com base nas pressões associadas à troca dos fluidos,
+ e os resultados mostraram boa concordância com a equação clássica para efeito balão.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Soluções geradas pelo código para modelo Newtoniano no anular considerando regime turbulento 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Software-Modelo-Potencia-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/ListaExer01_Quest1B_MOD2_NotasAula.png
+	lyxscale 70
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Validação da variação do comprimento do tubo devido ao efeito da temperatura
+\end_layout
+
+\begin_layout Standard
+este subtópico,
+ o software é validado quanto à dilatação térmica do tubo em função da variação de temperatura entre a configuração inicial e final do poço.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "default"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Utilizando o mesmo cenário descrito no item anterior.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Resposta esperada:
+ 0.5ft
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta L_{t}=C_{t}.L.\Delta T
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+onde:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{T}_{inicial}=\frac{80+200}{2}=140\text{º}F
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{T}_{finall}=\frac{80+220}{2}=150\text{º}F
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta T=150-140=10\text{º}F
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Logo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta L_{t}=(7.10^{-6})(8000)(10)=0.56ft
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A simulação indicou uma dilatação térmica compatível com os valores obtidos pela fórmula,
+ considerando a interpolação linear da temperatura entre o fundo e a superfície.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Solução gerada para variação do comprimentodo tudo devido ao efeito da temperatura 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Software-Modelo-Potencia-1-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/ListaExer01_Quest1C_MOD2_NotasAula.png
+	lyxscale 70
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Validação da importação e exportação do documento (“salvar como...”)
+\end_layout
+
+\begin_layout Standard
+funcionalidade de importação e exportação de arquivos foi validada por meio da opção “salvar como...” presente na interface do software,
+ que permite ao usuário armazenar as configurações completas do poço e dos fluidos em arquivos com extensão .dat.
+ Essa funcionalidade garante que os dados possam ser salvos,
+ compartilhados e reabertos posteriormente com total fidelidade.
+\end_layout
+
+\begin_layout Standard
+Durante os testes,
+ foram preenchidos manualmente diferentes conjuntos de dados,
+ incluindo profundidade total do poço,
+ pressão e temperatura nas condições inicial e final,
+ presença de packer,
+ além das propriedades de cada trecho da coluna e das características dos fluidos envolvidos.
+ Após o preenchimento,
+ os dados foram exportados para arquivos .dat.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Opção de Salvar 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Software-SalvarComo"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/funcionalidadeSalvarComo.png
+	lyxscale 70
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modelo do Arquivo .dat 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Software-ArquivoDat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/ArquivosDat.png
+	lyxscale 70
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+Posteriormente,
+ os arquivos foram reimportados utilizando a opção de carregamento automático do software.
+ Ao reabrir o arquivo salvo,
+ todas as informações foram recuperadas com exatidão,
+ sem perdas numéricas ou inconsistências nos campos de entrada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Opção de importação de arquivos no software 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Software-ImportarDados"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/importarDat.png
+	lyxscale 70
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Essa validação confirma que a rotina de leitura e escrita está corretamente implementada,
+ permitindo que os usuários arquivem projetos,
+ compartilhem simulações e retomem configurações com segurança.
+ Além disso,
+ essa funcionalidade viabiliza a reprodutibilidade dos testes apresentados neste capítulo,
+ já que os arquivos .dat utilizados encontram-se disponíveis nas pastas de documentação do projeto.
+\end_layout
+
+\begin_layout Section
+Conclusão
+\end_layout
+
+\begin_layout Standard
+As validações realizadas ao longo deste capítulo demonstraram que o software desenvolvido apresenta elevada precisão nos cálculos,
+ sendo capaz de reproduzir com fidelidade os resultados esperados tanto em exemplos teóricos quanto em exercícios aplicados em sala de aula.
+\end_layout
+
+\begin_layout Standard
+As comparações envolveram diversos modelos reológicos como:
+ o modelo Newtoniano,
+ o Plástico de Bingham e o modelo da Lei da Potência,
+ além de cálculos de pressão hidrostática,
+ perda de carga por fricção,
+ variações térmicas e efeitos mecânicos complexos,
+ como o efeito balão e deslocamentos axiais (ΔL).
+ Em todos os testes,
+ os resultados obtidos pelo software coincidiram com os valores de referência ou apresentaram variações mínimas compatíveis com margens de arredondamento.
+\end_layout
+
+\begin_layout Standard
+Além das simulações,
+ foi verificado o correto funcionamento das funcionalidades de importação e exportação de dados por arquivos .dat,
+ garantindo reprodutibilidade,
+ rastreabilidade e usabilidade da ferramenta em ambientes acadêmicos e operacionais.
+\end_layout
+
+\begin_layout Standard
+Dessa forma,
+ conclui-se que o software atende plenamente aos objetivos propostos,
+ podendo ser utilizado como ferramenta educacional robusta e confiável no apoio ao ensino de Engenharia de Poço.
 \end_layout
 
 \end_body

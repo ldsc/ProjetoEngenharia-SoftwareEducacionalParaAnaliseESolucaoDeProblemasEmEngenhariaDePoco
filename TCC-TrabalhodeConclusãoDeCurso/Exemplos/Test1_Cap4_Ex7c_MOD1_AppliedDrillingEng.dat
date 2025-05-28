@@ -1,0 +1,9 @@
+# Configuracao do Poco -----------------------------------------------------------------------------------------------------
+# Nome           Profund (ft)   Pressao (psi)  Diametro (in)  OD (in)        ID (in)        Vazao (bbl/d)  
+  7-TEST-1-RJS   12000          -7000          16             12.25          20             0              
+
+
+
+# Configuracao dos Fluidos --------------------------------------------------------------------------------
+# Nome           Densidade (lbm/gal)    Viscosidade (cP)       Prof. Inicial (ft)     Prof. Final (ft)    
+  Lama           11.00                  1.00                   0.00                   12000.00            
