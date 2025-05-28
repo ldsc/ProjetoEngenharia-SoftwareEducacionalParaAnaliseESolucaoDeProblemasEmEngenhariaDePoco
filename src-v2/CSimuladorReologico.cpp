@@ -580,7 +580,7 @@ void CSimuladorReologico::SalvarArquivo(bool salvarComo)
 
 void CSimuladorReologico::on_actionArquivo_dat_triggered()
 {
-    // Abre uma janelinha pra o usuario escolher o arquivo que ele quer carregar
+    // Abre uma janelinha pro usuario escolher o arquivo .dat
     QString caminhoDoArquivo = QFileDialog::getOpenFileName(
         this,
         "Selecione um arquivo",
@@ -588,36 +588,50 @@ void CSimuladorReologico::on_actionArquivo_dat_triggered()
         "Todos os arquivos (*.*)"
         );
 
-    // Converte o caminho pra string padrao do C++ (std::string)
+    // Se o usuario nao escolheu nada, sai da funcao
+    if (caminhoDoArquivo.isEmpty())
+        return;
+
+    // Converte o caminho do Qt para string do C++
     std::string caminhoDoArquivoStr = caminhoDoArquivo.toStdString();
 
-    // Abre o arquivo selecionado pra leitura
+    // Tenta abrir o arquivo
     std::ifstream file(caminhoDoArquivoStr);
+    if (!file.is_open()) {
+        QMessageBox::warning(this, "Erro", "Nao foi possivel abrir o arquivo!");
+        return;
+    }
 
     std::string linha;
-    bool lendoFluidos = false; // começa assumindo que vamos ler os dados do poço
+    bool lendoFluidos = false;
+    bool encontrouCabecalho = false;
+    bool leuPoco = false;
+    bool leuFluido = false;
 
-    // le linha por linha do arquivo
+    // Le o arquivo linha por linha
     while (std::getline(file, linha)) {
-        // ignora linhas em branco ou que comecam com '#' (comentario)
+        // Ignora linhas vazias ou comentarios
         if (linha.empty() || linha[0] == '#') {
-            // se encontrar a palavra "Fluidos", troca pro modo de leitura dos fluidos
             if (linha.find("Fluidos") != std::string::npos) {
                 lendoFluidos = true;
+                encontrouCabecalho = true;
             }
             continue;
         }
 
-        // se ainda estamos lendo os dados do poço (linha unica)
         if (!lendoFluidos) {
-            std::istringstream iss(linha); // transforma a linha em stream pra extrair os dados
+            // Tentativa de ler os dados do poço
+            std::istringstream iss(linha);
             std::string nome;
             double profundidade, pressaoSuperficie, diametro, OD, ID, vazao;
 
-            // extrai os valores na ordem correta
             if (iss >> nome >> profundidade >> pressaoSuperficie >> diametro >> OD >> ID >> vazao) {
+                poco = std::make_unique<CObjetoPoco>(
+                    CObjetoPoco::CriarParaModulo01(nome, profundidade, pressaoSuperficie, diametro, OD, ID, vazao)
+                    );
+                leuPoco = true;
 
-                // ativa os botoes de calculo, ja que agora temos um poço valido
+                // Ativa botoes da interface
                 ui->btnCalcularPressaoHidroestatica->setEnabled(true);
                 ui->btnCalcularModeloNewtonianoPoco->setEnabled(true);
                 ui->btnCalcularModeloNewtonianoAnular->setEnabled(true);
@@ -626,39 +640,41 @@ void CSimuladorReologico::on_actionArquivo_dat_triggered()
                 ui->btnCalcularModeloPotenciaPoco->setEnabled(true);
                 ui->btnCalcularModeloPotenciaAnular->setEnabled(true);
                 ui->btnExibirGraficoPressaoHidroestatica->setEnabled(true);
-
-                // cria o objeto do poço com os dados lidos
-                poco = std::make_unique<CObjetoPoco>(
-                    CObjetoPoco::CriarParaModulo01(nome, profundidade, pressaoSuperficie, diametro, OD, ID, vazao)
-                    );
             }
 
         } else {
-            // aqui ja estamos lendo os trechos dos fluidos
+            // Leitura dos fluidos associados ao poço
             std::istringstream iss(linha);
             std::string nome;
             double densidade, viscosidade, profInicial, profFinal;
 
-            // le os valores do fluido e da faixa de profundidade
             if (iss >> nome >> densidade >> viscosidade >> profInicial >> profFinal) {
                 auto fluido = std::make_unique<CFluido>(nome, densidade, viscosidade);
                 auto trechoPoco = std::make_unique<CTrechoPoco>(profInicial, profFinal, std::move(fluido));
-
-                // adiciona o trecho no objeto do poço
                 poco->AdicionarTrechoPoco(std::move(trechoPoco));
+                leuFluido = true;
             }
         }
     }
 
-    file.close(); // fecha o arquivo depois de terminar a leitura
+    file.close(); // fecha o arquivo apos a leitura
 
-    // atualiza a interface com os dados lidos
+    // Se nao conseguiu ler nem o poço nem fluidos, mostra um alerta
+    if (!leuPoco || !leuFluido || !encontrouCabecalho) {
+        QMessageBox::warning(this, "Arquivo Incorreto",
+                             "Atenção: o arquivo selecionado não está no formato esperado.\n"
+                             "Por favor, abra um arquivo de configuração valido.");
+        return;
+    }
+
+    // Atualiza a interface com os dados lidos
     AtualizarDados();
     ui->statusbar->showMessage("Dados importados com sucesso!");
 
     NomeArquivo(QFileInfo(caminhoDoArquivo).fileName());
     CaminhoArquivo(caminhoDoArquivo);
 }
+
 
 
 void CSimuladorReologico::on_btnExibirGraficoPressaoHidroestatica_clicked()

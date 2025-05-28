@@ -253,7 +253,7 @@ public:
         groupBox->setTitle(QString::fromUtf8(""));
         gridLayoutWidget = new QWidget(groupBox);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(10, 40, 261, 301));
+        gridLayoutWidget->setGeometry(QRect(10, 40, 261, 307));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -485,7 +485,7 @@ public:
         label_3->setFont(font1);
         gridLayoutWidget_14 = new QWidget(groupBox_2);
         gridLayoutWidget_14->setObjectName("gridLayoutWidget_14");
-        gridLayoutWidget_14->setGeometry(QRect(10, 40, 261, 191));
+        gridLayoutWidget_14->setGeometry(QRect(10, 40, 275, 191));
         gridLayout_14 = new QGridLayout(gridLayoutWidget_14);
         gridLayout_14->setObjectName("gridLayout_14");
         gridLayout_14->setContentsMargins(0, 0, 0, 0);
@@ -713,7 +713,7 @@ public:
         label_9->setFont(font1);
         gridLayoutWidget_5 = new QWidget(tab_9);
         gridLayoutWidget_5->setObjectName("gridLayoutWidget_5");
-        gridLayoutWidget_5->setGeometry(QRect(10, 31, 283, 241));
+        gridLayoutWidget_5->setGeometry(QRect(10, 31, 283, 255));
         gridLayout_5 = new QGridLayout(gridLayoutWidget_5);
         gridLayout_5->setObjectName("gridLayout_5");
         gridLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -837,7 +837,7 @@ public:
 
         gridLayoutWidget_6 = new QWidget(tab_9);
         gridLayoutWidget_6->setObjectName("gridLayoutWidget_6");
-        gridLayoutWidget_6->setGeometry(QRect(320, 30, 283, 241));
+        gridLayoutWidget_6->setGeometry(QRect(320, 30, 283, 255));
         gridLayout_6 = new QGridLayout(gridLayoutWidget_6);
         gridLayout_6->setObjectName("gridLayout_6");
         gridLayout_6->setContentsMargins(0, 0, 0, 0);
@@ -972,7 +972,7 @@ public:
         label_5->setFont(font1);
         gridLayoutWidget_7 = new QWidget(tab_8);
         gridLayoutWidget_7->setObjectName("gridLayoutWidget_7");
-        gridLayoutWidget_7->setGeometry(QRect(10, 40, 291, 201));
+        gridLayoutWidget_7->setGeometry(QRect(10, 40, 291, 228));
         gridLayout_7 = new QGridLayout(gridLayoutWidget_7);
         gridLayout_7->setObjectName("gridLayout_7");
         gridLayout_7->setContentsMargins(0, 0, 0, 0);
@@ -1084,7 +1084,7 @@ public:
 
         gridLayoutWidget_8 = new QWidget(tab_8);
         gridLayoutWidget_8->setObjectName("gridLayoutWidget_8");
-        gridLayoutWidget_8->setGeometry(QRect(330, 40, 281, 201));
+        gridLayoutWidget_8->setGeometry(QRect(330, 40, 281, 228));
         gridLayout_8 = new QGridLayout(gridLayoutWidget_8);
         gridLayout_8->setObjectName("gridLayout_8");
         gridLayout_8->setContentsMargins(0, 0, 0, 0);
@@ -1251,7 +1251,7 @@ public:
         CSimuladorReologico->setStatusBar(statusbar);
         menubar = new QMenuBar(CSimuladorReologico);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1264, 22));
+        menubar->setGeometry(QRect(0, 0, 1264, 26));
         menuArquivo = new QMenu(menubar);
         menuArquivo->setObjectName("menuArquivo");
         menuImportar_Dados = new QMenu(menuArquivo);
@@ -1344,7 +1344,7 @@ public:
         lbnTituloProfunidadeTotal->setText(QCoreApplication::translate("CSimuladorReologico", "Profundidade Total (ft)", nullptr));
         lbnTituloDiametroPoco->setText(QCoreApplication::translate("CSimuladorReologico", "Diametro Po\303\247o (in)", nullptr));
         lbnTituloViscosidadeMedia->setText(QCoreApplication::translate("CSimuladorReologico", "Viscosidade M\303\251dia (cP):", nullptr));
-        label->setText(QCoreApplication::translate("CSimuladorReologico", "Dados do Po\303\247oa", nullptr));
+        label->setText(QCoreApplication::translate("CSimuladorReologico", "Dados do Po\303\247o", nullptr));
         groupBox_3->setTitle(QString());
         QTableWidgetItem *___qtablewidgetitem = tblFluidos->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("CSimuladorReologico", "Nome", nullptr));

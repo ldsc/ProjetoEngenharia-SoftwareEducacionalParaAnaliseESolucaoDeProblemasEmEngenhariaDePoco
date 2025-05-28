@@ -817,7 +817,7 @@ border-radius: 4px;
        <x>10</x>
        <y>40</y>
        <width>341</width>
-       <height>341</height>
+       <height>342</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout">
@@ -1191,8 +1191,8 @@ border-radius: 5px;</string>
      <rect>
       <x>330</x>
       <y>0</y>
-      <width>830</width>
-      <height>55</height>
+      <width>996</width>
+      <height>64</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -1246,7 +1246,7 @@ border-radius: 5px;</string>
      <x>0</x>
      <y>0</y>
      <width>1449</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArquivo">
@@ -1363,11 +1363,20 @@ border-radius: 5px;</string>
  <tabstops>
   <tabstop>editNomePoco</tabstop>
   <tabstop>editProfundidadeTotal</tabstop>
+  <tabstop>editDiametroPoco</tabstop>
   <tabstop>editTemperaturaSuperiorInicial</tabstop>
   <tabstop>editTemperaturaFundoInicial</tabstop>
+  <tabstop>editPressaoSupInicial</tabstop>
   <tabstop>editTemperaturaSuperiorFinal</tabstop>
   <tabstop>editTemperaturaFundoFinal</tabstop>
+  <tabstop>editPressaoSupFinal</tabstop>
   <tabstop>checkBoxPacker</tabstop>
+  <tabstop>editProfundidadeMedicao</tabstop>
+  <tabstop>btnCalcularVariacoes</tabstop>
+  <tabstop>tblTrechos</tabstop>
+  <tabstop>btnAdicionarTrecho</tabstop>
+  <tabstop>btnRemoverTrecho</tabstop>
+  <tabstop>tblFluidos</tabstop>
   <tabstop>tabWidget_5</tabstop>
  </tabstops>
  <resources/>

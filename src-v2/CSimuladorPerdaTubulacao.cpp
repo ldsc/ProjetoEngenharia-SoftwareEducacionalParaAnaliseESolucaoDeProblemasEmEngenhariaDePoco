@@ -14,6 +14,10 @@ CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
 {
     ui->setupUi(this);
 
+    // ativa edicao de celulas da tabela com clique duplo ou tecla Enter
+    ui->tblFluidos->setEditTriggers(QAbstractItemView::DoubleClicked | QAbstractItemView::EditKeyPressed);
+    ui->tblTrechos->setEditTriggers(QAbstractItemView::DoubleClicked | QAbstractItemView::EditKeyPressed);
+
 
     // Sinal para alterações das caixas
     connect(ui->editNomePoco, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
@@ -581,12 +585,17 @@ void CSimuladorPerdaTubulacao::on_btnCalcularVariacoes_clicked()
 
 void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
 {
+    // Abre uma janelinha pro usuario escolher o arquivo .dat
     QString caminhoDoArquivo = QFileDialog::getOpenFileName(
         this,
         "Selecione um arquivo",
         "",
         "Todos os arquivos (*.*)"
         );
+
+    // Verifica se o usuario nao escolheu nada
+    if (caminhoDoArquivo.isEmpty())
+        return;
 
     std::string caminhoDoArquivoStr = caminhoDoArquivo.toStdString();
     std::ifstream file(caminhoDoArquivoStr);
@@ -598,19 +607,23 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
 
     std::string linha;
     bool lendoTrechos = false;
+    bool leuPoco = false;
+    bool leuTrecho = false;
 
     while (std::getline(file, linha)) {
+        // Verifica se chegou na parte de trechos e fluidos
         if (linha.find("Configuracao dos Fluidos") != std::string::npos) {
             lendoTrechos = true;
             continue;
         }
 
+        // Ignora linhas vazias ou de comentário
         if (linha.empty() || linha[0] == '#') {
             continue;
         }
 
         if (!lendoTrechos) {
-            // Leitura dos dados do poço
+            // Aqui lemos a linha com os dados principais do poço
             std::istringstream iss(linha);
             std::string nome;
             double profundidade, diamPoco, pressaoSup, pressaoSupFim;
@@ -618,32 +631,31 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
             double temperaturaSuperiorFinal, temperaturaFundoFinal;
             std::string strHaPacker;
 
-            if (iss >> nome >> profundidade >>  diamPoco >> pressaoSup >> pressaoSupFim
+            if (iss >> nome >> profundidade >> diamPoco >> pressaoSup >> pressaoSupFim
                 >> temperaturaSuperiorInicial >> temperaturaFundoInicial
                 >> temperaturaSuperiorFinal >> temperaturaFundoFinal >> strHaPacker) {
 
+                bool haPacker = (strHaPacker == "true" || strHaPacker == "1");
+
+                ui->checkBoxPacker->setChecked(haPacker);
                 ui->btnAdicionarTrecho->setEnabled(true);
                 ui->btnRemoverTrecho->setEnabled(true);
                 ui->btnCalcularVariacoes->setEnabled(true);
 
-                bool haPacker = (strHaPacker == "true" || strHaPacker == "1");
-
-                if (haPacker == false){
-                    ui->checkBoxPacker->setChecked(false);
-                } else {
-                    ui->checkBoxPacker->setChecked(true);
-                }
-
                 poco = std::make_unique<CObjetoPoco>(
-                    CObjetoPoco::CriarParaModulo02(nome, profundidade, diamPoco, pressaoSup,pressaoSupFim,
-                                             temperaturaSuperiorInicial, temperaturaFundoInicial,
-                                             temperaturaSuperiorFinal, temperaturaFundoFinal, haPacker)
+                    CObjetoPoco::CriarParaModulo02(nome, profundidade, diamPoco, pressaoSup, pressaoSupFim,
+                                                   temperaturaSuperiorInicial, temperaturaFundoInicial,
+                                                   temperaturaSuperiorFinal, temperaturaFundoFinal, haPacker)
                     );
+
+                leuPoco = true;
+
             } else {
                 std::cerr << "Erro ao ler linha de poço: " << linha << std::endl;
             }
+
         } else {
-            // Leitura dos dados dos trechos
+            // Aqui lemos os trechos e fluidos do poço
             std::istringstream iss(linha);
             std::string nomeTrecho, nomeFluido;
             double profundInicial, profundFinal;
@@ -660,14 +672,16 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
 
                 auto fluido = std::make_unique<CFluido>(nomeFluido, densidade, viscosidade);
                 auto trechoPoco = std::make_unique<CTrechoPoco>(nomeTrecho,
-                    profundInicial, profundFinal, std::move(fluido),
-                    diametroExterno, diametroInterno,
-                    coeficientePoisson, coeficienteExpansaoTermica,
-                    moduloElasticidade, pesoUnidade
-                    );
+                                                                profundInicial, profundFinal, std::move(fluido),
+                                                                diametroExterno, diametroInterno,
+                                                                coeficientePoisson, coeficienteExpansaoTermica,
+                                                                moduloElasticidade, pesoUnidade
+                                                                );
 
                 if (!poco->AdicionarTrechoPoco(std::move(trechoPoco))) {
                     std::cerr << "Falha ao adicionar trecho ao poço.\n";
+                } else {
+                    leuTrecho = true;
                 }
 
             } else {
@@ -677,9 +691,19 @@ void CSimuladorPerdaTubulacao::on_actionArquivo_Dat_triggered()
     }
 
     file.close();
+
+    // Se nao leu nem o poço ou nenhum trecho, mostra alerta
+    if (!leuPoco || !leuTrecho) {
+        QMessageBox::warning(this, "Arquivo Incorreto",
+                             "Atenção: o arquivo selecionado não está no formato esperado.\n"
+                             "Por favor, abra um arquivo de configuração válido.");
+        return;
+    }
+
     AtualizarDados();
     ui->statusbar->showMessage("Dados importados com sucesso!");
 }
+
 
 
 void CSimuladorPerdaTubulacao::on_actionNova_Simula_o_triggered()

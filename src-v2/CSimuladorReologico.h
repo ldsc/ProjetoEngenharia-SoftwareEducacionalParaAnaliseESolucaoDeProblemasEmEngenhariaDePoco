@@ -68,6 +68,7 @@ private slots:
     // exibe o grafico da pressao hidrostática ao longo da profundidade
     void on_btnExibirGraficoPressaoHidroestatica_clicked();
 
+
     //getters
     QString NomeArquivo() { return nomeArquivo; }
     QString CaminhoArquivo() { return caminhoArquivo; }

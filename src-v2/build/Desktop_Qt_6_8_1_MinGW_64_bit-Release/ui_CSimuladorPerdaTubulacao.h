@@ -520,7 +520,7 @@ public:
         groupBox_6->setTitle(QString::fromUtf8(""));
         layoutWidget1 = new QWidget(groupBox_6);
         layoutWidget1->setObjectName("layoutWidget1");
-        layoutWidget1->setGeometry(QRect(10, 40, 341, 341));
+        layoutWidget1->setGeometry(QRect(10, 40, 341, 342));
         formLayout = new QFormLayout(layoutWidget1);
         formLayout->setObjectName("formLayout");
         formLayout->setContentsMargins(0, 0, 0, 0);
@@ -692,7 +692,7 @@ public:
         label_5->setFont(font);
         layoutWidget_2 = new QWidget(centralwidget);
         layoutWidget_2->setObjectName("layoutWidget_2");
-        layoutWidget_2->setGeometry(QRect(330, 0, 830, 55));
+        layoutWidget_2->setGeometry(QRect(330, 0, 996, 64));
         verticalLayout = new QVBoxLayout(layoutWidget_2);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -728,7 +728,7 @@ public:
         layoutWidget_2->raise();
         menubar = new QMenuBar(CSimuladorPerdaTubulacao);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1449, 22));
+        menubar->setGeometry(QRect(0, 0, 1449, 26));
         menuArquivo = new QMenu(menubar);
         menuArquivo->setObjectName("menuArquivo");
         menuImportar_Dados = new QMenu(menuArquivo);
@@ -740,12 +740,21 @@ public:
         statusbar->setObjectName("statusbar");
         CSimuladorPerdaTubulacao->setStatusBar(statusbar);
         QWidget::setTabOrder(editNomePoco, editProfundidadeTotal);
-        QWidget::setTabOrder(editProfundidadeTotal, editTemperaturaSuperiorInicial);
+        QWidget::setTabOrder(editProfundidadeTotal, editDiametroPoco);
+        QWidget::setTabOrder(editDiametroPoco, editTemperaturaSuperiorInicial);
         QWidget::setTabOrder(editTemperaturaSuperiorInicial, editTemperaturaFundoInicial);
-        QWidget::setTabOrder(editTemperaturaFundoInicial, editTemperaturaSuperiorFinal);
+        QWidget::setTabOrder(editTemperaturaFundoInicial, editPressaoSupInicial);
+        QWidget::setTabOrder(editPressaoSupInicial, editTemperaturaSuperiorFinal);
         QWidget::setTabOrder(editTemperaturaSuperiorFinal, editTemperaturaFundoFinal);
-        QWidget::setTabOrder(editTemperaturaFundoFinal, checkBoxPacker);
-        QWidget::setTabOrder(checkBoxPacker, tabWidget_5);
+        QWidget::setTabOrder(editTemperaturaFundoFinal, editPressaoSupFinal);
+        QWidget::setTabOrder(editPressaoSupFinal, checkBoxPacker);
+        QWidget::setTabOrder(checkBoxPacker, editProfundidadeMedicao);
+        QWidget::setTabOrder(editProfundidadeMedicao, btnCalcularVariacoes);
+        QWidget::setTabOrder(btnCalcularVariacoes, tblTrechos);
+        QWidget::setTabOrder(tblTrechos, btnAdicionarTrecho);
+        QWidget::setTabOrder(btnAdicionarTrecho, btnRemoverTrecho);
+        QWidget::setTabOrder(btnRemoverTrecho, tblFluidos);
+        QWidget::setTabOrder(tblFluidos, tabWidget_5);
 
         menubar->addAction(menuArquivo->menuAction());
         menubar->addAction(menuRefer_ncias->menuAction());
