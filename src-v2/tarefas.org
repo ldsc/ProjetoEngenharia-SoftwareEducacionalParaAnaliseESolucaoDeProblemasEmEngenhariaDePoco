@@ -2,39 +2,40 @@
 #+AUTHOR: Nathan Rangel, Thauan Barbosa e André Bueno
 #+DATE: <2024-12-17>
 
-* DONE Lista de correções (Lyx):
-** DONE Criei um arquivo CMakeLists.txt que e usado pela versao automatizada do make, o cmake.
-** DONE Cria-se um arquivo CMakeLists.txt e roda-se "cmake ." com isso ele le sua maquina e gera o arquivo Makefile para windows ou linux ou mac-os x.
-** DONE Referenciar as figuras.
-** DONE Tirar pontos de figuras e tabelas.
-** DONE Pode gerenciar o arquivo bibliografia.bib usando editor simples, ou o emacs (super power),  ou https://www.zotero.org/, ou https://www.mendeley.com/,.... tem varios.
-** DONE Tirar do titulo Software Software,
-** DONE Passar o corretor ortografico
-*** DONE imput? caculos? numero
-** DONE informar link para dados informados no RF-01
-** DONE rodar no linux!
-** DONE 2.2.2  Hidráulica de perfuração ou 2.2.3 Pressão Hidrostática - decidir até onde vai maiusculo Maiusculo
-** DONE fazer figura Figura 2.1
-** DONE adicionar CGnuplot na seção de classes
-** DONE Diagrama de máquina de estado ajustar classe CNOME
-** DONE Nota sendo mostrada
-** DONE 4.1 cli CG|nuplot grafica qcustmplot
-** DONE Figura 4.1: refazer, faça igual ao de pacotes; 
-** DONE para versao do TCC gere as bibliotecas separado
-** DONE Figura 5.1:
+* Disciplina projeto aplicado
+** DONE Lista de correções (Lyx):
+*** DONE Criei um arquivo CMakeLists.txt que e usado pela versao automatizada do make, o cmake.
+*** DONE Cria-se um arquivo CMakeLists.txt e roda-se "cmake ." com isso ele le sua maquina e gera o arquivo Makefile para windows ou linux ou mac-os x.
+*** DONE Referenciar as figuras.
+*** DONE Tirar pontos de figuras e tabelas.
+*** DONE Pode gerenciar o arquivo bibliografia.bib usando editor simples, ou o emacs (super power),  ou https://www.zotero.org/, ou https://www.mendeley.com/,.... tem varios.
+*** DONE Tirar do titulo Software Software,
+*** DONE Passar o corretor ortografico
+**** DONE imput? caculos? numero
+*** DONE informar link para dados informados no RF-01
+*** DONE rodar no linux!
+*** DONE 2.2.2  Hidráulica de perfuração ou 2.2.3 Pressão Hidrostática - decidir até onde vai maiusculo Maiusculo
+*** DONE fazer figura Figura 2.1
+*** DONE adicionar CGnuplot na seção de classes
+*** DONE Diagrama de máquina de estado ajustar classe CNOME
+*** DONE Nota sendo mostrada
+*** DONE 4.1 cli CG|nuplot grafica qcustmplot
+*** DONE Figura 4.1: refazer, faça igual ao de pacotes;
+*** DONE para versao do TCC gere as bibliotecas separado
+*** DONE Figura 5.1:
 
-* DONE Lista de correções (código):
-** DONE cabecalho é atributo do simulador 
-** DONE corrigir arquivos incluidos.
-** DONE atributos nome minusculo
-** DONE PressaoTotal -> pressaoTotal
-** DONE acrescentar booleano | bool VerificarPreenchimentoColuna { preenchimentoColuna = true/false;}
+** DONE Lista de correções (código):
+*** DONE cabecalho é atributo do simulador
+*** DONE corrigir arquivos incluidos.
+*** DONE atributos nome minusculo
+*** DONE PressaoTotal -> pressaoTotal
+*** DONE acrescentar booleano | bool VerificarPreenchimentoColuna { preenchimentoColuna = true/false;}
 
 
-** DONE renomear todos os atributos | profunTotal
-** DONE std :: ofstream outputFile (" dados.txt") | (" dadosSimulacaoPoco.Gnuplot.dat") ;
-** DONE Modificar Poco (flag para o usuario manter o valor)
-** DONE Verificar entradas invalidas
+*** DONE renomear todos os atributos | profunTotal
+*** DONE std :: ofstream outputFile (" dados.txt") | (" dadosSimulacaoPoco.Gnuplot.dat") ;
+*** DONE Modificar Poco (flag para o usuario manter o valor)
+*** DONE Verificar entradas invalidas
 * DONE TCC1
 ** DONE CImpressao CRelatorioPoco ou algo do gênero (Deve ter um nome que faça sentido e encapsule os atributos e métodos).
 ** DONE Retirar necessidade de "enter" após atividade.
@@ -76,25 +77,23 @@
 **** Reunião com Bruno J.Vicente, identificar pelo menos 5 exemplos práticos a serem implementados.
 **** TODO Obter com Bruno a informação da teoria de cada exemplo
 **** TODO Solicitar a instalação e uso do software para feedback
-** Implementar a interface gráfica da parte I (poço com seção única)
+** DONE Implementar a interface gráfica da parte I (poço com seção única)
 *** DONE Fazer diagramas associados
 *** DONE Fazer a interface no QTCreator
 *** DONE Testar a usabilidade e fazer ajustes necessários
-
-
-**** DONE Adicionar menu, onde terão os ícones principais associados as simulações
-***** Simulador de Poço
-****** Nova simulação [Ctrl-n]
-****** Abrir arquivo [Ctrl-a]
-****** Salvar simulação [Ctrl-s]
+*** DONE Adicionar menu, onde terão os ícones principais associados as simulações
+**** Simulador de Poço
+***** Nova simulação [Ctrl-n]
+***** Abrir arquivo [Ctrl-a]
+***** Salvar simulação [Ctrl-s]
 ***** 
-**** DONE Adicionar uma barra de tarefas, onde terão os ícones principais associados as simulações. 
-***** Basicamente o que tem no menu Simulador de Pocço deve ter na barra de tarefas
-**** DONE Você pode adicionar uma barra de status
-***** É utilizada para enviar mensagens ao usuário, por exemplo, pediu para calcular algo, na barra de status aparece ...Calculando... e depois ...Calculou perda de carga.
-**** DONE Comportamento do ícone
-***** Se tiver cálculo demorado é normal mudar o ícone para ampulheta, terminou o cálculo volta para o padrão
-**** DONE Adicionar atalhos para as tarefas mais usadas. Por exemplo o botão Calcular pode ter um atalho. Como tem vários o atalho poderia chamar todos os cálculos na sequência correta, tipo atualizar todos os cálculos.
+*** DONE Adicionar uma barra de tarefas, onde terão os ícones principais associados as simulações.
+**** Basicamente o que tem no menu Simulador de Pocço deve ter na barra de tarefas
+*** DONE Você pode adicionar uma barra de status
+**** É utilizada para enviar mensagens ao usuário, por exemplo, pediu para calcular algo, na barra de status aparece ...Calculando... e depois ...Calculou perda de carga.
+*** DONE Comportamento do ícone
+**** Se tiver cálculo demorado é normal mudar o ícone para ampulheta, terminou o cálculo volta para o padrão
+*** DONE Adicionar atalhos para as tarefas mais usadas. Por exemplo o botão Calcular pode ter um atalho. Como tem vários o atalho poderia chamar todos os cálculos na sequência correta, tipo atualizar todos os cálculos.
 *** DONE Eliminar botão Adicionar Propriedade pois na verdade esta criando nova simulação
 *** DONE Adicionar classe de controle da simulação, por exemplo:
 **** após editar um lineEdit já executa a atualização dos cálculos ou só recalcula quando pressionar o botão calcular?
@@ -102,15 +101,13 @@
 *** DONE Na cálculo da pressão numa posição qualquer forneça botão para gerar o gráfico de pressão, uma janela que abre e mostra o gráfico de pressão.
 *** DONE Na aba fluidos deve ter: 
 **** Adicionar, adicionar linha nova de fluidos
-
-
 **** Modificar, abre os dados da linha e permite editação
 **** Deletar, deleta a linha seleciona. deve pedir confirmação
-** Implementar a interface gráfica da parte II (poço com seção variável)
+** TODO Implementar a interface gráfica da parte II (poço com seção variável)
 *** TODO Fazer diagramas associados
 *** DONE Fazer a interface no QTCreator
 *** TODO Testar a usabilidade e fazer ajustes necessários
-** Implementar a interface gráfica da parte III (poço horizontal)
+** TODO Implementar a interface gráfica da parte III (poço horizontal)
 *** TODO Fazer diagramas associados
 *** TODO Fazer a interface no QTCreator
 *** TODO Testar a usabilidade e fazer ajustes necessários
@@ -272,9 +269,8 @@
 *** Contém a ementa da disciplina.
 *** Contém informações dos conceitos teóricos e cálculos desenvolvidos.
 *** Pode ter como base o capítulo de elaboração (que já esta pronto) ou ser material de aula do professor, desde que tenha todas as informações teóricas necessárias para rodar o programa. Ou seja, deve ter INFORMAÇÕES TÉCNICAS DE ENGENHARIA DE POÇO. O Bruno deve ter material da disciplina, podemos ver se ele adiciona no material dele estes 5 exemplos (mostrando a interface desenvolvida), daí o material de aula dele seria o manual técnico.
-*** Neste manual logo após a teoria você inclui o exemplo de uso (copia os exemplos de uso).
+*** Neste manual logo após a teoria você inclui os exemplos de uso (copia os exemplos de uso do livro ou apostila do professor referenciando o autor do exemplo).
 *** Próxima reunião conversamos sobre este manual, é basicamente uma cópia do que já vai fazer mas em outro formato, logo após a teoria o exemplo aplicado.
-
 ** Manual do Usuário
 *** TODO Contém todas as instruções para baixar e usar o programa (Windows e Linux - arquivos executáveis e de entrada).
 **** Você deve gerar os executáveis para Windows e Linux e deixar disponibilizados.
@@ -287,18 +283,16 @@
 **** Note que se os exemplos contém arquivos de dados você deve incluir estes arquivos na distribuição, no zip que irão baixar (pasta test).
 **** Note que a pasta test deve ter TODOS OS ARQUIVOS NECESSÁRIOS PARA RODAR O PROGRAMA NO WINDOWS E LINUX, isto inclui os arquivos dos exemplos. Eu criei as pastas. Você deve testar o funcionamento dos 5 exemplos nas duas plataformas para garantir o funcionamento do sofwtare e da leitura dos arquivos. Use arquivos com codificação UTF8.
 *** DONE Adicionar ementa [copiar do capítulo de elaboração; pode ser como Apêndice ou capítulo]
-*** 
-
 ** Manual do Desenvolvedor
 *** DONE Elaboração: adicionar ementa [Bueno]
 *** TODO Este manuial deve conter todas as instruções para que outro aluno possa dar continuidade.
-*** TODO Incluir no capítulo de teste os 5 exemplos. 
-**** Note que aqui você deveria testar casos em que o usuário fornece dados errados para ver o comportamento do seu código. 
+*** TODO Incluir no capítulo de teste os 5 exemplos.
+**** Note que aqui você deveria testar casos em que o usuário fornece dados errados para ver o comportamento do seu código.
 **** Se identificar situações em que o software não funciona, tente entender o porque, coloque informações sobre o tipo de bug apresentado e adicione no github uma issue para resolver o problema identificado.
 **** Note que neste manual você pode adicionar um apêndice sobre BUGS
 **** Note que neste manual você pode adicionar um apêndice sobre tarefas a serem realizadas (uma cópia deste arquivo Tarefas.org).
 **** PS: uso o editor emacs, consigo exportar este arquivo para latex. Sendo fácil importar no lyx.
-**** Note que neste manual colocamos problemas resolvidos, problemas não resolvidos (pendências) e sugestões para trabalhos futuros. É um manual para os engenheiros. Falamos de acertos e erros, de tarefas. 
+**** Note que neste manual colocamos problemas resolvidos, problemas não resolvidos (pendências) e sugestões para trabalhos futuros. É um manual para os engenheiros. Falamos de acertos e erros, de tarefas.
 **** O manual do usuário é um manual de venda do produto, mostra o que dá certo, fala de limites operacionais, pode citar algum bug, mas não entra nos detalhes internos como fazemos aqui.
 ** No TCC coloque seção Sugestões para Trabalhos Futuros
 *** Possibilidade trabalhar com dois fluidos na mesma seção.
@@ -333,3 +327,83 @@
 **** C++ 23
 **** Qt
 **** Git
+* Erros/BUGS:
+1. coeficienteExpancaoTermica(coefExp), //ERRO: é o ultimo atributo, deve ser o último a ser inicializado.
+   Declaração atributo e uso no construtor:
+   A ordem de declaração dos atributos é a ordem de construção. Só que
+   o atributo a seguir você declara no final da classe e executa antes
+   de outros no construtor. Coloque no final da sequência de
+   construção.
+2. QVector<double> x(profundidades.begin(), profundidades.end());
+   - 2.1
+     - Não existe conversão direta de vector para QVector em versões
+     antigas do Qt.
+     Solução:
+     QVector<double> x(profundidades.size()); // Pré-aloca o tamanho para otimização
+      for (size_t i = 0; i < profundidades.size(); ++i) {
+          x[i] = profundidades[i];
+      }
+   - 2.2
+     - Pode criar um template num arquivo config.h e incluir este
+     config.h onde usa
+      template<typename T>
+         QVector<T> MakeQVector(std::vector<T> v)
+         {
+         QVector<T> x(v.size()); // Pré-aloca o tamanho para otimização
+         for (size_t i = 0; i < v.size(); ++i) {
+          x[i] = v[i];
+      }
+   - 2.3
+       Usar QT6
+       - // Conversão usando QVector::fromStdVector()
+        QVector<double> x = QVector<double>::fromStdVector(profundidades);
+3. double pressaoCabeca = ui->editPressaoSupFinal->text().toDouble();
+   - Declara mas não usa
+       /home/bueno/Documentos/workdir/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/src-v2/CSimuladorPerdaTubulacao.cpp:569:
+     warning: unused variable ‘pressaoCabeca’ [-Wunused-variable]
+     ../../CSimuladorPerdaTubulacao.cpp: In member function ‘void
+     CSimuladorPerdaTubulacao::on_btnCalcularVariacoes_clicked()’:
+     ../../CSimuladorPerdaTubulacao.cpp:569:12: warning: unused
+     variable ‘pressaoCabeca’ [-Wunused-variable]
+       569 |     double pressaoCabeca = ui->editPressaoSupFinal->text().toDouble();
+      |            ^~~~~~~~~~~~~
+
+4. QPixmap pixmap = this->grab();
+   /home/bueno/Documentos/workdir/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/src-v2/CSimuladorPerdaTubulacao.cpp:732:
+   error: ‘class CSimuladorPerdaTubulacao’ has no member named ‘grab’
+   ../../CSimuladorPerdaTubulacao.cpp:732:32: error: ‘class
+   CSimuladorPerdaTubulacao’ has no member named ‘grab’
+   732 |         QPixmap pixmap = this->grab();
+         |                                ^~~~
+
+5. if (row < 0 || row >= poco->Trechos().size()) return;
+   /home/bueno/Documentos/workdir/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/src-v2/CSimuladorReologico.cpp:123:
+   warning: comparison of integer expressions of different signedness:
+   ‘int’ and ‘std::vector<CTrechoPoco*>::size_type’ {aka ‘long
+   unsigned int’} [-Wsign-compare]
+   ../../CSimuladorReologico.cpp: In member function ‘void
+   CSimuladorReologico::EditarLinhaTabela(int)’:
+   ../../CSimuladorReologico.cpp:123:24: warning: comparison of
+   integer expressions of different signedness: ‘int’ and
+   ‘std::vector<CTrechoPoco*>::size_type’ {aka ‘long unsigned int’}
+   [-Wsign-compare]
+     123 |     if (row < 0 || row >= poco->Trechos().size()) return;
+           | ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~row é int pode ser negativo; size() é do tipo size_t (unsigned int) nunca é negativo. |
+    Pode trocar
+        void CSimuladorReologico::EditarLinhaTabela(int row)
+        por
+        void CSimuladorReologico::EditarLinhaTabela(size_t row)
+        e declarar e usar row como size_t se nunca for negativo.
+
+6. Aqui tem diversos outros erros que posso mostrar numa reunião online
+7.
+* Trabalho escrito
+** Adicionar diagrama de máquina de estado para os estados do poço.
+*** Considere todas as possibilidades implementadas.
+** Precisa adicionar os diagramas no lyx/pdf final.
+** versões
+*** Teve a versão 1 Nathan Poço 1 (disc.projeto)
+*** Teve a versão 2 Thauan Poço 1 continuidade  (disc.projeto)
+*** Teve a versão 3 Nathan Poço 2 (TCC)
+*** Considere renomear o diretório v2 para v3
+*** E a seguir criar diretório v2 e deixar alí cópia dos códigos como Nathan deixou, fica mais claro o que cada um fez.

@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+
+actor "Engenheiro Civil" as Engenheiro
+
+rectangle "Sistema de Análise de Conforto Térmico" {
+  usecase "Realizar Simulação Térmica" as UC1
+  usecase "Gerar Relatório de Conforto" as UC2
+}
+
+Engenheiro --> UC1
+UC1 ..> UC2 : <<include>>
+
+note "Contém dados de propriedades\nde meios porosos e condições\nde contorno." as InputFileNote
+UC1 -- InputFileNote
+
+note "Resultados de condutividade,\ntemperatura e fluxo de calor." as OutputFileNote
+UC1 -- OutputFileNote
+
+note "Relatório formatado\ncom gráficos e tabelas." as ReportFileNote
+UC2 -- ReportFileNote
+
+@enduml

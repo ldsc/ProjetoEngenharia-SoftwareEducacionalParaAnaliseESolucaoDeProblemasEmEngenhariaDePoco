@@ -28,16 +28,16 @@ CSimuladorReologico::CSimuladorReologico(QWidget *parent)
     ui->tblFluidos->setEditTriggers(QAbstractItemView::DoubleClicked | QAbstractItemView::EditKeyPressed);
 
     // conecta a edicao de celulas na tabela a uma funcao que atualiza os dados do fluido
-    connect(ui->tblFluidos, &QTableWidget::cellChanged, this, &CSimuladorReologico::EditarLinhaTabela);
+    QObject::connect(ui->tblFluidos, &QTableWidget::cellChanged, this, &CSimuladorReologico::EditarLinhaTabela);
 
     // conecta a alteracao dos campos de entrada para atualizar o objeto do poco
-    connect(ui->editNomePoco, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
-    connect(ui->editProfundidadeTotal, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
-    connect(ui->editPressaoSuperficie, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
-    connect(ui->editDiametroPoco, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
-    connect(ui->editDiametroOD, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
-    connect(ui->editDiametroID, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
-    connect(ui->editVazao, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
+    QObject::connect(ui->editNomePoco, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
+    QObject::QObject::connect(ui->editProfundidadeTotal, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
+    QObject::connect(ui->editPressaoSuperficie, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
+    QObject::connect(ui->editDiametroPoco, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
+    QObject::connect(ui->editDiametroOD, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
+    QObject::connect(ui->editDiametroID, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
+    QObject::connect(ui->editVazao, &QLineEdit::editingFinished, this, &CSimuladorReologico::EditarDadosPoco);
 
 
     // desativa todos os botoes de calculo inicialmente (só ativa quando preencher dados do poco)

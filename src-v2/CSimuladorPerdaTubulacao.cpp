@@ -7,6 +7,9 @@
 #include <iostream>   // para std::cerr e std::endl
 #include <fstream>    // para std::ifstream
 #include <sstream>
+#include <QMessageBox>
+#include <QScreen>
+#include <QFileDialog>
 
 CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
     : QMainWindow(parent)
@@ -20,16 +23,16 @@ CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
 
 
     // Sinal para alterações das caixas
-    connect(ui->editNomePoco, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editProfundidadeTotal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editPressaoSupInicial, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editPressaoSupFinal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editTemperaturaSuperiorInicial, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editTemperaturaFundoInicial, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editTemperaturaSuperiorFinal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editTemperaturaFundoFinal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->editProfundidadeMedicao, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
-    connect(ui->checkBoxPacker, &QCheckBox::stateChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    QObject::connect(ui->editNomePoco, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    QObject::connect(ui->editProfundidadeTotal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    QObject::connect(ui->editPressaoSupInicial, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    QObject::connect(ui->editPressaoSupFinal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    QObject::connect(ui->editTemperaturaSuperiorInicial, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    QObject::connect(ui->editTemperaturaFundoInicial, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    QObject::connect(ui->editTemperaturaSuperiorFinal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    QObject::connect(ui->editTemperaturaFundoFinal, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    QObject::connect(ui->editProfundidadeMedicao, &QLineEdit::editingFinished, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
+    QObject::connect(ui->checkBoxPacker, &QCheckBox::stateChanged, this, &CSimuladorPerdaTubulacao::EditarDadosPoco);
 
 
     // iniciar com botões desativado
@@ -37,8 +40,8 @@ CSimuladorPerdaTubulacao::CSimuladorPerdaTubulacao(QWidget *parent)
     ui->btnRemoverTrecho->setEnabled(false);
     ui->btnCalcularVariacoes->setEnabled(false);
 
-    connect(ui->tblFluidos, &QTableWidget::cellChanged, this, &CSimuladorPerdaTubulacao::EditarLinhaTabela);
-    connect(ui->tblTrechos, &QTableWidget::cellChanged, this, &CSimuladorPerdaTubulacao::EditarLinhaTabela);
+    QObject::connect(ui->tblFluidos, &QTableWidget::cellChanged, this, &CSimuladorPerdaTubulacao::EditarLinhaTabela);
+    QObject::connect(ui->tblTrechos, &QTableWidget::cellChanged, this, &CSimuladorPerdaTubulacao::EditarLinhaTabela);
 
     //abrir janela no meio do monitor
     QScreen *screen = QGuiApplication::primaryScreen();

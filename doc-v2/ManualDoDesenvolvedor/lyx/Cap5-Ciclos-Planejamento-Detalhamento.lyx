@@ -102,7 +102,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -111,6 +111,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -147,10 +148,42 @@ Versão Inicial – Interação via Terminal e Geração de Gráficos com Gnuplo
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Versão:
+ 0.9
+\end_layout
+
+\begin_layout Plain Layout
+Componentes:
+ módulo de calculo com interface CLI/terminal e biblioteca CGnuplot (acesso ao gnuplot)
+\end_layout
+
+\begin_layout Plain Layout
+Desenvolvida na disciplina:
+ xxx
+\end_layout
+
+\begin_layout Plain Layout
+Descrição:
+\end_layout
+
+\begin_layout Plain Layout
+...a versão 1 deve corresponder a que terminou na disciplina de projeto de software - programação prática
+\end_layout
+
+\end_inset
+
 Na versão inicial do sistema,
  a entrada e saída de dados foi implementada exclusivamente por meio do terminal,
  sem o uso de bibliotecas gráficas.
- Para a visualização dos resultados,
+ 
+\end_layout
+
+\begin_layout Standard
+Para a visualização dos resultados,
  foi incorporado o uso do Gnuplot,
  permitindo a geração de gráficos de forma simples e direta,
  o que facilitou a apresentação dos dados ao usuário.
@@ -163,6 +196,7 @@ Essa versão foi desenvolvida em um ambiente de linha de comando,
  em que a interação ocorre essencialmente por meio de texto.
  Mesmo com essa limitação,
  o usuário já era capaz de gerar gráficos e realizar simulações em diferentes cenários de forma funcional.
+ Veja Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Versao0.1"
@@ -204,7 +238,6 @@ name "fig:Versao0.1"
 
 \begin_inset Graphics
 	filename ../imagens/Sistema-V0.1.png
-	lyxscale 60
 	width 100text%
 
 \end_inset
@@ -229,15 +262,95 @@ Versão 0.2 – Otimização de Entrada,
 \end_layout
 
 \begin_layout Standard
-A versão 0.2 do programa introduziu melhorias significativas em termos de usabilidade,
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Versão:
+ 1.0
+\end_layout
+
+\begin_layout Plain Layout
+Componentes:
+ módulo de calculo com interface CLI/terminal e biblioteca CGnuplot (acesso ao gnuplot)
+\end_layout
+
+\begin_layout Plain Layout
+Desenvolvida na disciplina:
+ xxx
+\end_layout
+
+\begin_layout Plain Layout
+Descrição:
+\end_layout
+
+\begin_layout Plain Layout
+......a versão 1 deve corresponder a que terminou na disciplina de projeto de software - programação prática
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+no git
+\end_layout
+
+\begin_layout Plain Layout
+Localizar o commit da versão 1.0:
+\end_layout
+
+\begin_layout Plain Layout
+checkout --date="AAAA-MM-DD",
+ para ir para data que encerrou esta versão
+\end_layout
+
+\begin_layout Plain Layout
+git log --before="AAAA-MM-DD HH:MM:SS" --pretty=format:"%H" | head -1 ;
+ para localizar o commit específico desta versão
+\end_layout
+
+\begin_layout Plain Layout
+git checkout $GIT_COMMIT_HASH ;
+ para ir para o commit que tem esta versão finalizada
+\end_layout
+
+\begin_layout Plain Layout
+Registar a versão 1.0:
+\end_layout
+
+\begin_layout Plain Layout
+git tag -a NOME_DA_VERSAO -m "Mensagem da versão NOME_DA_VERSAO"
+\end_layout
+
+\begin_layout Plain Layout
+# Exemplo:
+ git tag -a v1.0.20240515 -m "Versão 1.0 lançada em 15 de maio de 2024."
+\end_layout
+
+\begin_layout Plain Layout
+Sempre que terminar uma versão marque a mesma criando a tag.
+\end_layout
+
+\end_inset
+
+A versão 0.2
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+1.0
+\end_layout
+
+\end_inset
+
+ do programa introduziu melhorias significativas em termos de usabilidade,
  efetividade e gestão de dados,
  mantendo a interação orientada ao terminal e a visualização de resultados por meio do Gnuplot.
  Essa atualização teve como foco a correção de falhas identificadas na versão anterior e a inclusão de novas funcionalidades que aprimoraram a experiência do usuário,
  tornando-a mais fluida e intuitiva.
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Standard
@@ -254,18 +367,51 @@ Otimização da navegação no menu de opções,
  permitindo a seleção de comandos por meio da digitação direta de números,
  sem a necessidade de pressionar Enter repetidamente,
  o que tornou o processo mais ágil.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+estes itens desta seção estão nos requisitos?
+ se não estão coloque
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 Implementação de um sistema de salvamento automático,
  no qual os dados são armazenados em arquivos nomeados conforme o poço em questão,
  contendo o histórico completo das ações realizadas durante a simulação.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+estes itens desta seção estão nos requisitos?
+ se não estão coloque
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 Adição de um mecanismo de verificação de entradas,
  capaz de detectar valores inválidos ou formatos inadequados,
  reduzindo significativamente erros de execução e assegurando a continuidade do processo de forma estável.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+estes itens desta seção estão nos requisitos?
+ se não estão coloque
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -319,8 +465,18 @@ name "fig:Versao0.2"
 
 \begin_inset Graphics
 	filename ../imagens/Sistema-V0.2.png
-	lyxscale 60
 	width 100text%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+faltou o gráfico aqui;
+ 
+\end_layout
 
 \end_inset
 
@@ -344,7 +500,46 @@ Versão 1.0 – Interface Gráfica,
 \end_layout
 
 \begin_layout Standard
-A versão 1.0 do software marcou uma transição significativa em sua arquitetura e usabilidade,
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Versão:
+ 1.5 - Gráfica 1
+\end_layout
+
+\begin_layout Plain Layout
+Componentes:
+ Qt
+\end_layout
+
+\begin_layout Plain Layout
+Desenvolvida na disciplina:
+ xxx
+\end_layout
+
+\begin_layout Plain Layout
+Descrição:
+\end_layout
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+
+A versão 1.0
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+1.5?
+ 2?
+\end_layout
+
+\end_inset
+
+ do software marcou uma transição significativa em sua arquitetura e usabilidade,
  ao substituir a interface baseada exclusivamente em comandos de terminal por uma interface gráfica interativa,
  desenvolvida com foco na acessibilidade e na experiência do usuário.
  Essa atualização manteve todas as funcionalidades implementadas nas versões anteriores,
@@ -364,6 +559,16 @@ Inserção de dados por meio de campos de texto e botões,
 \begin_layout Itemize
 Visualização das propriedades dos fluidos do poço organizadas em tabelas,
  o que proporciona maior clareza e organização das informações;
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+colocou isso nos requisitos?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -376,6 +581,17 @@ Essa versão consolida a transição do sistema,
  antes concebido como um protótipo textual,
  para uma aplicação interativa com maior usabilidade.
  A nova abordagem contribui diretamente para o aprendizado dos usuários e facilita a análise de diferentes cenários de simulação relacionados à Engenharia de Poço.
+\end_layout
+
+\begin_layout Standard
+Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Versao1.0"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -434,7 +650,57 @@ Versão 1.1 – Consolidação Visual,
 \end_layout
 
 \begin_layout Standard
-A versão 1.1 do software manteve todas as funcionalidades introduzidas na versão 1.0,
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Versão:
+ 
+\change_deleted 643308733 1748568595
+2
+\change_inserted 643308733 1748568595
+1
+\change_unchanged
+.
+\change_deleted 643308733 1748568596
+0
+\change_inserted 643308733 1748568596
+9
+\change_unchanged
+ - Gráfica 2
+\end_layout
+
+\begin_layout Plain Layout
+Componentes:
+ Qt
+\end_layout
+
+\begin_layout Plain Layout
+Desenvolvida na disciplina:
+ xxx
+\end_layout
+
+\begin_layout Plain Layout
+Descrição:
+\end_layout
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+
+A versão 1.1
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+?
+\end_layout
+
+\end_inset
+
+ do software manteve todas as funcionalidades introduzidas na versão 1.0,
  porém trouxe importantes avanços no aspecto visual e na eficiência da interface.
  Houve uma consolidação da estrutura gráfica,
  com ajustes que tornaram o ambiente mais limpo,
@@ -443,14 +709,24 @@ A versão 1.1 do software manteve todas as funcionalidades introduzidas na vers�
 
 \begin_layout Standard
 Uma das principais melhorias foi a automação do processo de cálculo:
- o software passou a detectar alterações nas propriedades dos elementos simulados e a recalcular os parâmetros automaticamente,
+ o software passou a detectar alterações nas propriedades dos elementos simulados 
+\change_inserted 643308733 1748568301
+(quando o usuário atualiza um determinado valor imediatamente são atualizados os demais parâmetros)
+\change_unchanged
+ e a recalcular os parâmetros automaticamente,
  sem a necessidade de o usuário acionar repetidamente o botão "Calcular".
  Essa otimização reduziu interações redundantes e tornou o fluxo de trabalho mais ágil.
 \end_layout
 
 \begin_layout Standard
 Além disso,
- foi implementada uma barra de tarefas com novas funcionalidades organizadas em menus acessíveis,
+ foi implementada uma barra de 
+\change_deleted 643308733 1748568337
+tarefas
+\change_inserted 643308733 1748568337
+menus
+\change_unchanged
+ com novas funcionalidades organizadas em menus acessíveis,
  incluindo:
 \end_layout
 
@@ -463,6 +739,24 @@ Arquivo:
  opções para iniciar nova simulação,
  salvar o projeto atual,
  importar dados e exportar a interface como imagem;
+\change_inserted 643308733 1748568529
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748568535
+colocou nos requisitos?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -472,6 +766,33 @@ Referências:
 
 \series default
  acesso ao manual do usuário e à documentação dos modelos reológicos implementados;
+
+\change_inserted 643308733 1748568410
+ Permite acessar todos os manuais em pdf.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1748568539
+Ajuda:
+ Acesso ao manual do usuário (como instalar e usar o software);
+ Acesso ao manual técnico científico (modelos reológicos implementados);
+ Sobre o software;
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748568539
+colocou nos requisitos?
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -482,6 +803,22 @@ Atalhos de teclado:
 \series default
 comandos como Ctrl+N para nova simulação e Ctrl+S para salvar,
  otimizando a navegação do sistema.
+\change_inserted 643308733 1748568541
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748568541
+colocou nos requisitos?
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -493,7 +830,25 @@ Outro recurso adicionado foi a possibilidade de exibir o gráfico da pressão hi
 
 \begin_layout Standard
 Com essas melhorias,
- a versão 1.1 reforça a transição do software de uma ferramenta educacional básica para uma aplicação mais robusta,
+ a versão 1.1
+\change_inserted 643308733 1748568573
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748568610
+1.9?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ reforça a transição do software de uma ferramenta educacional básica para uma aplicação mais robusta,
  interativa e alinhada às necessidades dos usuários no contexto da Engenharia de Poço.
 \end_layout
 
@@ -584,11 +939,23 @@ Variações de temperatura (dilatação térmica);
 \end_layout
 
 \begin_layout Itemize
-Efeito balão (ballooning);
+Efeito balão (
+\emph on
+ballooning
+\emph default
+);
 \end_layout
 
 \begin_layout Itemize
-Força pistão gerada por packer ou crossover;
+Força pistão gerada por 
+\emph on
+packer
+\emph default
+ ou 
+\emph on
+crossover
+\emph default
+;
 \end_layout
 
 \begin_layout Itemize
@@ -603,10 +970,18 @@ Pressões aplicadas ao longo da coluna.
 Para viabilizar essas análises,
  o usuário pode inserir propriedades adicionais,
  como coeficiente de expansão térmica,
- coeficiente de Poisson e módulo de elasticidade do material da coluna.
+ coeficiente de 
+\emph on
+Poisson
+\emph default
+ e módulo de elasticidade do material da coluna.
  A interface também permite modelar o poço com múltiplas seções,
  o que possibilita simulações mais precisas e segmentadas,
- inclusive em cenários com ou sem a presença de packer.
+ inclusive em cenários com ou sem a presença de 
+\emph on
+packer
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -662,7 +1037,6 @@ name "fig:Versao2.0"
 
 \begin_inset Graphics
 	filename ../imagens/MenuSistema-V2.0.png
-	lyxscale 60
 	width 100text%
 
 \end_inset
@@ -712,7 +1086,6 @@ name "fig:Versao2.0.1"
 
 \begin_inset Graphics
 	filename ../imagens/Sistema-V1.1.png
-	lyxscale 60
 	width 100text%
 
 \end_inset
@@ -762,7 +1135,6 @@ name "fig:Versao2.0.2"
 
 \begin_inset Graphics
 	filename ../imagens/Sistema-V2.0.png
-	lyxscale 60
 	width 100text%
 
 \end_inset

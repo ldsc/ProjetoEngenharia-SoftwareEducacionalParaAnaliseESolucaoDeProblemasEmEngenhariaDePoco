@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+
+actor "Analista de Conforto Térmico" as Analyst
+
+rectangle "Sistema de Avaliação de Desempenho de Telhas" {
+  usecase "Importar Dados de Ensaios" as UC_Import
+  usecase "Processar Propriedades Térmicas" as UC_Process
+  usecase "Gerar Relatório de Análise" as UC_Report
+}
+
+note "input_ensaios.dat\n(Dados brutos dos sensores)" as InputDataNote
+note "relatorio_final.pdf\n(Documento para conformidade)" as OutputReportNote
+
+Analyst --> UC_Import
+UC_Import --> UC_Process
+UC_Process --> UC_Report
+
+InputDataNote .l. UC_Import : <<dados de entrada>>
+UC_Report .r. OutputReportNote : <<dados de saída>>
+@enduml

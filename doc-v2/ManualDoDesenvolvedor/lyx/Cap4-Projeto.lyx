@@ -102,7 +102,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -111,6 +111,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -261,6 +262,26 @@ Diagrama de componentes
 \end_inset
 
 
+\change_inserted 643308733 1748558824
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1748558884
+Vimos o diagrama de pacotes/assuntos na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-Pacotes"
+nolink "false"
+
+\end_inset
+
+.
+ Veremos aqui o diagrama de componentes que é o detalhamento do diagrama de pacotes/assuntos mostrando os componentes,
+ as bibliotecas e subsistemas que fazem parte do software desenvolvido.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -307,6 +328,8 @@ name "fig:Diagrama-de-componentes"
 \end_inset
 
 
+\change_deleted 643308733 1748559644
+
 \begin_inset Graphics
 	filename ../imagens/DiagramaComponentes.png
 	lyxscale 20
@@ -314,6 +337,88 @@ name "fig:Diagrama-de-componentes"
 
 \end_inset
 
+
+\change_inserted 643308733 1748559646
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\change_inserted 643308733 1748559644
+\begin_inset Graphics
+	filename ../uml/DiagramaComponentes3.png
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748558987
+nesta página você encontra os componentes da biblioteca QT
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748558987
+https://doc.qt.io/qt-6/qtmodules.html
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748559031
+o arquivo do seu projeto Simulador-Poco.pro tem a informação de quais componentes de Qt esta utilizando:
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748559066
+QT += core gui
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748559068
+QT += widgets printsupport
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748559706
+ou seja usa os componentes:
+ core gui widgets printsupport
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748559734
+veja no diagrama que montei como fica o diagrama de componentes que você efetivamente usa
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748559859
+os arquivos relacionados a poco devem gerar a LibEngPoco,
+ idem para demais.
+ Dai ficará como ilustrado.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748559888
+você pode editar o arquivo DiagramaComponentes2 e gerar a imagem usando o plantuml ou fazer a mesma no umbrello
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 

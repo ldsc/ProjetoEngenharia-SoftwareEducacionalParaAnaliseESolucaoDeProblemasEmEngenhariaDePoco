@@ -49,9 +49,11 @@ public:
         diametroExterno(diamExt),
         diametroInterno(diamInt),
         coeficientePoisson(coefPoisson),
-        coeficienteExpancaoTermica(coefExp),
         moduloEslasticidade(moduloE),
-        pesoUnidade(pesoUnit) {}
+        pesoUnidade(pesoUnit),
+        coeficienteExpancaoTermica(coefExp) //ERRO: é o ultimo atributo, deve ser o último a ser inicializado
+
+    {}
 
     // Getters
     std::string Nome() const { return nome; }

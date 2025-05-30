@@ -1,0 +1,59 @@
+@startuml
+left to right direction
+
+title Diagrama de Componentes do Software de Engenharia de Poço
+
+' Definição dos componentes principais
+component "JanelaPrincipal" as JanelaPrincipal
+component "LibMecFluidos" as MecFluidos
+component "LibMecRochas" as MecRochas
+component "LibEngPoco" as EngPoco
+
+' Representação da Biblioteca Qt como um nó ou pacote
+node "Biblioteca Qt" as QtLib {
+  component "QtCore" as QtCore
+  component "QtGui" as QtGui
+  component "QtWidgets" as QtWidgets
+  component "QtPrintSupport" as QtPrintSupport
+}
+
+' Representação da Biblioteca C++ / STL
+component "Biblioteca C++ / STL" as CppSTL
+
+' NOVO COMPONENTE: QCustomPlot
+component "QCustomPlot" as QCustomPlotLib
+
+' Dependências explícitas conforme sua solicitação
+EngPoco --> MecFluidos : "utiliza"
+EngPoco --> MecRochas : "utiliza"
+
+JanelaPrincipal --> MecFluidos : "chama funções de"
+JanelaPrincipal --> MecRochas : "chama funções de"
+JanelaPrincipal --> EngPoco : "chama funções de"
+
+JanelaPrincipal --> QtLib : "depende de"
+
+' JanelaPrincipal utiliza QCustomPlot para visualização
+JanelaPrincipal --> QCustomPlotLib : "utiliza para gráficos"
+
+' QCustomPlot depende de componentes específicos do Qt
+QCustomPlotLib --> QtGui : "depende de"
+QCustomPlotLib --> QtWidgets : "depende de"
+
+' Dependências dos componentes Qt
+QtCore .down.> QtLib
+QtGui .down.> QtLib
+QtWidgets .down.> QtLib
+QtPrintSupport .down.> QtLib
+
+' Dependências de todos os componentes internos para C++ / STL
+JanelaPrincipal ..> CppSTL : "acessa"
+MecFluidos ..> CppSTL : "acessa"
+MecRochas ..> CppSTL : "acessa"
+EngPoco ..> CppSTL : "acessa"
+QCustomPlotLib ..> CppSTL : "acessa" ' QCustomPlot também usa STL
+
+' Dependências dos módulos Qt para C++ / STL (implícita, mas importante)
+QtLib ..> CppSTL : "acessa"
+
+@enduml

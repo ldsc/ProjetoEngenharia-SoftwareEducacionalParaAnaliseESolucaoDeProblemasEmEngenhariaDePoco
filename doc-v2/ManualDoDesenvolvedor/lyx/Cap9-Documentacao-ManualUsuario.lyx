@@ -114,7 +114,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -123,6 +123,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -181,8 +182,38 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Lá você encontra instruções atualizadas de download,
+Lá você encontra instruções atualizadas de 
+\emph on
+download
+\emph default
+,
  instalação e uso do programa.
+\change_inserted 643308733 1748570138
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748570200
+o manual esta incompleto;
+ assim que der atualize;
+ pode trazer para cá exemplos de uso;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748570228
+note que o manual do usuário estra num diretório diferente porque gera um pdf isolado/separado do manual técnico científico
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Subsection
@@ -206,8 +237,8 @@ Para compilar o software,
  é necessário atender aos seguintes pré-requisitos:
 \end_layout
 
-\begin_layout Standard
-• Instalar o compilador g++ da GNU,
+\begin_layout Itemize
+Instalar o compilador g++ da GNU,
  disponível para diferentes sistemas operacionais em:
  
 \begin_inset CommandInset href
@@ -219,6 +250,36 @@ literal "false"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1748569981
+Instalar a biblioteca Qt (6.0 ou superior) - 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.qt.io/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1748569968
+Instalar a biblioteca Qt CustomPlot - 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.qcustomplot.com/"
+literal "false"
+
+\end_inset
+
+.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section
@@ -274,6 +335,31 @@ nolink "false"
 \end_inset
 
 .
+\change_inserted 643308733 1748570057
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1748570057
+A Figura 1 (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Versao2.0"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) apresenta a tela inicial do software,
+ que corresponde ao menu de seleção entre os dois módulos principais da aplicação.
+ Nesta interface,
+ o usuário pode escolher entre acessar o Módulo 1,
+ voltado para a parte hidráulica de perfuração,
+ ou o Módulo 2,
+ destinado à análise de tensões na coluna de completação.
 \end_layout
 
 \begin_layout Standard
@@ -327,6 +413,26 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 643308733 1748570062
+A Figura 2 ( 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Versao2.0.1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) exibe o Módulo 1,
+ no qual são disponibilizadas as funcionalidades relacionadas ao cálculo da pressão hidrostática,
+ perda de carga por fricção,
+ propriedades médias dos fluidos e gráficos associados ao escoamento.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document
@@ -363,6 +469,24 @@ name "fig:Versao2.0.1"
 \end_inset
 
 
+\change_inserted 643308733 1748570094
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748570101
+coloque anotações na figura
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -374,6 +498,28 @@ Fonte:
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1748570073
+Já a Figura 3 (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Versao2.0.2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) apresenta o Módulo 2,
+ onde são realizados os cálculos referentes aos deslocamentos axiais (ΔL),
+ variações de comprimento da coluna,
+ efeitos de temperatura,
+ atuação do packer,
+ forças sobre o pistão e outros elementos mecânicos associados à completação do poço.
 \end_layout
 
 \begin_layout Standard
@@ -413,6 +559,22 @@ name "fig:Versao2.0.2"
 \end_inset
 
 
+\change_inserted 643308733 1748570106
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748570106
+coloque anotações na figura
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -427,6 +589,8 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 643308733 1748570051
 A Figura 1 (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -448,6 +612,8 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 643308733 1748570051
 A Figura 2 ( 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -466,6 +632,8 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 643308733 1748570051
 Já a Figura 3 (
 \begin_inset CommandInset ref
 LatexCommand ref

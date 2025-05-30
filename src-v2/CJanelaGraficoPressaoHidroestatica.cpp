@@ -36,8 +36,10 @@ void CJanelaGraficoPressaoHidroestatica::PerfilHidrostatico(
 // Parte da logica para segmentacao por inclinacao foi adaptada com auxilio de IA (ChatGPT)
 void CJanelaGraficoPressaoHidroestatica::PlotarGraficoPressaoxProfundidade()
 {
-    QVector<double> x(profundidades.begin(), profundidades.end());
-    QVector<double> y(pressoes.begin(), pressoes.end());
+    //QVector<double> x(profundidades.begin(), profundidades.end());
+    QVector<double> x = QVector<double>::fromStdVector(profundidades);
+    //QVector<double> y(pressoes.begin(), pressoes.end());
+    QVector<double> y = QVector<double>::fromStdVector(pressoes);
 
     auto *plot = ui->customPlotPressaoMediaProfundidade;
     plot->clearGraphs();
@@ -123,10 +125,15 @@ void CJanelaGraficoPressaoHidroestatica::PlotarGraficoPressaoxProfundidade()
     plot->setInteraction(QCP::iSelectPlottables, true);
 
     // Mostra tooltip com coordenadas ao passar o mouse (recurso inserido com apoio de IA)
-    connect(plot, &QCustomPlot::mouseMove, this, [=](QMouseEvent *event) {
+    //ERRO: linha abaixo não compila
+    // connect(plot, &QCustomPlot::mouseMove, this, [=](QMouseEvent *event) {
+    QObject::connect(plot, &QCustomPlot::mouseMove, this, [=](QMouseEvent *event) { // <--- AQUI ESTÁ A CORREÇÃO PRINCIPAL
         double xVal = plot->xAxis->pixelToCoord(event->pos().x());
         double yVal = plot->yAxis->pixelToCoord(event->pos().y());
 
+        // NOTA: Conforme discutido anteriormente, setToolTip pode não ser ideal para
+        // tooltip dinâmico no gráfico QCustomPlot. Avalie se você realmente quer
+        // um tooltip no *widget* QCustomPlot ou uma QLabel na barra de status.
         plot->setToolTip(QString("Profundidade: %1 ft\nPressão: %2 psi")
                              .arg(xVal, 0, 'f', 2)
                              .arg(yVal, 0, 'f', 2));

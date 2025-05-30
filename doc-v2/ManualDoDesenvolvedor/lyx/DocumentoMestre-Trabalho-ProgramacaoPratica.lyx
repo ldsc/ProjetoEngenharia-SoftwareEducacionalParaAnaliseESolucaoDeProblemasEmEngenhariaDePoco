@@ -255,10 +255,33 @@ literal "true"
 
 \begin_layout Standard
 \align block
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align block
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap9-Documentacao-ManualUsuario.lyx"
 literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+o manual do usuário esta num diretório separado pois deve gerar um pdf separado;
+ pode colocar lá os testes que colocou aqui,
+ simplesmente copiar o capítulo;
+\end_layout
+
+\begin_layout Plain Layout
+para banca pode enviar os dois pdfs.
+ O manual do desenvolvedor é o manual técnico científico,
+ para quem vai dar continuidade;
+ O manual do usuário para quem vai usar
+\end_layout
 
 \end_inset
 

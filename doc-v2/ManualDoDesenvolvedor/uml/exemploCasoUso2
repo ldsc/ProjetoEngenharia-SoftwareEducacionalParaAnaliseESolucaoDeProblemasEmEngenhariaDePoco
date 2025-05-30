@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+
+actor "Usuário" as User
+
+rectangle "Sistema de Análise de Simulação" {
+  usecase "Carregar Dados de Parâmetros" as UC_Load
+  usecase "Executar Simulação" as UC_Run
+  usecase "Exportar Resultados" as UC_Export
+}
+
+actor "Arquivo Input.dat" as InputFile  <<armazenamento>>
+actor "Arquivo Output.dat" as OutputFile <<armazenamento>>
+
+User --> UC_Load
+UC_Load --> UC_Run
+UC_Run --> UC_Export
+
+InputFile -- (UC_Load)
+(UC_Export) -- OutputFile
+@enduml

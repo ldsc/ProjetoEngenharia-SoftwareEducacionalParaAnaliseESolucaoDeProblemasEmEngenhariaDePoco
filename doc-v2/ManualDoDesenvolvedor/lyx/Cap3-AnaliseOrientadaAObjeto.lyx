@@ -89,7 +89,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -98,6 +98,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -169,7 +170,26 @@ Neste capítulo apresentam-se as classes desenvolvidas no projeto,
  suas respectivas relações,
  atributos e métodos.
  Apresenta-se também um breve conceito de cada classe.
- Todos os diagramas foram elaborados seguindo a estrutura da UML (Linguagem de Modelagem Unificada),
+ Todos os diagramas foram elaborados seguindo a estrutura da 
+\change_deleted 643308733 1748564842
+UML
+\change_inserted 643308733 1748564857
+
+\begin_inset CommandInset href
+LatexCommand href
+name "UML"
+target "https://www.uml.org/"
+literal "false"
+
+\end_inset
+
+ - 
+\emph on
+Unified Modeling Language
+\change_unchanged
+
+\emph default
+ (Linguagem de Modelagem Unificada),
  com o objetivo de padronizar e facilitar a compreensão do sistema.
  Além do diagrama de classes,
  são incluídos os diagramas de sequência,
@@ -214,16 +234,29 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-Essa representação segue a notação da UML (Linguagem de Modelagem Unificada) e serve como base para o entendimento da arquitetura do software,
+Essa representação segue a notação da UML 
+\change_deleted 643308733 1748564911
+(Linguagem de Modelagem Unificada)
+\change_unchanged
+ e serve como base para o entendimento da arquitetura do software,
  permitindo uma visão clara da organização interna dos componentes e de suas interdependências.
 \end_layout
 
 \begin_layout Standard
-O diagrama de classes é apresentado na Figura .
+O diagrama de classes é apresentado na Figura
+\change_deleted 643308733 1748564803
+ 
+\change_inserted 643308733 1748564924
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-classes"
+
+\end_inset
+
+
+\change_unchanged
+.
  Ele tem como objetivo apresentar todas as classes,
  seus atributos,
  métodos,
@@ -265,11 +298,22 @@ name "cap:Diagrama-de-classes"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../imagens/DiagramaClasse.png
+	filename ../uml/DiagramaClasse.png
 	lyxscale 10
 	width 100text%
 	height 100theight%
 	rotateAngle 90
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+verificar o caminho e se esta no github;
+ aqui não estava carregando
+\end_layout
 
 \end_inset
 
@@ -324,7 +368,25 @@ CFluido:
 CObjetoPoco:
 
 \series default
- responsável por armazenar as propriedades gerais do poço e integrar os diferentes trechos que o compõem.
+ 
+\change_inserted 643308733 1748565315
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748565320
+Troque por CPoco
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+responsável por armazenar as propriedades gerais do poço e integrar os diferentes trechos que o compõem.
 \end_layout
 
 \begin_layout Itemize
@@ -335,7 +397,25 @@ CTrechoTubulacao:
 \series default
  representa cada seção tubular do poço,
  permitindo uma modelagem segmentada.
- Os objetos dessa classe contêm fluido e estão organizados dentro da estrutura de CObjetoPoco.
+ Os objetos dessa classe contêm fluido e estão organizados dentro da estrutura de CObjetoPoco
+\change_inserted 643308733 1748565350
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748565352
+CPoco
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Itemize
@@ -380,7 +460,32 @@ CSimuladorReologico:
 
 \series default
  classe principal do simulador.
- Esta janela integra os modelos reológicos e executa os cálculos associados às propriedades dos fluidos e trechos do poço.
+ Esta 
+\change_deleted 643308733 1748565384
+janela
+\change_inserted 643308733 1748565385
+classe
+\change_unchanged
+ integra os modelos reológicos e executa os cálculos associados às propriedades dos fluidos e trechos do poço.
+\change_inserted 643308733 1748565442
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748565478
+idealmente a CSimuladorReologico é independente do tipo de interface,
+ podendo gerar CSimuladorReologico-CLI e CSimuladorReologico-Qt
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -388,8 +493,25 @@ CSimuladorReologico:
 \series bold
 CSimuladorPerdaTubulacao:
  
+\change_deleted 643308733 1748565552
+
 \series default
-segunda janela do sistema,
+segunda
+\change_inserted 643308733 1748565553
+esta
+\change_unchanged
+ 
+\change_deleted 643308733 1748565407
+janela
+\change_inserted 643308733 1748565408
+classe
+\change_unchanged
+ 
+\change_deleted 643308733 1748565556
+do sistema,
+\change_inserted 643308733 1748565556
+é
+\change_unchanged
  voltada para a análise de perda de pressão por fricção ao longo dos trechos,
  incluindo variações de comprimento (ΔL) e outros fatores associados ao escoamento.
 \end_layout
@@ -403,11 +525,28 @@ CJanelaAdicionarFluido,
  CJanelaMenu:
 
 \series default
- classes auxiliares criadas com o Qt Creator,
- responsáveis por fornecer interfaces gráficas para entrada e visualização de dados.
- Cada janela é especializada em uma função específica,
+ classes auxiliares 
+\change_inserted 643308733 1748565631
+com funcionalidades específicas de acordo com o nome.
+ Foram 
+\change_unchanged
+criadas com o 
+\family typewriter
+Qt Creator
+\family default
+,
+ 
+\change_inserted 643308733 1748565635
+e são 
+\change_unchanged
+responsáveis por fornecer interfaces gráficas para entrada e visualização de dados.
+ 
+\change_deleted 643308733 1748565641
+Cada janela é especializada em uma função específica,
  como adição de trechos,
  inserção de fluido ou exibição de gráficos.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -417,7 +556,38 @@ QCustomPlot:
 
 \series default
  biblioteca externa utilizada para renderização de gráficos científicos,
- como perfis de pressão e densidade.
+ como perfis de pressão e densidade
+\change_inserted 643308733 1748565673
+ (
+\begin_inset CommandInset href
+LatexCommand href
+name "site"
+target "https://www.qcustomplot.com/"
+literal "false"
+
+\end_inset
+
+)
+\change_unchanged
+.
+\change_inserted 643308733 1748565698
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748565745
+copiar informação para requisitos preparação do ambiente desenvolvedor no manual do desenvolvedor
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -535,6 +705,69 @@ nolink "false"
 \end_inset
 
 .
+\change_inserted 643308733 1748565841
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748565885
+explique o que esta sequência esta fazendo;
+ informe que o diagrama de sequência é um detalhamento do diagrama de caso de uso,
+ mostra os objetos,
+ a chamada de funções e a passagem de parâmetros.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1748566406
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748566456
+precisa adicionar mais diagramas de sequência;
+ para cada teste você tem uma sequência diferente?
+ caso afirmativo faça o diagrama de sequência para cada teste;
+ são cenários de uso do sistema e os diagramas associados;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748566479
+O ideal é que se faça primeiro o diagrama de sequência mostrando o que cada cenário deve atender;
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748566502
+depois realizamos os testes sequindo a sequência aqui definida.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748566528
+Para defesa faça pelo menos mais 2 diagramas de sequência;
+ para versão final todos os que forem usados nos testes
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -658,6 +891,38 @@ O diagrama de comunicação representa as interações entre os objetos do siste
  evidenciando a troca de mensagens e a sequência dos processos envolvidos.
  A disposição dos elementos enfatiza os relacionamentos estruturais,
  ao mesmo tempo em que indica a ordem numérica das mensagens trocadas durante a execução de uma tarefa específica.
+\change_inserted 643308733 1748566213
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748566235
+pode detalhar mais mostrando funções chamadas;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748566255
+tem erros:
+ o fluido não acessa o trecho do poco;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748566288
+pense nos objetos e nas funções o CSimuladorPoco se conecta com quais objetos?
+ e quais funções acessa em cada objeto?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -691,7 +956,7 @@ name "cap:Diagrama-de-comunicação"
 \align center
 \begin_inset Graphics
 	filename ../imagens/DiagramaComunicacao.png
-	lyxscale 20
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -748,7 +1013,13 @@ name "subsec:diagrama de máquina de estado"
 \begin_layout Standard
 O diagrama de máquina de estados descreve os diferentes estados que um objeto pode assumir ao longo de seu ciclo de vida,
  bem como os eventos que provocam mudanças entre esses estados.
- A Figura 
+ 
+\change_inserted 643308733 1748566620
+
+\end_layout
+
+\begin_layout Standard
+A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-maquina-de-estado"
@@ -759,7 +1030,29 @@ nolink "false"
 
 \end_inset
 
+
+\change_inserted 643308733 1748566360
+ 
+\change_unchanged
 apresenta esse diagrama aplicado ao objeto relacionado ao modelo reológico newtoniano.
+\change_inserted 643308733 1748566635
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748566638
+ta errado!
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -796,6 +1089,10 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de máquina de estado
+\change_inserted 643308733 1748566651
+ do objeto NOMEOBJETO
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-maquina-de-estado"
@@ -814,7 +1111,7 @@ name "cap:Diagrama-de-maquina-de-estado"
 \align center
 \begin_inset Graphics
 	filename ../imagens/DiagramaMaquinaEstado.png
-	lyxscale 15
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -864,17 +1161,33 @@ CModeloNewtoniano
 \begin_layout Standard
 O processo se inicia com o recebimento dos dados pela classe responsável pela simulação dos fluidos.
  Os atributos do objeto são atualizados conforme os valores de entrada fornecidos.
- O primeiro passo do método consiste no cálculo da velocidade média do fluido no poço.
+ O primeiro passo 
+\change_deleted 643308733 1748566789
+do método
+\change_unchanged
+ consiste no cálculo da velocidade média do fluido no poço.
  Em seguida,
- é realizada uma verificação para identificar se o número de Reynolds foi previamente determinado.
+ é realizada uma verificação para identificar se o número de 
+\emph on
+Reynolds
+\emph default
+ foi previamente determinado.
  Caso essa informação esteja ausente,
  o sistema emite uma mensagem de erro.
  Caso contrário,
- o método prossegue para a classificação do tipo de escoamento.
+
+\change_deleted 643308733 1748566808
+ o método
+\change_unchanged
+ prossegue para a classificação do tipo de escoamento.
 \end_layout
 
 \begin_layout Standard
-A partir do valor do número de Reynolds,
+A partir do valor do número de 
+\emph on
+Reynolds
+\emph default
+,
  o escoamento pode ser classificado como laminar ou turbulento,
  e o cálculo é ajustado conforme o regime identificado.
  Os procedimentos subsequentes utilizam as propriedades físicas específicas do fluido em questão para concluir os cálculos de perda de carga por fricção.
@@ -917,7 +1230,7 @@ name "cap:Diagrama-de-atividades"
 \align center
 \begin_inset Graphics
 	filename ../imagens/DiagramaAtividade.png
-	lyxscale 15
+	lyxscale 50
 	width 100text%
 
 \end_inset
