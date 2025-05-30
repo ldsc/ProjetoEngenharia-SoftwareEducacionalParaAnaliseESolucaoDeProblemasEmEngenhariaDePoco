@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -27,11 +27,11 @@
 \end_preamble
 \options normaltoc, sumarioincompleto
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -39,7 +39,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -49,6 +51,8 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement class
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref true
@@ -62,10 +66,10 @@
 \pdf_bookmarksopenlevel 1
 \pdf_breaklinks true
 \pdf_pdfborder true
-\pdf_colorlinks false
+\pdf_colorlinks true
 \pdf_backref page
 \pdf_pdfusetitle true
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -86,7 +90,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -108,11 +114,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -122,6 +133,7 @@
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap0-Capa.lyx"
+literal "true"
 
 \end_inset
 
@@ -158,6 +170,7 @@ LatexCommand tableofcontents
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap1-Instalacao-Dependencias.lyx"
+literal "true"
 
 \end_inset
 
@@ -169,6 +182,7 @@ filename "Cap1-Instalacao-Dependencias.lyx"
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap2-Interface-ComoUsar.lyx"
+literal "true"
 
 \end_inset
 
@@ -180,6 +194,7 @@ filename "Cap2-Interface-ComoUsar.lyx"
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap3-ExemplosDeUso.lyx"
+literal "true"
 
 \end_inset
 
@@ -191,6 +206,7 @@ filename "Cap3-ExemplosDeUso.lyx"
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap4-Contatos.lyx"
+literal "true"
 
 \end_inset
 

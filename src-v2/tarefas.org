@@ -401,9 +401,51 @@
 ** Adicionar diagrama de máquina de estado para os estados do poço.
 *** Considere todas as possibilidades implementadas.
 ** Precisa adicionar os diagramas no lyx/pdf final.
-** versões
+** versões - veja comentários no arquivo do lyx
+Precisa dar os nomes corretos.
 *** Teve a versão 1 Nathan Poço 1 (disc.projeto)
 *** Teve a versão 2 Thauan Poço 1 continuidade  (disc.projeto)
 *** Teve a versão 3 Nathan Poço 2 (TCC)
 *** Considere renomear o diretório v2 para v3
 *** E a seguir criar diretório v2 e deixar alí cópia dos códigos como Nathan deixou, fica mais claro o que cada um fez.
+* Códigos finais
+** Tela inicial
+*** <html:mailto >.
+*** Link do repositório.
+** Botão calcular do modelo pode verificar se tem fluido, se não tem dizer "Adicionar fluido"
+** Modelos esta precisando pressionar em calculo, pode fazer como o poço, alterou recalcula (verifique se didaticamente fica melhor)
+** Pressão hidrostática alterou profundidade já recalcula a pressão hidrostática (verifique se didaticamente fica melhor)
+** Os exemplos você deve criar diretórios:
+*** Exemplo-01-Titulo
+**** Dentro os arquivos .dat e png
+*** Exemplo-02-Titulo
+**** Dentro os arquivos .dat e png
+** Criar as libs/biblioteca LibEngPoco, LibMecRochas, LibMecFluidos
+** Sobre
+*** QTCustomPlot
+*** Nathan ...Engenheiro de Petróleo pela UENF/CCT/LENEP link site graduação
+*** Código e nome da disciplina.
+** Entrada de dados
+*** Idealmente deve validar os valores fisicamente, se entrar com valor muito pequeno ou muito alto gerar um alerta e botão OK CORRIGIR.
+*** Botão packer já recalcular.
+*** codificação utf8
+*** Criar extensão diferente: dados.sep
+*** vincula este arquivo ao simulador.
+*** Quando clica duas vezes abre
+** Manuais
+*** codificacao utf8
+** Manual desenvolvedor
+*** mais 2-3 diagramas sequencia
+*** diagrama comunicação detalhar e eventualmente dividir
+*** mais 2-3 diagrama máquina de estado
+*** arquivo .h declaração
+*** arquivo .cpp implementação
+***
+** Git
+*** Criar as tags v1.0
+*** v1.5
+*** V1.8
+***
+
+** Trabalhos futuros
+*** Permitir alteração da posição do Packer

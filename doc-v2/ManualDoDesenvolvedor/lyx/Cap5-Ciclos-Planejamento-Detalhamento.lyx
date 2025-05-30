@@ -153,7 +153,13 @@ status open
 
 \begin_layout Plain Layout
 Versão:
- 0.9
+ 
+\change_deleted 643308733 1748605080
+0.9
+\change_inserted 643308733 1748605082
+1 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -163,7 +169,13 @@ Componentes:
 
 \begin_layout Plain Layout
 Desenvolvida na disciplina:
- xxx
+ 
+\change_deleted 643308733 1748605086
+xxx
+\change_inserted 643308733 1748605096
+projeto de software aplicado
+\change_unchanged
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -267,7 +279,13 @@ status open
 
 \begin_layout Plain Layout
 Versão:
- 1.0
+ 
+\change_deleted 643308733 1748605155
+1.0
+\change_inserted 643308733 1748605181
+1.1
+\change_unchanged
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -277,7 +295,13 @@ Componentes:
 
 \begin_layout Plain Layout
 Desenvolvida na disciplina:
- xxx
+ 
+\change_deleted 643308733 1748605116
+xxx
+\change_inserted 643308733 1748605130
+depois da disciplina Projeto de software aplicado (férias)
+\change_unchanged
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -327,7 +351,11 @@ git tag -a NOME_DA_VERSAO -m "Mensagem da versão NOME_DA_VERSAO"
 
 \begin_layout Plain Layout
 # Exemplo:
- git tag -a v1.0.20240515 -m "Versão 1.0 lançada em 15 de maio de 2024."
+ git tag -a v1.0
+\change_deleted 643308733 1748605400
+.20240515
+\change_unchanged
+ -m "Versão 1.0 lançada em 15 de maio de 2024."
 \end_layout
 
 \begin_layout Plain Layout
@@ -515,7 +543,13 @@ Componentes:
 
 \begin_layout Plain Layout
 Desenvolvida na disciplina:
- xxx
+ 
+\change_inserted 643308733 1748605192
+TCCI
+\change_deleted 643308733 1748605190
+xxx
+\change_unchanged
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -656,16 +690,13 @@ status open
 \begin_layout Plain Layout
 Versão:
  
-\change_deleted 643308733 1748568595
+\change_deleted 643308733 1748605222
 2
-\change_inserted 643308733 1748568595
-1
-\change_unchanged
-.
-\change_deleted 643308733 1748568596
-0
-\change_inserted 643308733 1748568596
-9
+\change_inserted 643308733 1748605268
+1.7 (estável numero par,
+ com bugs to mexendo impar)
+\change_deleted 643308733 1748605222
+.0
 \change_unchanged
  - Gráfica 2
 \end_layout
@@ -677,7 +708,13 @@ Componentes:
 
 \begin_layout Plain Layout
 Desenvolvida na disciplina:
- xxx
+ 
+\change_inserted 643308733 1748605280
+TCCII
+\change_deleted 643308733 1748605277
+xxx
+\change_unchanged
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -919,7 +956,25 @@ A versão 2.0 do software introduziu uma das mudanças mais significativas desde
 
 \begin_layout Standard
 O Módulo 1 direciona para o simulador hidráulico de perfuração,
- que engloba todas as funcionalidades desenvolvidas até a versão 1.1,
+ que engloba todas as funcionalidades desenvolvidas até a versão 1.1
+\change_inserted 643308733 1748605297
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748605299
+corrigir
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+,
  incluindo a simulação de escoamento,
  cálculo de pressão hidrostática e perdas por fricção com base em modelos reológicos.
  Esse módulo mantém a interface gráfica interativa e os recursos de visualização consolidados nas versões anteriores.

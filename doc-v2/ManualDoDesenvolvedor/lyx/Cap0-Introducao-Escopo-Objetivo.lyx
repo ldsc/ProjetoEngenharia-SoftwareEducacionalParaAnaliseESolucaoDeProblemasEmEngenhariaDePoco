@@ -103,7 +103,7 @@
 \paperpagestyle fancy
 \tablestyle default
 \tracking_changes true
-\output_changes false
+\output_changes true
 \change_bars false
 \postpone_fragile_content false
 \html_math_output 0

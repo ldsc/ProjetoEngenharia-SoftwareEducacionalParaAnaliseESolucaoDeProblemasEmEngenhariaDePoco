@@ -783,6 +783,10 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de sequência
+\change_inserted 643308733 1748603924
+ geral
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-sequencia"
@@ -1212,6 +1216,11 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de atividades
+\change_inserted 643308733 1748604553
+:
+ NomeClasse::NomeFuncao
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-atividades"

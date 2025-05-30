@@ -505,7 +505,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Solução gerada para calculo da pressão hidroestática 
+Solução gerada para calculo da pressão hidro
+\change_deleted 643308733 1748605856
+e
+\change_unchanged
+stática 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Similador-Pressao_hidro"

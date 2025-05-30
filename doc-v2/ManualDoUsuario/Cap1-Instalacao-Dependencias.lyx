@@ -114,7 +114,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -123,6 +123,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -211,7 +212,13 @@ coloque as instruções:
 \end_layout
 
 \begin_layout Plain Layout
-git clone https://github.com/ldsc/nomeProjetoEspecifico
+git clone 
+\change_deleted 643308733 1748598131
+https://github.com/ldsc/nomeProjetoEspecifico
+\change_inserted 643308733 1748598131
+https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -219,6 +226,80 @@ git clone https://github.com/ldsc/nomeProjetoEspecifico
 
 \end_layout
 
+\begin_layout Section
+
+\change_inserted 643308733 1748606336
+Requisitos para uso do software
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1748606224
+Sistemas operacionais:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted 643308733 1748606230
+Windows
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1748606343
+GNU/Linux
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1748606345
+Mac?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\change_inserted 643308733 1748606253
+Disco
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted 643308733 1748606290
+80 MB Disco
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\change_inserted 643308733 1748606294
+Memória RAM
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted 643308733 1748606371
+20 MB
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\change_inserted 643308733 1748606379
+Bibliotecas
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\change_inserted 643308733 1748606385
+Qt6.0 site onde baixar
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Dependências
 \begin_inset Index idx
@@ -232,6 +313,24 @@ Dependências
 
 \end_inset
 
+
+\change_inserted 643308733 1748606132
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748606121
+manual do desenvolvedor
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
@@ -293,6 +392,24 @@ apague se não usa Qt;
 \end_inset
 
 
+\change_inserted 643308733 1748597949
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1748597962
+Instalar a biblioteca Qt-CustomPlot disponível em 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.qcustomplot.com/"
+literal "false"
+
+\end_inset
+
+.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -326,7 +443,11 @@ Test
 \begin_inset Quotes eld
 \end_inset
 
-Realease
+Re
+\change_deleted 643308733 1748606097
+a
+\change_unchanged
+lease
 \begin_inset Quotes erd
 \end_inset
 

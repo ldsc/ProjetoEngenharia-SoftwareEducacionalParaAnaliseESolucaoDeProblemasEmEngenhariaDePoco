@@ -101,7 +101,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -110,6 +110,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -144,9 +145,26 @@ thechapter - Teste}
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 643308733 1748598349
 Todo projeto de engenharia passa por uma etapa de testes.
- Neste capítulo apresentamos alguns testes do software desenvolvido.
- Estes testes devem dar resposta aos diagramas de caso de uso inicialmente apresentados (diagramas de caso de uso geral e específicos).
+ 
+\change_unchanged
+Neste capítulo apresentamos alguns 
+\change_deleted 643308733 1748598353
+testes 
+\change_inserted 643308733 1748598356
+exemplos de uso 
+\change_unchanged
+do software desenvolvido.
+ 
+\change_deleted 643308733 1748598358
+Estes testes devem dar resposta aos diagramas de caso de uso inicialmente apresentados (diagramas de caso de uso geral e específicos).
+
+\change_inserted 643308733 1748598358
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section
@@ -169,13 +187,63 @@ Enunciado da Questão
 
 \begin_layout Standard
 Um poço de 5.000 pés está sendo perfurado com água (
+\change_deleted 643308733 1748598373
+
 \backslash
-rho = 8,33 lbm/gal,
+rho = 8,33 lbm/gal
+\change_inserted 643308733 1748598373
+
+\begin_inset Formula $\rho=8,33lbm/gal$
+\end_inset
+
+
+\change_unchanged
+,
  
+\change_deleted 643308733 1748598376
+
 \backslash
-mu = 1 cP).
- O fluido circula a 500 GPM através de um tubo de perfuração (OD = 5,1",
- ID = 3,826") em um furo de 6,5".
+mu = 1 cP
+\change_inserted 643308733 1748598376
+
+\begin_inset Formula $\mu=1cP$
+\end_inset
+
+
+\change_unchanged
+).
+ O fluido circula a 500 GPM através de um tubo de perfuração (
+\change_deleted 643308733 1748598385
+OD = 5,1"
+\change_inserted 643308733 1748598385
+
+\begin_inset Formula $OD=5,1"$
+\end_inset
+
+
+\change_unchanged
+,
+ 
+\change_deleted 643308733 1748598390
+ID = 3,826"
+\change_inserted 643308733 1748598390
+
+\begin_inset Formula $ID=3,826"$
+\end_inset
+
+
+\change_unchanged
+) em um furo de 
+\change_deleted 643308733 1748598394
+6,5"
+\change_inserted 643308733 1748598394
+
+\begin_inset Formula $6,5"$
+\end_inset
+
+
+\change_unchanged
+.
  Considerando rugosidade zero,
  determine:
 \end_layout
@@ -250,7 +318,11 @@ Inserir as propriedades do poço
 \begin_deeper
 \begin_layout Itemize
 No menu,
- clique adicione um nome para o poço.
+ 
+\change_deleted 643308733 1748598454
+clique 
+\change_unchanged
+adicione um nome para o poço.
 \end_layout
 
 \begin_layout Itemize
@@ -268,7 +340,11 @@ Defina a vazão do fluido (500 GPM).
 \end_layout
 
 \begin_layout Itemize
-Confirme os dados.
+Confirme os dados
+\change_inserted 643308733 1748598496
+ pressionando no botão ...??
+\change_unchanged
+.
 \end_layout
 
 \end_deeper
@@ -283,7 +359,13 @@ No menu principal,
 \end_layout
 
 \begin_layout Itemize
-Insira um nome para o fluido (agua).
+Insira um nome para o fluido (
+\change_deleted 643308733 1748598515
+agua
+\change_inserted 643308733 1748598515
+água
+\change_unchanged
+).
 \end_layout
 
 \begin_layout Itemize
@@ -296,7 +378,14 @@ Coloque o intervalo do fluido (como só há água,
 \end_layout
 
 \begin_layout Itemize
-Confirme os dados.
+Confirme os dados
+\change_inserted 643308733 1748598578
+ ??como??
+ aperta aonde?
+ ou é conferência visual?
+ Confira os dados
+\change_unchanged
+.
 \end_layout
 
 \end_deeper
@@ -331,7 +420,30 @@ Executar a simulação
 \begin_deeper
 \begin_layout Itemize
 Após configurar os dados,
- clique em "Calcular".
+ clique em "Calcular
+\change_inserted 643308733 1748598646
+ MN
+\change_unchanged
+".
+\change_inserted 643308733 1748598650
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748598666
+diferencie os botões calcular;
+ no código devem ser diferentes
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize

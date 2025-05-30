@@ -149,7 +149,15 @@ Nathan Rangel Magalhães
 \end_layout
 
 \begin_layout Itemize
-<nrmagalhaes@hotmail.com>
+\begin_inset CommandInset href
+LatexCommand href
+name "<nrmagalhaes@hotmail.com>"
+target "mailto:nrmagalhaes@hotmail.com"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -164,7 +172,14 @@ Prof.
 \end_layout
 
 \begin_layout Itemize
-<bueno@lenep.uenf.br>
+\begin_inset CommandInset href
+LatexCommand href
+target "mailto:<bueno@lenep.uenf.br>"
+type "mailto:"
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper

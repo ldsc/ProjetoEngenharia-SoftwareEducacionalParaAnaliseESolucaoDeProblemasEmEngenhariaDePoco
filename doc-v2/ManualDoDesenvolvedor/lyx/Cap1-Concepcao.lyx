@@ -243,7 +243,11 @@ Bingham
 e lei das potências.
  Também simula cenários operacionais com variações de temperatura e pressão,
  incluindo efeitos como deslocamentos axiais (ΔL) da coluna de completação,
- efeito balão e atuação de packers e pistões.
+ efeito balão e atuação de 
+\emph on
+packers
+\emph default
+ e pistões.
 \end_layout
 
 \begin_layout Standard
@@ -1764,7 +1768,49 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de caso de uso específico:
- cálculo de pressão hidrostática e densidade 
+ 
+\change_inserted 643308733 1748603253
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\change_unchanged
+cálcul
+\change_deleted 643308733 1748603233
+o
+\change_inserted 643308733 1748603233
+ar
+\change_unchanged
+ 
+\change_deleted 643308733 1748603234
+de 
+\change_unchanged
+pressão hidrostática
+\change_inserted 643308733 1748603256
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\change_unchanged
+ e 
+\change_inserted 643308733 1748603259
+
+\begin_inset Quotes eld
+\end_inset
+
+Calcular 
+\change_unchanged
+densidade
+\change_inserted 643308733 1748603261
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\change_unchanged
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Diagrama-de-caso-de-uso-especifico1"
@@ -1777,13 +1823,89 @@ name "fig:Diagrama-de-caso-de-uso-especifico1"
 \end_inset
 
 
-\begin_inset Graphics
-	filename ../imagens/DiagramaCasoUsoEspecifico1.png
-	lyxscale 20
-	width 100text%
+\change_inserted 643308733 1748603365
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748603361
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748603361
+Calcular Pressão Hidrostática
+\end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\change_inserted 643308733 1748603361
+\begin_inset Graphics
+	filename ../imagens/DiagramaCasoUsoEspecifico1.png
+	lyxscale 20
+	width 48text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748603363
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748603363
+Calcular Pressão Hidrostática
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\change_inserted 643308733 1748603363
+\begin_inset Graphics
+	filename ../imagens/DiagramaCasoUsoEspecifico1.png
+	lyxscale 20
+	width 48text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 

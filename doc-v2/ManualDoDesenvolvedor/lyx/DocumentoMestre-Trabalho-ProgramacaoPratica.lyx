@@ -71,7 +71,7 @@
 \pdf_bookmarksopenlevel 1
 \pdf_breaklinks true
 \pdf_pdfborder true
-\pdf_colorlinks false
+\pdf_colorlinks true
 \pdf_backref page
 \pdf_pdfusetitle true
 \papersize a4

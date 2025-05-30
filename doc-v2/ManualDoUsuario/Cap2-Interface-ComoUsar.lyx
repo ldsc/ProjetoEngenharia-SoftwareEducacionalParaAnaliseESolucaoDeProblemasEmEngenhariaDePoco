@@ -114,7 +114,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -123,6 +123,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -315,9 +316,27 @@ O usuário acessa a aba Propriedades dos Poços.
 Insere os dados necessários,
  como nome do poço,
  profundidade total,
- pressão na superficie,
- diametro do poço,
- diametro do revestimento ID e OD e vazão.
+ pressão na 
+\change_deleted 643308733 1748598264
+superficie
+\change_inserted 643308733 1748598264
+superfície
+\change_unchanged
+,
+ 
+\change_deleted 643308733 1748598267
+diametro
+\change_inserted 643308733 1748598267
+diâmetro
+\change_unchanged
+ do poço,
+ 
+\change_deleted 643308733 1748598269
+diametro
+\change_inserted 643308733 1748598269
+diâmetro
+\change_unchanged
+ do revestimento ID e OD e vazão.
 \end_layout
 
 \begin_layout Itemize
@@ -353,7 +372,11 @@ O software exibe a pressão hidrostática correspondente com base nos fluidos e 
 \end_layout
 
 \begin_layout Subsection
-Cálculo da Pressão Hidroestática
+Cálculo da Pressão Hidro
+\change_deleted 643308733 1748598255
+e
+\change_unchanged
+stática
 \end_layout
 
 \begin_layout Standard
@@ -407,7 +430,17 @@ Define se o cálculo será para o poço ou para o anular.
 \begin_layout Itemize
 O software exibe a velocidade,
  o número de Reynolds,
- o tipo de fluxo e a perda friccional (em psi/ft).
+ o tipo de fluxo e a perda friccional (em 
+\change_deleted 643308733 1748598292
+psi/ft
+\change_inserted 643308733 1748598292
+
+\begin_inset Formula $psi/ft$
+\end_inset
+
+
+\change_unchanged
+).
 \end_layout
 
 \begin_layout Standard
