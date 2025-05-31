@@ -161,7 +161,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -170,6 +170,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\author -991030785 "Nathan"
 \author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
@@ -251,16 +252,8 @@ packers
 \end_layout
 
 \begin_layout Standard
-O sistema aceita entrada de dados por meio de arquivos .dat
-\change_inserted 643308733 1748553822
- (ASCII)
-\change_unchanged
-,
- oferece visualização gráfica dos resultados e permite a exportação dos dados
-\change_inserted 643308733 1748553915
- em formato .dat (ASCII)
-\change_unchanged
-,
+O sistema aceita entrada de dados por meio de arquivos .dat (ASCII),
+ oferece visualização gráfica dos resultados e permite a exportação dos dados em formato .dat (ASCII),
  apoiando tanto o estudo individual quanto a elaboração de relatórios acadêmicos.
 \end_layout
 
@@ -276,30 +269,9 @@ nolink "false"
 
 \end_inset
 
- apresenta as características do software desenvolvido.
-\change_inserted 643308733 1748553849
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748553864
-Títulos de seções,
- figuras e tabelas não levam ponto;
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748553871
-apague os pontos se tiver colocado
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
+ apresenta as características do software desenvolvido
+\change_deleted -991030785 1748704848
+.
 \change_unchanged
 
 \end_layout
@@ -357,7 +329,7 @@ Nome
 \begin_inset Text
 
 \begin_layout Plain Layout
-Software Educacional Para Análise e Solução de Problemas em Engenharia de Poço
+Software Educacional para Análise e Soluções de Problemas Em Engenharia de Poço
 \end_layout
 
 \end_inset
@@ -628,9 +600,6 @@ O usuário poderá carregar dados da propriedade para a simulação.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -667,9 +636,6 @@ O usuário deverá ter liberdade para alterar as propriedades reológicas do po�
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -745,9 +711,6 @@ Deve permitir cenários de simulação baseado em diferentes modelos teóricos.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -784,9 +747,6 @@ O usuário poderá comparar os resultados da simulação em diferentes modelos r
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -823,9 +783,6 @@ O usuário deve ter liberdade para adicionar ou retirar simplificações das pre
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -863,9 +820,6 @@ O usuário poderá visualizar seus resultados em um gráfico.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -902,9 +856,6 @@ O sistema deve permitir a análise dos deslocamentos axiais (ΔL) da coluna de c
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -952,9 +903,238 @@ crossover
 \end_inset
 
 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-11
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve contemplar variações térmicas,
+ efeito balão,
+ atuação de pistão,
+ 
+\emph on
+packer
+\emph default
+ e 
+\emph on
+crossover
+\emph default
+ nas análises de carga.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve permitir a navegação por meio de digitação direta de números no menu de opções,
+ otimizando o fluxo de trabalho e eliminando a necessidade de múltiplos comandos sequenciais.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve salvar automaticamente os dados da simulação em arquivos nomeados conforme o poço selecionado,
+ mantendo um histórico completo das ações do usuário
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve realizar a verificação automática de entradas inválidas,
+ garantindo estabilidade e prevenindo falhas durante a execução.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-15
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve oferecer atalhos de teclado,
+ como Ctrl+N para nova simulação e Ctrl+S para salvar,
+ otimizando a interação com o usuário.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-16
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve disponibilizar uma seção de ajuda com instruções de uso e descrição dos modelos implementados.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -1006,11 +1186,7 @@ RNF-01
 \begin_inset Text
 
 \begin_layout Plain Layout
-Suas primeiras versões devem suportar os sistemas operacionais 
-\change_inserted 643308733 1748554053
-GNU/
-\change_unchanged
-Linux e
+Suas primeiras versões devem suportar os sistemas operacionais GNU/Linux e
 \shape italic
  Windows.
 \end_layout
@@ -1091,10 +1267,6 @@ RNF-03
 
 \begin_layout Plain Layout
 A geração dos gráficos deve ser realizada por meio da biblioteca 
-\change_deleted 643308733 1748554084
-QCustomPlot
-\change_inserted 643308733 1748554084
-
 \begin_inset CommandInset href
 LatexCommand href
 name "QCustomPlot"
@@ -1103,8 +1275,6 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
 .
 \end_layout
 
@@ -1184,14 +1354,6 @@ RNF-05
 
 \begin_layout Plain Layout
 A interface gráfica deve ser desenvolvida com o 
-\change_deleted 643308733 1748554105
-
-\emph on
-Qt Framework
-\change_inserted 643308733 1748554105
-
-\emph default
-
 \begin_inset CommandInset href
 LatexCommand href
 name "Qt Framework"
@@ -1200,8 +1362,6 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
 ,
  oferecendo usabilidade intuitiva.
 \end_layout
@@ -1254,20 +1414,17 @@ O sistema deve manter organização modular do código,
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
 
 \begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
+<lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
 <column alignment="center" valignment="top">
 <column alignment="block" valignment="top" width="11cm">
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1278,7 +1435,7 @@ RNF-07
 
 \end_inset
 </cell>
-<cell alignment="block" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1288,24 +1445,36 @@ Os arquivos de entrada e saída devem seguir padrões consistentes e documentado
 \end_inset
 </cell>
 </row>
-<row change="inserted 643308733 1748549384">
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11cm">
+<row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\change_inserted 643308733 1748549384
+\series bold
 RNF-08
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted 643308733 1748549384
 Os arquivos devem usar a codificação de caracteres 
 \begin_inset CommandInset href
 LatexCommand href
@@ -1352,13 +1521,7 @@ Casos de uso
 \end_layout
 
 \begin_layout Standard
-Nesta seção iremos mostrar 
-\change_deleted 643308733 1748554233
-o caso 
-\change_inserted 643308733 1748554234
-cenários 
-\change_unchanged
-de uso do software a ser desenvolvido.
+Nesta seção iremos mostrar cenários de uso do software a ser desenvolvido.
 \end_layout
 
 \begin_layout Subsection
@@ -1366,12 +1529,10 @@ Diagrama de caso de uso geral
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 643308733 1748554283
 As condições do caso de uso geral são apresentadas na Tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Exemplo-de-um-caso-de-uso (tabela)"
+reference "tab:CasoDeUso-Geral"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1380,14 +1541,10 @@ nolink "false"
 \end_inset
 
 .
- Este cenário é representado graficamente pelo
-\change_deleted 643308733 1748554283
-O
-\change_unchanged
- diagrama de caso de uso geral da Figura 
+ Este cenário é representado graficamente pelo diagrama de caso de uso geral da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Diagrama-caso-uso-geral-1"
+reference "fig:CasoDeUsoGeral"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1395,20 +1552,16 @@ nolink "false"
 
 \end_inset
 
-
-\change_inserted 643308733 1748554295
 .
- O mesmo
-\change_unchanged
- mostra o usuário de frente a interface com as opções permitidas do simulador.
+ O mesmo mostra o usuário de frente a interface com as opções permitidas do simulador.
  Com essas opções ele poderá executar,
  analisar os resultados obtidos e salvar as imagens ou os dados em um arquivo PDF.
  
 \change_deleted 643308733 1748554271
-As condições do caso de uso são apresentadas na Tabela 
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Exemplo-de-um-caso-de-uso (tabela)"
+reference "tab:CasoDeUso-Geral"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1436,7 +1589,7 @@ status open
 Caso de uso 1
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:Exemplo-de-um-caso-de-uso (tabela)"
+name "tab:CasoDeUso-Geral"
 
 \end_inset
 
@@ -1527,13 +1680,7 @@ Etapas:
 
 \begin_layout Plain Layout
 3.
-
-\change_inserted 643308733 1748554312
- 
-\change_deleted 643308733 1748554310
- 
-\change_unchanged
-Incluir diferentes tipos de fluidos no poço
+ Incluir diferentes tipos de fluidos no poço
 \end_layout
 
 \begin_layout Plain Layout
@@ -1552,13 +1699,28 @@ Incluir diferentes tipos de fluidos no poço
 \end_layout
 
 \begin_layout Plain Layout
-6.
- Plotar perfis de poço
+7.
+ Calcular Variações de comprimento
 \end_layout
 
 \begin_layout Plain Layout
-7.
+8.
+ Plotar Perfis do Poço
+\end_layout
+
+\begin_layout Plain Layout
+9.
+ Exportar imagem da tela
+\end_layout
+
+\begin_layout Plain Layout
+10.
  Salvar dados em saida .dat
+\end_layout
+
+\begin_layout Plain Layout
+11.
+ Importar dados em arquivo .dat
 \end_layout
 
 \end_inset
@@ -1591,7 +1753,7 @@ status open
 Diagrama de caso de uso – caso de uso geral
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Diagrama-caso-uso-geral-1"
+name "fig:CasoDeUsoGeral"
 
 \end_inset
 
@@ -1605,8 +1767,6 @@ name "fig:Diagrama-caso-uso-geral-1"
 
 \begin_layout Plain Layout
 \align center
-
-\change_deleted 643308733 1748554327
 \begin_inset Graphics
 	filename ../imagens/DiagramaCasoUsoGeral.png
 	lyxscale 20
@@ -1614,50 +1774,6 @@ name "fig:Diagrama-caso-uso-geral-1"
 
 \end_inset
 
-
-\change_inserted 643308733 1748558272
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748558347
-Adicione a direita um boneco que representa o arquivo salvo (é salvo fora do sofwatware,
- é externo),
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748558344
-deve ter o estereótipo <<armazenamento>> 
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748558352
-e o nome Arquivo saida.dat
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748558367
-o mesmo vale para entrada.dat
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748558376
-Tudo o que for outros sistemas de fora da caixinha
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 
 \end_layout
 
@@ -1680,7 +1796,7 @@ Diagrama de caso de uso específico
 O caso de uso específico da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Diagrama-de-caso-de-uso-especifico1"
+reference "fig:DiagramaCasoDeUsoEspecifico-PressaoHidroestatica"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1689,69 +1805,23 @@ nolink "false"
 \end_inset
 
  mostra o cenário onde o usurário deseja 
-\change_deleted 643308733 1748554807
-c
-\change_inserted 643308733 1748554808
-
 \begin_inset Quotes eld
 \end_inset
 
-C
-\change_unchanged
-alcular a pressão hidrostática
-\change_inserted 643308733 1748554811
-
+Calcular a pressão hidrostática
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_unchanged
  e 
-\change_deleted 643308733 1748554820
-a
-\change_inserted 643308733 1748554824
-
 \begin_inset Quotes eld
 \end_inset
 
-Calcular
-\change_unchanged
- densidade do
-\change_deleted 643308733 1748554830
-s
-\change_unchanged
- fluido
-\change_inserted 643308733 1748554832
-
+Calcular densidade do fluido
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_deleted 643308733 1748554832
-s 
-\change_unchanged
 configurados no poço.
  
-\change_inserted 643308733 1748554846
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748554885
-na figura de cima colocou como sendo 2 casos de uso,
- ideal é separar em duas casos específicos ou seja,
- este diagrama abaixo deve ser o detalhamento de um item do diagrama de cima
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -1769,51 +1839,17 @@ status open
 \begin_layout Plain Layout
 Diagrama de caso de uso específico:
  
-\change_inserted 643308733 1748603253
-
 \begin_inset Quotes eld
 \end_inset
 
-
-\change_unchanged
-cálcul
-\change_deleted 643308733 1748603233
-o
-\change_inserted 643308733 1748603233
-ar
-\change_unchanged
- 
-\change_deleted 643308733 1748603234
-de 
-\change_unchanged
-pressão hidrostática
-\change_inserted 643308733 1748603256
-
+calcular pressão hidrostática
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_unchanged
- e 
-\change_inserted 643308733 1748603259
-
-\begin_inset Quotes eld
-\end_inset
-
-Calcular 
-\change_unchanged
-densidade
-\change_inserted 643308733 1748603261
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\change_unchanged
  
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Diagrama-de-caso-de-uso-especifico1"
+name "fig:DiagramaCasoDeUsoEspecifico-PressaoHidroestatica"
 
 \end_inset
 
@@ -1830,16 +1866,12 @@ placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
-
-\change_inserted 643308733 1748603361
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted 643308733 1748603361
 Calcular Pressão Hidrostática
 \end_layout
 
@@ -1850,8 +1882,6 @@ Calcular Pressão Hidrostática
 
 \begin_layout Plain Layout
 \align center
-
-\change_inserted 643308733 1748603361
 \begin_inset Graphics
 	filename ../imagens/DiagramaCasoUsoEspecifico1.png
 	lyxscale 20
@@ -1865,46 +1895,6 @@ Calcular Pressão Hidrostática
 \end_inset
 
  
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748603363
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748603363
-Calcular Pressão Hidrostática
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-
-\change_inserted 643308733 1748603363
-\begin_inset Graphics
-	filename ../imagens/DiagramaCasoUsoEspecifico1.png
-	lyxscale 20
-	width 48text%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \change_unchanged
 
 \end_layout
@@ -1924,7 +1914,7 @@ Fonte:
 O caso de uso específico da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Diagrama-de-caso-de-uso-especifico2"
+reference "fig:DiagramaCasoDeUsoEspecifico-PerdaFriccao"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1951,7 +1941,7 @@ status open
 Diagrama de caso de uso específico - cálculo da perda de pressão devido a perda por fricção no poço e no anular 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Diagrama-de-caso-de-uso-especifico2"
+name "fig:DiagramaCasoDeUsoEspecifico-PerdaFriccao"
 
 \end_inset
 

@@ -1,0 +1,1077 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\options normaltoc, sumarioincompleto
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children no
+\language brazilian
+\language_package auto
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_title "Título da Monografia - Dissertação - Tese"
+\pdf_author "Nome do Autor"
+\pdf_subject "Descrever assunto"
+\pdf_keywords "Copiar do resumo"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style apalike
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 1
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes true
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\author 643308733 "bueno" andreduartebueno@gmail.com
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Manual do usuário
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Manual do Usuário
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Manual-do-Usuário"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Instalação
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Instalação
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O software foi disponibilizado no GitHub,
+ por meio do repositório 
+\begin_inset CommandInset href
+LatexCommand href
+name "GitHub - Software Educacional Para Análise de Poço"
+target "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lá você encontra instruções atualizadas de 
+\emph on
+download
+\emph default
+,
+ instalação e uso do programa.
+\change_inserted 643308733 1748570138
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748570200
+o manual esta incompleto;
+ assim que der atualize;
+ pode trazer para cá exemplos de uso;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748570228
+note que o manual do usuário estra num diretório diferente porque gera um pdf isolado/separado do manual técnico científico
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Subsection
+Dependências
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Dependências
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para compilar o software,
+ é necessário atender aos seguintes pré-requisitos:
+\end_layout
+
+\begin_layout Itemize
+Instalar o compilador g++ da GNU,
+ disponível para diferentes sistemas operacionais em:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://gcc.gnu.org"
+target "http://gcc.gnu.org"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1748569981
+Instalar a biblioteca Qt (6.0 ou superior) - 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.qt.io/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1748569968
+Instalar a biblioteca Qt CustomPlot - 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.qcustomplot.com/"
+literal "false"
+
+\end_inset
+
+.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Section
+Interface gráfica
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Interface gráfica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A interface do programa é apresentada nas Figuras:
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:v3.0-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:v3.0-2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:v3.0-3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\change_inserted 643308733 1748570057
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1748570057
+A Figura 1 (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:v3.0-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) apresenta a tela inicial do software,
+ que corresponde ao menu de seleção entre os dois módulos principais da aplicação.
+ Nesta interface,
+ o usuário pode escolher entre acessar o Módulo 1,
+ voltado para a parte hidráulica de perfuração,
+ ou o Módulo 2,
+ destinado à análise de tensões na coluna de completação.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Versão 1.1,
+ Menu de interface do software
+\shape italic
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versao2.0"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/MenuSistema-V2.0.png
+	lyxscale 60
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1748570062
+A Figura 2 ( 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:v3.0-2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) exibe o Módulo 1,
+ no qual são disponibilizadas as funcionalidades relacionadas ao cálculo da pressão hidrostática,
+ perda de carga por fricção,
+ propriedades médias dos fluidos e gráficos associados ao escoamento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Versão 1.1,
+ interface do modulo 01 do software
+\shape italic
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versao2.0.1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/Sistema-V1.1.png
+	lyxscale 60
+	width 100text%
+
+\end_inset
+
+
+\change_inserted 643308733 1748570094
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748570101
+coloque anotações na figura
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1748570073
+Já a Figura 3 (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:v3.0-3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) apresenta o Módulo 2,
+ onde são realizados os cálculos referentes aos deslocamentos axiais (ΔL),
+ variações de comprimento da coluna,
+ efeitos de temperatura,
+ atuação do packer,
+ forças sobre o pistão e outros elementos mecânicos associados à completação do poço.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Versão 1.1,
+ interface do modulo 02 software
+\shape italic
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versao2.0.2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/Sistema-V2.0.png
+	lyxscale 60
+	width 100text%
+
+\end_inset
+
+
+\change_inserted 643308733 1748570106
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1748570106
+coloque anotações na figura
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 643308733 1748570051
+A Figura 1 (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:v3.0-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) apresenta a tela inicial do software,
+ que corresponde ao menu de seleção entre os dois módulos principais da aplicação.
+ Nesta interface,
+ o usuário pode escolher entre acessar o Módulo 1,
+ voltado para a parte hidráulica de perfuração,
+ ou o Módulo 2,
+ destinado à análise de tensões na coluna de completação.
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 643308733 1748570051
+A Figura 2 ( 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:v3.0-2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) exibe o Módulo 1,
+ no qual são disponibilizadas as funcionalidades relacionadas ao cálculo da pressão hidrostática,
+ perda de carga por fricção,
+ propriedades médias dos fluidos e gráficos associados ao escoamento.
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 643308733 1748570051
+Já a Figura 3 (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:v3.0-3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) apresenta o Módulo 2,
+ onde são realizados os cálculos referentes aos deslocamentos axiais (ΔL),
+ variações de comprimento da coluna,
+ efeitos de temperatura,
+ atuação do packer,
+ forças sobre o pistão e outros elementos mecânicos associados à completação do poço.
+\end_layout
+
+\begin_layout Section
+Funcionalidades 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Funcionalidades"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na sua versão 2.0,
+ o SEAPEP apresenta uma nova organização baseada em módulos.
+ A tela inicial do software,
+ apresentada na Figura 2.1,
+ oferece duas opções principais de navegação:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Módulo 1
+\series default
+ – Hidráulica de Perfuração
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Módulo 2
+\series default
+ – Análise de Tensões na Coluna
+\end_layout
+
+\begin_layout Standard
+Cada módulo contempla um conjunto específico de funcionalidades e cálculos,
+ permitindo ao usuário focar nos aspectos desejados da simulação.
+\end_layout
+
+\begin_layout Subsection
+Módulo 1 – Hidráulica de Perfuração
+\end_layout
+
+\begin_layout Standard
+Este módulo permite simular as principais variáveis relacionadas à circulação de fluidos no poço,
+ com foco no comportamento hidráulico ao longo da profundidade.
+ As funcionalidades disponíveis incluem:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Configuração do Poço e dos Fluidos:
+ 
+\series default
+inserção manual ou importação de dados como profundidade,
+ diâmetro,
+ tipo de revestimento e propriedades dos fluidos (densidade,
+ viscosidade,
+ faixa de atuação).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cálculo da Pressão Hidrostática:
+ 
+\series default
+permite determinar a pressão exercida pela coluna de fluido em qualquer ponto do poço.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Visualização Gráfica:
+
+\series default
+ geração de gráficos como perfil de densidade por profundidade e visualização em corte do poço com os fluidos distribuídos por zona.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cálculo da Perda de Carga por Fricção:
+
+\series default
+ aplicação de diferentes modelos reológicos,
+ Newtoniano,
+ Plástico de Bingham e Lei das Potências,
+ para simular o escoamento tanto no tubo quanto no espaço anular,
+ incluindo estimativas de velocidade,
+ número de Reynolds e tipo de escoamento.
+\end_layout
+
+\begin_layout Subsubsection
+Configuração Manual via Interface Gráfica
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Como adicionar materiais
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O usuário pode inserir os dados do poço e dos fluidos diretamente pela interface do programa.
+ Para isso,
+ basta seguir os seguintes passos:
+\end_layout
+
+\begin_layout Itemize
+Acesse o menu lateral e selecione a opção Configurar Poço.
+\end_layout
+
+\begin_layout Itemize
+Escolha entre as seguintes funcionalidades:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Criar Poço:
+ permite definir propriedades como profundidade total,
+ diâmetro do poço,
+ presença de revestimentos e pressão na superfície.
+\end_layout
+
+\begin_layout Itemize
+Adicionar Fluido:
+ possibilita configurar fluidos específicos,
+ definindo valores de densidade (lbm/gal) e viscosidade (cP),
+ além de outras propriedades associadas à faixa de atuação por profundidade.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ComoConfigurarPoco"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ ilustra o caminho no menu da interface gráfica para acessar essas funcionalidades.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Acesso às funcionalidades de configuração do poço e dos fluidos
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ComoConfigurarPoco"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/ManualCriaçaoPoco.png
+	lyxscale 80
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Carregamento de Arquivos de Dados (.dat)
+\end_layout
+
+\begin_layout Standard
+Alternativamente,
+ o software permite o carregamento automático das configurações do poço e dos fluidos por meio de arquivos no formato .dat.
+ Essa funcionalidade é especialmente útil para a reutilização de simulações ou integração com dados externos.
+\end_layout
+
+\begin_layout Standard
+O arquivo .dat deve conter as informações organizadas em uma sequência específica:
+\end_layout
+
+\begin_layout Itemize
+A primeira linha representa os dados do poço.
+\end_layout
+
+\begin_layout Itemize
+As linhas subsequentes listam os fluidos,
+ um por linha.
+\end_layout
+
+\begin_layout Standard
+Cada linha deve seguir o formato padrão estabelecido pelo software,
+ respeitando a ordem e as unidades exigidas.
+ A 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ArquivoDat"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ apresenta um exemplo de arquivo .dat estruturado corretamente e compatível com o sistema.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exemplo de estrutura de arquivo .dat para importação de dados
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ArquivoDat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/funcionalidade-carregar-poco.png
+	lyxscale 80
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dessa forma após configurar o poço o usuário poderá explorar as funcionalidade do software descritas na Seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Funcionalidades"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Módulo 2 – Análise de Tensões na Coluna
+\end_layout
+
+\begin_layout Standard
+O segundo módulo do software é voltado para o estudo dos efeitos mecânicos na coluna de completação,
+ com foco nos deslocamentos axiais (ΔL) provocados por variações térmicas e de pressão.
+ Esse módulo permite:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Configuração de Condições Iniciais e Finais:
+ 
+\series default
+entrada de temperaturas e profundidades associadas aos extremos da coluna.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Simulação de Efeitos Físicos:
+ 
+\series default
+como efeito balão,
+ atuação do pistão,
+ presença do packer e influência do crossover.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cálculo de Cargas Axiais:
+ 
+\series default
+estimativas de carga nas condições de coluna livre ou fixa,
+ além de simulações com restauração de força.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Visualização dos Resultados:
+
+\series default
+ geração de gráficos de temperatura versus profundidade e esquema da coluna com dados associados.
+\end_layout
+
+\begin_layout Standard
+Assim como no Módulo 1,
+ o usuário também pode configurar as propriedades do poço e dos trechos diretamente pela interface gráfica,
+ ou ainda importar um arquivo .dat contendo os dados necessários para inicialização da simulação.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ArquivoDat2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exemplo de estrutura de arquivo .dat para importação de dados
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ArquivoDat2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../imagens/funcionalidade-carregar-poco2.png
+	lyxscale 80
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

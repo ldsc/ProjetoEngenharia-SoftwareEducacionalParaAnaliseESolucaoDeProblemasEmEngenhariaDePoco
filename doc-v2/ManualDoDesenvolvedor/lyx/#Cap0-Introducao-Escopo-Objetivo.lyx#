@@ -102,7 +102,7 @@
 \papersides 2
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes true
 \change_bars false
 \postpone_fragile_content false
@@ -361,6 +361,8 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 643308733 1748553110
 A metodologia é descrita 
 \begin_inset CommandInset href
 LatexCommand href
@@ -384,17 +386,37 @@ literal "false"
 
 \begin_layout Standard
 O processo foi estruturado em três fases:
- ciclo concepção e análise,
- ciclo planejamento detalhado e ciclo construção (implementação).
+ 
+\change_inserted 643308733 1748553145
+ciclo 
+\change_unchanged
+concepção e análise,
+ 
+\change_inserted 643308733 1748553148
+ciclo 
+\change_unchanged
+planejamento detalhado e 
+\change_inserted 643308733 1748553160
+ciclo construção (
+\change_unchanged
+implementação
+\change_inserted 643308733 1748553159
+)
+\change_unchanged
+.
  O uso da linguagem C++ com o 
 \emph on
-framework Qt
+framework 
 \emph default
- viabilizou a construção de interfaces gráficas intuitivas,
+Qt viabilizou a construção de interfaces gráficas intuitivas,
  enquanto práticas modernas de controle de versão,
  com Git e GitHub,
  garantiram rastreabilidade e organização modular do código.
- Para comunicações usamos o Telegram e as reuniões foram realizadas de forma presencial ou remota usando Google Meet.
+
+\change_inserted 643308733 1748553214
+ Para comunicações usamos o telegram e as reuniões foram realizadas de forma presencial ou remota usando Google Meet.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -439,10 +461,16 @@ name "fig:Etapas para o desenvolvimento do software"
 \begin_layout Plain Layout
 \align center
 Fonte:
- Apostila da disciplina "LEP01348 - Introdução ao Projeto de Engenharia
+ Apostila da disciplina "
+\change_deleted 643308733 1748553257
+Programação Orientada a Objeto em C++"
+\change_inserted 643308733 1748553261
+LEP01348 - Introdução ao Projeto de Engenharia
 \begin_inset Quotes erd
 \end_inset
 
+
+\change_unchanged
  do professor André Duarte Bueno
 \end_layout
 
