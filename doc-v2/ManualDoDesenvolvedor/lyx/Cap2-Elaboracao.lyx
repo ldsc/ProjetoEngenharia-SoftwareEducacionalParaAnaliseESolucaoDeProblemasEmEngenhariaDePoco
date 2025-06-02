@@ -103,7 +103,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -112,7 +112,6 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -143,23 +142,9 @@ name "sec:Elaboração"
 \begin_layout Standard
 Neste capítulo,
  apresenta-se a elaboração do simulador,
- abrangendo 
-\change_inserted 643308733 1748558461
-a análise de domínio,
- 
-\change_unchanged
-o desenvolvimento teórico,
+ abrangendo o desenvolvimento teórico,
  a formulação das equações analíticas,
- a definição dos pacotes computacionais 
-\change_inserted 643308733 1748558488
-a serem 
-\change_unchanged
-utilizados
-\change_inserted 643308733 1748558518
-,
- os diagramas
-\change_unchanged
- e os algoritmos adicionais integrados ao software.
+ a definição dos pacotes computacionais utilizados e os algoritmos adicionais integrados ao software.
 \end_layout
 
 \begin_layout Section
@@ -174,11 +159,7 @@ name "sec:Análise-de-domínio"
 \end_layout
 
 \begin_layout Standard
-A análise de domínio é uma etapa essencial no desenvolvimento de um projeto
-\change_inserted 643308733 1748560168
- de engenharia
-\change_unchanged
-,
+A análise de domínio é uma etapa essencial no desenvolvimento de um projeto,
  pois envolve a identificação e compreensão dos conceitos fundamentais que orientarão a construção do simulador.
  Essa fase permite mapear os elementos-chave do problema,
  definindo as entidades,
@@ -186,11 +167,7 @@ A análise de domínio é uma etapa essencial no desenvolvimento de um projeto
 \end_layout
 
 \begin_layout Standard
-Este projeto está vinculado a cinco conceitos
-\change_inserted 643308733 1748560188
-/assuntos
-\change_unchanged
- essenciais:
+Este projeto está vinculado a cinco conceitos essenciais:
 \end_layout
 
 \begin_layout Enumerate
@@ -209,24 +186,6 @@ No contexto da engenharia de perfuração,
  Neste projeto,
  calcula-se a pressão dos fluidos considerando uma condição padrão:
  o estado de repouso da coluna e do fluido.
-\change_inserted 643308733 1748560357
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748560365
-se for falar de equações de fluidos fale aqui
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \end_deeper
@@ -242,51 +201,11 @@ A mecânica das rochas é crucial para entender o comportamento das formações 
  além de estimar tensões e fraturas que possam comprometer a integridade da operação.
  Conhecimentos sobre compressão,
  cisalhamento e tensões atuantes são fundamentais para garantir a segurança da estrutura do poço.
-
-\change_inserted 643308733 1748560368
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748560371
-se for falar de equações de rochas fale aqui
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-
-\change_deleted 643308733 1748560327
-Equações analíticas
-\change_inserted 643308733 1748560332
-Engenharia de poço
-\change_unchanged
-:
-\change_inserted 643308733 1748560297
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748560423
-são os assuntos/pacotes equações analíticas são assuntos específicos demais da matemática;
- aqui descreva conceitos e equações de poço
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+Equações analíticas:
 \end_layout
 
 \begin_deeper
@@ -301,42 +220,12 @@ As equações analíticas oferecem modelos matemáticos que permitem prever e co
 
 \end_deeper
 \begin_layout Enumerate
-
-\change_inserted 643308733 1748560486
-Modelagem e desenvolvimento de 
-\change_deleted 643308733 1748560489
-Programação
-\change_inserted 643308733 1748560490
-software
-\change_unchanged
-:
-\change_inserted 643308733 1748560681
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748560690
-programação é uma parte do todo
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+Programação:
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-A 
-\change_inserted 643308733 1748560507
-modelagem e 
-\change_unchanged
-programação orientada a objetos (POO) é a base do desenvolvimento do simulador,
+A programação orientada a objetos (POO) é a base do desenvolvimento do simulador,
  promovendo modularidade,
  reutilização de código e manutenção facilitada.
  A linguagem C++ foi adotada por sua robustez,
@@ -1109,11 +998,73 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $d_{2}$
+\begin_inset Formula $v$
 \end_inset
 
- é o diâmetro do poço 
-\begin_inset Formula $\left[in\right]$
+ é o coeficiente de Poisson;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E$
+\end_inset
+
+ Módulo de elasticidade 
+\begin_inset Formula $\left[psi\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Delta P_{in}$
+\end_inset
+
+ Variação de pressão na parte interna do poço 
+\begin_inset Formula $\left[psi\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Delta P_{out}$
+\end_inset
+
+ Variação de pressão no anular 
+\begin_inset Formula $\left[psi\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Delta L_{b}$
+\end_inset
+
+ Variação de comprimento devido efeito balão 
+\begin_inset Formula $\left[ft\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Delta L_{packer}$
+\end_inset
+
+ Variação de comprimento devido força pistão 
+\begin_inset Formula $\left[ft\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Delta L_{crossover}$
+\end_inset
+
+ Variação de comprimento devido ao crossover 
+\begin_inset Formula $\left[ft\right]$
 \end_inset
 
 ;
@@ -1126,45 +1077,11 @@ Hidráulica de Perfuração
 \begin_layout Standard
 Na engenharia de perfuração,
  um fluido de perfuração possui três funções principais:
- 
-\change_inserted 643308733 1748560740
-
-\end_layout
-
-\begin_layout Itemize
-transportar cascalho,
-
-\change_deleted 643308733 1748603493
- 
-\change_inserted 643308733 1748560742
-
-\end_layout
-
-\begin_layout Itemize
-prevenir o influxo de fluidos e 
-\change_inserted 643308733 1748560744
-
-\end_layout
-
-\begin_layout Itemize
-manter a estabilidade do poço.
-
-\change_deleted 643308733 1748560740
- 
-\change_inserted 643308733 1748560736
-
-\end_layout
-
-\begin_layout Standard
-Para cumprir essas funções,
+ transportar cascalho,
+ prevenir o influxo de fluidos e manter a estabilidade do poço.
+ Para cumprir essas funções,
  o fluido depende do seu escoamento na tubulação e das pressões associadas.
- 
-\change_inserted 643308733 1748560758
-
-\end_layout
-
-\begin_layout Standard
-Para que o engenheiro possa formular o fluido mais adequado a cada situação específica,
+ Para que o engenheiro possa formular o fluido mais adequado a cada situação específica,
  é essencial que ele seja capaz de prever as pressões e os escoamentos ao longo do poço.
 \end_layout
 
@@ -1174,28 +1091,10 @@ Os fluidos de perfuração podem variar amplamente em termos de composição e p
  como a água,
  até fluidos altamente compressíveis,
  como a espuma.
- 
-\change_inserted 643308733 1748560780
-
-\end_layout
-
-\begin_layout Standard
-O simulador desenvolvido neste trabalho se propõe a resolver dois tipos de problemas:
- 
-\change_inserted 643308733 1748560786
-
-\end_layout
-
-\begin_layout Itemize
-os estáticos,
+ O simulador desenvolvido neste trabalho se propõe a resolver dois tipos de problemas:
+ os estáticos,
  que envolvem o cálculo da pressão hidrostática,
- e 
-\change_inserted 643308733 1748560789
-
-\end_layout
-
-\begin_layout Itemize
-os dinâmicos,
+ e os dinâmicos,
  relacionados ao escoamento dos fluidos no interior da tubulação.
 \end_layout
 
@@ -1236,11 +1135,7 @@ name "subsec:Pressão-Hidrostática"
 
 \begin_layout Standard
 A pressão hidrostática corresponde à variação da pressão em função da profundidade ao longo de uma coluna de fluido,
- sendo 
-\change_deleted 643308733 1748562519
-comumente 
-\change_unchanged
-mais facilmente calculada em condições de poço estático.
+ sendo comumente mais facilmente calculada em condições de poço estático.
  Sua dedução pode ser realizada a partir da análise do diagrama de corpo livre apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1312,34 +1207,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-A partir 
-\change_deleted 643308733 1748562632
-dessa
-\change_inserted 643308733 1748562632
-da
-\change_unchanged
- dedução
-\change_inserted 643308733 1748562642
- de REF
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748562677
-coloque quem deduziu,
- a referência,
- pois você não apresenta a dedução;
- ou apresente a dedução matemática passo a passo a= pi*r²....
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- chegamos à Equação (
+A partir dessa dedução chegamos à Equação (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:EquacaoPressao"
@@ -1437,68 +1305,17 @@ p=0.05195\rho Z+p_{0}
 \end_layout
 
 \begin_layout Standard
-Onde
-\change_deleted 643308733 1748562823
- 
-\change_inserted 643308733 1748562825
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\begin_inset Formula $p$
-\end_inset
-
- é a pressão
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- 
-\begin_inset Formula $\left[psi\right]$
-\end_inset
-
-,
- 
-\change_unchanged
-
+Onde 
 \begin_inset Formula $p_{0}$
 \end_inset
 
- é a constante de integração
-\change_deleted 643308733 1748562792
-,
-
-\change_inserted 643308733 1748562792
- sendo
-\change_unchanged
+ é a constante de integração,
  igual a pressão na superfície 
 \begin_inset Formula $\left[psi\right]$
 \end_inset
 
 ,
 
-\change_deleted 643308733 1748562820
-
 \family roman
 \series medium
 \shape up
@@ -1534,8 +1351,6 @@ Onde
 \begin_inset Formula $\left[psi\right]$
 \end_inset
 
-
-\change_unchanged
  e 
 \begin_inset Formula $Z$
 \end_inset
@@ -1549,13 +1364,7 @@ Onde
  de modo que ele seja capaz de evitar o influxo de fluidos da formação para o poço,
  prevenindo,
  assim,
- 
-\change_deleted 643308733 1748558431
-sutuações
-\change_inserted 643308733 1748558431
-situações
-\change_unchanged
- de 
+ sutuações de 
 \shape italic
 kik
 \shape default
@@ -1826,24 +1635,6 @@ Na maioria dos casos,
  e,
  portanto,
  os testes devem considerar também as propriedades elásticas associadas à deformação do fluido durante o escoamento.
-\change_inserted 643308733 1748563063
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748563065
-fonte
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -1853,26 +1644,8 @@ Para isso,
  engenheiros de perfuração costumam utilizar modelos reológicos para representar o comportamento dos fluidos.
  Neste trabalho,
  são abordados três modelos principais:
- 
-\change_inserted 643308733 1748563085
-
-\end_layout
-
-\begin_layout Itemize
-o modelo Newtoniano,
- 
-\change_inserted 643308733 1748563088
-
-\end_layout
-
-\begin_layout Itemize
-o modelo plástico de Bingham e 
-\change_inserted 643308733 1748563090
-
-\end_layout
-
-\begin_layout Itemize
-o modelo da lei das potências 
+ o modelo Newtoniano,
+ o modelo plástico de Bingham e o modelo da lei das potências 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "FUNDAMENTALS2011"
@@ -1881,13 +1654,7 @@ literal "false"
 \end_inset
 
 .
- 
-\change_inserted 643308733 1748563094
-
-\end_layout
-
-\begin_layout Standard
-Ressalta-se ainda que outros modelos poderão ser incorporados em versões futuras do simulador,
+ Ressalta-se ainda que outros modelos poderão ser incorporados em versões futuras do simulador,
  visando seu aprimoramento contínuo.
 \end_layout
 
@@ -1947,6 +1714,7 @@ name "fig:Fluxo-laminar"
 
 \begin_inset Graphics
 	filename ../imagens/FluxoLaminar.png
+	lyxscale 70
 	width 100text%
 
 \end_inset
@@ -2126,13 +1894,7 @@ A taxa de cisalhamento
 
 \begin_layout Standard
 A viscosidade aparente pode ser definida como a razão entre a tensão de cisalhamento e a taxa de cisalhamento.
- 
-\change_inserted 643308733 1748563219
-
-\end_layout
-
-\begin_layout Standard
-A principal característica de um fluido Newtoniano é a viscosidade constante do fluido.
+ A principal característica de um fluido Newtoniano é a viscosidade constante do fluido.
  Como sabemos os fluidos de perfuração são misturas complexas que não podem ser caracterizadas por um único valor de viscosidade,
  quando um fluido não apresenta uma proporcionalidade entre tensão de cisalhamento e taxa de cisalhamento ele passa a ser conhecido como um fluido não Newtoniano,
  podendo ser pseudoplásticos se a viscosidade diminui com o aumento da taxa de cisalhamento e dilatantes se a viscosidade aumenta com o aumento da taxa de cisalhamento 
@@ -2202,15 +1964,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Subsubsection
-Modelo de fluido
-\change_deleted 643308733 1748563375
-s
-\change_unchanged
- plástico
-\change_deleted 643308733 1748563376
-s
-\change_unchanged
- de Bingham
+Modelo de fluidos plásticos de Bingham
 \end_layout
 
 \begin_layout Standard
@@ -2260,25 +2014,7 @@ A principal característica de um plástico Bingham é a necessidade de um valor
 \end_layout
 
 \begin_layout Subsubsection
-Modelo 
-\change_inserted 643308733 1748563349
-de 
-\change_unchanged
-fluido
-\change_deleted 643308733 1748563378
-s
-\change_unchanged
- 
-\change_deleted 643308733 1748563385
-de
-\change_inserted 643308733 1748563390
-regido pela
-\change_unchanged
- lei de potência
-\change_inserted 643308733 1748563463
-s
-\change_unchanged
-
+Modelo fluidos de lei de potência
 \end_layout
 
 \begin_layout Standard
@@ -2346,13 +2082,7 @@ Perda de Pressão Friccional em um Tubo de Perfuração
 
 \begin_layout Standard
 A perda de pressão friccional durante a circulação de fluidos em operações de perfuração pode ser calculada através de diferentes modelos de fluido.
- 
-\change_inserted 643308733 1748563541
-
-\end_layout
-
-\begin_layout Standard
-O primeiro passo é determinar o tipo de escoamento,
+ O primeiro passo é determinar o tipo de escoamento,
  para isso utilizamos o número de Reynolds 
 \begin_inset Formula $N_{_{re}}$
 \end_inset
@@ -2488,11 +2218,7 @@ Fluidos plásticos de Bingham
 \end_layout
 
 \begin_layout Standard
-Para um fluido que se comporta como plástico de Bingham a velocidade média pode
-\change_deleted 643308733 1748563652
-m
-\change_unchanged
- ser obtida pela Equação (
+Para um fluido que se comporta como plástico de Bingham a velocidade média podem ser obtida pela Equação (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:VelociadadeMedia"
@@ -2523,14 +2249,8 @@ O fluxo é considerado turbulento quando o número de Reynolds é maior ou igual
 \begin_inset Formula $N_{rec}$
 \end_inset
 
-
-\change_deleted 643308733 1748563682
 .
- O número de Reynods crítico
-\change_inserted 643308733 1748563682
- que
-\change_unchanged
- pode ser calculado pela seguinte fórmula:
+ O número de Reynods crítico pode ser calculado pela seguinte fórmula:
 \end_layout
 
 \begin_layout Standard
@@ -2680,30 +2400,7 @@ Perda de Pressão Friccional em um Anular
 A perda de pressão friccional durante a circulação de fluidos em operações de perfuração também pode ocorrer no anular,
  e assim como a perda na tubulação,
  pode ser calculada através de diferentes modelos de fluido.
- Assim como vimos anteriormente o primeiro pa
-\change_deleted 643308733 1748564030
-ç
-\change_inserted 643308733 1748564030
-ss
-\change_unchanged
-o
-\change_inserted 643308733 1748564039
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748564058
-paço é palácio;
- passo é etapa
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- é determinar o tipo de escoamento,
+ Assim como vimos anteriormente o primeiro paço é determinar o tipo de escoamento,
  para isso utilizamos o número de Reynolds,
  porém para cada modelo existe uma equação para a obtenção do número de Reynolds.
 \end_layout
@@ -2783,11 +2480,7 @@ Para fluxo laminar:
 \end_layout
 
 \begin_layout Standard
-Para 
-\change_deleted 643308733 1748564121
-o
-\change_unchanged
- fluxo turbulento:
+Para o fluxo turbulento:
 \end_layout
 
 \begin_layout Standard
@@ -2834,11 +2527,7 @@ N_{re}=\frac{757\rho\bar{v}\left(d_{2}-d_{1}\right)}{\mu_{p}}
 
 \begin_layout Standard
 O fluxo é considerado turbulento quando o número de Reynolds é maior ou igual ao número de Reynods crítico.
- O número de Reyno
-\change_inserted 643308733 1748564147
-l
-\change_unchanged
-ds crítico pode ser calculado usando a Equação (
+ O número de Reynods crítico pode ser calculado usando a Equação (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:ReynoldsCritico"
@@ -2850,25 +2539,7 @@ nolink "false"
 \end_inset
 
 ),
- mas o número de Hedstrom 
-\change_inserted 643308733 1748564184
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748564194
-explique o que é o número de Hedstrom 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-deve ser calculado pela seguinte equação:
+ mas o número de Hedstrom deve ser calculado pela seguinte equação:
 \end_layout
 
 \begin_layout Standard
@@ -3049,32 +2720,14 @@ A variação de temperatura ao longo da coluna provoca expansão ou contração 
 \end_layout
 
 \begin_layout Standard
+Onde 
+\end_layout
+
+\begin_layout Standard
 Esse efeito é abordado por Bourgoyne et al.
  (2011),
  que destacam sua relevância especialmente em colunas com extremidades restritas,
- como no caso de instalação de 
-\emph on
-packers
-\change_inserted 643308733 1748564341
-
-\emph default
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748564347
-termos em ingles sempre em itálico
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-,
+ como no caso de instalação de packers,
  onde a expansão térmica gera tensões axiais significativas 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3087,11 +2740,7 @@ literal "false"
 \end_layout
 
 \begin_layout Subsubsection
-Efeito Balão (
-\emph on
-Ballooning Effect
-\emph default
-)
+Efeito Balão (Ballooning Effect)
 \end_layout
 
 \begin_layout Standard
@@ -3155,16 +2804,8 @@ A equação que representa esse deslocamento axial é:
 
 \begin_layout Standard
 Esse termo representa o efeito pistão global sobre a coluna,
- sendo fundamental para simular condições com 
-\emph on
-packer
-\emph default
- ativado,
- 
-\emph on
-crossover
-\emph default
-,
+ sendo fundamental para simular condições com packer ativado,
+ crossover,
  ou colunas parcialmente cimentadas.
 \end_layout
 
@@ -3176,17 +2817,11 @@ Em aplicações práticas,
 \end_layout
 
 \begin_layout Subsubsection
-Força de Pistão Gerada por 
-\emph on
-Packer
+Força de Pistão Gerada por Packer
 \end_layout
 
 \begin_layout Standard
-A presença de um 
-\emph on
-packer
-\emph default
- impede o deslocamento axial livre da coluna.
+A presença de um packer impede o deslocamento axial livre da coluna.
  Assim,
  quando há diferença de pressão entre o interior e o exterior da coluna,
  gera-se uma força de pistão sobre a seção da coluna confinada,
@@ -3220,17 +2855,11 @@ literal "false"
 \end_layout
 
 \begin_layout Subsubsection
-Força de Pistão em 
-\emph on
-Crossovers
+Força de Pistão em Crossovers
 \end_layout
 
 \begin_layout Standard
-Em transições entre tubulações com diferentes geometrias (conhecidas como 
-\emph on
-crossovers
-\emph default
-),
+Em transições entre tubulações com diferentes geometrias (conhecidas como crossovers),
  o diferencial de área provoca uma força de pistão adicional,
  resultando em alongamento ou encurtamento da coluna:
 \end_layout
@@ -3359,37 +2988,13 @@ Pacote janela principal:
 
 \end_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1748564636
 Pacote equações analíticas:
  
-\change_inserted 643308733 1748564642
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748564650
-coloque as equações nos pacotes acima
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_deleted 643308733 1748564636
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1748564636
 Neste pacote estão agrupadas todas as equações analíticas que são aplicadas durante a simulação
-\change_unchanged
-
 \end_layout
 
 \end_deeper
@@ -3464,38 +3069,10 @@ name "fig:Diagrama-de-Pacotes"
 \end_inset
 
 
-\change_inserted 643308733 1748559911
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748559935
-troque Modelagem Gráfica por Biblioteca Gráfica
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748559970
-sua janela principal pelo que entendo acessa diretamente Mec fluidos e Mec Rochas se manipula estes objetos;
- revise o diagrama;
- veja como ficou o diagrama de componentes
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_inserted 643308733 1748558610
 
 \end_layout
 

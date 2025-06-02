@@ -89,7 +89,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -98,6 +98,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\author -501900170 "NMagalhaes"
 \author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
@@ -171,10 +172,6 @@ Neste capítulo apresentam-se as classes desenvolvidas no projeto,
  atributos e métodos.
  Apresenta-se também um breve conceito de cada classe.
  Todos os diagramas foram elaborados seguindo a estrutura da 
-\change_deleted 643308733 1748564842
-UML
-\change_inserted 643308733 1748564857
-
 \begin_inset CommandInset href
 LatexCommand href
 name "UML"
@@ -186,8 +183,6 @@ literal "false"
  - 
 \emph on
 Unified Modeling Language
-\change_unchanged
-
 \emph default
  (Linguagem de Modelagem Unificada),
  com o objetivo de padronizar e facilitar a compreensão do sistema.
@@ -234,9 +229,9 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
-Essa representação segue a notação da UML 
-\change_deleted 643308733 1748564911
-(Linguagem de Modelagem Unificada)
+Essa representação segue a notação da UML
+\change_deleted -501900170 1748865769
+ 
 \change_unchanged
  e serve como base para o entendimento da arquitetura do software,
  permitindo uma visão clara da organização interna dos componentes e de suas interdependências.
@@ -246,7 +241,7 @@ Essa representação segue a notação da UML
 O diagrama de classes é apresentado na Figura
 \change_deleted 643308733 1748564803
  
-\change_inserted 643308733 1748564924
+\change_unchanged
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -254,8 +249,6 @@ reference "cap:Diagrama-de-classes"
 
 \end_inset
 
-
-\change_unchanged
 .
  Ele tem como objetivo apresentar todas as classes,
  seus atributos,
@@ -298,22 +291,11 @@ name "cap:Diagrama-de-classes"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../uml/DiagramaClasse.png
+	filename ../imagens/DiagramaClasse.png
 	lyxscale 10
 	width 100text%
 	height 100theight%
 	rotateAngle 90
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-verificar o caminho e se esta no github;
- aqui não estava carregando
-\end_layout
 
 \end_inset
 
@@ -368,25 +350,7 @@ CFluido:
 CObjetoPoco:
 
 \series default
- 
-\change_inserted 643308733 1748565315
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748565320
-Troque por CPoco
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-responsável por armazenar as propriedades gerais do poço e integrar os diferentes trechos que o compõem.
+ responsável por armazenar as propriedades gerais do poço e integrar os diferentes trechos que o compõem.
 \end_layout
 
 \begin_layout Itemize
@@ -397,25 +361,7 @@ CTrechoTubulacao:
 \series default
  representa cada seção tubular do poço,
  permitindo uma modelagem segmentada.
- Os objetos dessa classe contêm fluido e estão organizados dentro da estrutura de CObjetoPoco
-\change_inserted 643308733 1748565350
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748565352
-CPoco
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
+ Os objetos dessa classe contêm fluido e estão organizados dentro da estrutura de CObjetoPoco.
 \end_layout
 
 \begin_layout Itemize
@@ -460,32 +406,7 @@ CSimuladorReologico:
 
 \series default
  classe principal do simulador.
- Esta 
-\change_deleted 643308733 1748565384
-janela
-\change_inserted 643308733 1748565385
-classe
-\change_unchanged
- integra os modelos reológicos e executa os cálculos associados às propriedades dos fluidos e trechos do poço.
-\change_inserted 643308733 1748565442
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748565478
-idealmente a CSimuladorReologico é independente do tipo de interface,
- podendo gerar CSimuladorReologico-CLI e CSimuladorReologico-Qt
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+ Esta classe integra os modelos reológicos e executa os cálculos associados às propriedades dos fluidos e trechos do poço.
 \end_layout
 
 \begin_layout Itemize
@@ -493,26 +414,8 @@ idealmente a CSimuladorReologico é independente do tipo de interface,
 \series bold
 CSimuladorPerdaTubulacao:
  
-\change_deleted 643308733 1748565552
-
 \series default
-segunda
-\change_inserted 643308733 1748565553
-esta
-\change_unchanged
- 
-\change_deleted 643308733 1748565407
-janela
-\change_inserted 643308733 1748565408
-classe
-\change_unchanged
- 
-\change_deleted 643308733 1748565556
-do sistema,
-\change_inserted 643308733 1748565556
-é
-\change_unchanged
- voltada para a análise de perda de pressão por fricção ao longo dos trechos,
+esta classe é voltada para a análise de perda de pressão por fricção ao longo dos trechos,
  incluindo variações de comprimento (ΔL) e outros fatores associados ao escoamento.
 \end_layout
 
@@ -525,28 +428,13 @@ CJanelaAdicionarFluido,
  CJanelaMenu:
 
 \series default
- classes auxiliares 
-\change_inserted 643308733 1748565631
-com funcionalidades específicas de acordo com o nome.
- Foram 
-\change_unchanged
-criadas com o 
+ classes auxiliares com funcionalidades específicas de acordo com o nome.
+ Foram criadas com o 
 \family typewriter
 Qt Creator
 \family default
 ,
- 
-\change_inserted 643308733 1748565635
-e são 
-\change_unchanged
-responsáveis por fornecer interfaces gráficas para entrada e visualização de dados.
- 
-\change_deleted 643308733 1748565641
-Cada janela é especializada em uma função específica,
- como adição de trechos,
- inserção de fluido ou exibição de gráficos.
-\change_unchanged
-
+ e são responsáveis por fornecer interfaces gráficas para entrada e visualização de dados.
 \end_layout
 
 \begin_layout Itemize
@@ -556,9 +444,7 @@ QCustomPlot:
 
 \series default
  biblioteca externa utilizada para renderização de gráficos científicos,
- como perfis de pressão e densidade
-\change_inserted 643308733 1748565673
- (
+ como perfis de pressão e densidade (
 \begin_inset CommandInset href
 LatexCommand href
 name "site"
@@ -567,27 +453,7 @@ literal "false"
 
 \end_inset
 
-)
-\change_unchanged
-.
-\change_inserted 643308733 1748565698
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748565745
-copiar informação para requisitos preparação do ambiente desenvolvedor no manual do desenvolvedor
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+).
 \end_layout
 
 \begin_layout Standard
@@ -1165,11 +1031,7 @@ CModeloNewtoniano
 \begin_layout Standard
 O processo se inicia com o recebimento dos dados pela classe responsável pela simulação dos fluidos.
  Os atributos do objeto são atualizados conforme os valores de entrada fornecidos.
- O primeiro passo 
-\change_deleted 643308733 1748566789
-do método
-\change_unchanged
- consiste no cálculo da velocidade média do fluido no poço.
+ O primeiro passo consiste no cálculo da velocidade média do fluido no poço.
  Em seguida,
  é realizada uma verificação para identificar se o número de 
 \emph on
@@ -1179,10 +1041,6 @@ Reynolds
  Caso essa informação esteja ausente,
  o sistema emite uma mensagem de erro.
  Caso contrário,
-
-\change_deleted 643308733 1748566808
- o método
-\change_unchanged
  prossegue para a classificação do tipo de escoamento.
 \end_layout
 

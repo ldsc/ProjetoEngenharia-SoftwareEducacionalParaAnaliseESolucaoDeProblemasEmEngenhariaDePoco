@@ -114,7 +114,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -123,7 +123,6 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -180,126 +179,24 @@ Baixando o software
 \end_layout
 
 \begin_layout Standard
-O software foi disponibilizado no site 
+O software foi disponibilizado no GitHub,
+ por meio do repositório 
 \begin_inset CommandInset href
 LatexCommand href
-name "Software Educacional Para Análise E Solução De Problemas Em Engenharia De Poço"
+name "GitHub - Software Educacional Para Análise de Poço"
 target "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"
 literal "false"
 
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-coloque o link correto para o seu projeto no site https://github.com/ldsc/nomeProjetoEspecifico
-\end_layout
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
-Acessando você encontra instruções atualizadas para baixar e instalar.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-coloque as instruções:
+Lá você encontra instruções atualizadas de download,
+ instalação e uso do programa.
 \end_layout
 
-\begin_layout Plain Layout
-git clone 
-\change_deleted 643308733 1748598131
-https://github.com/ldsc/nomeProjetoEspecifico
-\change_inserted 643308733 1748598131
-https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-
-\change_inserted 643308733 1748606336
-Requisitos para uso do software
-\end_layout
-
-\begin_layout Itemize
-
-\change_inserted 643308733 1748606224
-Sistemas operacionais:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\change_inserted 643308733 1748606230
-Windows
-\end_layout
-
-\begin_layout Itemize
-
-\change_inserted 643308733 1748606343
-GNU/Linux
-\end_layout
-
-\begin_layout Itemize
-
-\change_inserted 643308733 1748606345
-Mac?
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\change_inserted 643308733 1748606253
-Disco
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\change_inserted 643308733 1748606290
-80 MB Disco
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\change_inserted 643308733 1748606294
-Memória RAM
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\change_inserted 643308733 1748606371
-20 MB
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\change_inserted 643308733 1748606379
-Bibliotecas
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\change_inserted 643308733 1748606385
-Qt6.0 site onde baixar
-\end_layout
-
-\end_deeper
 \begin_layout Section
 Dependências
 \begin_inset Index idx
@@ -314,144 +211,295 @@ Dependências
 \end_inset
 
 
-\change_inserted 643308733 1748606132
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748606121
-manual do desenvolvedor
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-Caso você deseje rodar o software a partir dos arquivos fonte,
- é necessário para compilar atender as seguintes dependências:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-adicione aqui todas as dependências para instalação do software
+Para compilar o software,
+ é necessário atender aos seguintes pré-requisitos:
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Instalar o compilador g++ da GNU disponível em 
-\begin_inset CommandInset href
-LatexCommand href
-name "http://gcc.gnu.org"
-target "http://gcc.gnu.org"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Para instalar no GNU/Linux use o comando 
-\family typewriter
-dnf install gcc
-\family default
-.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Instalar a biblioteca Qt disponível em 
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.qt.io/download"
-
-\end_inset
-
-.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-apague se não usa Qt;
- 
-\end_layout
-
-\end_inset
-
-
-\change_inserted 643308733 1748597949
-
-\end_layout
-
-\begin_layout Itemize
-
-\change_inserted 643308733 1748597962
-Instalar a biblioteca Qt-CustomPlot disponível em 
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.qcustomplot.com/"
-literal "false"
-
-\end_inset
-
-.
-\change_unchanged
-
+\begin_layout Subsection
+Requisitos mínimos
 \end_layout
 
 \begin_layout Standard
-As demais bibliotecas já vêm com o compilador e não precisam ser instaladas separadamente.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-Note que você deve testar a instalação seguindo exatamente o que colocou nesta seção
+
+\series bold
+Recurso
 \end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Especificação Mínima
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sistema Operacional
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Windows 10 / Ubuntu 20.04
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Memória RAM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+512 MB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Processador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 núcleo,
+ 1.0 GHz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Espaço em Disco
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100 MB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Resolução de Tela
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1024 x 768
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Requisitos Recomendados
 \end_layout
 
 \begin_layout Standard
-Caso você deseje rodar o software sem a instalação de dependências,
- basta rodar o arquivo executável presente na pasta 
-\begin_inset Quotes eld
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Recurso
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Especificação Recomendada
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sistema Operacional
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Windows 11 / Ubuntu 22.04
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Memória RAM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 GB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Processador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 núcleo,
+ 2.0 GHz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Espaço em Disco
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+200 MB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Resolução de Tela
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1280 x 1024
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
 \end_inset
 
-Test
-\begin_inset Quotes erd
-\end_inset
 
- ou 
-\begin_inset Quotes eld
-\end_inset
-
-Re
-\change_deleted 643308733 1748606097
-a
-\change_unchanged
-lease
-\begin_inset Quotes erd
-\end_inset
-
-.
 \end_layout
 
 \end_body

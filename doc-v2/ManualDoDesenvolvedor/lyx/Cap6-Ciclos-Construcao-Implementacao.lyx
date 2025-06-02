@@ -895,7 +895,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de declaração da classe CModeloReologico},
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloReologico},
  label={CModeloReologico-h}] {../../../src-v2/CModeloReologico.h}
 \end_layout
 
@@ -986,7 +986,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de declaração da classe CModeloReologico},
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloReologico},
  label={CSimuladorPerdaTubulacao-h}] {../../../src-v2/CSimuladorPerdaTubulacao.h}
 \end_layout
 
@@ -1077,7 +1077,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de declaração da classe CObjetoPoco},
+lstinputlisting[ caption={Arquivo de implementação da classe CObjetoPoco},
  label={CPoco-h}] {../../../src-v2/CObjetoPoco.h}
 \end_layout
 
@@ -1163,7 +1163,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de declaração da classe CFluido},
+lstinputlisting[ caption={Arquivo de implementação da classe CFluido},
  label={CFluido-h}] {../../../src-v2/CFluido.h}
 \end_layout
 
@@ -1249,7 +1249,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de declaração da classe CModeloReologico},
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloReologico},
  label={CModeloReologico-h}] {../../../src-v2/CModeloReologico.h}
 \end_layout
 
@@ -1335,7 +1335,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de declaração da classe CModeloNewtoniano},
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloNewtoniano},
  label={CModeloNewtoniano-h}] {../../../src-v2/CModeloNewtoniano.h}
 \end_layout
 
@@ -1421,7 +1421,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de declaração da classe CModeloBingham},
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloBingham},
  label={CModeloBingham-h}] {../../../src-v2/CModeloBingham.h}
 \end_layout
 
@@ -1507,7 +1507,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de declaração da classe CModeloPotencia},
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloPotencia},
  label={CModeloPotencia-h}] {../../../src-v2/CModeloPotencia.h}
 \end_layout
 
@@ -1616,7 +1616,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de declaração da classe CJanelaAdicionarFluido},
+lstinputlisting[ caption={Arquivo de implementação da classe CJanelaAdicionarFluido},
  label={CModeloPotencia-h}] {../../../src-v2/CJanelaAdicionarFluido.h}
 \end_layout
 
@@ -1702,7 +1702,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de declaração da classe CJanelaAdicionarTrechoTubulacao},
+lstinputlisting[ caption={Arquivo de implementação da classe CJanelaAdicionarTrechoTubulacao},
  label={CJanelaAdicionarTrechoTubulacao-h}] {../../../src-v2/CJanelaAdicionarTrechoTubulacao.h}
 \end_layout
 
@@ -1788,7 +1788,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de declaração da classe CJanelaGraficoPressaoHidroestatica},
+lstinputlisting[ caption={Arquivo de implementação da classe CJanelaGraficoPressaoHidroestatica},
  label={CJanelaGraficoPressaoHidroestatica-h}] {../../../src-v2/CJanelaGraficoPressaoHidroestatica.h}
 \end_layout
 
@@ -1874,7 +1874,7 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de declaração da classe CJanelaMenu},
+lstinputlisting[ caption={Arquivo de implementação da classe CJanelaMenu},
  label={CJanelaMenu-h}] {../../../src-v2/CJanelaMenu.h}
 \end_layout
 
@@ -1933,23 +1933,6 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Detalhes de C++ veja 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Bueno2003,adb-prog-livroCpp"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
 
 \end_layout
 

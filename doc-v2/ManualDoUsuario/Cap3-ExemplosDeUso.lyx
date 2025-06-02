@@ -101,7 +101,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -110,7 +110,6 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -145,322 +144,101 @@ thechapter - Teste}
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 643308733 1748598349
 Todo projeto de engenharia passa por uma etapa de testes.
- 
-\change_unchanged
-Neste capítulo apresentamos alguns 
-\change_deleted 643308733 1748598353
-testes 
-\change_inserted 643308733 1748598356
-exemplos de uso 
-\change_unchanged
-do software desenvolvido.
- 
-\change_deleted 643308733 1748598358
-Estes testes devem dar resposta aos diagramas de caso de uso inicialmente apresentados (diagramas de caso de uso geral e específicos).
-
-\change_inserted 643308733 1748598358
- 
-\change_unchanged
-
+ Neste capítulo apresentamos alguns testes do software desenvolvido.
+ Estes testes devem dar resposta aos diagramas de caso de uso inicialmente apresentados (diagramas de caso de uso geral e específicos).
 \end_layout
 
-\begin_layout Section
-Exemplo 1
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Exemplo-1"
+\begin_layout Subsection
+Pressão Hidroestática
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+Validação do simulador
+\end_layout
 
 \end_inset
 
-:
- Cálculo aplicando o Modelo Newtoniano
+
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-Enunciado da Questão
-\end_layout
-
-\begin_layout Standard
-Um poço de 5.000 pés está sendo perfurado com água (
-\change_deleted 643308733 1748598373
-
-\backslash
-rho = 8,33 lbm/gal
-\change_inserted 643308733 1748598373
-
-\begin_inset Formula $\rho=8,33lbm/gal$
-\end_inset
-
-
-\change_unchanged
-,
- 
-\change_deleted 643308733 1748598376
-
-\backslash
-mu = 1 cP
-\change_inserted 643308733 1748598376
-
-\begin_inset Formula $\mu=1cP$
-\end_inset
-
-
-\change_unchanged
-).
- O fluido circula a 500 GPM através de um tubo de perfuração (
-\change_deleted 643308733 1748598385
-OD = 5,1"
-\change_inserted 643308733 1748598385
-
-\begin_inset Formula $OD=5,1"$
-\end_inset
-
-
-\change_unchanged
-,
- 
-\change_deleted 643308733 1748598390
-ID = 3,826"
-\change_inserted 643308733 1748598390
-
-\begin_inset Formula $ID=3,826"$
-\end_inset
-
-
-\change_unchanged
-) em um furo de 
-\change_deleted 643308733 1748598394
-6,5"
-\change_inserted 643308733 1748598394
-
-\begin_inset Formula $6,5"$
-\end_inset
-
-
-\change_unchanged
-.
- Considerando rugosidade zero,
- determine:
-\end_layout
-
-\begin_layout Enumerate
-O padrão do fluxo na tubulação.
-\end_layout
-
-\begin_layout Enumerate
-A perda por fricção por 1.000 pés na tubulação.
-\end_layout
-
-\begin_layout Enumerate
-O padrão do fluxo no anular.
-\end_layout
-
-\begin_layout Enumerate
-A perda por fricção por 1.000 pés no anular.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-\emph on
-Fonte:
-
-\series default
- Applied Drilling Engineering – Adam T.
- Bourgoyne Jr.
- (Exercício 40,
- Capítulo 4)
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Resolução Manual
-\end_layout
-
-\begin_layout Standard
-Normalmente,
- em sala de aula,
- seria necessário calcular:
-\end_layout
-
-\begin_layout Itemize
-Determinar a velocidade de escoamento do fluido.
-\end_layout
-
-\begin_layout Itemize
-Determinar o número de Reynolds para classificar o regime do fluxo.
-\end_layout
-
-\begin_layout Itemize
-Utilizar a formula do modelo newtoniano determinar a perda de carda.
-\end_layout
-
-\begin_layout Itemize
-Repetir o processo para o anular
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Resolução Usando o Software
-\end_layout
-
-\begin_layout Enumerate
-Inserir as propriedades do poço
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-No menu,
- 
-\change_deleted 643308733 1748598454
-clique 
-\change_unchanged
-adicione um nome para o poço.
-\end_layout
-
-\begin_layout Itemize
-Insira a profundidade do Poço.
- (5000ft)
-\end_layout
-
-\begin_layout Itemize
-Informe os diâmetros do tubo de perfuração (5,1" externo,
- 3,826" interno) e do furo (6,5").
-\end_layout
-
-\begin_layout Itemize
-Defina a vazão do fluido (500 GPM).
-\end_layout
-
-\begin_layout Itemize
-Confirme os dados
-\change_inserted 643308733 1748598496
- pressionando no botão ...??
-\change_unchanged
-.
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Inserir as propriedades do fluido
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-No menu principal,
- clique em "Adicionar Fluido".
-\end_layout
-
-\begin_layout Itemize
-Insira um nome para o fluido (
-\change_deleted 643308733 1748598515
-agua
-\change_inserted 643308733 1748598515
-água
-\change_unchanged
-).
-\end_layout
-
-\begin_layout Itemize
-Insira os valores de densidade (8,33 lbm/gal) e viscosidade (1 cP).
-\end_layout
-
-\begin_layout Itemize
-Coloque o intervalo do fluido (como só há água,
- 0ft como profundidade inicial e 5000ft como profundidade final)
-\end_layout
-
-\begin_layout Itemize
-Confirme os dados
-\change_inserted 643308733 1748598578
- ??como??
- aperta aonde?
- ou é conferência visual?
- Confira os dados
-\change_unchanged
-.
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Selecionar o modelo adequado
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Como o fluido é água,
- podemos considerar um modelo Newtoniano.
-\end_layout
-
-\begin_layout Itemize
-No menu de seleção de modelo,
- escolha "Modelo Newtoniano" e a aba 
-\begin_inset Quotes eld
-\end_inset
-
-poço
-\begin_inset Quotes erd
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Executar a simulação
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Após configurar os dados,
- clique em "Calcular
-\change_inserted 643308733 1748598646
- MN
-\change_unchanged
-".
-\change_inserted 643308733 1748598650
-
-\begin_inset Note Note
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "default"
+backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
+Um poço está sendo perfurado até 12.000 pés utilizando um fluido de perfuração com densidade de 11 lbm/gal.
+ Durante a operação,
+ uma formação permeável com pressão de fluido de 7.000 psig é exposta pela broca.
+\end_layout
 
-\change_inserted 643308733 1748598666
-diferencie os botões calcular;
- no código devem ser diferentes
-\change_unchanged
+\begin_layout Plain Layout
+c.
+ Calcule a pressão na superfície dentro da coluna de perfuração,
+ caso os preventores de erupção estejam fechados.
+ (traduzido,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "APPLIED1991"
+literal "false"
 
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Resposta esperada:
+ 136 psig
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
-\begin_layout Itemize
-O software processará os cálculos e exibirá os resultados de:
+\begin_layout Standard
+A partir da imagem abaixo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Similador-Pressao_hidro"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ ,
+ gerada pelo software,
+ é possível visualizar um exemplo de aplicação prática do sistema.
+ No caso ilustrado,
+ um cenário foi simulado com parâmetros de entrada previamente definidos.
+ O resultado apresentado pelo software coincide exatamente com a resolução manual,
+ demonstrando a capacidade do sistema de calcular corretamente a pressão na superfície em condição estática com os preventores fechados.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Padrão de fluxo na tubulação e no anular.
-\end_layout
-
-\begin_layout Itemize
-Perda por fricção no tubulação e no anular.
-\end_layout
-
-\end_deeper
-\end_deeper
 \begin_layout Standard
 \begin_inset Float figure
 placement H
@@ -471,8 +249,25 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Solução gerada para calculo da pressão hidroestática 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Similador-Pressao_hidro"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
-	filename imagens/Exemplo01_CalculoAplicandoModeloNewtoniano.png
+	filename ../ManualDoDesenvolvedor/imagens/Cap4_Ex7c_MOD1_AppliedDrillingEng.png
+	lyxscale 70
 	width 100text%
 
 \end_inset
@@ -481,13 +276,128 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Modelo Newtoniano no Poço e Anular
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "default"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Um poço está sendo perfurado a uma profundidade de 5.000 pés utilizando água como fluido de perfuração,
+ com densidade de 8,33 lbm/gal e viscosidade de 1 cP.
+ A coluna de perfuração possui diâmetro externo de 4,5 polegadas e diâmetro interno de 3,826 polegadas.
+ O diâmetro do poço (buraco) é de 6,5 polegadas.
+ O fluido de perfuração circula à razão de 500 galões por minuto.
+ Considere rugosidade relativa igual a zero.
+ (traduzido,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "APPLIED1991"
+literal "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+a.
+ Determine o regime de escoamento no tubo de perfuração.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Resposta esperada:
+ turbulento
+\end_layout
+
+\begin_layout Plain Layout
+b.
+ Determine a perda de pressão por fricção a cada 1.000 ft no tubo de perfuração.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Resposta esperada:
+ 51,3 psi/1.000 ft
+\end_layout
+
+\begin_layout Plain Layout
+c.
+ Determine o regime de escoamento no anular.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Resposta esperada:
+ turbulento
+\end_layout
+
+\begin_layout Plain Layout
+d.
+ Determine a perda de pressão por fricção a cada 1.000 ft no anular.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Resposta esperada:
+ 72,9 psi/1.000 ft
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tela do programa mostrando Calculo a Partir do Modelo Newtoniano
+Soluções geradas pelo código para modelo Newtoniano no poço e anular 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Teste-TelaPrograma"
+name "fig:Software-Modelo-Newtoniano"
 
 \end_inset
 
@@ -497,10 +407,368 @@ name "fig:Teste-TelaPrograma"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ../ManualDoDesenvolvedor/imagens/Cap4_Ex40_MOD1_AppliedDrillingEng.png
+	lyxscale 70
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Subsection
+Variação do comprimento do tubo devido a força pistão
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "default"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+A completação analisada contém um packer instalado a 8.000 ft de profundidade.
+ O tubo é livre para se mover e possui diâmetro externo de 4,5 polegadas e diâmetro interno de 3,862 polegadas,
+ enquanto o packer apresenta diâmetro externo de 5,0 polegadas.
+ Inicialmente,
+ o poço estava preenchido com fluido de densidade igual a 10 lb/gal.
+ A temperatura na superfície foi mantida constante em 80 ºF,
+ enquanto no fundo variou de 200 ºF para 220 ºF entre a condição inicial e final.
+ O tubo apresenta módulo de elasticidade igual a 10^6 psi,
+ coeficiente de Poisson de 0,3,
+ peso por unidade de comprimento de 17,0 lb/ft e coeficiente de expansão térmica igual a 7,0 × 10^-6 ºF⁻¹.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Resposta esperada:
+ 3ft
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Solução gerada para variação do comprimentodo tudo devido a força pistão 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Software-Variacao-devido-pistão"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../ManualDoDesenvolvedor/imagens/ListaExer01_Quest1a_MOD2_NotasAula.png
+	lyxscale 70
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Variação do comprimento do tubo devido ao efeito balão
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "default"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Utilizando o mesmo cenário descrito no item anterior,
+ o efeito balão foi avaliado com base na mudança de pressão devido à substituição do fluido no tubo e no anular.
+ A diferença de pressão provoca a expansão (ou contração) do tubo,
+ afetando seu comprimento axial.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Resposta esperada:
+ -2.6ft
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Solução gerada para variação do comprimentodo tudo devido ao efeito balão 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Software-Variacao-Balão"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../ManualDoDesenvolvedor/imagens/ListaExer01_Quest1B_MOD2_NotasAula.png
+	lyxscale 70
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Validação da importação e exportação do documento (“salvar como...”)
+\end_layout
+
+\begin_layout Standard
+funcionalidade de importação e exportação de arquivos foi validada por meio da opção “salvar como...” presente na interface do software,
+ que permite ao usuário armazenar as configurações completas do poço e dos fluidos em arquivos com extensão .dat.
+ Essa funcionalidade garante que os dados possam ser salvos,
+ compartilhados e reabertos posteriormente com total fidelidade.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Opção de Salvar 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Software-SalvarComo"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../ManualDoDesenvolvedor/imagens/funcionalidadeSalvarComo.png
+	lyxscale 70
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modelo do Arquivo .dat 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Software-ArquivoDat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../ManualDoDesenvolvedor/imagens/ArquivosDat.png
+	lyxscale 70
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+Posteriormente,
+ os arquivos podem ser reimportados utilizando a opção de carregamento automático do software.
+ Ao reabrir o arquivo salvo,
+ todas as informações são recuperadas com exatidão,
+ sem perdas numéricas ou inconsistências nos campos de entrada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Opção de importação de arquivos no software 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Software-ImportarDados"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../ManualDoDesenvolvedor/imagens/importarDat.png
+	lyxscale 70
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
