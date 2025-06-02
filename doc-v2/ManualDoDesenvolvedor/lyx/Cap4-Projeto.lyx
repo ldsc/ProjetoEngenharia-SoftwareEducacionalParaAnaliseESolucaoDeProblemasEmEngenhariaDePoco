@@ -262,13 +262,9 @@ Diagrama de componentes
 \end_inset
 
 
-\change_inserted 643308733 1748558824
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 643308733 1748558884
 Vimos o diagrama de pacotes/assuntos na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -280,8 +276,6 @@ nolink "false"
 .
  Veremos aqui o diagrama de componentes que é o detalhamento do diagrama de pacotes/assuntos mostrando os componentes,
  as bibliotecas e subsistemas que fazem parte do software desenvolvido.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
