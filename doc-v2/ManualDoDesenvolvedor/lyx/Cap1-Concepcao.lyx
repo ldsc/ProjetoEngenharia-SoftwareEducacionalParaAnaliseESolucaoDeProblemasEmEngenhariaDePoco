@@ -170,8 +170,6 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author -991030785 "Nathan"
-\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -270,10 +268,6 @@ nolink "false"
 \end_inset
 
  apresenta as características do software desenvolvido
-\change_deleted -991030785 1748704848
-.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -292,10 +286,6 @@ status open
 Características básicas do Software Educacional Para Análise e Solução de Problemas em Engenharia de Poço.
  Fonte:
  Elaborado pelo autor (2025)
-\change_deleted 643308733 1748553845
-.
-\change_unchanged
-
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Características-básicas-do"
@@ -352,12 +342,10 @@ Componentes principais
 
 \begin_layout Plain Layout
 Banco de dados com métodos e propriedades da Engenharia de Poço.
- 
 \end_layout
 
 \begin_layout Plain Layout
 Algoritmo de aproximação de resultados.
- 
 \end_layout
 
 \begin_layout Plain Layout
@@ -389,7 +377,6 @@ Missão
 \begin_layout Plain Layout
 A missão do software é fornecer uma ferramenta eficiente para potencializar o aprendizado de alunos que buscam se aprofundar nos conceitos de engenharia de poço.
  O software oferece uma ferramenta didática para a engenharia de petróleo.
- 
 \end_layout
 
 \end_inset
@@ -471,10 +458,6 @@ name "sec:Requisitos"
 \end_inset
 
 
-\change_deleted 643308733 1748553970
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -505,11 +488,7 @@ name "subsec:Requisitos-funcionais"
 \end_layout
 
 \begin_layout Standard
-Apresenta-se a seguir os requisitos funcionais
-\change_inserted 643308733 1748553983
-.
-\change_unchanged
-
+Apresenta-se a seguir os requisitos funcionais.
 \end_layout
 
 \begin_layout Standard
@@ -568,6 +547,9 @@ literal "false"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -604,6 +586,9 @@ O usuário poderá carregar dados da propriedade para a simulação.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -640,6 +625,9 @@ O usuário deverá ter liberdade para alterar as propriedades reológicas do po�
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -679,6 +667,9 @@ Deve permitir a exportação de simulações.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -715,6 +706,9 @@ Deve permitir cenários de simulação baseado em diferentes modelos teóricos.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -751,6 +745,9 @@ O usuário poderá comparar os resultados da simulação em diferentes modelos r
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -783,10 +780,16 @@ O usuário deve ter liberdade para adicionar ou retirar simplificações das pre
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -824,6 +827,9 @@ O usuário poderá visualizar seus resultados em um gráfico.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -860,6 +866,9 @@ O sistema deve permitir a análise dos deslocamentos axiais (ΔL) da coluna de c
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -907,6 +916,9 @@ crossover
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -954,6 +966,9 @@ crossover
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -991,6 +1006,9 @@ O sistema deve permitir a navegação por meio de digitação direta de números
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1028,6 +1046,9 @@ O sistema deve salvar automaticamente os dados da simulação em arquivos nomead
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1065,6 +1086,9 @@ O sistema deve realizar a verificação automática de entradas inválidas,
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1103,6 +1127,9 @@ O sistema deve oferecer atalhos de teclado,
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1165,6 +1192,10 @@ name "subsec:Requisitos-não-funcionais"
 \end_layout
 
 \begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1206,6 +1237,9 @@ Suas primeiras versões devem suportar os sistemas operacionais GNU/Linux e
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1245,6 +1279,9 @@ A linguagem predominante a ser utilizada no desenvolvimento é C++.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1293,6 +1330,9 @@ literal "false"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1332,6 +1372,9 @@ O sistema deve permitir a exportação dos resultados em arquivos de texto e no 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1381,6 +1424,9 @@ literal "false"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1418,6 +1464,9 @@ O sistema deve manter organização modular do código,
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1454,6 +1503,9 @@ Os arquivos de entrada e saída devem seguir padrões consistentes e documentado
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1517,7 +1569,7 @@ Casos de uso
 
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -1556,22 +1608,6 @@ nolink "false"
  O mesmo mostra o usuário de frente a interface com as opções permitidas do simulador.
  Com essas opções ele poderá executar,
  analisar os resultados obtidos e salvar as imagens ou os dados em um arquivo PDF.
- 
-\change_deleted 643308733 1748554271
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:CasoDeUso-Geral"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -1685,7 +1721,7 @@ Etapas:
 
 \begin_layout Plain Layout
 4.
- Calcular pressão hidrostática do poço 
+ Calcular pressão hidrostática do poço
 \end_layout
 
 \begin_layout Plain Layout
@@ -1821,7 +1857,6 @@ Calcular densidade do fluido
 \end_inset
 
 configurados no poço.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1859,8 +1894,6 @@ name "fig:DiagramaCasoDeUsoEspecifico-PressaoHidroestatica"
 \end_inset
 
 
-\change_inserted 643308733 1748603365
-
 \begin_inset Float figure
 placement document
 alignment document
@@ -1894,8 +1927,6 @@ Calcular Pressão Hidrostática
 
 \end_inset
 
- 
-\change_unchanged
 
 \end_layout
 

@@ -56,17 +56,16 @@
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref true
-\pdf_title "Projeto Engenharia: Desenvolvimento Software Aplicado XXXXX"
-\pdf_author "Nome do Autor"
-\pdf_subject "Descrever assunto"
-\pdf_keywords "Copiar do resumo"
+\pdf_title "Software Educacional Para Análise e Solução de Problemas em Engenharia de Poço"
+\pdf_author "Nathan Rangel Magalhães"
+\pdf_keywords "Simulador educacional; Engenharia de Poços; Visualização e análise; Simulação; Ensino de Engenharia de Petróleo;"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered true
 \pdf_bookmarksopen true
 \pdf_bookmarksopenlevel 1
 \pdf_breaklinks true
 \pdf_pdfborder true
-\pdf_colorlinks true
+\pdf_colorlinks false
 \pdf_backref page
 \pdf_pdfusetitle true
 \papersize a4

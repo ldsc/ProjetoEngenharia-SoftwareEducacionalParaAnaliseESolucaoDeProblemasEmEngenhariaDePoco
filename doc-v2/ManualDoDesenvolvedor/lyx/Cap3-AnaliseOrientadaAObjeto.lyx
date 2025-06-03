@@ -104,26 +104,6 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter
-\backslash
-space - Análise Orientada a Objeto}  
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 AOO
 \begin_inset Index idx
@@ -547,7 +527,7 @@ Sua construção geralmente tem como base os cenários definidos nos diagramas d
 
 \shape italic
 \emph on
-Diagrama de Sequência Geral
+Diagrama de Sequência 
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec: Diagrama de sequência geral"
@@ -555,11 +535,27 @@ name "subsec: Diagrama de sequência geral"
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Professor,
+ fui fazer outros diagramas de sequência,
+ mas todos ficaram praticamente iguais,
+ pois as premissas são as mesmas na criação dos poços e trechos.
+ A única coisa que muda de um diagrama para outro é a última função,
+ que varia,
+ por exemplo,
+ de CObjetoPoco::CalcularModeloNewtoniano para CObjetoPoco::CalcularModeloPotencia.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-A seguir,
- é apresentado o diagrama de sequência geral na Figura 
+O diagrama de comunicação do módulo reológico 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-sequencia"
@@ -570,70 +566,18 @@ nolink "false"
 
 \end_inset
 
-.
-\change_inserted 643308733 1748565841
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748565885
-explique o que esta sequência esta fazendo;
- informe que o diagrama de sequência é um detalhamento do diagrama de caso de uso,
- mostra os objetos,
- a chamada de funções e a passagem de parâmetros.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted 643308733 1748566406
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748566456
-precisa adicionar mais diagramas de sequência;
- para cada teste você tem uma sequência diferente?
- caso afirmativo faça o diagrama de sequência para cada teste;
- são cenários de uso do sistema e os diagramas associados;
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748566479
-O ideal é que se faça primeiro o diagrama de sequência mostrando o que cada cenário deve atender;
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748566502
-depois realizamos os testes sequindo a sequência aqui definida.
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748566528
-Para defesa faça pelo menos mais 2 diagramas de sequência;
- para versão final todos os que forem usados nos testes
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
+ mostra a troca de mensagens entre os objetos centrais durante a simulação de propriedades hidráulicas.
+ O objeto CSimuladorReologico representa a interface principal que orquestra toda a lógica.
+ Ele cria um poço (CObjetoPoco),
+ adiciona trechos com fluidos (CTrechoPoco + CFluido),
+ e por fim seleciona um modelo reológico (CModeloPotencia,
+ CModeloBingham,
+ ou CModeloNewtoniano).
+ As setas indicam chamadas de função entre os objetos,
+ como criação de trechos,
+ atribuição de fluido e cálculo de propriedades como Reynolds,
+ perda por fricção e tipo de escoamento.
+ Essa comunicação em rede reforça o acoplamento entre os componentes do simulador e garante que todos os dados físicos estejam interligados corretamente.
 \end_layout
 
 \begin_layout Standard
@@ -648,11 +592,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de sequência
-\change_inserted 643308733 1748603924
- geral
-\change_unchanged
-
+Diagrama de sequência - Módulo reológico
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-sequencia"
@@ -694,12 +634,25 @@ Fonte:
 status open
 
 \begin_layout Plain Layout
-deve mostrar uma sequência geral
+
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+No módulo térmico-mecânico,
+ o diagrama de comunicação evidencia as interações entre a interface (CSimuladorPerdaTubulacao),
+ o poço (CObjetoPoco),
+ os trechos (CTrechoPoco) e os fluidos (CFluido).
+ Após definir os dados gerais do poço,
+ o usuário adiciona trechos,
+ e o simulador realiza cálculos como variações de comprimento axial (ΔL) causadas por temperatura,
+ efeito balão e efeito pistão com ou sem packer.
+ As setas indicam chamadas sequenciais de funções específicas que somam as contribuições individuais para estimar a deformação total e a carga restauradora.
+ O diagrama permite visualizar o encadeamento lógico necessário para realizar os cálculos de forma automatizada e confiável.
 \end_layout
 
 \begin_layout Section
@@ -761,38 +714,19 @@ O diagrama de comunicação representa as interações entre os objetos do siste
  evidenciando a troca de mensagens e a sequência dos processos envolvidos.
  A disposição dos elementos enfatiza os relacionamentos estruturais,
  ao mesmo tempo em que indica a ordem numérica das mensagens trocadas durante a execução de uma tarefa específica.
-\change_inserted 643308733 1748566213
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748566235
-pode detalhar mais mostrando funções chamadas;
 \end_layout
 
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748566255
-tem erros:
- o fluido não acessa o trecho do poco;
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748566288
-pense nos objetos e nas funções o CSimuladorPoco se conecta com quais objetos?
- e quais funções acessa em cada objeto?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+\begin_layout Standard
+Neste diagrama de comunicação UML,
+ visualizamos como os objetos se relacionam durante a execução da simulação reológica.
+ A classe CSimuladorReologico atua como controlador principal,
+ criando o objeto CObjetoPoco e adicionando trechos com seus respectivos fluidos.
+ Em seguida,
+ ao selecionar um modelo reológico (como CModeloPotencia),
+ o simulador instancia o modelo passando o poço como argumento.
+ O modelo então interage diretamente com os dados do poço e dos fluidos para realizar os cálculos de perda por fricção,
+ tipo de escoamento e número de Reynolds.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -807,7 +741,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de comunicação
+Diagrama de comunicação para caso do cálculo usando modelo reológico
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-comunicação"
@@ -889,7 +823,7 @@ O diagrama de máquina de estados descreve os diferentes estados que um objeto p
 \end_layout
 
 \begin_layout Standard
-A Figura 
+O diagrama de máquina de estados do módulo de simulação térmico-mecânica 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-maquina-de-estado"
@@ -900,50 +834,15 @@ nolink "false"
 
 \end_inset
 
-
-\change_inserted 643308733 1748566360
- 
-\change_unchanged
-apresenta esse diagrama aplicado ao objeto relacionado ao modelo reológico newtoniano.
-\change_inserted 643308733 1748566635
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748566638
-ta errado!
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-O processo tem início com o recebimento dos dados pela classe responsável pela simulação.
- A partir disso,
- os atributos necessários são criados e o sistema passa para a fase de definição do poço.
- Dependendo da configuração estabelecida,
- a simulação pode ser direcionada para uma única seção ou para múltiplas seções.
-\end_layout
-
-\begin_layout Standard
-Na sequência,
- é realizada a configuração do fluido presente no poço,
- que pode ser do tipo gás ou óleo.
- Com todas as definições realizadas,
- os cálculos da simulação são executados a fim de determinar os parâmetros operacionais.
- Os resultados obtidos são,
- então,
- processados e exibidos graficamente para análise.
- Ao final da execução,
- o processo é encerrado de forma automática.
+ descreve as possíveis transições entre os estados do sistema conforme o usuário interage com a interface.
+ A simulação começa com a definição do poço,
+ seguida pela adição de trechos e fluidos.
+ Após o preenchimento dos dados,
+ o sistema entra em estado de cálculo,
+ onde são computadas as variações axiais (ΔL) e forças atuantes.
+ O usuário pode então modificar os dados,
+ reiniciar a simulação ou exportar os resultados.
+ Essa estrutura garante robustez e previsibilidade no fluxo de execução do software.
 \end_layout
 
 \begin_layout Standard
@@ -958,10 +857,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de máquina de estado
-\change_inserted 643308733 1748566651
- do objeto NOMEOBJETO
-\change_unchanged
+Diagrama de máquina de estado do objeto 
+\noun on
+CSimuladorPerdaTubulacao
+\noun default
 
 \begin_inset CommandInset label
 LatexCommand label
@@ -1018,47 +917,25 @@ O diagrama de atividades apresentado descreve,
  No caso em questão,
  é representado o método 
 \series bold
-CalcularPerdaPorFriccaoPoco
+Carga
 \series default
 ,
  pertencente à classe 
 \series bold
-CModeloNewtoniano
+CObjetoPoco
 \series default
 .
 \end_layout
 
 \begin_layout Standard
-O processo se inicia com o recebimento dos dados pela classe responsável pela simulação dos fluidos.
- Os atributos do objeto são atualizados conforme os valores de entrada fornecidos.
- O primeiro passo consiste no cálculo da velocidade média do fluido no poço.
- Em seguida,
- é realizada uma verificação para identificar se o número de 
-\emph on
-Reynolds
-\emph default
- foi previamente determinado.
- Caso essa informação esteja ausente,
- o sistema emite uma mensagem de erro.
- Caso contrário,
- prossegue para a classificação do tipo de escoamento.
-\end_layout
-
-\begin_layout Standard
-A partir do valor do número de 
-\emph on
-Reynolds
-\emph default
-,
- o escoamento pode ser classificado como laminar ou turbulento,
- e o cálculo é ajustado conforme o regime identificado.
- Os procedimentos subsequentes utilizam as propriedades físicas específicas do fluido em questão para concluir os cálculos de perda de carga por fricção.
-\end_layout
-
-\begin_layout Standard
-Ao final,
- os resultados são processados e retornados para o sistema,
- encerrando a execução do método.
+O método Carga calcula a carga axial total atuante sobre a coluna na profundidade especificada,
+ levando em conta o peso dos trechos acima,
+ a carga por pressão hidrostática no fundo do poço,
+ e os efeitos mecânicos em interfaces de diâmetro (crossover).
+ O fluxo é bifurcado com base no parâmetro inicio,
+ que altera o tratamento da pressão superficial final e da carga pistão.
+ O diagrama de atividade acima explicita esse encadeamento lógico passo a passo,
+ facilitando a validação do código e a compreensão dos cálculos estruturais realizados pelo simulador.
 \end_layout
 
 \begin_layout Standard
@@ -1073,12 +950,13 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de atividades
-\change_inserted 643308733 1748604553
-:
- NomeClasse::NomeFuncao
-\change_unchanged
+Diagrama de atividades:
 
+\change_inserted 643308733 1748604553
+ 
+\change_unchanged
+CObjetoPoco::Carga(double profundidade,
+ bool inicio)
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-atividades"
