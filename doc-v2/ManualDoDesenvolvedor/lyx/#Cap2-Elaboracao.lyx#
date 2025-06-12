@@ -1071,14 +1071,7 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \end_layout
 
 \begin_layout Subsection
-Pressão Hidrostática
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Pressão-Hidrostática"
-
-\end_inset
-
-
+Hidráulica de Perfuração
 \end_layout
 
 \begin_layout Standard
@@ -1098,9 +1091,22 @@ Os fluidos de perfuração podem variar amplamente em termos de composição e p
  como a água,
  até fluidos altamente compressíveis,
  como a espuma.
- O simulador desenvolvido neste trabalho se propõe a um dos tipos de problemas:
+ O simulador desenvolvido neste trabalho se propõe a resolver dois tipos de problemas:
  os estáticos,
- que envolvem o cálculo da pressão hidrostática.
+ que envolvem o cálculo da pressão hidrostática,
+ e os dinâmicos,
+ relacionados ao escoamento dos fluidos no interior da tubulação.
+\end_layout
+
+\begin_layout Subsection
+Pressão Hidrostática
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Pressão-Hidrostática"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
