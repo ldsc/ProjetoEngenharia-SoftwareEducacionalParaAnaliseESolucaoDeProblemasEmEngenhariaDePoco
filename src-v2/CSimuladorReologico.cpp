@@ -4,6 +4,9 @@
 #include "CJanelaGraficoPressaoHidroestatica.h"
 #include "CJanelaSobreSoftware.h"
 
+#include <QDesktopServices>
+#include <QUrl>
+#include <QPushButton>
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -711,4 +714,19 @@ void CSimuladorReologico::on_actionNova_Simula_o_triggered()
     }
 }
 
+
+
+void CSimuladorReologico::on_actionAjuda_triggered()
+{
+    QString caminho = QCoreApplication::applicationDirPath() + "/PDFs/ManualUsuario.pdf";
+    QDesktopServices::openUrl(QUrl::fromLocalFile(caminho));
+}
+
+
+void CSimuladorReologico::on_actionSobre_os_Modelos_Reol_gicos_triggered()
+{
+    QString caminho = QCoreApplication::applicationDirPath() + "/PDFs/FormulasUtilizadas.pdf";
+    QDesktopServices::openUrl(QUrl::fromLocalFile(caminho));
+
+}
 

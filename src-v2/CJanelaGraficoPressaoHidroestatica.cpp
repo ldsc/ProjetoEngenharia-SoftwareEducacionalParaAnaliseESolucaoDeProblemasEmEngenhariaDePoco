@@ -36,10 +36,8 @@ void CJanelaGraficoPressaoHidroestatica::PerfilHidrostatico(
 // Parte da logica para segmentacao por inclinacao foi adaptada com auxilio de IA (ChatGPT)
 void CJanelaGraficoPressaoHidroestatica::PlotarGraficoPressaoxProfundidade()
 {
-    //QVector<double> x(profundidades.begin(), profundidades.end());
-    QVector<double> x = QVector<double>::fromStdVector(profundidades);
-    //QVector<double> y(pressoes.begin(), pressoes.end());
-    QVector<double> y = QVector<double>::fromStdVector(pressoes);
+    QVector<double> x(profundidades.begin(), profundidades.end());
+    QVector<double> y(pressoes.begin(), pressoes.end());
 
     auto *plot = ui->customPlotPressaoMediaProfundidade;
     plot->clearGraphs();

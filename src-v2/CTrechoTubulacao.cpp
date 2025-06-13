@@ -9,7 +9,7 @@ double CTrechoPoco::PressaoHidroestatica() {
 
 // Calcula a pressao hidrostatica ate uma profundidade relativa passada como argumento
 double CTrechoPoco::PressaoHidroestatica(double profundidadeRelativa) {
-    return profundidadeRelativa * 0.05195 * fluido->Densidade();
+    return profundidadeRelativa * 0.052 * fluido->Densidade();
 }
 
 // Calcula a densidade equivalente do trecho com base na pressao hidrostatica

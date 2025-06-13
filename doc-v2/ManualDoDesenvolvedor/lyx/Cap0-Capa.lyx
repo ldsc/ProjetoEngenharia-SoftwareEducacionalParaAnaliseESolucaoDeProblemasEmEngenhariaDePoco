@@ -1474,16 +1474,11 @@ Este documento apresenta a estruturação e o desenvolvimento do projeto,
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset href
-LatexCommand href
-name "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"
-target "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"
-literal "false"
+github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseE
+\end_layout
 
-\end_inset
-
-.
- 
+\begin_layout Standard
+SolucaoDeProblemasEmEngenhariaDePoco 
 \begin_inset VSpace 0.5cm
 \end_inset
 

@@ -217,17 +217,11 @@ GitHub
 \begin_inset Newline newline
 \end_inset
 
-
-\begin_inset CommandInset href
-LatexCommand href
-name "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"
-target "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"
-literal "false"
-
+github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseE
+\begin_inset Newline newline
 \end_inset
 
-.
- 
+SolucaoDeProblemasEmEngenhariaDePoco 
 \end_layout
 
 \begin_layout Itemize

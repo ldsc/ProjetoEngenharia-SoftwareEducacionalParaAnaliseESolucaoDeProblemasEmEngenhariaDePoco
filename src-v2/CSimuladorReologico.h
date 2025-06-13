@@ -80,6 +80,10 @@ private slots:
 
 
 
+    void on_actionAjuda_triggered();
+
+    void on_actionSobre_os_Modelos_Reol_gicos_triggered();
+
 private:
     Ui::CSimuladorReologico *ui; // interface grafica do Qt
 

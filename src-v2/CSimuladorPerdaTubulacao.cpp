@@ -4,6 +4,9 @@
 #include "CJanelaAdicionarTrechoTubulacao.h"
 #include "CJanelaSobreSoftware.h"
 
+#include <QDesktopServices>
+#include <QUrl>
+#include <QPushButton>
 #include <iostream>   // para std::cerr e std::endl
 #include <fstream>    // para std::ifstream
 #include <sstream>
@@ -891,4 +894,17 @@ void CSimuladorPerdaTubulacao::EditarLinhaTabela(int row)
     AtualizarDados();
 
     ui->statusbar->showMessage("Fluido e profundidades atualizados com sucesso!");
+}
+
+void CSimuladorPerdaTubulacao::on_actionManual_do_Usu_rio_triggered()
+{
+    QString caminho = QCoreApplication::applicationDirPath() + "/PDFs/ManualUsuario.pdf";
+    QDesktopServices::openUrl(QUrl::fromLocalFile(caminho));
+}
+
+
+void CSimuladorPerdaTubulacao::on_actionF_rmulas_Utilizadas_triggered()
+{
+    QString caminho = QCoreApplication::applicationDirPath() + "/PDFs/FormulasUtilizadas.pdf";
+    QDesktopServices::openUrl(QUrl::fromLocalFile(caminho));
 }

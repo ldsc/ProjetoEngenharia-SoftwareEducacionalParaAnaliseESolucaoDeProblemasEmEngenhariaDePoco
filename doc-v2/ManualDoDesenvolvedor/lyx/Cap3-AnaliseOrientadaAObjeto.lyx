@@ -252,6 +252,58 @@ status open
 Diagrama de classes
 \begin_inset CommandInset label
 LatexCommand label
+name "cap:Diagrama-de-classes-Simplificado"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/DiagramaClasseSimplificado.png
+	lyxscale 10
+	height 80pheight%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+ Produzido pelo autor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de classes
+\begin_inset CommandInset label
+LatexCommand label
 name "cap:Diagrama-de-classes"
 
 \end_inset
@@ -613,29 +665,10 @@ Fonte:
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-No módulo térmico-mecânico,
- o diagrama de comunicação evidencia as interações entre a interface (CSimuladorPerdaTubulacao),
- o poço (CObjetoPoco),
- os trechos (CTrechoPoco) e os fluidos (CFluido).
- Após definir os dados gerais do poço,
- o usuário adiciona trechos,
- e o simulador realiza cálculos como variações de comprimento axial (ΔL) causadas por temperatura,
- efeito balão e efeito pistão com ou sem packer.
- As setas indicam chamadas sequenciais de funções específicas que somam as contribuições individuais para estimar a deformação total e a carga restauradora.
- O diagrama permite visualizar o encadeamento lógico necessário para realizar os cálculos de forma automatizada e confiável.
+
 \end_layout
 
 \begin_layout Section

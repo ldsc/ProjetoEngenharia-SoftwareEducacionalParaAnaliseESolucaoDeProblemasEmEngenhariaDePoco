@@ -67,7 +67,9 @@ static constexpr auto qt_meta_stringdata_ZN24CSimuladorPerdaTubulacaoE = QtMocHe
     "NomeArquivo",
     "CaminhoArquivo",
     "nome",
-    "caminho"
+    "caminho",
+    "on_actionManual_do_Usu_rio_triggered",
+    "on_actionF_rmulas_Utilizadas_triggered"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -79,7 +81,7 @@ Q_CONSTINIT static const uint qt_meta_data_ZN24CSimuladorPerdaTubulacaoE[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      20,   14, // methods
+      22,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -87,26 +89,28 @@ Q_CONSTINIT static const uint qt_meta_data_ZN24CSimuladorPerdaTubulacaoE[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,  134,    2, 0x08,    1 /* Private */,
-       3,    0,  135,    2, 0x08,    2 /* Private */,
-       4,    0,  136,    2, 0x08,    3 /* Private */,
-       5,    4,  137,    2, 0x08,    4 /* Private */,
-      11,    0,  146,    2, 0x08,    9 /* Private */,
-      12,    0,  147,    2, 0x08,   10 /* Private */,
-      13,    0,  148,    2, 0x08,   11 /* Private */,
-      14,    0,  149,    2, 0x08,   12 /* Private */,
-      15,    0,  150,    2, 0x08,   13 /* Private */,
-      16,    1,  151,    2, 0x08,   14 /* Private */,
-      18,    0,  154,    2, 0x08,   16 /* Private */,
-      19,    0,  155,    2, 0x08,   17 /* Private */,
-      20,    0,  156,    2, 0x08,   18 /* Private */,
-      21,    1,  157,    2, 0x08,   19 /* Private */,
-      23,    0,  160,    2, 0x08,   21 /* Private */,
-      24,    0,  161,    2, 0x08,   22 /* Private */,
-      25,    0,  162,    2, 0x08,   23 /* Private */,
-      26,    0,  163,    2, 0x08,   24 /* Private */,
-      25,    1,  164,    2, 0x08,   25 /* Private */,
-      26,    1,  167,    2, 0x08,   27 /* Private */,
+       1,    0,  146,    2, 0x08,    1 /* Private */,
+       3,    0,  147,    2, 0x08,    2 /* Private */,
+       4,    0,  148,    2, 0x08,    3 /* Private */,
+       5,    4,  149,    2, 0x08,    4 /* Private */,
+      11,    0,  158,    2, 0x08,    9 /* Private */,
+      12,    0,  159,    2, 0x08,   10 /* Private */,
+      13,    0,  160,    2, 0x08,   11 /* Private */,
+      14,    0,  161,    2, 0x08,   12 /* Private */,
+      15,    0,  162,    2, 0x08,   13 /* Private */,
+      16,    1,  163,    2, 0x08,   14 /* Private */,
+      18,    0,  166,    2, 0x08,   16 /* Private */,
+      19,    0,  167,    2, 0x08,   17 /* Private */,
+      20,    0,  168,    2, 0x08,   18 /* Private */,
+      21,    1,  169,    2, 0x08,   19 /* Private */,
+      23,    0,  172,    2, 0x08,   21 /* Private */,
+      24,    0,  173,    2, 0x08,   22 /* Private */,
+      25,    0,  174,    2, 0x08,   23 /* Private */,
+      26,    0,  175,    2, 0x08,   24 /* Private */,
+      25,    1,  176,    2, 0x08,   25 /* Private */,
+      26,    1,  179,    2, 0x08,   27 /* Private */,
+      29,    0,  182,    2, 0x08,   29 /* Private */,
+      30,    0,  183,    2, 0x08,   30 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -129,6 +133,8 @@ Q_CONSTINIT static const uint qt_meta_data_ZN24CSimuladorPerdaTubulacaoE[] = {
     QMetaType::QString,
     QMetaType::Void, QMetaType::QString,   27,
     QMetaType::Void, QMetaType::QString,   28,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -189,7 +195,11 @@ Q_CONSTINIT const QMetaObject CSimuladorPerdaTubulacao::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
         // method 'CaminhoArquivo'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QString, std::false_type>
+        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
+        // method 'on_actionManual_do_Usu_rio_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionF_rmulas_Utilizadas_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
@@ -221,6 +231,8 @@ void CSimuladorPerdaTubulacao::qt_static_metacall(QObject *_o, QMetaObject::Call
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         case 18: _t->NomeArquivo((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 19: _t->CaminhoArquivo((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 20: _t->on_actionManual_do_Usu_rio_triggered(); break;
+        case 21: _t->on_actionF_rmulas_Utilizadas_triggered(); break;
         default: ;
         }
     }
@@ -257,14 +269,14 @@ int CSimuladorPerdaTubulacao::qt_metacall(QMetaObject::Call _c, int _id, void **
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 20)
+        if (_id < 22)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 20;
+        _id -= 22;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 20)
+        if (_id < 22)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 20;
+        _id -= 22;
     }
     return _id;
 }

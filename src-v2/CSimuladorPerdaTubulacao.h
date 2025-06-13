@@ -60,6 +60,10 @@ private slots:
     void CaminhoArquivo(QString caminho) { caminhoArquivo = caminho; }
 
 
+    void on_actionManual_do_Usu_rio_triggered();
+
+    void on_actionF_rmulas_Utilizadas_triggered();
+
 private:
     Ui::CSimuladorPerdaTubulacao *ui; // ponteiro pra interface gerada pelo Qt Designer
 
