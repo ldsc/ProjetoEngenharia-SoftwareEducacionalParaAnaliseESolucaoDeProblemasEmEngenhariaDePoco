@@ -6,10 +6,13 @@
 \origin unavailable
 \textclass extbook
 \begin_preamble
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
 \usepackage {graphicx}
 \usepackage {longtable}
 \usepackage {indentfirst}
 \renewenvironment{center}{\par\centering}{\par}
+
 
 % Comentar linhas abaixo se não estiver usando pacote abntex
 % ou se o pacote ainda não foi instalado.
@@ -102,7 +105,7 @@
 \papersides 2
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -1218,7 +1221,7 @@ MACAÉ - RJ
 \begin_inset Newline newline
 \end_inset
 
-Maio - 2025
+Junho - 2025
 \end_layout
 
 \begin_layout Standard
@@ -1361,7 +1364,7 @@ Macaé - RJ
 \begin_inset Newline newline
 \end_inset
 
-Maio - 2025
+Junho - 2025
 \begin_inset Newline newline
 \end_inset
 
@@ -1467,12 +1470,13 @@ Este documento apresenta a estruturação e o desenvolvimento do projeto,
  práticas amplamente adotadas no mercado de trabalho.
  O software estará disponível publicamente por meio de repositório específico,
  conforme o link abaixo:
+ 
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset href
 LatexCommand href
-name "https://github.com/ldsc/SoftwareEducacionalEngenhariaDePoco"
+name "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"
 target "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"
 literal "false"
 
@@ -1529,25 +1533,10 @@ thispagestyle{empty}
 \end_inset
 
 
-\size large
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage cleardoublepage
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1558,47 +1547,15 @@ thispagestyle{empty}
 \end_layout
 
 \begin_layout Standard
-
-\size large
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty}
-\end_layout
-
-\end_inset
-
-
-\size default
-
 \begin_inset FloatList table
 
 \end_inset
 
 
-\size large
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage cleardoublepage
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1606,40 +1563,8 @@ thispagestyle{empty}
 \end_inset
 
 
-\size large
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty}
-\end_layout
-
-\end_inset
-
-
-\size default
-
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
-
-\end_inset
-
-
-\size large
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty}
-\end_layout
 
 \end_inset
 

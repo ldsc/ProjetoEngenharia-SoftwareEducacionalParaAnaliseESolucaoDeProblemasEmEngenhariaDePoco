@@ -166,16 +166,22 @@ backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
+
+\series bold
 Versão:
- 1.0
+ 1.0 (15/12/2024)
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 Componentes:
- Módulo de cálculo com interface CLI/terminal e biblioteca CGnuplot (
+ 
+\series default
+Módulo de cálculo com interface CLI/terminal e biblioteca CGnuplot (
 \begin_inset CommandInset href
 LatexCommand href
-name "Gnuplot"
+name "site"
 target "http://www.gnuplot.info/"
 literal "false"
 
@@ -185,8 +191,12 @@ literal "false"
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 Desenvolvida na disciplina:
- LEP01449 - Projeto de Software Aplicado à Engenharia (
+ 
+\series default
+LEP01449 - Projeto de Software Aplicado à Engenharia (
 \begin_inset CommandInset href
 LatexCommand href
 name "site"
@@ -199,11 +209,15 @@ literal "false"
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 Registro da versão 1.0:
+
+\series default
  
 \begin_inset CommandInset href
 LatexCommand href
-name "v1.0 Lançada 15/12/2024"
+name "versão v1.0 disponível no GitHub"
 target "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/releases/tag/v1.0"
 literal "false"
 
@@ -218,6 +232,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
 Na versão 1 do sistema,
  a entrada e saída de dados foi implementada exclusivamente por meio do terminal,
  sem o uso de bibliotecas gráficas.
@@ -323,16 +340,22 @@ backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
+
+\series bold
 Versão:
- 1.1
+ 1.1 (19/12/2024)
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 Componentes:
- Módulo de cálculo com interface CLI/terminal e biblioteca CGnuplot (
+ 
+\series default
+Módulo de cálculo com interface CLI/terminal e biblioteca CGnuplot (
 \begin_inset CommandInset href
 LatexCommand href
-name "Gnuplot"
+name "site"
 target "http://www.gnuplot.info/"
 literal "false"
 
@@ -342,7 +365,11 @@ literal "false"
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 Desenvolvida na disciplina:
+
+\series default
  LEP01449 - Projeto de Software Aplicado à Engenharia (
 \begin_inset CommandInset href
 LatexCommand href
@@ -356,11 +383,15 @@ literal "false"
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 Registro da versão 1.1:
+
+\series default
  
 \begin_inset CommandInset href
 LatexCommand href
-name "v1.1 Lançada 19/12/2024"
+name "versão v1.1 disponível no GitHub"
 target "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/tree/v1.1"
 literal "false"
 
@@ -369,6 +400,13 @@ literal "false"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -499,12 +537,18 @@ backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
+
+\series bold
 Versão:
- 2.0
+ 2.0 (25/02/2025)
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 Componentes:
+
+\series default
  Módulo de cálculo com interface gráfica desenvolvida com 
 \emph on
 Qt Framework
@@ -512,7 +556,7 @@ Qt Framework
  (
 \begin_inset CommandInset href
 LatexCommand href
-name "Qt Framework"
+name "site"
 target "https://www.qt.io/product/framework"
 literal "false"
 
@@ -521,7 +565,7 @@ literal "false"
 ) e visualização de dados usando a QCustomPlot (
 \begin_inset CommandInset href
 LatexCommand href
-name "QCustomPlot"
+name "site"
 target "https://www.qcustomplot.com/"
 literal "false"
 
@@ -531,7 +575,11 @@ literal "false"
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 Desenvolvida na disciplina:
+
+\series default
  LEP- 01559:
  Trabalho de Conclusão de Curso I (
 \begin_inset CommandInset href
@@ -546,11 +594,15 @@ literal "false"
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 Registro da versão 2.0:
+
+\series default
  
 \begin_inset CommandInset href
 LatexCommand href
-name "v2.0 Lançada 25/02/2025"
+name "versão v2.0 disponível no GitHub"
 target "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/tree/v2.0"
 literal "false"
 
@@ -565,6 +617,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
 A versão 2.0 do software marcou uma transição significativa em sua arquitetura e usabilidade,
  ao substituir a interface baseada exclusivamente em comandos de terminal por uma interface gráfica interativa,
  desenvolvida com foco na acessibilidade e na experiência do usuário.
@@ -685,12 +740,18 @@ backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
+
+\series bold
 Versão:
- 2.6
+ 2.6 (16/04/2025)
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 Componentes:
+
+\series default
  Módulo de cálculo com interface gráfica desenvolvida com 
 \emph on
 Qt Framework
@@ -698,7 +759,7 @@ Qt Framework
  (
 \begin_inset CommandInset href
 LatexCommand href
-name "Qt Framework"
+name "site"
 target "https://www.qt.io/product/framework"
 literal "false"
 
@@ -707,7 +768,7 @@ literal "false"
 ) e visualização de dados usando a QCustomPlot (
 \begin_inset CommandInset href
 LatexCommand href
-name "QCustomPlot"
+name "site"
 target "https://www.qcustomplot.com/"
 literal "false"
 
@@ -717,16 +778,24 @@ literal "false"
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 Desenvolvida na disciplina:
- UENF016 - Projeto de Trabalho de Conclusão de Curso 
+ 
+\series default
+UENF016 - Projeto de Trabalho de Conclusão de Curso 
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 Registro da versão 2.6:
  
+\series default
+
 \begin_inset CommandInset href
 LatexCommand href
-name "v2.6 Lançada 16/04/2025"
+name "versão v2.6 disponível no GitHub"
 target "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/tree/v2.6"
 literal "false"
 
@@ -741,6 +810,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
 A versão 2.6 do software manteve todas as funcionalidades introduzidas na versão 2.0,
  porém trouxe importantes avanços no aspecto visual e na eficiência da interface.
  Houve uma consolidação da estrutura gráfica,
@@ -890,12 +962,18 @@ backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
+
+\series bold
 Versão:
- 3.0
+ 3.0 (28/05/2025)
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 Componentes:
+
+\series default
  Módulo de cálculo com interface gráfica desenvolvida com 
 \emph on
 Qt Framework
@@ -903,7 +981,7 @@ Qt Framework
  (
 \begin_inset CommandInset href
 LatexCommand href
-name "Qt Framework"
+name "site"
 target "https://www.qt.io/product/framework"
 literal "false"
 
@@ -912,7 +990,7 @@ literal "false"
 ) e visualização de dados usando a QCustomPlot (
 \begin_inset CommandInset href
 LatexCommand href
-name "QCustomPlot"
+name "site"
 target "https://www.qcustomplot.com/"
 literal "false"
 
@@ -922,16 +1000,24 @@ literal "false"
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 Desenvolvida na disciplina:
- UENF016 - Projeto de Trabalho de Conclusão de Curso
+ 
+\series default
+UENF016 - Projeto de Trabalho de Conclusão de Curso
 \end_layout
 
 \begin_layout Plain Layout
-Registro da versão 3.0:
+
+\series bold
+Registro da versão 3.0
+\series default
+:
  
 \begin_inset CommandInset href
 LatexCommand href
-name "v3.0 Lançada 28 de Maio de 2025"
+name "versão v3.0 disponível no GitHub"
 target "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco/tree/v3.0"
 literal "false"
 
@@ -946,6 +1032,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
 A versão 3.0 do software introduziu uma das mudanças mais significativas desde o início do projeto,
  ao implementar um sistema de navegação baseado em módulos.
  Logo ao iniciar o programa,

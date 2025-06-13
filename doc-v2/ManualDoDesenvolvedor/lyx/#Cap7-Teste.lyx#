@@ -108,7 +108,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -117,7 +117,6 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -175,30 +174,19 @@ thechapter - Teste}
 \begin_layout Standard
 Neste capítulo,
  serão apresentados a validação e os resultados do software.
- 
-\change_inserted 643308733 1748569285
-Serão aplicados os conceitos descritos no capítulo de Metodologia.
- 
+ Serão aplicados os conceitos descritos no capítulo de Metodologia.
 \end_layout
 
 \begin_layout Standard
 Inicialmente,
  o software será validado por meio de comparações com cálculos realizados manualmente,
  a fim de verificar a precisão dos resultados fornecidos pelo código.
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted 643308733 1748569282
-Serão aplicados os conceitos descritos no capítulo de Metodologia.
- 
-\change_unchanged
-Para esses testes e validações,
+ Para esses testes e validações,
  serão utilizados exemplos do livro 
 \emph on
 Applied Drilling Engineering 
 \emph default
-
+(
 \begin_inset CommandInset citation
 LatexCommand citet
 key "APPLIED1991"
@@ -206,8 +194,8 @@ literal "false"
 
 \end_inset
 
-.,
- bem como exercícios aplicados durante a disciplina de Engenharia de Poço no período letivo 2024/01.
+),
+ além dos exercícios aplicados durante a disciplina de Engenharia de Poço no período letivo 2024/01.
 \end_layout
 
 \begin_layout Standard
@@ -221,17 +209,17 @@ Todos os exemplos utilizados neste capítulo estão disponíveis nas pastas de d
 \begin_layout Standard
 Optou-se por não sobrecarregar este capítulo com métodos repetidos,
  como diversos testes de pressão hidrostática.
- Embora durante a fase de validação tenham sido aplicados múltiplos exemplos,
+ Embora 
+\series bold
+durante a fase de validação tenham sido aplicados múltiplos exemplos,
  aqui serão apresentados apenas casos representativos,
- com o objetivo de evitar redundâncias e tornar o conteúdo mais direto e compreensível.
+ com o objetivo de evitar redundâncias 
+\series default
+e tornar o conteúdo mais direto e compreensível.
 \end_layout
 
 \begin_layout Section
-Metodologia de Validação
-\change_inserted 643308733 1748569394
- do Software
-\change_unchanged
-
+Metodologia de Validação do Software
 \end_layout
 
 \begin_layout Standard
@@ -264,20 +252,14 @@ As questões escolhidas,
 
 \begin_layout Section
 Casos de Teste
-\change_inserted 643308733 1748569433
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 643308733 1748569450
 Os casos de teste visam abranger diversos cenários de uso do software.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
-Validação da pressão Hidroestática
+Validação da Pressão Hidrostática
 \begin_inset Index idx
 range none
 pageformat default
@@ -306,6 +288,13 @@ Applied Drilling Engineering
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Box Boxed
 position "t"
 hor_pos "c"
@@ -331,8 +320,7 @@ Um poço está sendo perfurado até 12.000 pés utilizando um fluido de perfura�
 \end_layout
 
 \begin_layout Plain Layout
-c.
- Calcule a pressão na superfície dentro da coluna de perfuração,
+(c) Calcule a pressão na superfície dentro da coluna de perfuração,
  caso os preventores de erupção estejam fechados.
  (traduzido,
  
@@ -386,38 +374,20 @@ P_{H}=0.052\rho L-P_{formação}
 \color none
 Onde:
  
-\change_deleted 643308733 1748569472
-ρ
-\change_inserted 643308733 1748569472
-
 \begin_inset Formula $ρ$
 \end_inset
 
-
-\change_unchanged
 =11 lbm/gal (densidade do fluido);
  
-\change_deleted 643308733 1748569484
-L
-\change_inserted 643308733 1748569484
-
 \begin_inset Formula $L$
 \end_inset
 
-
-\change_unchanged
 =12.000 ft (profundidade total);
  
-\change_deleted 643308733 1748569488
-Pformação 
-\change_inserted 643308733 1748569488
-
-\begin_inset Formula $Pformação$
+\begin_inset Formula $P_{formação}$
 \end_inset
 
-
-\change_unchanged
-= 7000 ft (pressão da formação);
+= 7000 psi;
 \end_layout
 
 \begin_layout Standard
@@ -454,10 +424,6 @@ nolink "false"
 
 \end_inset
 
-
-\change_deleted 643308733 1748569503
- 
-\change_unchanged
 ,
  gerada pelo software,
  observa-se que o mesmo cenário foi simulado com os mesmos parâmetros de entrada.
@@ -465,31 +431,7 @@ nolink "false"
  indicando que o cálculo da pressão na superfície,
  em condição estática com os preventores fechados,
  está corretamente implementado no sistema.
-
-\change_inserted 643308733 1748569514
  
-\change_unchanged
-A resposta coincide exatamente com o resultado manual,
- indicando que o cálculo da pressão na superfície em condição estática com preventores fechados está implementado corretamente.
-\change_inserted 643308733 1748569193
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748569217
-adicione figura com imagem do livro com os resultados,
- validando o resultado
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -505,7 +447,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Solução gerada para calculo da pressão hidroestática 
+Solução gerada para calculo da pressão hidrostática 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Similador-Pressao_hidro"
@@ -540,13 +482,13 @@ Fonte:
 \end_layout
 
 \begin_layout Section
-Validação da perda de fricção pelo modelo Newtoniano no Poço e Anular
+Validação da Perda de Fricção pelo Modelo Newtoniano no Poço e Anular
 \end_layout
 
 \begin_layout Standard
 Neste subtópico,
  será validado o módulo de cálculo de perda de carga por fricção para fluidos Newtonianos,
- aplicando os conceitos diretamente no tubo de perfuração (drillpipe) e no anular.
+ aplicando os conceitos diretamente no tubo de perfuração e no anular.
  Para isso,
  foi utilizado o exercício 4.40 do livro 
 \emph on
@@ -554,6 +496,13 @@ Applied Drilling Engineering
 \emph default
 ,
  o qual apresenta um cenário clássico para esse tipo de validação.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -597,7 +546,6 @@ literal "false"
 \begin_layout Plain Layout
 a.
  Determine o regime de escoamento no tubo de perfuração.
- 
 \end_layout
 
 \begin_layout Plain Layout
@@ -665,9 +613,107 @@ Cálculos no tubo
 
 \begin_layout Standard
 Onde:
- v (Velocidade do Poço);
- q (vazão);
- d (diâmetro interno);
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $v$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ Velocidade do Poço);
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $q$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ vazão);
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $d$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ diâmetro interno);
 \end_layout
 
 \begin_layout Standard
@@ -683,7 +729,7 @@ N_{re}=\frac{928\rho\bar{v}d}{\mu}=\frac{928(8.33)(13.95)(3.826)}{1}=412583,78=T
 
 \begin_layout Standard
 Onde:
- 
+
 \family roman
 \series medium
 \shape up
@@ -697,13 +743,21 @@ Onde:
 \uwave off
 \noun off
 \color none
-
-\backslash
-rho = densidade;
  
-\backslash
-mu = viscosidade;
- N_{re} (Número de Reynolds);
+\begin_inset Formula $ρ$
+\end_inset
+
+ densidade;
+ 
+\begin_inset Formula $\mu$
+\end_inset
+
+ viscosidade;
+ 
+\begin_inset Formula $N_{re}$
+\end_inset
+
+ Número de Reynolds);
 \end_layout
 
 \begin_layout Standard
@@ -719,7 +773,7 @@ mu = viscosidade;
 
 \begin_layout Standard
 Onde:
- 
+
 \family roman
 \series medium
 \shape up
@@ -733,7 +787,11 @@ Onde:
 \uwave off
 \noun off
 \color none
-dp_{f} (Perda Friccional);
+ 
+\begin_inset Formula $dp_{f}$
+\end_inset
+
+(Perda Friccional);
 \end_layout
 
 \begin_layout Subsubsection
@@ -754,48 +812,24 @@ Cálculos no anular
 \begin_layout Standard
 Onde:
  
-\change_deleted 643308733 1748569549
-v
-\change_inserted 643308733 1748569549
-
 \begin_inset Formula $v$
 \end_inset
 
-
-\change_unchanged
  (Velocidade do Poço);
  
-\change_deleted 643308733 1748569555
-q
-\change_inserted 643308733 1748569555
-
 \begin_inset Formula $q$
 \end_inset
 
-
-\change_unchanged
  (vazão);
  
-\change_deleted 643308733 1748569558
-d2
-\change_inserted 643308733 1748569558
-
-\begin_inset Formula $d2$
+\begin_inset Formula $d_{2}$
 \end_inset
 
-
-\change_unchanged
  (diâmetro do Poço);
  
-\change_deleted 643308733 1748569560
-d1
-\change_inserted 643308733 1748569560
-
-\begin_inset Formula $d1$
+\begin_inset Formula $d_{1}$
 \end_inset
 
-
-\change_unchanged
  (diâmetro Externo);
 \end_layout
 
@@ -813,8 +847,6 @@ N_{re}=\frac{757\rho\bar{v}(d_{2}-d_{1})}{\mu}=\frac{757(8.33)(9.284)(6.5-4.5)}{
 \begin_layout Standard
 Onde:
  
-\change_deleted 643308733 1748569565
-
 \family roman
 \series medium
 \shape up
@@ -829,39 +861,19 @@ Onde:
 \noun off
 \color none
 
-\backslash
-rho
-\change_inserted 643308733 1748569565
-
 \begin_inset Formula $\rho$
 \end_inset
 
-
-\change_unchanged
  = densidade;
  
-\change_deleted 643308733 1748569569
-
-\backslash
-mu
-\change_inserted 643308733 1748569569
-
 \begin_inset Formula $\mu$
 \end_inset
 
-
-\change_unchanged
  = viscosidade;
  
-\change_deleted 643308733 1748569574
-N_{re}
-\change_inserted 643308733 1748569574
-
 \begin_inset Formula $N_{re}$
 \end_inset
 
-
-\change_unchanged
  (Número de Reynolds);
 \end_layout
 
@@ -879,8 +891,6 @@ N_{re}
 \begin_layout Standard
 Onde:
  
-\change_deleted 643308733 1748569583
-
 \family roman
 \series medium
 \shape up
@@ -894,14 +904,10 @@ Onde:
 \uwave off
 \noun off
 \color none
-dp_{f}
-\change_inserted 643308733 1748569583
 
 \begin_inset Formula $dp_{f}$
 \end_inset
 
-
-\change_unchanged
  (Perda Friccional);
 \end_layout
 
@@ -922,23 +928,6 @@ nolink "false"
  e a simulação demonstrou total concordância com os resultados esperados do exercício.
  Tanto o reconhecimento do regime de escoamento quanto o cálculo das perdas de carga por fricção foram validados com precisão,
  confirmando a fidelidade do modelo Newtoniano implementado.
-\change_inserted 643308733 1748569225
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748569225
-adicione figura com imagem do livro com os resultados,
- validando o resultado
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -988,7 +977,11 @@ Fonte:
 \end_layout
 
 \begin_layout Section
-Validação da perda de fricção pelo modelo Binghan no Poço e Anular
+Validação da Perda de Fricção pelo Modelo 
+\emph on
+Binghan
+\emph default
+ no Poço e Anular
 \end_layout
 
 \begin_layout Standard
@@ -998,6 +991,13 @@ Neste subtópico,
  O exercício 4.41 do livro Applied Drilling Engineering será utilizado como referência,
  por manter as mesmas condições geométricas e operacionais do exercício 4.40,
  alterando apenas as propriedades reológicas do fluido.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1214,23 +1214,6 @@ nolink "false"
 
 demonstrou capacidade confiável de tratar modelos reológicos mais complexos,
  indo além do comportamento Newtoniano.
-\change_inserted 643308733 1748569228
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748569228
-adicione figura com imagem do livro com os resultados,
- validando o resultado
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -1261,7 +1244,6 @@ name "fig:Software-Modelo-Binghan"
 
 \begin_inset Graphics
 	filename ../imagens/Cap4_Ex41_MOD1_AppliedDrillingEng.png
-	lyxscale 70
 	width 100text%
 
 \end_inset
@@ -1281,11 +1263,7 @@ Fonte:
 \end_layout
 
 \begin_layout Section
-Validação da perda de fricção pelo modelo Potência no Poço e Anular
-\change_deleted 643308733 1748569120
- 
-\change_unchanged
-
+Validação da Perda de Fricção pelo Modelo Potência no Poço e Anular
 \end_layout
 
 \begin_layout Standard
@@ -1294,6 +1272,13 @@ Neste subtópico,
  aplicando os mesmos parâmetros geométricos do exercício 4.40.
  Utiliza-se o exercício 4.42 do livro Applied Drilling Engineering como referência,
  alterando-se apenas as propriedades reológicas do fluido para refletir um comportamento pseudoplástico.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1530,23 +1515,6 @@ nolink "false"
 ,
  capacidade confiável de tratar modelos reológicos mais complexos,
  indo além dos comportamentos já validados nos modelos anteriores.
-\change_inserted 643308733 1748569232
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748569232
-adicione figura com imagem do livro com os resultados,
- validando o resultado
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -1577,7 +1545,6 @@ name "fig:Software-Modelo-Potencia"
 
 \begin_inset Graphics
 	filename ../imagens/Cap4_Ex42_MOD1_AppliedDrillingEng.png
-	lyxscale 70
 	width 100text%
 
 \end_inset
@@ -1597,7 +1564,7 @@ Fonte:
 \end_layout
 
 \begin_layout Section
-Validação da variação do comprimento do tubo devido a força pistão
+Validação da Variação do Comprimento do Tubo Devido a Força Pistão
 \end_layout
 
 \begin_layout Standard
@@ -1606,6 +1573,13 @@ Neste subtópico,
  efeito resultante da diferença de área entre o tubo e o packer em presença de variação de pressão interna e externa.
  Para validar os modelos de variação axial implementados no software,
  foi utilizado um cenário adaptado de exercício aplicado em sala de aula.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1730,23 +1704,6 @@ A_{in}=\frac{π}{4}(d_{2}^{2}-d_{1}^{2})=\frac{π}{4}(5^{2}-3.862^{2})=7.92in^{2
 A simulação realizada no software resultou em uma variação de comprimento compatível com o esperado teoricamente.
  A deformação foi calculada utilizando a equação de carga axial para efeito pistão,
  considerando o diferencial de área e a variação de pressão induzida pela substituição do fluido.
-\change_inserted 643308733 1748569236
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748569236
-adicione figura com imagem do livro com os resultados,
- validando o resultado
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -1777,7 +1734,6 @@ name "fig:Software-Variacao-devido-pistão"
 
 \begin_inset Graphics
 	filename ../imagens/ListaExer01_Quest1a_MOD2_NotasAula.png
-	lyxscale 70
 	width 100text%
 
 \end_inset
@@ -1797,12 +1753,19 @@ Fonte:
 \end_layout
 
 \begin_layout Section
-Validação da variação do comprimento do tubo devido ao efeito balão
+Validação da Variação do Comprimento do Tubo Devido ao Efeito Balão
 \end_layout
 
 \begin_layout Standard
 Este subtópico trata da validação do efeito balão,
  fenômeno associado à deformação radial e longitudinal do tubo sob diferentes pressões interna e externa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1923,23 +1886,6 @@ A_{in}=\frac{π}{4}(d_{2}^{2}-d_{1}^{2})=\frac{π}{4}(3.862^{2})=11.71in^{2}
 \begin_layout Standard
 O software foi capaz de calcular a deformação com base nas pressões associadas à troca dos fluidos,
  e os resultados mostraram boa concordância com a equação clássica para efeito balão.
-\change_inserted 643308733 1748569240
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748569240
-adicione figura com imagem do livro com os resultados,
- validando o resultado
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -1970,7 +1916,6 @@ name "fig:Software-Variacao-Balão"
 
 \begin_inset Graphics
 	filename ../imagens/ListaExer01_Quest1B_MOD2_NotasAula.png
-	lyxscale 70
 	width 100text%
 
 \end_inset
@@ -1990,12 +1935,19 @@ Fonte:
 \end_layout
 
 \begin_layout Section
-Validação da variação do comprimento do tubo devido ao efeito da temperatura
+Validação da Variação do Comprimento do Tubo Devido ao Efeito da Temperatura
 \end_layout
 
 \begin_layout Standard
 este subtópico,
  o software é validado quanto à dilatação térmica do tubo em função da variação de temperatura entre a configuração inicial e final do poço.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2099,23 +2051,6 @@ Logo:
 \begin_layout Standard
 A simulação indicou uma dilatação térmica compatível com os valores obtidos pela fórmula,
  considerando a interpolação linear da temperatura entre o fundo e a superfície.
-\change_inserted 643308733 1748569243
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748569243
-adicione figura com imagem do livro com os resultados,
- validando o resultado
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -2146,7 +2081,6 @@ name "fig:Software-Variação-devido-temperatura"
 
 \begin_inset Graphics
 	filename ../imagens/ListaExer01_Quest1C_MOD2_NotasAula.png
-	lyxscale 70
 	width 100text%
 
 \end_inset
@@ -2166,7 +2100,7 @@ Fonte:
 \end_layout
 
 \begin_layout Section
-Validação da importação e exportação do documento (“salvar como...”)
+Validação da Importação e Exportação do Documento (“salvar como...”)
 \end_layout
 
 \begin_layout Standard
@@ -2185,23 +2119,6 @@ Durante os testes,
  além das propriedades de cada trecho da coluna e das características dos fluidos envolvidos.
  Após o preenchimento,
  os dados foram exportados para arquivos .dat.
-\change_inserted 643308733 1748569246
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1748569246
-adicione figura com imagem do livro com os resultados,
- validando o resultado
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -2232,7 +2149,6 @@ name "fig:Software-SalvarComo"
 
 \begin_inset Graphics
 	filename ../imagens/funcionalidadeSalvarComo.png
-	lyxscale 70
 	width 100text%
 
 \end_inset

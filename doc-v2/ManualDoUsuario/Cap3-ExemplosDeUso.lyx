@@ -150,7 +150,7 @@ Todo projeto de engenharia passa por uma etapa de testes.
 \end_layout
 
 \begin_layout Subsection
-Pressão Hidroestática
+Pressão Hidrostática
 \begin_inset Index idx
 range none
 pageformat default
@@ -219,6 +219,9 @@ Resposta esperada:
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
 A partir da imagem abaixo 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -252,7 +255,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Solução gerada para calculo da pressão hidroestática 
+Solução gerada para calculo da pressão hidrostática 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Similador-Pressao_hidro"

@@ -214,21 +214,22 @@ Os códigos foram documentados no
 GitHub
 \shape default
 :
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_deeper
-\begin_layout Itemize
+
 \begin_inset CommandInset href
 LatexCommand href
+name "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"
 target "https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco"
 literal "false"
 
 \end_inset
 
-
+.
+ 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 A documentação foi gerada utilizando o software 
 \shape italic

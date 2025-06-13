@@ -169,7 +169,7 @@ Unified Modeling Language
  Além do diagrama de classes,
  são incluídos os diagramas de sequência,
  de comunicação,
- de máquina de estado e de atividades 
+ de máquina de estado e de atividades (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bueno2003"
@@ -177,11 +177,11 @@ literal "false"
 
 \end_inset
 
-.
+).
 \end_layout
 
 \begin_layout Section
-Diagramas de classes
+Diagramas de Classes
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Diagramas-de-classes"
@@ -531,23 +531,6 @@ Diagrama de Sequência
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec: Diagrama de sequência geral"
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Professor,
- fui fazer outros diagramas de sequência,
- mas todos ficaram praticamente iguais,
- pois as premissas são as mesmas na criação dos poços e trechos.
- A única coisa que muda de um diagrama para outro é a última função,
- que varia,
- por exemplo,
- de CObjetoPoco::CalcularModeloNewtoniano para CObjetoPoco::CalcularModeloPotencia.
-\end_layout
 
 \end_inset
 

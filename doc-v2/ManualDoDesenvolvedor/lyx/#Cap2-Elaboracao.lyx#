@@ -147,6 +147,47 @@ Neste capítulo,
  a definição dos pacotes computacionais utilizados e os algoritmos adicionais integrados ao software.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Nota sobre a fonte do conteúdo:
+
+\series default
+ Este capítulo foi inteiramente desenvolvido a partir das referências bibliográficas Applied Drilling Engineer (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "APPLIED1991"
+literal "false"
+
+\end_inset
+
+.
+ 1986) e Fundamentals of Dream Engineer (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
+
+\end_inset
+
+,
+ 2011).
+ Todo o embasamento teórico,
+ as formulações matemáticas,
+ os algoritmos descritos e demais conteúdos apresentados foram extraídos dessas obras,
+ com adaptações de linguagem e organização para fins acadêmicos,
+ conforme exigências deste trabalho.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Análise de Domínio
 \begin_inset CommandInset label
@@ -244,10 +285,6 @@ Modelagem Gráfica:
 \begin_layout Standard
 A modelagem gráfica é fundamental para representar visualmente fenômenos complexos,
  facilitando a análise e a tomada de decisões.
- Através de gráficos 2D e 3D,
- é possível visualizar perfis de pressão,
- porosidade,
- velocidade e ondas sísmicas em formações geológicas.
  A integração com a API Qt permite criar uma interface intuitiva e interativa,
  essencial para o uso didático e técnico do simulador.
 \end_layout
@@ -265,7 +302,7 @@ name "sec:Formulação-teórica"
 \end_layout
 
 \begin_layout Subsection
-Ementa da disciplina
+Ementa da Disciplina
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec: Ementa da disciplina"
@@ -627,11 +664,11 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $dp$
+\begin_inset Formula $Z$
 \end_inset
 
- é a variação de pressão 
-\begin_inset Formula $\left[psi\right]$
+ é a profundidade 
+\begin_inset Formula $\left[ft\right]$
 \end_inset
 
 ;
@@ -649,11 +686,33 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\rho$
+\begin_inset Formula $d$
 \end_inset
 
- é a densidade do fluido 
-\begin_inset Formula $\left[lbm/gal\right]$
+ é o diâmetro interno do revestimento ID 
+\begin_inset Formula $\left[in\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $d_{1}$
+\end_inset
+
+ é o diâmetro externo do revestimento OD 
+\begin_inset Formula $\left[in\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $d_{2}$
+\end_inset
+
+ é o diâmetro do poço 
+\begin_inset Formula $\left[in\right]$
 \end_inset
 
 ;
@@ -710,29 +769,88 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $Z$
+\begin_inset Formula $dp$
 \end_inset
 
- é a profundidade 
-\begin_inset Formula $\left[ft\right]$
+ é a variação de pressão 
+\begin_inset Formula $\left[psi\right]$
 \end_inset
 
 ;
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $z$
+\begin_inset Formula $\Delta P_{in}$
 \end_inset
 
- é o fator de desvio de gás;
+ Variação de pressão na parte interna do poço 
+\begin_inset Formula $\left[psi\right]$
+\end_inset
+
+;
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $R$
+\begin_inset Formula $\Delta P_{out}$
 \end_inset
 
- é constante universal dos gases 
-\begin_inset Formula $\left[psi.ft^{3}/lb-mol.^{\circ}R\right]$
+ Variação de pressão no anular 
+\begin_inset Formula $\left[psi\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tau$
+\end_inset
+
+ é a tensão de cisalhamento exercida sobre o fluido 
+\begin_inset Formula $\left[psi\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\dot{\gamma}$
+\end_inset
+
+ é a taxa de cisalhamento 
+\begin_inset Formula $\left[1/s\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tau_{y}$
+\end_inset
+
+ é a tensão de escoamento ou o ponto de escoamento 
+\begin_inset Formula $\left[lbf/100.sq.ft\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tau_{w}$
+\end_inset
+
+ é a tensão de cisalhamento na parede 
+\begin_inset Formula $\left[lbf/ft^{2}\right]$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\rho$
+\end_inset
+
+ é a densidade do fluido 
+\begin_inset Formula $\left[lbm/gal\right]$
 \end_inset
 
 ;
@@ -750,22 +868,22 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $M$
+\begin_inset Formula $\mu$
 \end_inset
 
- é o peso molecular do gás 
-\begin_inset Formula $\left[lb/lb-mol\right]$
+ é a viscosidade aparente 
+\begin_inset Formula $\left[cP\right]$
 \end_inset
 
 ;
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\triangle Z$
+\begin_inset Formula $\mu_{p}$
 \end_inset
 
- é a variação de profundidade 
-\begin_inset Formula $\left[ft\right]$
+ é a viscosidade plástica 
+\begin_inset Formula $\left[cP\right]$
 \end_inset
 
 ;
@@ -820,55 +938,47 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\tau$
+\begin_inset Formula $q$
 \end_inset
 
- é a tensão de cisalhamento exercida sobre o fluido 
-\begin_inset Formula $\left[psi\right]$
-\end_inset
-
-;
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\mu$
-\end_inset
-
- é a viscosidade aparente 
-\begin_inset Formula $\left[cP\right]$
+ é a vazão do poço 
+\begin_inset Formula $\left[gal/min\right]$
 \end_inset
 
 ;
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\dot{\gamma}$
+\begin_inset Formula $z$
 \end_inset
 
- é a taxa de cisalhamento 
-\begin_inset Formula $\left[1/s\right]$
+ é o fator de desvio de gás;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n$
+\end_inset
+
+ é o expoente da lei de potência ou o índice de comportamento do fluxo;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R$
+\end_inset
+
+ é constante universal dos gases 
+\begin_inset Formula $\left[psi.ft^{3}/lb-mol.^{\circ}R\right]$
 \end_inset
 
 ;
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\tau_{y}$
+\begin_inset Formula $M$
 \end_inset
 
- é a tensão de escoamento ou o ponto de escoamento 
-\begin_inset Formula $\left[lbf/100.sq.ft\right]$
-\end_inset
-
-;
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\mu_{p}$
-\end_inset
-
- é a viscosidade plástica 
-\begin_inset Formula $\left[cP\right]$
+ é o peso molecular do gás 
+\begin_inset Formula $\left[lb/lb-mol\right]$
 \end_inset
 
 ;
@@ -886,64 +996,6 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $n$
-\end_inset
-
- é o expoente da lei de potência ou o índice de comportamento do fluxo;
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $N_{_{re}}$
-\end_inset
-
- é o número de Reynolds;
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $d$
-\end_inset
-
- é o diâmetro interno do revestimento ID 
-\begin_inset Formula $\left[in\right]$
-\end_inset
-
-;
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\bar{v}$
-\end_inset
-
- é a velocidade média 
-\begin_inset Formula $\left[ft/s\right]$
-\end_inset
-
-;
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $q$
-\end_inset
-
- é a vazão do poço 
-\begin_inset Formula $\left[gal/min\right]$
-\end_inset
-
-;
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\frac{dp_{f}}{dL}$
-\end_inset
-
- é a perda de pressão por fricção 
-\begin_inset Formula $\left[psi/ft\right]$
-\end_inset
-
-;
-\end_layout
-
-\begin_layout Itemize
 \begin_inset Formula $f$
 \end_inset
 
@@ -951,14 +1003,21 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\tau_{w}$
+\begin_inset Formula $E$
 \end_inset
 
- é a tensão de cisalhamento na parede 
-\begin_inset Formula $\left[lbf/ft^{2}\right]$
+ Módulo de elasticidade 
+\begin_inset Formula $\left[psi\right]$
 \end_inset
 
 ;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N_{_{re}}$
+\end_inset
+
+ é o número de Reynolds;
 \end_layout
 
 \begin_layout Itemize
@@ -976,62 +1035,33 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $d_{1}$
+\begin_inset Formula $\frac{dp_{f}}{dL}$
 \end_inset
 
- é o diâmetro externo do revestimento OD 
-\begin_inset Formula $\left[in\right]$
-\end_inset
-
-;
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $d_{2}$
-\end_inset
-
- é o diâmetro do poço 
-\begin_inset Formula $\left[in\right]$
+ é a perda de pressão por fricção 
+\begin_inset Formula $\left[psi/ft\right]$
 \end_inset
 
 ;
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $v$
+\begin_inset Formula $L$
 \end_inset
 
- é o coeficiente de Poisson;
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $E$
-\end_inset
-
- Módulo de elasticidade 
-\begin_inset Formula $\left[psi\right]$
+ Comprimento do tubo 
+\begin_inset Formula $\left[ft\right]$
 \end_inset
 
 ;
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\Delta P_{in}$
+\begin_inset Formula $\Delta L$
 \end_inset
 
- Variação de pressão na parte interna do poço 
-\begin_inset Formula $\left[psi\right]$
-\end_inset
-
-;
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\Delta P_{out}$
-\end_inset
-
- Variação de pressão no anular 
-\begin_inset Formula $\left[psi\right]$
+ Variação de comprimento do tubo 
+\begin_inset Formula $\left[ft\right]$
 \end_inset
 
 ;
@@ -1041,7 +1071,7 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \begin_inset Formula $\Delta L_{b}$
 \end_inset
 
- Variação de comprimento devido efeito balão 
+ Variação de comprimento do tubo devido efeito balão 
 \begin_inset Formula $\left[ft\right]$
 \end_inset
 
@@ -1052,7 +1082,7 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \begin_inset Formula $\Delta L_{packer}$
 \end_inset
 
- Variação de comprimento devido força pistão 
+ Variação de comprimento do tubo devido força pistão 
 \begin_inset Formula $\left[ft\right]$
 \end_inset
 
@@ -1063,7 +1093,7 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \begin_inset Formula $\Delta L_{crossover}$
 \end_inset
 
- Variação de comprimento devido ao crossover 
+ Variação de comprimento do tubo devido ao crossover 
 \begin_inset Formula $\left[ft\right]$
 \end_inset
 
@@ -1071,7 +1101,14 @@ Os principais termos e suas unidades utilizadas neste projeto estão listadas ab
 \end_layout
 
 \begin_layout Subsection
-Hidráulica de Perfuração
+Pressão Hidrostática
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Pressão-Hidrostática"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1091,27 +1128,22 @@ Os fluidos de perfuração podem variar amplamente em termos de composição e p
  como a água,
  até fluidos altamente compressíveis,
  como a espuma.
- O simulador desenvolvido neste trabalho se propõe a resolver dois tipos de problemas:
+ O simulador desenvolvido neste trabalho se propõe a um dos tipos de problemas:
  os estáticos,
- que envolvem o cálculo da pressão hidrostática,
- e os dinâmicos,
- relacionados ao escoamento dos fluidos no interior da tubulação.
-\end_layout
-
-\begin_layout Subsection
-Pressão Hidrostática
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Pressão-Hidrostática"
+ que envolvem o cálculo da pressão hidrostática (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "APPLIED1991"
+literal "false"
 
 \end_inset
 
-
+).
 \end_layout
 
 \begin_layout Standard
 A pressão hidrostática corresponde à variação da pressão em função da profundidade ao longo de uma coluna de fluido,
- sendo comumente mais facilmente calculada em condições de poço estático.
+ sendo comumente calculada em condições de poço estático.
  Sua dedução pode ser realizada a partir da análise do diagrama de corpo livre apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1194,7 +1226,23 @@ nolink "false"
 
 \end_inset
 
-) a seguir em unidades 
+) a seguir:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dp}{dZ}=0.05195\rho\label{eq:EquacaoPressao}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+onde em unidades 
 \emph on
 oil field
 \emph default
@@ -1225,22 +1273,6 @@ e
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-\frac{dp}{dZ}=0.05195\rho\label{eq:EquacaoPressao}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Podemos calcular a pressão hidrostática para dois tipos de fluidos,
- os incompressíveis e os fluidos compressíveis.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1349,7 +1381,7 @@ kik
 blowout
 \shape default
 ,
- além de não causar fraturas na formação as quais poderiam provocar uma perda de circulação de fluido que também é indesejada 
+ além de não causar fraturas na formação as quais poderiam provocar uma perda de circulação de fluido que também é indesejada (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "APPLIED1991"
@@ -1357,101 +1389,7 @@ literal "false"
 
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Subsubsection
-Fluidos compressíveis
-\end_layout
-
-\begin_layout Standard
-Em diversas operações de perfuração ou completação,
- a presença de gás é comum,
- seja por injeção planejada ou por fluxo proveniente de formações geológicas.
- O cálculo da pressão hidrostática em uma coluna de gás estática é mais complexo,
- pois a compressibilidade do gás faz com que sua densidade varie com a pressão.
- Para representar esse comportamento,
- utiliza-se a equação do gás real:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-p=\rho z\frac{RT}{M}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Onde 
-\begin_inset Formula $z$
-\end_inset
-
- é o fator de desvio de gás,
- 
-\begin_inset Formula $R$
-\end_inset
-
- é constante universal dos gases 
-\begin_inset Formula $\left[psi.ft^{3}/lb-mol.^{\circ}R\right]$
-\end_inset
-
-,
- 
-\begin_inset Formula $T$
-\end_inset
-
- é a temperatura absoluta 
-\begin_inset Formula $\left[^{\circ}R\right]$
-\end_inset
-
- e 
-\begin_inset Formula $M$
-\end_inset
-
- é o peso molecular do gás 
-\begin_inset Formula $\left[lb/lb-mol\right]$
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "APPLIED1991"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Realizando a combinação da equação da pressão hidrostática para fluidos incompressíveis e da equação do gás real chegamos a seguinte equação da pressão hidrostática para fluidos compressíveis:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-p=p_{0}\exp\left(\frac{M\triangle Z}{1544zT}\right)
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Onde 
-\begin_inset Formula $\triangle Z$
-\end_inset
-
- é a variação de profundidade 
-\begin_inset Formula $\left[ft\right]$
-\end_inset
-
-.
+).
 \end_layout
 
 \begin_layout Subsection
@@ -1558,39 +1496,6 @@ Onde
 \end_layout
 
 \begin_layout Subsection
-Densidade Equivalente
-\end_layout
-
-\begin_layout Standard
-Em muitas situações de campo é útil comparar uma coluna com vários fluidos com uma coluna com um único fluido equivalente que esteja aberta para a atmosfera.
- Isso só é possível calculando a densidade da lama equivalente,
- definida por:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-\rho_{e}=\frac{p}{0.05195Z}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A densidade da lama equivalente sempre deve ser calculada utilizando uma profundidade de referência específica 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "APPLIED1991"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
 Modelos Reológicos de Fluidos de Perfuração
 \end_layout
 
@@ -1610,7 +1515,15 @@ Na maioria dos casos,
  lamas cada vez mais complexas vêm sendo desenvolvidas,
  e,
  portanto,
- os testes devem considerar também as propriedades elásticas associadas à deformação do fluido durante o escoamento.
+ os testes devem considerar também as propriedades elásticas associadas à deformação do fluido durante o escoamento (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011"
+literal "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -1621,7 +1534,7 @@ Para isso,
  Neste trabalho,
  são abordados três modelos principais:
  o modelo Newtoniano,
- o modelo plástico de Bingham e o modelo da lei das potências
+ o modelo plástico de Bingham e o modelo da lei das potências (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "APPLIED1991"
@@ -1629,7 +1542,7 @@ literal "false"
 
 \end_inset
 
- .
+) .
  Ressalta-se ainda que outros modelos poderão ser incorporados em versões futuras do simulador,
  visando seu aprimoramento contínuo.
 \end_layout
@@ -1768,15 +1681,7 @@ e
 \begin_inset Formula $\left[lbf\right]$
 \end_inset
 
- constante é necessária para manter a placa superior em movimento 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "HALLIDAY_2009"
-literal "false"
-
-\end_inset
-
-,
+ constante é necessária para manter a placa superior em movimento ,
  a magnitude dessa força pode ser determinada por:
 \end_layout
 

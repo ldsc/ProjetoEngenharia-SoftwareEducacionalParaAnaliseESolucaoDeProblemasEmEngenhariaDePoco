@@ -198,12 +198,12 @@ Concepção
 \end_layout
 
 \begin_layout Standard
-Apresenta-se neste capítulo do projeto de engenharia a concepção,
- a especificação do sistema a ser modelado e desenvolvido.
+Apresenta-se neste capítulo do projeto,
+ a especificação do sistema modelado e desenvolvido.
 \end_layout
 
 \begin_layout Section
-Nome do sistema/produto
+Nome do Sistema/Produto
 \begin_inset CommandInset label
 LatexCommand label
 name "sec: Nome do sistema/produto"
@@ -215,59 +215,13 @@ name "sec: Nome do sistema/produto"
 
 \begin_layout Standard
 O sistema desenvolvido,
- denominado Software Educacional para Análise e Solução de Problemas em Engenharia de Poço,
- foi construído em linguagem C++ com uso do 
-\emph on
-framework 
-\emph default
-Qt.
- Essa base tecnológica permitiu a criação de uma interface gráfica robusta,
+ denominado Software Educacional para Análise e Solução de Problemas em Engenharia de Poço.
+ A base tecnológica permitiu a criação de uma interface gráfica robusta,
  que facilita a navegação e oferece recursos visuais para apoio ao ensino.
-\end_layout
-
-\begin_layout Standard
-Entre suas funcionalidades,
- o programa realiza o cálculo de propriedades como pressão hidrostática,
- densidade e viscosidade média dos fluidos,
- além de permitir a seleção entre diferentes modelos reológicos:
- 
-\emph on
-newtoniano
-\emph default
-,
- plástico de 
-\emph on
-Bingham 
-\emph default
-e lei das potências.
- Também simula cenários operacionais com variações de temperatura e pressão,
- incluindo efeitos como deslocamentos axiais (ΔL) da coluna de completação,
- efeito balão e atuação de 
-\emph on
-packers
-\emph default
- e pistões.
-\end_layout
-
-\begin_layout Standard
-O sistema aceita entrada de dados por meio de arquivos .dat (ASCII),
- oferece visualização gráfica dos resultados e permite a exportação dos dados em formato .dat (ASCII),
- apoiando tanto o estudo individual quanto a elaboração de relatórios acadêmicos.
-\end_layout
-
-\begin_layout Standard
-A Tabela 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Características-básicas-do"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
+\begin_inset VSpace defskip
 \end_inset
 
- apresenta as características do software desenvolvido
+
 \end_layout
 
 \begin_layout Standard
@@ -341,19 +295,19 @@ Componentes principais
 \begin_inset Text
 
 \begin_layout Plain Layout
-Banco de dados com métodos e propriedades da Engenharia de Poço.
+Banco de dados com métodos e propriedades da Engenharia de Poço;
 \end_layout
 
 \begin_layout Plain Layout
-Algoritmo de aproximação de resultados.
+Algoritmo de aproximação de resultados;
 \end_layout
 
 \begin_layout Plain Layout
-Interface gráfica para o plotar resultados.
+Interface gráfica para o plotar resultados;
 \end_layout
 
 \begin_layout Plain Layout
-Saída gráfica e em arquivo .dat.
+Saída gráfica e em arquivo dat.
 \end_layout
 
 \end_inset
@@ -430,7 +384,41 @@ especificação
 \end_layout
 
 \begin_layout Standard
-O software educacional desenvolvido apresenta uma interface gráfica intuitiva que permite ao usuário selecionar,
+Entre suas funcionalidades,
+ o programa realiza o cálculo de propriedades como pressão hidrostática,
+ densidade e viscosidade média dos fluidos,
+ além de permitir a seleção entre diferentes modelos reológicos:
+ 
+\emph on
+newtoniano
+\emph default
+,
+ plástico de 
+\emph on
+Bingham 
+\emph default
+e lei das potências.
+ Também simula cenários operacionais com variações de temperatura e pressão,
+ incluindo efeitos como deslocamentos axiais (ΔL) da coluna de completação,
+ efeito balão e atuação de 
+\emph on
+packers
+\emph default
+ e 
+\emph on
+crossover
+\emph default
+s.
+\end_layout
+
+\begin_layout Standard
+O sistema aceita entrada de dados por meio de arquivos .dat (ASCII),
+ oferece visualização gráfica dos resultados e permite a exportação dos dados em formato .dat (ASCII),
+ apoiando tanto o estudo individual quanto a elaboração de relatórios acadêmicos.
+\end_layout
+
+\begin_layout Standard
+Além disso ele apresenta uma interface gráfica intuitiva que permite ao usuário selecionar,
  a qualquer momento,
  as funções desejadas.
  As operações implementadas baseiam-se em modelos e equações consolidados na área de Engenharia de Poço,
@@ -513,7 +501,7 @@ RF-01
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve conter uma base de dados confiáveis retiradas de referências bibliográficas como 
+O sistema conter uma base de dados confiáveis retiradas de referências bibliográficas como 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "FUNDAMENTALS2011"
@@ -571,7 +559,7 @@ RF-02
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário poderá carregar dados da propriedade para a simulação.
+O usuário pode carregar dados de propriedade para a simulação.
 \end_layout
 
 \end_inset
@@ -610,7 +598,7 @@ RF-03
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário deverá ter liberdade para alterar as propriedades reológicas do poço/fluido.
+O usuário tem a liberdade para alterar as propriedades reológicas do poço/fluido.
 \end_layout
 
 \end_inset
@@ -649,7 +637,7 @@ RF-04
 \begin_inset Text
 
 \begin_layout Plain Layout
-Deve permitir a exportação de simulações.
+Permite a exportação de simulações.
 \end_layout
 
 \end_inset
@@ -691,7 +679,7 @@ RF-05
 \begin_inset Text
 
 \begin_layout Plain Layout
-Deve permitir cenários de simulação baseado em diferentes modelos teóricos.
+Permite cenários de simulação baseado em diferentes modelos teóricos.
 \end_layout
 
 \end_inset
@@ -730,7 +718,7 @@ RF-06
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário poderá comparar os resultados da simulação em diferentes modelos reológicos.
+O usuário pode comparar os resultados da simulação em diferentes modelos reológicos.
 \end_layout
 
 \end_inset
@@ -769,7 +757,7 @@ RF-07
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário deve ter liberdade para adicionar ou retirar simplificações das premissas do modelo.
+O usuário tem a liberdade para adicionar ou retirar simplificações das premissas do modelo.
 \end_layout
 
 \end_inset
@@ -811,7 +799,7 @@ RF-08
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário poderá visualizar seus resultados em um gráfico.
+O usuário pode visualizar seus resultados em um gráfico.
  O gráfico poderá ser salvo como imagem.
 \end_layout
 
@@ -851,7 +839,7 @@ RF-09
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve permitir a análise dos deslocamentos axiais (ΔL) da coluna de completação em diferentes condições operacionais.
+O sistema permite a análise dos deslocamentos axiais (ΔL) da coluna de completação em diferentes condições operacionais.
 \end_layout
 
 \end_inset
@@ -890,7 +878,7 @@ RF-10
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve contemplar variações térmicas,
+O sistema contempla variações térmicas,
  efeito balão,
  atuação de pistão,
  
@@ -931,7 +919,7 @@ crossover
 \begin_layout Plain Layout
 
 \series bold
-RF-11
+RF-121
 \end_layout
 
 \end_inset
@@ -940,18 +928,8 @@ RF-11
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve contemplar variações térmicas,
- efeito balão,
- atuação de pistão,
- 
-\emph on
-packer
-\emph default
- e 
-\emph on
-crossover
-\emph default
- nas análises de carga.
+O sistema permite a navegação por meio de digitação direta de números no menu de opções,
+ otimizando o fluxo de trabalho e eliminando a necessidade de múltiplos comandos sequenciais.
 \end_layout
 
 \end_inset
@@ -990,8 +968,8 @@ RF-12
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve permitir a navegação por meio de digitação direta de números no menu de opções,
- otimizando o fluxo de trabalho e eliminando a necessidade de múltiplos comandos sequenciais.
+O sistema salva automaticamente os dados da simulação em arquivos nomeados conforme o poço selecionado,
+ mantendo um histórico completo das ações do usuário
 \end_layout
 
 \end_inset
@@ -1030,8 +1008,8 @@ RF-13
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve salvar automaticamente os dados da simulação em arquivos nomeados conforme o poço selecionado,
- mantendo um histórico completo das ações do usuário
+O sistema realiza a verificação automática de entradas inválidas,
+ garantindo estabilidade e prevenindo falhas durante a execução.
 \end_layout
 
 \end_inset
@@ -1070,8 +1048,9 @@ RF-14
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve realizar a verificação automática de entradas inválidas,
- garantindo estabilidade e prevenindo falhas durante a execução.
+O sistema oferecer atalhos de teclado,
+ como Ctrl+N para nova simulação e Ctrl+S para salvar,
+ otimizando a interação com o usuário.
 \end_layout
 
 \end_inset
@@ -1110,48 +1089,7 @@ RF-15
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve oferecer atalhos de teclado,
- como Ctrl+N para nova simulação e Ctrl+S para salvar,
- otimizando a interação com o usuário.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-RF-16
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-O sistema deve disponibilizar uma seção de ajuda com instruções de uso e descrição dos modelos implementados.
+O sistema disponibiliza uma seção de ajuda com instruções de uso e descrição dos modelos implementados.
 \end_layout
 
 \end_inset
@@ -1192,10 +1130,6 @@ name "subsec:Requisitos-não-funcionais"
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1217,7 +1151,7 @@ RNF-01
 \begin_inset Text
 
 \begin_layout Plain Layout
-Suas primeiras versões devem suportar os sistemas operacionais GNU/Linux e
+Suas primeiras versões suportam os sistemas operacionais GNU/Linux e
 \shape italic
  Windows.
 \end_layout
@@ -1261,7 +1195,7 @@ RNF-02
 \begin_inset Text
 
 \begin_layout Plain Layout
-A linguagem predominante a ser utilizada no desenvolvimento é C++.
+A linguagem predominante utilizada no desenvolvimento é C++.
 \end_layout
 
 \end_inset
@@ -1303,7 +1237,7 @@ RNF-03
 \begin_inset Text
 
 \begin_layout Plain Layout
-A geração dos gráficos deve ser realizada por meio da biblioteca 
+A geração dos gráficos foram realizadas por meio da biblioteca 
 \begin_inset CommandInset href
 LatexCommand href
 name "QCustomPlot"
@@ -1354,7 +1288,7 @@ RNF-04
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve permitir a exportação dos resultados em arquivos de texto e no formato .dat.
+O sistema permite a exportação dos resultados em arquivos de texto e no formato .dat.
 \end_layout
 
 \end_inset
@@ -1396,7 +1330,7 @@ RNF-05
 \begin_inset Text
 
 \begin_layout Plain Layout
-A interface gráfica deve ser desenvolvida com o 
+A interface gráfica foi desenvolvida com o 
 \begin_inset CommandInset href
 LatexCommand href
 name "Qt Framework"
@@ -1448,7 +1382,7 @@ RNF-06
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve manter organização modular do código,
+O sistema tem uma organização modular do código,
  facilitando manutenção e futuras expansões.
 \end_layout
 
@@ -1488,7 +1422,7 @@ RNF-07
 \begin_inset Text
 
 \begin_layout Plain Layout
-Os arquivos de entrada e saída devem seguir padrões consistentes e documentados para garantir interoperabilidade.
+Os arquivos de entrada e saída seguem padrões consistentes e documentados para garantir interoperabilidade.
 \end_layout
 
 \end_inset
@@ -1527,7 +1461,7 @@ RNF-08
 \begin_inset Text
 
 \begin_layout Plain Layout
-Os arquivos devem usar a codificação de caracteres 
+Os arquivos usam a codificação de caracteres 
 \begin_inset CommandInset href
 LatexCommand href
 name "UTF-8"
@@ -1577,7 +1511,7 @@ Nesta seção iremos mostrar cenários de uso do software a ser desenvolvido.
 \end_layout
 
 \begin_layout Subsection
-Diagrama de caso de uso geral
+Diagrama de Caso de Uso Geral
 \end_layout
 
 \begin_layout Standard
@@ -1622,7 +1556,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Caso de uso 1
+Caso de uso geral 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:CasoDeUso-Geral"
@@ -1776,7 +1710,7 @@ Etapas:
 
 \begin_layout Standard
 \begin_inset Float figure
-placement document
+placement H
 alignment document
 wide false
 sideways false
@@ -1825,7 +1759,7 @@ Fonte:
 \end_layout
 
 \begin_layout Subsection
-Diagrama de caso de uso específico
+Diagrama de Caso de Uso Específico
 \end_layout
 
 \begin_layout Standard
@@ -1840,7 +1774,7 @@ nolink "false"
 
 \end_inset
 
- mostra o cenário onde o usurário deseja 
+ mostra o cenário onde o usuário deseja 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1848,15 +1782,7 @@ Calcular a pressão hidrostática
 \begin_inset Quotes erd
 \end_inset
 
- e 
-\begin_inset Quotes eld
-\end_inset
-
-Calcular densidade do fluido
-\begin_inset Quotes erd
-\end_inset
-
-configurados no poço.
+ no poço.
 \end_layout
 
 \begin_layout Standard
@@ -1894,23 +1820,6 @@ name "fig:DiagramaCasoDeUsoEspecifico-PressaoHidroestatica"
 \end_inset
 
 
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Calcular Pressão Hidrostática
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -1918,12 +1827,7 @@ Calcular Pressão Hidrostática
 \begin_inset Graphics
 	filename ../imagens/DiagramaCasoUsoEspecifico1.png
 	lyxscale 20
-	width 48text%
-
-\end_inset
-
-
-\end_layout
+	width 100text%
 
 \end_inset
 

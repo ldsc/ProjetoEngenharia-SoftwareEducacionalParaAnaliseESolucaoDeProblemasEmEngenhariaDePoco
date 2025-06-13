@@ -739,9 +739,7 @@ name "sec:Funcionalidades"
 \end_layout
 
 \begin_layout Standard
-Na sua versão 2.0,
- o SEAPEP apresenta uma nova organização baseada em módulos.
- A tela inicial do software,
+A tela inicial do software,
  apresentada na Figura 2.1,
  oferece duas opções principais de navegação:
 \end_layout
@@ -1060,7 +1058,15 @@ Simulação de Efeitos Físicos:
 \series default
 como efeito balão,
  atuação do pistão,
- presença do packer e influência do crossover.
+ presença do 
+\emph on
+packer
+\emph default
+ e influência do 
+\emph on
+crossover
+\emph default
+.
 \end_layout
 
 \begin_layout Itemize

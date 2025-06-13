@@ -178,7 +178,7 @@ A ferramenta busca aproximar a teoria da prática,
 \end_layout
 
 \begin_layout Section
-Escopo do problema
+Escopo do Problema
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Escopo-do-Problema"
@@ -279,12 +279,13 @@ Desenvolver o manual técnico científico,
  um manual que apresenta os objetivos,
  metodologia,
  conceitos teóricos,
- ferramentas utilizadas e os códigos desenvolvidos e testes do software (este documento).
+ ferramentas utilizadas,
+ os códigos desenvolvidos e testes do software (este documento).
 \end_layout
 
 \end_deeper
 \begin_layout Section
-Metodologia utilizada
+Metodologia Utilizada
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Metodologia-utilizada"
@@ -326,7 +327,7 @@ LEP01348 - Introdução ao Projeto de Engenharia (
 \begin_inset CommandInset href
 LatexCommand href
 name "site"
-target "https://sites.google.com/view/professorandreduartebueno/ensino/introdu%C3%A7%C3%A3o-ao-projeto-de-engenharia"
+target "https://sites.google.com/view/professorandreduartebueno/ensino/introdu%C3%A7%C3%A3o-%C3%A0-engenharia-de-petr%C3%B3leo?authuser=0"
 literal "false"
 
 \end_inset
@@ -361,21 +362,25 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-A metodologia é descrita 
-\begin_inset CommandInset href
-LatexCommand href
-name "aqui"
-target "https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas"
-literal "false"
+A metodologia é descrita e disponível em 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas
+\end_layout
 
 \end_inset
 
- e um repositório com o modelo completo 
-\begin_inset CommandInset href
-LatexCommand href
-name "aqui"
-target "https://github.com/ldsc/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto"
-literal "false"
+ e um repositório com o modelo completo disponível em 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/ldsc/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto
+\end_layout
 
 \end_inset
 
@@ -384,8 +389,10 @@ literal "false"
 
 \begin_layout Standard
 O processo foi estruturado em três fases:
- ciclo concepção e análise,
- ciclo planejamento detalhado e ciclo construção (implementação).
+ o ciclo de concepção e análise,
+ o ciclo de planejamento detalhado e,
+ por fim,
+ o ciclo de construção (implementação).
  O uso da linguagem C++ com o 
 \emph on
 framework Qt

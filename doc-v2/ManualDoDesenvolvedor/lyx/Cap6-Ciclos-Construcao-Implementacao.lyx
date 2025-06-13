@@ -219,7 +219,7 @@ frame=lines,
 
 basicstyle=
 \backslash
-small
+scriptsize
 \backslash
 ttfamily,
 \end_layout
@@ -830,7 +830,7 @@ status open
 
 
 \backslash
-ref{Main-cpp}
+ref{main-cpp}
 \end_layout
 
 \end_inset
@@ -868,6 +868,20 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -876,12 +890,12 @@ status open
 
 
 \backslash
-ref{CModeloReologico-h}
+ref{CSimuladorReologico-h}
 \end_layout
 
 \end_inset
 
- o arquivo de cabeçalho da classe CModeloReologico.
+ o arquivo de cabeçalho da classe CSimuladorReologico.
  
 \end_layout
 
@@ -895,8 +909,8 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da classe CModeloReologico},
- label={CModeloReologico-h}] {../../../src-v2/CModeloReologico.h}
+lstinputlisting[ caption={Arquivo de implementação da classe CSimuladorReologico},
+ label={CSimuladorReologico-h}] {../../../src-v2/CSimuladorReologico.h}
 \end_layout
 
 \end_inset
@@ -911,6 +925,20 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -919,12 +947,12 @@ status open
 
 
 \backslash
-ref{CModeloReologico-cpp}
+ref{CSimuladorReologico-cpp}
 \end_layout
 
 \end_inset
 
- a implementação da classe CModeloReologico.
+ a implementação da classe CSimuladorReologico.
  
 \end_layout
 
@@ -943,8 +971,8 @@ lstset{style=C++}
 
 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da classe CModeloReologico},
- label={CModeloReologico-cpp}] {../../../src-v2/CModeloReologico.cpp}
+lstinputlisting[ caption={Arquivo de implementação da classe CSimuladorReologico},
+ label={CSimuladorReologico-cpp}] {../../../src-v2/CSimuladorReologico.cpp}
 \end_layout
 
 \end_inset
@@ -956,6 +984,20 @@ lstinputlisting[ caption={Arquivo de implementação da classe CModeloReologico}
 \align center
 Fonte:
  produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -999,6 +1041,20 @@ lstinputlisting[ caption={Arquivo de implementação da classe CModeloReologico}
 \align center
 Fonte:
  produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1050,6 +1106,20 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1078,7 +1148,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CObjetoPoco},
- label={CPoco-h}] {../../../src-v2/CObjetoPoco.h}
+ label={CObjetoPoco-h}] {../../../src-v2/CObjetoPoco.h}
 \end_layout
 
 \end_inset
@@ -1090,6 +1160,20 @@ lstinputlisting[ caption={Arquivo de implementação da classe CObjetoPoco},
 \align center
 Fonte:
  produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1121,7 +1205,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CObjetoPoco},
- label={CPoco-cpp}] {../../../src-v2/CObjetoPoco.cpp}
+ label={CObjetoPoco-cpp}] {../../../src-v2/CObjetoPoco.cpp}
 \end_layout
 
 \end_inset
@@ -1133,6 +1217,20 @@ lstinputlisting[ caption={Arquivo de implementação da classe CObjetoPoco},
 \align center
 Fonte:
  produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1179,6 +1277,20 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1219,6 +1331,20 @@ lstinputlisting[ caption={Arquivo de implementação da classe CFluido},
 \align center
 Fonte:
  produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1265,6 +1391,20 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1308,6 +1448,20 @@ Fonte:
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Apresenta-se na listagem 
 \begin_inset ERT
 status open
@@ -1348,6 +1502,17 @@ lstinputlisting[ caption={Arquivo de implementação da classe CModeloNewtoniano
 \align center
 Fonte:
  produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1391,6 +1556,17 @@ lstinputlisting[ caption={Arquivo de implementação da classe CModeloNewtoniano
 \align center
 Fonte:
  produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1434,6 +1610,17 @@ lstinputlisting[ caption={Arquivo de implementação da classe CModeloBingham},
 \align center
 Fonte:
  produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1477,6 +1664,17 @@ lstinputlisting[ caption={Arquivo de implementação da classe CModeloBingham},
 \align center
 Fonte:
  produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1520,6 +1718,17 @@ lstinputlisting[ caption={Arquivo de implementação da classe CModeloPotencia},
 \align center
 Fonte:
  produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1563,6 +1772,17 @@ lstinputlisting[ caption={Arquivo de implementação da classe CModeloPotencia},
 \align center
 Fonte:
  produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1617,7 +1837,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de implementação da classe CJanelaAdicionarFluido},
- label={CModeloPotencia-h}] {../../../src-v2/CJanelaAdicionarFluido.h}
+ label={CJanelaAdicionarFluido-h}] {../../../src-v2/CJanelaAdicionarFluido.h}
 \end_layout
 
 \end_inset
@@ -1629,6 +1849,17 @@ lstinputlisting[ caption={Arquivo de implementação da classe CJanelaAdicionarF
 \align center
 Fonte:
  produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1672,6 +1903,20 @@ lstinputlisting[ caption={Arquivo de implementação da classe CJanelaAdicionarF
 \align center
 Fonte:
  produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1733,6 +1978,17 @@ ref{CJanelaAdicionarTrechoTubulacao-cpp}
 
  a implementação da classe CJanelaAdicionarTrechoTubulacao.
  
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1776,6 +2032,17 @@ ref{CJanelaGraficoPressaoHidroestatica-h}
 
  o arquivo de cabeçalho da classe CJanelaGraficoPressaoHidroestatica.
  
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1801,6 +2068,17 @@ lstinputlisting[ caption={Arquivo de implementação da classe CJanelaGraficoPre
 \align center
 Fonte:
  produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1818,6 +2096,16 @@ ref{CJanelaGraficoPressaoHidroestatica-cpp}
 \end_inset
 
  a implementação da classe CJanelaGraficoPressaoHidroestatica.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
  
 \end_layout
 
@@ -1844,6 +2132,17 @@ lstinputlisting[ caption={Arquivo de implementação da classe CJanelaGraficoPre
 \align center
 Fonte:
  produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1887,6 +2186,17 @@ lstinputlisting[ caption={Arquivo de implementação da classe CJanelaMenu},
 \align center
 Fonte:
  produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
