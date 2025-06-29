@@ -1225,6 +1225,19 @@ Junho - 2025
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Newpage newpage
 \end_inset
 
@@ -1382,6 +1395,299 @@ Junho - 2025
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing single
+\noindent
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Página de aprovação
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+SOFTWARE EDUCACIONAL PARA ANÁLISE E SOLUÇÃO DE PROBLEMAS EM ENGENHARIA DE POÇO
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Nathan Rangel Magalhães
+\begin_inset VSpace 2.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "50text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align block
+Trabalho de Conclusão de Curso apresentado ao Centro de Ciências e Tecnologia da Universidade Estadual do Norte Fluminense Darcy Ribeiro,
+ como parte das exigências para obtenção do Título de Engenheiro de Exploração e Produção de Petróleo.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Aprovada em 27 de Junho de 2025.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset VSpace defskip
+\end_inset
+
+Comissão Examinadora:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100line%"
+height "1pt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1.25
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\noindent
+\align left
+Prof.
+ José Ricardo Siqueira (D.Sc) - LAMET/UENF
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100line%"
+height "1pt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1.25
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\noindent
+\align left
+Prof.
+ Bruno José Vicente (D.Sc) - LAMET/UENF
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100line%"
+height "1pt"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1.25
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\noindent
+\align left
+Prof.
+ André Duarte Bueno (D.Sc) - LENEP/UENF
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1437,48 +1743,37 @@ Resumo
 \end_layout
 
 \begin_layout Standard
-O presente trabalho descreve o desenvolvimento de um software educacional voltado para alunos de Engenharia de Petróleo e áreas afins,
- com ênfase no estudo e na aplicação dos principais conceitos da disciplina de Engenharia de Poços.
- O software reúne ferramentas de visualização,
+Este trabalho apresenta o desenvolvimento de um software educacional voltado para estudantes de Engenharia de Petróleo e áreas correlatas,
+ com foco na assimilação prática dos principais conceitos da disciplina de Engenharia de Poços.
+ O sistema,
+ concebido com uma interface gráfica intuitiva e recursos interativos,
+ visa auxiliar o aprendizado de tópicos complexos por meio de ferramentas de visualização,
  análise,
  simulação e cálculo,
- abordando os principais tópicos da ementa da disciplina LEP01353 - Engenharia de Poço,
- ministrada no Laboratório de Engenharia e Exploração de Petróleo (LENEP/CCT/UENF) desde o período letivo 2024/01.
-\begin_inset VSpace 0.5cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Com uma interface intuitiva,
- o sistema visa facilitar o aprendizado e o aprofundamento dos usuários,
- podendo ser utilizado tanto por estudantes da disciplina quanto por outros interessados,
- independentemente de sua vinculação institucional.
- Sua proposta é contribuir com o ensino de Engenharia de Poços em contextos didáticos diversos,
- reforçando o caráter educacional do projeto.
-\begin_inset VSpace 0.5cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Este documento apresenta a estruturação e o desenvolvimento do projeto,
- destacando as metodologias utilizadas para garantir sua funcionalidade e relevância no processo de ensino-aprendizagem.
- O desenvolvimento foi conduzido com base em metodologias ágeis e no uso de controle de versões via Git/GitHub,
- práticas amplamente adotadas no mercado de trabalho.
- O software estará disponível publicamente por meio de repositório específico,
- conforme o link abaixo:
- 
-\end_layout
-
-\begin_layout Standard
-github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseE
-\end_layout
-
-\begin_layout Standard
-SolucaoDeProblemasEmEngenhariaDePoco 
+ abrangendo conteúdos-chave da ementa da disciplina LEP01353 - Engenharia de Poço,
+ ministrada no Laboratório de Engenharia e Exploração de Petróleo (LENEP/CCT/UENF) desde o período letivo de 2024/01.
+ O software foi projetado para ser acessível tanto a discentes vinculados à disciplina quanto a outros interessados,
+ inclusive de instituições externas,
+ reforçando seu caráter inclusivo e educativo.
+ O processo de desenvolvimento foi conduzido com base em metodologias ágeis e no uso de sistemas de controle de versão como Git e GitHub,
+ práticas comuns no ambiente profissional e acadêmico contemporâneo.
+ Durante as fases de testes,
+ o sistema foi aplicado em diversos cenários de simulação,
+ como o estudo de perfis térmicos,
+ cálculo de pressão hidrostática,
+ análise de perda de carga em tubulações e anulares,
+ modelagem reológica de fluidos e avaliação do efeito pistão em completações com e sem packer.
+ Os resultados obtidos demonstraram que o software é capaz de representar com fidelidade os fenômenos envolvidos,
+ facilitando a compreensão dos mecanismos físicos e operacionais típicos da engenharia de poços.
+ Além disso,
+ os testes apontaram boa estabilidade computacional e respostas coerentes com os parâmetros de entrada fornecidos.
+ A proposta da ferramenta educacional mostrou-se eficaz tanto no apoio a aulas práticas e teóricas quanto no estímulo à autonomia dos alunos na exploração de variáveis operacionais,
+ consolidando-se como um recurso didático inovador e de alta relevância no processo de ensino-aprendizagem.
+ Conclui-se,
+ portanto,
+ que o projeto atingiu seus objetivos iniciais,
+ oferecendo uma solução tecnológica viável,
+ didaticamente rica e academicamente alinhada às necessidades da formação em engenharia de petróleo.
 \begin_inset VSpace 0.5cm
 \end_inset
 
@@ -1496,6 +1791,78 @@ Simulador educacional.
  Visualização e análise.
  Simulação.
  Ensino de Engenharia de Petróleo.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+Abstract
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This work presents the development of an educational software aimed at students of Petroleum Engineering and related fields,
+ focusing on the practical understanding of key concepts covered in the Well Engineering course.
+ The system was designed with an intuitive graphical interface and interactive tools to support the learning process through modules of visualization,
+ analysis,
+ simulation,
+ and calculation,
+ addressing essential topics from the syllabus of course LEP01353 – Well Engineering,
+ taught at the Petroleum Engineering and Exploration Laboratory (LENEP/CCT/UENF) since the 2024/01 academic term.
+ The software is intended to be accessible not only to students officially enrolled in the course but also to other interested users,
+ regardless of institutional affiliation,
+ thereby reinforcing its inclusive and educational nature.
+ The development process followed agile methodologies and utilized Git/GitHub for version control,
+ aligning with widely adopted practices in both academia and industry.
+ During testing phases,
+ the software was applied to various simulation scenarios,
+ including thermal profiling,
+ hydrostatic pressure calculations,
+ frictional pressure loss in pipes and annuli,
+ rheological modeling of drilling fluids,
+ and piston effect analysis in well completions with and without packers.
+ The results demonstrated that the system is capable of accurately representing the relevant physical and operational phenomena,
+ facilitating a deeper understanding of well engineering mechanisms.
+ Additionally,
+ simulations confirmed the tool’s computational stability and consistency with input parameters.
+ The educational platform proved to be effective in supporting both theoretical and practical instruction,
+ while also encouraging student autonomy in the exploration of operational variables.
+ In conclusion,
+ the project successfully achieved its objectives,
+ offering a viable technological solution that is pedagogically valuable and well-aligned with the academic demands of petroleum engineering education.
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Keywords:
+ 
+\series default
+Educational simulator.
+ Petroleum Engineering education.
+ Simulation.
+ Visualization and analysis.
+ Well Engineering.
 \end_layout
 
 \begin_layout Standard

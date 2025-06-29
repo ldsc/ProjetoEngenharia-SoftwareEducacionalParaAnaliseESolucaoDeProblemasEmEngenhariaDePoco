@@ -267,7 +267,10 @@ Diagrama de componentes
 O diagrama de componentes apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Diagrama-de-Pacotes"
+reference "fig:Diagrama-de-componentes"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
 
 \end_inset
@@ -387,10 +390,6 @@ Fonte:
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 

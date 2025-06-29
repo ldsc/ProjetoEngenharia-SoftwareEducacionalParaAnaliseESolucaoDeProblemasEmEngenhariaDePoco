@@ -894,6 +894,21 @@ Com essas melhorias,
 \end_layout
 
 \begin_layout Standard
+Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:v2.6"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document
@@ -1043,7 +1058,18 @@ literal "false"
 A versão 3.0 do software introduziu uma das mudanças mais significativas desde o início do projeto,
  ao implementar um sistema de navegação baseado em módulos.
  Logo ao iniciar o programa,
- o usuário se depara com um menu principal contendo dois botões de acesso:
+ o usuário se depara com um menu principal (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:v3.0-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).contendo dois botões de acesso:
  Módulo 1 e Módulo 2,
  além de informações institucionais como nome do software,
  desenvolvedor,
@@ -1051,7 +1077,18 @@ A versão 3.0 do software introduziu uma das mudanças mais significativas desde
 \end_layout
 
 \begin_layout Standard
-O Módulo 1 direciona para o simulador hidráulico de perfuração,
+O Módulo 1 (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:v3.0-2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) direciona para o simulador hidráulico de perfuração,
  que engloba todas as funcionalidades desenvolvidas até a versão 2.6,
  incluindo a simulação de escoamento,
  cálculo de pressão hidrostática e perdas por fricção com base em modelos reológicos.
@@ -1059,7 +1096,18 @@ O Módulo 1 direciona para o simulador hidráulico de perfuração,
 \end_layout
 
 \begin_layout Standard
-O Módulo 2,
+O Módulo 2 (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:v3.0-3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+),
  por sua vez,
  representa a nova funcionalidade da versão 3.0:
  o módulo de análise de tensões em colunas.

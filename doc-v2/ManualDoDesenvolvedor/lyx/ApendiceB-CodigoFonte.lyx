@@ -1,0 +1,2258 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+% Codificação de entrada: permite usar acentos no texto
+\usepackage[utf8]{inputenc}  % <- Essa linha é suficiente se o arquivo estiver salvo como UTF-8
+
+% Pacotes básicos de formatação
+\usepackage{graphicx}    % para inserir imagens
+\usepackage{longtable}   % para tabelas longas
+\usepackage{indentfirst} % para indentar o primeiro parágrafo de cada seção
+\renewenvironment{center}{\par\centering}{\par} % centralização mais segura
+
+% Comentários sobre pacotes de citação
+% \usepackage[alf, abnt-etal-cite=2, abnt-year-extra-label=yes, abnt-etal-list=0]{abntcite}
+% \usepackage{helvet}
+% \renewcommand{\familydefault}{\sfdefault}
+
+% Cores para os códigos
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}
+\definecolor{lightgray}{rgb}{0.8,0.8,0.8}
+\definecolor{mygreen1}{rgb}{0.2,1,0}
+\definecolor{mygreen2}{rgb}{0.2,1,0}
+\definecolor{brown}{rgb}{0.6,0.3,0}
+\definecolor{olive}{rgb}{0.5,0.5,0}
+\definecolor{mymauve}{rgb}{0.9,0.7,1}
+
+% Listagens de código-fonte
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Listagem} % muda o nome que aparece nas legendas
+\appendix
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children no
+\language brazilian
+\language_package auto
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement p
+\float_alignment class
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Ciclos Construção
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Ciclo construção
+\end_layout
+
+\end_inset
+
+ - Implementação
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Implementação
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Implementação"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neste apêndice,
+ são apresentados os códigos fonte implementados,
+ além dos códigos responsáveis pela interface.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Definições de informações aplicadas a códigos de C++ embutidos
+\end_layout
+
+\begin_layout Plain Layout
+Pacote listings.pdf
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstdefinestyle{C++}{
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+appendix
+\end_layout
+
+\begin_layout Plain Layout
+
+% tipo de bordas
+\end_layout
+
+\begin_layout Plain Layout
+
+frame=lines,
+\end_layout
+
+\begin_layout Plain Layout
+
+% tamanho da fonte e tipo de fonte
+\end_layout
+
+\begin_layout Plain Layout
+
+basicstyle=
+\backslash
+scriptsize
+\backslash
+ttfamily,
+\end_layout
+
+\begin_layout Plain Layout
+
+% linguagem
+\end_layout
+
+\begin_layout Plain Layout
+
+language=[ISO]C++,
+\end_layout
+
+\begin_layout Plain Layout
+
+% numeração
+\end_layout
+
+\begin_layout Plain Layout
+
+numbers=left,
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+numberstyle=
+\backslash
+tiny,
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+stepnumber=1,
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+numbersep=1pt,
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+firstnumber=1,
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+% formatação
+\end_layout
+
+\begin_layout Plain Layout
+
+breakatwhitespace=false,
+\end_layout
+
+\begin_layout Plain Layout
+
+breaklines=true,
+\end_layout
+
+\begin_layout Plain Layout
+
+extendedchars=true,
+\end_layout
+
+\begin_layout Plain Layout
+
+% cores
+\end_layout
+
+\begin_layout Plain Layout
+
+backgroundcolor=
+\backslash
+color{white},
+\end_layout
+
+\begin_layout Plain Layout
+
+commentstyle=
+\backslash
+color{lightgray},
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+keywordstyle=
+\backslash
+color{blue},
+\end_layout
+
+\begin_layout Plain Layout
+
+morekeywords={*,...},
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+stringstyle=
+\backslash
+color{mygreen1},
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+% Palavras chave BLUE
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={ bool,
+ char,
+ char8_t,
+ char16_t,
+ char32_t,
+ wchar_t,short,
+ int,
+ long,
+ long long,
+ float,
+ double,
+ long double,
+ void,
+ const,
+ extern,
+ mutable,
+ register,
+ signed,
+ static,
+ typedef,
+ unsigned,
+ volatile,
+ using,
+ typename,
+ auto,
+ constexpr,
+ decltype,
+ class,
+ enum,
+ struct,
+ union,
+ const_cast,
+ dynamic_cast,
+ reinterpret_cast,
+ static_cast,
+ try,
+ throw,
+ catch,
+ noexcept,
+ delete,
+ new,
+ nullptr,
+ static,
+ const,
+ friend,
+ virtual,
+ operator,
+ namespace,
+ sizeof,
+ template,
+ typename,
+ concept,
+ class,
+  delete,
+ friend,
+ explicit,
+ this,
+ typeid,
+ private,
+ protected,
+ public,
+ alignas,
+ alignof,
+ asm,
+ concept,
+ consteval,
+ constexpr,
+ constinit export,
+ extern,
+ inline,
+ static_assert,
+ requires,
+ template,
+ typename,
+ mutable,
+  volatile,
+ co_await,
+ co_return,
+ co_yield,
+ atomic_cancel,
+ atomic_commit,
+ atomic_noexcept,
+ import,
+ module,
+ synchronized,co_await,
+ co_return,
+ co_yield,
+ reflexpr },
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle={
+\backslash
+color{blue}},
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+% Estruturas de controle e de repeticao RED
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={[2] and,
+ and_eq,
+ bitand,
+ bitor,
+ compl,
+ false,
+ not,
+ not_eq,
+ or,
+ or_eq,
+ true,
+ xor,
+ xor_eq,
+ break,
+ case,
+ continue,
+ default,
+ do,
+ else,
+ for,
+ goto,
+ if,
+ return,
+ switch,
+ while  } ,
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle={[2]
+\backslash
+color{red}},
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+% Arquivos de inclusao mymauve (note que alguns poderao aparecer com outra cor,
+ ocorre quando nome arquivo igual ao nome da classe)
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={[3] algorithm ,
+ atomic ,backward ,bits ,bitset ,cassert ,ccomplex ,cctype ,cerrno ,cfenv ,cfloat ,chrono ,cinttypes ,ciso646 ,climits ,clocale ,cmath ,complex ,csetjmp ,csignal ,cstdalign ,cstdarg ,cstdbool ,cstddef ,cstdint ,cstdio ,cstdlib ,cstring ,ctgmath ,ctime ,cwchar ,cwctype ,debug ,decimal ,exception ,ext ,filesystem,
+ fstream ,functional  ,initializer_list ,iomanip ,ios ,iosfwd ,iostream ,istream ,iterator ,limits ,locale ,numeric ,ostream ,profile ,random ,ratio ,regex ,scoped_allocator ,sstream ,stack ,stdexcept  ,streambuf ,system_error ,tr1 ,tr2 ,typeindex ,typeinfo ,type_traits ,utility ,x86_64-redhat-linux ,complex } ,
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle={[3]
+\backslash
+color{green}},
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+% Strings VERDE2
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={[4] string,
+ string_view,
+ wstring,
+ u16string,u32string } ,
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle={[4]
+\backslash
+color{mygreen2}
+\backslash
+bfseries},
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+% Containers purple
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={[5]  array,
+ vector,
+ deque,
+ forward_list,
+ list,
+ set,
+ multiset,
+ map,
+ multimap,
+ unordered_set,
+ unordered_multiset,
+ unordered_map,
+ unordered_multimap ,
+ pair,
+ tuple,
+ basic_string },
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle={[5]
+\backslash
+color{brown}
+\backslash
+bfseries},
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+%Algoritmos genericos VERMELHO2
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={[6]  accumulate,
+ find,
+ max,
+ adjacent_find,
+ find_if,
+ max_element,
+ binary_search,
+ min,
+ count,
+ find_first_of,
+ for_each,
+ min_element,
+ count_if,
+ includes,
+ mismatch,
+ equal,
+ lexicographical_compare,
+ nth_element,
+ equal_range,
+ lower_bound,
+ mismatch,
+ search,
+ search_n,
+ find_end,
+ upper_bound,
+ copy,
+ remove_if,
+ copy_backward,
+ replace,
+ fill,
+ replace_copy,
+ fill_n,
+ replace_copy_if,
+ generate,
+ replace_if,
+ generate_n,
+ reverse,
+ inplace_merge,
+ reverse_copy,
+ iter_swap,
+ rotate,
+  make_heap,
+ rotate_copy,
+ merge,
+ set_difference,
+ nth_element,
+ next_permutation,
+ set_intersection,
+ set_symmetric_difference,
+ partial_sort,
+ set_union,
+ partial_sort_copy,
+ sort,
+ partition,
+ sort_heap,
+ prev_permutation,
+ stable_partition,
+ push_heap,
+ stable_sort,
+ pop_heap,
+ swap,
+ random_shuffle,
+ swap_ranges,
+ remove,
+ transform,
+ unique,
+ unique_copy,
+ remove_copy,
+ remove_copy_if,
+ all_of,
+ any_of,
+ none_of,
+ find_if_not,
+ copy_if,
+ copy_n,
+ move,
+ move_backward,
+ suffle,
+ is_partitioned,
+ partition_copy,
+ partition_point,
+ is_sorted,
+ is_sorted_until,
+ is_heap,
+ is_heap_until,
+ minmax,
+ minmax_element,
+ is_permutation,
+ iota,
+ uninitialized_copy_n,
+ for_each_n,
+ sample,
+ clamp,
+ reduce,
+ exclusive_scan,
+ inclusive_scan,
+ transform_reduce,
+ transform_exclusive_scan,
+ transform_inclusive_scan,
+ uninitialized_move,
+ uninitialized_move_n,
+ uninitialized_default_construct,
+ uninitialized_default_construct_n,
+ uninitialized_value_construct,
+ uninitialized_value_construct_n,
+ destroy,
+ destroy_at,
+ destroy_n,
+ shift_left,
+ shift_right,
+ compare_3way,
+ lexicographical_compare_3way } ,
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle={[6]
+\backslash
+color{olive}},
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\begin_layout Plain Layout
+
+% Processamento Paralelo Orange/laranja
+\end_layout
+
+\begin_layout Plain Layout
+
+emph={[7] thread,
+ yield,
+ get_id,
+ sleep_for,
+ sleep_until,
+ thread_local,
+ memory,
+ mutex,
+ parallel,
+ mutex,
+ timed_mutex,
+ recursive_mutex,
+ shared_mutex,
+ shared_timed_mutex,
+ lock_guard,
+ scoped_lock,
+ unique_lock,
+ shared_lock,
+ defer_lock_t,
+ try_to_lock_t,
+ adopt_lock_t,
+ try_lock,
+ lock,
+ once_flag,
+ call_once,
+ condition_variable,
+ condition_variable_any,
+ notify_all_at_thread_exit,
+ cv_status,
+ promise,
+ packaged_task,
+ future,
+ shared_future,
+ async,
+ launch,
+ future_status,
+ future_error,
+ future_category,
+ future_errc,
+ hardware_destructive_interference_size,
+ hardware_constructive_interference_size  } ,
+\end_layout
+
+\begin_layout Plain Layout
+
+emphstyle={[7]
+\backslash
+color{mymauve}},
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Código-Fonte (modelo) 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Codigo-Fonte"
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Código Fonte
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como visto na seção anterior,
+ a versão 0.1 foi a última desenvolvida utilizando execução no terminal.
+ Abaixo serão exibidas as classes necessárias para a interação via terminal.
+\end_layout
+
+\begin_layout Standard
+Apresenta-se a seguir um conjunto de classes (arquivos .h e .cpp) além do programa 
+\shape italic
+main
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{main-cpp}
+\end_layout
+
+\end_inset
+
+ o arquivo com código da função 
+\shape italic
+main
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da função main},
+ label={main-cpp}] {../../../src-v2/Main.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CSimuladorReologico-h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe CSimuladorReologico.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CSimuladorReologico},
+ label={CSimuladorReologico-h}] {../../../src-v2/CSimuladorReologico.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CSimuladorReologico-cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe CSimuladorReologico.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CSimuladorReologico},
+ label={CSimuladorReologico-cpp}] {../../../src-v2/CSimuladorReologico.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CSimuladorPerdaTubulacao-h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe CSimuladorPerdaTubulacao.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloReologico},
+ label={CSimuladorPerdaTubulacao-h}] {../../../src-v2/CSimuladorPerdaTubulacao.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CSimuladorPerdaTubulacao-cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe CSimuladorPerdaTubulacao.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloReologico},
+ label={CSimuladorPerdaTubulacao-cpp}] {../../../src-v2/CSimuladorPerdaTubulacao.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CObjetoPoco-h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe CObjetoPoco.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CObjetoPoco},
+ label={CObjetoPoco-h}] {../../../src-v2/CObjetoPoco.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CObjetoPoco-cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe CObjetoPoco.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CObjetoPoco},
+ label={CObjetoPoco-cpp}] {../../../src-v2/CObjetoPoco.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CFluido-h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe CFluido.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CFluido},
+ label={CFluido-h}] {../../../src-v2/CFluido.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CFluido-cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe CFluido.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CFluido},
+ label={CFluido-cpp}] {../../../src-v2/CFluido.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CModeloReologico-h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe CModeloReologico.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloReologico},
+ label={CModeloReologico-h}] {../../../src-v2/CModeloReologico.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CModeloReologico-cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe CModeloReologico.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloReologico},
+ label={CModeloReologico-cpp}] {../../../src-v2/CModeloReologico.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CModeloNewtoniano-h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe CModeloNewtoniano.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloNewtoniano},
+ label={CModeloNewtoniano-h}] {../../../src-v2/CModeloNewtoniano.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CModeloNewtoniano-cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe CModeloNewtoniano.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloNewtoniano},
+ label={CModeloNewtoniano-cpp}] {../../../src-v2/CModeloNewtoniano.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CModeloBingham-h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe CModeloBingham.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloBingham},
+ label={CModeloBingham-h}] {../../../src-v2/CModeloBingham.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CModeloBingham-cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe CModeloBingham.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloBingham},
+ label={CModeloBingham-cpp}] {../../../src-v2/CModeloBingham.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CModeloPotencia-h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe CModeloPotencia.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloPotencia},
+ label={CModeloPotencia-h}] {../../../src-v2/CModeloPotencia.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CModeloPotencia-cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe CModeloPotencia.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CModeloPotencia},
+ label={CModeloPotencia-cpp}] {../../../src-v2/CModeloPotencia.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Código Qt (interface) 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Codigo-QT"
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Código QT
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CJanelaAdicionarFluido-h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe CJanelaAdicionarFluido.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CJanelaAdicionarFluido},
+ label={CJanelaAdicionarFluido-h}] {../../../src-v2/CJanelaAdicionarFluido.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CJanelaAdicionarFluido-cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe CJanelaAdicionarFluido.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CJanelaAdicionarFluido},
+ label={CJanelaAdicionarFluido-cpp}] {../../../src-v2/CJanelaAdicionarFluido.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CJanelaAdicionarTrechoTubulacao-h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe CJanelaAdicionarTrechoTubulacao.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CJanelaAdicionarTrechoTubulacao},
+ label={CJanelaAdicionarTrechoTubulacao-h}] {../../../src-v2/CJanelaAdicionarTrechoTubulacao.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CJanelaAdicionarTrechoTubulacao-cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe CJanelaAdicionarTrechoTubulacao.
+ 
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CJanelaAdicionarTrechoTubulacao},
+ label={CJanelaAdicionarTrechoTubulacao-cpp}] {../../../src-v2/CJanelaAdicionarTrechoTubulacao.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CJanelaGraficoPressaoHidroestatica-h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe CJanelaGraficoPressaoHidroestatica.
+ 
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CJanelaGraficoPressaoHidroestatica},
+ label={CJanelaGraficoPressaoHidroestatica-h}] {../../../src-v2/CJanelaGraficoPressaoHidroestatica.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CJanelaGraficoPressaoHidroestatica-cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe CJanelaGraficoPressaoHidroestatica.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CJanelaGraficoPressaoHidroestatica},
+ label={CJanelaGraficoPressaoHidroestatica-cpp}] {../../../src-v2/CJanelaGraficoPressaoHidroestatica.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CJanelaMenu-h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe CJanelaMenu.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CJanelaMenu},
+ label={CJanelaMenu-h}] {../../../src-v2/CJanelaMenu.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CJanelaMenu-cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe CJanelaMenu.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CJanelaMenu},
+ label={CJanelaMenu-cpp}] {../../../src-v2/CJanelaMenu.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Fonte:
+ produzido pelo autor.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

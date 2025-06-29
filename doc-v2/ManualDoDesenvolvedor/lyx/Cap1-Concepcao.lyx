@@ -218,6 +218,25 @@ O sistema desenvolvido,
  denominado Software Educacional para Análise e Solução de Problemas em Engenharia de Poço.
  A base tecnológica permitiu a criação de uma interface gráfica robusta,
  que facilita a navegação e oferece recursos visuais para apoio ao ensino.
+\end_layout
+
+\begin_layout Standard
+A 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Características-básicas-do"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ apresentada a seguir,
+ resume as principais características do sistema,
+ incluindo seu nome,
+ missão e os componentes que o integram.
 \begin_inset VSpace defskip
 \end_inset
 

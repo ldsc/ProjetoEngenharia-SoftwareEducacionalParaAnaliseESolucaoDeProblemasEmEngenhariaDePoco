@@ -1213,7 +1213,62 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-A partir dessa dedução chegamos à Equação (
+No diagrama da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-corpo-livre"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ observa-se a atuação de três forças principais sobre um elemento cilíndrico de fluido com área transversal 
+\begin_inset Formula $A$
+\end_inset
+
+ e e altura 
+\begin_inset Formula $dZ$
+\end_inset
+
+,
+ situado a uma profundidade 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ A força 
+\begin_inset Formula $F_{1}$
+\end_inset
+
+representa a pressão exercida pelo fluido sobre a face superior do elemento,
+ atuando para baixo,
+ enquanto 
+\begin_inset Formula $F_{2}$
+\end_inset
+
+ é a força de pressão exercida pela camada inferior do fluido,
+ atuando para cima.
+ Já a força 
+\begin_inset Formula $F_{w}$
+\end_inset
+
+corresponde ao peso do elemento de fluido,
+ atuando também para baixo.
+ A diferença entre as forças 
+\begin_inset Formula $F_{1}$
+\end_inset
+
+ e 
+\begin_inset Formula $F_{2}$
+\end_inset
+
+,
+ em equilíbrio com o peso do fluido,
+ permite deduzir a equação da variação da pressão com a profundidade,
+ conforme mostrado na Equação 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:EquacaoPressao"
@@ -1224,8 +1279,7 @@ nolink "false"
 
 \end_inset
 
-) a seguir:
- 
+.
 \end_layout
 
 \begin_layout Standard
@@ -1732,7 +1786,9 @@ A razão
 \end_layout
 
 \begin_layout Standard
-A taxa de cisalhamento 
+Em reologia,
+ os termos taxa de cisalhamento e taxa de deformação são frequentemente utilizados como sinônimos,
+ ambos representados por 
 \begin_inset Formula $\dot{\gamma}$
 \end_inset
 
@@ -1740,24 +1796,8 @@ A taxa de cisalhamento
 \begin_inset Formula $\left[1/s\right]$
 \end_inset
 
-é expressa como o gradiente da velocidade 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $\frac{v}{L}$
-\end_inset
-
-:
+.
+ Esse parâmetro descreve o gradiente da velocidade entre camadas adjacentes de fluido em movimento relativo:
 \end_layout
 
 \begin_layout Standard
@@ -1772,8 +1812,7 @@ A taxa de cisalhamento
 \end_layout
 
 \begin_layout Standard
-A viscosidade aparente pode ser definida como a razão entre a tensão de cisalhamento e a taxa de cisalhamento.
- A principal característica de um fluido Newtoniano é a viscosidade constante do fluido.
+A principal característica de um fluido Newtoniano é a viscosidade constante do fluido.
  Como sabemos os fluidos de perfuração são misturas complexas que não podem ser caracterizadas por um único valor de viscosidade,
  quando um fluido não apresenta uma proporcionalidade entre tensão de cisalhamento e taxa de cisalhamento ele passa a ser conhecido como um fluido não Newtoniano,
  podendo ser pseudoplásticos se a viscosidade diminui com o aumento da taxa de cisalhamento e dilatantes se a viscosidade aumenta com o aumento da taxa de cisalhamento (

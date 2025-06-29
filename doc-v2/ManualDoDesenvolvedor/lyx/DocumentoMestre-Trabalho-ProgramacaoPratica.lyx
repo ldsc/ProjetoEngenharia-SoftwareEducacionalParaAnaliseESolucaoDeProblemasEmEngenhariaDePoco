@@ -161,6 +161,18 @@ literal "true"
 \align block
 \begin_inset CommandInset include
 LatexCommand include
+filename "Cap0-Metodologia.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset include
+LatexCommand include
 filename "Cap1-Concepcao.lyx"
 literal "true"
 
@@ -221,7 +233,7 @@ literal "true"
 \align block
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap6-Ciclos-Construcao-Implementacao.lyx"
+filename "Cap6-Teste.lyx"
 literal "true"
 
 \end_inset
@@ -233,7 +245,7 @@ literal "true"
 \align block
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap7-Teste.lyx"
+filename "Cap7-Documentacao.lyx"
 literal "true"
 
 \end_inset
@@ -245,33 +257,54 @@ literal "true"
 \align block
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap8-Documentacao.lyx"
+filename "Cap8-Conclusão.lyx"
 literal "true"
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap9-Documentacao-ManualDesenvolvedor.lyx"
-literal "true"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "bibliografia"
 options "bibtotoc,authordate2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+appendix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "ApendiceA-ManualDoDesenvolvedor.lyx"
+literal "true"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "ApendiceB-CodigoFonte.lyx"
+literal "true"
 
 \end_inset
 

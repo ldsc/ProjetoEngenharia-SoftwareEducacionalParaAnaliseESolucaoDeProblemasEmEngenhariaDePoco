@@ -98,7 +98,6 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author -501900170 "NMagalhaes"
 \author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
@@ -192,48 +191,44 @@ name "sec:Diagramas-de-classes"
 \end_layout
 
 \begin_layout Standard
-O diagrama de classes é apresentado na Figura 
+A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cap:Diagrama-de-classes"
+reference "cap:Diagrama-de-classes-Simplificado"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
 
 \end_inset
 
-.
- Seu objetivo é representar graficamente a estrutura estática do sistema,
- evidenciando todas as classes envolvidas,
- seus respectivos atributos,
- métodos,
- relações de herança e associações entre as classes.
+ apresenta o diagrama de classes simplificado,
+ que representa graficamente a estrutura estática do sistema por meio das principais classes e suas relações.
+ Esse modelo tem como objetivo fornecer uma visão geral da arquitetura do software,
+ destacando apenas os elementos estruturais essenciais,
+ sem detalhar atributos e métodos.
 \end_layout
 
 \begin_layout Standard
-Essa representação segue a notação da UML
-\change_deleted -501900170 1748865769
- 
-\change_unchanged
- e serve como base para o entendimento da arquitetura do software,
- permitindo uma visão clara da organização interna dos componentes e de suas interdependências.
-\end_layout
-
-\begin_layout Standard
-O diagrama de classes é apresentado na Figura
-\change_deleted 643308733 1748564803
- 
-\change_unchanged
- 
+Na sequência,
+ a Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-classes"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
-.
- Ele tem como objetivo apresentar todas as classes,
- seus atributos,
+ exibe o diagrama de classes completo,
+ conforme a notação UML,
+ incluindo todos os atributos,
  métodos,
- heranças e relações entre as classes.
+ heranças e associações entre as classes.
+ Essa representação detalhada é fundamental para o entendimento pleno da arquitetura interna do sistema,
+ permitindo uma análise precisa da organização e das interdependências entre seus componentes.
 \end_layout
 
 \begin_layout Standard
@@ -249,7 +244,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de classes
+Diagrama de classes simplificado
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-classes-Simplificado"
@@ -345,7 +340,7 @@ Fonte:
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Dicionário de Classes
 \begin_inset CommandInset label
 LatexCommand label
@@ -575,7 +570,7 @@ Sua construção geralmente tem como base os cenários definidos nos diagramas d
  permitindo uma visualização clara da lógica de execução dos processos.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 
 \shape italic
 \emph on
@@ -590,7 +585,7 @@ name "subsec: Diagrama de sequência geral"
 \end_layout
 
 \begin_layout Standard
-O diagrama de comunicação do módulo reológico 
+O diagrama de comunicação do módulo reológico na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-sequencia"
@@ -667,10 +662,6 @@ Fonte:
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Section
 Diagrama de Comunicação
 \begin_inset Index idx
@@ -726,7 +717,18 @@ name "par:Diagrama-de-colaboração:"
 \end_layout
 
 \begin_layout Standard
-O diagrama de comunicação representa as interações entre os objetos do sistema em um determinado contexto,
+O diagrama de comunicação na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-comunicação"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ representa as interações entre os objetos do sistema em um determinado contexto,
  evidenciando a troca de mensagens e a sequência dos processos envolvidos.
  A disposição dos elementos enfatiza os relacionamentos estruturais,
  ao mesmo tempo em que indica a ordem numérica das mensagens trocadas durante a execução de uma tarefa específica.
@@ -839,7 +841,7 @@ O diagrama de máquina de estados descreve os diferentes estados que um objeto p
 \end_layout
 
 \begin_layout Standard
-O diagrama de máquina de estados do módulo de simulação térmico-mecânica 
+O diagrama de máquina de estados do módulo de simulação térmico-mecânica na figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-maquina-de-estado"
@@ -927,7 +929,18 @@ name "sec: Diagrama de atividades"
 \end_layout
 
 \begin_layout Standard
-O diagrama de atividades apresentado descreve,
+O diagrama de atividades apresentado na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-atividades"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ descreve,
  em detalhe,
  a execução de uma atividade específica do sistema.
  No caso em questão,
