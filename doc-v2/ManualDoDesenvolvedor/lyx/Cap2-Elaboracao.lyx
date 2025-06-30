@@ -1117,7 +1117,15 @@ Na engenharia de perfuração,
  Para cumprir essas funções,
  o fluido depende do seu escoamento na tubulação e das pressões associadas.
  Para que o engenheiro possa formular o fluido mais adequado a cada situação específica,
- é essencial que ele seja capaz de prever as pressões e os escoamentos ao longo do poço.
+ é essencial que ele seja capaz de prever as pressões e os escoamentos ao longo do poço (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fredrickson1958,Dodge1963"
+literal "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -1436,7 +1444,7 @@ blowout
  além de não causar fraturas na formação as quais poderiam provocar uma perda de circulação de fluido que também é indesejada (
 \begin_inset CommandInset citation
 LatexCommand cite
-key "APPLIED1991"
+key "Butts1972,Lamb1945,Annis1967"
 literal "false"
 
 \end_inset
@@ -1570,7 +1578,7 @@ Na maioria dos casos,
  os testes devem considerar também as propriedades elásticas associadas à deformação do fluido durante o escoamento (
 \begin_inset CommandInset citation
 LatexCommand cite
-key "FUNDAMENTALS2011"
+key "FUNDAMENTALS2011,Hanks1967"
 literal "false"
 
 \end_inset
@@ -1589,7 +1597,7 @@ Para isso,
  o modelo plástico de Bingham e o modelo da lei das potências (
 \begin_inset CommandInset citation
 LatexCommand cite
-key "APPLIED1991"
+key "APPLIED1991,Fredrickson1958,Dodge1959"
 literal "false"
 
 \end_inset
@@ -1818,7 +1826,7 @@ A principal característica de um fluido Newtoniano é a viscosidade constante d
  podendo ser pseudoplásticos se a viscosidade diminui com o aumento da taxa de cisalhamento e dilatantes se a viscosidade aumenta com o aumento da taxa de cisalhamento (
 \begin_inset CommandInset citation
 LatexCommand cite
-key "FUNDAMENTALS2011"
+key "FUNDAMENTALS2011,Fredrickson1958"
 literal "false"
 
 \end_inset
@@ -2010,7 +2018,7 @@ A perda de pressão friccional durante a circulação de fluidos em operações 
  para cada modelo existe uma equação para a obtenção do número de Reynolds (
 \begin_inset CommandInset citation
 LatexCommand cite
-key "APPLIED1991"
+key "APPLIED1991,Hanks1967"
 literal "false"
 
 \end_inset
@@ -2317,7 +2325,15 @@ Perda de Pressão Friccional em um Anular
 \begin_layout Standard
 A perda de pressão friccional durante a circulação de fluidos em operações de perfuração também pode ocorrer no anular,
  e assim como a perda na tubulação,
- pode ser calculada através de diferentes modelos de fluido.
+ pode ser calculada através de diferentes modelos de fluido (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hanks1967,Dodge1963,Dodge1959"
+literal "false"
+
+\end_inset
+
+).
  Assim como vimos anteriormente o primeiro paço é determinar o tipo de escoamento,
  para isso utilizamos o número de Reynolds,
  porém para cada modelo existe uma equação para a obtenção do número de Reynolds.
@@ -2608,7 +2624,7 @@ Com base em Bourgoyne et al.
  apresenta-se nesta seção a descrição dos principais efeitos envolvidos na variação da carga e do deslocamento axial de colunas tubulares em poços de petróleo (
 \begin_inset CommandInset citation
 LatexCommand cite
-key "FUNDAMENTALS2011"
+key "FUNDAMENTALS2011,Boresi2002"
 literal "false"
 
 \end_inset
@@ -2624,9 +2640,25 @@ Efeito da Variação de Temperatura
 A variação de temperatura ao longo de uma coluna de produção causa dilatação ou contração térmica,
  influenciando diretamente o seu comprimento axial.
  Esse efeito é particularmente importante em poços profundos,
- onde o gradiente geotérmico e as operações de circulação de fluido podem resultar em variações térmicas significativas.
+ onde o gradiente geotérmico e as operações de circulação de fluido podem resultar em variações térmicas significativas (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Adams1991"
+literal "false"
+
+\end_inset
+
+).
  O alongamento ou encurtamento da coluna por temperatura é um fenômeno reversível,
- assumindo-se comportamento elástico do material.
+ assumindo-se comportamento elástico do material (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Adams1991,Seely1965"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2790,7 +2822,15 @@ A força de pistão é um fenômeno mecânico relevante no comportamento de colu
  Este efeito resulta da aplicação de pressões desbalanceadas sobre áreas distintas ao longo da coluna,
  gerando uma força líquida que provoca deslocamento axial.
  Esse comportamento é especialmente crítico em cenários de altas pressões diferenciais,
- podendo contribuir para falhas estruturais se não for devidamente considerado no projeto.
+ podendo contribuir para falhas estruturais se não for devidamente considerado no projeto (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FUNDAMENTALS2011,Mitchell2008,Lubinski1962"
+literal "false"
+
+\end_inset
+
+).
  A formulação matemática para esse efeito encontra-se descrita por 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2801,7 +2841,7 @@ literal "false"
 
 ,
  em sua Equação 7.51 (p.
- 426).
+ 426) .
  
 \end_layout
 
@@ -2858,6 +2898,15 @@ Quando um packer é instalado em uma coluna,
  onde a pressão do fluido acima e abaixo do packer pode ser distinta.
  Essa diferença de pressão exerce uma força líquida axial sobre a coluna,
  caracterizando o chamado efeito pistão.
+ A formulação e consequências desse comportamento são discutidas em detalhe por 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lubinski1962,Mitchell2008"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2910,7 +2959,7 @@ Em pontos da coluna onde há mudanças geométricas,
  ocorre o que se denomina crossover.
  Nessas regiões,
  as áreas internas e externas variam,
- o que implica em diferenças de força quando submetidas à mesma pressão.
+ o que implica em diferenças de força quando submetidas à mesma pressão .
 \end_layout
 
 \begin_layout Standard
@@ -2991,7 +3040,15 @@ Coluna livre:
  permite-se sua expansão ou contração axial.
  Nesse cenário,
  parte da energia associada à variação de pressão é absorvida na forma de deformação longitudinal,
- reduzindo a magnitude da carga axial transmitida.
+ reduzindo a magnitude da carga axial transmitida (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Mitchell2008"
+literal "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Itemize
