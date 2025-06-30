@@ -105,7 +105,7 @@
 \papersides 2
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -114,7 +114,6 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -1617,7 +1616,7 @@ baselineskip}
 \noindent
 \align left
 Prof.
- Bruno José Vicente (D.Sc) - LAMET/UENF
+ Bruno José Vicente (D.Sc) - LENEP/UENF
 \begin_inset space ~
 \end_inset
 
@@ -1665,7 +1664,7 @@ baselineskip}
 \noindent
 \align left
 Prof.
- André Duarte Bueno (D.Sc) - LENEP/UENF
+ André Duarte Bueno (D.Sc) - LENEP/UENF (Orientador)
 \begin_inset space ~
 \end_inset
 
@@ -1746,13 +1745,7 @@ Resumo
 \begin_layout Standard
 Este trabalho apresenta o desenvolvimento de um software educacional voltado para estudantes de Engenharia de Petróleo e áreas correlatas,
  com foco na assimilação prática dos principais conceitos da disciplina de Engenharia de Poços.
- O 
-\change_deleted 643308733 1751305782
-sistema
-\change_inserted 643308733 1751305785
-software
-\change_unchanged
-,
+ O software,
  concebido com uma interface gráfica intuitiva e recursos interativos,
  visa auxiliar o aprendizado de tópicos complexos por meio de ferramentas de visualização,
  análise,
@@ -1761,45 +1754,10 @@ software
  ministrada no Laboratório de Engenharia e Exploração de Petróleo (LENEP/CCT/UENF) desde o período letivo de 2024/01.
  O software foi projetado para ser acessível tanto a discentes vinculados à disciplina quanto a outros interessados,
  inclusive de instituições externas,
- reforçando seu caráter inclusivo
-\change_inserted 643308733 1751305829
-,
-
-\change_unchanged
- 
-\change_deleted 643308733 1751305830
-e
-\change_unchanged
- educativo
-\change_inserted 643308733 1751305834
- e de extensão
-\change_unchanged
-.
- 
-\change_inserted 643308733 1751305850
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1751305895
-posso te dar horas de extensão por este projeto pois é disponibilizado na liccença GPL no github,
- alunos de fora podem baixar e usar
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-O processo de desenvolvimento foi conduzido com base em metodologias ágeis 
-\change_inserted 643308733 1751305915
-- Scrum,
- FDD 
-\change_unchanged
-e no uso de sistemas de controle de versão como Git e GitHub,
+ reforçando seu caráter inclusivo,
+ educativo e de extensão.
+ O processo de desenvolvimento foi conduzido com base em metodologias ágeis - Scrum,
+ FDD e no uso de sistemas de controle de versão como Git e GitHub,
  práticas comuns no ambiente profissional e acadêmico contemporâneo.
  Durante as fases de testes,
  o sistema foi aplicado em diversos cenários de simulação,
