@@ -105,7 +105,7 @@
 \papersides 2
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -114,6 +114,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -1745,7 +1746,13 @@ Resumo
 \begin_layout Standard
 Este trabalho apresenta o desenvolvimento de um software educacional voltado para estudantes de Engenharia de Petróleo e áreas correlatas,
  com foco na assimilação prática dos principais conceitos da disciplina de Engenharia de Poços.
- O sistema,
+ O 
+\change_deleted 643308733 1751305782
+sistema
+\change_inserted 643308733 1751305785
+software
+\change_unchanged
+,
  concebido com uma interface gráfica intuitiva e recursos interativos,
  visa auxiliar o aprendizado de tópicos complexos por meio de ferramentas de visualização,
  análise,
@@ -1754,15 +1761,56 @@ Este trabalho apresenta o desenvolvimento de um software educacional voltado par
  ministrada no Laboratório de Engenharia e Exploração de Petróleo (LENEP/CCT/UENF) desde o período letivo de 2024/01.
  O software foi projetado para ser acessível tanto a discentes vinculados à disciplina quanto a outros interessados,
  inclusive de instituições externas,
- reforçando seu caráter inclusivo e educativo.
- O processo de desenvolvimento foi conduzido com base em metodologias ágeis e no uso de sistemas de controle de versão como Git e GitHub,
+ reforçando seu caráter inclusivo
+\change_inserted 643308733 1751305829
+,
+
+\change_unchanged
+ 
+\change_deleted 643308733 1751305830
+e
+\change_unchanged
+ educativo
+\change_inserted 643308733 1751305834
+ e de extensão
+\change_unchanged
+.
+ 
+\change_inserted 643308733 1751305850
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1751305895
+posso te dar horas de extensão por este projeto pois é disponibilizado na liccença GPL no github,
+ alunos de fora podem baixar e usar
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+O processo de desenvolvimento foi conduzido com base em metodologias ágeis 
+\change_inserted 643308733 1751305915
+- Scrum,
+ FDD 
+\change_unchanged
+e no uso de sistemas de controle de versão como Git e GitHub,
  práticas comuns no ambiente profissional e acadêmico contemporâneo.
  Durante as fases de testes,
  o sistema foi aplicado em diversos cenários de simulação,
  como o estudo de perfis térmicos,
  cálculo de pressão hidrostática,
  análise de perda de carga em tubulações e anulares,
- modelagem reológica de fluidos e avaliação do efeito pistão em completações com e sem packer.
+ modelagem reológica de fluidos e avaliação do efeito pistão em completações com e sem 
+\emph on
+packer
+\emph default
+.
  Os resultados obtidos demonstraram que o software é capaz de representar com fidelidade os fenômenos envolvidos,
  facilitando a compreensão dos mecanismos físicos e operacionais típicos da engenharia de poços.
  Além disso,

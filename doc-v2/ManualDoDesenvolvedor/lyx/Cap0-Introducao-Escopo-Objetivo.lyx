@@ -102,7 +102,7 @@
 \papersides 2
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes true
 \change_bars false
 \postpone_fragile_content false
@@ -129,9 +129,23 @@ name "cha:Introdução"
 \end_layout
 
 \begin_layout Standard
-O presente projeto de engenharia propõe o desenvolvimento de um software educacional voltado ao apoio didático na disciplina de Engenharia de Poço,
+O presente projeto de engenharia 
+\change_deleted 643308733 1751306836
+propõe
+\change_inserted 643308733 1751306837
+apresenta
+\change_unchanged
+ o desenvolvimento de um software educacional voltado ao apoio didático na disciplina de Engenharia de Poço,
  no contexto da Engenharia de Petróleo.
- Utilizando
+ 
+\change_inserted 643308733 1751306851
+O software foi desenvolvido 
+\change_deleted 643308733 1751306852
+U
+\change_inserted 643308733 1751306852
+u
+\change_unchanged
+tilizando
 \change_deleted -991030785 1748701163
  
 \change_unchanged
@@ -155,7 +169,14 @@ literal "false"
 
 \end_inset
 
- e a biblioteca gráfica 
+
+\change_inserted 643308733 1751306878
+,
+
+\change_deleted 643308733 1751306878
+ e
+\change_unchanged
+ a biblioteca gráfica 
 \begin_inset CommandInset href
 LatexCommand href
 name "Qt"
@@ -165,7 +186,22 @@ literal "false"
 \end_inset
 
 ,
- a aplicação tem como objetivo facilitar a assimilação de conceitos complexos por meio de simulações computacionais e recursos interativos.
+
+\change_inserted 643308733 1751306893
+ e metodologias de desenvolvimento ágeis.
+
+\change_unchanged
+ 
+\change_deleted 643308733 1751306897
+a 
+\change_inserted 643308733 1751306900
+O software
+\change_deleted 643308733 1751306901
+aplicação 
+\change_inserted 643308733 1751306901
+ 
+\change_unchanged
+tem como objetivo facilitar a assimilação de conceitos complexos por meio de simulações computacionais e recursos interativos.
 \end_layout
 
 \begin_layout Standard
@@ -209,6 +245,13 @@ Nesse contexto,
  para a formação acadêmica ao apresentar de forma prática os efeitos e as interações dos principais parâmetros operacionais de um poço.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Objetivos
 \begin_inset CommandInset label
@@ -234,7 +277,13 @@ Objetivo geral:
 
 \begin_deeper
 \begin_layout Itemize
-Desenvolver um software capaz de analisar e calcular as principais equações que sustentam os fundamentos da disciplina de Engenharia de Poço,
+Desenvolver um software
+\change_deleted 643308733 1751306970
+ 
+\change_inserted 643308733 1751306972
+ 
+\change_unchanged
+capaz de analisar e calcular as principais equações que sustentam os fundamentos da disciplina de Engenharia de Poço,
  favorecendo a consolidação do conhecimento teórico adquirido em sala de aula.
 \end_layout
 
@@ -267,6 +316,12 @@ Calcular propriedades hidrodinâmicas e reológicas associadas ao poço.
 
 \begin_layout Itemize
 Realizar simulações computacionais para teste e validação dos algoritmos desenvolvidos.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1751306997
+Desenvolver interface gráfica amigável e intuitiva.
 \end_layout
 
 \begin_layout Itemize

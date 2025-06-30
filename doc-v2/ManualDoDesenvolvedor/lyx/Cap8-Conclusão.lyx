@@ -102,7 +102,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -111,6 +111,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -165,6 +166,90 @@ Ao final deste trabalho,
  permitindo simular com fidelidade os principais fenômenos operacionais incluindo o escoamento de fluidos em diferentes regimes,
  perdas de carga,
  variações térmicas e deformações mecânicas da coluna.
+\change_inserted 643308733 1751307411
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1751307464
+abaixo é uma sugesTão,
+ uma resposta a cada item que foi colocado em Objetivos específicos;
+ eu gosto de responder demonstrando de forma cabal que o que foi proposto foi feito;
+ alinha objetivos e metas com o que foi realizado/entregue
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1751307193
+A modelagem física e matemática cobriu os temas centrais da disciplina (capítulo de Elaboração).
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1751307170
+A modelagem estática e dinâmica da estrutura do software foi apresentada de forma detalhada nos capítulos de Elaboração,
+ Análise,
+ Projeto.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1751307215
+Vimos aplicações práticas,
+ cálculos de propriedades hidrodinâmicas e reológicas associadas ao poço(no capítulo de Testes.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1751307038
+Realizar simulações computacionais para teste e validação dos algoritmos desenvolvidos.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1751307275
+O software inclui versões iniciais em modo CLI e três versões com interface gráfica amigável e intuitiva (capítulo Planejamento e Detalhamento).
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1751307321
+O manual do usuário,
+ um manual simplificado para orientar o uso do software esta disponibilizado em apêndice.
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1751307404
+Este documento é um manual técnico científico detalhado,
+ um manual que apresenta os objetivos,
+ metodologia,
+ conceitos teóricos,
+ ferramentas utilizadas,
+ os códigos desenvolvidos e testes do software,
+ permitindo que outros professores e alunos possam dar continuidade ao software.
+ Veja 
+\begin_inset Quotes eld
+\end_inset
+
+Sugestões para trabalhos futuros
+\begin_inset Quotes erd
+\end_inset
+
+.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -189,6 +274,17 @@ Por fim,
  mas também uma base sólida para futuras pesquisas e aprimoramentos na área,
  seja por meio da ampliação de funcionalidades,
  da modernização da interface ou da aplicação em contextos profissionais.
+\change_inserted 643308733 1751307470
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1751307513
+Como complemento foram desenvolvidos três vídeos que mostram o passo a passo para instalação do software,
+ uso do software e manutenção/atualização do software.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section
@@ -218,75 +314,131 @@ Com base nos resultados alcançados e nas possibilidades de aprimoramento identi
 Expansão da base física do modelo:
 
 \series default
- inclusão de efeitos transientes,
+ 
+\change_inserted 643308733 1751307521
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+inclusão de efeitos transientes,
  como variações dinâmicas de pressão e temperatura ao longo do tempo,
  ampliando o realismo das simulações.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 
 \series bold
 Simulação de poços não verticais:
 
 \series default
- implementação de modelos voltados a poços horizontais,
- desviados ou multissegmentados,
+ 
+\change_inserted 643308733 1751307523
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+implementação de modelos voltados a poços horizontais,
+ desviados ou multi
+\change_deleted 643308733 1751306711
+s
+\change_unchanged
+segmentados,
  com representação espacial mais complexa.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 
 \series bold
 Aprimoramento da interface gráfica:
  
-\series default
+\change_inserted 643308733 1751307524
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
 modernização visual,
  com inclusão de ícones interativos,
  navegação mais intuitiva e adaptação responsiva para diferentes resoluções de tela.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 
 \series bold
 Conversão automática de unidades:
 
 \series default
- criação de um sistema interno para permitir que o usuário escolha o sistema de unidades (SI,
+ 
+\change_inserted 643308733 1751307526
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+criação de um sistema interno para permitir que o usuário escolha o sistema de unidades (SI,
  imperial etc.),
  com conversões automáticas nas entradas e saídas.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 
 \series bold
 Geração automática de relatórios:
 
 \series default
- integração de uma funcionalidade para exportar relatórios personalizados em PDF ou outros formatos,
+ 
+\change_inserted 643308733 1751307528
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+integração de uma funcionalidade para exportar relatórios personalizados em PDF ou outros formatos,
  com tabelas,
  gráficos e interpretações dos resultados.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 
 \series bold
 Internacionalização da ferramenta:
  
-\series default
+\change_inserted 643308733 1751307529
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
 adaptação do software para diferentes idiomas,
  ampliando seu uso para contextos acadêmicos e industriais internacionais.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 
 \series bold
 Aplicação de inteligência artificial:
 
 \series default
- uso de algoritmos para sugerir parâmetros iniciais,
+ 
+\change_inserted 643308733 1751307532
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+uso de algoritmos para sugerir parâmetros iniciais,
  prever resultados esperados ou detectar incoerências nos dados de entrada.
 \end_layout
 
+\end_deeper
 \begin_layout Standard
 Essas propostas visam transformar o protótipo atual em uma plataforma ainda mais robusta,
  versátil e alinhada às necessidades reais do setor petrolífero e do ensino técnico-científico.
